@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-    <div class="chat-notification">
+  <div>
+    <Header />
+    <Footer />
+    <!-- <div class="chat-notification">
       <div class="chat-notification-logo-wrapper">
         <img
           class="chat-notification-logo"
@@ -12,10 +14,19 @@
         <h4 class="chat-notification-title">ChitChat</h4>
         <p class="chat-notification-message">You have a new message!</p>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
-
+<script>
+import Footer from "~/components/Footer";
+import Header from "~/components/Header";
+export default {
+  components: {
+    Header,
+    Footer
+  }
+};
+</script>
 <style>
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
