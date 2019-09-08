@@ -1,0 +1,21 @@
+{
+  "name": "arialshop-tailwind",
+  "version": "1.0.0",
+  "description": "Arialshop Tailwind Store Front",
+  "author": "coolnaveesh",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.9.2",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^1.1.2"
+  }
+}
