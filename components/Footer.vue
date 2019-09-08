@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-gray-100">
-    <div class="flex flex-no-wrap">
-        <div class="w-1/4 flex-none p-2">
+    <div class="flex">
+        <div class="w-1/4  flex-none p-2">
            <p class="text-center  font-medium">ONLINE SHOPPING</p>
            <ul class="ml-20 py-2">
                <li><a href="">Men</a></li>
@@ -25,14 +25,14 @@
                <li><a href="">Myntra Insider</a></li>
            </ul>
         </div>
-        <div class="w-1/4 flex-none p-2">
+        <div class="w-1/4 flex-none  p-2">
             <p class="text-center  font-medium">EXPERIENCE MYNTRA APP ON MOBILE</p>
-            <img class="float-left mt-5 mb-5 h-12" src="/playstore.png">
-            <img class="float-left mt-5 mb-5 h-12" src="/appstore.png">
-            <p class="text-left  text-sm">KEEP IN TOUCH</p>
+            <img class="float-left mt-5  h-10" src="/playstore.png">
+            <img class="float-left mt-5  h-10" src="/appstore.png"><br><br><br>
+            <h6 class="text-left  text-sm">KEEP IN TOUCH</h6>
             <img class="float-left mt-3 h-5" src="/socialicons.png">
         </div>
-        <div class="w-1/4 flex-none p-2">
+        <div class="w-1/4  flex-none p-2">
             <div class=" lg:flex-shrink-0">
                 <img class="w-1/4 rounded-sm mb-5 sm:w-10 float-left" src="/original.png" alt="" />
                 <p class="w-3/4 float-left mb-5 ml-1 text-sm"><span class="font-medium">100% ORIGINAL guarantee</span> for all products at myntra.com</p>
