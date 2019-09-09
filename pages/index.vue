@@ -2,6 +2,10 @@
   <div>
     <Header />
     <HeaderBody /><br>
+    <div>
+      <LeftSideBar />
+    <RightSideBar />
+    </div>
     <Footer/>
     <!-- <div class="chat-notification">
       <div class="chat-notification-logo-wrapper">
@@ -20,13 +24,15 @@
 </template>
 <script>
 import Footer from "~/components/Footer";
+import LeftSideBar from "~/components/LeftSideBar";
+import RightSideBar from "~/components/RightSideBar";
 import Header from "~/components/Header";
 import HeaderBody from "~/components/HeaderBody";
 import Logo  from "~/components/Logo";
 import Button  from "~/components/Button";
 export default {
     components:{
-        Logo,Button,Header,HeaderBody,Footer
+        Logo,Button,Header,HeaderBody,Footer,LeftSideBar
     }
 }
 </script>

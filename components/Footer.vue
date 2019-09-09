@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-gray-100">
-    <div class="flex">
+  <footer class="txtxlr">
+    <div class="md:flex py-3">
         <div class="w-1/4  flex-none p-2">
            <p class="text-center  font-medium">ONLINE SHOPPING</p>
            <ul class="ml-20 py-2">
@@ -49,7 +49,7 @@
     </div>
     <div class="w-4/4 flex-none container-fluid p-2">
         <p class="text-sm font-medium hr-line">POPULAR SEARCHES</p>
-        <p class="text-gray-600 mt-5 mb-5">Adidas | Arrow | Fila | Online Shopping | Nike | Pepe Jeans | Puma | United Colors of Benetton |  
+        <p class="txtxlr mt-5 mb-5">Adidas | Arrow | Fila | Online Shopping | Nike | Pepe Jeans | Puma | United Colors of Benetton |  
             Fastrack | Shorts | Being Human | Skirts | Woodland | Supra | Dresses | Clothing | Jewellery |  
             T-shirts |  Shoes | Bags | Watches | Caps | Shirts | Backpacks | Flip Flops | Sunglasses | Kurtas |  
             Lingerie | Jackets |  Skechers | Saree | Sandals | Puma Tshirts | Woodland Shoes | Titan Watches | 
@@ -58,11 +58,11 @@
     </div>
     <div class="w-4/4 ">
         <div class="w-2/4 float-left bg-gray-100">
-            <p class="text-gray-600 container-fluid">In case of any concern,<span class="text-indigo-600">Contact Us</span></p>
+            <p class="txtxlr container-fluid">In case of any concern,<span class="text-indigo-600">Contact Us</span></p>
         </div>
 
         <div class="w-2/4 float-left bg-gray-100">
-            <p class="text-gray-600 text-right px-20">© 2019 www.myntra.com. All rights reserved.</p>
+            <p class="txtxlr text-right px-20">© 2019 www.myntra.com. All rights reserved.</p>
         </div>
 
         
@@ -79,5 +79,9 @@ export default {
 <style scoped>
 .hr-line{
     border-bottom:1px solid lightgray; 
+}
+.txtxlr{
+    color:#696b79;
+    font-size: 15px;
 }
 </style>
