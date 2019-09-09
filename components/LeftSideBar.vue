@@ -447,4 +447,18 @@ input[type="radio"] {
   margin-right: 8px;
   margin-left: 4px;
 }
+input[type="checkbox"],
+input[type="radio"] {
+  margin-top: 0.4em;
+}
+.colour-colorDisplay {
+  width: 15px;
+  height: 15px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  margin-left: 4px;
+}
 </style>
