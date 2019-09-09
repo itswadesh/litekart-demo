@@ -1,27 +1,56 @@
 <template>
   <div>
-    <Header />
-    <HeaderBody />
     <div>
-      <LeftSideBar />
-      <RightSideBar />
+      <Header />
     </div>
-    <Footer/>
+    <div class="flex">
+      <LeftSideBar class="flex-none max-w-xs hidden md:block" />
+      <div>
+        <HeaderBody />
+        <div class="flex flex-wrap">
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+        </div>
+        <Pagination />
+      </div>
+    </div>
+    <!-- <RightSideBar /> -->
+    <Footer />
   </div>
 </template>
 <script>
+import Pagination from "~/components/Pagination";
+import Product from "~/components/Product";
 import Footer from "~/components/Footer";
 import LeftSideBar from "~/components/LeftSideBar";
 import RightSideBar from "~/components/RightSideBar";
 import Header from "~/components/Header";
 import HeaderBody from "~/components/HeaderBody";
-import Logo  from "~/components/Logo";
-import Button  from "~/components/Button";
+import Logo from "~/components/Logo";
+import Button from "~/components/Button";
 export default {
-    components:{
-        Logo,Button,Header,HeaderBody,Footer,LeftSideBar
-    }
-}
+  components: {
+    Logo,
+    Button,
+    Header,
+    HeaderBody,
+    Footer,
+    LeftSideBar,
+    Pagination,
+    RightSideBar,
+    Product
+  }
+};
 </script>
 <style>
 /* Sample `apply` at-rules with Tailwind CSS
