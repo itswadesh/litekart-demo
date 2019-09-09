@@ -44,7 +44,7 @@
         <div>
            <img class="w-5 h-4  center" src="/bag.png">
           <a href="#" class="mr-10 inline-block text-sm font-semibold"
-            >Bag</a
+            >Bag <span class="text-white notify text-xs">1</span></a
           >
         </div>
       </div>
@@ -53,6 +53,14 @@
   </header>
 </template>
 <style scoped>
+.notify{
+  background: rgb(255,81,123);
+    border-radius: 50%;
+    padding: 0px 3px;
+    position: absolute;
+    top: 14px;
+    margin-left: -10px
+}
 .input-search{
     padding-right: 100px;
 }
