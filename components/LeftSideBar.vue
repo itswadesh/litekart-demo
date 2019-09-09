@@ -3,7 +3,7 @@
         <div class="w-1/6 margin-right  flex">
             <div class="bb w-screen">
                 <ul class="ml-2 py-2 font-semibold text-sm px-3">
-                    <input  type="radio" name="gender"><li><a   href="#">Women</a></li><br>
+                    <input  type="radio" name="gender"><li><a   href="#">Women</a></li>
                     <input   type="radio" name="gender"><li><a   href="#">Girls</a></li>
                 </ul>
             </div>

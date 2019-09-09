@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <HeaderBody /><br>
+    <HeaderBody />
     <div>
       <LeftSideBar />
     <RightSideBar />
