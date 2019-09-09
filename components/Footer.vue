@@ -10,7 +10,7 @@
                <li><a href="">Home & Living</a></li>
                <li><a href="">Discover</a></li>
                <li><a href="">Gift Cards</a></li>
-               <li><a href="">Myntra Insider</a></li>
+               <li><a href="">Myntra Insider</a><span class="desktop-superscript">New</span></li>
            </ul>
         </div>
         <div class="w-1/4 flex-none p-2">
@@ -83,5 +83,14 @@ export default {
 .txtxlr{
     color:#696b79;
     font-size: 15px;
+}
+.desktop-superscript{
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 0px 5px;
+    background: red;
+    border-radius: 90px;
+    margin: 0px 0px 0px 5px;
 }
 </style>
