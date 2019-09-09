@@ -2,179 +2,196 @@
   <div class="flex flex-wrap">
     <div class="w-1/6 margin-right bb flex flex-row flex-wrap">
       <div class="bb w-screen ">
-        <ul class="ml-2 py-2 font-semibold text-sm px-3">
-          <input
-            type="radio"
-            name="gender"
-          >
-          <li><a  href="#">Women</a></li>
-          <input
-            type="radio"
-            name="gender"
-          >
-          <li><a href="#">Girls</a></li>
+        <ul class="ml-2 py-2 text-sm px-3">
+          <li>
+            <label class="common-customRadio gender-label undefined">
+              <input type="radio" name="ladies" value="women,men women">Women
+            </label>
+          </li>
+          <li>
+            <label class="common-customRadio gender-label undefined">
+              <input type="radio" name="ladies" value="women,men women">Girls
+            </label>
+          </li>
         </ul>
       </div>
-      <div class="bb w-screen ">
+      <div class="bb w-screen">
         <p class="ml-2 py-2 font-semibold text-sm px-3">BRAND</p>
-        <ul class="ml-2 py-2 font-semibold text-gray-600 text-sm px-3">
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">FOREVER 21(1288)</a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">DOROTHY PERKINS(1211)</a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">Peppermint(943)</a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">MANGO(779)</a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">next(644)</a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">H&M(585)</a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">Tokyo Talkies(580)</a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">Vero Moda(505)</a></li>
+        <ul class="ml-2 py-2 text-gray-600 text-sm px-3">
+          <li>
+            <label>
+              <input type="checkbox" value="Scotch &amp; Soda">Scotch &amp; Soda
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Scotch &amp; Soda">DOROTHY(1211)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Scotch &amp; Soda">Peppermint(943)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Scotch &amp; Soda">Mango(779)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Scotch &amp; Soda">next(644)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Scotch &amp; Soda">H&M(943)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Scotch &amp; Soda">Tokyo Talkies(943)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Scotch &amp; Soda">Vero Moda(943)
+            </label>
+          </li>
         </ul>
       </div>
-
-
       <div class="bb w-screen ">
-        <p class="ml-2 py-2 font-semibold text-sm px-3">PRICE</p>
-        <ul class="ml-2 py-2 text-gray-600 font-semibold text-sm px-3">
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">RS. 184 to Rs.4638 <span>(30807)</span></a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">RS. 184 to Rs.4638 <span>(30807)</span></a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">RS. 184 to Rs.4638 <span>(30807)</span></a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">RS. 184 to Rs.4638 <span>(30807)</span></a></li>
+        <p class="ml-2 py-2 font-semibold text-xs px-3">PRICE</p>
+        <ul class="ml-2 py-2 text-gray-600 text-xs px-3">
+          <li>
+            <label class="common-customCheckbox">
+            <input type="checkbox" class="price-input" value="197.0 TO 4648.0">Rs. 197 to Rs. 4648
+            <span class="price-num">(30851)</span>
+            </label>
+          </li>
+          <li>
+            <label class="common-customCheckbox">
+            <input type="checkbox" class="price-input" value="197.0 TO 4648.0">Rs. 184 to Rs.4638
+            <span class="price-num">(30851)</span>
+            </label>
+          </li>
+          <li>
+            <label class="common-customCheckbox">
+            <input type="checkbox" class="price-input" value="197.0 TO 4648.0">Rs. 197 to Rs. 4648
+            <span class="price-num">(30851)</span>
+            </label>
+          </li>
+          <li>
+            <label class="common-customCheckbox">
+            <input type="checkbox" class="price-input" value="197.0 TO 4648.0">Rs. 197 to Rs. 4648
+            <span class="price-num">(30851)</span>
+            </label>
+          </li>
+          <li>
+            <label class="common-customCheckbox">
+            <input type="checkbox" class="price-input" value="197.0 TO 4648.0">Rs. 197 to Rs. 4648
+            <span class="price-num">(30851)</span>
+            </label>
+          </li>
         </ul>
       </div>
 
       <div class="bb w-screen ">
         <p class="ml-2 py-2 font-semibold text-sm px-3">COLOR</p>
-        <ul class="ml-2 py-2 text-gray-600 font-semibold text-sm px-3">
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">Black <span>(30807)</span></a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">Navy Blue <span>(30807)</span></a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">Blue <span>(30807)</span></a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">White<span>(30807)</span></a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">Pink<span>(30807)</span></a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">Red<span>(30807)</span></a></li>
-          <input
-            type="checkbox"
-            name="gender"
-          >
-          <li><a class="text-xs" href="#">Green<span>(30807)</span></a></li>
+        <ul class="ml-2 py-2 text-gray-600 text-sm px-3">
+          <li class="colour-listItem">
+            <label class="common-customCheckbox" data-count="4957">
+            <span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(54, 69, 79);"></span>Black<span class="colour-num">(4957)</span>
+            <input type="checkbox" value="Black">
+            </label>
+          </li>
+          <li class="colour-listItem">
+            <label class="common-customCheckbox" data-count="4957">
+            <span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(60, 68, 119);"></span>Navy Blue<span class="colour-num">(4957)</span>
+            <input type="checkbox" value="Black">
+            </label>
+          </li>
+          <li class="colour-listItem">
+            <label class="common-customCheckbox" data-count="4957">
+            <span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(0, 116, 217);"></span>Blue<span class="colour-num">(4957)</span>
+            <input type="checkbox" value="Black">
+            </label>
+          </li>
+          <li class="colour-listItem">
+            <label class="common-customCheckbox" data-count="4957">
+            <span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(255, 255, 255);border:1px solid grey"></span>White<span class="colour-num">(4957)</span>
+            <input type="checkbox" value="Black">
+            </label>
+          </li>
+          <li class="colour-listItem">
+            <label class="common-customCheckbox" data-count="4957">
+            <span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(241, 169, 196);"></span>Pink<span class="colour-num">(4957)</span>
+            <input type="checkbox" value="Black">
+            </label>
+          </li>
+          <li class="colour-listItem">
+            <label class="common-customCheckbox" data-count="4957">
+            <span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(211, 75, 86);"></span>Red<span class="colour-num">(4957)</span>
+            <input type="checkbox" value="Black">
+            </label>
+          </li>
         </ul>
       </div>
       <div class="bb w-screen ">
         <p class="ml-2 py-2 font-semibold text-sm px-3">DISCOUNT RANGE</p>
-        <ul class="ml-2 py-2 text-gray-600 font-semibold text-sm px-3">
-          <input
-            type="radio"
-            name="discount"
-          >
-          <li><a  href="#">10% and above</a></li>
-          <input
-            type="radio"
-            name="discount"
-          >
-          <li><a href="#">20% and above</a></li>
-          <input
-            type="radio"
-            name="discount"
-          >
-          <li><a href="#">30% and above</a></li>
-          <input
-            type="radio"
-            name="discount"
-          >
-          <li><a href="#">40% and above</a></li>
-          <input
-            type="radio"
-            name="discount"
-          >
-          <li><a href="#">50% and above</a></li>
-          <input
-            type="radio"
-            name="discount"
-          >
-          <li><a href="#">60% and above</a></li>
-          <input
-            type="radio"
-            name="discount"
-          >
-          <li><a href="#">70% and above</a></li>
-          <input
-            type="radio"
-            name="discount"
-          >
-          <li><a href="#">80% and above</a></li>
+        <ul class="ml-2 py-2 text-gray-600 text-sm px-3">
+          <li>
+            <label class="common-customRadio">
+              <input type="radio" class="discount-input" name="discount-product" value="10.0 TO 100.0">
+              10% and above
+            </label>
+          </li>
+          <li>
+            <label class="common-customRadio">
+              <input type="radio" class="discount-input" name="discount-product" value="10.0 TO 100.0">
+              20% and above
+            </label>
+          </li>
+          <li>
+            <label class="common-customRadio">
+              <input type="radio" class="discount-input" name="discount-product" value="10.0 TO 100.0">
+              30% and above
+            </label>
+          </li>
+          <li>
+            <label class="common-customRadio">
+              <input type="radio" class="discount-input" name="discount-product" value="10.0 TO 100.0">
+              40% and above
+            </label>
+          </li>
+          <li>
+            <label class="common-customRadio">
+              <input type="radio" class="discount-input" name="discount-product" value="10.0 TO 100.0">
+              50% and above
+            </label>
+          </li>
+          <li>
+            <label class="common-customRadio">
+              <input type="radio" class="discount-input" name="discount-product" value="10.0 TO 100.0">
+              60% and above
+            </label>
+          </li>
+          <li>
+            <label class="common-customRadio">
+              <input type="radio" class="discount-input" name="discount-product" value="10.0 TO 100.0">
+              70% and above
+            </label>
+          </li>
+          <li>
+            <label class="common-customRadio">
+              <input type="radio" class="discount-input" name="discount-product" value="10.0 TO 100.0">
+              80% and above
+            </label>
+          </li>
         </ul>
       </div>
     </div>
-    <div class="w-5/6 right-body margin-right flex flex-row flex-wrap p-2 items-center">
+    <div class="w-5/6 right-body margin-topp flex flex-row flex-wrap p-2 items-center">
       <Product />
       <Product />
       <Product />
@@ -215,13 +232,16 @@ input {
   margin-right: 0.5em;
 }
 .bb {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #EDEBEF;
   height: max-content;
 }
 .margin-right {
-  border-right: 1px solid lightgray;
-  border-top: 1px solid lightgray;
+  border-right:1px solid #EDEBEF;
+  border-top: 1px solid #EDEBEF;
   height: unset;
+}
+.margin-topp{
+  border-top: 1px solid #EDEBEF;
 }
 .right-body {
   padding: 1em;
@@ -284,5 +304,18 @@ input {
     text-align: center;
     margin-left: 64px;
     padding: 10px 22px;
+}
+input[type="checkbox"],input[type="radio"]{
+  margin-top:0.4em;
+}
+.colour-colorDisplay {
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    margin-left: 4px;
 }
 </style>

@@ -44,7 +44,7 @@
         <div>
            <img class="w-5 h-4  center" src="/bag.png">
           <a href="#" class="mr-10 inline-block text-sm font-semibold"
-            >Bag <span class="text-white notify text-xs">1</span></a
+            >Bag <span class="numberCircle">1</span></a
           >
         </div>
       </div>
@@ -53,13 +53,29 @@
   </header>
 </template>
 <style scoped>
-.notify{
+/* .notify{
   background: rgb(255,81,123);
     border-radius: 50%;
     padding: 0px 3px;
     position: absolute;
     top: 14px;
     margin-left: -10px
+} */
+.numberCircle {
+    white-space: nowrap;
+    text-align: center;
+    line-height: 18px;
+    padding: 0 6px;
+    height: 18px;
+    background: #ff3f6c;
+    position: absolute;
+    border-radius: 50%;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #fff;
+    top: 16px;
+    font-weight: bold;
+    right: 60px;
 }
 .input-search{
     padding-right: 100px;

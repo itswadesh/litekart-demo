@@ -9,25 +9,25 @@
             </div>
             <div class="w-3/4  flex-none p-2">
               <div class="text-sm sm:flex-grow float-left">
-              <a href="#"  class="block  text-gray-600 m-4 sm:inline-block  sm:mt-0">
+              <a href="#"  class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black">
                 Bundles<img class="w-2 h-2 arrowcls" src="/down-arrow.png">
               </a>
-              <a  href="#"  class="block  text-gray-600 m-4 sm:inline-block  sm:mt-0">
+              <a  href="#"  class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black">
               Fabric <img class="w-2 h-2 arrowcls" src="/down-arrow.png">
               </a>
-              <a href="#" class="block  text-gray-600 m-4 sm:inline-block  sm:mt-0">
+              <a href="#" class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black">
                 Fabric Type <img class="w-2 h-2 arrowcls" src="/down-arrow.png">
               </a>
-              <a href="#" class="block  text-gray-600 m-4 sm:inline-block  sm:mt-0 ">
+              <a href="#" class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black ">
                 Length <img class="w-2 h-2 arrowcls" src="/down-arrow.png">
               </a>
-              <a href="#" class="block  text-gray-600 m-4 sm:inline-block  sm:mt-0 ">
+              <a href="#" class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black ">
                 Neck <img class="w-2 h-2 arrowcls" src="/down-arrow.png">
               </a>
-              <a href="#" class="block  text-gray-600 m-4 sm:inline-block  sm:mt-0 ">
+              <a href="#" class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black ">
                 Ocassion <img class="w-2 h-2 arrowcls" src="/down-arrow.png">
               </a>
-              <a href="#" class="block  text-gray-600 m-4 sm:inline-block  sm:mt-0 ">
+              <a href="#" class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black ">
                 Pattern <img class="w-2 h-2 arrowcls" src="/down-arrow.png">
               </a>
               <a href="#" class="block  text-black font-semibold m-4 sm:inline-block  sm:mt-0 ">
