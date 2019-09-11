@@ -4,57 +4,42 @@
     <p class="py-2 px-5 text-sm "><span class="font-semibold">Clothing Dresses</span>- 31391 items</p>
 
     <div class="flex flex-wrap">
-      <div class="text-sm sm:flex-grow float-left">
+      <div class="text-sm sm:flex-grow float-left px-5">
         <a
           href="#"
-          class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black"
+          class="block inline-block rounded-full  p-1 mr-8 bg-gray-200 text-black"
         >
-          Bundles<img
-            class="w-2 h-2 arrowcls"
-            src="/down-arrow.png"
-          >
+          Bundles<i class="fa fa-caret-down px-1" />
         </a>
         <a
           href="#"
-          class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black"
+          class="block inline-block rounded-full  p-1 mr-8 bg-gray-200 text-black"
         >
-          Fabric <i class="fa fa-caret-down" />
+          Fabric <i class="fa fa-caret-down px-1" />
         </a>
         <a
           href="#"
-          class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black "
+          class="block inline-block rounded-full  p-1 mr-8 bg-gray-200 text-black "
         >
-          Length <img
-            class="w-2 h-2 arrowcls"
-            src="/down-arrow.png"
-          >
+          Length<i class="fa fa-caret-down px-1" />
         </a>
         <a
           href="#"
-          class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black "
+          class="block inline-block rounded-full  p-1 mr-8 bg-gray-200 text-black "
         >
-          Neck <img
-            class="w-2 h-2 arrowcls"
-            src="/down-arrow.png"
-          >
+          Neck<i class="fa fa-caret-down px-1" />
         </a>
         <a
           href="#"
-          class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black "
+          class="block inline-block rounded-full  p-1 mr-8 bg-gray-200 text-black "
         >
-          Ocassion <img
-            class="w-2 h-2 arrowcls"
-            src="/down-arrow.png"
-          >
+          Ocassion<i class="fa fa-caret-down px-1" />
         </a>
         <a
           href="#"
-          class="block inline-block rounded  p-1 mr-2 bg-gray-200 text-black "
+          class="block inline-block rounded-full  p-1 mr-8 bg-gray-200 text-black "
         >
-          Pattern <img
-            class="w-2 h-2 arrowcls"
-            src="/down-arrow.png"
-          >
+          Pattern<i class="fa fa-caret-down px-1" />
         </a>
         <a
           href="#"
@@ -63,7 +48,7 @@
           +8 more
         </a>
 
-        <select class="py-2 px-2 bg-white-400">
+        <select class="py-2 px-2 bg-white">
           <option>Sort by:Recommended</option>
           <option>What's New</option>
           <option>Popularity</option>

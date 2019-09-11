@@ -7,7 +7,7 @@
       <LeftSideBar class="flex-none max-w-xs hidden md:block" />
       <div>
         <HeaderBody />
-        <div class="flex flex-wrap">
+        <div class="flex flex-wrap shadow-inner">
           <Product />
           <Product />
           <Product />

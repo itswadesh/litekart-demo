@@ -1,10 +1,10 @@
 <template>
-  <div class="">
-    <div class="w-1/4  flex-none p-2">
-      <p class="font-semibold py-2 px-3">FILTERS</p>
+  <div class="py-16 bg-white-800 shadow ">
+    <div class="flex-none px-2">
+      <p class="font-semibold py-2 px-5 py-2">FILTERS</p>
     </div>
     <div class=" ">
-      <ul class="ml-2 py-2 text-sm px-3">
+      <ul class="ml-2 py-2 text-sm px-5 py-2">
         <li>
           <label class="common-customRadio gender-label undefined">
             <input
@@ -26,8 +26,8 @@
       </ul>
     </div>
     <div class=" ">
-      <p class="ml-2 py-2 font-semibold text-sm px-3">BRAND</p>
-      <ul class="ml-2 py-2 text-gray-600 text-sm px-3">
+      <p class="ml-2 py-2 font-semibold text-sm px-5 py-2">BRAND</p>
+      <ul class="ml-2 py-2 text-gray-600 text-sm px-5 py-2">
         <li>
           <label>
             <input
@@ -95,68 +95,41 @@
       </ul>
     </div>
 
-    <div class="bb w-screen ">
-      <p class="ml-2 py-2 font-semibold text-sm px-3">PRICE</p>
-      <ul class="ml-2 py-2 text-gray-600 text-xs px-3">
+    <div>
+      <p class="ml-2 py-2 font-semibold text-sm px-5 py-2">PRICE</p>
+      <ul class="ml-2 py-2 text-gray-600 text-xs px-5 py-2">
         <li>
-          <label class="common-customCheckbox">
-            <input
-              type="checkbox"
-              class="price-input"
-              value="197.0 TO 4648.0"
-            >Rs. 197 to Rs. 4648
-            <span class="price-num">(30851)</span>
+         <Checkbox/>
+        </li>
+        <li>
+          <label>
+           <Checkbox/>
           </label>
         </li>
         <li>
-          <label class="common-customCheckbox">
-            <input
-              type="checkbox"
-              class="price-input"
-              value="197.0 TO 4648.0"
-            >Rs. 184 to Rs.4638
-            <span class="price-num">(30851)</span>
+          <label>
+            <Checkbox/>
           </label>
         </li>
         <li>
-          <label class="common-customCheckbox">
-            <input
-              type="checkbox"
-              class="price-input"
-              value="197.0 TO 4648.0"
-            >Rs. 197 to Rs. 4648
-            <span class="price-num">(30851)</span>
+          <label>
+            <Checkbox/>
           </label>
         </li>
         <li>
-          <label class="common-customCheckbox">
-            <input
-              type="checkbox"
-              class="price-input"
-              value="197.0 TO 4648.0"
-            >Rs. 197 to Rs. 4648
-            <span class="price-num">(30851)</span>
-          </label>
-        </li>
-        <li>
-          <label class="common-customCheckbox">
-            <input
-              type="checkbox"
-              class="price-input"
-              value="197.0 TO 4648.0"
-            >Rs. 197 to Rs. 4648
-            <span class="price-num">(30851)</span>
+          <label>
+            <Checkbox/>
           </label>
         </li>
       </ul>
     </div>
 
-    <div class="bb w-screen ">
-      <p class="ml-2 py-2 font-semibold text-sm px-3">COLOR</p>
-      <ul class="ml-2 py-2 text-gray-600 text-sm px-3">
+    <div >
+      <p class="ml-2 py-2 font-semibold text-sm px-5 py-2">COLOR</p>
+      <ul class="ml-2 py-2 text-gray-600 text-sm px-5 py-2">
         <li class="colour-listItem">
           <label
-            class="common-customCheckbox"
+          
             data-count="4957"
           >
             <span
@@ -172,7 +145,7 @@
         </li>
         <li class="colour-listItem">
           <label
-            class="common-customCheckbox"
+          
             data-count="4957"
           >
             <span
@@ -188,7 +161,7 @@
         </li>
         <li class="colour-listItem">
           <label
-            class="common-customCheckbox"
+          
             data-count="4957"
           >
             <span
@@ -204,7 +177,7 @@
         </li>
         <li class="colour-listItem">
           <label
-            class="common-customCheckbox"
+          
             data-count="4957"
           >
             <span
@@ -220,7 +193,7 @@
         </li>
         <li class="colour-listItem">
           <label
-            class="common-customCheckbox"
+          
             data-count="4957"
           >
             <span
@@ -236,7 +209,7 @@
         </li>
         <li class="colour-listItem">
           <label
-            class="common-customCheckbox"
+          
             data-count="4957"
           >
             <span
@@ -252,9 +225,9 @@
         </li>
       </ul>
     </div>
-    <div class="bb w-screen ">
-      <p class="ml-2 py-2 font-semibold text-sm px-3">DISCOUNT RANGE</p>
-      <ul class="ml-2 py-2 text-gray-600 text-sm px-3">
+    <div>
+      <p class="ml-2 py-2 font-semibold text-sm px-5 py-2">DISCOUNT RANGE</p>
+      <ul class="ml-2 py-2 text-gray-600 text-sm px-5 py-2">
         <li>
           <label class="common-customRadio">
             <input
@@ -347,7 +320,12 @@
     </div>
   </div>
 </template>
-
+<script>
+import Checkbox from '~/components/Checkbox'
+export default{
+  components:{Checkbox}
+}
+</script>
 <style scoped>
 .arrow {
   position: relative;

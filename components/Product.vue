@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white w-60 ml-5 mr-6 mb-10">
+  <div class="bg-white w-60 ml-5 mr-6 mt-5">
     <div class="w-60">
       <img
         src="/cardimage.webp"

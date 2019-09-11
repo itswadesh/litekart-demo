@@ -64,7 +64,7 @@
         <div class="w-2/4 float-left bg-gray-100">
             <p class="txtxlr text-right px-20">© 2019 www.myntra.com. All rights reserved.</p>
         </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><img class="m-auto w-1/3" src="/up-arrow.png"></button>
         
     </div>
   </footer>
@@ -111,7 +111,7 @@ export default {
     margin: 0px 0px 0px 5px;
 }
 #myBtn {
-      display: block;
+    display: block;
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -121,8 +121,6 @@ export default {
     background-color:#555;
     color: white;
     cursor: pointer;
-    padding: 7px;
-    border-radius: 4px;
     border-radius: 100px;
     width: 40px;
     height: 40px;

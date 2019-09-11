@@ -2,7 +2,7 @@
   <header>
     <div>
       <!-- NAVBAR COMPONENT -->
-      <nav class="flex items-center justify-between flex-wrap bg-white-800 shadow-xl p-6">
+      <nav class="flex items-center justify-between flex-wrap bg-white-800 shadow p-3">
         <div class="flex items-center flex-shrink-0 text-orange mr-6">
           <img
             class="w-12 h-10 ml-5"
@@ -87,14 +87,6 @@
   </header>
 </template>
 <style scoped>
-/* .notify {
-  background: rgb(255, 81, 123);
-  border-radius: 50%;
-  padding: 0px 3px;
-  position: absolute;
-  top: 14px;
-  margin-left: -10px;
-} */
 .numberCircle {
   white-space: nowrap;
   text-align: center;
@@ -107,9 +99,9 @@
   font-family: Arial, sans-serif;
   font-size: 12px;
   color: #fff;
-  top: 16px;
+  top: 0;
   font-weight: bold;
-  right: 60px;
+  right: 47px;
 }
 .input-search {
   padding-right: 100px;
