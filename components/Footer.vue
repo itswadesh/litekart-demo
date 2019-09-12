@@ -95,11 +95,12 @@ export default {
 </script>
 <style scoped>
 .hr-line{
-    border-bottom:1px solid lightgray; 
+    border-bottom:1px solid #FAFBFC; 
 }
 .txtxlr{
     color:#696b79;
     font-size: 15px;
+    background: #FAFBFC;
 }
 .desktop-superscript{
     color: white;

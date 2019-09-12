@@ -7,8 +7,8 @@
 module.exports = {
   theme: {
     colors: {
-      lightgray: '#282c3f',
-      pinkclr:'#ff3f6c'
+      pink: '#ff3f6c',
+      gray:'#282c3f',
     }
   },
   variants: {},

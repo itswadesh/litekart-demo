@@ -5,7 +5,10 @@
             value="Black"
         >
         <span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(211, 75, 86);"></span>
-        FOREVER 21<span class="brand-num">(1295)</span>
+        <span class="text-gray-800 text-sm">
+            FOREVER 21
+        </span>
+        <span class="text-gray-100 text-xs">(1295)</span>
        <div class="common-checkboxIndicator"></div>
         
     </label>
@@ -21,26 +24,18 @@ export default {
 .colour-colorDisplay {
   width: 15px;
   height: 15px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   border-radius: 50%;
   display: inline-block;
   margin-right: 8px;
   margin-left: 4px;
-}
-input[type="checkbox"],
-input[type="radio"] {
-  margin-top: 0.4em;
 }
 .colour-colorDisplay {
-  width: 15px;
-  height: 15px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   display: inline-block;
   margin-right: 8px;
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .common-customCheckbox input:checked ~ .common-checkboxIndicator {
     border: none;
@@ -56,10 +51,26 @@ input[type="radio"] {
     height: 16px;
     border: 1px solid #c3c2c9;
     background: #fff;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
     border-radius: 2px;
     margin-top: -1.5em;
 }
-
+.common-checkboxIndicator:after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 1;
+    width: 8px;
+    height: 5px;
+    border: 2px solid #fff;
+    border-color: #fff;
+    border-top-style: none;
+    border-right-style: none;
+    transition: all 0.3s ease-in-out;
+    transform: rotate(-45deg);
+}
+label{
+    line-height: 2;
+    cursor: pointer;
+}
 </style>
