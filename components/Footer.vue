@@ -2,8 +2,8 @@
   <footer class="txtxlr">
     <div class="md:flex py-3">
         <div class="w-1/4  flex-none p-2">
-           <p class="text-center  font-medium">ONLINE SHOPPING</p>
-           <ul class="ml-20 py-2 px-2">
+           <p class="text-center  font-bold text-sm">ONLINE SHOPPING</p>
+           <ul class="ml-20 py-2 px-2 font-hairline text-sm">
                <li><a href="">Men</a></li>
                <li><a href="">Women</a></li>
                <li><a href="">Kids</a></li>
@@ -14,8 +14,8 @@
            </ul>
         </div>
         <div class="w-1/4 flex-none p-2 px-2">
-            <p class="text-center mr-2  font-medium">USEFUL LINKS</p>
-            <ul class="mx-24">
+            <p class="text-center mr-2  font-bold text-sm">USEFUL LINKS</p>
+            <ul class="mx-24 font-hairline text-sm py-2 px-1">
                <li><a href="">Men</a></li>
                <li><a href="">Women</a></li>
                <li><a href="">Kids</a></li>
@@ -26,7 +26,7 @@
            </ul>
         </div>
         <div class="w-1/4 flex-none  p-2">
-            <p class="f-medium">EXPERIENCE MYNTRA APP ON MOBILE</p>
+            <p class="font-bold text-sm">EXPERIENCE MYNTRA APP ON MOBILE</p>
             <img class="float-left mt-5  h-10" src="/playstore.png">
             <img class="float-left mt-5  h-10" src="/appstore.png"><br><br><br>
             <h6 class="text-left  text-sm">KEEP IN TOUCH</h6>
@@ -35,20 +35,20 @@
         <div class="w-1/4  flex-none p-2">
             <div class=" lg:flex-shrink-0">
                 <img class="w-1/4 rounded-sm mb-5 sm:w-10 float-left" src="/original.png" alt="" />
-                <p class="w-3/4 float-left mb-5 ml-1 text-sm"><span class="font-medium">100% ORIGINAL guarantee</span> for all products at myntra.com</p>
+                <p class="w-3/4 float-left mb-5 ml-1 text-sm"><span class="font-bold">100% ORIGINAL</span> guarantee for all products at myntra.com</p>
             </div>
             <div class=" lg:flex-shrink-0">
                 <img class="w-1/4 rounded-sm mb-5 sm:w-10 float-left" src="/return.png" alt="" />
-                <p class="w-3/4 float-left ml-1 mb-5 text-sm"><span class="font-medium">Return within 30days</span> of receiving your order</p>
+                <p class="w-3/4 float-left ml-1 mb-5 text-sm"><span class="font-bold">Return within 30days</span> of receiving your order</p>
             </div>
             <div class=" lg:flex-shrink-0">
                 <img class="w-1/4 rounded-sm sm:w-10 mb-5 float-left" src="/truck.png" alt="" />
-                <p class="w-3/4 float-left ml-1 text-sm mb-5"><span class="font-medium">Get free delivery</span> for every order above Rs. 1199</p>
+                <p class="w-3/4 float-left ml-1 text-sm mb-5"><span class="font-bold">Get free delivery</span> for every order above Rs. 1199</p>
             </div>
         </div>
     </div>
     <div class="w-4/4 flex-none container-fluid p-2">
-        <p class="text-sm font-medium hr-line">POPULAR SEARCHES</p>
+        <p class="text-sm font-medium hr-line">POPULAR SEARCHES</p><hr class="text-gray-100">
         <p class="txtxlr mt-5 mb-5">Adidas | Arrow | Fila | Online Shopping | Nike | Pepe Jeans | Puma | United Colors of Benetton |  
             Fastrack | Shorts | Being Human | Skirts | Woodland | Supra | Dresses | Clothing | Jewellery |  
             T-shirts |  Shoes | Bags | Watches | Caps | Shirts | Backpacks | Flip Flops | Sunglasses | Kurtas |  
@@ -99,7 +99,6 @@ export default {
 }
 .txtxlr{
     color:#696b79;
-    font-size: 15px;
     background: #FAFBFC;
 }
 .desktop-superscript{
