@@ -2,7 +2,7 @@
   <header>
     <div>
       <!-- NAVBAR COMPONENT -->
-      <nav class="flex items-center justify-between flex-wrap bg-white-800 shadow p-3">
+      <nav class="flex items-center justify-between flex-wrap bg-white-800 shadow p-5">
         <div class="flex items-center flex-shrink-0 text-orange mr-6">
           <img
             class="w-12 h-10 ml-5"
@@ -14,51 +14,48 @@
           <div class="text-sm sm:flex-grow">
             <a
               href="#"
-              class="block mt-2 sm:inline-block sm:mt-0 text-grey-300 font-semibold mr-4"
+              class="block mt-2 ml-6 sm:inline-block sm:mt-0 lightgray font-semibold"
             >
               MEN
             </a>
             <a
               href="#"
-              class="block mt-2 sm:inline-block sm:mt-0 text-grey-300 font-semibold mr-4"
+              class="block mt-2 ml-6 sm:inline-block sm:mt-0 lightgray font-semibold"
             >
               WOMEN
             </a>
             <a
               href="#"
-              class="block mt-2 sm:inline-block sm:mt-0 text-grey-300 font-semibold"
+              class="block mt-2 ml-6 sm:inline-block sm:mt-0 lightgray font-semibold"
             >
               KIDS
             </a>
             <a
               href="#"
-              class="block mt-2 ml-4 sm:inline-block sm:mt-0 text-grey-300 font-semibold"
+              class="block mt-2 ml-6 sm:inline-block sm:mt-0 lightgray font-semibold"
             >
               HOME & LIVING
             </a>
             <a
               href="#"
-              class="block mt-2 ml-4 sm:inline-block sm:mt-0 text-grey-300 font-semibold"
+              class="block mt-2 ml-6 sm:inline-block sm:mt-0 lightgray font-semibold"
             >
               DISCOVER
             </a>
           </div>
-          <div class="input-search">
-            <!-- <img class="w-5 h-5 mr-10" src="/search.png"> -->
-            <input
-              class="full-width mr-20 rounded input-bg border-2 px-1 py-1"
-              type="text"
-              placeholder="Search for brands,products or more"
-            >
-          </div>
-          <div>
+          
+          
+        <div class="relative mr-8 w-1/3">
+          <input type="search" class="w-full bg-purple-white pr-4 shadow rounded border-0 p-3 h-10" placeholder="Search by name...">
+        </div>
+        <div>
             <img
-              class="w-5 h-4   ml-3"
+              class="w-5 h-4 ml-3"
               src="/avatar.png"
             >
             <a
               href="#"
-              class="mr-10 inline-block text-sm font-semibold"
+              class="mr-10 inline-lightgray font-light"
             >Profile</a>
           </div>
           <div>
@@ -68,7 +65,7 @@
             >
             <a
               href="#"
-              class="mr-10 inline-block text-sm font-semibold"
+              class="mr-10 inline-lightgray font-light"
             >Whistlist</a>
           </div>
           <div>
@@ -78,8 +75,8 @@
             >
             <a
               href="#"
-              class="mr-10 inline-block text-sm font-semibold"
-            >Bag <span class="numberCircle">1</span></a>
+              class="mr-10 inline-lightgray font-light"
+            >Bag <span class="numberCircle text-white font-bold rounded-full text-xs h-4 absolute pl-1 pr-1 pt-0 pb-1 text-center whitespace-no-wrap">1</span></a>
           </div>
         </div>
       </nav>
@@ -88,30 +85,8 @@
 </template>
 <style scoped>
 .numberCircle {
-  white-space: nowrap;
-  text-align: center;
-  line-height: 18px;
-  padding: 0 6px;
-  height: 18px;
   background: #ff3f6c;
-  position: absolute;
-  border-radius: 50%;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  color: #fff;
-  top: 0;
-  font-weight: bold;
-  right: 47px;
-}
-.input-search {
-  padding-right: 100px;
-}
-.input-search > img {
-  position: absolute;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-input {
-  width: 100%;
+  top:10px;
+  right:60px;
 }
 </style>

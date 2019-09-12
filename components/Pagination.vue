@@ -1,56 +1,58 @@
 <template>
-  <div class="flex flex-row w-full">
+  <div class="flex flex-row w-full px-3">
 
-    <ul class="flex pagination-container w-full">
-      <li class="pagination-paginationMeta">
-        <!-- react-text: 2463 -->Page
-        <!-- /react-text -->
-        <!-- react-text: 2464 -->1
-        <!-- /react-text -->
-        <!-- react-text: 2465 --> of
-        <!-- /react-text -->
-        <!-- react-text: 2466 -->627
-        <!-- /react-text -->
+    <ul class="flex pagination-container pb-12 pt-4 list-none text-center w-full">
+      <li class="pagination-paginationMeta text-sm mt-3">
+        Page
+        
+        1
+        
+         of
+        
+        627
+        
       </li>
-      <li class="pagination-active"><a href="https://www.myntra.com/clothing-dresses?sort=new">
-          <!-- react-text: 2469 -->1
-          <!-- /react-text --></a></li>
-      <li class="pagination-number"><a href="https://www.myntra.com/clothing-dresses?sort=new&amp;p=2">
-          <!-- react-text: 2472 -->2
-          <!-- /react-text --></a></li>
-      <li class="pagination-number"><a href="https://www.myntra.com/clothing-dresses?sort=new&amp;p=3">
-          <!-- react-text: 2475 -->3
-          <!-- /react-text --></a></li>
-      <li class="pagination-number"><a href="https://www.myntra.com/clothing-dresses?sort=new&amp;p=4">
-          <!-- react-text: 2478 -->4
-          <!-- /react-text --></a></li>
-      <li class="pagination-number"><a href="https://www.myntra.com/clothing-dresses?sort=new&amp;p=5">
-          <!-- react-text: 2481 -->5
-          <!-- /react-text --></a></li>
-      <li class="pagination-number"><a href="https://www.myntra.com/clothing-dresses?sort=new&amp;p=6">
-          <!-- react-text: 2484 -->6
-          <!-- /react-text --></a></li>
-      <li class="pagination-number"><a href="https://www.myntra.com/clothing-dresses?sort=new&amp;p=7">
-          <!-- react-text: 2487 -->7
-          <!-- /react-text --></a></li>
-      <li class="pagination-number"><a href="https://www.myntra.com/clothing-dresses?sort=new&amp;p=8">
-          <!-- react-text: 2490 -->8
-          <!-- /react-text --></a></li>
-      <li class="pagination-number"><a href="https://www.myntra.com/clothing-dresses?sort=new&amp;p=9">
-          <!-- react-text: 2493 -->9
-          <!-- /react-text --></a></li>
-      <li class="pagination-number"><a href="https://www.myntra.com/clothing-dresses?sort=new&amp;p=10">
-          <!-- react-text: 2496 -->10
-          <!-- /react-text --></a></li>
-      <li class="pagination-next"><a
-          rel="next"
-          href=""
-        >
-          <!-- react-text: 2499 -->Next
-          <!-- /react-text --><span class="pagination-arrowRight"><img
-              src="/right.png"
-              class="arrow"
-            ></span></a></li>
+      <div class="m-auto">
+        <li class="bg-black font-medium text-white tracking-wide rounded-sm"><a href="">
+            1
+            </a></li>
+        <li><a href="">
+            2
+            </a></li>
+        <li><a href="">
+            3
+            </a></li>
+        <li><a href="">
+            4
+            </a></li>
+        <li><a href="">
+            5
+            </a></li>
+        <li><a href="">
+            6
+            </a></li>
+        <li><a href="">
+            7
+            </a></li>
+        <li><a href="">
+            8
+            </a></li>
+        <li><a href="">
+            9
+            </a></li>
+        <li><a href="">
+            10
+            </a></li>
+        <li class=" ml-3 h-10 text-center round-sm border-gray-300"><a
+            rel="next"
+            href=""
+            class="font-bold"
+            >Next
+            <span class="absolute"><img
+                src="/right.png"
+                class="w-9/12 py-2 px-1"
+                ></span></a></li>
+        </div>
     </ul>
   </div>
 </template>
@@ -59,5 +61,20 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
+.pagination-container {
+    border-top: 0.01rem solid #EDEBEF;
+    color: #282c3f;
+}
+.pagination-paginationMeta {
+    color: #535766;
+}
+li {
+    display: inline-block;
+    margin-right: 0.09rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.9rem 0.9rem;
+    border-radius: 0.4rem;
+}
 </style>

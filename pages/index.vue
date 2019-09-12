@@ -33,7 +33,6 @@ import Pagination from "~/components/Pagination";
 import Product from "~/components/Product";
 import Footer from "~/components/Footer";
 import LeftSideBar from "~/components/LeftSideBar";
-import RightSideBar from "~/components/RightSideBar";
 import Header from "~/components/Header";
 import HeaderBody from "~/components/HeaderBody";
 import Logo from "~/components/Logo";
@@ -47,7 +46,6 @@ export default {
     Footer,
     LeftSideBar,
     Pagination,
-    RightSideBar,
     Product
   }
 };

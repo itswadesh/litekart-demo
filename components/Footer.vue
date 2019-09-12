@@ -3,7 +3,7 @@
     <div class="md:flex py-3">
         <div class="w-1/4  flex-none p-2">
            <p class="text-center  font-medium">ONLINE SHOPPING</p>
-           <ul class="ml-20 py-2">
+           <ul class="ml-20 py-2 px-2">
                <li><a href="">Men</a></li>
                <li><a href="">Women</a></li>
                <li><a href="">Kids</a></li>
@@ -13,7 +13,7 @@
                <li><a href="">Myntra Insider</a><span class="desktop-superscript">New</span></li>
            </ul>
         </div>
-        <div class="w-1/4 flex-none p-2">
+        <div class="w-1/4 flex-none p-2 px-2">
             <p class="text-center mr-2  font-medium">USEFUL LINKS</p>
             <ul class="mx-24">
                <li><a href="">Men</a></li>
@@ -26,7 +26,7 @@
            </ul>
         </div>
         <div class="w-1/4 flex-none  p-2">
-            <p class="text-center  font-medium">EXPERIENCE MYNTRA APP ON MOBILE</p>
+            <p class="f-medium">EXPERIENCE MYNTRA APP ON MOBILE</p>
             <img class="float-left mt-5  h-10" src="/playstore.png">
             <img class="float-left mt-5  h-10" src="/appstore.png"><br><br><br>
             <h6 class="text-left  text-sm">KEEP IN TOUCH</h6>

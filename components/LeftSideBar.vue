@@ -30,68 +30,40 @@
       <ul class="ml-2 py-2 text-gray-600 text-sm px-5 py-2">
         <li>
           <label>
-            <input
-              type="checkbox"
-              value="Scotch &amp; Soda"
-            >Scotch &amp; Soda
+           <Checkbox/>
           </label>
         </li>
         <li>
           <label>
-            <input
-              type="checkbox"
-              value="Scotch &amp; Soda"
-            >DOROTHY(1211)
+           <Checkbox/>
           </label>
         </li>
         <li>
           <label>
-            <input
-              type="checkbox"
-              value="Scotch &amp; Soda"
-            >Peppermint(943)
+           <Checkbox/>
           </label>
         </li>
         <li>
           <label>
-            <input
-              type="checkbox"
-              value="Scotch &amp; Soda"
-            >Mango(779)
+           <Checkbox/>
           </label>
         </li>
         <li>
           <label>
-            <input
-              type="checkbox"
-              value="Scotch &amp; Soda"
-            >next(644)
+           <Checkbox/>
           </label>
         </li>
         <li>
           <label>
-            <input
-              type="checkbox"
-              value="Scotch &amp; Soda"
-            >H&M(943)
+           <Checkbox/>
           </label>
         </li>
         <li>
           <label>
-            <input
-              type="checkbox"
-              value="Scotch &amp; Soda"
-            >Tokyo Talkies(943)
+           <Checkbox/>
           </label>
         </li>
-        <li>
-          <label>
-            <input
-              type="checkbox"
-              value="Scotch &amp; Soda"
-            >Vero Moda(943)
-          </label>
-        </li>
+
       </ul>
     </div>
 
@@ -128,100 +100,22 @@
       <p class="ml-2 py-2 font-semibold text-sm px-5 py-2">COLOR</p>
       <ul class="ml-2 py-2 text-gray-600 text-sm px-5 py-2">
         <li class="colour-listItem">
-          <label
-          
-            data-count="4957"
-          >
-            <span
-              data-colorhex="black"
-              class="colour-label colour-colorDisplay"
-              style="background-color: rgb(54, 69, 79);"
-            ></span>Black<span class="colour-num">(4957)</span>
-            <input
-              type="checkbox"
-              value="Black"
-            >
-          </label>
+           <ColorCheckbox/>
         </li>
         <li class="colour-listItem">
-          <label
-          
-            data-count="4957"
-          >
-            <span
-              data-colorhex="black"
-              class="colour-label colour-colorDisplay"
-              style="background-color: rgb(60, 68, 119);"
-            ></span>Navy Blue<span class="colour-num">(4957)</span>
-            <input
-              type="checkbox"
-              value="Black"
-            >
-          </label>
+           <ColorCheckbox/>
         </li>
         <li class="colour-listItem">
-          <label
-          
-            data-count="4957"
-          >
-            <span
-              data-colorhex="black"
-              class="colour-label colour-colorDisplay"
-              style="background-color: rgb(0, 116, 217);"
-            ></span>Blue<span class="colour-num">(4957)</span>
-            <input
-              type="checkbox"
-              value="Black"
-            >
-          </label>
+           <ColorCheckbox/>
         </li>
         <li class="colour-listItem">
-          <label
-          
-            data-count="4957"
-          >
-            <span
-              data-colorhex="black"
-              class="colour-label colour-colorDisplay"
-              style="background-color: rgb(255, 255, 255);border:1px solid grey"
-            ></span>White<span class="colour-num">(4957)</span>
-            <input
-              type="checkbox"
-              value="Black"
-            >
-          </label>
+           <ColorCheckbox/>
         </li>
         <li class="colour-listItem">
-          <label
-          
-            data-count="4957"
-          >
-            <span
-              data-colorhex="black"
-              class="colour-label colour-colorDisplay"
-              style="background-color: rgb(241, 169, 196);"
-            ></span>Pink<span class="colour-num">(4957)</span>
-            <input
-              type="checkbox"
-              value="Black"
-            >
-          </label>
+           <ColorCheckbox/>
         </li>
         <li class="colour-listItem">
-          <label
-          
-            data-count="4957"
-          >
-            <span
-              data-colorhex="black"
-              class="colour-label colour-colorDisplay"
-              style="background-color: rgb(211, 75, 86);"
-            ></span>Red<span class="colour-num">(4957)</span>
-            <input
-              type="checkbox"
-              value="Black"
-            >
-          </label>
+          <ColorCheckbox/>
         </li>
       </ul>
     </div>
@@ -322,19 +216,13 @@
 </template>
 <script>
 import Checkbox from '~/components/Checkbox'
+import ColorCheckbox from '~/components/ColorCheckbox'
 export default{
-  components:{Checkbox}
+  components:{Checkbox,ColorCheckbox}
 }
 </script>
 <style scoped>
-.arrow {
-  position: relative;
-  right: -40px;
-  top: -16px;
-  width: 0.6em;
-}
 input {
-  float: left;
   margin-right: 0.5em;
 }
 .bb {
@@ -353,90 +241,10 @@ input {
   padding: 1em;
 }
 .results-showMoreContainer {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.pagination-container {
-  list-style: none;
-  text-align: center;
-  border-top: 1px solid #edebef;
-  padding-top: 24px;
-  padding-bottom: 60px;
-  color: #282c3f;
-}
-.pagination-container .pagination-paginationMeta {
-  color: #535766;
-  font-size: 14px;
-  float: left;
-  margin-top: 6px;
-  margin-right: 10px;
-  cursor: default;
-  font-weight: 400;
-}
-.pagination-container .pagination-active {
-  font-weight: 500;
-  color: #fff;
-  letter-spacing: 0.4px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  background-color: #282c3f;
-}
-.pagination-container li {
-  display: inline-block;
-  margin-right: 9px;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 6px 8px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-}
-.pagination-container {
-  list-style: none;
-  text-align: center;
-  border-top: 1px solid #edebef;
-  padding-top: 24px;
-  padding-bottom: 60px;
-  color: #282c3f;
-}
-.pagination-container .pagination-next {
-  height: 42px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  border: 1px solid #d4d5d9;
-  text-align: center;
-  margin-left: 64px;
-  padding: 10px 22px;
-}
 input[type="checkbox"],
 input[type="radio"] {
   margin-top: 0.4em;
-}
-.colour-colorDisplay {
-  width: 15px;
-  height: 15px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 8px;
-  margin-left: 4px;
-}
-input[type="checkbox"],
-input[type="radio"] {
-  margin-top: 0.4em;
-}
-.colour-colorDisplay {
-  width: 15px;
-  height: 15px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 8px;
-  margin-left: 4px;
 }
 </style>
