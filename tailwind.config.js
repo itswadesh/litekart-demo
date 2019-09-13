@@ -6,11 +6,23 @@
 */
 module.exports = {
   theme: {
-    colors: {
-      pink: '#ff3f6c',
-      gray:'#282c3f',
+    fontFamily: {
+      display: ['Gilroy', 'sans-serif'],
+      body: ['Graphik', 'sans-serif'],
+    },
+    extend: {
+      colors: {
+        cyan: '#9cdbff',
+        pink: '#ff3f6c',
+        gray: '#282c3f',
+      },
+      margin: {
+        '96': '24rem',
+        '128': '32rem',
+      },
     }
   },
-  variants: {},
-  plugins: []
+  variants: {
+    opacity: ['responsive', 'hover']
+  }
 }
