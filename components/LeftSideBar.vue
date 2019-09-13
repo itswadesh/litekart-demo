@@ -2,7 +2,7 @@
   <div class="py-2\1 bg-white-800 shadow bg-white">
     <div class="flex-none px-2 py-4">
       <span class="font-normal text-sm text-gray px-5">FILTERS</span>
-      <span class="font-normal text-sm float-right text-pink font-bold cursor-pointer">CLEAR ALL</span>
+      <span class="font-normal text-sm float-right text-pink-500 font-bold cursor-pointer">CLEAR ALL</span>
     </div>
     <div class=" ">
       <ul class="ml-2 py-2 text-sm px-5 py-2">

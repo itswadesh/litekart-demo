@@ -44,11 +44,14 @@
             </a>
           </div>
 
-          <div class="mr-8 w-full">
+          <div class="mr-8 w-full border-gray-300 relative">
+            <div class="absolute">
+              <i class="fa fa-search ml-2 mt-3 text-gray-500" aria-hidden="true"></i>
+            </div>
             <input
               type="search"
-              class="w-full bg-purple-white pr-4 shadow rounded border-0 p-3 h-10"
-              placeholder="Search by name..."
+              class="w-full px-10 bg-purple-white pr-4 shadow rounded border-0  h-10"
+              placeholder="Search for products,brands and more"
             >
           </div>
           <div class="flex items-center">
@@ -93,9 +96,9 @@
 </template>
 <style scoped>
 .desktop-badge {
-  height: 18px;
+  height: 16px;
   background: #ff3f6c;
   left: 13px;
-  top: -2px;
+  top: -6px;
 }
 </style>

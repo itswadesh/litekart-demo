@@ -78,7 +78,7 @@
         Fastrack Watches | Wrangler Shirts | Adidas Tshirts | Nike Shoes | Roadster Shirts | Casual Shoes |
         Running Shoes | Nike Sports Shoes | Jeans | Being Human | Tshirts | Converse Shoes | Cricket Shoes</div>
     </div>
-    <div class="flex p-10 bg-gray-100 flex-wrap justify-between">
+    <div class="flex p-10 bg-white flex-wrap justify-between">
       <div> In case of any concern,<span class="px-2 text-indigo-600">Contact Us</span> </div>
       <div> © 2019 www.myntra.com. All rights reserved. </div>
     </div>
