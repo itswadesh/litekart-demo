@@ -10,48 +10,48 @@
           >
         </div>
 
-        <div class="w-full block flex-grow sm:flex sm:items-center sm:w-auto">
-          <div class="flex w-1/2 text-sm sm:flex-grow">
+        <div class="w-full justify-between flex-grow sm:flex sm:items-center sm:w-auto">
+          <div class="flex flex-none text-sm py-4 xs:justify-between items-center text-gray ">
             <a
               href="#"
-              class="block mt-2 ml-6 sm:inline-block sm:mt-0 text-gray"
+              class="mr-8"
             >
               MEN
             </a>
             <a
               href="#"
-              class="block mt-2 ml-6 sm:inline-block sm:mt-0 text-gray"
+              class="mr-8"
             >
               WOMEN
             </a>
             <a
               href="#"
-              class="block mt-2 ml-6 sm:inline-block sm:mt-0 text-gray"
+              class="mr-8"
             >
               KIDS
             </a>
             <a
               href="#"
-              class="block mt-2 ml-6 sm:inline-block sm:mt-0 text-gray"
+              class="mr-8 "
             >
               HOME & LIVING
             </a>
             <a
               href="#"
-              class="block mt-2 ml-6 sm:inline-block sm:mt-0 text-gray"
+              class="mx-2"
             >
               DISCOVER
             </a>
           </div>
 
-          <div class="relative mr-8 w-1/3 w-full">
+          <div class="mr-8 w-full">
             <input
               type="search"
               class="w-full bg-purple-white pr-4 shadow rounded border-0 p-3 h-10"
               placeholder="Search by name..."
             >
           </div>
-          <div class="flex">
+          <div class="flex items-center">
             <div>
               <img
                 class="w-5 h-4 ml-2"
@@ -74,14 +74,15 @@
             </div>
             <div class="relative">
               <img
-                class="w-5 h-4  center"
+                class="w-5 h-4"
                 src="/bag.png"
               >
               <a
                 href="#"
-                class="mr-6 text-xs inline-text-gray font-bold"
+                class="flex mr-6 text-xs inline-text-gray font-bold"
               >Bag
-                <span class="text-white font-bold desktop-badge rounded-full text-xs h-4 absolute pl-1 pr-1 pt-0 pb-1 text-center whitespace-no-wrap">1</span>
+                <span class="text-white font-bold desktop-badge rounded-full text-xs 
+                h-4 pl-1 pr-1 pt-0 pb-1 absolute text-center whitespace-no-wrap">1</span>
               </a>
             </div>
           </div>

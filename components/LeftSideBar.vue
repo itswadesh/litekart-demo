@@ -19,37 +19,65 @@
       <ul class="ml-2 py-2 px-5">
         <li>
           <label>
-           <Checkbox/>
+            <Checkbox
+              :count="100"
+              text="Forever 21"
+              val="Forever 21"
+            />
           </label>
         </li>
         <li>
           <label>
-           <Checkbox/>
+            <Checkbox
+              :count="100"
+              text="Forever 21"
+              val="Forever 21"
+            />
           </label>
         </li>
         <li>
           <label>
-           <Checkbox/>
+            <Checkbox
+              :count="100"
+              text="Forever 21"
+              val="Forever 21"
+            />
           </label>
         </li>
         <li>
           <label>
-           <Checkbox/>
+            <Checkbox
+              :count="100"
+              text="Forever 21"
+              val="Forever 21"
+            />
           </label>
         </li>
         <li>
           <label>
-           <Checkbox/>
+            <Checkbox
+              :count="100"
+              text="Forever 21"
+              val="Forever 21"
+            />
           </label>
         </li>
         <li>
           <label>
-           <Checkbox/>
+            <Checkbox
+              :count="100"
+              text="Forever 21"
+              val="Forever 21"
+            />
           </label>
         </li>
         <li>
           <label>
-           <Checkbox/>
+            <Checkbox
+              :count="100"
+              text="Forever 21"
+              val="Forever 21"
+            />
           </label>
         </li>
 
@@ -57,61 +85,111 @@
     </div>
 
     <div>
-     <p class="ml-2 py-2 font-semibold text-sm px-5">PRICE</p>
+      <p class="ml-2 py-2 font-semibold text-sm px-5">PRICE</p>
       <ul class="ml-2 py-2 px-5">
         <li>
-         <Checkbox/>
+          <Checkbox
+            :count="100"
+            text="Forever 21"
+            val="Forever 21"
+          />
         </li>
         <li>
           <label>
-           <Checkbox/>
+            <Checkbox
+              :count="100"
+              text="Forever 21"
+              val="Forever 21"
+            />
           </label>
         </li>
         <li>
           <label>
-            <Checkbox/>
+            <Checkbox
+              :count="100"
+              text="Forever 21"
+              val="Forever 21"
+            />
           </label>
         </li>
         <li>
           <label>
-            <Checkbox/>
+            <Checkbox
+              :count="100"
+              text="Forever 21"
+              val="Forever 21"
+            />
           </label>
         </li>
         <li>
           <label>
-            <Checkbox/>
+            <Checkbox
+              :count="100"
+              text="Forever 21"
+              val="Forever 21"
+            />
           </label>
         </li>
       </ul>
     </div>
 
-    <div >
+    <div>
       <p class="ml-2 py-2 font-semibold text-sm px-5">COLOR</p>
       <ul class="ml-2 py-2 px-5">
         <li class="colour-listItem">
-           <ColorCheckbox/>
+          <ColorCheckbox
+            color="#ff0000"
+            :count="100"
+            text="Forever 21"
+            val="Forever 21"
+          />
         </li>
         <li class="colour-listItem">
-           <ColorCheckbox/>
+          <ColorCheckbox
+            color="#00ff00"
+            :count="100"
+            text="Forever 21"
+            val="Forever 21"
+          />
         </li>
         <li class="colour-listItem">
-           <ColorCheckbox/>
+          <ColorCheckbox
+            color="#0000ff"
+            :count="100"
+            text="Forever 21"
+            val="Forever 21"
+          />
         </li>
         <li class="colour-listItem">
-           <ColorCheckbox/>
+          <ColorCheckbox
+            color="yellow"
+            :count="100"
+            text="Forever 21"
+            val="Forever 21"
+          />
         </li>
         <li class="colour-listItem">
-           <ColorCheckbox/>
+          <ColorCheckbox
+            color="cyan"
+            :count="100"
+            text="Forever 21"
+            val="Forever 21"
+          />
         </li>
         <li class="colour-listItem">
-          <ColorCheckbox/>
+          <ColorCheckbox
+            color="orange"
+            :count="100"
+            text="Forever 21"
+            val="Forever 21"
+          />
         </li>
       </ul>
     </div>
     <div>
       <p class="ml-2 py-2 font-semibold text-sm px-5 py-2">DISCOUNT RANGE</p>
       <ul class="ml-2 py-2 text-gray-600 text-sm px-5 py-2">
-        
+
         <li>
           <Radio />
         </li>
@@ -134,22 +212,19 @@
           <Radio />
         </li>
 
-        
       </ul>
     </div>
   </div>
 </template>
 <script>
-
-import Checkbox from '~/components/Checkbox'
-import ColorCheckbox from '~/components/ColorCheckbox'
-import Radio from '~/components/Radio'
-export default{
-  components:{Checkbox,ColorCheckbox,Radio}
-}
+import Checkbox from "~/components/Checkbox";
+import ColorCheckbox from "~/components/ColorCheckbox";
+import Radio from "~/components/Radio";
+export default {
+  components: { Checkbox, ColorCheckbox, Radio }
+};
 </script>
 <style scoped>
-
 .bb {
   border-bottom: 1px solid #edebef;
   height: max-content;

@@ -41,30 +41,30 @@
           src="/socialicons.png"
         >
       </div>
-      <div class="p-10">
-        <div class="flex align-middle">
+      <div class="p-10 items-center">
+        <div class="flex align-middle items-center">
           <img
-            class="w-1/4 rounded-sm mb-5 sm:w-10"
+            class="w-1/4 rounded-sm m-5 sm:w-10"
             src="/original.png"
             alt=""
           />
-          <div class="w-3/4 mb-5 ml-1 text-sm"><span class="font-bold">100% ORIGINAL</span> guarantee for all products at myntra.com</div>
+          <div class="text-sm"><span class="font-bold">100% ORIGINAL</span> guarantee for all products at myntra.com</div>
         </div>
-        <div class="flex align-middle">
+        <div class="flex align-middle items-center">
           <img
-            class="w-1/4 rounded-sm mb-5 sm:w-10"
+            class="w-1/4 rounded-sm m-5 sm:w-10"
             src="/return.png"
             alt=""
           />
-          <div class="w-3/4 ml-1 mb-5 text-sm"><span class="font-bold">Return within 30days</span> of receiving your order</div>
+          <div class="text-sm"><span class="font-bold">Return within 30days</span> of receiving your order</div>
         </div>
-        <div class="flex align-middle">
+        <div class="flex align-middle items-center">
           <img
-            class="w-1/4 rounded-sm sm:w-10 mb-5"
+            class="w-1/4 rounded-sm m-5 sm:w-10"
             src="/truck.png"
             alt=""
           />
-          <div class="w-3/4 ml-1 text-sm mb-5"><span class="font-bold">Get free delivery</span> for every order above Rs. 1199</div>
+          <div class="text-sm"><span class="font-bold">Get free delivery</span> for every order above Rs. 1199</div>
         </div>
       </div>
     </div>

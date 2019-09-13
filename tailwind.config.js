@@ -13,8 +13,17 @@ module.exports = {
     extend: {
       colors: {
         cyan: '#9cdbff',
-        pink: '#ff3f6c',
-        gray: '#282c3f',
+        cpink: {
+          '100': '#9cdbf5',
+          '200': 'red',
+          '300': 'blue',
+          '400': 'green',
+          '500': 'yellow',
+          '600': '#9cdbf5',
+          '700': '#9cdbf1',
+          '800': '#9cdbf2',
+          '900': '#9cdbf1',
+        }
       },
       margin: {
         '96': '24rem',
