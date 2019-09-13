@@ -22,10 +22,5 @@ export default {
 </script>
 
 <style scoped>
-.border-b {
-  border-bottom: 1px solid lightgray;
-}
-.container-fluid {
-  background: #f1f3f6;
-}
+
 </style>
