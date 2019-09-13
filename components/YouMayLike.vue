@@ -9,7 +9,7 @@
           View All
         </button>
       </div>
-      <div class="flex flex-wrap">
+      <div class="flex flex-wrap justify-between p-4">
         <div class="w-32 ml-1">
           <div class="relative">
             <img
@@ -164,5 +164,11 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
+.border-b {
+  border-bottom: 1px solid lightgray;
+}
+.you{
+  margin-top: 1.5em;
+}
 </style>

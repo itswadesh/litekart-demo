@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-wrap">
-    <div class="w-3/4 shadow">
+    <div class="lg:w-3/4 shadow xs:w-4/4">
       <div class="w-full p-3 border-b flex justify-between">
         <p class="w-1/2 float-left">Deals Of the Day
           <span class="ml-2 text-gray-500 text-xs">23:57:57 Left</span>
@@ -9,7 +9,7 @@
           View All
         </button>
       </div>
-      <div class="flex flex-wrap">
+      <div class="flex flex-wrap flex justify-between p-4">
         <div class="w-32 ml-1">
           <img
             src="/cardimage.webp"
@@ -84,7 +84,7 @@
         </div>
       </div>
     </div>
-    <div class="w-1/4 shadow">
+    <div class="lg:w-1/4 shadow xs:w-full">
       <div class="h-64">
         <img
           src="/cardimage.webp"
