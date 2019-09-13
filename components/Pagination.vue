@@ -2,7 +2,7 @@
   <div class="flex flex-row w-full px-3">
 
     <ul class="flex pagination-container pb-12 pt-4 list-none text-center w-full">
-      <li class="pagination-paginationMeta text-sm mt-3">
+      <li class="pagination-paginationMeta text-sm mt-3 py-3">
         Page
 
         1
@@ -13,37 +13,37 @@
 
       </li>
       <div class="m-auto">
-        <li class="bg-black font-medium text-white tracking-wide rounded-sm"><a href="">
+        <li class="py-2 px-2 bg-black font-medium text-white tracking-wide rounded-sm"><a href="">
             1
           </a></li>
-        <li><a href="">
+        <li class=" px-2"><a href="">
             2
           </a></li>
-        <li><a href="">
+        <li class=" px-3"><a href="">
             3
           </a></li>
-        <li><a href="">
+        <li class=" px-3"><a href="">
             4
           </a></li>
-        <li><a href="">
+        <li class=" px-3"><a href="">
             5
           </a></li>
-        <li><a href="">
+        <li class=" px-3"><a href="">
             6
           </a></li>
-        <li><a href="">
+        <li class=" px-3"><a href="">
             7
           </a></li>
-        <li><a href="">
+        <li class=" px-3"><a href="">
             8
           </a></li>
-        <li><a href="">
+        <li class=" px-3"><a href="">
             9
           </a></li>
-        <li><a href="">
+        <li class=" px-3"><a href="">
             10
           </a></li>
-        <li class="text-gray-600 m-4 px-2 py-4 border border-gray-300 hover:border-gray-500 capitalize rounded-full">Next
+        <li class="text-gray-600 m-4 px-4 py-2 border border-gray-300 hover:border-gray-500 capitalize rounded-full">Next
           <span class="absolute">
             <img
               src="/right.png"
@@ -70,10 +70,8 @@ export default {};
 }
 li {
   display: inline-block;
-  margin-right: 0.09rem;
   font-weight: 500;
   cursor: pointer;
-  padding: 0.9rem 0.9rem;
   border-radius: 0.4rem;
 }
 </style>

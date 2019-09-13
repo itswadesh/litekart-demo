@@ -54,7 +54,7 @@
               placeholder="Search for products,brands and more"
             >
           </div>
-          <div class="flex items-center">
+          <div class="flex items-center py-4">
             <div>
               <img
                 class="w-5 h-4 ml-2"

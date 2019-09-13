@@ -1,7 +1,7 @@
 <template>
   <footer class="txtxlr">
     <div class="flex flex-wrap justify-between">
-      <div class="p-10">
+      <div class="p-8">
         <div class="text-center mr-2 font-bold text-sm">ONLINE SHOPPING</div>
         <ul class="font-hairline text-sm">
           <li><a href="">Men</a></li>
@@ -13,7 +13,7 @@
           <li><a href="">Myntra Insider</a><span class="desktop-superscript">New</span></li>
         </ul>
       </div>
-      <div class="p-10">
+      <div class="p-8">
         <div class="text-center mr-2  font-bold text-sm">USEFUL LINKS</div>
         <ul class="font-hairline text-sm">
           <li><a href="">Men</a></li>
@@ -25,7 +25,7 @@
           <li><a href="">Myntra Insider</a></li>
         </ul>
       </div>
-      <div class="p-10">
+      <div class="p-8">
         <div class="font-bold text-sm">EXPERIENCE MYNTRA APP ON MOBILE</div>
         <img
           class="float-left mt-5  h-10"
@@ -41,7 +41,7 @@
           src="/socialicons.png"
         >
       </div>
-      <div class="p-10 items-center">
+      <div class="p-8 items-center">
         <div class="flex align-middle items-center">
           <img
             class="w-1/4 rounded-sm m-5 sm:w-10"
@@ -68,7 +68,7 @@
         </div>
       </div>
     </div>
-    <div class="p-10">
+    <div class="p-8">
       <div class="text-sm font-medium hr-line">POPULAR SEARCHES</div>
       <hr class="text-gray-100">
       <div class="mt-5 mb-5">Adidas | Arrow | Fila | Online Shopping | Nike | Pepe Jeans | Puma | United Colors of Benetton |
@@ -78,7 +78,7 @@
         Fastrack Watches | Wrangler Shirts | Adidas Tshirts | Nike Shoes | Roadster Shirts | Casual Shoes |
         Running Shoes | Nike Sports Shoes | Jeans | Being Human | Tshirts | Converse Shoes | Cricket Shoes</div>
     </div>
-    <div class="flex p-10 bg-white flex-wrap justify-between">
+    <div class="flex p-8 bg-white flex-wrap justify-between">
       <div> In case of any concern,<span class="px-2 text-indigo-600">Contact Us</span> </div>
       <div> © 2019 www.myntra.com. All rights reserved. </div>
     </div>
