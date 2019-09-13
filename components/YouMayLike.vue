@@ -1,0 +1,168 @@
+<template>
+  <div class="w-full flex flex-wrap mt-2">
+    <div class="w-full shadow">
+      <div class="w-full p-3 border-b h-14 flex justify-between">
+        <p class="w-1/2 float-left relative">You may also Like
+          <span class="text-gray-500 text-xs absolute inset-x-0 you">Based on Your Order</span>
+        </p>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white text-xs right-0 py-1 px-2">
+          View All
+        </button>
+      </div>
+      <div class="flex flex-wrap">
+        <div class="w-32 ml-1">
+          <div class="relative">
+            <img
+              src="/cardimage.webp"
+              class="px-2 h-32 w-32 mt-2 "
+            />
+            <i
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div class="px-2 py-4">
+            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
+            <p class="text-green-700 text-xs text-center">
+              Extra 5% off
+            </p>
+          </div>
+        </div>
+        <div class="w-32 ml-1">
+          <div class="relative">
+            <img
+              src="/cardimage.webp"
+              class="px-2 h-32 w-32 mt-2 "
+            />
+            <i
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div class="px-2 py-4">
+            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
+            <p class="text-green-700 text-xs text-center">
+              Extra 5% off
+            </p>
+          </div>
+        </div>
+        <div class="w-32 ml-1">
+          <div class="relative">
+            <img
+              src="/cardimage.webp"
+              class="px-2 h-32 w-32 mt-2 "
+            />
+            <i
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div class="px-2 py-4">
+            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
+            <p class="text-green-700 text-xs text-center">
+              Extra 5% off
+            </p>
+          </div>
+        </div>
+        <div class="w-32 ml-1">
+          <div class="relative">
+            <img
+              src="/cardimage.webp"
+              class="px-2 h-32 w-32 mt-2 "
+            />
+            <i
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div class="px-2 py-4">
+            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
+            <p class="text-green-700 text-xs text-center">
+              Extra 5% off
+            </p>
+          </div>
+        </div>
+        <div class="w-32 ml-1">
+          <div class="relative">
+            <img
+              src="/cardimage.webp"
+              class="px-2 h-32 w-32 mt-2 "
+            />
+            <i
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div class="px-2 py-4">
+            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
+            <p class="text-green-700 text-xs text-center">
+              Extra 5% off
+            </p>
+          </div>
+        </div>
+        <div class="w-32 ml-1">
+          <div class="relative">
+            <img
+              src="/cardimage.webp"
+              class="px-2 h-32 w-32 mt-2 "
+            />
+            <i
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div class="px-2 py-4">
+            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
+            <p class="text-green-700 text-xs text-center">
+              Extra 5% off
+            </p>
+          </div>
+        </div>
+        <div class="w-32 ml-1">
+          <div class="relative">
+            <img
+              src="/cardimage.webp"
+              class="px-2 h-32 w-32 mt-2 "
+            />
+            <i
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div class="px-2 py-4">
+            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
+            <p class="text-green-700 text-xs text-center">
+              Extra 5% off
+            </p>
+          </div>
+        </div>
+        <div class="w-32 ml-1">
+          <div class="relative">
+            <img
+              src="/cardimage.webp"
+              class="px-2 h-32 w-32 mt-2 "
+            />
+            <i
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              aria-hidden="true"
+            ></i>
+          </div>
+          <div class="px-2 py-4">
+            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
+            <p class="text-green-700 text-xs text-center">
+              Extra 5% off
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style>
+</style>
