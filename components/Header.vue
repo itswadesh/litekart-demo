@@ -47,17 +47,24 @@
           class="mr-8 border-gray-300 relative order-4 sm:order-3"
           style="flex:1"
         >
-          <div class="absolute">
-            <i
-              class="fa fa-search ml-2 mt-3 text-gray-500"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <input
-            type="search"
-            class="w-full px-10 bg-purple-white pr-4 shadow rounded border-0  h-10"
-            placeholder="Search for products,brands and more"
+          <form
+            novalidate
+            autocomplete="off"
+            @submit.stop.prevent="submit()"
           >
+            <div class="absolute">
+              <i
+                class="fa fa-search ml-2 mt-3 text-gray-500"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <input
+              type="search"
+              v-model="search"
+              class="w-full px-10 bg-purple-white pr-4 shadow rounded border-0  h-10"
+              placeholder="Search for products,brands and more"
+            >
+          </form>
         </div>
 
         <div class="flex items-center flex-shrink-0 py-4 order-3 sm:order-4">
@@ -100,6 +107,86 @@
     </div>
   </header>
 </template>
+<script>
+import { mapGetters, mapActions } from "vuex";
+import { typingTimeout } from "~/config";
+export default {
+  data() {
+    return {
+      search: "",
+      typingTimeout
+    };
+  },
+  methods: {
+    submit() {
+      this.$router.push("/search?q=" + this.search);
+    },
+    closeSidebar() {
+      this.sidebar = false;
+    },
+    logout() {
+      this.$store.dispatch("auth/logout").then(() => {});
+    },
+    go(url) {
+      this.$router.push(url);
+    }
+    // ...mapActions({
+    //   addToCart: "cart/addToCart",
+    //   fetch: "cart/fetch"
+    // }),
+    // async checkAndAddToCart(item) {
+    //   try {
+    //     this.adding = true;
+    //     await this.addToCart(item);
+    //     this.adding = false;
+    //   } catch (e) {
+    //     console.log("err...", e.response.data);
+    //   }
+    //   this.refreshStock(); // Not required, because stock is being queried from database through addToCart... On page load stock need to be refreshed and added to items variable. Hence this is also required
+    // },
+    // async refreshStock() {
+    //   // Each items stock is checked on page load
+    //   try {
+    //     this.items = await this.$axios.$post(
+    //       `products/refresh`,
+    //       this.cartItems
+    //     );
+    //   } catch (e) {
+    //     this.items = [];
+    //   }
+    // }
+  },
+  // computed: {
+  //   user() {
+  //     return (this.$store.state.auth || {}).user || null;
+  //   }
+  // },
+  watch: {
+    search: {
+      immediate: false,
+      handler(value, oldValue) {
+        if (!oldValue) return; // Do not trigger on page load
+        clearTimeout(this.typingTimer);
+        let vm = this;
+        this.typingTimer = setTimeout(function() {
+          if (!value || value == "undefined") value = ""; // When clear button clicked
+          vm.searchString = value;
+          vm.$router.push("/search/" + value);
+        }, vm.typingTimeout);
+      }
+    },
+    "$route.params.q": {
+      immediate: true,
+      handler(value) {
+        let pathName = null;
+        if (!value || value == "undefined") value = "";
+        if (value == "") return;
+        if (this.search == "") this.search = value;
+      }
+    }
+  }
+};
+</script>
 <style scoped>
 .desktop-badge {
   height: 16px;

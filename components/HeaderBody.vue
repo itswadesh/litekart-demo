@@ -1,11 +1,11 @@
 <template>
   <div>
     <p class="py-2 px-5 text-sm ">Home / Clothing / Dresses / <span class="font-semibold">Clothing Dresses</span></p>
-    <p class="py-2 px-5 text-sm "><span class="font-semibold">Clothing Dresses</span>- 31391 items</p>
+    <p class="py-2 px-5 text-sm "><span class="font-semibold">Clothing Dresses</span>- {{count}} items</p>
 
     <div class="flex flex-wrap">
-      <div class="text-sm sm:flex-grow float-left px-5 w-full">
-        <a
+      <div class="flex text-sm w-full">
+        <!-- <a
           href="#"
           class="block inline-block mb-1 rounded-full p-1 mr-8 bg-gray-200 text-black"
         >
@@ -46,7 +46,20 @@
           class="block  text-black m-4 sm:inline-block  sm:mt-0 "
         >
           +8 more
-        </a>
+        </a> -->
+        <div class="text-sm sm:flex-grow float-left h-12 py-4 w-full">
+          <a
+            href="#"
+            class="block"
+          >
+            <span class="text-gray-600 m-4 p-2 border border-gray-300 hover:border-gray-500 capitalize rounded-full">Bundles
+              <i
+                class="fa fa-times px-1"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </a>
+        </div>
         <div class="inline-block relative w-64">
           <select class="text-black  border-gray-100 cursor-pointer cursor-pointer block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8  leading-tight focus:outline-none focus:none">
             <option class="bg-white hover:bg-black focus:bg-black">Sort by:Recommended</option>
@@ -63,25 +76,19 @@
         </div>
 
       </div>
-      <div class="text-sm sm:flex-grow float-left h-12 py-4 w-full">
-        <a
-          href="#"
-          class="block"
-        >
-          <span class="text-gray-600 m-4 p-2 border border-gray-300 hover:border-gray-500 capitalize rounded-full">Bundles
-            <i
-              class="fa fa-times px-1"
-              aria-hidden="true"
-            ></i>
-          </span>
-        </a>
-      </div>
+
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    count: {
+      type: Number
+    }
+  }
+};
 </script>
 
 <style>
@@ -102,9 +109,10 @@ select {
   margin-top: 0.6em;
   margin-left: 0.2em;
 }
-label:focus,label:hover {
+label:focus,
+label:hover {
   outline: -webkit-focus-ring-color auto 1px;
-  background: grey!important;
+  background: grey !important;
   border-color: rgb(212, 213, 217);
 }
 </style>

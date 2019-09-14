@@ -1,65 +1,42 @@
+require('dotenv').config()
+const { API_URL, head } = require("./config");
+const PROXY = API_URL
 
 export default {
-  mode: 'spa',
-  /*
-  ** Headers of the page
-  */
-  head: {
-    title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap' }
-    ]
-  },
-  /*
-  ** Customize the progress-bar color
-  */
+  mode: 'universal',
+  head,
   loading: { color: '#fff' },
   /*
   ** Global CSS
   */
   css: [
   ],
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
+    '~/plugins/filters.js',
+    { src: '~/plugins/init.js', ssr: false },
+    { src: '~/plugins/lazy.js', ssr: false }
   ],
-  /*
-  ** Nuxt.js dev-modules
-  */
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
   ],
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/font-awesome',
     '@nuxtjs/pwa',
+    '@nuxtjs/toast',
+    'cookie-universal-nuxt'
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
   axios: {
+    baseURL: PROXY + '/api/',
+    browserBaseURL: '/api/',
+    proxy: true,
+    credentials: true
   },
-  /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-    }
+  proxy: {
+    '/api': PROXY,
+    '/auth': PROXY,
+    '/images': PROXY,
   }
 }

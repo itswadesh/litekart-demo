@@ -1,11 +1,21 @@
 <template>
-  <label class="vertical-filters-label common-customCheckbox">
+  <label
+    class="vertical-filters-label common-customCheckbox"
+    :for="id || uniqueId"
+  >
     <input
       type="checkbox"
-      :value="val"
+      :id="id || uniqueId"
+      :name="name"
+      :value="value"
+      :disabled="disabled"
+      :required="required"
+      :color="color"
+      :checked="checkboxState"
+      @click="toggle"
     >
     <span class="ml-2 text-sm">
-      {{text}}
+      <slot />
     </span>
     <span class="text-gray-500 text-xs">({{count}})</span>
     <div class="common-checkboxIndicator"></div>
@@ -14,18 +24,115 @@
 
 <script>
 export default {
+  name: "Checkbox",
+  model: {
+    prop: "model",
+    event: "change"
+  },
   props: {
+    id: {
+      type: String,
+      required: false
+    },
+    model: {
+      type: String | Array,
+      default: undefined
+    },
+    color: {
+      type: String,
+      required: false
+    },
+    circle: {
+      type: Boolean,
+      default: false,
+      required: false
+    },
+    checked: {
+      type: Boolean,
+      required: false
+    },
+    value: {
+      type: [String, Boolean],
+      required: false,
+      default: ""
+    },
     count: {
+      type: [String, Number],
+      required: false,
+      default: 0
+    },
+    name: {
+      type: String,
+      required: false
+    },
+    required: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    required: {
+      type: Boolean,
+      required: false
+    },
+    size: {
       type: Number,
-      default: 1295
+      required: false
     },
-    text: {
-      type: String,
-      default: ""
+    fontSize: {
+      type: Number,
+      required: false
+    }
+  },
+  data: () => ({
+    uniqueId: ""
+  }),
+  computed: {
+    checkboxState() {
+      // if (this.model === undefined) return this.value;
+      if (Array.isArray(this.model))
+        return this.model.indexOf(this.value) !== -1;
+      return this.model && this.value;
+    }
+  },
+  methods: {
+    toggle() {
+      if (this.disabled) return;
+      let value = this.model || this.value;
+      if (Array.isArray(value)) {
+        const i = value.indexOf(this.value);
+        if (i === -1) value.push(this.value);
+        else value.splice(i, 1);
+      } else {
+        value = [];
+        value.push(this.value);
+      }
+      this.$emit("change", value);
     },
-    val: {
-      type: String,
-      default: ""
+
+    genId() {
+      if (this.id === undefined || typeof String) {
+        this.uniqueId = `m-checkbox--${Math.random()
+          .toString(36)
+          .substring(2, 10)}`;
+      } else {
+        this.uniqueId = this.id;
+      }
+    }
+  },
+  watch: {
+    checked(v) {
+      if (v !== this.checkboxState) this.toggle();
+    }
+  },
+  mounted() {
+    this.genId();
+    if (this.checked && !this.checkboxState) {
+      this.toggle();
     }
   }
 };
