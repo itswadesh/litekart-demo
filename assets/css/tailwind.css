@@ -6,12 +6,12 @@ body{
 }
 .container {
     margin: 0 auto;
-    min-height: 100vh;
+    min-height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-  }
+}
 
 .container-fluid{
   padding-left: 5.2em;

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Header />
+    <Header /> 
+    <EmptyCart v-if="cartempty"/>
     <div class="flex flex-wrap justify-between">
         <div class="lg:w-16 xs:w-0">
             
@@ -144,8 +145,15 @@
 
 <script>
 import Header from "~/components/Header";
+import EmptyCart from "~/components/EmptyCart";
+
 export default {
-  components: { Header }
+    data(){
+        return{
+            cartempty:true
+        }
+    },
+  components: { Header,EmptyCart }
 };
 </script>
 
