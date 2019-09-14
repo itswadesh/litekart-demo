@@ -11,9 +11,15 @@
                     <span class="ml-2 mr-1 font-hairline text-gray-500 text-xl">.</span>
                     <span class="text-gray-500 text-xl font-hairline">item</span>
                 </p>
-                <button class="text-gray-600 font-medium text-sm right-0 hover:bg-gray-200 rounded px-2">
+                <!-- <button class="text-gray-600 font-medium text-sm right-0 hover:bg-gray-200 rounded px-2">
                    Enter pincode for delivery<i class="fa fa-caret-down px-2" />
-                </button>
+                </button> -->
+                <div class="text-gray-600  right-0 rounded relative">
+                    <input type="search" class="text-lg border-none p-2 w-full rounded focus:outline-none" placeholder="Enter Pin Code">
+                    <button class="absolute right-0 text-sm mt-2 text-gray-500 pr-2 focus:outline-none hover:text-gray-600">
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
             <div class="flex hr-line justify-between pt-5 pb-5">
                 <div class="lg:w-1/5 left-0 xs:w-3/12">
@@ -90,10 +96,11 @@
                 </div>
             </div>
         </div>
-        <div class="lg:w-1/4 mt-10 lg:pr-20 xs:w-full px-3">
-            <div class="w-full flex flex-wrap hr-line justify-between pb-2">
-                <button class="relative  text-gray-600 font-medium text-sm w-full rounded p-3 pl-0 text-left focus:outline-none hover:text-black">
-                   Got a promo code?<i class="fa fa-caret-down right-0 absolute" />
+        <div class="lg:w-1/4 mt-10 lg:pr-20 xs:w-full px-3 ">
+            <div class="w-full flex flex-wrap hr-line justify-between pb-2 relative">
+                <input type="search" class="bg-gray-200 border p-2 w-full rounded" placeholder="Promo Code">
+                <button class="absolute right-0 text-sm mt-2 text-gray-500 pr-2 focus:outline-none hover:text-gray-600 cursor-pointer">
+                    APPLY
                 </button>
             </div>
             <div class="4/5 right-0 pb-3 bb">
