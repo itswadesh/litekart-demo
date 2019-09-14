@@ -47,12 +47,15 @@
         >
           +8 more
         </a> -->
-        <div class="text-sm sm:flex-grow float-left h-12 py-4 w-full">
+        <div class="text-sm flex h-12 py-4 w-full">
           <a
+            v-for="(v,k) in fl"
+            :key="k"
+            v-if="v.length>0"
             href="#"
             class="block"
           >
-            <span class="text-gray-600 m-4 p-2 border border-gray-300 hover:border-gray-500 capitalize rounded-full">Bundles
+            <span class="text-gray-600 m-4 p-2 border border-gray-300 hover:border-gray-500 capitalize rounded-full">{{v && v[0]}}
               <i
                 class="fa fa-times px-1"
                 aria-hidden="true"
@@ -86,6 +89,9 @@ export default {
   props: {
     count: {
       type: Number
+    },
+    fl: {
+      type: Object
     }
   }
 };

@@ -9,7 +9,10 @@
         :facets="facets"
       />
       <div>
-        <HeaderBody :count="productCount" />
+        <HeaderBody
+          :count="productCount"
+          :fl="fl"
+        />
         <div class="flex flex-wrap shadow-inner">
           <Product
             v-for="p in products"
