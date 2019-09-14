@@ -85,10 +85,10 @@
       </div>
     </div>
     <div class="lg:w-1/4 shadow xs:w-full">
-      <div class="h-64">
+      <div class="deals">
         <img
           src="/cardimage.webp"
-          class="px-2 w-full h-64 mt-2"
+          class="px-1 w-full"
         />
       </div>
     </div>
@@ -100,4 +100,7 @@ export default {};
 </script>
 
 <style>
+.deals > img{
+  height:18rem;
+}
 </style>
