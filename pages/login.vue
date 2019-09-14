@@ -72,4 +72,8 @@ export default {
     letter-spacing: 15px;
     border: 1px solid transparent;
 }
+input + label {
+    position: relative;
+    z-index: 999;
+}
 </style>

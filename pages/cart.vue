@@ -2,10 +2,10 @@
   <div>
     <Header />
     <div class="flex flex-wrap justify-between">
-        <div class="w-16">
+        <div class="lg:w-16 xs:w-0">
             
         </div>
-        <div class="w-2/4 mt-10 px-2">
+        <div class="xs:w-full lg:w-2/4 mt-10 px-2">
             <div class="w-full flex flex-wrap hr-line justify-between pb-2">
                 <p class="font-semibold text-3xl text-black">Cart
                     <span class="ml-2 mr-1 font-hairline text-gray-500 text-xl">.</span>
@@ -15,13 +15,16 @@
                    Enter pincode for delivery<i class="fa fa-caret-down px-2" />
                 </button>
             </div>
-            <div class="flex f hr-line justify-between pt-5 pb-5">
-                <div class="w-1/5 left-0">
+            <div class="flex hr-line justify-between pt-5 pb-5">
+                <div class="lg:w-1/5 left-0 xs:w-3/12">
                     <div>
-                        <img class="rounded" src="/cart-product.jpg">
+                        <img class="lg:rounded xs:rounded-b-none" src="/cart-product.jpg">
+                        <div class="lg:hidden xs:visible text-black p-2 bg-gray-300 rounded rounded-t-none">
+                            Arrives 19 Sep
+                        </div>
                     </div>
                 </div>
-                <div class="4/5 right-0">
+                <div class="lg:w-4/5 right-0 xs:9/12">
                     <div class="pl-4 font-hairline">
                         <p class="text-black mb-2"><a href="#">Stylish Green Floral Print Mid Thigh L</a>... Arrives 19 Sep By Prince & Princes</p>
                         <p class="text-gray-500 mb-2"><span>Size:</span>3-4 years</p>
@@ -61,35 +64,35 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="hidden lg:block">
                 <div class="w-full flex justify-between mt-6 mb-6">
                     <div class="w-1/3">
-                        <div class="bg-gray-200 rounded p-3 mt-3 mb-3 mr-1">
+                        <div class="bg-gray-200 rounded pl-3 pr-3 pt-8 pb-8 mt-3 mb-3 mr-1 mr-1">
                             <i class="fa fa-truck text-gray-500"></i>
-                            <p class="text-gray-500 text-lg font-normal">Easy returns</p>
-                            <p class="text-gray-500 text-xs">Send items back for free within 15 days</p>
+                            <p class="text-gray-500 text-lg font-normal">Free Shipping*</p>
+                            <p class="text-gray-500 text-xs">On orders of ₹500 and above.Details</p>
                         </div>
                     </div>
                     <div class="w-1/3">
-                         <div class="bg-gray-200 rounded p-3 mt-3 mb-3 mr-1">
+                         <div class="bg-gray-200 rounded pl-3 pr-3 pt-8 pb-8 mt-3 mb-3 mr-1 mr-1">
                             <i class="fa fa-undo text-gray-500"></i>
                             <p class="text-gray-500 text-lg font-normal">Easy returns</p>
                             <p class="text-gray-500 text-xs">Send items back for free within 15 days</p>
                         </div>
                     </div>
                     <div class="w-1/3">
-                         <div class="bg-gray-200 rounded p-3 mt-3 mb-3">
+                         <div class="bg-gray-200 rounded pl-3 pr-3 pt-8 pb-8 mt-3 mb-3 mr-1">
                             <i class="fa fa-shield text-gray-500"></i>
-                            <p class="text-gray-500 text-lg font-normal">Easy returns</p>
-                            <p class="text-gray-500 text-xs">Send items back for free within 15 days</p>
+                            <p class="text-gray-500 text-lg font-normal">Secure shopping</p>
+                            <p class="text-gray-500 text-xs">Your payment details are fully encrypted</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-1/4 mt-10 pr-20">
+        <div class="lg:w-1/4 mt-10 lg:pr-20 xs:w-full px-3">
             <div class="w-full flex flex-wrap hr-line justify-between pb-2">
-                <button class="relative text-gray-600 font-medium text-sm w-full rounded p-3 pl-0 text-left focus:outline-none hover:text-black">
+                <button class="relative  text-gray-600 font-medium text-sm w-full rounded p-3 pl-0 text-left focus:outline-none hover:text-black">
                    Got a promo code?<i class="fa fa-caret-down right-0 absolute" />
                 </button>
             </div>
@@ -148,5 +151,8 @@ export default {
 }
 .bb{
     border-bottom: 1px dashed lightgray;  
+}
+.fa-truck,.fa-undo,.fa-shield{
+    font-size: 2rem;
 }
 </style>
