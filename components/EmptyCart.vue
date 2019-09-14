@@ -14,7 +14,7 @@
             <div class="pt-5 pb-5">
                 <div class="w-full left-0">
                     <div class="mt-16">
-                        <img class="container w-1/2" src="/emptycart.png">
+                        <img class="containerr w-1/2" src="/emptycart.png">
                     </div>
                 </div>
                 <div class="w-full left-0">
@@ -23,7 +23,7 @@
                          <p class="text-center font-hairline text-lg text-black">You have not added any items to your cart yet.</p>
                     </div>
                 </div>
-                <div class="container mt-8"> 
+                <div class="containerr mt-8"> 
                     <button class="w-1/3 mt-10 p-3 bg-pink-500 hover:bg-pink-600 text-white tet-2xl font-bold rounded">
                         SHOP NOW
                     </button>

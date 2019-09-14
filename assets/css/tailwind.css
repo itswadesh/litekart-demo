@@ -6,11 +6,19 @@ body{
 }
 .container {
     margin: 0 auto;
-    min-height: 10vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.containerr {
+  margin: 0 auto;
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .container-fluid{
