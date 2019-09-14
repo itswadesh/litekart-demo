@@ -2,10 +2,10 @@
   <div>
     <Header />
     <div class="flex flex-wrap justify-between">
-        <div class="w-1/5">
+        <div class="w-16">
             
         </div>
-        <div class="w-1/2 mt-10 px-2">
+        <div class="w-2/4 mt-10 px-2">
             <div class="w-full flex flex-wrap hr-line justify-between pb-2">
                 <p class="font-semibold text-3xl text-black">Cart
                     <span class="ml-2 mr-1 font-hairline text-gray-500 text-xl">.</span>
@@ -124,6 +124,9 @@
                     Proceed To Checkout
                 </button>
             </div>
+        </div>
+        <div class="w-8">
+            
         </div>
     </div>
   </div>

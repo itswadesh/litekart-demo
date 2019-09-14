@@ -53,20 +53,20 @@ export default {
     border: 1px solid #dfe1e6;
 }
 .otp-container #wraper1 {
-    top: 16px;
-    left: 22px;
+    top: 20px;
+    left: 28px;
 }
 .otp-container #wraper2 {
-    top: 16px;
-    left: 48px;
+    top: 20px;
+    left: 51px;
 }
 .otp-container #wraper3 {
-    top: 16px;
-    left: 78px;
+    top: 20px;
+    left: 76px;
 }
 .otp-container #wraper4 {
-    top: 16px;
-    left: 106px;
+    top: 20px;
+    left: 100px;
 }
 .otp-container .otp-content {
     letter-spacing: 15px;
