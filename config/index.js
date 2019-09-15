@@ -1,5 +1,5 @@
-export const API_URL = 'http://localhost:7000' // The port where API runs
-// export const API_URL = 'https://api.litekart.in' // The port where API runs
+// export const API_URL = 'http://localhost:7000' // The port where API runs
+export const API_URL = 'https://api.litekart.in' // The port where API runs
 export const tokenExpiry = 60 * 60 * 15 // Login validity (15 minutes)
 export const typingTimeout = 700 // After this delay the search api will be fired
 export const loadingTimeout = 500 // Loading indicator will be shown after this delay
@@ -19,3 +19,9 @@ export const head = {
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap' }
     ]
 }
+export const sorts = [
+    { name: "Relevance", val: null },
+    { name: "Whats New", val: "-createdAt" },
+    { name: "Price low to high", val: "price" },
+    { name: "Price high to low", val: "-price" }
+]

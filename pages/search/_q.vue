@@ -32,7 +32,22 @@
             :product="p"
           />
         </div>
-        <Pagination />
+        <div class="pagination_box">
+          <v-pagination
+            v-if="noOfPages>1"
+            v-model="currentPage"
+            @change="changePage(currentPage)"
+            :page-count="noOfPages"
+            :disabled="loading"
+            :classes="bootstrapPaginationClasses"
+            :labels="paginationAnchorTexts"
+          ></v-pagination>
+        </div>
+        <!-- <Pagination
+          :count=""
+          :current="parseInt($route.query.page)"
+          @changed="changePage"
+        /> -->
       </div>
     </div>
     <!-- <RightSideBar /> -->
@@ -49,6 +64,8 @@ import HeaderBody from "~/components/HeaderBody";
 import Logo from "~/components/Logo";
 import Button from "~/components/Button";
 import Loading from "~/components/Loading";
+import { constructURL } from "~/lib/";
+import vPagination from "vue-plain-pagination";
 export default {
   name: "ProductListing",
   data() {
@@ -73,10 +90,25 @@ export default {
       facets: [],
       category: {},
       productCount: 0,
-      loading: false
+      currentPage: 1,
+      loading: false,
+      bootstrapPaginationClasses: {
+        ul: "pagination",
+        li: "page-item",
+        liActive: "active",
+        liDisable: "disabled",
+        button: "page-link"
+      },
+      paginationAnchorTexts: {
+        first: "&laquo;",
+        prev: "&lsaquo;",
+        next: "&rsaquo;",
+        last: "&raquo;"
+      }
     };
   },
   created() {
+    this.currentPage = parseInt(this.$route.query.page);
     // let query = { ...this.$route.query };
     // this.fl = query;
   },
@@ -89,9 +121,23 @@ export default {
     LeftSideBar,
     Pagination,
     Product,
-    Loading
+    Loading,
+    vPagination
+  },
+  computed: {
+    noOfPages() {
+      return Math.ceil(this.productCount / this.products.length);
+    }
   },
   methods: {
+    changePage(p) {
+      let fl = { ...this.fl };
+      delete fl.page;
+      delete fl.categories;
+      const url = constructURL("/", fl);
+      let page = parseInt(p || 1);
+      this.$router.push(`${url}page=${page}`);
+    },
     facetRemoved(f) {
       this.fl = f;
     },
@@ -184,5 +230,42 @@ export default {
   color: #718096;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+.pagination {
+  list-style-type: none !important;
+  display: flex !important;
+  padding-left: 0 !important;
+  list-style: none !important;
+  border-radius: 0.25rem !important;
+}
+.page-link {
+  position: relative !important;
+  display: block !important;
+  padding: 0.5rem 0.75rem !important;
+  margin-left: -1px !important;
+  line-height: 1.25 !important;
+  color: #007bff !important;
+  background-color: #fff !important;
+  border: 1px solid #dee2e6 !important;
+}
+.page-item.disabled .page-link {
+  color: #6c757d !important;
+  pointer-events: none !important;
+  cursor: auto !important;
+  background-color: #fff !important;
+  border-color: #dee2e6 !important;
+  height: 34px !important;
+}
+.page-item:first-child .page-link {
+  margin-left: 0 !important;
+  border-top-left-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+}
+.page-item.active .page-link {
+  z-index: 1 !important;
+  color: #fff !important;
+  background-color: #007bff !important;
+  border-color: #007bff !important;
 }
 </style>

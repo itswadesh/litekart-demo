@@ -3,61 +3,46 @@
 
     <ul class="flex pagination-container pb-12 pt-4 list-none text-center w-full">
       <li class="pagination-paginationMeta text-sm mt-3 py-3">
-        Page
-
-        1
-
-        of
-
-        627
-
+        Page {{current}} of {{count}}
       </li>
       <div class="m-auto">
-        <li class="py-2 px-2 bg-black font-medium text-white tracking-wide rounded-sm"><a href="">
-            1
-          </a></li>
-        <li class=" px-2"><a href="">
-            2
-          </a></li>
-        <li class=" px-3"><a href="">
-            3
-          </a></li>
-        <li class=" px-3"><a href="">
-            4
-          </a></li>
-        <li class=" px-3"><a href="">
-            5
-          </a></li>
-        <li class=" px-3"><a href="">
-            6
-          </a></li>
-        <li class=" px-3"><a href="">
-            7
-          </a></li>
-        <li class=" px-3"><a href="">
-            8
-          </a></li>
-        <li class=" px-3"><a href="">
-            9
-          </a></li>
-        <li class=" px-3"><a href="">
-            10
-          </a></li>
-        <li class="text-gray-600 m-4 px-4 py-2 border border-gray-300 hover:border-gray-500 capitalize rounded-full">Next
-          <span class="absolute">
-            <img
-              src="/right.png"
-              class="w-9/12 py-2 px-1"
-            >
-          </span>
-        </li>
+        <!-- <li
+          class="p-2"
+          :class="{'bg-black font-medium text-white tracking-wide rounded-sm':current==i}"
+          v-for="i in pages"
+          :key="i"
+          @click="$emit('changed',i)"
+        >
+          {{i}}
+        </li> -->
+        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow rounded inline-flex items-center">
+          <span>Next</span>
+          &nbsp;<i class="fa fa-caret-right" />
+        </button>
       </div>
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    pages() {
+      if (this.count > 10) this.count = 10;
+      return parseInt(this.count);
+    }
+  },
+  props: {
+    count: {
+      type: Number,
+      default: 2
+    },
+    current: {
+      type: Number,
+      default: 1
+    }
+  }
+};
 </script>
 
 <style scoped>

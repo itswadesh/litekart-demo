@@ -47,11 +47,11 @@
         >
           +8 more
         </a> -->
-        <div class="text-sm flex h-12 py-4 w-full">
+        <div class="text-sm flex h-12 py-4 w-full flex-wrap">
           <div
             v-for="(v,k) in fl"
             :key="k"
-            v-if="v && v.length>0"
+            v-if="v && v.length>0 && k!='page' && k!='sort'"
             class="block"
           >
             <span
@@ -61,7 +61,7 @@
             >
               {{i}}
               <i
-                class="fa fa-times px-1"
+                class="fa fa-times px-1 cursor-pointer"
                 aria-hidden="true"
                 @click="remove(k,i)"
               ></i>
@@ -69,14 +69,17 @@
           </div>
         </div>
         <div class="inline-block relative w-64">
-          <select class="text-black  border-gray-100 cursor-pointer cursor-pointer block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8  leading-tight focus:outline-none focus:none">
-            <option class="bg-white hover:bg-black focus:bg-black">Sort by:Recommended</option>
-            <option class="bg-white">What's New</option>
-            <option class="bg-white">Popularity</option>
-            <option class="bg-white">Better Discount</option>
-            <option class="bg-white">Price: High to Low</option>
-            <option class="bg-white">Price: Low to High</option>
-            <option class="bg-white">Faster Delivery</option>
+          <select
+            class="text-black  border-gray-100 cursor-pointer cursor-pointer block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8  leading-tight focus:outline-none focus:none"
+            v-model="sortBy"
+            @change="sort"
+          >
+            <option
+              class="bg-white"
+              v-for="(s,ix) in sorts"
+              :key="ix"
+              :value="s.val"
+            >{{s.name}}</option>
           </select>
           <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
             <i class="fa fa-caret-down px-1" />
@@ -91,8 +94,17 @@
 
 <script>
 import { constructURL } from "~/lib/";
-
+import { sorts } from "~/config";
 export default {
+  data() {
+    return {
+      sorts,
+      sortBy: null
+    };
+  },
+  created() {
+    this.sortBy = this.$route.query.sort;
+  },
   props: {
     count: {
       type: Number
@@ -102,6 +114,12 @@ export default {
     }
   },
   methods: {
+    sort() {
+      let fl = { ...this.fl };
+      fl.sort = this.sortBy;
+      let url = constructURL("/search", fl);
+      this.$router.push(url);
+    },
     remove(k, i) {
       let ix = this.fl[k].indexOf(i);
       this.fl[k].splice(ix, 1);

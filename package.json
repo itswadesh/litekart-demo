@@ -29,7 +29,8 @@
     "cross-env": "^5.2.1",
     "dotenv": "^8.1.0",
     "nuxt": "^2.9.2",
-    "vue-lazyload": "^1.3.2"
+    "vue-lazyload": "^1.3.2",
+    "vue-plain-pagination": "^0.3.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.1.2",
