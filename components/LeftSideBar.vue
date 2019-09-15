@@ -1,7 +1,7 @@
 <template>
   <div
     class="py-2\1 bg-white-800 shadow bg-white"
-    v-if="facets.brands"
+    v-if="facets"
   >
     <div class="flex-none px-2 py-4">
       <span class="font-normal text-sm text-gray px-5">FILTERS</span>
@@ -162,6 +162,9 @@ export default {
   name: "ProductSidebar",
   props: {
     clear: Boolean,
+    fl: {
+      type: [Object, Array]
+    },
     facets: {
       type: [Object, Array],
       default: () => {
@@ -172,38 +175,8 @@ export default {
   components: { Checkbox, ColorCheckbox, Radio },
   data() {
     return {
-      fl: {
-        brands: [],
-        price: [],
-        categories: [],
-        colors: [],
-        sizes: [],
-        price: [1, 100],
-        sort: null,
-        features: { Type: [], Fit: [], Fabric: [], Neck: [], Color: [] },
-        sorts: [
-          { name: "Relevance", val: null },
-          { name: "Whats New", val: "-createdAt" },
-          { name: "Price low to high", val: "variants.price" },
-          { name: "Price high to low", val: "-variants.price" }
-        ]
-      },
       loadingPrice: true // Required because after loading finished then only we will initiate the price slider component
     };
-  },
-  async created() {
-    let query = this.$route.query;
-    let vm = this;
-    Object.keys(query).map(function(k, i) {
-      if (
-        query[k] &&
-        !Array.isArray(query[k]) &&
-        query[k] != null &&
-        query[k] != ""
-      )
-        query[k] = query[k].split(",");
-    });
-    this.fl = query;
   },
   methods: {
     categoryChanged(i) {
@@ -212,7 +185,7 @@ export default {
     changed(e) {
       this.fl[e.model] = e.checked;
       // this.fl.pilot = e.checked;
-      let url = constructURL("/search/", this.$route.params.q, this.fl);
+      let url = constructURL("/search", this.fl);
       this.$router.push(url);
     },
     checkCategory() {},

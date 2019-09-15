@@ -171,11 +171,11 @@ export default {
         this.typingTimer = setTimeout(function() {
           if (!value || value == "undefined") value = ""; // When clear button clicked
           vm.searchString = value;
-          vm.$router.push("/search/" + value);
+          vm.$router.push("/search?q=" + value);
         }, vm.typingTimeout);
       }
     },
-    "$route.params.q": {
+    "$route.query.q": {
       immediate: true,
       handler(value) {
         let pathName = null;

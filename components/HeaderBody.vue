@@ -48,20 +48,25 @@
           +8 more
         </a> -->
         <div class="text-sm flex h-12 py-4 w-full">
-          <a
+          <div
             v-for="(v,k) in fl"
             :key="k"
-            v-if="v.length>0"
-            href="#"
+            v-if="v && v.length>0"
             class="block"
           >
-            <span class="text-gray-600 m-4 p-2 border border-gray-300 hover:border-gray-500 capitalize rounded-full">{{v && v[0]}}
+            <span
+              class="text-gray-600 m-4 p-2 border border-gray-300 hover:border-gray-500 capitalize rounded-full"
+              v-for="(i,ix) in v"
+              :key="ix"
+            >
+              {{i}}
               <i
                 class="fa fa-times px-1"
                 aria-hidden="true"
+                @click="remove(k,i)"
               ></i>
             </span>
-          </a>
+          </div>
         </div>
         <div class="inline-block relative w-64">
           <select class="text-black  border-gray-100 cursor-pointer cursor-pointer block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8  leading-tight focus:outline-none focus:none">
@@ -85,13 +90,24 @@
 </template>
 
 <script>
+import { constructURL } from "~/lib/";
+
 export default {
   props: {
     count: {
       type: Number
     },
     fl: {
-      type: Object
+      type: [Object, Array]
+    }
+  },
+  methods: {
+    remove(k, i) {
+      let ix = this.fl[k].indexOf(i);
+      this.fl[k].splice(ix, 1);
+      // this.$emit("removed", this.fl);
+      let url = constructURL("/search", this.fl);
+      this.$router.push(url);
     }
   }
 };

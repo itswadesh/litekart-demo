@@ -7,14 +7,26 @@
       <LeftSideBar
         class="flex-none max-w-xs hidden md:block"
         :facets="facets"
+        :fl="fl"
       />
       <div>
         <HeaderBody
           :count="productCount"
           :fl="fl"
+          @removed="facetRemoved"
         />
         <div class="flex flex-wrap shadow-inner">
+          <div
+            class="items-center"
+            v-if="loading"
+          >
+            <img
+              src="/loading.svg"
+              alt="loading ..."
+            />
+          </div>
           <Product
+            v-else
             v-for="p in products"
             :key="p._id"
             :product="p"
@@ -36,16 +48,37 @@ import Header from "~/components/Header";
 import HeaderBody from "~/components/HeaderBody";
 import Logo from "~/components/Logo";
 import Button from "~/components/Button";
+import Loading from "~/components/Loading";
 export default {
   name: "ProductListing",
   data() {
     return {
-      fl: { sort: "-createdAt" },
+      fl: {
+        brands: [],
+        price: [],
+        categories: [],
+        colors: [],
+        sizes: [],
+        price: [1, 100],
+        sort: null,
+        features: { Type: [], Fit: [], Fabric: [], Neck: [], Color: [] },
+        sorts: [
+          { name: "Relevance", val: null },
+          { name: "Whats New", val: "-createdAt" },
+          { name: "Price low to high", val: "variants.price" },
+          { name: "Price high to low", val: "-variants.price" }
+        ]
+      },
       products: [],
       facets: [],
       category: {},
-      productCount: 0
+      productCount: 0,
+      loading: false
     };
+  },
+  created() {
+    // let query = { ...this.$route.query };
+    // this.fl = query;
   },
   components: {
     Logo,
@@ -55,22 +88,18 @@ export default {
     Footer,
     LeftSideBar,
     Pagination,
-    Product
-  },
-  created() {
-    this.fl = this.$route.query;
+    Product,
+    Loading
   },
   methods: {
-    changed(e) {
-      if (e.sort) this.fl.sort = e.sort;
-      if (e.page) this.fl.page = e.page;
-      let url = constructURL("/search/", this.$route.params.q, this.fl);
-      this.$router.push(url);
+    facetRemoved(f) {
+      this.fl = f;
     },
     async getData() {
       try {
+        this.loading = true;
         const products = await this.$axios.$get("products/es", {
-          params: { q: this.$route.params.q, ...this.$route.query }
+          params: { ...this.$route.query }
         });
         this.productCount = products.count;
         this.products = products.data;
@@ -83,13 +112,28 @@ export default {
         // ) {
         //   delete this.facets[lastClick];
         // }
-      } catch (e) {}
+      } catch (e) {
+      } finally {
+        this.loading = false;
+      }
     }
   },
   watch: {
     "$route.query": {
       immediate: true,
       handler(value, oldValue) {
+        let query = { ...this.$route.query };
+        Object.keys(query).map(function(k, i) {
+          if (
+            query[k] &&
+            !Array.isArray(query[k]) &&
+            query[k] != null &&
+            query[k] != ""
+          )
+            query[k] = query[k].split(",");
+        });
+        if (query.q && query.q[0]) query.q = query.q[0];
+        this.fl = query;
         this.getData();
       }
     }
