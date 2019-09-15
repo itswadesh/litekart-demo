@@ -32,5 +32,9 @@ export default {
     '/api': PROXY,
     '/auth': PROXY,
     '/images': PROXY,
+  },
+  generate: {
+    dir: 'dist',
+    fallback: true
   }
 }
