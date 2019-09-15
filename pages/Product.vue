@@ -2,24 +2,24 @@
   <div>
     <Header />
     <div class="flex flex-wrap justify-between p-2">
-      <div class="w-2/4 flex justify-start">
-        <div class>
+      <div class="xs:w-full lg:w-2/4 flex justify-start">
+        <div class="hidden lg:block">
           <img class="w-28 cursor-pointer" src="/small-product.png" />
           <img class="w-28 cursor-pointer" src="/small-product.png" />
           <img class="w-28 cursor-pointer" src="/small-product.png" />
         </div>
         <div class="xs:w-full lg:w-3/4 mr-4 relative">
           <img class="inline-block w-full border border-gray-400" src="/product.png" />
-          <div class="absolute w-full flex flex-wrap">
+          <div class="w-full flex flex-wrap">
             <button
-              class="bg-yellow-600 w-56 my-3 mr-3 p-5 text-center font-bold text-white focus:outline-none"
+              class="xs:bg-white lg:bg-orange-600 w-1/2 my-3 p-5 text-center font-bold xs:text-black lg:text-white focus:outline-none xs:text-sm lg:text-lg"
             >
-              <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i> ADD TO CART
+              <i class="invisible lg:visible fa fa-shopping-cart mr-2" aria-hidden="true"></i> ADD TO CART
             </button>
             <button
-              class="bg-orange-500 w-56 my-3 ml-1 p-5 text-center font-bold text-white focus:outline-none"
+              class="bg-orange-500 bg-yellow-600 w-1/2 my-3 p-5 text-center font-bold text-white focus:outline-none"
             >
-              <i class="fa fa-bolt mr-2" aria-hidden="true"></i>BUY NOW
+              <i class="invisible lg:visible fa fa-bolt mr-2" aria-hidden="true"></i>BUY NOW
             </button>
           </div>
         </div>
@@ -39,7 +39,7 @@
         </div>
         <div class="w-full">
           <p
-            class="w-9/12 left-0 text-left text-lg text-black"
+            class="xs:w-full lg:w-9/12 left-0 text-left text-lg text-black"
           >Fitbit Inspire HR (Black Strap, Size : Regular)</p>
           <p class="mt-2">
             <a href class="w-9/12 left-0 text-left text-lg text-black mt-2">
@@ -90,7 +90,7 @@
         </div>
         <div class="w-full flex flex-wrap mt-3">
           <p class="w-20 pt-2 text-left text-sm text-gray-500">Delivery</p>
-          <div class="w-1/3 text-left left-0 relative">
+          <div class="lg:w-1/3 xs:w-full text-left left-0 relative">
             <i aria-hidden="true" class="fa fa-map-marker absolute mt-3"></i>
             <input
               type="search"
@@ -107,7 +107,7 @@
 
         <div class="w-full flex flex-wrap mt-3">
           <p class="w-20 pt-2 text-left text-sm text-gray-500">Color</p>
-          <div class="w-1/3 flex flex-wrap justify-between">
+          <div class="xs:w-full lg:w-1/3 flex flex-wrap justify-between">
             <img class="w-14 h-12 cursor-pointer" src="/small-product.png" />
             <img class="w-14 h-12 cursor-pointer" src="/small-product.png" />
             <img class="w-14 h-12 cursor-pointer" src="/small-product.png" />
@@ -115,7 +115,7 @@
         </div>
 
         <div class="w-full mt-3 flex flex-wrap">
-          <div class="w-1/2 flex flex-wrap">
+          <div class="xs:w-full lg:w-1/2 flex flex-wrap">
             <div class="w-20">
               <p class="pt-2 text-left text-sm text-gray-500">Highlights</p>
             </div>
@@ -130,7 +130,7 @@
               </ul>
             </div>
           </div>
-          <div class="w-1/2 flex flex-wrap">
+          <div class="xs:w-full lg:w-1/2 flex flex-wrap">
             <div class="w-20">
               <p class="pt-2 text-left text-sm text-gray-500">Services</p>
             </div>
@@ -163,7 +163,7 @@
 
         <div class="w-full flex flex-wrap mt-3 mb-10">
           <p class="w-20 pt-2 text-left text-sm text-gray-500">Description</p>
-          <div class="w-4/5 text-justify mt-3">
+          <div class="xs:w-full lg:w-4/5 text-justify mt-3">
             <p>Meet the Fitbit Inspire HR, your new partner who will guide you towards a healthier lifestyle. From tracking your heart rate and sleep quality to the number of calories you burn and the steps you take, the Inspire HR is designed to get you up and moving.</p>
           </div>
         </div>
@@ -226,7 +226,7 @@
         <!-- Product Review -->
         <div>
           <div class="w-full flex flex-wrap mt-3 border p-5">
-            <p class="text-2xl w-1/2">Ratings & Reviews</p>
+            <p class="xs:text-xl lg:text-2xl w-1/2">Ratings & Reviews</p>
             <p class="text-sm w-1/2 text-right">
               <button class="bg-white border px-4 py-2 shadow font-normal">Rate Product</button>
             </p>
