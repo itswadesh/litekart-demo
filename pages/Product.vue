@@ -1,9 +1,9 @@
 <template>
   <div>
     <Header />
-    <div class="flex flex-wrap justify-between p-2">
+    <div class="flex flex-wrap justify-start p-2">
       <div class="xs:w-full lg:w-2/4 flex justify-start flex-wrap">
-        <div class="flex md:flex-col md:order-1">
+        <div class="flex md:flex-col xs:order-2 md:order-1">
           <img
             class="w-28 cursor-pointer"
             src="/small-product.png"
@@ -17,7 +17,7 @@
             src="/small-product.png"
           />
         </div>
-        <div class="xs:w-full lg:w-3/4 relative md:order-2">
+        <div class="flex-1 xs:order-1 md:order-2">
           <img
             class="inline-block w-full border border-gray-400"
             src="/product.png"
