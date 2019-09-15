@@ -5,16 +5,16 @@
   >
     <div class="w-60">
       <img
-        v-if="product.imgUrls"
-        v-lazy="product.imgUrls[0]"
+        v-if="product._source.imgUrls"
+        v-lazy="product._source.imgUrls[0]"
         alt=""
         class="h-64 w-40%"
       />
     </div>
     <div class="ml-1 pt-1">
-      <p class="text-gray-900 font-bold">{{product.name | truncate(30)}}</p>
-      <p class=" text-black font-thin">{{product.categories[0].name}}</p>
-      <p class=" text-gray-600">{{product.variants[0].price | currency}}</p>
+      <p class="text-gray-900 font-bold">{{product._source.name | truncate(30)}}</p>
+      <p class=" text-black font-thin">{{product._source.categories[0].name}}</p>
+      <p class=" text-gray-600">{{product._source.variants[0].price | currency}}</p>
     </div>
   </div>
 
