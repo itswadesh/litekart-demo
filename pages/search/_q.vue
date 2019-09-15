@@ -69,7 +69,7 @@ export default {
     },
     async getData() {
       try {
-        const products = await this.$axios.$get("products/es", {
+        const products = await this.$axios.$get("products/search", {
           params: { q: this.$route.params.q, ...this.$route.query }
         });
         this.productCount = products.count;
