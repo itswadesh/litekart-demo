@@ -5,8 +5,8 @@
   >
     <div class="w-60">
       <img
-        v-if="product.img[0]"
-        v-lazy="$store.state.settings.CDN_URL+product.img[0].medium"
+        v-if="product.imgUrls"
+        v-lazy="product.imgUrls[0]"
         alt=""
         class="h-64 w-40%"
       />
