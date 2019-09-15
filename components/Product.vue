@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-white m-8 mt-5">
+  <div
+    class="bg-white m-8 mt-5"
+    v-if="product"
+  >
     <div class="w-60">
       <img
         v-if="product._source.img[0]"
