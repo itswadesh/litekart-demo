@@ -15,7 +15,7 @@
     "live": "run-s build copy liveS",
     "liveS": "node devops/live.js",
     "generate": "nuxt generate",
-    "build": "nuxt build --universal",
+    "build": "nuxt build",
     "analyze": "nuxt build -a"
   },
   "dependencies": {
