@@ -3,7 +3,17 @@
     <div>
       <Header />
     </div>
-    <div class="flex">
+    <MobileFilters
+      class="flex-none max-w-xs"
+      :facets="facets"
+      :fl="fl"
+      v-if="showMobileFilter"
+      @hide="showMobileFilter=false"
+    />
+    <div
+      class="flex"
+      v-else
+    >
       <LeftSideBar
         class="flex-none max-w-xs hidden md:block"
         :facets="facets"
@@ -14,34 +24,38 @@
           :count="productCount"
           :fl="fl"
           @removed="facetRemoved"
+          @showFilters="showMobileFilter=true"
         />
-        <div class="flex flex-wrap shadow-inner">
-          <div
-            class="items-center"
-            v-if="loading"
-          >
-            <img
-              src="/loading.svg"
-              alt="loading ..."
+        <NoProduct v-if="products.length==0 && !loading" />
+        <div v-else>
+          <div class="flex flex-wrap shadow-inner">
+            <div
+              class="items-center"
+              v-if="loading"
+            >
+              <img
+                src="/loading.svg"
+                alt="loading ..."
+              />
+            </div>
+            <Product
+              v-else
+              v-for="p in products"
+              :key="p._id"
+              :product="p"
             />
           </div>
-          <Product
-            v-else
-            v-for="p in products"
-            :key="p._id"
-            :product="p"
-          />
-        </div>
-        <div class="pagination_box">
-          <v-pagination
-            v-if="noOfPages>1"
-            v-model="currentPage"
-            @change="changePage(currentPage)"
-            :page-count="noOfPages"
-            :disabled="loading"
-            :classes="bootstrapPaginationClasses"
-            :labels="paginationAnchorTexts"
-          ></v-pagination>
+          <div class="pagination_box">
+            <v-pagination
+              v-if="noOfPages>1"
+              v-model="currentPage"
+              @change="changePage(currentPage)"
+              :page-count="noOfPages"
+              :disabled="loading"
+              :classes="bootstrapPaginationClasses"
+              :labels="paginationAnchorTexts"
+            ></v-pagination>
+          </div>
         </div>
         <!-- <Pagination
           :count=""
@@ -59,17 +73,20 @@ import Pagination from "~/components/Pagination";
 import Product from "~/components/Product";
 import Footer from "~/components/Footer";
 import LeftSideBar from "~/components/LeftSideBar";
+import MobileFilters from "~/components/MobileFilters";
 import Header from "~/components/Header";
 import HeaderBody from "~/components/HeaderBody";
 import Logo from "~/components/Logo";
 import Button from "~/components/Button";
 import Loading from "~/components/Loading";
+import NoProduct from "~/components/NoProduct";
 import { constructURL } from "~/lib/";
 import vPagination from "vue-plain-pagination";
 export default {
   name: "ProductListing",
   data() {
     return {
+      showMobileFilter: false,
       fl: {
         brands: [],
         price: [],
@@ -119,10 +136,12 @@ export default {
     HeaderBody,
     Footer,
     LeftSideBar,
+    MobileFilters,
     Pagination,
     Product,
     Loading,
-    vPagination
+    vPagination,
+    NoProduct
   },
   computed: {
     noOfPages() {
