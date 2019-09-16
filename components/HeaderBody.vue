@@ -1,7 +1,13 @@
 <template>
   <div>
-    <p class="py-2 px-5 text-sm ">Home / Clothing / Dresses / <span class="font-semibold">Clothing Dresses</span></p>
-    <p class="py-2 px-5 text-sm "><span class="font-semibold">Clothing Dresses</span>- {{count}} items</p>
+    <p class="py-2 px-5 text-sm">
+      Home / Clothing / Dresses /
+      <span class="font-semibold">Clothing Dresses</span>
+    </p>
+    <p class="py-2 px-5 text-sm">
+      <span class="font-semibold">Clothing Dresses</span>
+      - {{count}} items
+    </p>
 
     <div class="flex flex-wrap">
       <div class="flex text-sm w-full">
@@ -46,7 +52,7 @@
           class="block  text-black m-4 sm:inline-block  sm:mt-0 "
         >
           +8 more
-        </a> -->
+        </a>-->
         <div class="text-sm flex h-12 py-4 w-full flex-wrap">
           <div
             v-for="(v,k) in fl"
@@ -70,32 +76,112 @@
         </div>
         <div class="inline-block relative w-64">
           <select
-            class="text-black  border-gray-100 cursor-pointer cursor-pointer block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8  leading-tight focus:outline-none focus:none"
+            class="text-black border-gray-100 cursor-pointer cursor-pointer block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
             v-model="sortBy"
             @change="sort"
           >
-            <option
-              class="bg-white"
-              v-for="(s,ix) in sorts"
-              :key="ix"
-              :value="s.val"
-            >{{s.name}}</option>
+            <option class="bg-white" v-for="(s,ix) in sorts" :key="ix" :value="s.val">{{s.name}}</option>
           </select>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <div
+            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+          >
             <i class="fa fa-caret-down px-1" />
           </div>
         </div>
-
       </div>
-
+    </div>
+    <div class="xs:block lg:hidden">
+      <div class="flex shadow-md py-4 bg-white w-full">
+        <div class="flex-1 text-gray-700 text-left text-pink-500">
+          <i class="fa fa-sliders px-3 mr-2" aria-hidden="true"></i>Filter
+        </div>
+        <div class="flex-1 text-gray-700 text-center font-normal px-4">0 Items</div>
+        <div class="flex-1 text-gray-700 text-center px-4 text-pink-500">
+          <i class="fa fa-sort mr-2" aria-hidden="true"></i>Sort
+        </div>
+      </div>
+      <div class="shadow py-4 bb w-full">
+        <div class="text-gray-700 text-center">
+          <img class="containerr" src="/empty-listing.png" />
+        </div>
+        <div class="text-gray-500 text-center font-normal">We are unable to find items matching</div>
+        <div class="text-black text-center">"xxxxxxxxxxxxxxxxxxxx"</div>
+      </div>
+      <div class="w-full flex text-center shadow-md">
+        <div class="w-1/3">
+          <img class="containerr p-2" src="/circle-filter-imgs.png" />Baby 0-2y
+        </div>
+        <div class="w-1/3">
+          <img class="containerr p-2" src="/circle-filter-imgs.png" />Girls 2y+
+        </div>
+        <div class="w-1/3">
+          <img class="containerr p-2" src="/circle-filter-imgs.png" />Boys 2y+
+        </div>
+      </div>
+    </div>
+    <div class="xs:block lg:hidden">
+      <div class="flex shadow-md py-4 bg-white w-full">
+        <div class="flex-1 text-gray-700 text-left">
+          <i class="fa fa-times px-6" aria-hidden="true"></i>
+        </div>
+        <div class="flex-1 text-gray-700 text-center font-bold px-4">FILTER</div>
+        <div class="flex-1 text-gray-700 text-center px-4">Clear all</div>
+      </div>
+      <div class="w-full flex">
+        <div class="w-2/5">
+          <ul class="bg-gray-300">
+            <li class="py-4 text-gray-700 font-bold px-4 border-l-4 border-pink-600">
+              <a href>Shop for</a>
+            </li>
+            <li class="py-4 text-gray-700 font-bold px-4">
+              <a href>Age</a>
+            </li>
+            <li class="py-4 text-gray-700 font-bold px-4">
+              <a href>Category</a>
+            </li>
+            <li class="py-4 text-gray-700 font-bold px-4">
+              <a href>Delivery Time</a>
+            </li>
+            <li class="py-4 text-gray-700 font-bold px-4">
+              <a href>Colour</a>
+            </li>
+            <li class="py-4 text-gray-700 font-bold px-4">
+              <a href>Price</a>
+            </li>
+            <li class="py-4 text-gray-700 font-bold px-4">
+              <a href>Discount</a>
+            </li>
+            <li class="py-4 text-gray-700 font-bold px-4">
+              <a href>Brands</a>
+            </li>
+          </ul>
+        </div>
+        <div class="3/5">
+          <!-- <ul class="ml-2 py-2 px-5">
+            <li v-for="b in facets.brands && facets.brands.buckets" :key="b.key">
+              <Checkbox
+                :count="b.doc_count"
+                :value="b.key"
+                v-model="fl.brands"
+                @change="changed({model:'brands',checked:fl.brands})"
+              >{{b.key}}</Checkbox>
+            </li>
+          </ul>-->
+        </div>
+      </div>
+      <div class="w-full text-center bg-pink-500 text-white">
+        <button class="w-full p-4 cursor-pointer font-bold focus:outline-none">APPLY</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Checkbox from "~/components/Checkbox";
 import { constructURL } from "~/lib/";
 import { sorts } from "~/config";
 export default {
+  components: { Checkbox },
   data() {
     return {
       sorts,
@@ -131,7 +217,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.bb {
+  background: #f5f5f5;
+}
 select {
   border: 1px solid lightgray !important;
 }

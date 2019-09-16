@@ -1,8 +1,5 @@
 <template>
-  <label
-    class="vertical-filters-label common-customCheckbox"
-    :for="id || uniqueId"
-  >
+  <label class="vertical-filters-label common-customCheckbox hover:bg-none" :for="id || uniqueId">
     <input
       type="checkbox"
       :id="id || uniqueId"
@@ -13,7 +10,7 @@
       :color="color"
       :checked="checkboxState"
       @click="toggle"
-    >
+    />
     <span class="ml-2 text-sm">
       <slot />
     </span>
