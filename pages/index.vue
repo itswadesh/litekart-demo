@@ -1,37 +1,64 @@
 <template>
   <div>
     <Header />
-    <div id="owl-demo" class="flex text-center">
+    <div
+      class="flex text-center flex-no-wrap"
+      style="overflow-x:scroll"
+    >
       <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img src="/owl-carousel.png" class="rounded-t" />
+        <img
+          src="/owl-carousel.png"
+          class="rounded-t"
+        />
         <div class="xs:text-xs">BABIES</div>
       </div>
       <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img src="/owl-carousel.png" class="rounded-t" />
+        <img
+          src="/owl-carousel.png"
+          class="rounded-t"
+        />
         <div class="xs:text-xs">OLD</div>
       </div>
       <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img src="/owl-carousel.png" class="rounded-t" />
+        <img
+          src="/owl-carousel.png"
+          class="rounded-t"
+        />
         <div class="xs:text-xs">LADIES</div>
       </div>
       <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img src="/owl-carousel.png" class="rounded-t" />
+        <img
+          src="/owl-carousel.png"
+          class="rounded-t"
+        />
         <div class="xs:text-xs">MEN</div>
       </div>
       <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img src="/owl-carousel.png" class="rounded-t" />
+        <img
+          src="/owl-carousel.png"
+          class="rounded-t"
+        />
         <div class="xs:text-xs">WOMEN</div>
       </div>
       <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img src="/owl-carousel.png" class="rounded-t" />
+        <img
+          src="/owl-carousel.png"
+          class="rounded-t"
+        />
         <div class="xs:text-xs">SHOES</div>
       </div>
       <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img src="/owl-carousel.png" class="rounded-t" />
+        <img
+          src="/owl-carousel.png"
+          class="rounded-t"
+        />
         <div class="xs:text-xs">GIRLS</div>
       </div>
       <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img src="/owl-carousel.png" class="rounded-t" />
+        <img
+          src="/owl-carousel.png"
+          class="rounded-t"
+        />
         <div class="xs:text-xs">BOYS</div>
       </div>
     </div>
@@ -66,7 +93,4 @@ export default {
 </script>
 
 <style scoped>
-#owl-demo img {
-  min-width: 80px;
-}
 </style>
