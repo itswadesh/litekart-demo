@@ -178,7 +178,7 @@ export default {
           )
             query[k] = query[k].split(",");
         });
-        if (query.q && query.q[0]) query.q = query.q[0];
+        // if (query.q && query.q[0]) query.q = query.q[0];
         this.fl = query;
         this.getData();
       }

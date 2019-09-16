@@ -103,7 +103,7 @@ export default {
     };
   },
   created() {
-    this.sortBy = this.$route.query.sort;
+    this.sortBy = this.$route.query.sort || "-createdAt";
   },
   props: {
     count: {
