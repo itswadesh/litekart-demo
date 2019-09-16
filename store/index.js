@@ -84,6 +84,13 @@ export const actions = {
     } catch (e) { }
   },
   async nuxtClientInit({ commit, dispatch }, context) {
+    // Categories
+    try {
+      let categories = await this.$axios.$get('categories/megamenu')
+      commit('categories', categories.data)
+    } catch (err) {
+      commit('setErr', err)
+    }
     // Settings
     try {
       let settings = await this.$axios.$get('settings')

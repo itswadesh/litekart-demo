@@ -8,47 +8,62 @@
             <div class="p-0 bg-blue-700 text-white rounded rounded-b-none">
               <h1 class="text-xl mb-6 text-left p-3"><span class="font-extrabold">SIGN IN</span> TO YOUR ACCOUNT</h1>
             </div>
-            <div class="p-6">
-              <div class="mb-10 flex items-center border-b border-b-2 border-grey-500">
-                <input
-                  class="appearance-none bg-gray-200 border-none w-full text-gray-700 p-4 leading-tight focus:outline-none"
-                  type="text"
-                  placeholder="Phone No"
-                  aria-label="Full name"
-                >
-              </div>
+            <form
+              novalidate
+              autocomplete="off"
+              @submit.stop.prevent="submit()"
+              class="container center"
+            >
+              <div class="p-6">
+                <div class="mb-10 flex items-center border-b border-b-2 border-grey-500">
+                  <input
+                    class="appearance-none bg-gray-200 border-none w-full text-gray-700 p-4 leading-tight focus:outline-none"
+                    type="text"
+                    placeholder="Phone No"
+                    aria-label="Full name"
+                    @keyup="onPhoneChange"
+                  >
+                </div>
 
-              <p class="text-red-500 mb-5 text-xs font-hairline">Please enter OTP sent to mobile number</p>
-              <div class="otp-container relative inline-block rounded p-2 w-32 w-12 mb-10 bg-gray-200">
-                <div
-                  id="wraper1"
-                  class="otp-seperator w-1 h-1 rounded absolute "
-                ></div>
-                <div
-                  id="wraper2"
-                  class="otp-seperator w-1 h-1 rounded absolute"
-                ></div>
-                <div
-                  id="wraper3"
-                  class="otp-seperator w-1 h-1 rounded absolute"
-                ></div>
-                <div
-                  id="wraper4"
-                  class="otp-seperator w-1 h-1 rounded absolute"
-                ></div>
-                <input
-                  type="tel"
-                  class="outline-none pl-4 otp-content w-32 bg-transparent"
-                  maxlength="4"
-                  autocomplete="off"
-                >
+                <p class="text-red-500 mb-5 text-xs font-hairline">Please enter OTP sent to mobile number</p>
+
+                <div class="otp-container relative inline-block rounded p-2 w-32 w-12 mb-10 bg-gray-200">
+                  <div
+                    id="wraper1"
+                    class="otp-seperator w-1 h-1 rounded absolute "
+                    :class="{'wraper-hide':otp.length>0}"
+                  ></div>
+                  <div
+                    id="wraper2"
+                    class="otp-seperator w-1 h-1 rounded absolute"
+                    :class="{'wraper-hide':otp.length>1}"
+                  ></div>
+                  <div
+                    id="wraper3"
+                    class="otp-seperator w-1 h-1 rounded absolute"
+                    :class="{'wraper-hide':otp.length>2}"
+                  ></div>
+                  <div
+                    id="wraper4"
+                    class="otp-seperator w-1 h-1 rounded absolute"
+                    :class="{'wraper-hide':otp.length>3}"
+                  ></div>
+                  <input
+                    v-model="otp"
+                    type="number"
+                    class="outline-none pl-4 otp-content w-32 bg-transparent"
+                    maxlength="4"
+                    autocomplete="off"
+                    @keyup="onKeyUpEvent(otp.length, $event)"
+                  >
+                </div>
+                <div class="flex items-center justify-between">
+                  <button class="text-2xl big-button outline-none text-xl hover:bg-red-200 w-full text-white font-bold py-2 px-4 rounded">
+                    Verify Phone
+                  </button>
+                </div>
               </div>
-              <div class="flex items-center justify-between">
-                <button class="text-2xl big-button outline-none text-xl hover:bg-red-200 w-full text-white font-bold py-2 px-4 rounded">
-                  Verify Phone
-                </button>
-              </div>
-            </div>
+            </form>
 
           </div>
         </div>
@@ -59,13 +74,147 @@
 
 <script>
 import Header from "~/components/Header";
-
 export default {
-  components: { Header }
+  data() {
+    return {
+      otp: "",
+      loading: false,
+      fadeIn: "",
+      disable: "disable",
+      p: {},
+      showOTP: false,
+      msg: null
+    };
+  },
+  components: { Header },
+  computed: {
+    user() {
+      return (this.$store.state.auth || {}).user || {};
+    }
+  },
+  methods: {
+    onPhoneChange(e) {
+      if (e.keyCode != 13) {
+        this.showOTP = false;
+        this.p = {};
+        return;
+      }
+    },
+    async submit() {
+      let vm = this;
+      this.err = null;
+      this.msg = null;
+      if (!this.user.phone || this.user.phone == "") {
+        this.$store.commit("setErr", "Please enter your phone no");
+        return;
+      }
+      if (!this.showOTP) {
+        // When request OTP clicked 1st
+        try {
+          this.loading = true;
+          const otp = await this.$axios.get("/users/phone/" + this.user.phone);
+          if (otp.status == 200 || otp.status == 201) {
+            this.showOTP = true;
+            this.msg = "Please enter OTP sent to your Mobile";
+            this.$refs.otp1.focus();
+            return;
+          }
+        } catch (e) {
+          this.showOTP = false;
+          if (e && e.response && e.response.data) {
+            this.err = e.response.data._message || e.response.data.msg;
+            this.msg = this.err;
+          }
+          // this.$store.commit("setErr", this.err);
+          return;
+        } finally {
+          this.loading = false;
+        }
+      } else {
+        // To send OTP verification request 2nd
+        try {
+          this.loading = true;
+          const password = this.p.i1 + this.p.i2 + this.p.i3 + this.p.i4;
+          const res = await this.$store.dispatch("auth/login", {
+            phone: this.user.phone,
+            password
+          });
+          if (res.token) {
+            this.$store.commit("success", "Verified! Thank You.");
+            let returnUrl = this.$route.query.return || "/";
+            this.$router.push(returnUrl);
+          }
+          // this.showOTP = false;
+        } catch (e) {
+        } finally {
+          this.loading = false;
+        }
+      }
+    },
+    getCodeBoxElement(index) {
+      return document.getElementById("otp" + index);
+    },
+    onKeyUpEvent(index, event) {
+      const eventCode = event.which || event.keyCode;
+      if (index == 4) {
+        this.submit(); // Submit code
+      }
+      // console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", index, eventCode);
+    },
+    onFocusEvent(index) {
+      // for (let item = 1; item < index; item++) {
+      //   const currentElement = this.getCodeBoxElement(item);
+      //   if (!currentElement.value) {
+      //     currentElement.focus();
+      //     break;
+      //   }
+      // }
+    }
+  },
+  head() {
+    return {
+      title: "Login to Litekart",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "After this checkout process we will ship the item and it should be delivered within 7 working days"
+        },
+        {
+          hid: "og:description",
+          name: "Description",
+          property: "og:description",
+          content:
+            "After this checkout process we will ship the item and it should be delivered within 7 working days"
+        },
+
+        {
+          hid: "og:title",
+          name: "og:title",
+          property: "og:title",
+          content: "Checkout with the products in your cart"
+        },
+        // Twitter
+        {
+          name: "twitter:title",
+          content: "Checkout with the products in your cart"
+        },
+        {
+          name: "twitter:description",
+          content:
+            "After this checkout process we will ship the item and it should be delivered within 7 working days"
+        }
+      ]
+    };
+  }
 };
 </script>
 
 <style scoped>
+.wraper-hide {
+  visibility: hidden;
+}
 .border-t {
   border-bottom: 1px solid lightgray;
 }

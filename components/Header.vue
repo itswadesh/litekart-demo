@@ -4,43 +4,22 @@
       <!-- NAVBAR COMPONENT -->
       <nav class="flex items-center justify-between flex-wrap bg-white-800 shadow p-5">
         <div class="flex items-center flex-shrink-0 text-orange mr-6 order-1">
-          <img
-            class="w-12 h-10 ml-8"
-            src="/logo.png"
-          >
-
+          <nuxt-link to="/">
+            <img
+              class="w-12 h-10 ml-8"
+              src="/logo.png"
+            >
+          </nuxt-link>
           <!-- <div class="w-full justify-between flex-grow sm:flex sm:items-center sm:w-auto"> -->
           <div class="hidden lg:block flex flex-none text-sm py-4 xs:justify-between items-center text-gray order-2">
-            <a
-              href="#"
+            <nuxt-link
+              v-for="c in $store.state.categories"
+              :key="c._id"
+              :to="`/search?q=${c.slug}`"
               class="mr-8"
             >
-              MEN
-            </a>
-            <a
-              href="#"
-              class="mr-8"
-            >
-              WOMEN
-            </a>
-            <a
-              href="#"
-              class="mr-8"
-            >
-              KIDS
-            </a>
-            <a
-              href="#"
-              class="mr-8 "
-            >
-              HOME & LIVING
-            </a>
-            <a
-              href="#"
-              class="mx-2"
-            >
-              DISCOVER
-            </a>
+              {{c.name.toUpperCase()}}
+            </nuxt-link>
           </div>
         </div>
         <div
@@ -68,39 +47,33 @@
         </div>
 
         <div class="flex items-center flex-shrink-0 py-4 order-3 sm:order-4">
-          <div>
+          <nuxt-link to="/login">
             <img
               class="w-5 h-4 ml-2"
               src="/avatar.png"
             >
-            <a
-              href="#"
-              class="mr-6 inline-text-gray text-xs font-bold"
-            >Profile</a>
-          </div>
+            <div class="mr-6 inline-text-gray text-xs font-bold">Profile</div>
+          </nuxt-link>
           <div>
             <img
               class="w-5 h-4  ml-3 center"
               src="/bookmark.png"
             >
-            <a
-              href="#"
-              class="mr-6 text-xs inline-text-gray font-bold"
-            >Whistlist</a>
+            <div class="mr-6 text-xs inline-text-gray font-bold">Whistlist</div>
           </div>
-          <div class="relative">
+          <nuxt-link
+            to="/cart"
+            class="relative"
+          >
             <img
               class="w-5 h-4"
               src="/bag.png"
             >
-            <a
-              href="#"
-              class="flex mr-6 text-xs inline-text-gray font-bold"
-            >Bag
+            <div class="flex mr-6 text-xs inline-text-gray font-bold">Bag
               <span class="text-white font-bold desktop-badge rounded-full 
                 px-1 absolute ">1</span>
-            </a>
-          </div>
+            </div>
+          </nuxt-link>
         </div>
         <!-- </div> -->
       </nav>
