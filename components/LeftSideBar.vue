@@ -17,7 +17,24 @@
         </li>
       </ul>
     </div>
-    <div>
+    <div v-if="facets.categories && facets.categories.all.buckets && facets.categories.all.buckets.length>0">
+      <p class="ml-2 py-2 font-semibold text-sm px-5">CATEGORY</p>
+      <ul class="ml-2 py-2 px-5">
+        <li
+          v-for="b in facets.categories && facets.categories.all.buckets"
+          :key="b.key"
+        >
+          <Checkbox
+            :count="b.doc_count"
+            :value="b.key"
+            v-model="fl.categories"
+            @change="changed({model:'categories',checked:fl.categories})"
+          >{{b.key}}</Checkbox>
+        </li>
+      </ul>
+    </div>
+
+    <div v-if="facets.brands && facets.brands.all.buckets && facets.brands.all.buckets.length>0">
       <p class="ml-2 py-2 font-semibold text-sm px-5">BRAND</p>
       <ul class="ml-2 py-2 px-5">
         <li
@@ -34,7 +51,7 @@
       </ul>
     </div>
 
-    <div>
+    <div v-if="facets.sizes && facets.sizes.all.buckets && facets.sizes.all.buckets.length>0">
       <p class="ml-2 py-2 font-semibold text-sm px-5">SIZES</p>
       <ul class="ml-2 py-2 px-5">
         <li
@@ -54,7 +71,7 @@
     <div
       v-for="(v,k) in facets.features && facets.features.name.buckets"
       :key="k"
-      v-if="v.key!='Color'"
+      v-if="v.key!='Color' && v.val && v.val.buckets.length>0"
     >
       <p class="ml-2 py-2 font-semibold text-sm px-5">{{v.key}}</p>
       <ul class="ml-2 py-2 px-5">
@@ -72,7 +89,7 @@
       </ul>
     </div>
 
-    <div>
+    <div v-if="facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets && facets.colors.colors.name.buckets.length>0">
       <p class="ml-2 py-2 font-semibold text-sm px-5">COLOR</p>
       <ul class="ml-2 py-2 px-5">
         <li

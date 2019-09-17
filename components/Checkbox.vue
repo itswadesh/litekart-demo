@@ -16,6 +16,7 @@
       @click="toggle"
     />
     <span
+      v-if="color"
       data-colorhex="black"
       class="colour-label colour-colorDisplay"
       :style="{'background-color':color}"
