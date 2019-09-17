@@ -10,7 +10,7 @@
     </p>
 
     <div class="flex flex-wrap">
-      <div class="flex text-sm w-full">
+      <div class="lg:flex text-sm w-full">
         <!-- <a
           href="#"
           class="block inline-block mb-1 rounded-full p-1 mr-8 bg-gray-200 text-black"
@@ -74,9 +74,9 @@
             </span>
           </div>
         </div>
-        <div class="inline-block relative w-64">
+        <div class="inline-block relative">
           <select
-            class="text-black border-gray-100 cursor-pointer cursor-pointer block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
+            class="text-black border-gray-100 cursor-pointer cursor-pointer block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
             v-model="sortBy"
             @change="sort"
           >

@@ -10,15 +10,8 @@
       v-if="showMobileFilter"
       @hide="showMobileFilter=false"
     />
-    <div
-      class="flex"
-      v-else
-    >
-      <LeftSideBar
-        class="flex-none max-w-xs hidden md:block"
-        :facets="facets"
-        :fl="fl"
-      />
+    <div class="flex" v-else>
+      <LeftSideBar class="flex-none max-w-xs hidden md:block" :facets="facets" :fl="fl" />
       <div>
         <HeaderBody
           :count="productCount"
@@ -29,21 +22,11 @@
         <NoProduct v-if="products.length==0 && !loading" />
         <div v-else>
           <div class="flex flex-wrap shadow-inner">
-            <div
-              class="items-center"
-              v-if="loading"
-            >
-              <img
-                src="/loading.svg"
-                alt="loading ..."
-              />
+            <div class="items-center" v-if="loading">
+              <img src="/loading.svg" alt="loading ..." />
             </div>
-            <Product
-              v-else
-              v-for="p in products"
-              :key="p._id"
-              :product="p"
-            />
+            <Product v-else v-for="p in products" :key="p._id" :product="p" />
+            <Skeleton v-else v-for="p in products" :key="p._id" :Skeleton="p" />
           </div>
           <div class="pagination_box">
             <v-pagination
@@ -61,7 +44,7 @@
           :count=""
           :current="parseInt($route.query.page)"
           @changed="changePage"
-        /> -->
+        />-->
       </div>
     </div>
     <!-- <RightSideBar /> -->
@@ -70,6 +53,7 @@
 </template>
 <script>
 import Pagination from "~/components/Pagination";
+import Skeleton from "~/components/Skeleton";
 import Product from "~/components/Product";
 import Footer from "~/components/Footer";
 import LeftSideBar from "~/components/LeftSideBar";
@@ -141,7 +125,8 @@ export default {
     Product,
     Loading,
     vPagination,
-    NoProduct
+    NoProduct,
+    Skeleton
   },
   computed: {
     noOfPages() {

@@ -1,10 +1,7 @@
 <template>
   <div class="flex flex-row w-full px-3">
-
-    <ul class="flex pagination-container pb-12 pt-4 list-none text-center w-full">
-      <li class="pagination-paginationMeta text-sm mt-3 py-3">
-        Page {{current}} of {{count}}
-      </li>
+    <ul class="flex pagination-container justify-center">
+      <li class="pagination-paginationMeta">Page {{current}} of {{count}}</li>
       <div class="m-auto">
         <!-- <li
           class="p-2"
@@ -12,12 +9,13 @@
           v-for="i in pages"
           :key="i"
           @click="$emit('changed',i)"
+        >{{i}}</li>-->
+        <button
+          class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow rounded inline-flex items-center"
         >
-          {{i}}
-        </li> -->
-        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow rounded inline-flex items-center">
           <span>Next</span>
-          &nbsp;<i class="fa fa-caret-right" />
+          &nbsp;
+          <i class="fa fa-caret-right" />
         </button>
       </div>
     </ul>
@@ -47,11 +45,21 @@ export default {
 
 <style scoped>
 .pagination-container {
-  border-top: 0.01rem solid #edebef;
+  list-style: none;
+  text-align: center;
+  border-top: 1px solid #edebef;
+  padding-top: 24px;
+  padding-bottom: 60px;
   color: #282c3f;
 }
 .pagination-paginationMeta {
   color: #535766;
+  font-size: 14px;
+  float: left;
+  margin-top: 6px;
+  margin-right: 10px;
+  cursor: default;
+  font-weight: 400;
 }
 li {
   display: inline-block;
