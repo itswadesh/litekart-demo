@@ -2,7 +2,7 @@
   <header>
     <div>
       <!-- NAVBAR COMPONENT -->
-      <nav class="flex items-center justify-between flex-wrap bg-white-800 shadow p-5">
+      <nav class="flex items-center justify-between flex-wrap bg-white-800 shadow">
         <div class="flex items-center flex-shrink-0 text-orange mr-6 order-1">
           <nuxt-link to="/">
             <img class="w-12 h-10 ml-8" src="/logo.png" />
