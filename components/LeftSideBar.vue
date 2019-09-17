@@ -21,7 +21,7 @@
       <p class="ml-2 py-2 font-semibold text-sm px-5">BRAND</p>
       <ul class="ml-2 py-2 px-5">
         <li
-          v-for="b in facets.brands && facets.brands.buckets"
+          v-for="b in facets.brands && facets.brands.all.buckets"
           :key="b.key"
         >
           <Checkbox
@@ -38,7 +38,7 @@
       <p class="ml-2 py-2 font-semibold text-sm px-5">SIZES</p>
       <ul class="ml-2 py-2 px-5">
         <li
-          v-for="b in facets.sizes && facets.sizes.buckets"
+          v-for="b in facets.sizes && facets.sizes.all.buckets"
           :key="b.key"
         >
           <Checkbox
@@ -54,6 +54,7 @@
     <div
       v-for="(v,k) in facets.features && facets.features.name.buckets"
       :key="k"
+      v-if="v.key!='Color'"
     >
       <p class="ml-2 py-2 font-semibold text-sm px-5">{{v.key}}</p>
       <ul class="ml-2 py-2 px-5">
@@ -74,53 +75,18 @@
     <div>
       <p class="ml-2 py-2 font-semibold text-sm px-5">COLOR</p>
       <ul class="ml-2 py-2 px-5">
-        <li class="colour-listItem">
-          <ColorCheckbox
-            color="#ff0000"
-            :count="100"
-            text="Forever 21"
-            val="Forever 21"
-          />
-        </li>
-        <li class="colour-listItem">
-          <ColorCheckbox
-            color="#00ff00"
-            :count="100"
-            text="Forever 21"
-            val="Forever 21"
-          />
-        </li>
-        <li class="colour-listItem">
-          <ColorCheckbox
-            color="#0000ff"
-            :count="100"
-            text="Forever 21"
-            val="Forever 21"
-          />
-        </li>
-        <li class="colour-listItem">
-          <ColorCheckbox
-            color="yellow"
-            :count="100"
-            text="Forever 21"
-            val="Forever 21"
-          />
-        </li>
-        <li class="colour-listItem">
-          <ColorCheckbox
-            color="cyan"
-            :count="100"
-            text="Forever 21"
-            val="Forever 21"
-          />
-        </li>
-        <li class="colour-listItem">
-          <ColorCheckbox
-            color="orange"
-            :count="100"
-            text="Forever 21"
-            val="Forever 21"
-          />
+        <li
+          class="colour-listItem"
+          v-for="b in facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets"
+          :key="b.key"
+        >
+          <Checkbox
+            :color="b.val.buckets[0] && b.val.buckets[0].key"
+            :count="b.doc_count"
+            :value="b.key"
+            v-model="fl.color"
+            @change="changed({model:'color',checked:fl.color})"
+          >{{b.key}}</Checkbox>
         </li>
       </ul>
     </div>
