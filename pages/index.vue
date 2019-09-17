@@ -1,67 +1,61 @@
 <template>
   <div>
     <Header />
-    <div
-      class="flex text-center flex-no-wrap"
-      style="overflow-x:scroll"
-    >
-      <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img
-          src="/owl-carousel.png"
-          class="rounded-t"
-        />
+    <div class="flex items-center h-auto p-5 xs:block lg:hidden" style="overflow-x:scroll">
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
         <div class="xs:text-xs">BABIES</div>
       </div>
-      <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img
-          src="/owl-carousel.png"
-          class="rounded-t"
-        />
-        <div class="xs:text-xs">OLD</div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
       </div>
-      <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img
-          src="/owl-carousel.png"
-          class="rounded-t"
-        />
-        <div class="xs:text-xs">LADIES</div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
       </div>
-      <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img
-          src="/owl-carousel.png"
-          class="rounded-t"
-        />
-        <div class="xs:text-xs">MEN</div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
       </div>
-      <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img
-          src="/owl-carousel.png"
-          class="rounded-t"
-        />
-        <div class="xs:text-xs">WOMEN</div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
       </div>
-      <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img
-          src="/owl-carousel.png"
-          class="rounded-t"
-        />
-        <div class="xs:text-xs">SHOES</div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
       </div>
-      <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img
-          src="/owl-carousel.png"
-          class="rounded-t"
-        />
-        <div class="xs:text-xs">GIRLS</div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
       </div>
-      <div class="m-2 rounded shadow xs:w-16 lg:auto">
-        <img
-          src="/owl-carousel.png"
-          class="rounded-t"
-        />
-        <div class="xs:text-xs">BOYS</div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
+      </div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
+      </div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
+      </div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
+      </div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
+      </div>
+      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
+        <img src="/circle-filter-imgs-1.png" class="w-20" />
+        <div class="xs:text-xs">BABIES</div>
       </div>
     </div>
+
     <div class="px-2">
       <Carousel />
       <Deals />
