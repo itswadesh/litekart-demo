@@ -25,7 +25,7 @@
             <div class="items-center" v-if="loading">
               <img src="/loading.svg" alt="loading ..." />
             </div>
-            <Product v-else v-for="p in products" :key="p._id" :product="p" />
+            <!-- <Product v-else v-for="p in products" :key="p._id" :product="p" /> -->
             <Skeleton v-else v-for="p in products" :key="p._id" :Skeleton="p" />
           </div>
           <div class="pagination_box">
