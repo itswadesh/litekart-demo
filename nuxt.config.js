@@ -9,6 +9,7 @@ export default {
   css: [],
   plugins: [
     '~/plugins/filters.js',
+    '~/plugins/directives.js',
     { src: '~/plugins/init.js', ssr: false },
     { src: '~/plugins/lazy.js', ssr: false }
   ],
