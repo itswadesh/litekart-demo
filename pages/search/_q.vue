@@ -30,20 +30,23 @@
         <div v-else>
           <div class="flex flex-wrap shadow-inner">
             <div
-              class="items-center"
+              class="flex flex-wrap"
               v-if="loading"
             >
-              <img
+              <!-- <img
                 src="/loading.svg"
                 alt="loading ..."
+              /> -->
+              <Skeleton
+                v-for="(p,ix) in skeletonCount"
+                :key="ix+'-1'"
               />
             </div>
-            <!-- <Product v-else v-for="p in products" :key="p._id" :product="p" /> -->
-            <Skeleton
-              v-else
+            <Product
+              v-else-if="products && products.length>0"
               v-for="p in products"
               :key="p._id"
-              :Skeleton="p"
+              :product="p"
             />
           </div>
           <div class="pagination_box">
@@ -67,6 +70,7 @@
     </div>
     <!-- <RightSideBar /> -->
     <Footer />
+    <BackToTopDark />
   </div>
 </template>
 <script>
@@ -84,10 +88,12 @@ import Loading from "~/components/Loading";
 import NoProduct from "~/components/NoProduct";
 import { constructURL } from "~/lib/";
 import vPagination from "vue-plain-pagination";
+import { BackToTopDark } from "~/components/ui";
 export default {
   name: "ProductListing",
   data() {
     return {
+      skeletonCount: 8,
       showMobileFilter: false,
       fl: {
         brands: [],
@@ -144,7 +150,8 @@ export default {
     Loading,
     vPagination,
     NoProduct,
-    Skeleton
+    Skeleton,
+    BackToTopDark
   },
   computed: {
     noOfPages() {

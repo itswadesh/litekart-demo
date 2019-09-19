@@ -82,14 +82,6 @@
       <div> In case of any concern,<span class="px-2 text-indigo-600">Contact Us</span> </div>
       <div> © 2019 www.myntra.com. All rights reserved. </div>
     </div>
-    <button
-      onclick="topFunction()"
-      id="myBtn"
-      title="Go to top"
-    ><img
-        class="m-auto w-1/3"
-        src="/up-arrow.png"
-      ></button>
   </footer>
 </template>
 
@@ -130,25 +122,5 @@ export default {};
   background: red;
   border-radius: 90px;
   margin: 0px 0px 0px 5px;
-}
-#myBtn {
-  display: block;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: #555;
-  color: white;
-  cursor: pointer;
-  border-radius: 100px;
-  width: 40px;
-  height: 40px;
-  font-size: 22px;
-}
-
-#myBtn:hover {
-  background-color: #555;
 }
 </style>

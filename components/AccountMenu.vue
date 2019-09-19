@@ -13,7 +13,7 @@
         <nuxt-link
           to="/my/orders"
           active-class="text-pink-500"
-          class="w-full flex flex-wrap text-lg hover:text-pink-400"
+          class="w-full flex flex-wrap text-lg"
         >
           <div class="w-1/5">
             <i
@@ -28,7 +28,7 @@
         <nuxt-link
           to="/my/address"
           active-class="text-pink-500"
-          class="w-full flex flex-wrap text-lg hover:text-pink-400"
+          class="w-full flex flex-wrap text-lg"
         >
           <div class="w-1/5">
             <i
@@ -43,7 +43,7 @@
         <nuxt-link
           to="/my/profile"
           active-class="text-pink-500"
-          class="w-full flex flex-wrap text-lg hover:text-pink-400"
+          class="w-full flex flex-wrap text-lg"
         >
           <div class="w-1/5">
             <i
@@ -56,9 +56,9 @@
       </li>
 
       <li>
-        <a
-          href="#"
-          class="w-full flex flex-wrap text-lg hover:text-pink-400"
+        <nuxt-link
+          to="/my/order/details"
+          class="w-full flex flex-wrap text-lg"
         >
           <div class="w-1/5">
             <i
@@ -67,12 +67,12 @@
             ></i>
           </div>
           <div class="w-4/5 text-left p-3">My Moments</div>
-        </a>
+        </nuxt-link>
       </li>
       <li>
         <a
           href="#"
-          class="w-full flex flex-wrap text-lg hover:text-pink-400"
+          class="w-full flex flex-wrap text-lg"
         >
           <div class="w-1/5">
             <i
@@ -86,7 +86,7 @@
       <li>
         <a
           href="#"
-          class="w-full flex flex-wrap text-lg hover:text-pink-400"
+          class="w-full flex flex-wrap text-lg"
         >
           <div class="w-1/5">
             <i
@@ -100,7 +100,7 @@
       <li>
         <div
           @click="logout"
-          class="logout w-full flex flex-wrap text-lg hover:text-pink-400"
+          class="logout w-full flex flex-wrap text-lg"
         >
           <div class="w-1/5">
             <i
@@ -129,11 +129,15 @@ export default {
   methods: {
     async logout() {
       await this.$store.dispatch("auth/logout");
+      this.$router.push('/')
     }
   }
 };
 </script>
 <style scoped>
+ul > li:hover{
+  background-color:#f6f6f6;
+}
 .logout {
   cursor: pointer;
 }

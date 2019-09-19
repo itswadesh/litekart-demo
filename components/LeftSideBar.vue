@@ -19,7 +19,7 @@
     </div>
     <div v-if="facets.categories && facets.categories.all.buckets && facets.categories.all.buckets.length>0">
       <p class="ml-2 py-2 font-semibold text-sm px-5">CATEGORY</p>
-      <ul class="ml-2 py-2 px-5">
+      <ul class="ml-2 py-2 px-5 filter-container">
         <li
           v-for="b in facets.categories && facets.categories.all.buckets"
           :key="b.key"
@@ -36,7 +36,7 @@
 
     <div v-if="facets.brands && facets.brands.all.buckets && facets.brands.all.buckets.length>0">
       <p class="ml-2 py-2 font-semibold text-sm px-5">BRAND</p>
-      <ul class="ml-2 py-2 px-5">
+      <ul class="ml-2 py-2 px-5 filter-container">
         <li
           v-for="b in facets.brands && facets.brands.all.buckets"
           :key="b.key"
@@ -53,7 +53,7 @@
 
     <div v-if="facets.sizes && facets.sizes.all.buckets && facets.sizes.all.buckets.length>0">
       <p class="ml-2 py-2 font-semibold text-sm px-5">SIZES</p>
-      <ul class="ml-2 py-2 px-5">
+      <ul class="ml-2 py-2 px-5 filter-container">
         <li
           v-for="b in facets.sizes && facets.sizes.all.buckets"
           :key="b.key"
@@ -74,7 +74,7 @@
       v-if="v.key!='Color' && v.val && v.val.buckets.length>0"
     >
       <p class="ml-2 py-2 font-semibold text-sm px-5">{{v.key}}</p>
-      <ul class="ml-2 py-2 px-5">
+      <ul class="ml-2 py-2 px-5 filter-container">
         <li
           v-for="f in v.val.buckets"
           :key="f.key"
@@ -91,7 +91,7 @@
 
     <div v-if="facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets && facets.colors.colors.name.buckets.length>0">
       <p class="ml-2 py-2 font-semibold text-sm px-5">COLOR</p>
-      <ul class="ml-2 py-2 px-5">
+      <ul class="ml-2 py-2 px-5 filter-container">
         <li
           class="colour-listItem"
           v-for="b in facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets"
@@ -109,7 +109,7 @@
     </div>
     <div>
       <p class="ml-2 py-2 font-semibold text-sm px-5 py-2">DISCOUNT RANGE</p>
-      <ul class="ml-2 py-2 text-gray-600 text-sm px-5 py-2">
+      <ul class="ml-2 py-2 text-gray-600 text-sm px-5 py-2 filter-container">
         <li>
           <Radio />
         </li>
@@ -180,6 +180,10 @@ export default {
 </script>
 
 <style scoped>
+.filter-container {
+  max-height: 300px;
+  overflow: auto;
+}
 .bb {
   border-bottom: 1px solid #edebef;
   height: max-content;

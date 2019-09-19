@@ -3,7 +3,10 @@
     <nav class="flex items-center justify-between flex-wrap bg-white-800 shadow">
       <div class="flex items-center flex-shrink-0 text-orange mr-6 order-1">
         <nuxt-link to="/">
-          <!-- <img class="w-12 h-10 ml-4" src="/logo.png" /> -->
+          <img
+            class="w-12 h-10 ml-4"
+            src="/logo.svg"
+          />
         </nuxt-link>
         <div class="hidden lg:block flex flex-none text-sm py-4 xs:justify-between items-center text-gray order-2">
           <Megamenu />
@@ -53,7 +56,7 @@
           />
           <div class="flex mr-6 text-xs inline-text-gray font-bold">
             Bag
-            <span class="text-white font-bold desktop-badge rounded-full px-1 absolute">1</span>
+            <span class="text-white font-bold desktop-badge rounded-full px-1 absolute">{{cart.qty }}</span>
           </div>
         </nuxt-link>
       </div>

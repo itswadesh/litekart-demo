@@ -5,25 +5,23 @@
       <div class="xs:w-full lg:w-2/4 flex justify-start flex-wrap">
         <div class="flex md:flex-col xs:order-2 md:order-1">
           <img
+            v-for="(i,ix) in product.imgUrls"
+            :key="ix"
             class="w-28 cursor-pointer"
-            src="/small-product.png"
-          />
-          <img
-            class="w-28 cursor-pointer"
-            src="/small-product.png"
-          />
-          <img
-            class="w-28 cursor-pointer"
-            src="/small-product.png"
+            v-lazy="i"
           />
         </div>
         <div class="flex-1 xs:order-1 md:order-2">
           <img
             class="inline-block w-full border border-gray-400"
-            src="/product.png"
+            v-lazy="`${product.imgUrls[0]}`" 
           />
           <div class="w-full flex">
-            <button class="bg-orange-500 flex-1 my-3 p-3 md:p-5 mr-2 text-center font-bold text-white focus:outline-none text-xs lg:text-lg">
+            <button 
+            :disabled="!selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
+                  v-if="!checkCart({pid:product._id, vid:selectedVariant._id})"
+                  @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
+                  class="bg-orange-500 flex-1 my-3 p-3 md:p-5 mr-2 text-center font-bold text-white focus:outline-none text-xs lg:text-lg">
               <i
                 class="fa fa-shopping-cart mr-2"
                 aria-hidden="true"
@@ -54,7 +52,7 @@
             <i
               class="fa fa-angle-right"
               aria-hidden="true"
-            ></i> FitBit Smart Band
+            ></i> {{product.name}}
           </p>
           <p class="w-3/12 text-right right-0 pr-3">
             <i
@@ -413,12 +411,526 @@
   </div>
 </template>
 
-<script>
-import Header from "~/components/Header";
+  <script>
+const  Header = () => import("~/components/Header");
+import { HOST, TITLE, DESCRIPTION, KEYWORDS, sharingLogo } from "~/config";
+import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
+
 export default {
-  components: { Header }
+  async validate({ query, $axios }) {
+    try {
+      let product = await $axios.$get("products/" + query.id);
+      return !!product;
+    } catch (e) {
+      return false;
+    }
+  },
+  components: {
+    Header,
+  },
+  mounted() {
+    if (this.product) {
+      this.scrollTo();
+    }
+  },
+  computed: {
+    ...mapGetters({
+      checkCart: "cart/checkCart"
+    }),
+    calculateOffPercent() {
+      let percent =
+        ((this.product.variants[0].mrp - this.product.variants[0].price) *
+          100) /
+        this.product.variants[0].mrp;
+      return Math.round(percent);
+    },
+    calculatePrice() {
+      let price = 0;
+      if (this.product.variants[0].price < this.product.variants[0].mrp) {
+        price = this.product.variants[0].price;
+      } else {
+        price = this.product.variants[0].mrp;
+      }
+      return price;
+    }
+  },
+  async asyncData({ params, query, $axios }) {
+    let product = {},
+      selectedVariant = null,
+      err = null;
+    try {
+      product = await $axios.$get(`products/${query.id}`);
+      if (!product) return;
+      for (let v of product && product.variants) {
+        if (v.stock > 0) {
+          selectedVariant = v;
+          break;
+        }
+      }
+    } catch (e) {
+      product = {};
+      selectedVariant = null;
+      if (e && e.response && e.response.data) {
+        err = e.response.data;
+      } else if (e && e.response) {
+        err = e.response;
+      } else {
+        err = e;
+      }
+      console.log("err...", `${err}`);
+    }
+
+    const structuredData = {
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      name: product && product.name,
+      description: product && product.description,
+      sku: product && product.sku,
+      image:
+        HOST +
+        (product && product.imgA && product.imgA[0] && product.imgA[0].medium)
+    };
+    return { product, selectedVariant, err, structuredData };
+  },
+  data() {
+    return {
+      shake: false,
+      promotion: null,
+      currentImage: null,
+      similarProducts: [],
+      RecentlyViewedProducts: [],
+      YouMightAlsoLikeProducts: [],
+      carouselShow: false,
+      loading: false,
+      productDescription: false,
+      plusIcon: true,
+      minusIcon: false,
+      selectedImgIndex: 0,
+      sizepopup: false,
+      // slider_1: true,
+      slider_2: true,
+      groupProducts: [],
+      userSelectedVariant: null,
+      slider_options: {
+        items: 9,
+        gutter: 10,
+        loop: false,
+        swipeAngle: 50,
+        controls: true,
+        nav: false,
+        mouseDrag: true,
+        responsive: {
+          50: {
+            items: 1
+          },
+          550: {
+            items: 2
+          },
+          700: {
+            items: 3
+          },
+          900: {
+            items: 4
+          },
+          1150: {
+            items: 5
+          }
+        }
+      }
+    };
+  },
+  watch: {
+    // images(newVal) {
+    //   this.currentImage = newVal[0];
+    // }
+  },
+  methods: {
+    ...mapMutations(["setErr"]),
+    ...mapActions({ addToCart: "cart/addToCart" }),
+    selectedColor() {
+      alert("ere");
+    },
+    toast() {
+      this.$toast
+        .show(
+          `
+      <div class="toast-card">
+        <img class="img" src="${this.currentImage.small}"/>
+        <div class="detail">
+          <div class="name">${this.product.name}</div>
+          <div class="mute">Added to your cart</div>
+          <div class="link">View cart</div>
+        </div>
+      </div>
+      `,
+          {
+            containerClass: "sw-toast-container",
+            theme: "outline",
+            position: "top-right",
+            singleton: false
+          }
+        )
+        .goAway(5000);
+    },
+    scrollTo() {
+      window.scroll({
+        behavior: "smooth",
+        left: 0,
+        top: 0
+      });
+    },
+    addToBag(obj) {
+      // if (!this.userSelectedVariant) {
+      //   this.setErr("Please select a size");
+      //   this.shake = true;
+      //   setTimeout(() => {
+      //     this.shake = false;
+      //   }, 3000);
+      //   return;
+      // } else {
+        this.addToCart(obj);
+        if (
+          this.$store.state.settings.analytics.fbPixels_status === "enabled"
+        ) {
+          this.$fb.track("AddToCart", {
+            content_type: "product",
+            content_ids: this.product._id,
+            content_name: this.product.name,
+            currency: "INR",
+            value: this.calculatePrice
+          });
+        }
+        //this.toast();
+      // }
+    },
+    showAsCurrentImage(image) {
+      this.currentImage = image;
+    },
+    showDescription() {
+      this.productDescription = true;
+      this.plusIcon = false;
+      this.minusIcon = true;
+    },
+    hideDescription() {
+      this.productDescription = false;
+      this.plusIcon = true;
+      this.minusIcon = false;
+    },
+    changeVariant(v) {
+      this.selectedVariant = v;
+    },
+    slider_1_options() {
+      return Object.assign({}, this.slider_options, {
+        container: this.$refs.slider_1,
+        nextButton: this.$refs.slider_1_next_btn,
+        prevButton: this.$refs.slider_1_prev_btn
+      });
+    },
+    slider_2_options() {
+      return Object.assign({}, this.slider_options, {
+        container: this.$refs.slider_2,
+        nextButton: this.$refs.slider_2_next_btn,
+        prevButton: this.$refs.slider_2_prev_btn
+      });
+    },
+    handler() {},
+    go(url) {
+      this.$router.push(url);
+    },
+    // async getReviews() {
+    //   if (!this.product || !this.product._id) return;
+    //   try {
+    //     this.loading = true;
+    //     let r = await this.$axios.$get("reviews/product/" + this.product._id);
+    //     this.loading = false;
+    //     this.publishRatings(r);
+    //     this.reviews = r;
+    //   } catch (err) {
+    //     this.loading = false;
+    //     this.error(err);
+    //   }
+    // },
+    publishRatings(r) {
+      let vm = this;
+      let reviewCount = 0;
+      let rating = {
+        r5: 0,
+        r4: 0,
+        r3: 0,
+        r2: 0,
+        r1: 0,
+        count: 0,
+        total: 0,
+        avg: 0
+      };
+      r.forEach(function(i) {
+        if (i.message) reviewCount++;
+        if (i.rating) rating.count++;
+        if (i.rating) rating.total = rating.total + i.rating;
+        if (i.rating == 5) rating.r5++;
+        if (i.rating == 4) rating.r4++;
+        if (i.rating == 3) rating.r3++;
+        if (i.rating == 2) rating.r2++;
+        if (i.rating == 1) rating.r1++;
+      }, this);
+      this.reviewCount = reviewCount;
+      if (rating.count === 0) rating.avg = 0;
+      else rating.avg = Math.round((rating.total / rating.count) * 10) / 10;
+      this.rating = rating;
+    },
+    selectVariant(s) {
+      this.selectedVariant = s;
+      this.userSelectedVariant = s;
+      this.selectedImgIndex = 0;
+    },
+    selectImg(ix) {
+      this.selectedImgIndex = ix;
+    },
+    afterImageLoaded(component) {},
+    error(err) {
+      this.setError(err.err);
+    },
+    clearRecentItems() {
+      this.RecentlyViewedProducts = [];
+    }
+  },
+  async created() {
+    //similar products vue.ai
+    /*var self = this;
+    this.$axios
+      .post(
+        "https://4e152636-b7cc-4e3f-b3bd-7ef129a3d46b.mock.pstmn.io/widgets",
+        {
+          api_key: "6a913f1119c88c21df451d1ceba9f6c9a104e91b",
+          num_results: "[10]",
+          product_id: self.product._id,
+          widget_list: "[0]",
+          mad_uuid: self.$store.state.guestId,
+          details: "true"
+        },
+        {
+          headers: {
+            "Postman-Token": "bf420477-d207-4c3b-9cc8-f2ccccd2cc24",
+            "cache-control": "no-cache",
+            "x-mock-response-name":
+              "Widget 0 : Visually Similar Recommendations",
+            "x-api-key": "ed91e96a0fb645419a6a1f3017edc3cb",
+            "Content-Type": "application/json"
+          }
+        }
+      )
+      .then(function(response) {
+        self.similarProducts = response.data.data;
+      });*/
+    //end of similar products code
+    this.currentImage = this.product.imgA && this.product.imgA[0];
+    if(this.product.group && this.product.group.trim()){
+      this.groupProducts = await this.$axios.get(
+              "products/groupItems/" + this.product.group
+      );
+    }
+
+    if (
+      !this.product ||
+      !this.product.categories ||
+      !this.product.categories[0]
+    )
+      return;
+    if (this.product && this.product.categories) {
+      if (
+        this.product &&
+        this.product.categories &&
+        this.product.categories[0]
+      ) {
+        // const vm = this;
+        // try {
+        //   vm.loading = true;
+        //   vm.YouMightAlsoLikeProducts = await vm.$axios.$get("products", {
+        //     "categories._id": this.product.categories[0]._id,
+        //     params: { limit: 10 }
+        //   });
+        //   vm.loading = false;
+        // } catch (e) {
+        //   vm.loading = false;
+        // }
+      }
+      // `products/${this.product.categories[0]._id}`
+    }
+    this.promotion = await this.$axios.$get(
+      "promotions/product/" + this.$route.query.id
+    );
+    if (!process.server) {
+      if (this.product) {
+        let recentlyViewd = localStorage.getItem("recent");
+        const currentId = this.product._id;
+        if (recentlyViewd) {
+          recentlyViewd = JSON.parse(recentlyViewd);
+          recentlyViewd.reverse();
+          if (!recentlyViewd.includes(currentId)) {
+            if (recentlyViewd.length > 10) {
+              recentlyViewd = [];
+            }
+            recentlyViewd.push(currentId);
+            localStorage.setItem("recent", JSON.stringify(recentlyViewd));
+          }
+        } else {
+          let productId = [];
+          productId.push(currentId);
+          localStorage.setItem("recent", JSON.stringify(productId));
+        }
+
+        if (recentlyViewd && recentlyViewd.length > 0) {
+          let recentProduct = await this.$axios.$post(
+            "products/ids",
+            recentlyViewd
+          );
+          this.RecentlyViewedProducts = recentProduct;
+        }
+      } else {
+        // console.log("NO LOCALSTORAGE");
+      }
+    }
+  },
+  head() {
+    const host = process.server
+      ? this.$ssrContext.req.headers.host
+      : window.location.host;
+    return {
+      title:
+        (this.product && this.product.metaTitle) ||
+        (this.product && this.product.name) ||
+        TITLE,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            (this.product && this.product.metaDescription) ||
+            (this.product && this.product.description) ||
+            DESCRIPTION
+        },
+        {
+          hid: "keywords",
+          name: "Keywords",
+          property: "keywords",
+          content:
+            (this.product && this.product.metaKeywords) ||
+            (this.product && this.product.keywords) ||
+            KEYWORDS
+        },
+
+        // OpenGraph data
+        {
+          hid: "og:title",
+          name: "og_title",
+          property: "og:title",
+          content:
+            (this.product && this.product.metaTitle) ||
+            (this.product && this.product.name) ||
+            TITLE
+        },
+        {
+          hid: "og:description",
+          name: "Description",
+          property: "og:description",
+          content:
+            (this.product && this.product.metaDescription) ||
+            (this.product && this.product.description) ||
+            DESCRIPTION
+        },
+        {
+          name: "og_url",
+          property: "og:url",
+          content: host + "/" + this.product.slug + "?id=" + this.product._id
+        },
+        {
+          name: "og_image",
+          property: "og:image",
+          content:
+            (this.product &&
+              this.product.imgA &&
+              this.product.imgA[0] &&
+              this.product.imgA[0].large) ||
+            sharingLogo
+        },
+        {
+          property: "og:image:width",
+          content: "600"
+        },
+        {
+          property: "og:image:height",
+          content: "600"
+        },
+        // Twitter
+        {
+          name: "twitter:title",
+          content:
+            (this.product && this.product.metaTitle) ||
+            (this.product && this.product.name) ||
+            TITLE
+        },
+        {
+          name: "twitter:description",
+          content:
+            (this.product && this.product.metaDescription) ||
+            (this.product && this.product.description) ||
+            DESCRIPTION
+        },
+        {
+          name: "twitter:image:src",
+          content:
+            (this.product &&
+              this.product.imgA &&
+              this.product.imgA[0] &&
+              this.product.imgA[0].large) ||
+            sharingLogo
+        },
+        // Google / Schema.org markup:
+        {
+          hid: "product_name",
+          itemprop: "name",
+          content: (this.product && this.product.name) || TITLE
+        },
+        {
+          hid: "product_description",
+          itemprop: "description",
+          content:
+            (this.product && this.product.metaDescription) ||
+            (this.product && this.product.description) ||
+            DESCRIPTION
+        },
+        {
+          hid: "product_image",
+          itemprop: "image",
+          content:
+            (this.product &&
+              this.product.imgA &&
+              this.product.imgA[0] &&
+              this.product.imgA[0].large) ||
+            sharingLogo
+        },
+        {
+          hid: "product_price",
+          name: "product_price",
+          property: "product:price",
+          content:
+            this.product &&
+            this.product.variants &&
+            this.product.variants[0] &&
+            this.product.variants[0].price
+        }
+      ]
+      // script: [
+      //   {
+      //     innerHTML: JSON.stringify(this.structuredData),
+      //     type: "application/ld+json"
+      //   }
+      // ]
+    };
+  }
 };
 </script>
+
 
 <style>
 </style>
