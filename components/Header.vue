@@ -16,7 +16,20 @@
         <Search />
       </div>
       <div class="flex items-center flex-shrink-0 py-4 order-3 sm:order-4">
-        <nuxt-link to="/login">
+        <nuxt-link
+          to="/login"
+          v-if="!user"
+        >
+          <img
+            class="w-5 h-4 ml-2"
+            src="/avatar.png"
+          />
+          <div class="mr-6 inline-text-gray text-xs font-bold">Profile</div>
+        </nuxt-link>
+        <nuxt-link
+          to="/my"
+          v-else
+        >
           <img
             class="w-5 h-4 ml-2"
             src="/avatar.png"
@@ -48,11 +61,23 @@
   </header>
 </template>
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 import Megamenu from "~/components/Megamenu";
 import Search from "~/components/Search";
 export default {
   components: { Megamenu, Search },
+  computed: {
+    user() {
+      return (this.$store.state.auth || {}).user || null;
+    },
+    cart() {
+      return this.$store.state.cart || {};
+    },
+    ...mapGetters({
+      checkCart: "cart/checkCart",
+      showCart: "cart/showCart"
+    })
+  },
   methods: {
     closeSidebar() {
       this.sidebar = false;
@@ -63,37 +88,7 @@ export default {
     go(url) {
       this.$router.push(url);
     }
-    // ...mapActions({
-    //   addToCart: "cart/addToCart",
-    //   fetch: "cart/fetch"
-    // }),
-    // async checkAndAddToCart(item) {
-    //   try {
-    //     this.adding = true;
-    //     await this.addToCart(item);
-    //     this.adding = false;
-    //   } catch (e) {
-    //     console.log("err...", e.response.data);
-    //   }
-    //   this.refreshStock(); // Not required, because stock is being queried from database through addToCart... On page load stock need to be refreshed and added to items variable. Hence this is also required
-    // },
-    // async refreshStock() {
-    //   // Each items stock is checked on page load
-    //   try {
-    //     this.items = await this.$axios.$post(
-    //       `products/refresh`,
-    //       this.cartItems
-    //     );
-    //   } catch (e) {
-    //     this.items = [];
-    //   }
-    // }
   }
-  // computed: {
-  //   user() {
-  //     return (this.$store.state.auth || {}).user || null;
-  //   }
-  // },
 };
 </script>
 <style scoped>

@@ -65,3 +65,7 @@ Vue.filter('truncate', function (text, stop, clamp) {
 Vue.filter('nl2br', function (text, stop, clamp) {
     return text.replace(/(?:\r\n|\r|\n)/g, '<br />')
 })
+Vue.filter('first', function (text) {
+    if (!text) return text
+    return text.substring(0, 1).toUpperCase()
+})
