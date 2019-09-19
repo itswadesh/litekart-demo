@@ -72,7 +72,7 @@ export default {
       this.showInstantSearch = false;
     },
     async search(q) {
-      const res = await this.$axios.$get("products/esis", {
+      const res = await this.$axios.$get("products/autocomplete", {
         params: { q }
       });
       this.data = res.data;
