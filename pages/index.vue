@@ -1,61 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="flex items-center h-auto p-5 xs:block lg:hidden" style="overflow-x:scroll">
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-      <div class="flex-1 text-gray-700 rounded-full shadow text-center px-4 py-2 m-2">
-        <img src="/circle-filter-imgs-1.png" class="w-20" />
-        <div class="xs:text-xs">BABIES</div>
-      </div>
-    </div>
-
+    <MegamenuMobile />
     <div class="px-2">
       <Carousel />
       <Deals />
@@ -71,8 +17,10 @@ import Carousel from "~/components/Carousel";
 import Deals from "~/components/Deals";
 import Banners from "~/components/Banners";
 import YouMayLike from "~/components/YouMayLike";
+import MegamenuMobile from "~/components/MegamenuMobile";
+
 export default {
-  components: { Header, Carousel, Deals, Banners, YouMayLike }
+  components: { Header, MegamenuMobile, Carousel, Deals, Banners, YouMayLike }
 };
 
 // $(document).ready(function() {
