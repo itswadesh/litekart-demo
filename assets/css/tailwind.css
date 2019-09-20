@@ -35,23 +35,24 @@ body{
     border-radius: 5px;
     background: #fff;
     box-shadow: 5px rgba(0, 0, 0, 0.4);
-    height: 11rem; 
+    height: 8rem; 
+    width:60%;
+    padding:2em;
   }
 .sw-toast-container .toast-card {
-  padding: 10px 0;
   height: 100px;
   display: flex;
 }
 .sw-toast-container .toast-card .img {
-  height: 8rem;
+  height: 6rem;
 }
 .sw-toast-container .toast-card .detail {
   color: #111;
-   height: 9rem;
+  height: 9rem;
   margin-left: 10px;
 }
 .sw-toast-container .toast-card .detail .name {
-  font-weight: bold;
+  font-weight: normal;
 }
 .sw-toast-container .toast-card .detail .mute {
   color: #666;
