@@ -15,7 +15,7 @@
       <Banners />
       <YouMayLike />
     </div>
-    <BackToTop />
+    <BackToTopDark />
   </div>
 </template>
 
@@ -26,7 +26,7 @@ import Deals from "~/components/Deals";
 import Banners from "~/components/Banners";
 import YouMayLike from "~/components/YouMayLike";
 import MegamenuMobile from "~/components/MegamenuMobile";
-import { Carousel, ImageCard, BackToTop } from "~/components/ui";
+import { Carousel, ImageCard, BackToTopDark } from "~/components/ui";
 export default {
   data() {
     return {
@@ -57,7 +57,7 @@ export default {
     YouMayLike,
     Carousel,
     ImageCard,
-    BackToTop
+    BackToTopDark
   }
 };
 </script>
