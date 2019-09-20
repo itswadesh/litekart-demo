@@ -556,8 +556,8 @@ export default {
       this.$toast
         .show(
           `
-      <div class="toast-card">
-        <img class="img" src="${this.currentImage}"/>
+      <div class="toast-card h-64">
+        <img class="img w-32 h-64" src="${this.currentImage}"/>
         <div class="detail">
           <div class="name">${this.product.name}</div>
           <div class="mute">Added to your cart</div>

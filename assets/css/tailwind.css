@@ -35,17 +35,19 @@ body{
     border-radius: 5px;
     background: #fff;
     box-shadow: 5px rgba(0, 0, 0, 0.4);
+    height: 11rem; 
   }
 .sw-toast-container .toast-card {
-  padding: 20px 0;
+  padding: 10px 0;
   height: 100px;
   display: flex;
 }
 .sw-toast-container .toast-card .img {
-  height: auto;
+  height: 8rem;
 }
 .sw-toast-container .toast-card .detail {
   color: #111;
+   height: 9rem;
   margin-left: 10px;
 }
 .sw-toast-container .toast-card .detail .name {
