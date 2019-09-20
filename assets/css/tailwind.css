@@ -44,7 +44,7 @@ body{
   display: flex;
 }
 .sw-toast-container .toast-card .img {
-  height: 6rem;
+  height: 4rem;
 }
 .sw-toast-container .toast-card .detail {
   color: #111;

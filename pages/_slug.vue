@@ -498,7 +498,7 @@ export default {
             singleton: false
           }
         )
-        .goAway(500000);
+        .goAway(500);
     },
     scrollTo() {
       window.scroll({

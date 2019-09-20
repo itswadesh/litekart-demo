@@ -1,5 +1,8 @@
 <template>
-  <div class="py-2\1 bg-white-800 shadow bg-white" v-if="facets">
+  <div
+    class="py-2\1 bg-white-800 shadow bg-white max-w-lg h-screen w-screen top-0 left-0 fixed"
+    v-if="facets"
+  >
     <!-- Mobile version starts here -->
     <div class="block md:hidden" v-if="showMobileFilter">
       <div class="flex shadow-md py-4 bg-white w-full">
