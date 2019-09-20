@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav class="flex items-center justify-between flex-wrap bg-white-800 shadow">
-      <div class="flex items-center flex-shrink-0 text-orange mr-10 order-1">
+      <div class="flex items-center flex-shrink-0 text-orange mr-16 order-1">
         <nuxt-link to="/">
           <img class="w-12 h-10 ml-4" src="/logo.svg" />
         </nuxt-link>
@@ -14,7 +14,7 @@
       <div class="mr-4 ml-4 py-2 border-gray-300 relative order-4 sm:order-3" style="flex:1">
         <Search />
       </div>
-      <div class="flex items-center flex-shrink-0 py-4 order-3 sm:order-4">
+      <div class="flex items-center flex-shrink-0 py-4 order-3 sm:order-4 mr-2 ml-6">
         <nuxt-link to="/login" v-if="!user">
           <img class="w-5 h-4 ml-2" src="/avatar.png" />
           <div class="mr-6 inline-text-gray text-xs font-bold">Profile</div>
