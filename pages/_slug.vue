@@ -9,12 +9,14 @@
             :key="ix"
             class="w-24 cursor-pointer"
             v-lazy="i"
+            alt=""
+            @click="showAsCurrentImage(i)"
           />
         </div>
         <div class="flex-1 xs:order-1 md:order-2">
           <img
             class="inline-block w-full border border-gray-400"
-            v-lazy="`${product.imgUrls[0]}`"
+            v-lazy="`${currentImage}`"
           />
           <div class="w-full flex">
             <button
@@ -489,9 +491,7 @@ export default {
       name: product && product.name,
       description: product && product.description,
       sku: product && product.sku,
-      image:
-        HOST +
-        (product && product.imgA && product.imgA[0] && product.imgA[0].medium)
+      image: HOST + (product && product.imgUrls && product.imgUrls[0])
     };
     return { product, selectedVariant, err, structuredData };
   },
@@ -557,7 +557,7 @@ export default {
         .show(
           `
       <div class="toast-card">
-        <img class="img" src="${this.currentImage.small}"/>
+        <img class="img" src="${this.currentImage}"/>
         <div class="detail">
           <div class="name">${this.product.name}</div>
           <div class="mute">Added to your cart</div>
@@ -600,7 +600,7 @@ export default {
           value: this.calculatePrice
         });
       }
-      //this.toast();
+      this.toast();
       // }
     },
     showAsCurrentImage(image) {
@@ -695,7 +695,7 @@ export default {
     }
   },
   async created() {
-    this.currentImage = this.product.imgA && this.product.imgA[0];
+    this.currentImage = this.product.imgUrls && this.product.imgUrls[0];
     if (this.product.group && this.product.group.trim()) {
       this.groupProducts = await this.$axios.get(
         "products/groupItems/" + this.product.group

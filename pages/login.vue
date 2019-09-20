@@ -85,7 +85,7 @@ export default {
         });
         if (res.token) {
           this.$store.commit("success", "Verified! Thank You.");
-          let returnUrl = this.$route.query.return || "/";
+          let returnUrl = this.$route.query.return || "/my";
           this.$router.push(returnUrl);
         }
       } catch (e) {

@@ -57,7 +57,7 @@
 
       <li>
         <nuxt-link
-          to="/my/order/details"
+          to="/my/orders/details"
           class="w-full flex flex-wrap text-lg"
         >
           <div class="w-1/5">
@@ -70,8 +70,8 @@
         </nuxt-link>
       </li>
       <li>
-        <a
-          href="#"
+        <nuxt-link
+          to="/my/password"
           class="w-full flex flex-wrap text-lg"
         >
           <div class="w-1/5">
@@ -81,7 +81,7 @@
             ></i>
           </div>
           <div class="w-4/5 text-left p-3">Saved Cards</div>
-        </a>
+        </nuxt-link>
       </li>
       <li>
         <a
@@ -129,14 +129,14 @@ export default {
   methods: {
     async logout() {
       await this.$store.dispatch("auth/logout");
-      this.$router.push('/')
+      this.$router.push("/");
     }
   }
 };
 </script>
 <style scoped>
-ul > li:hover{
-  background-color:#f6f6f6;
+ul > li:hover {
+  background-color: #f6f6f6;
 }
 .logout {
   cursor: pointer;

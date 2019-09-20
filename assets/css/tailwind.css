@@ -28,3 +28,37 @@ body{
 .input-bg{
   background-color: #F5F5F6;
 }
+
+/* Toast */
+.sw-toast-container .toasted.outline {
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 5px rgba(0, 0, 0, 0.4);
+  }
+.sw-toast-container .toast-card {
+  padding: 20px 0;
+  height: 100px;
+  display: flex;
+}
+.sw-toast-container .toast-card .img {
+  height: auto;
+}
+.sw-toast-container .toast-card .detail {
+  color: #111;
+  margin-left: 10px;
+}
+.sw-toast-container .toast-card .detail .name {
+  font-weight: bold;
+}
+.sw-toast-container .toast-card .detail .mute {
+  color: #666;
+  font-size: 11px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.sw-toast-container .toast-card .detail .link {
+  font-size: 11px;
+  color: deeppink;
+}
+/* End Toast */
