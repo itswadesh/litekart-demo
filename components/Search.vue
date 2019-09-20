@@ -2,7 +2,7 @@
   <form
     novalidate
     autocomplete="off"
-    @submit.stop.prevent="submit()"
+    @submit.stop.prevent="submit(q)"
     @click="showInstantSearch=true"
     v-on-clickaway="onClose"
   >
@@ -72,13 +72,13 @@ export default {
       this.showInstantSearch = false;
     },
     async search(q) {
-      const res = await this.$axios.$get("products/autocomplete", {
+      const res = await this.$axios.$get("/products/autocomplete", {
         params: { q }
       });
       this.data = res.data;
     },
-    submit() {
-      this.$router.push("/search?q=" + this.search);
+    submit(q) {
+      this.$router.push("/search?q=" + q);
     }
   },
   watch: {

@@ -13,19 +13,21 @@
         <div class="pt-5 pb-5">
           <div class="w-full left-0">
             <div class="mt-16">
-              <img class="containerr w-1/2" src="/emptycart.png" />
+              <img
+                class="containerr w-1/2"
+                src="/emptycart.png"
+              />
             </div>
           </div>
           <div class="w-full left-0">
             <div>
               <p class="text-center font-bold text-lg text-black">There's nothing in here</p>
-              <p
-                class="text-center font-hairline text-lg text-black"
-              >You have not added any items to your cart yet.</p>
+              <p class="text-center font-hairline text-lg text-black">You have not added any items to your cart yet.</p>
             </div>
           </div>
           <div class="mt-8 margin-0 flex justify-center">
             <button
+              @click="$router.push('/search')"
               class="mt-10 py-3 px-12 tracking-wide bg-pink-500 hover:bg-pink-600 text-white tet-2xl font-bold rounded"
             >SHOP NOW</button>
           </div>

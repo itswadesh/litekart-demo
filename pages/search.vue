@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div>
-      <Header />
-    </div>
+    <Header />
     <MobileFilters
       class="flex-none max-w-xs"
       :facets="facets"
@@ -173,7 +171,7 @@ export default {
     async getData() {
       try {
         this.loading = true;
-        const products = await this.$axios.$get("products/es", {
+        const products = await this.$axios.$get("/products/es", {
           params: { ...this.$route.query }
         });
         this.productCount = products.count;
