@@ -39,13 +39,13 @@
           />
           <div class="mr-6 inline-text-gray text-xs font-bold">Profile</div>
         </nuxt-link>
-        <div>
+        <nuxt-link to="/wishlist">
           <img
             class="w-5 h-4 ml-3 center"
             src="/bookmark.png"
           />
           <div class="mr-6 text-xs inline-text-gray font-bold">Whistlist</div>
-        </div>
+        </nuxt-link>
         <nuxt-link
           to="/cart"
           class="relative"

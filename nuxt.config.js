@@ -5,7 +5,7 @@ const PROXY = process.env.API_URL || API_URL
 export default {
   mode: 'spa',
   head,
-  loading: { color: '#fff' },
+  loading: '~/components/Loading.vue',
   css: [],
   plugins: [
     '~/plugins/filters.js',
