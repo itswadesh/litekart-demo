@@ -7,21 +7,22 @@
           <img
             v-for="(i,ix) in product.imgUrls"
             :key="ix"
-            class="w-28 cursor-pointer"
+            class="w-24 cursor-pointer"
             v-lazy="i"
           />
         </div>
         <div class="flex-1 xs:order-1 md:order-2">
           <img
             class="inline-block w-full border border-gray-400"
-            v-lazy="`${product.imgUrls[0]}`" 
+            v-lazy="`${product.imgUrls[0]}`"
           />
           <div class="w-full flex">
-            <button 
-            :disabled="!selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
-                  v-if="!checkCart({pid:product._id, vid:selectedVariant._id})"
-                  @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
-                  class="bg-orange-500 flex-1 my-3 p-3 md:p-5 mr-2 text-center font-bold text-white focus:outline-none text-xs lg:text-lg">
+            <button
+              :disabled="!selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
+              v-if="!checkCart({pid:product._id, vid:selectedVariant._id})"
+              @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
+              class="bg-orange-500 flex-1 my-3 p-3 md:p-5 mr-2 text-center font-bold text-white focus:outline-none text-xs lg:text-lg"
+            >
               <i
                 class="fa fa-shopping-cart mr-2"
                 aria-hidden="true"
@@ -62,7 +63,7 @@
           </p>
         </div>
         <div class="w-full">
-          <p class="xs:w-full lg:w-9/12 left-0 text-left text-lg text-black">Fitbit Inspire HR (Black Strap, Size : Regular)</p>
+          <p class="xs:w-full lg:w-9/12 left-0 text-left text-lg text-black">{{product.name}}</p>
           <p class="mt-2">
             <a
               href
@@ -78,7 +79,7 @@
               <span class="text-gray-500 text-sm p-1">214 Ratings & 22 Reviews</span>
             </a>
           </p>
-          <p class="w-9/12 left-0 text-left text-2xl font-bold text-black mt-2">₹8,999</p>
+          <p class="w-9/12 left-0 text-left text-2xl font-bold text-black mt-2">{{product.variants[0].price | currency}}</p>
           <ul class="mt-2 text-sm">
             <li class="mt-3">
               <i
@@ -412,7 +413,7 @@
 </template>
 
   <script>
-const  Header = () => import("~/components/Header");
+const Header = () => import("~/components/Header");
 import { HOST, TITLE, DESCRIPTION, KEYWORDS, sharingLogo } from "~/config";
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
 
@@ -426,7 +427,7 @@ export default {
     }
   },
   components: {
-    Header,
+    Header
   },
   mounted() {
     if (this.product) {
@@ -460,11 +461,13 @@ export default {
       err = null;
     try {
       product = await $axios.$get(`products/${query.id}`);
-      if (!product) return;
-      for (let v of product && product.variants) {
-        if (v.stock > 0) {
-          selectedVariant = v;
-          break;
+      if (!product || product == "null") product = {};
+      else {
+        for (let v of product && product.variants) {
+          if (v.stock > 0) {
+            selectedVariant = v;
+            break;
+          }
         }
       }
     } catch (e) {
@@ -495,7 +498,6 @@ export default {
   data() {
     return {
       shake: false,
-      promotion: null,
       currentImage: null,
       similarProducts: [],
       RecentlyViewedProducts: [],
@@ -588,19 +590,17 @@ export default {
       //   }, 3000);
       //   return;
       // } else {
-        this.addToCart(obj);
-        if (
-          this.$store.state.settings.analytics.fbPixels_status === "enabled"
-        ) {
-          this.$fb.track("AddToCart", {
-            content_type: "product",
-            content_ids: this.product._id,
-            content_name: this.product.name,
-            currency: "INR",
-            value: this.calculatePrice
-          });
-        }
-        //this.toast();
+      this.addToCart(obj);
+      if (this.$store.state.settings.analytics.fbPixels_status === "enabled") {
+        this.$fb.track("AddToCart", {
+          content_type: "product",
+          content_ids: this.product._id,
+          content_name: this.product.name,
+          currency: "INR",
+          value: this.calculatePrice
+        });
+      }
+      //this.toast();
       // }
     },
     showAsCurrentImage(image) {
@@ -695,38 +695,10 @@ export default {
     }
   },
   async created() {
-    //similar products vue.ai
-    /*var self = this;
-    this.$axios
-      .post(
-        "https://4e152636-b7cc-4e3f-b3bd-7ef129a3d46b.mock.pstmn.io/widgets",
-        {
-          api_key: "6a913f1119c88c21df451d1ceba9f6c9a104e91b",
-          num_results: "[10]",
-          product_id: self.product._id,
-          widget_list: "[0]",
-          mad_uuid: self.$store.state.guestId,
-          details: "true"
-        },
-        {
-          headers: {
-            "Postman-Token": "bf420477-d207-4c3b-9cc8-f2ccccd2cc24",
-            "cache-control": "no-cache",
-            "x-mock-response-name":
-              "Widget 0 : Visually Similar Recommendations",
-            "x-api-key": "ed91e96a0fb645419a6a1f3017edc3cb",
-            "Content-Type": "application/json"
-          }
-        }
-      )
-      .then(function(response) {
-        self.similarProducts = response.data.data;
-      });*/
-    //end of similar products code
     this.currentImage = this.product.imgA && this.product.imgA[0];
-    if(this.product.group && this.product.group.trim()){
+    if (this.product.group && this.product.group.trim()) {
       this.groupProducts = await this.$axios.get(
-              "products/groupItems/" + this.product.group
+        "products/groupItems/" + this.product.group
       );
     }
 
@@ -736,29 +708,6 @@ export default {
       !this.product.categories[0]
     )
       return;
-    if (this.product && this.product.categories) {
-      if (
-        this.product &&
-        this.product.categories &&
-        this.product.categories[0]
-      ) {
-        // const vm = this;
-        // try {
-        //   vm.loading = true;
-        //   vm.YouMightAlsoLikeProducts = await vm.$axios.$get("products", {
-        //     "categories._id": this.product.categories[0]._id,
-        //     params: { limit: 10 }
-        //   });
-        //   vm.loading = false;
-        // } catch (e) {
-        //   vm.loading = false;
-        // }
-      }
-      // `products/${this.product.categories[0]._id}`
-    }
-    this.promotion = await this.$axios.$get(
-      "promotions/product/" + this.$route.query.id
-    );
     if (!process.server) {
       if (this.product) {
         let recentlyViewd = localStorage.getItem("recent");

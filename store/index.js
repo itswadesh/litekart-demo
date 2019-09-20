@@ -112,5 +112,8 @@ export const actions = {
     } else {
       this.$axios.setToken(null)
     }
+    try {
+      await dispatch('cart/fetch')
+    } catch (e) { }
   }
 }

@@ -1,0 +1,48 @@
+<template>
+  <div class="hidden lg:block">
+    <div class="w-full flex justify-between mt-6 mb-6">
+      <div class="w-1/3">
+        <div class="bg-gray-200 rounded pl-3 pr-3 pt-8 pb-8 mt-3 mb-3 mr-1 mr-1">
+          <i class="fa fa-truck text-gray-500"></i>
+          <p class="text-gray-500 text-lg font-normal">Free Shipping*</p>
+          <p class="text-gray-500 text-xs">On orders of ₹500 and above.Details</p>
+        </div>
+      </div>
+      <div class="w-1/3">
+        <div class="bg-gray-200 rounded pl-3 pr-3 pt-8 pb-8 mt-3 mb-3 mr-1 mr-1">
+          <i class="fa fa-undo text-gray-500"></i>
+          <p class="text-gray-500 text-lg font-normal">Easy returns</p>
+          <p class="text-gray-500 text-xs">Send items back for free within 15 days</p>
+        </div>
+      </div>
+      <div class="w-1/3">
+        <div class="bg-gray-200 rounded pl-3 pr-3 pt-8 pb-8 mt-3 mb-3 mr-1">
+          <i class="fa fa-shield text-gray-500"></i>
+          <p class="text-gray-500 text-lg font-normal">Secure shopping</p>
+          <p class="text-gray-500 text-xs">Your payment details are fully encrypted</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped>
+.hr-line {
+  border-bottom: 1px solid lightgray;
+}
+.fa-truck {
+  transform: scaleX(-1);
+}
+.bb {
+  border-bottom: 1px dashed lightgray;
+}
+.fa-truck,
+.fa-undo,
+.fa-shield {
+  font-size: 2rem;
+}
+</style>

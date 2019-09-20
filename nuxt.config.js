@@ -3,7 +3,7 @@ const { API_URL, head } = require("./config");
 const PROXY = process.env.API_URL || API_URL
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   head,
   loading: { color: '#fff' },
   css: [],
