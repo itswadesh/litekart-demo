@@ -1,22 +1,10 @@
 <template>
-  <div
-    class="py-2\1 bg-white-800 shadow bg-white"
-    v-if="facets"
-  >
+  <div class="py-2\1 bg-white-800 shadow bg-white" v-if="facets">
     <!-- Mobile version starts here -->
-    <div
-      class=" block md:hidden"
-      v-if="showMobileFilter"
-    >
+    <div class="block md:hidden" v-if="showMobileFilter">
       <div class="flex shadow-md py-4 bg-white w-full">
-        <div
-          class="flex-1 text-gray-700 text-left"
-          @click="$emit('hide')"
-        >
-          <i
-            class="fa fa-times px-6"
-            aria-hidden="true"
-          ></i>
+        <div class="flex-1 text-gray-700 text-left" @click="$emit('hide')">
+          <i class="fa fa-times px-6" aria-hidden="true"></i>
         </div>
         <div class="flex-1 text-gray-700 text-center font-bold px-4">FILTER</div>
         <div class="flex-1 text-gray-700 text-center px-4">Clear all</div>
@@ -24,7 +12,9 @@
       <div class="w-full flex">
         <div class="w-2/5">
           <ul class="bg-gray-300">
-            <li class="py-4 text-gray-700 font-bold px-4 border-l-4 border-pink-600">
+            <li
+              class="bg-white text-pink-500 py-4 text-gray-700 font-bold px-4 border-l-4 border-pink-600"
+            >
               <a href>Shop for</a>
             </li>
             <li class="py-4 text-gray-700 font-bold px-4">
@@ -52,10 +42,7 @@
         </div>
         <div class="3/5">
           <ul class="ml-2 py-2 px-5">
-            <li
-              v-for="b in facets.brands && facets.brands.buckets"
-              :key="b.key"
-            >
+            <li v-for="b in facets.brands && facets.brands.buckets" :key="b.key">
               <Checkbox
                 :count="b.doc_count"
                 :value="b.key"
