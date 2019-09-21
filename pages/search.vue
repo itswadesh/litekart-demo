@@ -81,12 +81,10 @@ import MobileFilters from "~/components/MobileFilters";
 import Header from "~/components/Header";
 import HeaderBody from "~/components/HeaderBody";
 import Logo from "~/components/Logo";
-import Button from "~/components/Button";
-import Loading from "~/components/Loading";
 import NoProduct from "~/components/NoProduct";
 import { constructURL } from "~/lib/";
 import vPagination from "vue-plain-pagination";
-import { BackToTopDark } from "~/components/ui";
+import { BackToTopDark, Loading } from "~/components/ui";
 export default {
   name: "ProductListing",
   data() {
@@ -137,7 +135,6 @@ export default {
   },
   components: {
     Logo,
-    Button,
     Header,
     HeaderBody,
     Footer,

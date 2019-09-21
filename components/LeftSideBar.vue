@@ -137,9 +137,7 @@
   </div>
 </template>
 <script>
-import Checkbox from "~/components/Checkbox";
-import ColorCheckbox from "~/components/ColorCheckbox";
-import Radio from "~/components/Radio";
+import { Checkbox, Radio } from "~/components/ui";
 import { constructURL } from "~/lib/";
 export default {
   name: "ProductSidebar",
@@ -155,7 +153,7 @@ export default {
       }
     }
   },
-  components: { Checkbox, ColorCheckbox, Radio },
+  components: { Checkbox, Radio },
   data() {
     return {
       loadingPrice: true // Required because after loading finished then only we will initiate the price slider component

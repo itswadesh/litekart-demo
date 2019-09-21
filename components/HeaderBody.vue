@@ -80,11 +80,14 @@
             v-model="sortBy"
             @change="sort"
           >
-            <option class="bg-white" v-for="(s,ix) in sorts" :key="ix" :value="s.val">{{s.name}}</option>
+            <option
+              class="bg-white"
+              v-for="(s,ix) in sorts"
+              :key="ix"
+              :value="s.val"
+            >{{s.name}}</option>
           </select>
-          <div
-            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-          >
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
             <i class="fa fa-caret-down px-1" />
           </div>
         </div>
@@ -92,12 +95,21 @@
     </div>
     <div class="xs:block lg:hidden">
       <div class="flex shadow-md py-4 bg-white w-full">
-        <div class="flex-1 text-gray-700 text-left text-pink-500" @click="$emit('showFilters')">
-          <i class="fa fa-sliders px-3 mr-2" aria-hidden="true"></i>Filter
+        <div
+          class="flex-1 text-gray-700 text-left text-pink-500"
+          @click="$emit('showFilters')"
+        >
+          <i
+            class="fa fa-sliders px-3 mr-2"
+            aria-hidden="true"
+          ></i>Filter
         </div>
         <div class="flex-1 text-gray-700 text-center font-normal px-4">0 Items</div>
         <div class="flex-1 text-gray-700 text-center px-4 text-pink-500">
-          <i class="fa fa-sort mr-2" aria-hidden="true"></i>Sort
+          <i
+            class="fa fa-sort mr-2"
+            aria-hidden="true"
+          ></i>Sort
         </div>
       </div>
     </div>
@@ -105,7 +117,7 @@
 </template>
 
 <script>
-import Checkbox from "~/components/Checkbox";
+import Checkbox from "~/components/ui/Checkbox";
 import { constructURL } from "~/lib/";
 import { sorts } from "~/config";
 export default {

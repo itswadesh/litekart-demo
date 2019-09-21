@@ -46,10 +46,10 @@
 
 <script>
 import Header from "~/components/Header";
-import EmptyCart from "~/components/EmptyCart";
-import CartSummary from "~/components/CartSummary";
-import CartBanners from "~/components/CartBanners";
-import CartItem from "~/components/CartItem";
+import EmptyCart from "~/components/cart/EmptyCart";
+import CartSummary from "~/components/cart/CartSummary";
+import CartBanners from "~/components/cart/CartBanners";
+import CartItem from "~/components/cart/CartItem";
 import { mapGetters } from "vuex";
 
 export default {

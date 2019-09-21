@@ -23,12 +23,13 @@
             <span class="text-gray-600">Arrives by Sep 21</span>
           </div>
         </div>
-        <p
-          class="bg-green-500 text-white text-center p-1 rounded"
-        >Please pay ₹689 to the delivery agent</p>
+        <p class="bg-green-500 text-white text-center p-1 rounded">Please pay ₹689 to the delivery agent</p>
         <div class="flex flex-wrap justify-between bg-white shadow p-5">
           <div class="w-1/5">
-            <img class="w-20 h-20" src="/cart-product.jpg" />
+            <img
+              class="w-20 h-20"
+              src="/cart-product.jpg"
+            />
           </div>
           <div class="w-4/5 flex flex-wrap justify-center h-20">
             <div class="text-black mb-2 w-1/2">
@@ -49,12 +50,8 @@
         </div>
       </div>
       <div class="lg:w-1/4 mt-10 lg:pr-20 xs:w-full px-3 mb-8">
-        <div
-          class="w-full flex flex-wrap justify-between pb-2 relative text-xs font-semibold tracking-widest"
-        >SHIPPING ADDRESS</div>
-        <div
-          class="shadow bg-white p-2 rounded border-b border-gray-200 text-gray-800 text-sm font-hairline"
-        >
+        <div class="w-full flex flex-wrap justify-between pb-2 relative text-xs font-semibold tracking-widest">SHIPPING ADDRESS</div>
+        <div class="shadow bg-white p-2 rounded border-b border-gray-200 text-gray-800 text-sm font-hairline">
           <span>Kohn Wick</span>
           <br />
           <span>+91 00000000000</span>
@@ -90,18 +87,20 @@
               <div class="w-1/2 text-left">Cash on delivery</div>
               <div class="ml-2 w-1/2 text-black-400 text-right">₹577</div>
             </div>
-            <button
-              class="text-center px-16 ml-2 mt-2 py-1 bg-gray-400 rounded-full focus:outline-none"
-            >₹689 due</button>
+            <button class="text-center px-16 ml-2 mt-2 py-1 bg-gray-400 rounded-full focus:outline-none">₹689 due</button>
           </div>
         </div>
-        <div
-          class="mt-3 text-center rounded shadow bg-white p-2 border-b border-gray-200 text-gray-700 text-sm"
-        >
-          <img src="help.png" class="py-5 px-12" />
+        <div class="mt-3 text-center rounded shadow bg-white p-2 border-b border-gray-200 text-gray-700 text-sm">
+          <img
+            src="help.png"
+            class="py-5 px-12"
+          />
           <span>Need help with this order?</span>
           <br />
-          <a href="#" class="text-pink-500">Visit our help center</a>
+          <a
+            href="#"
+            class="text-pink-500"
+          >Visit our help center</a>
         </div>
       </div>
       <div class="w-8"></div>
@@ -112,15 +111,9 @@
 
 <script>
 import Header from "~/components/Header";
-import EmptyCart from "~/components/EmptyCart";
 import Footer from "~/components/Footer";
 export default {
-  data() {
-    return {
-      cartempty: true
-    };
-  },
-  components: { Header, EmptyCart, Footer }
+  components: { Header, Footer }
 };
 </script>
 

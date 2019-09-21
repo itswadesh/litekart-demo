@@ -6,7 +6,10 @@
       <div class="xs:w-full lg:w-1/3 mt-10 px-2">
         <div class="text-gray-700 font-bold text-xl mb-2">All done</div>
         <div>
-          <img src="/order-success.png" class="mb-2 h-56 object-cover" />
+          <img
+            src="/order-success.png"
+            class="mb-2 h-56 object-cover"
+          />
         </div>
         <div class="font-hairline text-sm">
           Your Order number is
@@ -15,7 +18,10 @@
         <div class="flex justify-between pt-5 pb-5">
           <div class="lg:w-1/5 left-0 xs:w-3/12">
             <div>
-              <img class="lg:rounded xs:rounded-b-none" src="/cart-product.jpg" />
+              <img
+                class="lg:rounded xs:rounded-b-none"
+                src="/cart-product.jpg"
+              />
             </div>
           </div>
           <div class="lg:w-4/5 right-0 text-sm xs:9/12">
@@ -34,9 +40,7 @@
               <div class="flex justify-between">
                 <div class="w-1/2 left-0">
                   <div class="inline-block relative w-16">
-                    <div
-                      class="text-xs font-hairline text-black p-1 text-center block appearance-none w-full bg-gray-200 rounded"
-                    >Qty 1</div>
+                    <div class="text-xs font-hairline text-black p-1 text-center block appearance-none w-full bg-gray-200 rounded">Qty 1</div>
                   </div>
                 </div>
               </div>
@@ -46,7 +50,10 @@
       </div>
       <div class="lg:w-1/4 mt-10 lg:pr-20 xs:w-full p-10">
         <div class="w-full flex flex-wrap justify-between pb-2 relative">
-          <img src="/order-success-side.png" class="w-64 h-56 object-cover rounded" />
+          <img
+            src="/order-success-side.png"
+            class="w-64 h-56 object-cover rounded"
+          />
         </div>
         <div class="4/5 right-0 pb-3 bb">
           <div>
@@ -82,15 +89,9 @@
 
 <script>
 import Header from "~/components/Header";
-import EmptyCart from "~/components/EmptyCart";
 
 export default {
-  data() {
-    return {
-      cartempty: true
-    };
-  },
-  components: { Header, EmptyCart }
+  components: { Header }
 };
 </script>
 
