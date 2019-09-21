@@ -56,6 +56,9 @@ export const actions = {
         }
     },
     async login({ commit }, payload) {
+        if (!payload.password || payload.password == "") {
+            throw "Please enter password"
+        }
         try {
             const data = await this.$axios.$post('auth/local', payload)
             if (data) {
@@ -64,6 +67,8 @@ export const actions = {
                 this.$cookies.set('Authorization', data.token, { path: '/', maxAge: tokenExpiry })
                 commit('cart/setCart', data.cart, { root: true })
                 return data
+            } else {
+                throw 'Invalid email'
             }
         } catch (err) {
             commit('setErr', err, { root: true })

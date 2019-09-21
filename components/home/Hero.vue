@@ -1,6 +1,8 @@
 <template>
   <carousel
     :perPage="1"
+    :autoplay="true"
+    :autoplayTimeout="5000"
     :paginationEnabled="true"
     :navigationEnabled="true"
     navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)'>"

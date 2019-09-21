@@ -19,7 +19,7 @@
               <div class="p-6">
                 <div class="mb-5 flex items-center border-b border-b-2 border-grey-500">
                   <input
-                    v-model="user.email"
+                    v-model="uid"
                     class="appearance-none bg-gray-200 border-none w-full text-gray-700 p-4 leading-tight focus:outline-none"
                     type="email"
                     placeholder="Email"
@@ -31,7 +31,7 @@
 
                 <div class="mb-10 flex items-center border-b border-b-2 border-grey-500">
                   <input
-                    v-model="user.password"
+                    v-model="password"
                     class="appearance-none bg-gray-200 border-none w-full text-gray-700 p-4 leading-tight focus:outline-none"
                     type="password"
                     placeholder="Password"
@@ -56,32 +56,37 @@ export default {
   data() {
     return {
       loading: false,
+      isPhone: false,
       fadeIn: "",
       disable: "disable",
       p: {},
       msg: null,
+      uid: "",
+      password: "",
+      otp: "",
       user: { email: "", password: "" }
     };
   },
   components: { Header },
   methods: {
     async submit() {
-      let vm = this;
-      this.err = null;
-      this.msg = null;
-      if (!this.user.email || this.user.email == "") {
-        this.$store.commit("setErr", "Please enter your email");
+      if (!this.uid || this.uid == "") {
+        this.$store.commit("setErr", "Please enter your email/phone no");
         return;
       }
-      if (!this.user.password || this.user.password == "") {
-        this.$store.commit("setErr", "Please enter password");
-        return;
+      if (this.isPhone) {
+        await this.phoneLogin();
+      } else {
+        await this.emailLogin();
       }
+    },
+    async phoneLogin() {},
+    async emailLogin() {
       try {
         this.loading = true;
         const res = await this.$store.dispatch("auth/login", {
-          email: this.user.email,
-          password: this.user.password
+          email: this.uid,
+          password: this.password
         });
         if (res.token) {
           this.$store.commit("success", "Verified! Thank You.");
@@ -89,6 +94,7 @@ export default {
           this.$router.push(returnUrl);
         }
       } catch (e) {
+        // this.$store.commit("setErr", e);
       } finally {
         this.loading = false;
       }

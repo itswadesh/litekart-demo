@@ -564,11 +564,6 @@ export default {
       }
     };
   },
-  watch: {
-    // images(newVal) {
-    //   this.currentImage = newVal[0];
-    // }
-  },
   methods: {
     ...mapMutations(["setErr"]),
     ...mapActions({ addToCart: "cart/addToCart" }),
@@ -595,7 +590,7 @@ export default {
             singleton: false
           }
         )
-        .goAway(500);
+        .goAway(1000);
     },
     scrollTo() {
       window.scroll({
