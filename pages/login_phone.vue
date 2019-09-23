@@ -2,7 +2,7 @@
   <div>
     <Header />
     <div class="bg-gray-100">
-      <div class="container mx-auto h-full flex justify-center items-center">
+      <div class="mx-auto h-full flex justify-center items-center">
         <div class="lg:w-1/3 xs:3/3">
           <div class="border-teal border-t-12 bg-white mb-6 rounded shadow-2xl">
             <div class="p-0 bg-blue-700 text-white rounded rounded-b-none">
@@ -10,12 +10,7 @@
                 <span class="font-extrabold">SIGN IN</span> TO YOUR ACCOUNT
               </h1>
             </div>
-            <form
-              novalidate
-              autocomplete="off"
-              @submit.stop.prevent="submit()"
-              class="center"
-            >
+            <form novalidate autocomplete="off" @submit.stop.prevent="submit()" class="center">
               <div class="p-6">
                 <div class="mb-10 flex items-center border-b border-b-2 border-grey-500">
                   <input
@@ -28,9 +23,13 @@
                   />
                 </div>
 
-                <p class="text-red-500 mb-5 text-xs font-hairline">Please enter OTP sent to mobile number</p>
+                <p
+                  class="text-red-500 mb-5 text-xs font-hairline"
+                >Please enter OTP sent to mobile number</p>
 
-                <div class="otp-container relative inline-block rounded p-2 w-32 w-12 mb-10 bg-gray-200">
+                <div
+                  class="otp-container relative inline-block rounded p-2 w-32 w-12 mb-10 bg-gray-200"
+                >
                   <div
                     id="wraper1"
                     class="otp-seperator w-1 h-1 rounded absolute"
@@ -60,7 +59,9 @@
                   />
                 </div>
                 <div class="flex items-center justify-between">
-                  <button class="text-2xl big-button outline-none text-xl hover:bg-red-200 w-full text-white font-bold py-2 px-4 rounded">Verify Phone</button>
+                  <button
+                    class="text-2xl big-button outline-none text-xl hover:bg-red-200 w-full text-white font-bold py-2 px-4 rounded"
+                  >Verify Phone</button>
                 </div>
               </div>
             </form>

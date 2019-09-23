@@ -1,6 +1,6 @@
 <template>
   <div
-    class="py-2\1 bg-white-800 shadow bg-white max-w-lg h-screen w-screen top-0 left-0 fixed"
+    class="py-2\1 bg-white-800 shadow bg-white w-screen top-0 left-0 fixed h-screen max-w-lg"
     v-if="facets"
   >
     <!-- Mobile version starts here -->
