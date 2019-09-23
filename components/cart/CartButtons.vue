@@ -1,43 +1,42 @@
 <template>
-  <div class="flex-column align-top">
+  <div class="flex pt-3">
     <div
       v-if="!checkCart({pid:product._id, vid:variant._id})"
       :disabled="!variant || variant.price<1 || variant.stock<1 || $store.state.loading"
       @click="addToBag(1);"
     >
-      <button class="cart-button buttonrounded">
-        <img
-          src="/plus.svg"
-          alt=""
-        />
+      <button class="cart-button w-8">
+        <img src="/plus.svg" alt />
       </button>
     </div>
     <div v-else>
-      <div class="flex-row-nocenter">
-        <button
-          class="cart-button buttonrounded "
-          @click="addToBag(-1)"
-        >
-          <img
-            src="/minus.svg"
-            alt=""
-          />
+      <div class="flex-row-nocenter flex flex-wrap">
+        <button class="cart-button w-8 hover:bg-yellow-500" @click="addToBag(-1)">
+          <img src="/minus.svg" alt class="m-auto" />
         </button>
-        <span class="product-id">{{getQty({pid:product._id, vid:variant._id})}}</span>
+        <div class="px-4 py-1">{{getQty({pid:product._id, vid:variant._id})}}</div>
         <button
-          class="cart-button button.is-danger buttonrounded btnplus-clr"
+          class="cart-button w-8 bg-yellow-500"
           :disabled="!variant || variant.price<1 || variant.stock<1 || $store.state.loading"
           @click="addToBag(1)"
         >
-          <img
-            src="/plus.svg"
-            alt=""
-          />
+          <img src="/plus.svg" alt class="m-auto" />
         </button>
       </div>
     </div>
   </div>
 </template>
+<style scoped>
+.cart-button {
+  border: 1px solid transparent;
+  color: #32325d;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.23);
+}
+</style>
 <script>
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
 export default {
@@ -61,51 +60,5 @@ export default {
   }
 };
 </script>
-<style>
-.product-id {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-}
-.buttonrounded {
-  border-radius: 50px;
-  width: 33px;
-}
-.cart-button {
-  border: 1px solid transparent;
-  border-width: 1px;
-  color: #32325d;
-  cursor: pointer;
-  justify-content: center;
-  text-align: center;
-  white-space: nowrap;
-  background: #f5f5f5;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
-}
-.cart-button.is-danger {
-  border-color: transparent;
-  color: #fff;
-}
-.cart-button:hover {
-  background: #ffdd57;
-}
-.btnplus-clr {
-  background: #ffdd57;
-}
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.align-top {
-  padding-top: 10px;
-}
-.cart-icon {
-  padding-bottom: 3px;
-  padding-left: 5px;
-}
-.addalign {
-  padding-top: 4px;
-}
-</style>
+
 

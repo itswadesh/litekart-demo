@@ -15,30 +15,28 @@
       <div class="w-full flex mt-1 h-full">
         <div class="w-2/5">
           <ul class="bg-gray-200 h-full">
-            <li
-              class="bg-white text-pink-500 py-4 text-gray-700 font-bold px-4 border-l-4 border-pink-600"
-            >
+            <li class="bg-white text-pink-500 border-l-4 border-pink-600">
               <a href>Shop for</a>
             </li>
-            <li class="py-4 text-gray-700 font-bold px-4">
+            <li>
               <a href>Age</a>
             </li>
-            <li class="py-4 text-gray-700 font-bold px-4">
+            <li>
               <a href>Category</a>
             </li>
-            <li class="py-4 text-gray-700 font-bold px-4">
+            <li>
               <a href>Delivery Time</a>
             </li>
-            <li class="py-4 text-gray-700 font-bold px-4">
+            <li>
               <a href>Colour</a>
             </li>
-            <li class="py-4 text-gray-700 font-bold px-4">
+            <li>
               <a href>Price</a>
             </li>
-            <li class="py-4 text-gray-700 font-bold px-4">
+            <li>
               <a href>Discount</a>
             </li>
-            <li class="py-4 text-gray-700 font-bold px-4">
+            <li>
               <a href>Brands</a>
             </li>
           </ul>
@@ -68,7 +66,13 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
+ul > li {
+  font: bold;
+  color: gray;
+  padding: 10px;
+  font-size: 1.1rem;
+}
 .show-for-small-only {
   background: #f5f5f5;
   height: 1px;
