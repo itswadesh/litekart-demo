@@ -55,16 +55,41 @@ export const actions = {
             commit('setErr', err, { root: true })
         }
     },
+    async phone({ commit }, payload) {
+        if (!payload.phone || payload.phone == "") {
+            throw "Please enter otp"
+        }
+        try {
+            const data = await this.$axios.$post('auth/phone', payload)
+            if (data && data.token) {
+                this.$axios.setToken(data.token, 'Bearer')
+                commit('setUser', data.user)
+                commit('success', "Verified! Thank You.", { root: true })
+                this.$cookies.set('Authorization', data.token, { path: '/', maxAge: tokenExpiry })
+                let returnUrl = payload.route || "/my";
+                this.$router.push(returnUrl)
+                commit('cart/setCart', data.cart, { root: true })
+                return data
+            } else {
+                throw 'Invalid phone number'
+            }
+        } catch (err) {
+            commit('setErr', err, { root: true })
+        }
+    },
     async login({ commit }, payload) {
         if (!payload.password || payload.password == "") {
             throw "Please enter password"
         }
         try {
             const data = await this.$axios.$post('auth/local', payload)
-            if (data) {
+            if (data && data.token) {
                 this.$axios.setToken(data.token, 'Bearer')
                 commit('setUser', data.user)
+                commit('success', "Verified! Thank You.", { root: true })
                 this.$cookies.set('Authorization', data.token, { path: '/', maxAge: tokenExpiry })
+                let returnUrl = payload.route || "/my";
+                this.$router.push(returnUrl)
                 commit('cart/setCart', data.cart, { root: true })
                 return data
             } else {
@@ -102,7 +127,7 @@ export const actions = {
         try {
             const data = await this.$axios.$put('/users/password', payload)
             commit('info', data.message, { root: true })
-            // router.push('/my') // Push does not work from here. It stay at the same page without natigating. Rather it should be done from callee page
+            this.$router.push('/my')
             return data
         } catch (err) {
             commit('setErr', err, { root: true })
