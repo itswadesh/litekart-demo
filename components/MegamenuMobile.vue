@@ -6,7 +6,7 @@
       class="flex-1 bg-white circletag"
       id="nay"
     >
-      <img :src="$store.state.settings.CDN_URL+c.img" class="rounded-full object-cover h-12" />
+      <img :src="$store.state.settings.CDN_URL+c.img" class="object-cover h-12" />
       <div class="text text-center">{{c.name.toUpperCase()}}</div>
     </div>
   </div>
@@ -16,6 +16,9 @@
 export default {};
 </script>
 <style  scoped>
+.circletag img {
+  border-radius: 50%;
+}
 .circletag {
   display: block;
   max-width: 50%;

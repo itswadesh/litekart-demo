@@ -39,8 +39,14 @@ body{
     width:60%;
     padding:2em;
   }
+  .toasted.outline.default {
+    width: auto;
+  }
+  .toast-card {
+    padding-top: 2rem;
+  }
 .sw-toast-container .toast-card {
-  height: 100px;
+  height: 125px;
   display: flex;
 }
 .sw-toast-container .toast-card .img {
