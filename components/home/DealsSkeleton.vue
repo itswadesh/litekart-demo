@@ -10,42 +10,48 @@
       </div>
       <div class="flex flex-wrap flex justify-between p-4">
         <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
+          <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
+          <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
           <div class="px-2 py-4">
             <div class="font-bold text-xs mb-2">Laptop Accessories</div>
             <p class="text-green-700 text-xs text-center">Extra 5% off</p>
           </div>
         </div>
         <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
+          <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
+          <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
           <div class="px-2 py-4">
             <div class="font-bold text-xs mb-2">Laptop Accessories</div>
             <p class="text-green-700 text-xs text-center">Extra 5% off</p>
           </div>
         </div>
         <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
+          <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
+          <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
           <div class="px-2 py-4">
             <div class="font-bold text-xs mb-2">Laptop Accessories</div>
             <p class="text-green-700 text-xs text-center">Extra 5% off</p>
           </div>
         </div>
         <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
+          <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
+          <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
           <div class="px-2 py-4">
             <div class="font-bold text-xs mb-2">Laptop Accessories</div>
             <p class="text-green-700 text-xs text-center">Extra 5% off</p>
           </div>
         </div>
         <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
+          <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
+          <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
           <div class="px-2 py-4">
             <div class="font-bold text-xs mb-2">Laptop Accessories</div>
             <p class="text-green-700 text-xs text-center">Extra 5% off</p>
           </div>
         </div>
         <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
+          <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
+          <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
           <div class="px-2 py-4">
             <div class="font-bold text-xs mb-2">Laptop Accessories</div>
             <p class="text-green-700 text-xs text-center">Extra 5% off</p>
@@ -53,9 +59,9 @@
         </div>
       </div>
     </div>
-    <div class="lg:w-1/4 shadow xs:w-full">
+    <div class="lg:w-1/4 shadow xs:w-full bg-gray-100">
       <div class="deals">
-        <img src="/cardimage.webp" class="px-1 w-full" />
+        <!-- <img src="/cardimage.webp" class="px-1 w-full" /> -->
       </div>
     </div>
   </div>

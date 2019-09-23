@@ -4,9 +4,12 @@
     <MegamenuMobile />
     <div class="px-2 home">
       <Hero />
-      <Deals />
-      <Banners />
-      <YouMayLike />
+      <!-- <Deals /> -->
+      <DealsSkeleton />
+      <!-- <Banners /> -->
+      <BannersSkeleton />
+      <YouMayLikeSkeleton />
+      <!-- <YouMayLike /> -->
     </div>
     <BackToTopDark />
   </div>
@@ -20,7 +23,10 @@ import Banners from "~/components/home/Banners";
 import YouMayLike from "~/components/home/YouMayLike";
 import MegamenuMobile from "~/components/MegamenuMobile";
 import { BackToTopDark } from "~/components/ui";
-
+// skeletons
+import YouMayLikeSkeleton from "~/components/home/YouMayLikeSkeleton";
+import BannersSkeleton from "~/components/home/BannersSkeleton";
+import DealsSkeleton from "~/components/home/DealsSkeleton";
 export default {
   components: {
     Header,
@@ -29,7 +35,11 @@ export default {
     Deals,
     Banners,
     YouMayLike,
-    BackToTopDark
+    BackToTopDark,
+    //Skeletons
+    YouMayLikeSkeleton,
+    BannersSkeleton,
+    DealsSkeleton
   }
 };
 </script>
