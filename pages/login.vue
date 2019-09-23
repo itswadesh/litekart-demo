@@ -20,26 +20,73 @@
                 <div class="mb-5 flex items-center border-b border-b-2 border-grey-500">
                   <input
                     v-model="uid"
+                    name="uid"
+                    ref="uid"
                     class="appearance-none bg-gray-200 border-none w-full text-gray-700 p-4 leading-tight focus:outline-none"
                     type="email"
-                    placeholder="Email"
+                    placeholder="Email/Phone"
                     aria-label="Enter email id"
+                    @keyup="onPhoneChange"
                   />
                 </div>
-
-                <!-- <p class="text-red-500 mb-5 text-xs font-hairline">Please enter password</p> -->
-
-                <div class="mb-10 flex items-center border-b border-b-2 border-grey-500">
-                  <input
-                    v-model="password"
-                    class="appearance-none bg-gray-200 border-none w-full text-gray-700 p-4 leading-tight focus:outline-none"
-                    type="password"
-                    placeholder="Password"
-                    aria-label="Enter Password"
-                  />
+                <div v-if="showOTP">
+                  <!-- <p class="text-red-500 mb-5 text-xs font-hairline">Please enter password</p> -->
+                  <!-- Show password box -->
+                  <div
+                    class="mb-10 flex items-center border-b border-b-2 border-grey-500"
+                    v-if="!isPhone"
+                  >
+                    <input
+                      v-model="password"
+                      name="password"
+                      ref="password"
+                      class="appearance-none bg-gray-200 border-none w-full text-gray-700 p-4 leading-tight focus:outline-none"
+                      type="password"
+                      placeholder="Password"
+                      aria-label="Enter Password"
+                    />
+                  </div>
+                  <!-- Show OTP box -->
+                  <div
+                    v-else
+                    class="otp-container relative inline-block rounded p-2 w-32 w-12 mb-10 bg-gray-200"
+                  >
+                    <div
+                      id="wraper1"
+                      class="otp-seperator w-1 h-1 rounded absolute"
+                      :class="{'wraper-hide':otp.length>0}"
+                    ></div>
+                    <div
+                      id="wraper2"
+                      class="otp-seperator w-1 h-1 rounded absolute"
+                      :class="{'wraper-hide':otp.length>1}"
+                    ></div>
+                    <div
+                      id="wraper3"
+                      class="otp-seperator w-1 h-1 rounded absolute"
+                      :class="{'wraper-hide':otp.length>2}"
+                    ></div>
+                    <div
+                      id="wraper4"
+                      class="otp-seperator w-1 h-1 rounded absolute"
+                      :class="{'wraper-hide':otp.length>3}"
+                    ></div>
+                    <input
+                      v-model="otp"
+                      name="otp"
+                      ref="otp"
+                      class="outline-none pl-4 otp-content w-32 bg-transparent"
+                      maxlength="4"
+                      autocomplete="off"
+                      @keyup="onKeyUpEvent(otp.length, $event)"
+                    />
+                  </div>
                 </div>
                 <div class="flex items-center justify-between">
-                  <button class="text-2xl big-button outline-none text-xl w-full text-white font-bold py-2 px-4 rounded">Login Now</button>
+                  <button
+                    :disabled="loading"
+                    class="text-2xl big-button outline-none text-xl w-full text-white font-bold py-2 px-4 rounded"
+                  ><span :class="{'loading':loading}" />{{submitText}}</button>
                 </div>
               </div>
             </form>
@@ -56,7 +103,6 @@ export default {
   data() {
     return {
       loading: false,
-      isPhone: false,
       fadeIn: "",
       disable: "disable",
       p: {},
@@ -64,10 +110,32 @@ export default {
       uid: "",
       password: "",
       otp: "",
+      showOTP: false,
       user: { email: "", password: "" }
     };
   },
   components: { Header },
+  computed: {
+    isPhone() {
+      const phoneno = /^[+()\d-]+$/;
+      if (this.uid.length >= 10 && this.uid.match(phoneno)) return true;
+      else return false;
+    },
+    submitText() {
+      // if (!this.isPhone && !this.showOTP) {
+      //   return "Verify";
+      // } else
+      if (this.isPhone && !this.showOTP) {
+        return "Verify Phone"; //Login Now
+      } else if (this.isPhone && this.showOTP) {
+        return "Verify OTP";
+      } else if (!this.isPhone && !this.showOTP) {
+        return "Verify Email"; //Login Now
+      } else {
+        return "Login Now";
+      }
+    }
+  },
   methods: {
     async submit() {
       if (!this.uid || this.uid == "") {
@@ -80,23 +148,75 @@ export default {
         await this.emailLogin();
       }
     },
-    async phoneLogin() {},
-    async emailLogin() {
-      try {
-        this.loading = true;
-        const res = await this.$store.dispatch("auth/login", {
-          email: this.uid,
-          password: this.password
-        });
-        if (res.token) {
-          this.$store.commit("success", "Verified! Thank You.");
-          let returnUrl = this.$route.query.return || "/my";
-          this.$router.push(returnUrl);
+    async phoneLogin() {
+      this.loading = true;
+      if (!this.showOTP) {
+        // When clicked 1st time
+        try {
+          const otp = await this.$axios.get("/users/phone/" + this.uid);
+          if (otp.status == 200 || otp.status == 201) {
+            this.showOTP = true;
+            this.msg = "Please enter OTP sent to your Mobile";
+            // this.$refs.otp.focus();
+            return;
+          }
+        } catch (e) {
+          console.log("err...", e);
+        } finally {
+          this.loading = false;
         }
-      } catch (e) {
-        // this.$store.commit("setErr", e);
-      } finally {
-        this.loading = false;
+      } else {
+        try {
+          this.loading = true;
+          const res = await this.$store.dispatch("auth/login", {
+            uid: this.uid,
+            password: this.otp,
+            route: this.$route.query.return
+          });
+        } catch (e) {
+        } finally {
+          this.loading = false;
+        }
+      }
+    },
+    async emailLogin() {
+      if (!this.showOTP) {
+        // When clicked 1st time
+        this.showOTP = true;
+        this.msg = "Please enter your password";
+        // this.$refs.password.focus();
+        return;
+      } else {
+        try {
+          this.loading = true;
+          const res = await this.$store.dispatch("auth/login", {
+            uid: this.uid,
+            password: this.password,
+            route: this.$route.query.return
+          });
+          this.showOTP = true;
+          // this.$refs.password.focus();
+        } catch (e) {
+          this.showOTP = false;
+          this.err = e.toString();
+          this.msg = this.err;
+          // this.$refs.uid.focus();
+        } finally {
+          this.loading = false;
+        }
+      }
+    },
+    onKeyUpEvent(index, event) {
+      const eventCode = event.which || event.keyCode;
+      if (index == 4) {
+        this.submit(); // Submit code
+      }
+    },
+    onPhoneChange(e) {
+      if (e.keyCode != 13) {
+        this.showOTP = false;
+        this.p = {};
+        return;
       }
     }
   },

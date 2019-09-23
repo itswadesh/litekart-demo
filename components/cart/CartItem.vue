@@ -25,7 +25,12 @@
         </p>
         <div class="flex justify-between">
           <div class="w-1/2 left-0">
-            <div class="inline-block relative w-24">
+            <cart-buttons
+              :product="{_id:item.product._id}"
+              :variant="{_id:item.variant._id}"
+            />
+            <!-- <div class="inline-block relative w-24">
+              
               <select class="text-sm font-bold text-gray-500 p-2 border-gray-300 cursor-pointer cursor-pointer block appearance-none w-full bg-gray-200 rounded border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none">
                 <option class="bg-white">Qty 1</option>
                 <option class="bg-white text-black">2</option>
@@ -38,7 +43,7 @@
               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <i class="fa fa-caret-down px-1" />
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="w-1/2 right-0">
             <div class="right-0 text-right">
@@ -59,6 +64,7 @@
 
 <script>
 import { mapActions } from "vuex";
+const CartButtons = () => import("./CartButtons");
 
 export default {
   props: {
@@ -69,6 +75,7 @@ export default {
       adding: false
     };
   },
+  components: { CartButtons },
   methods: {
     ...mapActions({
       addToCart: "cart/addToCart"
