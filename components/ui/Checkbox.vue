@@ -1,9 +1,5 @@
 <template>
-  <label
-    class="vertical-filters-label common-customCheckbox 
-  hover:bg-none"
-    :for="id || uniqueId"
-  >
+  <label class="vertical-filters-label common-customCheckbox hover:bg-none" :for="id || uniqueId">
     <input
       type="checkbox"
       :id="id || uniqueId"
@@ -28,7 +24,68 @@
     <div class="common-checkboxIndicator"></div>
   </label>
 </template>
-
+<style scoped>
+.common-checkboxIndicator {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #c3c2c9;
+  background: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.vertical-filters-filters .vertical-filters-label {
+  display: block;
+  width: 95%;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  min-height: 17px;
+  color: #282c3f;
+}
+.common-customCheckbox {
+  position: relative;
+  cursor: pointer;
+}
+.common-customCheckbox input:checked ~ .common-checkboxIndicator {
+  border: none;
+  background: #ff3f6c;
+}
+.common-checkboxIndicator:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 1;
+  width: 8px;
+  height: 5px;
+  border: 2px solid #fff;
+  border-color: #fff;
+  border-top-style: none;
+  border-right-style: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+label {
+  line-height: 2;
+  cursor: pointer;
+}
+</style>
 <script>
 export default {
   name: "Checkbox",
@@ -144,11 +201,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-label {
-  line-height: 2;
-
-  cursor: pointer;
-}
-</style>
