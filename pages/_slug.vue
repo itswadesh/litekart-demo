@@ -24,7 +24,7 @@
             :paginationEnabled="false"
           >
             <slide
-              class="inline-block w-full border border-gray-400"
+              class="md:hidden inline-block w-full border border-gray-400"
               v-for="i in product.imgUrls"
               :key="i"
             >
