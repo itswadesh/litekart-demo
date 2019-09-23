@@ -4,27 +4,20 @@
     v-if="facets"
   >
     <!-- Mobile version starts here -->
-    <div
-      class="block md:hidden"
-      v-if="showMobileFilter"
-    >
+    <div class="block md:hidden h-full" v-if="showMobileFilter">
       <div class="flex shadow-md py-4 bg-white w-full">
-        <div
-          class="flex-1 text-gray-700 text-left"
-          @click="$emit('hide')"
-        >
-          <i
-            class="fa fa-times px-6"
-            aria-hidden="true"
-          ></i>
+        <div class="flex-1 text-gray-700 text-left" @click="$emit('hide')">
+          <i class="fa fa-times ml-2" aria-hidden="true"></i>
         </div>
-        <div class="flex-1 text-gray-700 text-center font-bold px-4">FILTER</div>
-        <div class="flex-1 text-gray-700 text-center px-4">Clear all</div>
+        <div class="flex-1 text-gray-700 text-center font-bold">FILTER</div>
+        <div class="flex-1 text-gray-700 text-right mr-2">Clear all</div>
       </div>
-      <div class="w-full flex">
+      <div class="w-full flex mt-1 h-full">
         <div class="w-2/5">
-          <ul class="bg-gray-300">
-            <li class="bg-white text-pink-500 py-4 text-gray-700 font-bold px-4 border-l-4 border-pink-600">
+          <ul class="bg-gray-200 h-full">
+            <li
+              class="bg-white text-pink-500 py-4 text-gray-700 font-bold px-4 border-l-4 border-pink-600"
+            >
               <a href>Shop for</a>
             </li>
             <li class="py-4 text-gray-700 font-bold px-4">
@@ -50,28 +43,41 @@
             </li>
           </ul>
         </div>
-        <div class="3/5">
-          <ul class="ml-2 py-2 px-5">
-            <li
-              v-for="b in facets.brands && facets.brands.buckets"
-              :key="b.key"
-            >
+        <div class="w-full overflow-y-scroll">
+          <ul class="ml-2 py-2 px-5 w-full">
+            <!--<li v-for="b in facets.brands && facets.brands.buckets" :key="b.key">
               <Checkbox
                 :count="b.doc_count"
                 :value="b.key"
                 v-model="fl.brands"
                 @change="changed({model:'brands',checked:fl.brands})"
               >{{b.key}}</Checkbox>
-            </li>
+            </li>-->
+            <label class="vertical-filters-label common-customCheckbox hover:bg-none">
+              <input type="checkbox" />
+              <span>Below ₹500</span>
+              <div class="common-checkboxIndicator"></div>
+              <div class="show-for-small-only"></div>
+            </label>
           </ul>
         </div>
       </div>
-      <div class="w-full text-center bg-pink-500 text-white">
+      <div class="w-full text-center bg-pink-500 text-white absolute bottom-0">
         <button class="w-full p-4 cursor-pointer font-bold focus:outline-none">APPLY</button>
       </div>
     </div>
   </div>
 </template>
+<style>
+.show-for-small-only {
+  background: #f5f5f5;
+  height: 1px;
+  position: relative;
+  top: 13px;
+  margin-left: 15px;
+  width: calc(100% + 16px);
+}
+</style>
 <script>
 import { Checkbox, Radio } from "~/components/ui";
 import { constructURL } from "~/lib/";
