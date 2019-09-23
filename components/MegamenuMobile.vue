@@ -3,10 +3,11 @@
     <div
       v-for="c in $store.state.categories"
       :key="c._id"
-      class="flex-1 text-gray-700 rounded-full shadow w-8"
+      class="flex-1 bg-white circletag"
+      id="nay"
     >
-      <img :src="$store.state.settings.CDN_URL+c.img" class="w-20" />
-      <div class="xs:text-xs">{{c.name.toUpperCase()}}</div>
+      <img :src="$store.state.settings.CDN_URL+c.img" />
+      <div class="text">{{c.name.toUpperCase()}}</div>
     </div>
   </div>
 </template>
@@ -14,3 +15,18 @@
 <script>
 export default {};
 </script>
+<style>
+.circletag {
+  display: block;
+  max-width: 50%;
+  border-radius: 50%;
+  text-align: center;
+}
+.circletag > img {
+  max-width: 40%;
+  margin: auto;
+}
+.text {
+  font-size: 0.6em;
+}
+</style>
