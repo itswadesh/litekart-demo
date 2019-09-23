@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="bg-gray-100 xs:mobile-login h-full p-2">
+    <div class="bg-gray-100 xs:mobile-login h-full px-4">
       <div class="container mx-auto h-full flex items-center">
         <div class="lg:w-1/3 w-full">
           <div class="border-teal border-t-12 bg-white mb-6 rounded shadow-2xl">
