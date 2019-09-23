@@ -4,7 +4,7 @@
       <div>
         <img
           class="lg:rounded xs:rounded-b-none"
-          v-lazy="$store.state.settings.CDN_URL+item.product.img"
+          v-lazy="item.product.img"
         />
         <div class="lg:hidden xs:visible text-black p-2 bg-gray-300 rounded rounded-t-none">Arrives 19 Sep</div>
       </div>
