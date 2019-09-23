@@ -9,8 +9,8 @@
       @hide="showMobileFilter=false"
     />
     <div
-      class="flex"
       v-else
+      class="flex"
     >
       <LeftSideBar
         class="flex-none max-w-xs hidden md:block"
@@ -26,22 +26,17 @@
         />
         <NoProduct v-if="products.length==0 && !loading" />
         <div v-else>
-          <div class="flex flex-wrap shadow-inner">
-            <div
-              class="flex flex-wrap"
-              v-if="loading"
-            >
-              <!-- <img
+          <Skeleton v-if="loading" />
+          <!-- <img
                 src="/loading.svg"
                 alt="loading ..."
               /> -->
-              <Skeleton
-                v-for="(p,ix) in skeletonCount"
-                :key="ix+'-1'"
-              />
-            </div>
+          <div
+            v-else-if="products && products.length>0"
+            class="flex flex-wrap"
+          >
             <Product
-              v-else-if="products && products.length>0"
+              class="w-1/2"
               v-for="p in products"
               :key="p._id"
               :product="p"
@@ -89,7 +84,6 @@ export default {
   name: "ProductListing",
   data() {
     return {
-      skeletonCount: 8,
       showMobileFilter: false,
       fl: {
         brands: [],

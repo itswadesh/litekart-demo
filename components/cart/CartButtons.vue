@@ -6,21 +6,42 @@
       @click="addToBag(1);"
     >
       <button class="cart-button w-8">
-        <img src="/plus.svg" alt />
+        <img
+          src="/plus.svg"
+          alt
+        />
       </button>
     </div>
     <div v-else>
       <div class="flex-row-nocenter flex flex-wrap">
-        <button class="cart-button w-8 hover:bg-yellow-500" @click="addToBag(-1)">
-          <img src="/minus.svg" alt class="m-auto" />
+        <button
+          class="cart-button w-8 hover:bg-yellow-500"
+          @click="addToBag(-1)"
+        >
+          <img
+            src="/minus.svg"
+            alt
+            class="m-auto"
+          />
         </button>
-        <div class="px-4 py-1">{{getQty({pid:product._id, vid:variant._id})}}</div>
+        <div
+          class="px-4 py-1"
+          v-if="!$store.state.loading"
+        >{{getQty({pid:product._id, vid:variant._id})}}</div>
+        <img
+          src="/loading.svg"
+          v-else
+        />
         <button
           class="cart-button w-8 bg-yellow-500"
           :disabled="!variant || variant.price<1 || variant.stock<1 || $store.state.loading"
           @click="addToBag(1)"
         >
-          <img src="/plus.svg" alt class="m-auto" />
+          <img
+            src="/plus.svg"
+            alt
+            class="m-auto"
+          />
         </button>
       </div>
     </div>
@@ -43,10 +64,15 @@ export default {
   props: ["product", "variant"],
   methods: {
     ...mapActions({ addToCart: "cart/addToCart" }),
-    addToBag(qty) {
+    async addToBag(qty) {
       if (!this.variant) this.$store.commit("setErr", "Please select a size");
-      else
-        this.addToCart({ pid: this.product._id, vid: this.variant._id, qty });
+      else {
+        await this.addToCart({
+          pid: this.product._id,
+          vid: this.variant._id,
+          qty
+        });
+      }
     }
   },
   computed: {

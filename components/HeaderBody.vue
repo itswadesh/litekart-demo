@@ -1,59 +1,38 @@
 <template>
   <div>
-    <p class="py-2 px-5 text-sm">
-      Home / Clothing / Dresses /
-      <span class="font-semibold">Clothing Dresses</span>
-    </p>
-    <p class="py-2 px-5 text-sm">
-      <span class="font-semibold">Clothing Dresses</span>
-      - {{count}} items
-    </p>
+    <div class="flex justify-between p-2">
+      <div class="hidden md:flex py-2 px-5 text-sm">
+        Home / Clothing / Dresses /
+        <span class="font-semibold">Clothing Dresses</span>
+      </div>
 
-    <div class="flex flex-wrap">
-      <div class="lg:flex text-sm w-full">
-        <!-- <a
-          href="#"
-          class="block inline-block mb-1 rounded-full p-1 mr-8 bg-gray-200 text-black"
-        >
-          Bundles<i class="fa fa-caret-down px-1" />
-        </a>
-        <a
-          href="#"
-          class="block inline-block mb-1 rounded-full  p-1 mr-8 bg-gray-200 text-black"
-        >
-          Fabric <i class="fa fa-caret-down px-1" />
-        </a>
-        <a
-          href="#"
-          class="block inline-block mb-1 rounded-full  p-1 mr-8 bg-gray-200 text-black "
-        >
-          Length<i class="fa fa-caret-down px-1" />
-        </a>
-        <a
-          href="#"
-          class="block inline-block mb-1 rounded-full  p-1 mr-8 bg-gray-200 text-black "
-        >
-          Neck<i class="fa fa-caret-down px-1" />
-        </a>
-        <a
-          href="#"
-          class="block inline-block mb-1 rounded-full  p-1 mr-8 bg-gray-200 text-black "
-        >
-          Ocassion<i class="fa fa-caret-down px-1" />
-        </a>
-        <a
-          href="#"
-          class="block inline-block mb-1 rounded-full  p-1 mr-8 bg-gray-200 text-black "
-        >
-          Pattern<i class="fa fa-caret-down px-1" />
-        </a>
-        <a
-          href="#"
-          class="block  text-black m-4 sm:inline-block  sm:mt-0 "
-        >
-          +8 more
-        </a>-->
-        <div class="text-sm flex h-12 py-4 w-full flex-wrap">
+      <div class="text-sm">
+        <div class="font-semibold">Clothing Dresses</div>
+        <div>{{count}} items</div>
+      </div>
+
+      <div class="flex-wrap">
+        <!-- <div class="hidden lg:flex text-sm w-full">
+          <a
+            href="#"
+            class="block inline-block mb-1 rounded-full p-1 mr-8 bg-gray-200 text-black"
+          >
+            Bundles<i class="fa fa-caret-down px-1" />
+          </a>
+          <a
+            href="#"
+            class="block inline-block mb-1 rounded-full  p-1 mr-8 bg-gray-200 text-black "
+          >
+            Pattern<i class="fa fa-caret-down px-1" />
+          </a>
+          <a
+            href="#"
+            class="block  text-black m-4 sm:inline-block  sm:mt-0 "
+          >
+            +8 more
+          </a>
+        </div> -->
+        <div class="text-sm">
           <div
             v-for="(v,k) in fl"
             :key="k"
@@ -73,31 +52,45 @@
               ></i>
             </span>
           </div>
-        </div>
-        <div class="inline-block relative">
-          <select
-            class="text-black border-gray-100 cursor-pointer cursor-pointer block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
-            v-model="sortBy"
-            @change="sort"
-          >
-            <option class="bg-white" v-for="(s,ix) in sorts" :key="ix" :value="s.val">{{s.name}}</option>
-          </select>
-          <div
-            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-          >
-            <i class="fa fa-caret-down px-1" />
+          <div class="inline-block relative">
+            <select
+              class="text-black border-gray-100 cursor-pointer cursor-pointer block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
+              v-model="sortBy"
+              @change="sort"
+            >
+              <option
+                class="bg-white"
+                v-for="(s,ix) in sorts"
+                :key="ix"
+                :value="s.val"
+              >{{s.name}}</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <i class="fa fa-caret-down px-1" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="xs:block lg:hidden">
-      <div class="flex shadow-md py-4 bg-white w-full">
-        <div class="flex-1 text-gray-700 text-left text-pink-500" @click="$emit('showFilters')">
-          <i class="fa fa-sliders px-3 mr-2" aria-hidden="true"></i>Filter
-        </div>
-        <div class="flex-1 text-gray-700 text-center font-normal px-4">0 Items</div>
-        <div class="flex-1 text-gray-700 text-center px-4 text-pink-500">
-          <i class="fa fa-sort mr-2" aria-hidden="true"></i>Sort
+    <div>
+      <div class="xs:block lg:hidden">
+        <div class="flex shadow-md py-4 bg-white w-full">
+          <div
+            class="flex-1 text-gray-700 text-left text-pink-500"
+            @click="$emit('showFilters')"
+          >
+            <i
+              class="fa fa-sliders px-3 mr-2"
+              aria-hidden="true"
+            ></i>Filter
+          </div>
+          <div class="flex-1 text-gray-700 text-center font-normal px-4">0 Items</div>
+          <div class="flex-1 text-gray-700 text-center px-4 text-pink-500">
+            <i
+              class="fa fa-sort mr-2"
+              aria-hidden="true"
+            ></i>Sort
+          </div>
         </div>
       </div>
     </div>

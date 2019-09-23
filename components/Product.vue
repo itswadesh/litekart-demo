@@ -6,13 +6,14 @@
   >
     <div class="xs:w-1/2">
       <img
-        style="max-height:12em;min-height:12em;object-fit: cover;"
+        class="w-100"
+        style="height:255px;object-fit: cover;"
         v-if="product._source.imgUrls"
         v-lazy="product._source.imgUrls[0]"
-        alt
+        alt=""
       />
-      <div class="ml-1">
-        <p class="text-gray-900 lg:font-bold sm:font-normal text-sm">{{product._source.name | truncate(25)}}</p>
+      <div class="m-1">
+        <p class="text-gray-900 lg:font-bold sm:font-normal text-sm">{{product._source.name | truncate(23)}}</p>
         <p class="text-black font-thin text-sm">{{product._source.categories[0].name}}</p>
         <p class="text-gray-600">{{product._source.variants[0].price | currency}}</p>
       </div>
