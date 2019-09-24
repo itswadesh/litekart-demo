@@ -40,12 +40,16 @@
           <p>XL</p>
         </button>
       </div>
-      <div>
-        <button class="mr-3 bg-red-600 hover:bg-red-500 text-white py-2 px-12 rounded font-bold">
-          <i class="fa fa-shopping-bag mr-2" aria-hidden="true"></i> ADD TO BAG
+      <div class="flex">
+        <button
+          class="mt-2 mr-3 bg-red-600 hover:bg-red-500 text-white py-2 px-5 rounded font-bold text-sm lg:text-lg"
+        >
+          <i class="fa fa-shopping-bag mr-2 hidden lg:block" aria-hidden="true"></i> ADD TO BAG
         </button>
-        <button class="mr-3 bg-white border border-grey-300 text-black py-2 px-8 rounded font-bold">
-          <i class="fa fa-bookmark mr-2" aria-hidden="true"></i> WISHLIST
+        <button
+          class="mt-2 mr-3 bg-white border border-grey-300 text-black py-2 px-8 rounded font-bold text-sm lg:text-lg"
+        >
+          <i class="fa fa-bookmark mr-2 hidden lg:block" aria-hidden="true"></i> WISHLIST
         </button>
       </div>
       <div class="py-8 border-b border-gray-300">
@@ -56,7 +60,7 @@
         <span class="text-gray-500">This product is already at its best price</span>
         <div>
           <button
-            class="my-2 w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
+            class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
           >
             <div class="font-bold">10% instant discount on Federal Bank Cards</div>
             <div
@@ -69,7 +73,7 @@
           </button>
 
           <button
-            class="my-2 w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
+            class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
           >
             <div class="font-bold">10 super cashback on MobiWiki</div>
             <div class="font-hairline text-gray-500 text-sm">Max super cashback of Rs.250. TCA</div>
@@ -80,7 +84,7 @@
           </button>
 
           <button
-            class="my-2 w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
+            class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
           >
             <div class="font-bold">Flat 200 cashback on Airtel Payments Bank</div>
             <div
@@ -93,7 +97,7 @@
           </button>
 
           <button
-            class="my-2 w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
+            class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
           >
             <div class="font-bold">EMI option available</div>
             <div class="font-hairline text-gray-500 text-sm">EMI starting from Rs.26/month</div>
@@ -172,7 +176,7 @@
           <i class="fa fa-truck ml-2" aria-hidden="true"></i>
         </p>
         <div class="text-gray-600 leading-loose">
-          <div class="w-1/3 flex flex-wrap hr-line justify-between pb-2 relative">
+          <div class="w-full lg:w-1/3 flex flex-wrap hr-line justify-between pb-2 relative">
             <input
               type="search"
               class="bg-gray-200 border p-2 w-full rounded"
