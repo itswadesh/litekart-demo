@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 body{
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 .container {
     margin: 0 auto;

@@ -19,10 +19,9 @@
           {{item.variant.size}}
         </p>
         <p class="relative mb-2">
-          <span class="text-sm top-0 mt-1 absolute">₹</span>
           <span class="text-black font-bold mb-2 text-2xl ml-2">{{item.variant.price | currency}}</span>
           <span class="text-gray-300 line-through ml-2">{{item.variant.mrp | currency}}</span>
-          <span class="ml-2 text-green-400">15% off</span>
+          <span class="ml-2 text-green-400">{{calculateOffPercent(item.variant.mrp, item.variant.price)}}% off</span>
         </p>
         <div class="flex justify-between">
           <div class="w-1/2 left-0">
@@ -97,6 +96,10 @@ export default {
       } catch (e) {
         console.log("err...", e.toString());
       }
+    },
+    calculateOffPercent(mrp, price) {
+      let percent = ((mrp - price) * 100) / mrp;
+      return Math.round(percent);
     }
   }
 };

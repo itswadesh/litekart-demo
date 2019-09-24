@@ -38,7 +38,7 @@
         />
         <CartBanners />
       </div>
-      <CartSummary />
+      <CartSummary :cart="cart" />
       <div class="w-8"></div>
     </div>
   </div>

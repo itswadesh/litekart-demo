@@ -64,7 +64,33 @@ export default {
   data() {
     return {
       currentImage: null,
-      carouselShow: false
+      carouselShow: false,
+      slider_options: {
+        items: 9,
+        gutter: 10,
+        loop: false,
+        swipeAngle: 50,
+        controls: true,
+        nav: false,
+        mouseDrag: true,
+        responsive: {
+          50: {
+            items: 1
+          },
+          550: {
+            items: 2
+          },
+          700: {
+            items: 3
+          },
+          900: {
+            items: 4
+          },
+          1150: {
+            items: 5
+          }
+        }
+      }
     };
   },
   created() {
@@ -77,58 +103,21 @@ export default {
   },
   components: { Carousel, Slide },
   methods: {
-    ...mapActions({ addToCart: "cart/addToCart" }),
     showAsCurrentImage(image) {
       this.currentImage = image;
-    },
-    toast() {
-      this.$toast
-        .show(
-          `
-      <div class="flex">
-        <img class="w-12 h-12 object-cover" src="${this.currentImage}"/>
-        <div>
-          <div>${this.product.name.substr(0, 20) + "..."}</div>
-          <div class="text-gray-600 text-xs">Added to your cart</div>
-          <div class="text-pink-600">View cart</div>
-        </div>
-      </div>
-      `,
-          {
-            containerClass: "sw-toast-container",
-            theme: "outline",
-            position: "top-right",
-            singleton: false
-          }
-        )
-        .goAway(1000);
-    },
-
-    addToBag(obj) {
-      // if (!this.userSelectedVariant) {
-      //   this.setErr("Please select a size");
-      //   this.shake = true;
-      //   setTimeout(() => {
-      //     this.shake = false;
-      //   }, 3000);
-      //   return;
-      // } else {
-      this.addToCart(obj);
-      if (this.$store.state.settings.analytics.fbPixels_status === "enabled") {
-        this.$fb.track("AddToCart", {
-          content_type: "product",
-          content_ids: this.product._id,
-          content_name: this.product.name,
-          currency: "INR",
-          value: this.calculatePrice
-        });
-      }
-      this.toast();
-      // }
     }
+    //  selectImg(ix) {
+    //       this.selectedImgIndex = ix;
+    //     },
   }
 };
 </script>
 
-<style>
+<style scoped>
+.zoom {
+  transition: transform 0.7s;
+}
+.zoom:hover {
+  transform: scale(1.035);
+}
 </style>

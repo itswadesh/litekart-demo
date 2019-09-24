@@ -4,7 +4,10 @@
     <Breadcrumb :product="product" />
     <div class="flex flex-wrap justify-start">
       <ProductImage :product="product" />
-      <ProductDetails :product="product" />
+      <ProductDetails
+        :product="product"
+        :selectedVariant="selectedVariant"
+      />
       <!-- <ProductDetailsFlipkart :product="product" /> -->
     </div>
   </div>
@@ -38,27 +41,6 @@ export default {
   mounted() {
     if (this.product) {
       this.scrollTo();
-    }
-  },
-  computed: {
-    ...mapGetters({
-      checkCart: "cart/checkCart"
-    }),
-    calculateOffPercent() {
-      let percent =
-        ((this.product.variants[0].mrp - this.product.variants[0].price) *
-          100) /
-        this.product.variants[0].mrp;
-      return Math.round(percent);
-    },
-    calculatePrice() {
-      let price = 0;
-      if (this.product.variants[0].price < this.product.variants[0].mrp) {
-        price = this.product.variants[0].price;
-      } else {
-        price = this.product.variants[0].mrp;
-      }
-      return price;
     }
   },
   async asyncData({ params, query, $axios }) {
@@ -101,76 +83,15 @@ export default {
   },
   data() {
     return {
-      shake: false,
-      currentImage: null,
       similarProducts: [],
       RecentlyViewedProducts: [],
       YouMightAlsoLikeProducts: [],
       carouselShow: false,
-      loading: false,
-      productDescription: false,
-      plusIcon: true,
-      minusIcon: false,
-      selectedImgIndex: 0,
-      sizepopup: false,
-      // slider_1: true,
-      slider_2: true,
-      groupProducts: [],
-      userSelectedVariant: null,
-      slider_options: {
-        items: 9,
-        gutter: 10,
-        loop: false,
-        swipeAngle: 50,
-        controls: true,
-        nav: false,
-        mouseDrag: true,
-        responsive: {
-          50: {
-            items: 1
-          },
-          550: {
-            items: 2
-          },
-          700: {
-            items: 3
-          },
-          900: {
-            items: 4
-          },
-          1150: {
-            items: 5
-          }
-        }
-      }
+      loading: false
     };
   },
   methods: {
     ...mapMutations(["setErr"]),
-    ...mapActions({ addToCart: "cart/addToCart" }),
-    selectedColor() {},
-    toast() {
-      this.$toast
-        .show(
-          `
-      <div class="flex">
-        <img class="w-12 h-12 object-cover" src="${this.currentImage}"/>
-        <div>
-          <div>${this.product.name.substr(0, 20) + "..."}</div>
-          <div class="text-gray-600 text-xs">Added to your cart</div>
-          <div class="text-pink-600">View cart</div>
-        </div>
-      </div>
-      `,
-          {
-            containerClass: "sw-toast-container",
-            theme: "outline",
-            position: "top-right",
-            singleton: false
-          }
-        )
-        .goAway(1000);
-    },
     scrollTo() {
       window.scroll({
         behavior: "smooth",
@@ -178,59 +99,6 @@ export default {
         top: 0
       });
     },
-    addToBag(obj) {
-      // if (!this.userSelectedVariant) {
-      //   this.setErr("Please select a size");
-      //   this.shake = true;
-      //   setTimeout(() => {
-      //     this.shake = false;
-      //   }, 3000);
-      //   return;
-      // } else {
-      this.addToCart(obj);
-      if (this.$store.state.settings.analytics.fbPixels_status === "enabled") {
-        this.$fb.track("AddToCart", {
-          content_type: "product",
-          content_ids: this.product._id,
-          content_name: this.product.name,
-          currency: "INR",
-          value: this.calculatePrice
-        });
-      }
-      this.toast();
-      // }
-    },
-    showAsCurrentImage(image) {
-      this.currentImage = image;
-    },
-    showDescription() {
-      this.productDescription = true;
-      this.plusIcon = false;
-      this.minusIcon = true;
-    },
-    hideDescription() {
-      this.productDescription = false;
-      this.plusIcon = true;
-      this.minusIcon = false;
-    },
-    changeVariant(v) {
-      this.selectedVariant = v;
-    },
-    slider_1_options() {
-      return Object.assign({}, this.slider_options, {
-        container: this.$refs.slider_1,
-        nextButton: this.$refs.slider_1_next_btn,
-        prevButton: this.$refs.slider_1_prev_btn
-      });
-    },
-    slider_2_options() {
-      return Object.assign({}, this.slider_options, {
-        container: this.$refs.slider_2,
-        nextButton: this.$refs.slider_2_next_btn,
-        prevButton: this.$refs.slider_2_prev_btn
-      });
-    },
-    handler() {},
     go(url) {
       this.$router.push(url);
     },
@@ -275,15 +143,6 @@ export default {
       else rating.avg = Math.round((rating.total / rating.count) * 10) / 10;
       this.rating = rating;
     },
-    selectVariant(s) {
-      this.selectedVariant = s;
-      this.userSelectedVariant = s;
-      this.selectedImgIndex = 0;
-    },
-    selectImg(ix) {
-      this.selectedImgIndex = ix;
-    },
-    afterImageLoaded(component) {},
     error(err) {
       this.setError(err.err);
     },
@@ -471,12 +330,3 @@ export default {
 };
 </script>
 
-
-<style scoped>
-.zoom {
-  transition: transform 0.7s;
-}
-.zoom:hover {
-  transform: scale(1.035);
-}
-</style>
