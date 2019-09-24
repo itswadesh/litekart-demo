@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full md:w-6/12 lg:w-7/12 p-2 px-10 leading-loose">
-    <div class="py-4 border-b border-gray-200">
-      <p class="text-2xl text-gray-700 font-semibold">{{product.brandNamr}}</p>
+  <div class="w-full md:w-6/12 lg:w-7/12 px-3 lg:px-3 leading-relaxed">
+    <div class="pb-4 border-b border-gray-200">
+      <p class="text-2xl text-gray-700 font-semibold">{{product.brandName}}</p>
       <p>{{product.name}}</p>
     </div>
     <div
@@ -24,11 +24,11 @@
       <p class="text-sm font-hairline">Additional tax shall apply, charged at checkout</p>
     </div>
     <div>
-      <div>
-        <span class="font-extrabold text-lg">SELECT SIZE</span>
+      <div class="flex">
+        <span class="font-extrabold text-lg w-1/2 lg:w-24">SELECT SIZE</span>
         <a
           href="#"
-          class="font-extrabold text-sm text-pink-500 ml-8"
+          class="lg:w-24 text-right w-1/2 right-0 font-extrabold text-sm text-pink-500 ml-8 text-right"
         >
           SIZE CHART
           <i
@@ -52,18 +52,18 @@
           <p>{{v.size}}</p>
         </button>
       </div>
-      <div class="flex">
+      <div class="flex mt-2">
         <button
-          class="mt-2 mr-3 bg-red-600 hover:bg-red-500 text-white py-2 px-5 rounded font-bold text-sm lg:text-lg"
           :disabled="!selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
+          class="mr-5 bg-red-600 hover:bg-red-500 text-white py-2 px-8 rounded font-bold text-sm lg:text-lg focus:outline-none"
         >
           <i
             class="fa fa-shopping-bag mr-2 hidden lg:block"
             aria-hidden="true"
           ></i> ADD TO BAG
         </button>
-        <button class="mt-2 mr-3 bg-white border border-grey-300 text-black py-2 px-8 rounded font-bold text-sm lg:text-lg">
+        <button class="bg-white border border-grey-300 text-black py-2 px-8 rounded font-bold text-sm lg:text-lg focus:outline-none">
           <i
             class="fa fa-bookmark mr-2 hidden lg:block"
             aria-hidden="true"
@@ -209,13 +209,15 @@
             />
             <button class="absolute right-0 text-sm mt-2 font-bold text-pink-500 pr-2 focus:outline-none hover:text-gray-600 cursor-pointer">Check</button>
           </div>
-          <span class="text-gray-500 text-xs">Please enter PIN code to check delivery time & Cash/Card on Delivery Availability</span>
-          <p>Tax: Applicable tax on the basis of exact location & discount will be charged at the time of checkout</p>
-          <p>100% Original Products</p>
-          <p>Free Delivery on order above Rs. 1199</p>
-          <p>Cash on delivery might be available</p>
-          <p>Easy 30 days returns and exchanges</p>
-          <p>Try & Buy might be available</p>
+          <span class="text-gray-500 text-xs">Please enter PIN code to check Availability</span>
+          <ul>
+            <li>Tax: Applicable tax on the basis of exact location & discount will be charged at the time of checkout</li>
+            <li>100% Original Products</li>
+            <li>Free Delivery on order above Rs. 1199</li>
+            <li>Cash on delivery might be available</li>
+            <li>Easy 30 days returns and exchanges</li>
+            <li>Try & Buy might be available</li>
+          </ul>
 
           <p>
             Product Code:
