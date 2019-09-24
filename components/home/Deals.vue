@@ -60,6 +60,7 @@ export default {
     if (!process.server) {
       let recentlyViewd = localStorage.getItem("recent");
       recentlyViewd = JSON.parse(recentlyViewd);
+      if (!recentlyViewd) recentlyViewd = [];
       recentlyViewd.reverse();
       if (recentlyViewd && recentlyViewd.length > 0) {
         let recentProduct = await this.$axios.$post(

@@ -310,11 +310,12 @@ export default {
         const currentId = this.product._id;
         if (recentlyViewd) {
           recentlyViewd = JSON.parse(recentlyViewd);
+          if (!recentlyViewd) recentlyViewd = [];
           recentlyViewd.reverse();
           if (!recentlyViewd.includes(currentId)) {
-            if (recentlyViewd.length > 10) {
-              recentlyViewd = [];
-            }
+            // if (recentlyViewd.length > 10) {
+            //   recentlyViewd = [];
+            // }
             recentlyViewd.push(currentId);
             localStorage.setItem("recent", JSON.stringify(recentlyViewd));
           }
