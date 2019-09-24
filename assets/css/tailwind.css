@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 body{
-  font-family: 'Roboto';
+  font-family: 'Catamaran', sans-serif;
 }
 .container {
     margin: 0 auto;
