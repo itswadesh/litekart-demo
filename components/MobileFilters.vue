@@ -24,34 +24,65 @@
       <div class="w-full flex mt-1 h-full">
         <div class="w-2/5">
           <ul class="bg-gray-200 h-full">
-            <li class="bg-white text-pink-500 border-l-4 border-pink-600">
-              <a href>Shop for</a>
+            <li
+              :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='categories'}"
+              @click="selected='categories'"
+            >
+              Category
             </li>
-            <li>
-              Age
+            <li
+              :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='brands'}"
+              @click="selected='brands'"
+            >
+              Brands
             </li>
-            <li>
-              <a href>Category</a>
+            <li
+              :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='sizes'}"
+              @click="selected='sizes'"
+            >
+              Sizes
             </li>
-            <li>
-              <a href>Delivery Time</a>
+            <li
+              :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='colors'}"
+              @click="selected='colors'"
+            >
+              Colour
             </li>
-            <li>
-              <a href>Colour</a>
+            <li
+              :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='Price'}"
+              @click="selected='Price'"
+            >
+              Price
             </li>
-            <li>
-              <a href>Price</a>
-            </li>
-            <li>
-              <a href>Discount</a>
-            </li>
-            <li @click="selected='brands'">
-              <a href>Brands</a>
+            <li
+              :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='Gender'}"
+              @click="selected='Gender'"
+            >
+              Gender
             </li>
           </ul>
         </div>
         <div class="w-full overflow-y-scroll">
-          <ul class="ml-2 py-2 px-5 w-full">
+          <ul
+            class="ml-2 py-2 px-5 w-full"
+            v-if="selected == 'categories' && facets.categories && facets.categories.all && facets.categories.all.buckets"
+          >
+            <li
+              v-for="b in facets.categories && facets.categories.all && facets.categories.all.buckets"
+              :key="b.key"
+            >
+              <Checkbox
+                :count="b.doc_count"
+                :value="b.key"
+                v-model="fl.categories"
+                @change="changed({model:'categories',checked:fl.categories})"
+              >{{b.key}}</Checkbox>
+            </li>
+          </ul>
+          <ul
+            class="ml-2 py-2 px-5 w-full"
+            v-if="selected == 'brands' && facets.brands && facets.brands.all && facets.brands.all.buckets"
+          >
             <li
               v-for="b in facets.brands && facets.brands.all && facets.brands.all.buckets"
               :key="b.key"
@@ -61,6 +92,39 @@
                 :value="b.key"
                 v-model="fl.brands"
                 @change="changed({model:'brands',checked:fl.brands})"
+              >{{b.key}}</Checkbox>
+            </li>
+          </ul>
+          <ul
+            class="ml-2 py-2 px-5 w-full"
+            v-if="selected == 'sizes' && facets.sizes && facets.sizes.all.buckets && facets.sizes.all.buckets.length>0"
+          >
+            <li
+              v-for="b in facets.sizes && facets.sizes.all && facets.sizes.all.buckets"
+              :key="b.key"
+            >
+              <Checkbox
+                :count="b.doc_count"
+                :value="b.key"
+                v-model="fl.sizes"
+                @change="changed({model:'sizes',checked:fl.sizes})"
+              >{{b.key}}</Checkbox>
+            </li>
+          </ul>
+          <ul
+            class="ml-2 py-2 px-5 w-full"
+            v-if="selected == 'colors' && facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets && facets.colors.colors.name.buckets.length>0"
+          >
+            <li
+              v-for="b in facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets"
+              :key="b.key"
+            >
+              <Checkbox
+                :color="b.val.buckets[0] && b.val.buckets[0].key"
+                :count="b.doc_count"
+                :value="b.key"
+                v-model="fl.color"
+                @change="changed({model:'colors',checked:fl.color})"
               >{{b.key}}</Checkbox>
             </li>
           </ul>
@@ -109,12 +173,13 @@ export default {
   components: { Checkbox, Radio },
   data() {
     return {
+      selected: "categories",
       loadingPrice: true, // Required because after loading finished then only we will initiate the price slider component
       showMobileFilter: true
     };
   },
   methods: {
-    categoryChanged(i) {
+    Changed(i) {
       console.error("categoryChanged", i);
     },
     changed(e) {
@@ -130,3 +195,9 @@ export default {
   }
 };
 </script>
+<style scoped>
+ul > li {
+  cursor: pointer;
+  font-size: 1rem;
+}
+</style>
