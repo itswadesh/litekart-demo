@@ -4,10 +4,19 @@
     v-if="facets"
   >
     <!-- Mobile version starts here -->
-    <div class="block md:hidden h-full" v-if="showMobileFilter">
+    <div
+      class="block md:hidden h-full"
+      v-if="showMobileFilter"
+    >
       <div class="flex shadow-md py-4 bg-white w-full">
-        <div class="flex-1 text-gray-700 text-left" @click="$emit('hide')">
-          <i class="fa fa-times ml-2" aria-hidden="true"></i>
+        <div
+          class="flex-1 text-gray-700 text-left"
+          @click="$emit('hide')"
+        >
+          <i
+            class="fa fa-times ml-2"
+            aria-hidden="true"
+          ></i>
         </div>
         <div class="flex-1 text-gray-700 text-center font-bold">FILTER</div>
         <div class="flex-1 text-gray-700 text-right mr-2">Clear all</div>
@@ -19,7 +28,7 @@
               <a href>Shop for</a>
             </li>
             <li>
-              <a href>Age</a>
+              Age
             </li>
             <li>
               <a href>Category</a>
@@ -36,27 +45,24 @@
             <li>
               <a href>Discount</a>
             </li>
-            <li>
+            <li @click="selected='brands'">
               <a href>Brands</a>
             </li>
           </ul>
         </div>
         <div class="w-full overflow-y-scroll">
           <ul class="ml-2 py-2 px-5 w-full">
-            <!--<li v-for="b in facets.brands && facets.brands.buckets" :key="b.key">
+            <li
+              v-for="b in facets.brands && facets.brands.all && facets.brands.all.buckets"
+              :key="b.key"
+            >
               <Checkbox
                 :count="b.doc_count"
                 :value="b.key"
                 v-model="fl.brands"
                 @change="changed({model:'brands',checked:fl.brands})"
               >{{b.key}}</Checkbox>
-            </li>-->
-            <label class="vertical-filters-label common-customCheckbox hover:bg-none">
-              <input type="checkbox" />
-              <span>Below ₹500</span>
-              <div class="common-checkboxIndicator"></div>
-              <div class="show-for-small-only"></div>
-            </label>
+            </li>
           </ul>
         </div>
       </div>
@@ -85,6 +91,7 @@ ul > li {
 <script>
 import { Checkbox, Radio } from "~/components/ui";
 import { constructURL } from "~/lib/";
+
 export default {
   name: "ProductSidebar",
   props: {

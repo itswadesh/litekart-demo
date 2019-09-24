@@ -3,7 +3,7 @@
     <div
       v-for="(p,ix) in skeletonCount"
       :key="ix+'-1'"
-      class="w-1/2"
+      class="xs:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12"
     >
       <div class="lg:p-2 mt-3 border-0">
         <img
