@@ -60,9 +60,17 @@
             </div>
             <div class="p-3 h-40 overflow-y-scroll">
               <div class="w-full flex text-xs text-gray-700 mb-1">
-                <div class="w-16 text-center font-semibold">
+                <div class="w-16 text-center font-semibold flex">
                   24
                   <br />Jun
+                  <ul id="progress">
+                    <li>
+                      <div class="node green"></div>
+                    </li>
+                    <li>
+                      <div class="divider grey"></div>
+                    </li>
+                  </ul>
                 </div>
                 <div class="w-full flex p-2 bg-pink-100">
                   <div class="w-1/3">
@@ -77,9 +85,17 @@
                 </div>
               </div>
               <div class="w-full flex text-xs text-gray-700 mb-1">
-                <div class="w-16 text-center font-semibold">
+                <div class="w-16 text-center font-semibold flex">
                   24
                   <br />Jun
+                  <ul id="progress">
+                    <li>
+                      <div class="node green"></div>
+                    </li>
+                    <li>
+                      <div class="divider grey"></div>
+                    </li>
+                  </ul>
                 </div>
                 <div class="w-full flex p-2 bg-pink-100">
                   <div class="w-1/3">
@@ -94,9 +110,17 @@
                 </div>
               </div>
               <div class="w-full flex text-xs text-gray-700 mb-1">
-                <div class="w-16 text-center font-semibold">
+                <div class="w-16 text-center font-semibold flex">
                   24
                   <br />Jun
+                  <ul id="progress">
+                    <li>
+                      <div class="node green"></div>
+                    </li>
+                    <li>
+                      <div class="divider grey"></div>
+                    </li>
+                  </ul>
                 </div>
                 <div class="w-full flex p-2 bg-pink-100">
                   <div class="w-1/3">
@@ -111,43 +135,17 @@
                 </div>
               </div>
               <div class="w-full flex text-xs text-gray-700 mb-1">
-                <div class="w-16 text-center font-semibold">
+                <div class="w-16 text-center font-semibold flex">
                   24
                   <br />Jun
-                </div>
-                <div class="w-full flex p-2 bg-pink-100">
-                  <div class="w-1/3">
-                    <span class="font-semibold">Location:</span>(Haryana)
-                  </div>
-                  <div class="w-1/3">
-                    <span class="font-semibold">Time:</span>13:20
-                  </div>
-                  <div class="w-1/3">
-                    <span class="font-semibold">Remark:</span>Returned as per client
-                  </div>
-                </div>
-              </div>
-              <div class="w-full flex text-xs text-gray-700 mb-1">
-                <div class="w-16 text-center font-semibold">
-                  24
-                  <br />Jun
-                </div>
-                <div class="w-full flex p-2 bg-pink-100">
-                  <div class="w-1/3">
-                    <span class="font-semibold">Location:</span>(Haryana)
-                  </div>
-                  <div class="w-1/3">
-                    <span class="font-semibold">Time:</span>13:20
-                  </div>
-                  <div class="w-1/3">
-                    <span class="font-semibold">Remark:</span>Returned as per client
-                  </div>
-                </div>
-              </div>
-              <div class="w-full flex text-xs text-gray-700 mb-1">
-                <div class="w-16 text-center font-semibold">
-                  24
-                  <br />Jun
+                  <ul id="progress">
+                    <li>
+                      <div class="node green"></div>
+                    </li>
+                    <li>
+                      <div class="divider grey"></div>
+                    </li>
+                  </ul>
                 </div>
                 <div class="w-full flex p-2 bg-pink-100">
                   <div class="w-1/3">
@@ -261,15 +259,50 @@ export default {
   background: red;
   margin-bottom: -4.9rem;
 }
-/** * Some Generic Styling */
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
+/* vertical scroll bar starts */
+.node {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 1000ms ease;
 }
-body {
-  font-family: "Open Sans", sans-serif;
-  text-align: center;
-  color: #6d6875;
+
+.activated {
+  box-shadow: 0px 0px 3px 2px rgb(224, 34, 174);
 }
+
+.divider {
+  height: 40px;
+  width: 2px;
+  margin-left: 4px;
+  transition: all 800ms ease;
+}
+
+li p {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+li {
+  list-style: none;
+  line-height: 1px;
+}
+
+.blue {
+  background-color: rgba(82, 165, 255, 1);
+}
+.green {
+  background-color: rgb(224, 34, 174);
+}
+.red {
+  background-color: rgba(255, 148, 148, 1);
+}
+.grey {
+  background-color: rgb(224, 34, 174);
+}
+#progress {
+  margin-left: 0.5rem;
+}
+/* vertical scroll bar ends */
 </style>
