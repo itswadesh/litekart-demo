@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="'/'+product._source.slug+'?id='+product._id"
-    class="lg:w-3/12 xs:w-1/2 lg:p-2 mt-3 flex flex-wrap"
+    class="xs:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 lg:p-2 mt-3 flex flex-wrap"
     v-if="product"
   >
     <div class="xs:w-1/2">
