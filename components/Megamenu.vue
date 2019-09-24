@@ -15,7 +15,7 @@
           aria-hidden="true"
         ></i>
       </nuxt-link>
-      <div class="mega-menu mb-16 sm:mb-0 shadow-xl">
+      <div class="mega-menu mb-16 sm:mb-0 shadow-xl bg-gray-100">
         <div class="mx-auto w-full flex flex-wrap justify-start mx-2">
           <ul
             v-for="(c,ix) in category.children"
@@ -26,19 +26,12 @@
             <div class="flex items-center">
               <h3 class="font-bold text-sm text-black text-bold mb-2">
                 {{c.name}}
-                <i
-                  class="fa fa-caret-right"
-                  aria-hidden="true"
-                ></i>
+                <i class="fa fa-caret-right" aria-hidden="true"></i>
               </h3>
             </div>
             <div class="flex items-center py-3">
               <ul>
-                <li
-                  class="py-1 text-gray-600"
-                  v-for="(c, index) in c.children"
-                  :key="index"
-                >
+                <li class="py-1 text-gray-600" v-for="(c, index) in c.children" :key="index">
                   <nuxt-link :to="`/search?q=${c.slug}`">{{c.name}}</nuxt-link>
                 </li>
               </ul>
