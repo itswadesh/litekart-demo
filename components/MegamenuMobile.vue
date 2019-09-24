@@ -1,14 +1,21 @@
 <template>
-  <div class="flex h-auto p-5 xs:block lg:hidden" style="overflow-x:scroll">
-    <div
+  <div
+    class="flex h-auto p-5 xs:block lg:hidden"
+    style="overflow-x:scroll"
+  >
+    <nuxt-link
       v-for="c in $store.state.categories"
       :key="c._id"
+      :to="`/search?q=${c.slug}`"
       class="flex-1 bg-white circletag"
       id="nay"
     >
-      <img :src="$store.state.settings.CDN_URL+c.img" class="object-cover h-12" />
+      <img
+        :src="$store.state.settings.CDN_URL+c.img"
+        class="object-cover h-12"
+      />
       <div class="text text-center">{{c.name.toUpperCase()}}</div>
-    </div>
+    </nuxt-link>
   </div>
 </template>
 

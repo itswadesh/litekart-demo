@@ -33,15 +33,15 @@
           v-for="i in data"
           :key="i._id"
         >
-          <nuxt-link
-            :to="`/search?q=${q}`"
+          <div
+            @click="go(i._source.name)"
             class="current_item"
           >
             <span> <img
                 :src="i._source.imgUrls[0]"
                 alt=""
               > </span> {{i._source.name | truncate(50)}}<span class="category_tag">in t-shirt</span>
-          </nuxt-link>
+          </div>
         </li>
       </ul>
       <ul v-else>
@@ -68,6 +68,10 @@ export default {
     this.search("");
   },
   methods: {
+    go(q) {
+      this.$router.push(`/search?q=${q}`);
+      this.showInstantSearch = false;
+    },
     onClose() {
       this.showInstantSearch = false;
     },
