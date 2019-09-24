@@ -8,65 +8,72 @@
         </p>
         <button class="bg-blue-500 hover:bg-blue-700 text-white text-xs right-0 py-1 px-2">View All</button>
       </div>
-      <div class="flex flex-wrap flex justify-between p-4">
-        <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
+      <carousel
+        :perPageCustom="[[425, 2], [768, 3], [1024, 5]]"
+        :paginationEnabled="false"
+        :navigationEnabled="true"
+        navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)'>"
+        navigation-prev-label="<img src='/chevron-right.svg'/>"
+      >
+        <slide
+          v-for="product in products"
+          :key="product._id"
+        >
+          <img
+            style="height:255px;object-fit: cover;"
+            v-if="product.imgUrls"
+            v-lazy="product.imgUrls[0]"
+            alt=""
+          />
+          <div class="">
+            <div class="font-bold text-xs mb-2">{{product.name}}</div>
             <p class="text-green-700 text-xs text-center">Extra 5% off</p>
           </div>
-        </div>
-        <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" />
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-      </div>
+        </slide>
+      </carousel>
     </div>
     <div class="lg:w-1/4 shadow xs:w-full">
-      <div class="deals">
-        <img src="/cardimage.webp" class="px-1 w-full" />
-      </div>
+      <img
+        v-lazy="$store.state.settings.CDN_URL+$store.state.settings.banners.hero.img"
+        alt=""
+        class="w-full h-full object-cover object-center"
+      />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
-</script>
+import { Carousel, Slide } from "vue-carousel";
 
-<style>
-.deals > img {
-  height: 18rem;
-}
-</style>
+export default {
+  data() {
+    return {
+      products: []
+    };
+  },
+  async created() {
+    if (!process.server) {
+      let recentlyViewd = localStorage.getItem("recent");
+      recentlyViewd = JSON.parse(recentlyViewd);
+      recentlyViewd.reverse();
+      if (recentlyViewd && recentlyViewd.length > 0) {
+        let recentProduct = await this.$axios.$post(
+          "products/ids",
+          recentlyViewd
+        );
+        this.products = recentProduct;
+      }
+    }
+  },
+  components: { Carousel, Slide },
+  methods: {
+    go(url) {
+      this.$router.push(url);
+    },
+    clearRecentItems() {
+      localStorage.setItem("recent", []);
+      this.$emit("clearRecentItems");
+    }
+  }
+};
+</script>

@@ -63,7 +63,6 @@
     </div>
     <!-- <RightSideBar /> -->
     <Footer />
-    <BackToTopDark />
   </div>
 </template>
 <script>

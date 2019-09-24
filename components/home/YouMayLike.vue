@@ -10,11 +10,16 @@
         </button>
       </div>
       <div class="flex flex-wrap justify-between p-4">
-        <div class="w-32 ml-1">
+        <div
+          v-for="product in products"
+          :key="product._id"
+        >
           <div class="relative">
             <img
-              src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2 "
+              style="height:255px;object-fit: cover;"
+              v-if="product.imgUrls"
+              v-lazy="product.imgUrls[0]"
+              alt=""
             />
             <i
               class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
@@ -22,153 +27,42 @@
             ></i>
           </div>
           <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
+            <div class="font-bold text-xs mb-2">{{product.name}}</div>
             <p class="text-green-700 text-xs text-center">
               Extra 5% off
             </p>
           </div>
         </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <img
-              src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2 "
-            />
-            <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">
-              Extra 5% off
-            </p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <img
-              src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2 "
-            />
-            <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">
-              Extra 5% off
-            </p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <img
-              src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2 "
-            />
-            <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">
-              Extra 5% off
-            </p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <img
-              src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2 "
-            />
-            <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">
-              Extra 5% off
-            </p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <img
-              src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2 "
-            />
-            <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">
-              Extra 5% off
-            </p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <img
-              src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2 "
-            />
-            <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">
-              Extra 5% off
-            </p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <img
-              src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2 "
-            />
-            <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">
-              Extra 5% off
-            </p>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      products: []
+    };
+  },
+  async created() {
+    try {
+      this.loading = true;
+      const res = await this.$axios.$get("products/sale");
+      this.products = res.data;
+    } catch (e) {
+    } finally {
+      this.loading = false;
+    }
+  }
+};
 </script>
 
 <style scoped>
 .border-b {
   border-bottom: 1px solid lightgray;
 }
-.you{
+.you {
   margin-top: 1.5em;
 }
 </style>
