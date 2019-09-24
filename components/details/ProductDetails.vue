@@ -179,7 +179,7 @@
               placeholder="PinCode"
             />
             <button
-              class="absolute right-0 text-sm mt-2 text-pink-500 pr-2 focus:outline-none hover:text-gray-600 cursor-pointer"
+              class="absolute right-0 text-sm mt-2 font-bold text-pink-500 pr-2 focus:outline-none hover:text-gray-600 cursor-pointer"
             >Check</button>
           </div>
           <span
@@ -194,18 +194,18 @@
 
           <p>
             Product Code:
-            <span>1923967</span>
+            <span class="font-bold text-black">1923967</span>
           </p>
 
           <p>
             Sold by:
-            <a href="#">SERA GROUP</a>
+            <a href="#" class="font-bold text-black">SERA GROUP</a>
           </p>
 
-          <p class="font-semibold text-sm text-gray-700">Manufacturer/Packer/Importer Details</p>
+          <p class="font-semibold text-sm text-black">Manufacturer/Packer/Importer Details</p>
           <span class="text-xs">Sera Group, 1st Floor, Gehlot Farms, Sector-47, Gurgaon</span>
 
-          <p class="font-semibold text-sm text-gray-700">Country of origin</p>
+          <p class="font-semibold text-sm text-black">Country of origin</p>
           <span class="text-xs">India</span>
         </div>
       </div>
