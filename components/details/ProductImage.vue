@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:w-6/12 lg:w-5/12 flex justify-start flex-wrap">
+  <div class="w-full md:w-6/12 lg:w-5/12 flex justify-start flex-wrap px-2">
     <div class="flex md:flex-col hidden md:block md:order-1">
       <img
         v-for="(i,ix) in product.imgUrls"
@@ -11,24 +11,10 @@
       />
     </div>
     <div class="flex-1 xs:order-1 md:order-2 overflow-hidden">
-      <img
-        class="hidden md:inline-block w-full zoom"
-        v-lazy="`${currentImage}`"
-      />
-      <carousel
-        class="md:hidden"
-        :perPage="1"
-        :paginationEnabled="false"
-      >
-        <slide
-          class="md:hidden inline-block w-full"
-          v-for="i in product.imgUrls"
-          :key="i"
-        >
-          <img
-            class="inline-block w-full"
-            v-lazy="`${i}`"
-          />
+      <img class="hidden md:inline-block w-full zoom" v-lazy="`${currentImage}`" />
+      <carousel class="md:hidden" :perPage="1" :paginationEnabled="false">
+        <slide class="md:hidden inline-block w-full" v-for="i in product.imgUrls" :key="i">
+          <img class="inline-block w-full" v-lazy="`${i}`" />
         </slide>
       </carousel>
       <!-- <div class="w-full flex p-2">
@@ -49,7 +35,7 @@
             aria-hidden="true"
           ></i>BUY NOW
         </button>
-      </div> -->
+      </div>-->
     </div>
   </div>
 </template>
