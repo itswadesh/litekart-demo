@@ -19,26 +19,31 @@
           v-for="product in products"
           :key="product._id"
         >
-          <img
-            style="height:255px;object-fit: cover;"
-            v-if="product.imgUrls"
-            v-lazy="product.imgUrls[0]"
-            alt=""
-          />
-          <div class="">
-            <div class="font-bold text-xs mb-2">{{product.name}}</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
+          <nuxt-link :to="'/'+product.slug+'?id='+product._id">
+            <img
+              style="height:255px;object-fit: cover;"
+              v-if="product.imgUrls"
+              v-lazy="product.imgUrls[0]"
+              alt=""
+            />
+            <div class="">
+              <div class="font-bold text-xs mb-2">{{product.name}}</div>
+              <p class="text-green-700 text-xs text-center">Extra 5% off</p>
+            </div>
+          </nuxt-link>
         </slide>
       </carousel>
     </div>
-    <div class="lg:w-1/4 shadow xs:w-full">
+    <nuxt-link
+      :to="$store.state.settings.banners.hero.link || '/search'"
+      class="lg:w-1/4 shadow xs:w-full"
+    >
       <img
         v-lazy="$store.state.settings.CDN_URL+$store.state.settings.banners.hero.img"
         alt=""
         class="w-full h-full object-cover object-center"
       />
-    </div>
+    </nuxt-link>
   </div>
 </template>
 

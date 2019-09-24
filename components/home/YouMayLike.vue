@@ -10,9 +10,10 @@
         </button>
       </div>
       <div class="flex flex-wrap justify-between p-4">
-        <div
+        <nuxt-link
           v-for="product in products"
           :key="product._id"
+          :to="'/'+product.slug+'?id='+product._id"
         >
           <div class="relative">
             <img
@@ -32,7 +33,7 @@
               Extra 5% off
             </p>
           </div>
-        </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
