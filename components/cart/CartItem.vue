@@ -51,9 +51,9 @@
           </div>
           <div class="right-0">
             <div class="flex text-right mt-2">
-              <button class="mr-5 focus:outline-none">MOVE TO WISHLIST</button>
+              <button class="mr-6 focus:outline-none">MOVE TO WISHLIST</button>
               <button
-                class="text-gray-600 font-medium right-0 bg-gray-200 rounded lg:text-2xl py-2 px-4"
+                class="text-gray-600 font-medium right-0 bg-gray-200 rounded lg:text-2xl py-1 px-3 ml-1"
                 @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
                 :disabled="loading"
               >

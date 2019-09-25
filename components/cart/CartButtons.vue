@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    Quantity:
+    <span class="mt-1">Quantity:</span>
     <div
       v-if="!checkCart({pid:product._id, vid:variant._id})"
       :disabled="!variant || variant.price<1 || variant.stock<1 || $store.state.loading"
