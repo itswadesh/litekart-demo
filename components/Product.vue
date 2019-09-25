@@ -14,7 +14,10 @@
       />
       <div class="m-1">
         <p class="text-gray-900 lg:font-bold sm:font-normal text-sm">{{product._source.name | truncate(23)}}</p>
-        <p class="text-black font-thin text-sm">{{product._source.categories[0].name}}</p>
+        <p
+          class="text-black font-thin text-sm"
+          v-if="product._source.categories && product._source.categories[0]"
+        >{{product._source.categories[0].name}}</p>
         <p class="text-gray-600">{{product._source.variants[0].price | currency}}</p>
       </div>
     </div>
