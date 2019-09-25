@@ -1,30 +1,48 @@
 <template>
   <div class="flex">
-    <span class="mt-1">Quantity:</span>
+    <span class="mt-1">Quantity: &nbsp; </span>
     <div
       v-if="!checkCart({pid:product._id, vid:variant._id})"
       :disabled="!variant || variant.price<1 || variant.stock<1 || $store.state.loading"
       @click="addToBag(1);"
     >
-      <button class="cart-button w-8">
-        <img src="/plus.svg" alt />
+      <button class="text-gray-600 bg-gray-200 rounded px-2 rounded">
+        <img
+          src="/plus.svg"
+          alt
+        />
       </button>
     </div>
     <div v-else>
       <div class="flex flex-wrap">
-        <button class="cart-button w-8 hover:bg-yellow-500" @click="addToBag(-1)">
-          <img src="/minus.svg" alt class="m-auto" />
+        <button
+          class="text-gray-600 bg-gray-300 rounded-full w-8 h-8"
+          @click="addToBag(-1)"
+        >
+          <img
+            src="/minus.svg"
+            alt
+            class="m-auto"
+          />
         </button>
-        <div class="px-4 py-1 w-12 h-8 text-center">
-          <span v-if="!loading">{{getQty({pid:product._id, vid:variant._id})}}</span>
-          <img src="/loading.svg" v-else />
+        <div class="px-2 flex items-center text-center">
+          <div v-if="!loading">{{getQty({pid:product._id, vid:variant._id})}}</div>
+          <img
+            class="w-3 h-4"
+            src="/loading.svg"
+            v-else
+          />
         </div>
         <button
-          class="cart-button w-8 bg-yellow-500"
+          class="text-gray-600 bg-pink-400 rounded-full w-8 h-8"
           :disabled="!variant || variant.price<1 || variant.stock<1 || loading"
           @click="addToBag(1)"
         >
-          <img src="/plus.svg" alt class="m-auto" />
+          <img
+            src="/plus.svg"
+            alt
+            class="m-auto"
+          />
         </button>
       </div>
     </div>
