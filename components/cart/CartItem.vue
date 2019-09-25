@@ -13,10 +13,14 @@
             :to="`/${item.product.slug}?id=${item.product._id}`"
           >{{item.product.name | truncate(30)}}</nuxt-link>
         </p>
-        <p class="text-gray-500 mb-2">
-          <span>Size:</span>
-          {{item.variant.size}}
-        </p>
+        <div class="flex">
+          <p class="text-gray-500 mb-2">
+            <span>Size:</span>
+            {{item.variant.size}}
+          </p>
+          <span class="inline-block rounded-full bg-gray-300 h-2 w-2 m-2"></span>
+          <span style="color: rgb(237, 113, 0);">3 left</span>
+        </div>
         <p class="relative mb-2">
           <span class="text-black font-bold mb-2 text-2xl ml-2">{{item.variant.price | currency}}</span>
           <span class="text-gray-300 line-through ml-2">{{item.variant.mrp | currency}}</span>
