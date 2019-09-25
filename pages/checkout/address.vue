@@ -2,7 +2,7 @@
   <div>
     <CheckoutHeader />
     <div class="flex flex-wrap justify-between">
-      <div class="lg:w-8 xs:w-0"></div>
+      <div class="lg:w-1/5 xs:w-0"></div>
       <div class="lg:w-8 xs:w-0 mt-10 px-2">
         <div class="pt-8">
           <div class="text-left">
@@ -116,7 +116,7 @@
           class="tracking-widest w-full mt-3 p-3 bg-red-600 text-white text-sm font-semibold rounded"
         >MAKE PAYMENT</button>
       </CartSummary>
-      <div class="w-8"></div>
+      <div class="w-1/5"></div>
     </div>
     <CheckoutFooter />
   </div>
@@ -198,7 +198,7 @@ textarea:focus + label {
 }
 
 .divider {
-  height: 36rem;
+  height: 40rem;
   width: 2px;
   transition: all 800ms ease;
 }
