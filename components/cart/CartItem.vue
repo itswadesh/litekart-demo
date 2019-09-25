@@ -1,19 +1,17 @@
 <template>
-  <div class="flex hr-line justify-between pt-5 pb-5">
+  <div class="flex justify-between pt-5 pb-5 border-b border-gray-300">
     <div class="lg:w-1/5 left-0 xs:w-1/6">
       <div>
-        <img
-          class="lg:rounded xs:rounded-b-none w-64"
-          v-lazy="item.product.img"
-          alt
-        />
+        <img class="lg:rounded xs:rounded-b-none w-64" v-lazy="item.product.img" alt />
         <!-- <div class="lg:hidden xs:visible text-black p-2 bg-gray-300 rounded rounded-t-none">Arrives 19 Sep</div> -->
       </div>
     </div>
     <div class="lg:w-4/5 right-0 xs:9/12">
       <div class="pl-4 font-hairline">
         <p class="text-black mb-2">
-          <nuxt-link :to="`/${item.product.slug}?id=${item.product._id}`">{{item.product.name | truncate(30)}}</nuxt-link>
+          <nuxt-link
+            :to="`/${item.product.slug}?id=${item.product._id}`"
+          >{{item.product.name | truncate(30)}}</nuxt-link>
         </p>
         <p class="text-gray-500 mb-2">
           <span>Size:</span>
@@ -22,14 +20,13 @@
         <p class="relative mb-2">
           <span class="text-black font-bold mb-2 text-2xl ml-2">{{item.variant.price | currency}}</span>
           <span class="text-gray-300 line-through ml-2">{{item.variant.mrp | currency}}</span>
-          <span class="ml-2 text-green-400">{{calculateOffPercent(item.variant.mrp, item.variant.price)}}% off</span>
+          <span
+            class="ml-2 text-green-400"
+          >{{calculateOffPercent(item.variant.mrp, item.variant.price)}}% off</span>
         </p>
         <div class="flex justify-between flex-wrap">
           <div class="left-0">
-            <CartButtons
-              :product="{_id:item.product._id}"
-              :variant="{_id:item.variant._id}"
-            />
+            <CartButtons :product="{_id:item.product._id}" :variant="{_id:item.variant._id}" />
             <!-- <div class="inline-block relative w-24">
               
               <select class="text-sm font-bold text-gray-500 p-2 border-gray-300 cursor-pointer cursor-pointer block appearance-none w-full bg-gray-200 rounded border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none">
@@ -54,15 +51,8 @@
                 @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
                 :disabled="loading"
               >
-                <img
-                  src="/loading.svg"
-                  v-if="loading"
-                  alt="..."
-                />
-                <i
-                  class="fa fa-trash"
-                  v-else
-                ></i>
+                <img src="/loading.svg" v-if="loading" alt="..." />
+                <i class="fa fa-trash" v-else></i>
               </button>
             </div>
           </div>

@@ -8,8 +8,8 @@
     >
       <img
         v-lazy="$store.state.settings.CDN_URL+b.img"
-        alt=""
-        class="w-full h-full pr-1 object-cover object-center"
+        alt
+        class="w-full h-full lg:pr-1 p-0 object-cover object-center"
       />
     </nuxt-link>
   </div>
