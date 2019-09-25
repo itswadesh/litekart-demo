@@ -1,5 +1,6 @@
 <template>
-  <div class="flex pt-3">
+  <div class="flex">
+    Quantity:
     <div
       v-if="!checkCart({pid:product._id, vid:variant._id})"
       :disabled="!variant || variant.price<1 || variant.stock<1 || $store.state.loading"
@@ -24,14 +25,11 @@
             class="m-auto"
           />
         </button>
-        <div
-          class="px-4 py-1"
-          v-if="!loading"
-        >{{getQty({pid:product._id, vid:variant._id})}}</div>
-        <img
-          src="/loading.svg"
-          v-else
-        />
+        <div class="px-4 py-1 w-12 h-8"><span v-if="!loading">{{getQty({pid:product._id, vid:variant._id})}}</span>
+          <img
+            src="/loading.svg"
+            v-else
+          /></div>
         <button
           class="cart-button w-8 bg-yellow-500"
           :disabled="!variant || variant.price<1 || variant.stock<1 || loading"

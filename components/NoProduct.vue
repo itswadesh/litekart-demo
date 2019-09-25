@@ -8,10 +8,11 @@
         />
       </div>
       <div class="text-gray-500 text-center font-normal">We are unable to find items matching</div>
-      <div class="text-black text-center">"xxxxxxxxxxxxxxxxxxxx"</div>
+      <div class="text-black text-center">{{$route.query.q}}</div>
     </div>
     <div class="w-full flex text-center shadow-md">
-      <div class="w-1/3">
+      <MegamenuMobile />
+      <!-- <div class="w-1/3">
         <img
           class="containerr p-2"
           src="/circle-filter-imgs.png"
@@ -28,13 +29,16 @@
           class="containerr p-2"
           src="/circle-filter-imgs.png"
         />Boys 2y+
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import MegamenuMobile from "~/components/MegamenuMobile";
+export default {
+  components: { MegamenuMobile }
+};
 </script>
 
 <style>

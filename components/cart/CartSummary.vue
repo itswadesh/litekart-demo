@@ -51,10 +51,7 @@
         <div class="w-1/2 text-lg font-bold text-left">Total</div>
         <div class="ml-2 w-1/2 font-bold text-black-400 text-right">{{cart.total | currency}}</div>
       </div>
-      <button
-        @click="$router.push('/checkout')"
-        class="w-full mt-3 p-3 bg-pink-500 hover:bg-pink-600 text-white tet-2xl font-bold rounded"
-      >Proceed To Checkout</button>
+      <slot />
     </div>
   </div>
 </template>

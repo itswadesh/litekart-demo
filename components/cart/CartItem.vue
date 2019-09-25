@@ -5,14 +5,15 @@
         <img
           class="lg:rounded xs:rounded-b-none w-64"
           v-lazy="item.product.img"
+          alt
         />
-        <div class="lg:hidden xs:visible text-black p-2 bg-gray-300 rounded rounded-t-none">Arrives 19 Sep</div>
+        <!-- <div class="lg:hidden xs:visible text-black p-2 bg-gray-300 rounded rounded-t-none">Arrives 19 Sep</div> -->
       </div>
     </div>
     <div class="lg:w-4/5 right-0 xs:9/12">
       <div class="pl-4 font-hairline">
         <p class="text-black mb-2">
-          <nuxt-link :to="`/${item.product.slug}?id=${item.product._id}`">{{item.product.name | truncate(30)}}</nuxt-link>... Arrives 19 Sep By Prince & Princes
+          <nuxt-link :to="`/${item.product.slug}?id=${item.product._id}`">{{item.product.name | truncate(30)}}</nuxt-link>
         </p>
         <p class="text-gray-500 mb-2">
           <span>Size:</span>
@@ -23,9 +24,9 @@
           <span class="text-gray-300 line-through ml-2">{{item.variant.mrp | currency}}</span>
           <span class="ml-2 text-green-400">{{calculateOffPercent(item.variant.mrp, item.variant.price)}}% off</span>
         </p>
-        <div class="flex justify-between">
-          <div class="w-1/2 left-0">
-            <cart-buttons
+        <div class="flex justify-between flex-wrap">
+          <div class="left-0">
+            <CartButtons
               :product="{_id:item.product._id}"
               :variant="{_id:item.variant._id}"
             />
@@ -45,8 +46,9 @@
               </div>
             </div>-->
           </div>
-          <div class="w-1/2 right-0">
-            <div class="right-0 text-right mt-2">
+          <div class="right-0">
+            <div class="flex text-right mt-2">
+              <button class="p-4 focus:outline-none">MOVE TO WISHLIST</button>
               <button
                 class="text-gray-600 font-medium text-2xl right-0 bg-gray-200 rounded px-3 py-1"
                 @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
