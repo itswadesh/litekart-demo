@@ -4,7 +4,10 @@
       <p class="text-2xl text-gray-700 font-semibold">{{product.brandName}}</p>
       <p>{{product.name}}</p>
     </div>
-    <div class="text-gray-700 font-semibold py-3 tracking-wider" v-if="selectedVariant">
+    <div
+      class="text-gray-700 font-semibold py-3 tracking-wider"
+      v-if="selectedVariant"
+    >
       <!-- <div v-if="!selectedVariant._id">
         <span class="text-2xl mr-2">{{product.price | currency}}</span>
         <span class="font-hairline line-through text-lg mr-2">{{product.mrp | currency}}</span>
@@ -28,37 +31,51 @@
           class="lg:w-24 text-right w-1/2 right-0 font-extrabold text-sm text-pink-500 ml-8 text-right"
         >
           SIZE CHART
-          <i class="fa fa-angle-right ml-2" aria-hidden="true"></i>
+          <i
+            class="fa fa-angle-right ml-2"
+            aria-hidden="true"
+          ></i>
         </a>
       </div>
-      <div class="flex py-6 relative" :class="{'shake-animation': shake}">
+      <div
+        class="flex py-6 relative"
+        :class="{'shake-animation': shake}"
+      >
         <button
           v-for="v in product.variants"
           :key="v._id"
           @click="selectVariant(v)"
-          :class="{'selected-size':v.size==(userSelectedVariant && userSelectedVariant.size)}"
+          :class="{'size-selected': v.size==(userSelectedVariant && userSelectedVariant.size)}"
           v-if="v.stock>0"
-          class="size-selected focus:outline:none mr-3 rounded-full bg-white border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
+          class=" focus:outline:none mr-3 rounded-full bg-white border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
         >
           <p>{{v.size}}</p>
-          <span
-            class="text-xs font-semibold absolute left-0 w-12 bg-orange-500 text-white text-center px-1 rounded"
-          >4 left</span>
+          <span class="text-xs font-semibold absolute left-0 w-12 bg-orange-500 text-white text-center px-1 rounded">4 left</span>
         </button>
       </div>
-      <div class="flex py-4">
-        <button class="mr-3 rounded-full w-12 h-12 focus:outline-none">
-          <img src="/red-crl.png" />
-        </button>
-        <button class="mr-3 rounded-full w-12 h-12 focus:outline-none">
-          <img src="/green-crl.png" />
-        </button>
-        <button class="mr-3 rounded-full w-12 h-12 focus:outline-none">
-          <img src="/blue-crl.png" />
-        </button>
-        <button class="mr-3 rounded-full w-12 h-12 focus:outline-none">
-          <img src="/purple-crl.png" />
-        </button>
+      <div
+        class="flex py-4"
+        v-if="groupProducts.data && groupProducts.data.length>0"
+      >
+        <nuxt-link
+          class="mr-3 rounded-full w-12 h-12 focus:outline-none"
+          v-for="p in groupProducts.data"
+          :key="p._id"
+          :to="'/'+p.slug+'?id='+p._id"
+        >
+          <img
+            v-lazy="p.imgUrls && p.imgUrls[0]"
+            :alt="p.color && p.color.name"
+          />
+
+          <span
+            class="tooltiptext"
+            v-if="p.color"
+          >
+            {{p.color.name}}
+            <!--replace with variable here-->
+          </span>
+        </nuxt-link>
       </div>
       <div class="flex mt-4">
         <button
@@ -66,66 +83,73 @@
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
           class="mr-12 bg-red-600 hover:bg-red-500 text-white py-2 px-6 rounded font-bold text-sm lg:text-lg focus:outline-none"
         >
-          <i class="fa fa-shopping-bag mr-2 hidden lg:block" aria-hidden="true"></i> ADD TO BAG
+          <i
+            class="fa fa-shopping-bag mr-2 hidden lg:block"
+            aria-hidden="true"
+          ></i> ADD TO BAG
         </button>
-        <button
-          class="bg-white border border-grey-300 text-black py-2 px-6 rounded font-bold text-sm lg:text-lg focus:outline-none"
-        >
-          <i class="fa fa-bookmark mr-2 hidden lg:block" aria-hidden="true"></i> WISHLIST
+        <button class="bg-white border border-grey-300 text-black py-2 px-6 rounded font-bold text-sm lg:text-lg focus:outline-none">
+          <i
+            class="fa fa-bookmark mr-2 hidden lg:block"
+            aria-hidden="true"
+          ></i> WISHLIST
         </button>
       </div>
       <div class="py-8 border-b border-gray-300">
         <p class="font-bold text-lg">
           BEST OFFERS
-          <i class="fa fa-tag ml-2" aria-hidden="true"></i>
+          <i
+            class="fa fa-tag ml-2"
+            aria-hidden="true"
+          ></i>
         </p>
         <span class="text-gray-500">This product is already at its best price</span>
         <div>
-          <button
-            class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
-          >
+          <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none">
             <div class="font-bold">10% instant discount on Federal Bank Cards</div>
-            <div
-              class="font-hairline text-gray-500 text-sm"
-            >This product is already at its best price</div>
+            <div class="font-hairline text-gray-500 text-sm">This product is already at its best price</div>
             <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
               view
-              <i class="fa fa-angle-right ml-2" aria-hidden="true"></i>
+              <i
+                class="fa fa-angle-right ml-2"
+                aria-hidden="true"
+              ></i>
             </span>
           </button>
 
-          <button
-            class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
-          >
+          <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none">
             <div class="font-bold">10 super cashback on MobiWiki</div>
             <div class="font-hairline text-gray-500 text-sm">Max super cashback of Rs.250. TCA</div>
             <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
               view
-              <i class="fa fa-angle-right ml-2" aria-hidden="true"></i>
+              <i
+                class="fa fa-angle-right ml-2"
+                aria-hidden="true"
+              ></i>
             </span>
           </button>
 
-          <button
-            class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
-          >
+          <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none">
             <div class="font-bold">Flat 200 cashback on Airtel Payments Bank</div>
-            <div
-              class="font-hairline text-gray-500 text-sm"
-            >Min spend 2,000;for first time transaction. TCA</div>
+            <div class="font-hairline text-gray-500 text-sm">Min spend 2,000;for first time transaction. TCA</div>
             <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
               view
-              <i class="fa fa-angle-right ml-2" aria-hidden="true"></i>
+              <i
+                class="fa fa-angle-right ml-2"
+                aria-hidden="true"
+              ></i>
             </span>
           </button>
 
-          <button
-            class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none"
-          >
+          <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500 focus:outline-none">
             <div class="font-bold">EMI option available</div>
             <div class="font-hairline text-gray-500 text-sm">EMI starting from Rs.26/month</div>
             <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
               view
-              <i class="fa fa-angle-right ml-2" aria-hidden="true"></i>
+              <i
+                class="fa fa-angle-right ml-2"
+                aria-hidden="true"
+              ></i>
             </span>
           </button>
         </div>
@@ -133,11 +157,12 @@
       <div class="py-8 border-b border-gray-300">
         <p class="font-bold text-lg">
           PRODUCT DETAILS
-          <i class="fa fa-list-alt ml-2" aria-hidden="true"></i>
+          <i
+            class="fa fa-list-alt ml-2"
+            aria-hidden="true"
+          ></i>
         </p>
-        <span
-          class="text-gray-500"
-        >Black printed woven fit and flare dress, has a tie-up neck, three-quarter sleeves, flared hem</span>
+        <span class="text-gray-500">Black printed woven fit and flare dress, has a tie-up neck, three-quarter sleeves, flared hem</span>
         <p class="font-bold text-lg">Size & Fit</p>
         <span class="text-gray-700">he model (height 5'8") is wearing a size S</span>
 
@@ -195,7 +220,10 @@
       <div class="py-4">
         <p class="font-bold text-lg">
           DELIVERY OPTIONS
-          <i class="fa fa-truck ml-2" aria-hidden="true"></i>
+          <i
+            class="fa fa-truck ml-2"
+            aria-hidden="true"
+          ></i>
         </p>
         <div class="text-gray-600 leading-loose">
           <div class="w-full lg:w-1/3 flex flex-wrap hr-line justify-between pb-2 relative">
@@ -204,9 +232,7 @@
               class="bg-gray-200 border p-2 w-full rounded"
               placeholder="PinCode"
             />
-            <button
-              class="absolute right-0 text-sm mt-2 font-bold text-pink-500 pr-2 focus:outline-none hover:text-gray-600 cursor-pointer"
-            >Check</button>
+            <button class="absolute right-0 text-sm mt-2 font-bold text-pink-500 pr-2 focus:outline-none hover:text-gray-600 cursor-pointer">Check</button>
           </div>
           <span class="text-gray-500 text-xs">Please enter PIN code to check Availability</span>
           <ul>
@@ -225,7 +251,10 @@
 
           <p>
             Sold by:
-            <a href="#" class="font-bold text-black">SERA GROUP</a>
+            <a
+              href="#"
+              class="font-bold text-black"
+            >SERA GROUP</a>
           </p>
 
           <p class="font-semibold text-sm text-black">Manufacturer/Packer/Importer Details</p>
@@ -275,6 +304,13 @@ export default {
         price = this.product.variants[0].mrp;
       }
       return price;
+    }
+  },
+  async created() {
+    if (this.product.group && this.product.group.trim()) {
+      this.groupProducts = await this.$axios.get(
+        "products/groupItems/" + this.product.group
+      );
     }
   },
   methods: {

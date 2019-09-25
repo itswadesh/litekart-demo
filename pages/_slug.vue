@@ -151,12 +151,6 @@ export default {
     }
   },
   async created() {
-    if (this.product.group && this.product.group.trim()) {
-      this.groupProducts = await this.$axios.get(
-        "products/groupItems/" + this.product.group
-      );
-    }
-
     if (
       !this.product ||
       !this.product.categories ||
