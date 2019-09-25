@@ -15,12 +15,17 @@
               <li class="progres-li">
                 <div class="divider grey"></div>
               </li>
+              <li class="progres-li">
+                <div class="node">
+                  <p class="mt-3 ml-2 text-gray-500">2</p>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
       </div>
       <div class="xs:w-full lg:w-1/2 mt-10 px-2">
-        <div class="font-bold text-gray-700 w-full p-3 text-lg bg-white mt-3 flex flex-wrap">
+        <div class="font-bold text-gray-700 w-full py-3 text-lg bg-white mt-3 flex flex-wrap">
           <div class="text-left">Checkout</div>
         </div>
         <div class="flex justify-between border-b border-gray-200 w-full">
@@ -198,9 +203,10 @@ textarea:focus + label {
 }
 
 .divider {
-  height: 40rem;
+  height: 42.5rem;
   width: 2px;
   transition: all 800ms ease;
+  margin-bottom: 0.5rem;
 }
 
 .progres-li {
