@@ -36,10 +36,10 @@
               <CartButtons :product="{_id:item.product._id}" :variant="{_id:item.variant._id}" />
             </div>
             <div class="w-full lg:w-2/5 text-right my-2">
-              <div class="flex lg:text-sm">
-                <button class="mr-6 focus:outline-none">MOVE TO WISHLIST</button>
+              <div class="flex text-xs">
+                <button class="mr-8 focus:outline-none">MOVE TO WISHLIST</button>
                 <button
-                  class="text-gray-600 bg-gray-200 rounded py-2 px-3"
+                  class="ml-3 text-gray-600 bg-gray-200 rounded py-2 px-3"
                   @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
                   :disabled="loading"
                 >
