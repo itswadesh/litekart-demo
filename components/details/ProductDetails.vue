@@ -58,22 +58,22 @@
         v-if="groupProducts.data && groupProducts.data.length>0"
       >
         <nuxt-link
-          class="mr-3 rounded-full w-12 h-12 focus:outline-none"
           v-for="p in groupProducts.data"
           :key="p._id"
           :to="'/'+p.slug+'?id='+p._id"
+          class="mr-3 rounded-full w-12 h-12 focus:outline-none
+          tooltip"
+          v-bind:class="{color_box_selected: product.color.name=== (p.color && p.color.name)}"
         >
           <img
             v-lazy="p.imgUrls && p.imgUrls[0]"
             :alt="p.color && p.color.name"
           />
-
           <span
             class="tooltiptext"
             v-if="p.color"
           >
             {{p.color.name}}
-            <!--replace with variable here-->
           </span>
         </nuxt-link>
       </div>
@@ -433,13 +433,57 @@ export default {
 };
 </script>
 
-<style >
-.size-selected {
-  color: #ffffff;
-  font-weight: 500;
-  background-color: #535766;
-  border: 1px solid #535766 !important;
+<style scoped>
+/** Hover Tooltip Css ***/
+.tooltip {
+  position: relative;
+  display: inline-block;
 }
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 82px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 7px;
+  margin-left: -38px;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.tooltip .tooltiptext {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.tooltip:hover .tooltiptext {
+  opacity: 1;
+}
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+/** End Hover Tooltip Css ***/
+
+.info_text {
+  color: grey;
+  font-size: 12px;
+}
+.info_text_list {
+  padding-left: 17px;
+}
+
 .shake-animation {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
