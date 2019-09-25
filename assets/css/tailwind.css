@@ -4,6 +4,9 @@
 body{
   font-family: 'Rubik', sans-serif;
 }
+button:focus, a:focus{
+   outline:none;
+}
 .container {
     margin: 0 auto;
     min-height: 100vh;
