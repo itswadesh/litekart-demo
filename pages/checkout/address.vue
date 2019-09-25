@@ -43,66 +43,38 @@
           <div class="w-8/12 pb-4">
             <div class="pt-12 pb-2 text-left text-gray-700 text-xl">Add an address</div>
             <form class="form w-full p-2">
-              <div class="field">
-                <input
-                  type="text"
-                  class="bg-gray-200 hover:bg-gray-300 w-full rounded p-2 h-12 focus:outline-none border-b focus:border-pink-500"
-                />
-                <label class="text-gray-500">Full Name</label>
-              </div>
-
-              <div class="field">
-                <input
-                  type="text"
-                  class="bg-gray-200 hover:bg-gray-300 w-full rounded p-2 h-12 focus:outline-none border-b focus:border-pink-500"
-                />
-                <label class="text-gray-500">Pincode</label>
-              </div>
-
-              <div class="field">
-                <textarea
-                  type="text"
-                  class="bg-gray-200 hover:bg-gray-300 w-full rounded p-2 h-12 focus:outline-none border-b focus:border-pink-500"
-                ></textarea>
-                <label class="text-gray-500">Address</label>
-              </div>
-
-              <div class="field">
-                <input
-                  type="text"
-                  class="bg-gray-200 hover:bg-gray-300 w-full rounded p-2 h-12 focus:outline-none border-b focus:border-pink-500"
-                />
-                <label class="text-gray-500">LankMark</label>
-              </div>
+              <Textbox
+                label="Full Name"
+                class="w-full"
+              />
+              <Textbox
+                label="Pin Code"
+                class="w-full"
+              />
+              <Textbox
+                label="Address"
+                class="w-full"
+              />
+              <Textbox
+                label="Landmark"
+                class="w-full"
+              />
 
               <div class="w-full flex justify-between">
-                <div class="field w-5/12">
-                  <input
-                    type="text"
-                    class="bg-gray-200 hover:bg-gray-300 w-full rounded p-2 h-12 focus:outline-none border-b focus:border-pink-500"
-                  />
-                  <label class="text-gray-500">Pincode</label>
-                </div>
-                <div class="field w-5/12">
-                  <input
-                    type="text"
-                    class="bg-gray-200 hover:bg-gray-300 w-full rounded p-2 h-12 focus:outline-none border-b focus:border-pink-500"
-                  />
-                  <label class="text-gray-500">Pincode</label>
-                </div>
-              </div>
-
-              <div class="field">
-                <input
-                  type="text"
-                  class="bg-gray-200 hover:bg-gray-300 w-full rounded p-2 h-12 focus:outline-none border-b focus:border-pink-500"
+                <Textbox
+                  label="Landmark"
+                  class="w-1/2"
                 />
-                <label class="text-gray-500">Mobile</label>
+                <Textbox
+                  label="Landmark"
+                  class="w-1/2"
+                />
               </div>
-
-              <button
-                class="tracking-widest w-full mt-3 p-3 hover:bg-pink-600 bg-pink-500 text-white text-sm font-semibold rounded"
-              >CONTINUE</button>
+              <Textbox
+                label="Mobile"
+                class="w-full"
+              />
+              <button class="tracking-widest w-full mt-3 p-3 hover:bg-pink-600 bg-pink-500 text-white text-sm font-semibold rounded">CONTINUE</button>
             </form>
           </div>
         </div>
@@ -115,7 +87,11 @@
         </div>
       </div>
       <div class="border-r border-gray-300"></div>
-      <CartSummary :cart="cart" hidden lg:block>
+      <CartSummary
+        :cart="cart"
+        hidden
+        lg:block
+      >
         <button
           @click="$router.push('/checkout/payment')"
           class="tracking-widest w-full mt-3 p-3 bg-red-600 text-white text-sm font-semibold rounded"
@@ -134,9 +110,17 @@ const Offers = () => import("~/components/cart/Offers");
 const CartSummary = () => import("~/components/cart/CartSummary");
 const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
 const CheckoutFooter = () => import("~/components/checkout/CheckoutFooter");
+const Textbox = () => import("~/components/ui/Textbox");
 
 export default {
-  components: { CartItem, Offers, CartSummary, CheckoutHeader, CheckoutFooter },
+  components: {
+    CartItem,
+    Offers,
+    CartSummary,
+    CheckoutHeader,
+    CheckoutFooter,
+    Textbox
+  },
   computed: {
     user() {
       return (this.$store.state.auth || {}).user || null;
