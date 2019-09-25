@@ -64,12 +64,12 @@
         <button
           :disabled="!selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
-          class="mr-5 bg-red-600 hover:bg-red-500 text-white py-2 px-8 rounded font-bold text-sm lg:text-lg focus:outline-none"
+          class="mr-12 bg-red-600 hover:bg-red-500 text-white py-2 px-6 rounded font-bold text-sm lg:text-lg focus:outline-none"
         >
           <i class="fa fa-shopping-bag mr-2 hidden lg:block" aria-hidden="true"></i> ADD TO BAG
         </button>
         <button
-          class="bg-white border border-grey-300 text-black py-2 px-8 rounded font-bold text-sm lg:text-lg focus:outline-none"
+          class="bg-white border border-grey-300 text-black py-2 px-6 rounded font-bold text-sm lg:text-lg focus:outline-none"
         >
           <i class="fa fa-bookmark mr-2 hidden lg:block" aria-hidden="true"></i> WISHLIST
         </button>

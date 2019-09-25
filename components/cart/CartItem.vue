@@ -22,13 +22,15 @@
           <span style="color: rgb(237, 113, 0);">3 left</span>
         </div>
         <p class="relative mb-2">
-          <span class="text-black font-bold mb-2 text-2xl ml-2">{{item.variant.price | currency}}</span>
-          <span class="text-gray-300 line-through ml-2">{{item.variant.mrp | currency}}</span>
+          <span class="text-black font-bold mb-2 text-2xl">{{item.variant.price | currency}}</span>
           <span
-            class="ml-2 text-green-400"
+            class="text-gray-300 line-through ml-2 text-xs lg:text-sm"
+          >{{item.variant.mrp | currency}}</span>
+          <span
+            class="ml-2 text-green-400 text-xs lg:text-sm"
           >{{calculateOffPercent(item.variant.mrp, item.variant.price)}}% off</span>
         </p>
-        <div class="flex justify-between flex-wrap">
+        <div class="flex justify-between flex-wrap text-sm">
           <div class="left-0">
             <CartButtons :product="{_id:item.product._id}" :variant="{_id:item.variant._id}" />
             <!-- <div class="inline-block relative w-24">
@@ -49,9 +51,9 @@
           </div>
           <div class="right-0">
             <div class="flex text-right mt-2">
-              <button class="p-4 focus:outline-none">MOVE TO WISHLIST</button>
+              <button class="mr-5 focus:outline-none">MOVE TO WISHLIST</button>
               <button
-                class="text-gray-600 font-medium text-2xl right-0 bg-gray-200 rounded px-3 py-1"
+                class="text-gray-600 font-medium right-0 bg-gray-200 rounded lg:text-2xl py-2 px-4"
                 @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
                 :disabled="loading"
               >

@@ -7,39 +7,24 @@
       @click="addToBag(1);"
     >
       <button class="cart-button w-8">
-        <img
-          src="/plus.svg"
-          alt
-        />
+        <img src="/plus.svg" alt />
       </button>
     </div>
     <div v-else>
-      <div class="flex-row-nocenter flex flex-wrap">
-        <button
-          class="cart-button w-8 hover:bg-yellow-500"
-          @click="addToBag(-1)"
-        >
-          <img
-            src="/minus.svg"
-            alt
-            class="m-auto"
-          />
+      <div class="flex-row-nocenter flex flex-wrap pl-3">
+        <button class="cart-button w-8 hover:bg-yellow-500" @click="addToBag(-1)">
+          <img src="/minus.svg" alt class="m-auto" />
         </button>
-        <div class="px-4 py-1 w-12 h-8"><span v-if="!loading">{{getQty({pid:product._id, vid:variant._id})}}</span>
-          <img
-            src="/loading.svg"
-            v-else
-          /></div>
+        <div class="px-4 py-1 w-12 h-8">
+          <span v-if="!loading">{{getQty({pid:product._id, vid:variant._id})}}</span>
+          <img src="/loading.svg" v-else />
+        </div>
         <button
           class="cart-button w-8 bg-yellow-500"
           :disabled="!variant || variant.price<1 || variant.stock<1 || loading"
           @click="addToBag(1)"
         >
-          <img
-            src="/plus.svg"
-            alt
-            class="m-auto"
-          />
+          <img src="/plus.svg" alt class="m-auto" />
         </button>
       </div>
     </div>
