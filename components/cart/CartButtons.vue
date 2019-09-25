@@ -11,7 +11,7 @@
       </button>
     </div>
     <div v-else>
-      <div class="flex-row-nocenter flex flex-wrap pl-3">
+      <div class="flex flex-wrap">
         <button class="cart-button w-8 hover:bg-yellow-500" @click="addToBag(-1)">
           <img src="/minus.svg" alt class="m-auto" />
         </button>

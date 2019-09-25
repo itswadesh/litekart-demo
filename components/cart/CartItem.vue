@@ -30,36 +30,23 @@
             class="ml-2 text-green-400 text-xs lg:text-sm"
           >{{calculateOffPercent(item.variant.mrp, item.variant.price)}}% off</span>
         </p>
-        <div class="flex justify-between flex-wrap text-sm">
-          <div class="left-0">
-            <CartButtons :product="{_id:item.product._id}" :variant="{_id:item.variant._id}" />
-            <!-- <div class="inline-block relative w-24">
-              
-              <select class="text-sm font-bold text-gray-500 p-2 border-gray-300 cursor-pointer cursor-pointer block appearance-none w-full bg-gray-200 rounded border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none">
-                <option class="bg-white">Qty 1</option>
-                <option class="bg-white text-black">2</option>
-                <option class="bg-white text-black">3</option>
-                <option class="bg-white text-black">4</option>
-                <option class="bg-white text-black">5</option>
-                <option class="bg-white text-black">6</option>
-                <option class="bg-white text-black">7</option>
-              </select>
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                <i class="fa fa-caret-down px-1" />
+        <div class="justify-between text-sm">
+          <div class="flex flex-wrap">
+            <div class="w-full lg:w-3/5 my-2">
+              <CartButtons :product="{_id:item.product._id}" :variant="{_id:item.variant._id}" />
+            </div>
+            <div class="w-full lg:w-2/5 text-right my-2">
+              <div class="flex lg:text-sm">
+                <button class="mr-6 focus:outline-none">MOVE TO WISHLIST</button>
+                <button
+                  class="text-gray-600 bg-gray-200 rounded py-2 px-3"
+                  @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
+                  :disabled="loading"
+                >
+                  <img src="/loading.svg" v-if="loading" alt="..." />
+                  <i class="fa fa-trash" v-else></i>
+                </button>
               </div>
-            </div>-->
-          </div>
-          <div class="right-0">
-            <div class="flex text-right mt-2">
-              <button class="mr-6 focus:outline-none">MOVE TO WISHLIST</button>
-              <button
-                class="text-gray-600 font-medium right-0 bg-gray-200 rounded lg:text-2xl py-1 px-3 ml-1"
-                @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
-                :disabled="loading"
-              >
-                <img src="/loading.svg" v-if="loading" alt="..." />
-                <i class="fa fa-trash" v-else></i>
-              </button>
             </div>
           </div>
         </div>
