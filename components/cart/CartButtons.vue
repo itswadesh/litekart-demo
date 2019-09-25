@@ -15,7 +15,7 @@
         <button class="cart-button w-8 hover:bg-yellow-500" @click="addToBag(-1)">
           <img src="/minus.svg" alt class="m-auto" />
         </button>
-        <div class="px-4 py-1 w-12 h-8">
+        <div class="px-4 py-1 w-12 h-8 text-center">
           <span v-if="!loading">{{getQty({pid:product._id, vid:variant._id})}}</span>
           <img src="/loading.svg" v-else />
         </div>
