@@ -3,20 +3,23 @@
     <CheckoutHeader />
     <div class="w-full pb-4">
       <div>
-        <div class="p-3 flex shadow items-center">
-          <i class="fa fa-arrow-left p-1" aria-hidden="true"></i>
-          <div class="font-bold text-gray-700 text-xl ml-3">Add address</div>
+        <div class="p-3 flex shadow items-center justify-between">
+          <div class="flex items-center">
+            <i class="fa fa-arrow-left mb-1" aria-hidden="true"></i>
+            <div class="font-bold text-gray-700 text-xl ml-3">Add address</div>
+          </div>
+          <div class="text-xs text-gray-600">Step 2 of 3</div>
         </div>
       </div>
-      <form class="form w-full mb-5">
+      <form class="lg:mx-15 form w-full mb-5">
         <div class="p-2">
           <Textbox label="Full Name" class="w-full" />
           <Textbox label="Pin Code" class="w-full" />
           <Textbox label="Address" class="w-full" />
           <Textbox label="Landmark" class="w-full" />
 
-          <div class="w-full flex flex-wrap justify-between">
-            <Textbox label="City" class="flex-1" />
+          <div class="w-full flex justify-between">
+            <Textbox label="City" class="flex-1 mr-1" />
             <Textbox label="State" class="flex-1 ml-1" />
           </div>
           <Textbox label="Mobile" class="w-full" />
