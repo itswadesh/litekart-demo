@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="bg-gray-300">
     <CheckoutHeader />
+    <div class="text-sm font-hairline text-gray-600 p-5">CHOOSE DELIVERY ADDRESS</div>
   </div>
 </template>
 

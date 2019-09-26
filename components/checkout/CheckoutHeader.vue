@@ -2,11 +2,11 @@
   <div class="flex flex-wrap justify-center p-2 lg:p-5">
     <div class="w-1/2 lg:w-1/3 order-0 lg:order-0">
       <nuxt-link to="/">
-        <img class="w-12 h-10 ml-8" src="/logo.svg" />
+        <img class="w-12 h-10 ml-2 lg:ml-8" src="/logo.svg" />
       </nuxt-link>
     </div>
     <div
-      class="order-2 lg:order-1 w-full lg:w-1/3 tracking-widest text-center text-gray-700 font-bold pt-3 text-xs"
+      class="order-2 lg:order-1 w-full lg:w-1/3 tracking-widest text-center text-gray-700 font-bold pt-3 text-xs flex justify-between p-2"
     >
       <a href class="text-green-500 border-b-2 border-green-500 pb-1">BAG</a>
       <span>- - - - - - - -</span>
