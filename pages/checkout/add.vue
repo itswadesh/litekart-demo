@@ -2,7 +2,12 @@
   <div>
     <CheckoutHeader />
     <div class="w-full pb-4">
-      <div class="py-4 px-2 mb-2 text-left text-gray-700 text-xl shadow">Add an address</div>
+      <div class>
+        <div class="p-3 flex shadow">
+          <i class="fa fa-arrow-left p-2" aria-hidden="true"></i>
+          <div class="font-bold text-gray-700 text-xl mt-1 ml-3">Add address</div>
+        </div>
+      </div>
       <form class="form w-full mb-5">
         <div class="p-2">
           <Textbox label="Full Name" class="w-full" />
