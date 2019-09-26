@@ -2,9 +2,11 @@
   <div class="group">
     <input
       type="text"
-      class="bg-gray-200 border-b w-full rounded hover:bg-gray-300 focus:outline-none focus:border-pink-500"
+      class="bg-gray-200 border-b w-full rounded 
+      hover:bg-gray-300 
+      focus:outline-none focus:border-pink-500"
       required
-    />
+    >
     <label class="text-gray-500">{{label}}</label>
   </div>
 </template>
