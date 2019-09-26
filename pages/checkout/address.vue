@@ -43,38 +43,19 @@
           <div class="w-8/12 pb-4">
             <div class="pt-12 pb-2 text-left text-gray-700 text-xl">Add an address</div>
             <form class="form w-full p-2">
-              <Textbox
-                label="Full Name"
-                class="w-full"
-              />
-              <Textbox
-                label="Pin Code"
-                class="w-full"
-              />
-              <Textbox
-                label="Address"
-                class="w-full"
-              />
-              <Textbox
-                label="Landmark"
-                class="w-full"
-              />
+              <Textbox label="Full Name" class="w-full" />
+              <Textbox label="Pin Code" class="w-full" />
+              <Textbox label="Address" class="w-full" />
+              <Textbox label="Landmark" class="w-full" />
 
               <div class="w-full flex justify-between">
-                <Textbox
-                  label="Landmark"
-                  class="w-1/2"
-                />
-                <Textbox
-                  label="Landmark"
-                  class="w-1/2"
-                />
+                <Textbox label="Landmark" class="w-1/2" />
+                <Textbox label="Landmark" class="w-1/2" />
               </div>
-              <Textbox
-                label="Mobile"
-                class="w-full"
-              />
-              <button class="tracking-widest w-full mt-3 p-3 hover:bg-pink-600 bg-pink-500 text-white text-sm font-semibold rounded">CONTINUE</button>
+              <Textbox label="Mobile" class="w-full" />
+              <button
+                class="tracking-widest w-full mt-3 p-3 hover:bg-pink-600 bg-pink-500 text-white text-sm font-semibold rounded"
+              >CONTINUE</button>
             </form>
           </div>
         </div>
@@ -87,11 +68,7 @@
         </div>
       </div>
       <div class="border-r border-gray-300"></div>
-      <CartSummary
-        :cart="cart"
-        hidden
-        lg:block
-      >
+      <CartSummary :cart="cart" hidden lg:block>
         <button
           @click="$router.push('/checkout/payment')"
           class="tracking-widest w-full mt-3 p-3 bg-red-600 text-white text-sm font-semibold rounded"
