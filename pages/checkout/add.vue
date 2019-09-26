@@ -2,10 +2,10 @@
   <div>
     <CheckoutHeader />
     <div class="w-full pb-4">
-      <div class>
-        <div class="p-3 flex shadow">
-          <i class="fa fa-arrow-left p-2" aria-hidden="true"></i>
-          <div class="font-bold text-gray-700 text-xl mt-1 ml-3">Add address</div>
+      <div>
+        <div class="p-3 flex shadow items-center">
+          <i class="fa fa-arrow-left p-1" aria-hidden="true"></i>
+          <div class="font-bold text-gray-700 text-xl ml-3">Add address</div>
         </div>
       </div>
       <form class="form w-full mb-5">
