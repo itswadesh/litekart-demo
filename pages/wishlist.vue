@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="flex flex-wrap justify-between">
       <div class="w-full p-2 font-semibold text-lg">
         My Wishlist
@@ -179,15 +178,12 @@
         </div>
       </a>
     </div>
-    <Footer />
+
   </div>
 </template>
 
 <script>
-import Header from "~/components/Header";
-import Footer from "~/components/Footer";
 export default {
-  components: { Header, Footer },
   data() {
     return {
       product: {},

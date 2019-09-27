@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="flex flex-wrap justify-between">
       <div class="lg:w-16 xs:w-0"></div>
       <div class="xs:w-full lg:w-2/4 mt-10 px-2">
@@ -66,7 +65,6 @@
 </template>
 
 <script>
-import Header from "~/components/Header";
 export default {};
 </script>
 

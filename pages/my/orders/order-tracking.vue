@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="bg-gray-100">
       <div class="flex flex-wrap py-4">
         <div class="w-1/12"></div>
@@ -28,10 +27,11 @@
               <span class="text-gray-500">ORDER PLACED</span>
               <p class="font-semibold text-gray-700">22nd may 19</p>
             </div>
-            <button
-              class="px-5 right-0 focus:outline-none px-3 py-0 bg-pink-500 text-white font-semibold rounded-full"
-            >
-              <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+            <button class="px-5 right-0 focus:outline-none px-3 py-0 bg-pink-500 text-white font-semibold rounded-full">
+              <i
+                class="fa fa-share-alt"
+                aria-hidden="true"
+              ></i> Share
             </button>
           </div>
         </div>
@@ -163,22 +163,22 @@
           </div>
           <div class="w-4"></div>
           <div class="w-4/12 shadow">
-            <img src="banner-imgs.jpg" class="w-full h-56 object-cover" />
+            <img
+              src="banner-imgs.jpg"
+              class="w-full h-56 object-cover"
+            />
             <p class="p-3 bg-white text-gray-600">Hop300</p>
           </div>
         </div>
         <div class="w-1/12"></div>
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Header from "~/components/Header";
-import Footer from "~/components/Footer";
 export default {
-  components: { Header, Footer }
+  components: {}
 };
 </script>
 

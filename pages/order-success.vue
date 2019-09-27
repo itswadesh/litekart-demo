@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="flex flex-wrap justify-start">
       <div class="lg:w-1/4 xs:w-0"></div>
       <div class="xs:w-full lg:w-1/3 mt-10 px-2">
@@ -88,11 +87,7 @@
 </template>
 
 <script>
-import Header from "~/components/Header";
-
-export default {
-  components: { Header }
-};
+export default {};
 </script>
 
 <style scoped>

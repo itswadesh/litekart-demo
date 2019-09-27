@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <Breadcrumb :product="product" />
     <div class="flex flex-wrap justify-start">
       <ProductImage :product="product" />
@@ -14,7 +13,6 @@
 </template>
 
   <script>
-const Header = () => import("~/components/Header");
 import { HOST, TITLE, DESCRIPTION, KEYWORDS, sharingLogo } from "~/config";
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
 import { Carousel, Slide } from "vue-carousel";
@@ -32,7 +30,6 @@ export default {
     }
   },
   components: {
-    Header,
     ProductImage,
     Breadcrumb,
     ProductDetails,
