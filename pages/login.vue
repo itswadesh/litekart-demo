@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="bg-gray-100 xs:mobile-login h-full px-4">
       <div class="container mx-auto h-full flex items-center">
         <div class="lg:w-1/3 w-full">
@@ -10,7 +9,12 @@
                 <span class="font-extrabold">SIGN IN</span> TO YOUR ACCOUNT
               </h1>
             </div>
-            <form novalidate autocomplete="off" @submit.stop.prevent="submit()" class="center">
+            <form
+              novalidate
+              autocomplete="off"
+              @submit.stop.prevent="submit()"
+              class="center"
+            >
               <div class="p-6">
                 <div class="mb-5 flex items-center border-b border-b-2 border-grey-500">
                   <input
@@ -96,7 +100,6 @@
 </template>
 
 <script>
-import Header from "~/components/Header";
 export default {
   data() {
     return {
@@ -112,7 +115,7 @@ export default {
       user: { email: "", password: "" }
     };
   },
-  components: { Header },
+  components: {},
   computed: {
     isPhone() {
       const phoneno = /^[+()\d-]+$/;

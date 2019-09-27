@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="flex flex-wrap justify-between bg-gray-100 shadow">
       <div class="text-center text-sm text-black bg-white w-full py-2">
         <p class="font-semibold">Order 091714264468</p>
@@ -105,16 +104,11 @@
       </div>
       <div class="w-8"></div>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Header from "~/components/Header";
-import Footer from "~/components/Footer";
-export default {
-  components: { Header, Footer }
-};
+export default {};
 </script>
 
 <style scoped>

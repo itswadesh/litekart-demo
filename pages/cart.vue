@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <EmptyCart v-if="!cart || !cart.qty || cart.qty==0" />
     <div
       class="flex flex-wrap justify-between"
@@ -82,7 +81,6 @@
 </template>
 
 <script>
-import Header from "~/components/Header";
 import EmptyCart from "~/components/cart/EmptyCart";
 import CartSummary from "~/components/cart/CartSummary";
 import CartBanners from "~/components/cart/CartBanners";
@@ -105,6 +103,6 @@ export default {
       showCart: "cart/showCart"
     })
   },
-  components: { Header, EmptyCart, CartSummary, CartBanners, CartItem }
+  components: { EmptyCart, CartSummary, CartBanners, CartItem }
 };
 </script>

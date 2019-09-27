@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <MegamenuMobile />
     <div class="px-2 home">
       <Hero />
@@ -15,7 +14,6 @@
 </template>
 
 <script>
-import Header from "~/components/Header";
 import Hero from "~/components/home/Hero";
 import Deals from "~/components/home/Deals";
 import Banners from "~/components/home/Banners";
@@ -27,13 +25,11 @@ import BannersSkeleton from "~/components/home/BannersSkeleton";
 import DealsSkeleton from "~/components/home/DealsSkeleton";
 export default {
   components: {
-    Header,
     Hero,
     MegamenuMobile,
     Deals,
     Banners,
     YouMayLike,
-
     //Skeletons
     YouMayLikeSkeleton,
     BannersSkeleton,

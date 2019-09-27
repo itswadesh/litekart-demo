@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <MobileFilters
       class="flex-none max-w-xs"
       :facets="facets"
@@ -62,17 +61,14 @@
       </div>
     </div>
     <!-- <RightSideBar /> -->
-    <Footer />
   </div>
 </template>
 <script>
 import Pagination from "~/components/Pagination";
 import Skeleton from "~/components/Skeleton";
 import Product from "~/components/Product";
-import Footer from "~/components/Footer";
 import LeftSideBar from "~/components/LeftSideBar";
 import MobileFilters from "~/components/MobileFilters";
-import Header from "~/components/Header";
 import HeaderBody from "~/components/HeaderBody";
 import Logo from "~/components/Logo";
 import NoProduct from "~/components/NoProduct";
@@ -128,9 +124,7 @@ export default {
   },
   components: {
     Logo,
-    Header,
     HeaderBody,
-    Footer,
     LeftSideBar,
     MobileFilters,
     Pagination,
