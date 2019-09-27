@@ -4,6 +4,18 @@
     <div class="px-2 home">
       <Hero />
       <Deals />
+      <div>
+        <nuxt-link
+          :to="$store.state.settings.banners.hero.link || '/search'"
+          class="lg:w-1/4 shadow xs:w-full"
+        >
+          <img
+            v-lazy="$store.state.settings.CDN_URL+$store.state.settings.banners.hero.img"
+            alt=""
+            class="w-full h-full object-cover object-center"
+          />
+        </nuxt-link>
+      </div>
       <!-- <DealsSkeleton /> -->
       <Banners />
       <!-- <BannersSkeleton /> -->

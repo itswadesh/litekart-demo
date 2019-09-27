@@ -16,7 +16,7 @@
         :facets="facets"
         :fl="fl"
       />
-      <div>
+      <div class="w-full">
         <HeaderBody
           :count="productCount"
           :fl="fl"
@@ -25,17 +25,16 @@
         />
         <NoProduct v-if="products.length==0 && !loading" />
         <div v-else>
-          <Skeleton v-if="loading" />
+          <!-- <Skeleton v-if="loading" /> -->
           <!-- <img
                 src="/loading.svg"
                 alt="loading ..."
               /> -->
           <div
-            v-else-if="products && products.length>0"
+            v-if="products && products.length>0"
             class="flex flex-wrap"
           >
             <Product
-              class="w-1/2"
               v-for="p in products"
               :key="p._id"
               :product="p"
