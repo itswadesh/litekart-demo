@@ -33,25 +33,7 @@
           </a>
         </div> -->
         <div class="text-sm">
-          <div
-            v-for="(v,k) in fl"
-            :key="k"
-            v-if="v && v.length>0 && k!='page' && k!='sort'"
-            class="block"
-          >
-            <span
-              class="text-gray-600 m-4 p-2 border border-gray-300 hover:border-gray-500 capitalize rounded-full"
-              v-for="(i,ix) in v"
-              :key="ix"
-            >
-              {{i}}
-              <i
-                class="fa fa-times px-1 cursor-pointer"
-                aria-hidden="true"
-                @click="remove(k,i)"
-              ></i>
-            </span>
-          </div>
+
           <div class="inline-block relative">
             <select
               class="text-black border-gray-100 cursor-pointer cursor-pointer block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
@@ -72,26 +54,22 @@
         </div>
       </div>
     </div>
-    <div>
-      <div class="xs:block lg:hidden">
-        <div class="flex shadow-md py-4 bg-white w-full">
-          <div
-            class="flex-1 text-gray-700 text-left text-pink-500"
-            @click="$emit('showFilters')"
-          >
-            <i
-              class="fa fa-sliders px-3 mr-2"
-              aria-hidden="true"
-            ></i>Filter
-          </div>
-          <div class="flex-1 text-gray-700 text-center font-normal px-4">0 Items</div>
-          <div class="flex-1 text-gray-700 text-center px-4 text-pink-500">
-            <i
-              class="fa fa-sort mr-2"
-              aria-hidden="true"
-            ></i>Sort
-          </div>
-        </div>
+    <div class="xs:block lg:hidden flex shadow-md py-4 bg-white w-full mb-1">
+      <div
+        class="flex-1 text-gray-700 text-left text-pink-500"
+        @click="$emit('showFilters')"
+      >
+        <i
+          class="fa fa-sliders px-3 mr-2"
+          aria-hidden="true"
+        ></i>Filter
+      </div>
+      <div class="flex-1 text-gray-700 text-center font-normal px-4">0 Items</div>
+      <div class="flex-1 text-gray-700 text-center px-4 text-pink-500">
+        <i
+          class="fa fa-sort mr-2"
+          aria-hidden="true"
+        ></i>Sort
       </div>
     </div>
   </div>

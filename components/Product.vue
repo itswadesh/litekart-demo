@@ -1,25 +1,22 @@
 <template>
   <nuxt-link
     :to="'/'+product._source.slug+'?id='+product._id"
-    class="xs:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 lg:p-2 mt-3 flex flex-wrap"
+    class="flex flex-wrap w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 px-1"
     v-if="product"
   >
-    <div class="xs:w-1/2">
+    <div>
       <img
-        class="w-100"
-        style="height:255px;object-fit: cover;"
+        style="height:250px; object-fit: cover;"
         v-if="product._source.imgUrls"
         v-lazy="product._source.imgUrls[0]"
         alt=""
       />
-      <div class="m-1">
-        <p class="text-gray-900 lg:font-bold sm:font-normal text-sm">{{product._source.name | truncate(23)}}</p>
-        <p
-          class="text-black font-thin text-sm"
-          v-if="product._source.categories && product._source.categories[0]"
-        >{{product._source.categories[0].name}}</p>
-        <p class="text-gray-600">{{product._source.variants[0].price | currency}}</p>
-      </div>
+      <div class="text-gray-900 lg:font-bold sm:font-normal text-sm">{{product._source.name | truncate(23)}}</div>
+      <div
+        class="text-black font-thin text-sm"
+        v-if="product._source.categories && product._source.categories[0]"
+      >{{product._source.categories[0].name}}</div>
+      <div class="text-gray-600">{{product._source.variants[0].price | currency}}</div>
     </div>
   </nuxt-link>
 </template>
