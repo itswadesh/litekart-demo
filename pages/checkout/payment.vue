@@ -9,24 +9,11 @@
           <div class="text-left w-1/2">My Shopping Bag ({{cart.qty}} Items)</div>
           <div class="text-right w-1/2">Total {{cart.total | currency}}</div>
         </div>
-        <CartItem
-          v-for="item in cart.items"
-          :key="item._id"
-          :item="item"
-        />
+        <CartItem v-for="item in cart.items" :key="item._id" :item="item" />
         <div class="hidden lg:block">
-          <nuxt-link
-            to="wishlist"
-            class="w-full shadow flex flex-wrap p-4 mt-6 mb-6"
-          >
-            <i
-              class="fa fa-bookmark-o mt-1 mr-2"
-              aria-hidden="true"
-            ></i> Add More From Wishlist
-            <i
-              class="fa fa-angle-right mt-1 ml-2"
-              aria-hidden="true"
-            ></i>
+          <nuxt-link to="wishlist" class="w-full shadow flex flex-wrap p-4 mt-6 mb-6">
+            <i class="fa fa-bookmark-o mt-1 mr-2" aria-hidden="true"></i> Add More From Wishlist
+            <i class="fa fa-angle-right mt-1 ml-2" aria-hidden="true"></i>
           </nuxt-link>
         </div>
       </div>
