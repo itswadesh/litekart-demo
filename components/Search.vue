@@ -2,7 +2,7 @@
   <form
     novalidate
     autocomplete="off"
-    @submit.stop.prevent="submit(q)"
+    @submit.stop.prevent="submit(search)"
   >
     <div class="search_fix"></div>
     <div class="absolute">
@@ -13,25 +13,20 @@
     </div>
     <input
       type="text"
-      v-model="q"
+      v-model="search"
       class="w-full px-10 bg-purple-white pr-4 shadow rounded border-0 h-10"
       placeholder="Search for products,brands and more"
       name="search"
-      @keyup="submit(q)"
     >
   </form>
 </template>
 
 <script>
-import { mixin as clickaway } from "vue-clickaway";
 import { typingTimeout } from "~/config";
 export default {
-  mixins: [clickaway],
   data() {
     return {
-      q: "",
-      data: [],
-      typingTimeout
+      search: ""
     };
   },
   methods: {
@@ -43,6 +38,7 @@ export default {
     search: {
       immediate: false,
       handler(value, oldValue) {
+        // if (value.length < 4) return;
         if (!oldValue) return; // Do not trigger on page load
         clearTimeout(this.typingTimer);
         let vm = this;
@@ -50,7 +46,7 @@ export default {
           if (!value || value == "undefined") value = ""; // When clear button clicked
           vm.searchString = value;
           vm.$router.push("/search?q=" + value);
-        }, vm.typingTimeout);
+        }, typingTimeout);
       }
     },
     "$route.query.q": {
@@ -61,7 +57,7 @@ export default {
         if (pathName === "category") return;
         if (!value || value == "undefined") value = "";
         if (value == "") return;
-        if (this.q == "") this.q = value;
+        if (this.search == "") this.search = value;
       }
     }
   }
