@@ -24,7 +24,7 @@
       <div class="flex items-center">
         <span class="font-extrabold text-lg w-1/2 lg:w-32">SELECT SIZE</span>
         <span
-          class="lg:w-40 text-right right-0 font-extrabold text-sm text-pink-500 ml-8 text-right"
+          class="flex-1 text-right right-0 font-extrabold text-sm text-pink-500 ml-8 text-right"
         >
           <div class="flex items-center justify-between">
             <img
