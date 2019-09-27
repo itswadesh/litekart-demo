@@ -9,43 +9,54 @@
           View All
         </button>
       </div>
-      <div class="flex flex-wrap justify-between p-4">
-        <nuxt-link
+      <carousel
+        :perPageCustom="[[425, 2], [768, 3], [1024, 5]]"
+        :paginationEnabled="false"
+        :navigationEnabled="true"
+        navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)'>"
+        navigation-prev-label="<img src='/chevron-right.svg'/>"
+        class="flex flex-wrap justify-between p-4"
+      >
+        <slide
           v-for="product in products"
           :key="product._id"
-          :to="'/'+product.slug+'?id='+product._id"
         >
-          <div class="relative">
-            <img
-              style="height:255px;object-fit: cover;"
-              v-if="product.imgUrls"
-              v-lazy="product.imgUrls[0]"
-              alt=""
-            />
-            <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">{{product.name}}</div>
-            <p class="text-green-700 text-xs text-center">
-              Extra 5% off
-            </p>
-          </div>
-        </nuxt-link>
-      </div>
+          <nuxt-link :to="'/'+product.slug+'?id='+product._id">
+            <div class="relative">
+              <img
+                style="height:255px;object-fit: cover;"
+                v-if="product.imgUrls"
+                v-lazy="product.imgUrls[0]"
+                alt=""
+              />
+              <i
+                class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <div class="px-2 py-4">
+              <div class="font-bold text-xs mb-2">{{product.name | truncate(40)}}</div>
+              <p class="text-green-700 text-xs text-center">
+                Extra 5% off
+              </p>
+            </div>
+          </nuxt-link>
+        </slide>
+      </carousel>
     </div>
   </div>
 </template>
 
 <script>
+import { Carousel, Slide } from "vue-carousel";
+
 export default {
   data() {
     return {
       products: []
     };
   },
+  components: { Carousel, Slide },
   async created() {
     try {
       this.loading = true;
