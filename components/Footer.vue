@@ -1,86 +1,117 @@
 <template>
   <footer class="txtxlr">
-    <div class="flex flex-wrap justify-between">
-      <div class="p-8">
-        <div class="text-center mr-2 font-bold text-sm">ONLINE SHOPPING</div>
+    <div class="flex flex-wrap justify-between py-8">
+      <div class="lg:p-8 p-2">
+        <div class="text-left mr-2 font-bold text-sm">ONLINE SHOPPING</div>
         <ul class="font-hairline text-sm">
-          <li><a href="">Men</a></li>
-          <li><a href="">Women</a></li>
-          <li><a href="">Kids</a></li>
-          <li><a href="">Home & Living</a></li>
-          <li><a href="">Discover</a></li>
-          <li><a href="">Gift Cards</a></li>
-          <li><a href="">Myntra Insider</a><span class="desktop-superscript">New</span></li>
+          <li>
+            <a href>Men</a>
+          </li>
+          <li>
+            <a href>Women</a>
+          </li>
+          <li>
+            <a href>Kids</a>
+          </li>
+          <li>
+            <a href>Home & Living</a>
+          </li>
+          <li>
+            <a href>Discover</a>
+          </li>
+          <li>
+            <a href>Gift Cards</a>
+          </li>
+          <li>
+            <a href>Myntra Insider</a>
+            <span class="desktop-superscript">New</span>
+          </li>
         </ul>
       </div>
-      <div class="p-8">
-        <div class="text-center mr-2  font-bold text-sm">USEFUL LINKS</div>
+      <div class="lg:p-8 p-2">
+        <div class="text-center mr-2 font-bold text-sm">USEFUL LINKS</div>
         <ul class="font-hairline text-sm">
-          <li><a href="">Men</a></li>
-          <li><a href="">Women</a></li>
-          <li><a href="">Kids</a></li>
-          <li><a href="">Home & Living</a></li>
-          <li><a href="">Discover</a></li>
-          <li><a href="">Gift Cards</a></li>
-          <li><a href="">Myntra Insider</a></li>
+          <li>
+            <a href>Men</a>
+          </li>
+          <li>
+            <a href>Women</a>
+          </li>
+          <li>
+            <a href>Kids</a>
+          </li>
+          <li>
+            <a href>Home & Living</a>
+          </li>
+          <li>
+            <a href>Discover</a>
+          </li>
+          <li>
+            <a href>Gift Cards</a>
+          </li>
+          <li>
+            <a href>Myntra Insider</a>
+          </li>
         </ul>
       </div>
-      <div class="p-8">
+      <div class="lg:p-8 p-2 items-center">
         <div class="font-bold text-sm">EXPERIENCE MYNTRA APP ON MOBILE</div>
-        <img
-          class="float-left mt-5  h-10"
-          src="/playstore.png"
-        >
-        <img
-          class="float-left mt-5  h-10"
-          src="/appstore.png"
-        ><br><br><br>
-        <h6 class="text-left  text-sm">KEEP IN TOUCH</h6>
-        <img
-          class="float-left mt-3 h-5"
-          src="/socialicons.png"
-        >
+        <div class="flex mb-2">
+          <img class="mt-2 h-10" src="/playstore.png" />
+          <img class="mt-2 h-10" src="/appstore.png" />
+        </div>
+        <div>
+          <h6 class="text-left text-sm">KEEP IN TOUCH</h6>
+          <img class="mt-3 h-5" src="/socialicons.png" />
+        </div>
       </div>
-      <div class="p-8 items-center">
-        <div class="flex align-middle items-center">
+      <div class="lg:p-8 p-2 items-center">
+        <div class="flex items-center">
           <img
-            class="w-1/4 rounded-sm m-5 sm:w-10"
+            class="lg:w-1/8 rounded-sm lg:mx-5 my-2 w-12 h-12 lg:h-10 mr-3"
             src="/original.png"
-            alt=""
+            alt
           />
-          <div class="text-sm"><span class="font-bold">100% ORIGINAL</span> guarantee for all products at myntra.com</div>
+          <div class="text-sm">
+            <span class="font-bold">100% ORIGINAL</span> guarantee for all products at myntra.com
+          </div>
         </div>
-        <div class="flex align-middle items-center">
+        <div class="flex items-center">
           <img
-            class="w-1/4 rounded-sm m-5 sm:w-10"
+            class="lg:w-1/8 rounded-sm lg:mx-5 my-2 w-12 h-12 lg:h-10 mr-3"
             src="/return.png"
-            alt=""
+            alt
           />
-          <div class="text-sm"><span class="font-bold">Return within 30days</span> of receiving your order</div>
+          <div class="text-sm">
+            <span class="font-bold">Return within 30days</span> of receiving your order
+          </div>
         </div>
-        <div class="flex align-middle items-center">
-          <img
-            class="w-1/4 rounded-sm m-5 sm:w-10"
-            src="/truck.png"
-            alt=""
-          />
-          <div class="text-sm"><span class="font-bold">Get free delivery</span> for every order above Rs. 1199</div>
+        <div class="flex items-center">
+          <img class="lg:w-1/8 rounded-sm lg:mx-5 my-2 w-12 h-12 lg:h-10 mr-3" src="/truck.png" alt />
+          <div class="text-sm">
+            <span class="font-bold">Get free delivery</span> for every order above Rs. 1199
+          </div>
         </div>
       </div>
     </div>
-    <div class="p-8">
-      <div class="text-sm font-medium hr-line">POPULAR SEARCHES</div>
-      <hr class="text-gray-100">
-      <div class="mt-5 mb-5">Adidas | Arrow | Fila | Online Shopping | Nike | Pepe Jeans | Puma | United Colors of Benetton |
+    <div class="lg:p-8 p-2 text-gray-700 text-sm">
+      <div class="font-medium hr-line">POPULAR SEARCHES</div>
+      <hr class="text-gray-100" />
+      <div class="mt-5 mb-5 font-normal">
+        Adidas | Arrow | Fila | Online Shopping | Nike | Pepe Jeans | Puma | United Colors of Benetton |
         Fastrack | Shorts | Being Human | Skirts | Woodland | Supra | Dresses | Clothing | Jewellery |
         T-shirts | Shoes | Bags | Watches | Caps | Shirts | Backpacks | Flip Flops | Sunglasses | Kurtas |
         Lingerie | Jackets | Skechers | Saree | Sandals | Puma Tshirts | Woodland Shoes | Titan Watches |
         Fastrack Watches | Wrangler Shirts | Adidas Tshirts | Nike Shoes | Roadster Shirts | Casual Shoes |
-        Running Shoes | Nike Sports Shoes | Jeans | Being Human | Tshirts | Converse Shoes | Cricket Shoes</div>
+        Running Shoes | Nike Sports Shoes | Jeans | Being Human | Tshirts | Converse Shoes | Cricket Shoes
+      </div>
     </div>
-    <div class="flex p-8 bg-white flex-wrap justify-between">
-      <div> In case of any concern,<span class="px-2 text-indigo-600">Contact Us</span> </div>
-      <div> © 2019 www.myntra.com. All rights reserved. </div>
+    <div class="flex lg:p-8 p-2 text-gray-700 flex-wrap justify-between">
+      <div>
+        In case of any concern,
+        <span class="px-2 text-indigo-600">Contact Us</span>
+      </div>
+      <div>© 2019 www.myntra.com. All rights reserved.</div>
     </div>
   </footer>
 </template>
