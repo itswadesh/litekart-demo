@@ -5,7 +5,7 @@
       <div>
         <div class="p-3 flex shadow items-center justify-between">
           <div class="flex items-center">
-            <i class="fa fa-arrow-left mb-1" aria-hidden="true"></i>
+            <i @click="go('/checkout/list')" class="fa fa-arrow-left mb-1" aria-hidden="true"></i>
             <div class="font-bold text-gray-700 text-xl ml-3">Add address</div>
           </div>
           <div class="text-xs text-gray-600">Step 2 of 3</div>
@@ -42,7 +42,13 @@ export default {
   components: {
     CheckoutHeader,
     Textbox
-  }
+  },
+  methods: {
+    go(url) {
+      this.$router.push(url);
+    }
+  },
+  layout: "none"
 };
 </script>
 

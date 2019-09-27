@@ -1,9 +1,8 @@
 <template>
   <div>
     <CheckoutHeader />
-    <div>
-      <div class="text-sm font-hairline text-gray-600 p-3">CHOOSE DELIVERY ADDRESS</div>
-      <div class="m-2">
+    <div class="p-2">
+      <div class="w-full pb-4">
         <div
           class="shadow bg-white p-2 rounded flex flex-wrap justify-between border border-green-500"
         >
@@ -30,45 +29,29 @@
           </div>
           <div class="border-t border-gray-200 flex w-full">
             <button
+              @click="go('/checkout/list')"
               class="tracking-widest w-1/2 text-blue-500 py-1 border-r border-gray-200 mt-1"
-            >Remove</button>
+            >Edit/Change</button>
             <button
               @click="go('/checkout/add')"
               class="tracking-widest w-1/2 text-blue-500 py-1 mt-1"
-            >Edit</button>
+            >Add New Address</button>
           </div>
         </div>
-
-        <div class="mt-2 shadow bg-white p-2 rounded flex flex-wrap justify-between">
-          <div class="w-full flex justify-between">
-            <div>
-              <Radio />
-            </div>
-            <div class="flex-1 ml-2">
-              <div class="font-semibold">Kintali Naveesh</div>
-              <div class="py-2 text-xs">
-                <div>Girls Hostel Vit university vellore,Tamil Nadu,632014</div>
-              </div>
-            </div>
-            <div>
-              <div class="rounded-full text-xs bg-gray-200 py-1 px-2">Home</div>
-            </div>
-          </div>
-        </div>
-
-        <nuxt-link
-          to="/checkout/add"
-          class="shadow bg-white pointer my-2 py-2 px-4 rounded flex justify-between items-center"
-        >
-          <div>Add New Address</div>
-          <i class="fa fa-angle-right text-right" aria-hidden="true"></i>
-        </nuxt-link>
       </div>
-    </div>
-    <div class="fixed bottom-0 w-full p-2 bg-white">
-      <button
-        class="tracking-widest w-full mt-3 p-3 bg-red-500 text-white text-sm font-semibold rounded"
-      >CONFIRM</button>
+      <div
+        class="w-full flex justify-between border rounded p-2 text-sm border-green-300 bg-green-100"
+      >
+        <div>
+          <Radio />
+        </div>
+        <div class="flex-1 ml-2">
+          <div>
+            <div class="font-bold text-black">Standard Delivery</div>
+            <div class="text-gray-500">Get it by 02nd oct | Delivery Charge 149</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -91,11 +74,4 @@ export default {
 </script>
 
 <style scoped>
-.dot {
-  height: 15px;
-  width: 15px;
-  background-color: green;
-  border-radius: 50%;
-  display: inline-block;
-}
 </style>

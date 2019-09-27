@@ -13,9 +13,9 @@
     <div class="bg-gray-200">
       <div class="p-2">
         <ul
-          class="shadow-lg rounded text-sm bg-white border-l-4 border-green-600 text-gray-500 font-hairline"
+          class="shadow rounded text-sm bg-white border-l-4 border-green-600 text-gray-500 font-hairline"
         >
-          <li class="p-2">
+          <li class="p-2 list-disc">
             10% Instant Discount on HDFC Bank Debit and Credit Cards on a min spend of Rs. 5,000. TCA
             <br />
             <div class="flex items-center">
@@ -56,7 +56,7 @@
           </div>
         </div>
       </div>
-      <div class="p-2 text-sm text-gray-700 mb-20">
+      <div class="p-2 text-sm text-gray-700">
         <div>DELIVER TO:</div>
         <br />
         <div class="w-full flex justify-between bg-white shadow rounded">

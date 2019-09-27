@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-wrap">
-    <div class="lg:w-3/4 shadow xs:w-4/4">
+    <div class="lg:w-3/4 shadow w-full">
       <div class="w-full p-3 border-b flex justify-between">
         <p class="w-1/2 float-left">
           Deals Of the Day
@@ -15,18 +15,15 @@
         navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)'>"
         navigation-prev-label="<img src='/chevron-right.svg'/>"
       >
-        <slide
-          v-for="product in products"
-          :key="product._id"
-        >
+        <slide v-for="product in products" :key="product._id">
           <nuxt-link :to="'/'+product.slug+'?id='+product._id">
             <img
               style="height:255px;object-fit: cover;"
               v-if="product.imgUrls"
               v-lazy="product.imgUrls[0]"
-              alt=""
+              alt
             />
-            <div class="">
+            <div class>
               <div class="font-bold text-xs mb-2">{{product.name}}</div>
               <p class="text-green-700 text-xs text-center">Extra 5% off</p>
             </div>
@@ -40,7 +37,7 @@
     >
       <img
         v-lazy="$store.state.settings.CDN_URL+$store.state.settings.banners.hero.img"
-        alt=""
+        alt
         class="w-full h-full object-cover object-center"
       />
     </nuxt-link>

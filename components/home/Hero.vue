@@ -8,15 +8,9 @@
     navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)'>"
     navigation-prev-label="<img src='/chevron-right.svg'/>"
   >
-    <slide
-      v-for="(image, index) in heroImages"
-      :key="index"
-    >
+    <slide v-for="(image, index) in heroImages" :key="index">
       <nuxt-link :to="image.link">
-        <img
-          v-lazy="$store.state.settings.CDN_URL+image.img"
-          alt=""
-        />
+        <img v-lazy="$store.state.settings.CDN_URL+image.img" alt />
       </nuxt-link>
     </slide>
   </carousel>
@@ -64,10 +58,10 @@ export default {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.11);
 }
 .VueCarousel-navigation button.VueCarousel-navigation-prev {
-  left: 30px !important;
+  left: 27px !important;
 }
 .VueCarousel-navigation button.VueCarousel-navigation-next {
-  right: 30px !important;
+  right: 47px !important;
 }
 .VueCarousel-navigation button.VueCarousel-navigation--disabled {
   display: none;

@@ -1,128 +1,160 @@
 <template>
-  <div class="w-full flex flex-wrap mt-2">
-    <div class="w-full shadow">
-      <div class="w-full p-3 border-b h-14 flex justify-between">
-        <p class="w-1/2 float-left relative">
+  <div data-v-6c993de2 class="w-full flex flex-wrap mt-2">
+    <div data-v-6c993de2 class="w-full shadow">
+      <div data-v-6c993de2 class="w-full p-3 border-b h-14 flex justify-between">
+        <p data-v-6c993de2 class="w-1/2 float-left relative">
           You may also Like
           <span
+            data-v-6c993de2
             class="text-gray-500 text-xs absolute inset-x-0 you"
           >Based on Your Order</span>
         </p>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white text-xs right-0 py-1 px-2">View All</button>
+        <button
+          data-v-6c993de2
+          class="bg-blue-500 hover:bg-blue-700 text-white text-xs right-0 py-1 px-2"
+        >View All</button>
       </div>
-      <div class="flex flex-wrap justify-between p-4">
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
-            <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
+      <div data-v-6c993de2 class="flex flex-wrap justify-between p-4">
+        <a
+          class="w-1/4"
+          data-v-6c993de2
+          href="/wine-red-women-high-waist-package-hip-pencil-skirt-side-split-knee-casual?id=5cb44dc35979266dfe6f4a3d"
+        >
+          <div data-v-6c993de2 class="relative w-full">
+            <img
+              class="w-auto"
+              data-v-6c993de2
+              alt
+              data-src="https://cdn.shoppo.com/images/8e4a630b4010e288ea26b22549aa97c6.JPEG"
+              src="https://cdn.shoppo.com/images/8e4a630b4010e288ea26b22549aa97c6.JPEG"
+              lazy="loaded"
+            />
             <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              data-v-6c993de2
               aria-hidden="true"
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
             ></i>
+            <div data-v-6c993de2 class="px-2 py-4">
+              <div
+                data-v-6c993de2
+                class="font-bold text-xs mb-2"
+              >Wine Red Women High Waist Package Hip Pencil Skirt Side Split Knee Casual</div>
+              <p data-v-6c993de2 class="text-green-700 text-xs text-center">Extra 5% off</p>
+            </div>
           </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
-            <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
+        </a>
+        <a
+          class="w-1/4"
+          data-v-6c993de2
+          href="/wine-red-women-high-waist-package-hip-pencil-skirt-side-split-knee-casual?id=5cb44dc35979266dfe6f4a3d"
+        >
+          <div data-v-6c993de2 class="relative w-full">
+            <img
+              class="w-auto"
+              data-v-6c993de2
+              alt
+              data-src="https://cdn.shoppo.com/images/8e4a630b4010e288ea26b22549aa97c6.JPEG"
+              src="https://cdn.shoppo.com/images/8e4a630b4010e288ea26b22549aa97c6.JPEG"
+              lazy="loaded"
+            />
             <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              data-v-6c993de2
               aria-hidden="true"
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
             ></i>
+            <div data-v-6c993de2 class="px-2 py-4">
+              <div
+                data-v-6c993de2
+                class="font-bold text-xs mb-2"
+              >Wine Red Women High Waist Package Hip Pencil Skirt Side Split Knee Casual</div>
+              <p data-v-6c993de2 class="text-green-700 text-xs text-center">Extra 5% off</p>
+            </div>
           </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
-            <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
+        </a>
+        <a
+          class="w-1/4"
+          data-v-6c993de2
+          href="/wine-red-women-high-waist-package-hip-pencil-skirt-side-split-knee-casual?id=5cb44dc35979266dfe6f4a3d"
+        >
+          <div data-v-6c993de2 class="relative w-full">
+            <img
+              class="w-auto"
+              data-v-6c993de2
+              alt
+              data-src="https://cdn.shoppo.com/images/8e4a630b4010e288ea26b22549aa97c6.JPEG"
+              src="https://cdn.shoppo.com/images/8e4a630b4010e288ea26b22549aa97c6.JPEG"
+              lazy="loaded"
+            />
             <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              data-v-6c993de2
               aria-hidden="true"
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
             ></i>
+            <div data-v-6c993de2 class="px-2 py-4">
+              <div
+                data-v-6c993de2
+                class="font-bold text-xs mb-2"
+              >Wine Red Women High Waist Package Hip Pencil Skirt Side Split Knee Casual</div>
+              <p data-v-6c993de2 class="text-green-700 text-xs text-center">Extra 5% off</p>
+            </div>
           </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
-            <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
+        </a>
+        <a
+          class="w-1/4"
+          data-v-6c993de2
+          href="/wine-red-women-high-waist-package-hip-pencil-skirt-side-split-knee-casual?id=5cb44dc35979266dfe6f4a3d"
+        >
+          <div data-v-6c993de2 class="relative w-full">
+            <img
+              class="w-auto"
+              data-v-6c993de2
+              alt
+              data-src="https://cdn.shoppo.com/images/8e4a630b4010e288ea26b22549aa97c6.JPEG"
+              src="https://cdn.shoppo.com/images/8e4a630b4010e288ea26b22549aa97c6.JPEG"
+              lazy="loaded"
+            />
             <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              data-v-6c993de2
               aria-hidden="true"
+              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
             ></i>
+            <div data-v-6c993de2 class="px-2 py-4">
+              <div
+                data-v-6c993de2
+                class="font-bold text-xs mb-2"
+              >Wine Red Women High Waist Package Hip Pencil Skirt Side Split Knee Casual</div>
+              <p data-v-6c993de2 class="text-green-700 text-xs text-center">Extra 5% off</p>
+            </div>
           </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
-            <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
+        </a>
+        <a
+          class="w-1/4"
+          data-v-6c993de2
+          href="/wine-red-women-high-waist-package-hip-pencil-skirt-side-split-knee-casual?id=5cb44dc35979266dfe6f4a3d"
+        >
+          <div data-v-6c993de2 class="relative w-full">
+            <img
+              class="w-auto"
+              data-v-6c993de2
+              alt
+              data-src="https://cdn.shoppo.com/images/8e4a630b4010e288ea26b22549aa97c6.JPEG"
+              src="https://cdn.shoppo.com/images/8e4a630b4010e288ea26b22549aa97c6.JPEG"
+              lazy="loaded"
+            />
             <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+              data-v-6c993de2
               aria-hidden="true"
-            ></i>
-          </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
-            <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
-            <i
               class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
-              aria-hidden="true"
             ></i>
+            <div data-v-6c993de2 class="px-2 py-4">
+              <div
+                data-v-6c993de2
+                class="font-bold text-xs mb-2"
+              >Wine Red Women High Waist Package Hip Pencil Skirt Side Split Knee Casual</div>
+              <p data-v-6c993de2 class="text-green-700 text-xs text-center">Extra 5% off</p>
+            </div>
           </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
-            <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
-            <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
-        <div class="w-32 ml-1">
-          <div class="relative">
-            <!-- <img src="/cardimage.webp" class="px-2 h-32 w-32 mt-2" /> -->
-            <div class="px-2 h-32 w-32 mt-2 bg-gray-100"></div>
-            <i
-              class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <div class="px-2 py-4">
-            <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
