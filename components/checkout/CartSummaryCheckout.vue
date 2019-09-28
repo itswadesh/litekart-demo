@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:w-1/4 mt-10 lg:pr-10 xs:w-full px-3">
+  <div class="mt-10 w-full px-3">
     <!-- <div class="w-full flex flex-wrap border-b border-dotted pb-3 justify-between pb-2 relative">
       <div class="text-sm w-full text-gray-500">OPTIONS</div>
       <div class="text-sm text-black mt-3">Coupons</div>
@@ -64,8 +64,11 @@
 
 <script>
 export default {
-  props: {
-    cart: { type: Object }
+  props: {},
+  computed: {
+    cart() {
+      return this.$store.state.cart || {};
+    }
   }
 };
 </script>

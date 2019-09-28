@@ -5,7 +5,7 @@
       <Hero />
       <Deals />
       <div>
-        <nuxt-link
+        <!-- <nuxt-link
           :to="$store.state.settings.banners.hero.link || '/search'"
           class="lg:w-1/4 shadow xs:w-full"
         >
@@ -14,7 +14,7 @@
             alt=""
             class="w-full h-full object-cover object-center"
           />
-        </nuxt-link>
+        </nuxt-link> -->
       </div>
       <!-- <DealsSkeleton /> -->
       <Banners />

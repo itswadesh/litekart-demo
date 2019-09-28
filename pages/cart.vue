@@ -1,7 +1,10 @@
 <template>
   <div>
     <EmptyCart v-if="!cart || !cart.qty || cart.qty==0" />
-    <div class="flex flex-wrap justify-between" v-else>
+    <div
+      class="flex flex-wrap justify-between"
+      v-else
+    >
       <div class="lg:w-16 xs:w-0"></div>
       <div class="xs:w-full lg:w-2/4 px-2">
         <div class="w-full hr-line justify-between pb-2">
@@ -14,9 +17,7 @@
           </div>
 
           <div class="block lg:hidden w-full p-3 bg-white mt-3 flex flex-wrap">
-            <div
-              class="text-left text-gray-700 text-3xl w-20 border-r border-gray-200 font-bold"
-            >Cart</div>
+            <div class="text-left text-gray-700 text-3xl w-20 border-r border-gray-200 font-bold">Cart</div>
             <span class="text-sm mx-4 text-gray-500">
               {{cart.qty}} items
               <br />
@@ -46,18 +47,31 @@
             </button>
           </div>-->
         </div>
-        <CartItem v-for="(item,ix) in cart.items" :key="ix" :item="item" />
+        <CartItem
+          v-for="(item,ix) in cart.items"
+          :key="ix"
+          :item="item"
+        />
         <div class="hidden lg:block">
-          <nuxt-link to="wishlist" class="w-full shadow flex flex-wrap p-4 mt-6 mb-6">
-            <i class="fa fa-bookmark-o mt-1 mr-2" aria-hidden="true"></i> Add More From Wishlist
-            <i class="fa fa-angle-right mt-1 ml-2" aria-hidden="true"></i>
+          <nuxt-link
+            to="wishlist"
+            class="w-full shadow flex flex-wrap p-4 mt-6 mb-6"
+          >
+            <i
+              class="fa fa-bookmark-o mt-1 mr-2"
+              aria-hidden="true"
+            ></i> Add More From Wishlist
+            <i
+              class="fa fa-angle-right mt-1 ml-2"
+              aria-hidden="true"
+            ></i>
           </nuxt-link>
         </div>
         <CartBanners />
       </div>
       <CartSummary :cart="cart">
         <button
-          @click="$router.push('/checkout/address-index')"
+          @click="$router.push('/checkout/address')"
           class="w-full mt-3 p-3 bg-pink-500 hover:bg-pink-600 text-white tet-2xl font-bold rounded"
         >Proceed To Checkout</button>
       </CartSummary>
