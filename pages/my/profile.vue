@@ -16,7 +16,7 @@
                 aria-hidden="true"
               ></i>
             </div>
-            <div class="w-10/12">KOHN WICK</div>
+            <div class="w-10/12">{{profile.firstName}} {{profile.lastName}}</div>
             <div class="w-1/12">
               <i
                 class="fa fa-angle-right"
@@ -34,7 +34,7 @@
                 aria-hidden="true"
               ></i>
             </div>
-            <div class="w-10/12">9999999999</div>
+            <div class="w-10/12">{{profile.phone}}</div>
             <div class="w-1/12">
               <i
                 class="fa fa-angle-right"
@@ -52,7 +52,7 @@
                 aria-hidden="true"
               ></i>
             </div>
-            <div class="w-10/12">kohnwick@gmail.com</div>
+            <div class="w-10/12">{{profile.email}}</div>
             <div class="w-1/12">
               <i
                 class="fa fa-angle-right"
@@ -84,8 +84,76 @@
   </div>
 </template>
 
+
 <script>
+import { mapGetters, mapActions } from "vuex";
 export default {
+  fetch({ store, redirect }) {
+    if (!(store.state.auth || {}).user)
+      return redirect("/login?return=my/profile");
+  },
+  async asyncData({ store }) {
+    let profile = {};
+    let userDetails = await store.dispatch("auth/fetch");
+    profile = Object.assign({}, userDetails);
+    profile.dob = profile.dob || {};
+    profile.state = profile.state || {};
+    return { profile };
+  },
+  data() {
+    return {
+      user: null,
+      showImageModal: false,
+      userAvatar: null,
+      states: [],
+      cities: [],
+      dd: null,
+      mm: null,
+      yyyy: null
+    };
+  },
+  computed: {
+    ...mapGetters({
+      loading: "loading"
+    })
+  },
+  async mounted() {
+    this.getStates(this.profile.country);
+    this.getCities(this.profile.state);
+  },
+  methods: {
+    async getCities(state) {
+      this.cities = await this.$axios.$get("countries/cities", {
+        params: { state }
+      });
+    },
+    async getStates() {
+      this.states = await this.$axios.$get("countries/states");
+    },
+    ...mapActions({
+      updateProfile: "auth/updateProfile"
+    }),
+    splitDate(date) {
+      if (!date) return {};
+      var dd = date.getDate();
+      var mm = date.getMonth() + 1; //January is 0!
+      var yyyy = date.getFullYear();
+      if (dd < 10) {
+        dd = "0" + dd;
+      }
+      if (mm < 10) {
+        mm = "0" + mm;
+      }
+      var date = { dd, mm, yyyy };
+      return date;
+    }
+  },
+  head() {
+    return {
+      title: "Update your profile"
+    };
+  },
   layout: "account"
 };
 </script>
+

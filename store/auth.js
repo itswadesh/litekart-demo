@@ -96,17 +96,23 @@ export const actions = {
                 throw 'Invalid email'
             }
         } catch (err) {
-            commit('setErr', err, { root: true })
+            throw err
         }
     },
     async signup({ commit }, payload) {
         try {
             let data = await this.$axios.$post('users', payload)
-            if (data) {
-                commit('setUser', data.user)
+            if (data && data.token) {
                 this.$axios.setToken(data.token, 'Bearer')
+                commit('setUser', data.user)
+                commit('success', "Verified! Thank You.", { root: true })
                 this.$cookies.set('Authorization', data.token, { path: '/', maxAge: tokenExpiry })
+                let returnUrl = payload.route || "/my";
+                this.$router.push(returnUrl)
+                commit('cart/setCart', data.cart, { root: true })
                 return data
+            } else {
+                throw 'Invalid email'
             }
         } catch (err) {
             commit('setErr', err, { root: true })

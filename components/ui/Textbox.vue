@@ -1,9 +1,13 @@
 <template>
   <div class="group">
     <input
-      type="text"
+      v-bind="$attrs"
+      v-model="content"
+      @input="$emit('input', $event.target.value)"
+      :type="type"
       class="bg-gray-200 border-b w-full rounded hover:bg-gray-300 focus:outline-none focus:border-pink-500"
       required
+      :aria-label="label"
     />
     <label class="text-gray-500">{{label}}</label>
   </div>
@@ -12,7 +16,14 @@
 <script>
 export default {
   props: {
-    label: { type: String }
+    label: { type: String },
+    type: { type: String, default: "text" },
+    value: { type: String }
+  },
+  data() {
+    return {
+      content: this.value
+    };
   }
 };
 </script>

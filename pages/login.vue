@@ -6,7 +6,13 @@
           <div class="border-teal border-t-12 bg-white mb-6 rounded shadow-2xl">
             <div class="p-0 bg-blue-700 text-white rounded rounded-b-none">
               <h1 class="text-xl mb-6 text-left p-3">
-                <span class="font-extrabold">SIGN IN</span> TO YOUR ACCOUNT
+                <span
+                  class="font-extrabold"
+                  v-if="!signup"
+                >SIGN IN</span><span
+                  class="font-extrabold"
+                  v-else
+                >SIGN UP</span> TO YOUR ACCOUNT
               </h1>
             </div>
             <form
@@ -16,40 +22,40 @@
               class="center"
             >
               <div class="p-6">
-                <div class="mb-5 flex items-center border-b border-b-2 border-grey-500">
-                  <input
+                <div>
+                  <Textbox
                     v-model="uid"
-                    name="uid"
-                    ref="uid"
-                    class="appearance-none bg-gray-200 border-none w-full text-gray-700 p-4 leading-tight focus:outline-none"
-                    type="email"
-                    placeholder="Email/Phone"
-                    aria-label="Enter email id"
+                    label="Email/Phone"
                     @keyup="onPhoneChange"
+                  />
+                  <Textbox
+                    v-if="signup"
+                    v-model="firstName"
+                    label="Fisrt Name"
+                    class="w-full"
+                  />
+                  <Textbox
+                    v-if="signup"
+                    v-model="lastName"
+                    label="Last Name"
+                    class="w-full"
                   />
                 </div>
                 <div v-if="showOTP">
                   <!-- <p class="text-red-500 mb-5 text-xs font-hairline">Please enter password</p> -->
                   <!-- Show password box -->
-                  <div
-                    class="mb-10 flex items-center border-b border-b-2 border-grey-500"
-                    v-if="!isPhone"
-                  >
-                    <input
+                  <div v-if="!isPhone">
+                    <Textbox
                       v-model="password"
                       name="password"
+                      label="Password"
                       ref="password"
-                      class="appearance-none bg-gray-200 border-none w-full text-gray-700 p-4 leading-tight focus:outline-none"
                       type="password"
-                      placeholder="Password"
-                      aria-label="Enter Password"
+                      class="w-full"
                     />
                   </div>
                   <!-- Show OTP box -->
-                  <div
-                    v-else
-                    class="otp-container relative inline-block rounded p-2 w-32 w-12 mb-10 bg-gray-200"
-                  >
+                  <div v-else>
                     <div
                       id="wraper1"
                       class="otp-seperator w-1 h-1 rounded absolute"
@@ -83,11 +89,18 @@
                 </div>
                 <div class="flex items-center justify-between">
                   <button
+                    type="submit"
                     :disabled="loading"
-                    class="text-2xl big-button outline-none text-xl w-full text-white font-bold py-2 px-4 rounded"
+                    class="flex items-center justify-center h-14 text-2xl outline-none w-full font-bold py-2 rounded"
+                    :class="{'big-button text-white':!loading,'border border-gray-400 bg-gray-300':loading}"
                   >
-                    <span :class="{'loading':loading}" />
-                    {{submitText}}
+                    <div v-if="loading">
+                      <img
+                        src="/loading.svg"
+                        :class="{'loading':loading}"
+                      />
+                    </div>
+                    <span v-else>{{submitText}}</span>
                   </button>
                 </div>
               </div>
@@ -100,6 +113,7 @@
 </template>
 
 <script>
+import Textbox from "~/components/ui/Textbox";
 export default {
   data() {
     return {
@@ -108,30 +122,37 @@ export default {
       disable: "disable",
       p: {},
       msg: null,
+      signup: false,
       uid: "",
       password: "",
+      firstName: "",
+      lastName: "",
       otp: "",
-      showOTP: false,
-      user: { email: "", password: "" }
+      showOTP: false
     };
   },
-  components: {},
+  components: { Textbox },
   computed: {
+    isEmail() {
+      if (this.uid.includes("@")) return true;
+      else return false;
+    },
     isPhone() {
       const phoneno = /^[+()\d-]+$/;
       if (this.uid.length >= 10 && this.uid.match(phoneno)) return true;
       else return false;
     },
     submitText() {
-      // if (!this.isPhone && !this.showOTP) {
-      //   return "Verify";
-      // } else
-      if (this.isPhone && !this.showOTP) {
+      if (this.signup) {
+        return "Signup New Account";
+      } else if (!this.isPhone && !this.isEmail && !this.showOTP) {
+        return "Verify";
+      } else if (this.isPhone && !this.showOTP) {
         return "Verify Phone"; //Login Now
+      } else if (this.isEmail && !this.showOTP) {
+        return "Verify Email"; //Login Now
       } else if (this.isPhone && this.showOTP) {
         return "Verify OTP";
-      } else if (!this.isPhone && !this.showOTP) {
-        return "Verify Email"; //Login Now
       } else {
         return "Login Now";
       }
@@ -141,6 +162,10 @@ export default {
     async submit() {
       if (!this.uid || this.uid == "") {
         this.$store.commit("setErr", "Please enter your email/phone no");
+        return;
+      }
+      if (!this.isPhone && !this.isEmail) {
+        this.$store.commit("setErr", "Entered email is not valid");
         return;
       }
       if (this.isPhone) {
@@ -183,26 +208,51 @@ export default {
     async emailLogin() {
       if (!this.showOTP) {
         // When clicked 1st time
-        this.showOTP = true;
-        this.msg = "Please enter your password";
-        // this.$refs.password.focus();
-        return;
+        try {
+          const otp = await this.$axios.get("/users/email/" + this.uid);
+          this.showOTP = true;
+          this.msg = "Please enter your password";
+          // this.$refs.otp.focus();
+          return;
+        } catch (e) {
+          if (e.response && e.response.status == "400") {
+            this.signup = true;
+            this.showOTP = true;
+            console.log("err...", e.response.status);
+          } else {
+            console.log("err...", e.toString());
+          }
+        } finally {
+          this.showOTP = true;
+          this.loading = false;
+        }
       } else {
         try {
           this.loading = true;
-          const res = await this.$store.dispatch("auth/login", {
-            uid: this.uid,
-            password: this.password,
-            route: this.$route.query.return
-          });
+          if (this.signup) {
+            const res = await this.$store.dispatch("auth/signup", {
+              email: this.uid,
+              firstName: this.firstName,
+              lastName: this.lastName,
+              password: this.password,
+              route: this.$route.query.return
+            });
+          } else {
+            const res = await this.$store.dispatch("auth/login", {
+              uid: this.uid,
+              password: this.password,
+              route: this.$route.query.return
+            });
+          }
           this.showOTP = true;
           // this.$refs.password.focus();
         } catch (e) {
           this.showOTP = false;
-          this.err = e.toString();
-          this.msg = this.err;
+          this.msg = this.err = e.response.data;
+          this.$store.commit("setErr", this.err, { root: true });
           // this.$refs.uid.focus();
         } finally {
+          this.showOTP = true;
           this.loading = false;
         }
       }
