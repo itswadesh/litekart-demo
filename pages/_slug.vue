@@ -7,7 +7,7 @@
         :product="product"
         :selectedVariant="selectedVariant"
       />
-      <!-- <ProductDetailsFlipkart :product="product" /> -->
+      <SimilarProducts :product="product" />
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@ import { Carousel, Slide } from "vue-carousel";
 import ProductImage from "~/components/details/ProductImage";
 import Breadcrumb from "~/components/details/Breadcrumb";
 import ProductDetails from "~/components/details/ProductDetails";
-import ProductDetailsFlipkart from "~/components/details/ProductDetailsFlipkart";
+import SimilarProducts from "~/components/details/SimilarProducts";
 export default {
   async validate({ query, $axios }) {
     try {
@@ -33,7 +33,7 @@ export default {
     ProductImage,
     Breadcrumb,
     ProductDetails,
-    ProductDetailsFlipkart
+    SimilarProducts
   },
   mounted() {
     if (this.product) {
