@@ -92,38 +92,38 @@
     <div>
       <ul class="flex justify-center flex-wrap py-5">
         <li
-          class="w-full lg:flex-1 py-3 py-2 px-3 m-1 text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
+          class="p-3 m-1 w-full lg:w-auto text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
         >
           <a href="#" class="flex justify-between">
             <div>MORE KURTA SETS BY SOUJANYA</div>
-            <i class="fa fa-chevron-right mt-1" aria-hidden="true"></i>
+            <i class="fa fa-chevron-right mt-1 pl-3" aria-hidden="true"></i>
           </a>
         </li>
 
         <li
-          class="w-full lg:flex-1 py-3 py-2 px-3 m-1 text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
+          class="p-3 m-1 w-full lg:w-auto text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
         >
           <a href="#" class="flex justify-between">
             <div>MORE KURTA SETS BY lipsoum</div>
-            <i class="fa fa-chevron-right mt-1" aria-hidden="true"></i>
+            <i class="fa fa-chevron-right mt-1 pl-3" aria-hidden="true"></i>
           </a>
         </li>
 
         <li
-          class="w-full lg:flex-1 py-3 py-2 px-3 m-1 text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
+          class="p-3 m-1 w-full lg:w-auto text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
         >
           <a href="#" class="flex justify-between">
             <div>MORE KURTA SETS BY arvind</div>
-            <i class="fa fa-chevron-right mt-1" aria-hidden="true"></i>
+            <i class="fa fa-chevron-right mt-1 pl-3" aria-hidden="true"></i>
           </a>
         </li>
 
         <li
-          class="w-full lg:flex-1 py-3 py-2 px-3 m-1 text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
+          class="p-3 m-1 w-full lg:w-auto text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
         >
           <a href="#" class="flex justify-between">
             <div>MORE KURTA</div>
-            <i class="fa fa-chevron-right mt-1" aria-hidden="true"></i>
+            <i class="fa fa-chevron-right mt-1 pl-3" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
