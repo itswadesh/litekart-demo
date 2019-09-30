@@ -40,7 +40,7 @@
               :product="p"
             />
           </div>
-          <div class="pagination_box">
+          <!-- <div class="pagination_box">
             <v-pagination
               v-if="noOfPages>1"
               v-model="currentPage"
@@ -50,13 +50,13 @@
               :classes="bootstrapPaginationClasses"
               :labels="paginationAnchorTexts"
             ></v-pagination>
-          </div>
+          </div> -->
         </div>
-        <!-- <Pagination
-          :count=""
-          :current="parseInt($route.query.page)"
-          @changed="changePage"
-        />-->
+        <Pagination
+          :count="10"
+          :current="parseInt($route.query.page || 1)"
+          @change="changePage"
+        />
       </div>
     </div>
     <!-- <RightSideBar /> -->
@@ -140,6 +140,9 @@ export default {
     }
   },
   methods: {
+    // setPage(p) {
+    //   console.log(p)
+    // },
     changePage(p) {
       let fl = { ...this.fl };
       delete fl.page;

@@ -28,6 +28,8 @@
                     label="Email/Phone"
                     @keyup="onPhoneChange"
                   />
+                </div>
+                <div v-if="showOTP">
                   <Textbox
                     v-if="signup"
                     v-model="firstName"
@@ -40,8 +42,6 @@
                     label="Last Name"
                     class="w-full"
                   />
-                </div>
-                <div v-if="showOTP">
                   <!-- <p class="text-red-500 mb-5 text-xs font-hairline">Please enter password</p> -->
                   <!-- Show password box -->
                   <div v-if="!isPhone">
@@ -80,7 +80,7 @@
                       v-model="otp"
                       name="otp"
                       ref="otp"
-                      class="outline-none pl-4 otp-content w-32 bg-transparent"
+                      class="outline-none pl-4 otp-content w-32 bg-transparent border border-gray-400"
                       maxlength="4"
                       autocomplete="off"
                       @keyup="onKeyUpEvent(otp.length, $event)"
@@ -248,7 +248,7 @@ export default {
           // this.$refs.password.focus();
         } catch (e) {
           this.showOTP = false;
-          this.msg = this.err = e.response.data;
+          this.msg = this.err = e.response && e.response.data;
           this.$store.commit("setErr", this.err, { root: true });
           // this.$refs.uid.focus();
         } finally {
