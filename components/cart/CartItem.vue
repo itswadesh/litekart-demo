@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-between pt-5 pb-5 border-b border-gray-300">
-    <div class="lg:w-1/5 left-0 xs:w-1/6">
+    <div class="w-1/2 lg:w-1/3">
       <div>
         <img class="lg:rounded xs:rounded-b-none w-64" v-lazy="item.product.img" alt />
         <!-- <div class="lg:hidden xs:visible text-black p-2 bg-gray-300 rounded rounded-t-none">Arrives 19 Sep</div> -->
@@ -37,7 +37,7 @@
             </div>
             <div class="w-full lg:w-2/5 text-right my-2">
               <div class="flex text-xs">
-                <button class="mr-8 focus:outline-none">MOVE TO WISHLIST</button>
+                <button class="mr-1 focus:outline-none">MOVE TO WISHLIST</button>
                 <button
                   class="ml-3 text-gray-600 bg-gray-200 rounded py-2 px-3"
                   @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
