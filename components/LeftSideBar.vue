@@ -10,14 +10,14 @@
       v-if="v && v.length>0 && k!='page' && k!='sort'"
       class="flex flex-wrap mx-5 items-center"
     >
-      <span
-        class="flex mx-1 flex-wrap items-center text-gray-600 mb-1 p-1 border border-gray-300 hover:border-gray-500 capitalize rounded-full"
+      <div
+        class="justify-between flex m-1 flex-wrap items-center text-gray-600 p-1 border border-gray-300 hover:border-gray-500 capitalize rounded-full"
         v-for="(i,ix) in v"
         :key="ix"
       >
         {{i}}
-        <i class="fa fa-times px-1 cursor-pointer" aria-hidden="true" @click="remove(k,i)"></i>
-      </span>
+        <i class="fa fa-times cursor-pointer ml-1" aria-hidden="true" @click="remove(k,i)"></i>
+      </div>
     </div>
     <div
       v-if="facets.categories && facets.categories.all.buckets && facets.categories.all.buckets.length>0"
