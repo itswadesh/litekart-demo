@@ -8,10 +8,10 @@
       v-for="(v,k) in fl"
       :key="k"
       v-if="v && v.length>0 && k!='page' && k!='sort'"
-      class="flex flex-wrap mx-5"
+      class="flex flex-wrap mx-5 items-center"
     >
       <span
-        class="flex flex-wrap items-center text-gray-600 mb-1 p-2 border border-gray-300 hover:border-gray-500 capitalize rounded-full"
+        class="flex mx-1 flex-wrap items-center text-gray-600 mb-1 p-1 border border-gray-300 hover:border-gray-500 capitalize rounded-full"
         v-for="(i,ix) in v"
         :key="ix"
       >

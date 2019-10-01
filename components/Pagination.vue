@@ -2,7 +2,7 @@
   <div class="flex flex-row w-full px-1">
     <ul class="flex-1 pagination-container justify-start w-full text-xs lg:text-sm">
       <li class="pagination-paginationMeta w-full lg:w-auto">Page {{current}} of {{count}}</li>
-      <div class="flex justify-between w-full lg:w-auto">
+      <div class="flex-1 justify-start w-full lg:w-auto">
         <button
           v-if="current>1"
           class="lg:mx-5 bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 p-2 lg:px-4 border border-gray-400 rounded shadow rounded inline-flex items-center"

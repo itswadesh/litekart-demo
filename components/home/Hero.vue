@@ -10,7 +10,11 @@
   >
     <slide v-for="(image, index) in heroImages" :key="index">
       <nuxt-link :to="image.link">
-        <img v-lazy="$store.state.settings.CDN_URL+image.img" alt />
+        <img
+          v-lazy="$store.state.settings.CDN_URL+image.img"
+          alt
+          class="h-48 lg:h-auto object-cover"
+        />
       </nuxt-link>
     </slide>
   </carousel>
