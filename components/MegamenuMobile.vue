@@ -7,7 +7,7 @@
       class="flex-1 bg-white circletag"
       id="nay"
     >
-      <img :src="$store.state.settings.CDN_URL+c.img" class="object-cover h-12" />
+      <img :src="$store.state.settings.CDN_URL+c.img" class="object-cover rounded-full" />
       <div class="text text-center">{{c.name.toUpperCase()}}</div>
     </nuxt-link>
   </div>
@@ -22,7 +22,7 @@ export default {};
 }
 .circletag {
   display: block;
-  max-width: 50%;
+  max-width: 100%;
   border-radius: 50%;
   text-align: center;
 }

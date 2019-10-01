@@ -1,10 +1,7 @@
 <template>
-  <div
-    class="py-2\1 bg-white-800 shadow bg-white w-1/5"
-    v-if="facets"
-  >
+  <div class="py-2\1 bg-white-800 shadow bg-white w-1/5" v-if="facets">
     <div class="flex-none px-2 py-4">
-      <span class="font-normal text-sm text-gray px-5">FILTERS</span>
+      <span class="font-bold text-sm text-gray px-5">FILTERS</span>
       <span class="font-normal text-sm float-right text-pink-500 font-bold cursor-pointer">CLEAR ALL</span>
     </div>
     <div
@@ -19,20 +16,15 @@
         :key="ix"
       >
         {{i}}
-        <i
-          class="fa fa-times px-1 cursor-pointer"
-          aria-hidden="true"
-          @click="remove(k,i)"
-        ></i>
+        <i class="fa fa-times px-1 cursor-pointer" aria-hidden="true" @click="remove(k,i)"></i>
       </span>
     </div>
-    <div v-if="facets.categories && facets.categories.all.buckets && facets.categories.all.buckets.length>0">
+    <div
+      v-if="facets.categories && facets.categories.all.buckets && facets.categories.all.buckets.length>0"
+    >
       <p class="ml-2 py-2 font-semibold text-sm px-5">CATEGORY</p>
       <ul class="ml-2 py-2 px-5 filter-container">
-        <li
-          v-for="b in facets.categories && facets.categories.all.buckets"
-          :key="b.key"
-        >
+        <li v-for="b in facets.categories && facets.categories.all.buckets" :key="b.key">
           <Checkbox
             :count="b.doc_count"
             :value="b.key"
@@ -46,10 +38,7 @@
     <div v-if="facets.brands && facets.brands.all.buckets && facets.brands.all.buckets.length>0">
       <p class="ml-2 py-2 font-semibold text-sm px-5">BRAND</p>
       <ul class="ml-2 py-2 px-5 filter-container">
-        <li
-          v-for="b in facets.brands && facets.brands.all.buckets"
-          :key="b.key"
-        >
+        <li v-for="b in facets.brands && facets.brands.all.buckets" :key="b.key">
           <Checkbox
             :count="b.doc_count"
             :value="b.key"
@@ -63,10 +52,7 @@
     <div v-if="facets.sizes && facets.sizes.all.buckets && facets.sizes.all.buckets.length>0">
       <p class="ml-2 py-2 font-semibold text-sm px-5">SIZES</p>
       <ul class="ml-2 py-2 px-5 filter-container">
-        <li
-          v-for="b in facets.sizes && facets.sizes.all.buckets"
-          :key="b.key"
-        >
+        <li v-for="b in facets.sizes && facets.sizes.all.buckets" :key="b.key">
           <Checkbox
             :count="b.doc_count"
             :value="b.key"
@@ -84,10 +70,7 @@
     >
       <p class="ml-2 py-2 font-semibold text-sm px-5">{{v.key}}</p>
       <ul class="ml-2 py-2 px-5 filter-container">
-        <li
-          v-for="f in v.val.buckets"
-          :key="f.key"
-        >
+        <li v-for="f in v.val.buckets" :key="f.key">
           <Checkbox
             :count="f.doc_count"
             :value="f.key"
@@ -98,7 +81,9 @@
       </ul>
     </div>
 
-    <div v-if="facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets && facets.colors.colors.name.buckets.length>0">
+    <div
+      v-if="facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets && facets.colors.colors.name.buckets.length>0"
+    >
       <p class="ml-2 py-2 font-semibold text-sm px-5">COLOR</p>
       <ul class="ml-2 py-2 px-5 filter-container">
         <li
@@ -141,7 +126,7 @@
           <Radio />
         </li>
       </ul>
-    </div> -->
+    </div>-->
   </div>
 </template>
 <script>
@@ -194,7 +179,7 @@ export default {
 
 <style scoped>
 .filter-container {
-  max-height: 300px;
+  max-height: 400px;
   overflow: auto;
 }
 .bb {

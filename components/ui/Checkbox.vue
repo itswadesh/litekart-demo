@@ -65,7 +65,6 @@
   position: absolute;
   top: 4px;
   left: 4px;
-  z-index: 1;
   width: 8px;
   height: 5px;
   border: 2px solid #fff;

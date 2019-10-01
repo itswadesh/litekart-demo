@@ -23,7 +23,7 @@
     <div>
       <div class="flex items-center px-3">
         <span class="font-extrabold text-lg w-1/2 lg:w-32">SELECT SIZE</span>
-        <div class="font-extrabold text-sm text-pink-500 px-3">
+        <div class="font-extrabold text-lg lg:text-sm text-pink-500">
           <div class="flex items-center">
             <img
               class="mr-2"
