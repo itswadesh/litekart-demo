@@ -50,7 +50,6 @@ button:focus, a:focus{
 .input-bg{
   background-color: #F5F5F6;
 }
-
 .sw-toast-container .toasted.outline {
   border: none;
   border-radius: .125rem;

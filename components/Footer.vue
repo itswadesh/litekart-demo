@@ -62,34 +62,46 @@
         </div>
         <div>
           <h6 class="text-left text-sm">KEEP IN TOUCH</h6>
-          <img class="mt-3 h-5" src="/socialicons.png" />
+          <div class="text-gray-700">
+            <a href="#">
+              <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            </a>
+            <a href="#">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="#">
+              <i class="fa fa-youtube-play" aria-hidden="true"></i>
+            </a>
+            <a href="#">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
       </div>
-      <div class="lg:p-8 p-2 items-center">
+      <div class="lg:p-6 p-1 items-center">
         <div class="flex items-center">
-          <img
-            class="lg:w-1/8 rounded-sm lg:mx-5 my-2 w-12 h-12 lg:h-10 mr-3"
-            src="/original.png"
-            alt
-          />
+          <img class="my-3 h-10" src="/original.png" alt />
           <div class="text-sm">
-            <span class="font-bold">100% ORIGINAL</span> guarantee for all products at myntra.com
+            <div>
+              <span class="font-bold ml-1">100% ORIGINAL</span> guarantee for all products
+              at myntra.com
+            </div>
           </div>
         </div>
         <div class="flex items-center">
-          <img
-            class="lg:w-1/8 rounded-sm lg:mx-5 my-2 w-12 h-12 lg:h-10 mr-3"
-            src="/return.png"
-            alt
-          />
+          <img class="ml-1 my-2 h-10" src="/return.png" alt />
           <div class="text-sm">
-            <span class="font-bold">Return within 30days</span> of receiving your order
+            <div>
+              <span class="font-bold ml-1">Return within 30days</span> of receiving your order
+            </div>
           </div>
         </div>
         <div class="flex items-center">
-          <img class="lg:w-1/8 rounded-sm lg:mx-5 my-2 w-12 h-12 lg:h-10 mr-3" src="/truck.png" alt />
+          <img class="ml-1 my-2 h-10" src="/truck.png" alt />
           <div class="text-sm">
-            <span class="font-bold">Get free delivery</span> for every order above Rs. 1199
+            <div>
+              <span class="font-bold ml-1">Get free delivery</span> for every order above Rs. 1199
+            </div>
           </div>
         </div>
       </div>

@@ -27,7 +27,6 @@ export default {
   },
   components: { Carousel, Slide },
   async created() {
-    // const settings = await this.$axios.$get("/settings");
     this.heroImages =
       this.$store.state.settings &&
       this.$store.state.settings.banners &&
@@ -72,21 +71,4 @@ export default {
 .VueCarousel-navigation button.VueCarousel-navigation-next img {
   margin-left: 5px;
 }
-/* // &-wrapper
-  //   width: 98%
-  //   margin: 0 auto
-  // .product-carousel
-  //   width: 100%
-  //   height: 250px
-  //   margin: 20px 0
-  //   border-radius: 3px
-  //   @apply mx-auto relative bg-white
-  //   margin-bottom: 70px
-  //   &__header
-  //     padding: 24px
-  //     @apply flex flex-row flex-no-wrap bg-white justify-between
-  //   &__carousel
-  //     width: 100%
-  //     padding: 0 24px
-  //     height: auto */
 </style>
