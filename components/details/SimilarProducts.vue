@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full">
     <div class="text-black font-bold text-lg p-2">SIMILAR PRODUCTS</div>
     <div>
       <div class="flex flex-wrap justify-between">

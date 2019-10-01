@@ -1,10 +1,10 @@
 <template>
-  <div class="w-full md:w-6/12 lg:w-7/12 px-3 lg:px-3 leading-relaxed">
-    <div class="pb-4 border-b border-gray-200">
+  <div class="w-full md:w-6/12 lg:w-7/12 leading-relaxed">
+    <div class="pb-4 border-b border-gray-200 px-3">
       <p class="text-2xl text-gray-700 font-semibold">{{product.brandName}}</p>
       <p>{{product.name}}</p>
     </div>
-    <div class="text-gray-700 font-semibold py-3 tracking-wider" v-if="selectedVariant">
+    <div class="px-3 text-gray-700 font-semibold py-3 tracking-wider" v-if="selectedVariant">
       <!-- <div v-if="!selectedVariant._id">
         <span class="text-2xl mr-2">{{product.price | currency}}</span>
         <span class="font-hairline line-through text-lg mr-2">{{product.mrp | currency}}</span>
@@ -21,9 +21,9 @@
       <p class="text-sm font-hairline">Additional tax shall apply, charged at checkout</p>
     </div>
     <div>
-      <div class="flex items-center">
+      <div class="flex items-center px-3">
         <span class="font-extrabold text-lg w-1/2 lg:w-32">SELECT SIZE</span>
-        <div class="font-extrabold text-sm text-pink-500">
+        <div class="font-extrabold text-sm text-pink-500 px-3">
           <div class="flex items-center">
             <img
               class="mr-2"
@@ -33,7 +33,7 @@
           </div>
         </div>
       </div>
-      <div class="flex py-6 relative" :class="{'shake-animation': shake}">
+      <div class="flex py-6 relative px-3" :class="{'shake-animation': shake}">
         <button
           v-for="v in product.variants"
           :key="v._id"
@@ -42,14 +42,14 @@
           v-if="v.stock>0"
           class="focus:outline:none mr-3 rounded-full bg-white border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
         >
-          <p>{{v.size}}</p>
+          <p class="text-xs">{{v.size}}</p>
           <span
             v-if="v.stock<5"
             class="text-xs font-semibold absolute left-0 w-12 bg-orange-500 text-white text-center px-1 rounded"
           >{{v.stock}} left</span>
         </button>
       </div>
-      <div class="flex py-4" v-if="groupProducts.data && groupProducts.data.length>0">
+      <div class="flex py-4 px-3" v-if="groupProducts.data && groupProducts.data.length>0">
         <nuxt-link
           v-for="p in groupProducts.data"
           :key="p._id"
@@ -65,7 +65,10 @@
           <span class="tooltiptext" v-if="p.color">{{p.color.name}}</span>
         </nuxt-link>
       </div>
-      <div class="flex mt-4">
+      <div
+        class="flex mt-4 fixed bottom-0 lg:relative bg-white lg:px-3 p-2 w-full"
+        style="z-index:9999;"
+      >
         <button
           :disabled="!selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
@@ -79,7 +82,7 @@
           <i class="fa fa-bookmark mr-2 hidden lg:block" aria-hidden="true"></i> WISHLIST
         </button>
       </div>
-      <div class="py-8 border-b border-gray-300">
+      <div class="py-8 border-b border-gray-300 px-3">
         <p class="font-bold text-lg">
           BEST OFFERS
           <i class="fa fa-tag ml-2" aria-hidden="true"></i>
@@ -135,7 +138,7 @@
           </button>
         </div>
       </div>
-      <div class="py-8 border-b border-gray-300">
+      <div class="py-8 border-b border-gray-300 px-3">
         <p class="font-bold text-lg">
           PRODUCT DETAILS
           <i class="fa fa-list-alt ml-2" aria-hidden="true"></i>
@@ -197,7 +200,7 @@
           <span class="font-bold text-pink-500">See More</span>
         </div>
       </div>
-      <div class="py-4">
+      <div class="p-3">
         <p class="font-bold text-lg">
           DELIVERY OPTIONS
           <i class="fa fa-truck ml-2" aria-hidden="true"></i>
@@ -214,7 +217,7 @@
             >Check</button>
           </div>
           <span class="text-gray-500 text-xs">Please enter PIN code to check Availability</span>
-          <ul>
+          <ul class="text-sm font-hairline text-gray-700">
             <li>Tax: Applicable tax on the basis of exact location & discount will be charged at the time of checkout</li>
             <li>100% Original Products</li>
             <li>Free Delivery on order above Rs. 1199</li>
