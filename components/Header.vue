@@ -15,7 +15,7 @@
         <Search />
       </div>
       <div
-        class="flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mx-2 w-32"
+        class="flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mx-2 w-40"
       >
         <nuxt-link class="w-auto" to="/login" v-if="!user">
           <img class="h-4 ml-2" src="/avatar.png" />

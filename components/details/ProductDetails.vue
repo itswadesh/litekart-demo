@@ -250,7 +250,10 @@
 <script>
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
 
+import Button from "~/components/ui/Button";
+
 export default {
+  components: { Button },
   props: {
     product: { type: Object },
     selectedVariant: { type: Object }
