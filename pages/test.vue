@@ -2,7 +2,7 @@
   <div class="container my-5">
     <div class="row">
       <div class="col-md-6 mx-auto">
-        <Button>,mku</Button>
+        <Button color="primary">Buy Now</Button>
       </div>
     </div>
   </div>
