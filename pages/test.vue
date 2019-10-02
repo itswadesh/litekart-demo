@@ -2,16 +2,16 @@
   <div class="container my-5">
     <div class="row">
       <div class="col-md-6 mx-auto">
-        <Textbox />
+        <Button>,mku</Button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-const Textbox = () => import("~/components/ui/Textbox");
+const Button = () => import("~/components/ui/Button");
 export default {
-  components: { Textbox }
+  components: { Button }
 };
 </script>
 

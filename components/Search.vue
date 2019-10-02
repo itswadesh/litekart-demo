@@ -2,7 +2,7 @@
   <form novalidate autocomplete="off" @submit.stop.prevent="submit(search)">
     <div class="search_fix"></div>
     <div class="absolute">
-      <i class="fa fa-search ml-2 mt-3 text-gray-500" aria-hidden="true"></i>
+      <i class="fa fa-search m-3 text-gray-500" aria-hidden="true"></i>
     </div>
     <input
       type="text"

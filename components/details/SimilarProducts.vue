@@ -1,149 +1,128 @@
 <template>
-  <div class="w-full">
-    <div class="text-black font-bold text-lg p-2">SIMILAR PRODUCTS</div>
-    <div>
-      <div class="flex flex-wrap justify-between">
-        <a href="#" class="w-1/2 lg:w-48">
-          <div class="shadow m-2 relative">
-            <img class="h-64 w-full object-cover" src="/cart-product.jpg" />
-            <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-            <div class="px-2 leading-loose">
-              <div class="text-lg font-bold text-black">Fitbit Inspire HR</div>
-              <div class="text-sm font-hairline text-gray-700">Shirt and bottom jeans</div>
-              <div class="text-gray-500 mb-2 text-xs">
-                <span class="text-lg font-bold text-black mt-2">Rs. 8,999</span>
-                <span class="line-through">₹904</span>
-                <span class>|</span>
-                <span class="text-orange-500 font-hairline">40% OFF</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="w-1/2 lg:w-48">
-          <div class="shadow m-2 relative">
-            <img class="h-64 w-full object-cover" src="/cart-product.jpg" />
-            <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-            <div class="px-2 leading-loose">
-              <div class="text-lg font-bold text-black">Fitbit Inspire HR</div>
-              <div class="text-sm font-hairline text-gray-700">Shirt and bottom jeans</div>
-              <div class="text-gray-500 mb-2 text-xs">
-                <span class="text-lg font-bold text-black mt-2">Rs. 8,999</span>
-                <span class="line-through">₹904</span>
-                <span class>|</span>
-                <span class="text-orange-500 font-hairline">40% OFF</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="w-1/2 lg:w-48">
-          <div class="shadow m-2 relative">
-            <img class="h-64 w-full object-cover" src="/cart-product.jpg" />
-            <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-            <div class="px-2 leading-loose">
-              <div class="text-lg font-bold text-black">Fitbit Inspire HR</div>
-              <div class="text-sm font-hairline text-gray-700">Shirt and bottom jeans</div>
-              <div class="text-gray-500 mb-2 text-xs">
-                <span class="text-lg font-bold text-black mt-2">Rs. 8,999</span>
-                <span class="line-through">₹904</span>
-                <span class>|</span>
-                <span class="text-orange-500 font-hairline">40% OFF</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="w-1/2 lg:w-48">
-          <div class="shadow m-2 relative">
-            <img class="h-64 w-full object-cover" src="/cart-product.jpg" />
-            <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-            <div class="px-2 leading-loose">
-              <div class="text-lg font-bold text-black">Fitbit Inspire HR</div>
-              <div class="text-sm font-hairline text-gray-700">Shirt and bottom jeans</div>
-              <div class="text-gray-500 mb-2 text-xs">
-                <span class="text-lg font-bold text-black mt-2">Rs. 8,999</span>
-                <span class="line-through">₹904</span>
-                <span class>|</span>
-                <span class="text-orange-500 font-hairline">40% OFF</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="w-1/2 lg:w-48">
-          <div class="shadow m-2 relative">
-            <img class="h-64 w-full object-cover" src="/cart-product.jpg" />
-            <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-            <div class="px-2 leading-loose">
-              <div class="text-lg font-bold text-black">Fitbit Inspire HR</div>
-              <div class="text-sm font-hairline text-gray-700">Shirt and bottom jeans</div>
-              <div class="text-gray-500 mb-2 text-xs">
-                <span class="text-lg font-bold text-black mt-2">Rs. 8,999</span>
-                <span class="line-through">₹904</span>
-                <span class>|</span>
-                <span class="text-orange-500 font-hairline">40% OFF</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="w-1/2 lg:w-48">
-          <div class="shadow m-2 relative">
-            <img class="h-64 w-full object-cover" src="/cart-product.jpg" />
-            <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-            <div class="px-2 leading-loose">
-              <div class="text-lg font-bold text-black">Fitbit Inspire HR</div>
-              <div class="text-sm font-hairline text-gray-700">Shirt and bottom jeans</div>
-              <div class="text-gray-500 mb-2 text-xs">
-                <span class="text-lg font-bold text-black mt-2">Rs. 8,999</span>
-                <span class="line-through">₹904</span>
-                <span class>|</span>
-                <span class="text-orange-500 font-hairline">40% OFF</span>
-              </div>
-            </div>
-          </div>
-        </a>
+  <div>
+    <div class="flex flex-wrap justify-between">
+      <div class="w-full p-2 font-semibold text-lg">
+        My Wishlist
+        <span class="font-hairline">1 item</span>
       </div>
     </div>
-    <div>
-      <ul class="flex justify-center flex-wrap py-5">
-        <li
-          class="p-3 m-1 w-full lg:w-auto text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
-        >
-          <a href="#" class="flex justify-between">
-            <div>MORE KURTA SETS BY SOUJANYA</div>
-            <i class="fa fa-chevron-right mt-1 pl-3" aria-hidden="true"></i>
-          </a>
-        </li>
+    <div class="flex flex-wrap justify-between">
+      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+        <div class="shadow m-2 relative">
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
+          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <div class="px-2 leading-loose">
+            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
+            <div class="text-gray-500 mb-2 text-xs">
+              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
+              <span class="line-through">₹904</span>
+              <span class>|</span>
+              <span class="text-green-500 font-hairline">40% OFF</span>
+            </div>
+          </div>
+          <div
+            class="border-t border-gray-300 text-center"
+            @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
+          >
+            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+          </div>
+        </div>
+      </a>
 
-        <li
-          class="p-3 m-1 w-full lg:w-auto text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
-        >
-          <a href="#" class="flex justify-between">
-            <div>MORE KURTA SETS BY lipsoum</div>
-            <i class="fa fa-chevron-right mt-1 pl-3" aria-hidden="true"></i>
-          </a>
-        </li>
+      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+        <div class="shadow m-2 relative">
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
+          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <div class="px-2 leading-loose">
+            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
+            <div class="text-gray-500 mb-2 text-xs">
+              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
+              <span class="line-through">₹904</span>
+              <span class>|</span>
+              <span class="text-green-500 font-hairline">40% OFF</span>
+            </div>
+          </div>
+          <div class="border-t border-gray-300 text-center">
+            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+          </div>
+        </div>
+      </a>
 
-        <li
-          class="p-3 m-1 w-full lg:w-auto text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
-        >
-          <a href="#" class="flex justify-between">
-            <div>MORE KURTA SETS BY arvind</div>
-            <i class="fa fa-chevron-right mt-1 pl-3" aria-hidden="true"></i>
-          </a>
-        </li>
+      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+        <div class="shadow m-2 relative">
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
+          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <div class="px-2 leading-loose">
+            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
+            <div class="text-gray-500 mb-2 text-xs">
+              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
+              <span class="line-through">₹904</span>
+              <span class>|</span>
+              <span class="text-green-500 font-hairline">40% OFF</span>
+            </div>
+          </div>
+          <div class="border-t border-gray-300 text-center">
+            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+          </div>
+        </div>
+      </a>
 
-        <li
-          class="p-3 m-1 w-full lg:w-auto text-sm lg:rounded-full pointer border border-gray-500 hover:border-red-600 font-bold lg:text-red-500 text-black font-bold jus"
-        >
-          <a href="#" class="flex justify-between">
-            <div>MORE KURTA</div>
-            <i class="fa fa-chevron-right mt-1 pl-3" aria-hidden="true"></i>
-          </a>
-        </li>
-      </ul>
+      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+        <div class="shadow m-2 relative">
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
+          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <div class="px-2 leading-loose">
+            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
+            <div class="text-gray-500 mb-2 text-xs">
+              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
+              <span class="line-through">₹904</span>
+              <span class>|</span>
+              <span class="text-green-500 font-hairline">40% OFF</span>
+            </div>
+          </div>
+          <div class="border-t border-gray-300 text-center">
+            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+        <div class="shadow m-2 relative">
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
+          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <div class="px-2 leading-loose">
+            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
+            <div class="text-gray-500 mb-2 text-xs">
+              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
+              <span class="line-through">₹904</span>
+              <span class>|</span>
+              <span class="text-green-500 font-hairline">40% OFF</span>
+            </div>
+          </div>
+          <div class="border-t border-gray-300 text-center">
+            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+        <div class="shadow m-2 relative">
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
+          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <div class="px-2 leading-loose">
+            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
+            <div class="text-gray-500 mb-2 text-xs">
+              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
+              <span class="line-through">₹904</span>
+              <span class>|</span>
+              <span class="text-green-500 font-hairline">40% OFF</span>
+            </div>
+          </div>
+          <div class="border-t border-gray-300 text-center">
+            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </template>

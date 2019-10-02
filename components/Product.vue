@@ -3,16 +3,16 @@
     <nuxt-link :to="'/'+product._source.slug+'?id='+product._id" class="w-full" v-if="product">
       <div>
         <img
-          class="w-full"
-          style="height:250px; object-fit: cover;"
+          class="w-full h-64"
+          style="object-fit: cover; max-height:316px;"
           v-if="product._source.imgUrls"
           v-lazy="product._source.imgUrls[0]"
           alt
         />
-        <div class="p-1">
+        <div class="p-1 text-center">
           <div
             class="text-gray-900 lg:font-bold sm:font-normal text-sm"
-          >{{product._source.name | truncate(23)}}</div>
+          >{{product._source.name | truncate(18)}}</div>
           <div
             class="text-black font-thin text-sm"
             v-if="product._source.categories && product._source.categories[0]"
