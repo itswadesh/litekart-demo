@@ -3,10 +3,7 @@
     <Breadcrumb :product="product" />
     <div class="flex flex-wrap justify-start">
       <ProductImage :product="product" />
-      <ProductDetails
-        :product="product"
-        :selectedVariant="selectedVariant"
-      />
+      <ProductDetails :product="product" :selectedVariant="selectedVariant" />
       <SimilarProducts :product="product" />
     </div>
   </div>

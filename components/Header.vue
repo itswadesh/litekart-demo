@@ -73,9 +73,13 @@ export default {
 </script>
 <style scoped>
 .desktop-badge {
-  height: 16px;
+  font-size: 10px;
   background: #ff3f6c;
-  left: 13px;
+  left: 11px;
   top: -6px;
+  height: 15px;
+  width: 14px;
+  border-radius: 50%;
+  display: inline-block;
 }
 </style>

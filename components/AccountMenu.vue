@@ -1,5 +1,5 @@
 <template>
-  <div class="xs:w-full text-center lg:w-1/5 mt-10 bg-white shadow leading-loose rounded">
+  <div class="w-full text-center lg:w-1/5 lg:mt-10 bg-white shadow leading-loose rounded">
     <div class="w-full p-10 border-b border-gray-200">
       <span
         class="h-20 w-20 p-2 text-4xl text-gray-600 rounded-full bg-gray-200 inline-block"

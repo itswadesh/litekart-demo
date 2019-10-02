@@ -7,7 +7,7 @@
     >
       <nuxt-link
         :to="`/search?q=${category.slug}`"
-        class="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold"
+        class="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold items-center"
       >
         {{category.name && category.name.toUpperCase()}}
         <i
@@ -23,11 +23,13 @@
             class="bg-gray-100 px-4 w-full sm:w-1/2 lg:w-1/6 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3"
             :class="{'bg-gray-200':Math.abs(ix % 2)}"
           >
-            <div class="flex items-center">
-              <h3 class="font-bold text-sm text-black text-bold mb-2">
+            <div class="flex">
+              <div class="flex font-bold text-sm text-black text-bold mb-1 items-center">
                 {{c.name}}
-                <i class="fa fa-caret-right" aria-hidden="true"></i>
-              </h3>
+                <div class="pl-1" style="padding-top:2px;">
+                  <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </div>
+              </div>
             </div>
             <div class="flex items-center py-3">
               <ul>
