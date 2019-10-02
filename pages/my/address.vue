@@ -1,15 +1,15 @@
 <template>
-  <div class="lg:w-1/2 mt-10 xs:w-full p-2 bg-white shadow ml-10">
-    <div class="text-xl text-black font-bold">Manage Addresses</div>
+  <div class="lg:w-1/2 mt-0 lg:mt-10 xs:w-full bg-white shadow lg:ml-10 ml-0 p-5">
+    <div class="text-xl text-black font-bold">
+      <i
+        class="fa fa-arrow-left mr-2 block lg:invisible"
+        @click="$router.push('/my/')"
+        aria-hidden="true"
+      ></i>Manage Addresses
+    </div>
     <div class="w-full mt-5 mb-5 p-5 border border-gray-200">
-      <a
-        href="#"
-        class="text-sm text-blue-500 font-bold w-full"
-      >
-        <i
-          class="fa fa-plus-square-o mr-2"
-          aria-hidden="true"
-        ></i>ADD NEW ADDRESS
+      <a href="#" class="text-sm text-blue-500 font-bold w-full">
+        <i class="fa fa-plus-square-o mr-2" aria-hidden="true"></i>ADD NEW ADDRESS
       </a>
     </div>
     <div class="w-full p-5 flex flex-wrap border border-gray-100 relative">
@@ -23,7 +23,9 @@
         <p>Kintali Navesh 9944817722</p>
         <span>
           kintali naveesh girls hostel vit university vellore tamilnadu,632014, vellore, Vellore, Tamil Nadu -
-          <span class="font-bold">632014</span>
+          <span
+            class="font-bold"
+          >632014</span>
         </span>
       </div>
     </div>
@@ -38,7 +40,9 @@
         <p>Kintali Navesh 9944817722</p>
         <span>
           kintali naveesh girls hostel vit university vellore tamilnadu,632014, vellore, Vellore, Tamil Nadu -
-          <span class="font-bold">632014</span>
+          <span
+            class="font-bold"
+          >632014</span>
         </span>
       </div>
     </div>
