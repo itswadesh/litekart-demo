@@ -1,10 +1,10 @@
 <template>
-  <div class="flex p-2 w-1/2 lg:w-1/4 xl:w-1/5 justify-between" style="max-width:210px;">
+  <div class="flex p-2 w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
     <nuxt-link :to="'/'+product._source.slug+'?id='+product._id" class="w-full" v-if="product">
       <div>
         <img
-          class="w-full"
-          style="object-fit: cover;"
+          class="w-full h-64"
+          style="object-fit: cover; max-height:316px;"
           v-if="product._source.imgUrls"
           v-lazy="product._source.imgUrls[0]"
           alt
