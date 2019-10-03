@@ -4,7 +4,7 @@
       class="flex items-center justify-between flex-wrap bg-white-800"
       style="box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);"
     >
-      <div class="flex items-center flex-shrink-0 text-orange order-1">
+      <div class="flex items-center flex-shrink-0 text-orange order-1 w-1/2">
         <nuxt-link to="/">
           <img class="w-12 h-10 ml-4" src="/logo.svg" />
         </nuxt-link>
@@ -14,7 +14,7 @@
           <Megamenu />
         </div>
       </div>
-      <div class="mx-2 py-2 border-gray-300 relative order-4 sm:order-3" style="flex:1">
+      <div class="mx-2 py-2 relative order-4 sm:order-3 w-full" style="flex:1">
         <Search />
       </div>
       <div
@@ -36,9 +36,9 @@
           <img class="h-4 ml-1" src="/bag.png" />
           <div class="flex text-xs inline-text-gray font-bold">
             Cart
-            <span
-              class="text-white font-bold desktop-badge rounded-full px-1 absolute"
-            >{{cart.qty }}</span>
+            <div class="text-white font-bold desktop-badge rounded-full px-1 absolute text-center">
+              <div class="number">{{cart.qty }}</div>
+            </div>
           </div>
         </nuxt-link>
       </div>
@@ -78,7 +78,7 @@ export default {
 </script>
 <style scoped>
 .desktop-badge {
-  font-size: 10px;
+  font-size: 8px;
   background: #ff3f6c;
   left: 11px;
   top: -6px;
@@ -86,5 +86,9 @@ export default {
   width: 14px;
   border-radius: 50%;
   display: inline-block;
+}
+.desktop-badge .number {
+  margin-top: 1.5px;
+  margin-left: -1px;
 }
 </style>

@@ -1,10 +1,11 @@
 <template>
   <div>
-    <div class="flex justify-between px-2 py-6 text-sm" style="margin-top:2px;">
-      <div class="hidden md:flex">
+    <div class="flex justify-between px-2 py-6 text-sm items-center">
+      <!-- <div class="hidden md:flex">
         Home / Clothing / Dresses /
         <span class="font-semibold">Clothing Dresses</span>
-      </div>
+      </div>-->
+      <Breadcrumb :product="{}" />
       <div class="font-semibold flex">
         TOTAL-
         <div class="font-hairline">{{count}} items</div>
@@ -62,11 +63,12 @@
 </template>
 
 <script>
+import Breadcrumb from "~/components/details/Breadcrumb";
 import Checkbox from "~/components/ui/Checkbox";
 import { constructURL } from "~/lib/";
 import { sorts } from "~/config";
 export default {
-  components: { Checkbox },
+  components: { Checkbox, Breadcrumb },
   data() {
     return {
       sorts,

@@ -3,8 +3,13 @@
     <CheckoutHeader />
     <div class="p-2 flex flex-wrap justify-between lg:mx-10 items-start">
       <div class="flex flex-wrap justify-start pb-4">
-        <AddressCard class="mb-2 lg:mr-2" />
-        <AddressCard class="mb-2" />
+        <div>
+          <AddressCard class="mb-2 block lg:hidden" />
+          <SelectAddress class="mb-2 hidden lg:block" />
+        </div>
+        <div class="hidden lg:block">
+          <AddressNewCard class="mx-2 mb-2" />
+        </div>
       </div>
       <div class="w-full lg:w-auto">
         <div class="flex justify-start border rounded p-2 text-sm border-green-300 bg-green-100">
@@ -22,6 +27,8 @@
 
 <script>
 import AddressCard from "~/components/AddressCard";
+import SelectAddress from "~/components/SelectAddress";
+import AddressNewCard from "~/components/AddressNewCard";
 import CartSummaryCheckout from "~/components/checkout/CartSummaryCheckout";
 import Radio from "~/components/ui/Radio";
 const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
@@ -29,6 +36,8 @@ export default {
   components: {
     CheckoutHeader,
     Radio,
+    SelectAddress,
+    AddressNewCard,
     AddressCard,
     CartSummaryCheckout
   },

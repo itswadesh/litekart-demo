@@ -56,7 +56,7 @@
         <CartBanners />
       </div>
       <CartSummary :cart="cart">
-        <Button @click="$router.push('/checkout/address')" color="primary">Proceed To Checkout</Button>
+        <Button @click="$router.push('/checkout/address')" color="primary">PLACE ORDER</Button>
       </CartSummary>
       <div class="w-8"></div>
     </div>

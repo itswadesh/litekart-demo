@@ -1,6 +1,9 @@
 <template>
   <div class="shadow bg-white p-2 rounded">
     <div class="w-full flex justify-between">
+      <div>
+        <Radio />
+      </div>
       <div class="flex-1 ml-2">
         <div class="font-semibold">Kintali Naveesh(Default)</div>
         <div class="py-2 text-xs">

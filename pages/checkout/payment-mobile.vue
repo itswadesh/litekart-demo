@@ -15,7 +15,7 @@
         <ul
           class="shadow rounded text-sm bg-white border-l-4 border-green-600 text-gray-500 font-hairline"
         >
-          <li class="p-2 list-disc">
+          <li class="p-2">
             10% Instant Discount on HDFC Bank Debit and Credit Cards on a min spend of Rs. 5,000. TCA
             <br />
             <div class="flex items-center">
@@ -72,7 +72,11 @@
                 <span class="font-bold">9944817722</span>
               </div>
               <div class="pt-2">
-                <a href="#" class="text-blue-700 font-semibold">Change Address</a>
+                <a
+                  href="#"
+                  @click="$router.push('/checkout/address')"
+                  class="text-blue-700 font-semibold"
+                >Change Address</a>
               </div>
             </div>
           </div>

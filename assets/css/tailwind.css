@@ -34,6 +34,17 @@ button:focus, a:focus{
     align-items: center;
     text-align: center;
 }
+.address{
+    border: 1px dashed #eaeaec;
+    box-shadow: 0 0 4px rgba(40,44,63,.08);
+    height: 200px;
+    width: 325px;
+    padding:4rem;
+    margin-bottom: 25px;
+    vertical-align: top;
+    border-radius: 4px;
+    cursor: pointer;
+}
 .containerr {
   margin: 0 auto;
   min-height: 10vh;

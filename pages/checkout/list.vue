@@ -67,6 +67,7 @@
     </div>
     <div class="fixed bottom-0 w-full p-2 bg-white">
       <button
+        @click="$router.push('/checkout/address')"
         class="tracking-widest w-full mt-3 p-3 bg-red-500 text-white text-sm font-semibold rounded"
       >CONFIRM</button>
     </div>

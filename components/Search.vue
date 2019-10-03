@@ -7,7 +7,7 @@
     <input
       type="text"
       v-model="search"
-      class="w-full px-10 bg-purple-white pr-4 border border-gray-200 rounded border-0 h-10 focus:outline-none"
+      class="w-full px-10 bg-purple-white pr-4 shadow rounded border-0 h-10 focus:outline-none"
       placeholder="Search for products,brands and more"
       name="search"
     />

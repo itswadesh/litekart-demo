@@ -22,7 +22,7 @@
           <a href="#">
             <li class="flex-wrap flex mt-5 mb-5 py-5 px-8">
               <div class="w-1/12">
-                <i class="fa fa-id-card" aria-hidden="true"></i>
+                <img src="/name.png" class="w-5" />
               </div>
               <div class="w-10/12">{{profile.firstName}} {{profile.lastName}}</div>
               <div class="w-1/12">
@@ -35,8 +35,8 @@
         <div class="px-0 lg:px-10 hover:bg-gray-200">
           <a href="#">
             <li class="flex-wrap flex mt-5 mb-5 hover:bg-gray-200 py-5 px-8">
-              <div class="w-1/12">
-                <i class="fa fa-id-card" aria-hidden="true"></i>
+              <div class="w-1/12 text-xl">
+                <i class="fa fa-mobile" aria-hidden="true"></i>
               </div>
               <div class="w-10/12">{{profile.phone}}</div>
               <div class="w-1/12">
@@ -50,7 +50,7 @@
           <a href="#">
             <li class="flex-wrap flex mt-5 mb-5 hover:bg-gray-200 py-5 px-8">
               <div class="w-1/12">
-                <i class="fa fa-id-card" aria-hidden="true"></i>
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
               </div>
               <div class="w-10/12">{{profile.email}}</div>
               <div class="w-1/12">
@@ -64,7 +64,7 @@
           <a href="#">
             <li class="flex-wrap flex mt-5 mb-5 hover:bg-gray-200 py-5 px-8">
               <div class="w-1/12">
-                <i class="fa fa-id-card" aria-hidden="true"></i>
+                <i class="fa fa-key" aria-hidden="true"></i>
               </div>
               <div class="w-10/12">Password</div>
               <div class="w-1/12">

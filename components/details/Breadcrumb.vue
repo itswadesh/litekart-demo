@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full flex flex-wrap p-3">
-    <div class="w-full lg:w-9/12 left-0 text-left text-xs text-gray-500">
+  <div class="flex flex-wrap p-3">
+    <div class="left-0 text-left text-xs text-gray-500">
       Home
       <i class="fa fa-angle-right" aria-hidden="true"></i>
       Wearable Smart Watch

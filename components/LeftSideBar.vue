@@ -1,6 +1,9 @@
 <template>
   <div class="py-6 w-1/5" v-if="facets">
-    <div class="font-bold flex justify-between md:px-3 lg:px-4 py-1 text-sm md:text-xs">
+    <div
+      class="font-bold flex justify-between md:px-3 lg:px-4 items-center pt-2 text-sm md:text-xs"
+      style="margin-top:1px;"
+    >
       <div class="text-gray">FILTERS</div>
       <div class="text-right text-pink-500 cursor-pointer">CLEAR ALL</div>
     </div>
@@ -8,13 +11,9 @@
       v-for="(v,k) in fl"
       :key="k"
       v-if="v && v.length>0 && k!='page' && k!='sort'"
-      class="flex flex-wrap mx-2 items-center text-xs"
+      class="flex flex-wrap items-center text-xs"
     >
-      <div
-        class="justify-between flex m-1 flex-wrap items-center text-gray-600 p-1 border border-gray-300 hover:border-gray-500 capitalize rounded-full"
-        v-for="(i,ix) in v"
-        :key="ix"
-      >
+      <div class="rnd-mnt" v-for="(i,ix) in v" :key="ix">
         {{i}}
         <i class="fa fa-times cursor-pointer ml-1" aria-hidden="true" @click="remove(k,i)"></i>
       </div>
@@ -202,5 +201,20 @@ export default {
 }
 input[type="radio"] {
   margin-top: 0.4em;
+}
+.rnd-mnt {
+  margin-left: 0.8rem;
+  margin-bottom: 0.2rem;
+  background-color: #fff;
+  text-transform: capitalize;
+  color: #3e4152;
+  cursor: default;
+  font-size: 10px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 20px;
+  border: solid 1px #d4d5d9;
+}
+.rnd-mnt:hover {
+  border: solid 1px #94969f;
 }
 </style>

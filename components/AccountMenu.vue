@@ -16,7 +16,7 @@
           class="w-full flex flex-wrap text-lg"
         >
           <div class="w-1/5">
-            <i class="fa fa-first-order p-5" aria-hidden="true"></i>
+            <i class="fa fa-archive p-5" aria-hidden="true"></i>
           </div>
           <div class="w-4/5 text-left p-3">Orders</div>
         </nuxt-link>
@@ -57,7 +57,7 @@
       <li>
         <nuxt-link to="/my/password" class="w-full flex flex-wrap text-lg">
           <div class="w-1/5">
-            <i class="fa fa-credit-card p-5" aria-hidden="true"></i>
+            <i class="fa fa-key p-5" aria-hidden="true"></i>
           </div>
           <div class="w-4/5 text-left p-3">Password</div>
         </nuxt-link>

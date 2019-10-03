@@ -25,7 +25,10 @@
           <Textbox label="Mobile" class="w-full" />
         </div>
         <div class="flex shadow fixed bottom-0 justify-between w-full">
-          <button class="tracking-widest p-3 w-1/2 bg-white text-black text-sm font-semibold">CANCEL</button>
+          <button
+            @click="$router.push('/checkout/address')"
+            class="tracking-widest p-3 w-1/2 bg-white text-black text-sm font-semibold"
+          >CANCEL</button>
           <button
             class="tracking-widest p-3 w-1/2 hover:bg-pink-600 bg-pink-500 text-white text-sm font-semibold"
           >CONTINUE</button>
