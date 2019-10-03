@@ -1,6 +1,6 @@
 <template>
-  <div class="py-2\1 bg-white-800 shadow bg-white w-1/5" v-if="facets">
-    <div class="font-bold flex justify-between md:px-3 lg:px-4 py-4 text-sm md:text-xs">
+  <div class="py-6 w-1/5" v-if="facets">
+    <div class="font-bold flex justify-between md:px-3 lg:px-4 py-1 text-sm md:text-xs">
       <div class="text-gray">FILTERS</div>
       <div class="text-right text-pink-500 cursor-pointer">CLEAR ALL</div>
     </div>

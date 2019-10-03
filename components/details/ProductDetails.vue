@@ -85,7 +85,7 @@
       <div class="py-8 border-b border-gray-300 px-3">
         <p class="font-bold text-lg">
           BEST OFFERS
-          <i class="fa fa-tag ml-2" aria-hidden="true"></i>
+          <i class="fa fa-tag ml-2 text-gray-600" aria-hidden="true"></i>
         </p>
         <span class="text-gray-500">This product is already at its best price</span>
         <div>
@@ -141,7 +141,7 @@
       <div class="py-8 border-b border-gray-300 px-3">
         <p class="font-bold text-lg">
           PRODUCT DETAILS
-          <i class="fa fa-list-alt ml-2" aria-hidden="true"></i>
+          <i class="fa fa-list-alt ml-2 text-gray-600" aria-hidden="true"></i>
         </p>
         <span
           class="text-gray-500"
@@ -203,7 +203,7 @@
       <div class="p-3">
         <p class="font-bold text-lg">
           DELIVERY OPTIONS
-          <i class="fa fa-truck ml-2" aria-hidden="true"></i>
+          <i class="fa fa-truck ml-2 text-gray-600" aria-hidden="true"></i>
         </p>
         <div class="text-gray-600 leading-loose">
           <div class="w-full lg:w-1/3 flex flex-wrap hr-line justify-between pb-2 relative">

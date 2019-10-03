@@ -1,6 +1,9 @@
 <template>
   <header>
-    <nav class="flex items-center justify-between flex-wrap bg-white-800 shadow">
+    <nav
+      class="flex items-center justify-between flex-wrap bg-white-800"
+      style="box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);"
+    >
       <div class="flex items-center flex-shrink-0 text-orange order-1">
         <nuxt-link to="/">
           <img class="w-12 h-10 ml-4" src="/logo.svg" />

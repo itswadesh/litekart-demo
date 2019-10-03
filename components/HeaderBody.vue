@@ -1,16 +1,13 @@
 <template>
   <div>
-    <div class="flex justify-between p-2 bg-white">
-      <div class="hidden md:flex py-2 p-1 text-sm">
+    <div class="flex justify-between px-2 py-6 text-sm" style="margin-top:2px;">
+      <div class="hidden md:flex">
         Home / Clothing / Dresses /
         <span class="font-semibold">Clothing Dresses</span>
       </div>
-
-      <div class="text-sm">
-        <div class="font-semibold flex py-2 p-1">
-          TOTAL-
-          <div class="font-hairline">{{count}} items</div>
-        </div>
+      <div class="font-semibold flex">
+        TOTAL-
+        <div class="font-hairline">{{count}} items</div>
       </div>
 
       <div class="flex-wrap">
