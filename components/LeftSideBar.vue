@@ -1,7 +1,7 @@
 <template>
   <div class="py-6 w-1/5" v-if="facets">
     <div
-      class="font-bold flex justify-between md:px-3 lg:px-4 items-center pt-2 text-sm md:text-xs"
+      class="font-bold flex justify-between md:px-3 lg:px-4 items-center pt-3 text-sm md:text-xs"
       style="margin-top:1px;"
     >
       <div class="text-gray">FILTERS</div>

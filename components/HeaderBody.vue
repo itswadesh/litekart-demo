@@ -1,17 +1,17 @@
 <template>
   <div>
-    <div class="flex justify-between px-2 py-6 text-sm items-center">
+    <div class="flex-none lg:flex justify-between px-2 py-6 text-sm items-center">
       <!-- <div class="hidden md:flex">
         Home / Clothing / Dresses /
         <span class="font-semibold">Clothing Dresses</span>
       </div>-->
-      <Breadcrumb :product="{}" />
-      <div class="font-semibold flex">
+      <Breadcrumb :product="{}" class="px-1 py-0" />
+      <div class="font-semibold flex p-1">
         TOTAL-
         <div class="font-hairline">{{count}} items</div>
       </div>
 
-      <div class="flex-wrap">
+      <div class="flex-wrap p-1">
         <!-- <div class="hidden lg:flex text-sm w-full">
           <a
             href="#"
