@@ -14,7 +14,7 @@
             alt=""
             class="w-full h-full object-cover object-center"
           />
-        </nuxt-link> -->
+        </nuxt-link>-->
       </div>
       <!-- <DealsSkeleton /> -->
       <Banners />

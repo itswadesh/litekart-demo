@@ -8,7 +8,7 @@
     </div>
     <div class="flex flex-wrap justify-between">
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
+        <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
           <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">
@@ -30,7 +30,7 @@
       </a>
 
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
+        <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
           <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">
@@ -49,7 +49,7 @@
       </a>
 
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
+        <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
           <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">
@@ -68,7 +68,7 @@
       </a>
 
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
+        <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
           <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">
@@ -87,7 +87,7 @@
       </a>
 
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
+        <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
           <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">
@@ -106,7 +106,7 @@
       </a>
 
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
+        <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
           <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">

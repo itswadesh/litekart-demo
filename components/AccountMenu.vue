@@ -51,7 +51,7 @@
           <div class="w-1/5">
             <i class="fa fa-heart-o p-5" aria-hidden="true"></i>
           </div>
-          <div class="w-4/5 text-left p-3">My Moments</div>
+          <div class="w-4/5 text-left p-3">Order Details</div>
         </nuxt-link>
       </li>
       <li>

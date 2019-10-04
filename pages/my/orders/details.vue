@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="flex flex-wrap justify-between shadow">
+    <div class="flex flex-wrap justify-between shadow" style="background:#f5f5f5;">
       <div class="text-center text-sm text-black bg-white w-full py-2">
-        <p class="font-semibold">Order 091714264468</p>
+        <p class="font-semibold tracking-widest">Order 091714264468</p>
         <Span class="flex flex-wrap justify-center">
           Placed on Sep 17, 2019
           <li class="list-disc ml-2">₹689 for 1 item</li>
@@ -25,7 +25,7 @@
         <p
           class="bg-green-500 text-white text-center p-1 rounded"
         >Please pay ₹689 to the delivery agent</p>
-        <div class="flex justify-between py-1 border-b border-gray-300">
+        <div class="flex justify-between py-1 border-b border-gray-300 bg-white rounded mt-2">
           <div>
             <img class="lg:rounded xs:rounded-b-none w-32" src="/cart-product.jpg" />
           </div>
@@ -56,38 +56,38 @@
         <div
           class="w-full flex flex-wrap justify-between pb-2 relative text-sm font-semibold tracking-widest"
         >SHIPPING ADDRESS</div>
-        <div class="shadow bg-white p-2 rounded text-gray-800 text-xs">
-          <div class="pb-1 text-sm">Kohn Wick</div>
-          <div class="pb-1">99998 17722</div>
-          <div class="pb-1">Vellore 632 014</div>
+        <div class="shadow bg-white p-2 rounded leading-loose text-sm text-gray-700">
+          <div>Kohn Wick</div>
+          <div>99998 17722</div>
+          <div>Vellore 632 014</div>
         </div>
 
         <p class="text-black mt-4 font-normal text-sm font-semibold tracking-widest">PAYMENT SUMMERY</p>
-        <div class="4/5 right-0 pb-3 leading-loose shadow bg-white mt-2 rounded p-2">
-          <div class="border-b border-gray-300">
+        <div class="text-sm right-0 pb-3 leading-loose shadow bg-white mt-2 rounded p-2">
+          <div class="border-b border-gray-300 text-gray-700">
             <div class="flex justify-between mt-1">
-              <div class="w-1/2 text-sm text-left">Total item price</div>
-              <div class="ml-2 w-1/2 text-black-400 text-right">₹1,009</div>
+              <div>Total item price</div>
+              <div>₹1,009</div>
             </div>
             <div class="flex justify-between mt-1">
-              <div class="w-1/2 text-sm text-left">Item discount</div>
-              <div class="ml-2 w-1/2 text-black-400 text-right">-₹577</div>
+              <div>Item discount</div>
+              <div>-₹577</div>
             </div>
             <div class="flex justify-between mt-1">
-              <div class="w-1/2 text-sm text-left">Shipping fee</div>
-              <div class="ml-2 w-1/2 text-black-400 text-right">₹100</div>
+              <div>Shipping fee</div>
+              <div>₹100</div>
             </div>
-            <div class="flex justify-between mt-2">
-              <div class="w-1/2 text-lg font-bold text-left">Total</div>
-              <div class="ml-2 w-1/2 font-bold text-black-400 text-right">₹532</div>
+            <div class="flex justify-between mt-2 font-bold">
+              <div>Total</div>
+              <div>₹532</div>
             </div>
           </div>
-          <div class="my-2 text-gray-700 text-sm font-semibold">
-            <span class="text-semibold text-sm">PAYMENT MODE</span>
+          <div class="my-2 text-gray-700 text-sm font-semibold text-black-400">
+            <span class="text-semibold text-xs">PAYMENT MODE</span>
             <br />
             <div class="flex text-xs justify-between mt-1">
-              <div class="w-1/2 text-left">Cash on delivery</div>
-              <div class="ml-2 w-1/2 text-black-400 text-right">₹577</div>
+              <div>Cash on delivery</div>
+              <div>₹577</div>
             </div>
             <div class="flex justify-center">
               <button

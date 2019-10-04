@@ -6,7 +6,7 @@
     >
       <div class="flex items-center flex-shrink-0 text-orange order-1 w-1/2">
         <nuxt-link to="/">
-          <img class="w-12 h-10 ml-4" src="/logo.svg" />
+          <img class="w-12 h-10 ml-2" src="/logo.svg" />
         </nuxt-link>
         <div
           class="hidden lg:block flex flex-none text-sm py-4 xs:justify-between items-center text-gray order-2"
@@ -18,7 +18,7 @@
         <Search />
       </div>
       <div
-        class="flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mx-2 w-40"
+        class="flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mr-3 w-40"
       >
         <nuxt-link class="w-auto" to="/login" v-if="!user">
           <img class="h-4 ml-2" src="/avatar.png" />
