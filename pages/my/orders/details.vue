@@ -56,14 +56,14 @@
         <div
           class="w-full flex flex-wrap justify-between pb-2 relative text-sm font-semibold tracking-widest"
         >SHIPPING ADDRESS</div>
-        <div class="shadow bg-white p-2 rounded leading-loose text-sm text-gray-700">
+        <div class="shadow bg-white p-4 rounded leading-loose text-sm text-gray-700">
           <div>Kohn Wick</div>
           <div>99998 17722</div>
           <div>Vellore 632 014</div>
         </div>
 
         <p class="text-black mt-4 font-normal text-sm font-semibold tracking-widest">PAYMENT SUMMERY</p>
-        <div class="text-sm right-0 pb-3 leading-loose shadow bg-white mt-2 rounded p-2">
+        <div class="text-sm right-0 pb-3 leading-loose shadow bg-white mt-2 rounded p-4">
           <div class="border-b border-gray-300 text-gray-700">
             <div class="flex justify-between mt-1">
               <div>Total item price</div>
@@ -91,7 +91,7 @@
             </div>
             <div class="flex justify-center">
               <button
-                class="text-center px-16 ml-2 mt-2 py-1 bg-gray-300 rounded-full focus:outline-none"
+                class="text-center px-12 ml-2 mt-2 py-1 bg-gray-300 rounded-full focus:outline-none"
               >₹689 due</button>
             </div>
           </div>

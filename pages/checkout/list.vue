@@ -3,9 +3,9 @@
     <CheckoutHeader />
     <div>
       <div class="text-sm font-hairline text-gray-600 p-3">CHOOSE DELIVERY ADDRESS</div>
-      <div class="m-2">
+      <div class="m-2 lg:flex">
         <div
-          class="shadow bg-white p-2 rounded flex flex-wrap justify-between border border-green-500"
+          class="m-1 lg:w-1/3 shadow bg-white p-2 rounded flex flex-wrap justify-between border border-green-500"
         >
           <div class="w-full flex justify-between">
             <div>
@@ -39,7 +39,7 @@
           </div>
         </div>
 
-        <div class="mt-2 shadow bg-white p-2 rounded flex flex-wrap justify-between">
+        <div class="m-1 lg:w-1/3 mt-2 shadow bg-white p-2 rounded flex flex-wrap justify-between">
           <div class="w-full flex justify-between">
             <div>
               <Radio />
@@ -58,14 +58,14 @@
 
         <nuxt-link
           to="/checkout/add"
-          class="shadow bg-white pointer my-2 py-2 px-4 rounded flex justify-between items-center"
+          class="m-1 shadow bg-white pointer my-2 py-2 px-4 rounded flex justify-between lg:w-1/3"
         >
           <div>Add New Address</div>
           <i class="fa fa-angle-right text-right" aria-hidden="true"></i>
         </nuxt-link>
       </div>
     </div>
-    <div class="fixed bottom-0 w-full p-2 bg-white">
+    <div class="fixed bottom-0 lg:inset-auto w-full lg:w-1/4 lg:absolute p-2 bg-white right-0">
       <button
         @click="$router.push('/checkout/address')"
         class="tracking-widest w-full mt-3 p-3 bg-red-500 text-white text-sm font-semibold rounded"

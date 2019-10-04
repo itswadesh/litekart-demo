@@ -1,9 +1,9 @@
 <template>
   <div>
     <CheckoutHeader />
-    <div class="w-full pb-4">
+    <div class="w-full pb-4 lg:w-1/3 m-auto">
       <div>
-        <div class="p-3 flex shadow items-center justify-between">
+        <div class="p-3 flex shadow lg:shadow-none items-center justify-between">
           <div class="flex items-center">
             <i @click="go('/checkout/list')" class="fa fa-arrow-left mb-1" aria-hidden="true"></i>
             <div class="font-bold text-gray-700 text-xl ml-3">Add address</div>
@@ -11,7 +11,7 @@
           <div class="text-xs text-gray-600">Step 2 of 3</div>
         </div>
       </div>
-      <form class="lg:mx-15 form w-full mb-5">
+      <form class="lg:mx-15 form w-full mb-1">
         <div class="p-2">
           <Textbox label="Full Name" class="w-full" />
           <Textbox label="Pin Code" class="w-full" />
@@ -24,7 +24,7 @@
           </div>
           <Textbox label="Mobile" class="w-full" />
         </div>
-        <div class="flex shadow fixed bottom-0 justify-between w-full">
+        <div class="flex shadow lg:shadow-none fixed bottom-0 justify-between w-full lg:w-1/3">
           <button
             @click="$router.push('/checkout/address')"
             class="tracking-widest p-3 w-1/2 bg-white text-black text-sm font-semibold"
