@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="flex flex-wrap justify-between shadow" style="background:#f5f5f5;">
-      <div class="text-center text-sm text-black bg-white w-full py-2">
-        <p class="font-semibold tracking-widest">Order 091714264468</p>
-        <Span class="flex flex-wrap justify-center">
+      <div class="text-center text-sm text-black bg-white w-full py-5 tracking-widest bg-gray-100">
+        <p class="font-semibold">Order 091714264468</p>
+        <Span class="flex flex-wrap justify-center text-gray-600 text-xs">
           Placed on Sep 17, 2019
           <li class="list-disc ml-2">₹689 for 1 item</li>
         </Span>
