@@ -3,8 +3,11 @@
     <div
       class="w-full font-semibold text-xs justify-between flex border-b-2 border-gray-300 lg:hidden block"
     >
-      <div class="flex-1 text-center text-pink-500 border-b border-pink-500 bg-white py-4">Select</div>
-      <div class="flex-1 py-4 bg-white">
+      <div
+        class="flex-1 text-center bg-white py-4"
+        :class="{'text-pink-500 border-b border-pink-500':step==1}"
+      >Select</div>
+      <div class="flex-1 py-4 bg-white" :class="{'text-pink-500 border-b border-pink-500':step==2}">
         <div class="flex justify-between">
           <div>
             <i class="fa fa-angle-right text-gray-500" aria-hidden="true"></i>
@@ -15,12 +18,16 @@
           </div>
         </div>
       </div>
-      <div class="flex-1 text-gray-500 py-4 bg-white text-center">Confirm</div>
+      <div
+        class="flex-1 text-gray-500 py-4 bg-white text-center"
+        :class="{'text-pink-500 border-b border-pink-500':step==3}"
+      >Confirm</div>
     </div>
     <div class="w-full lg:w-4/5 m-auto flex lg:border lg:border-gray-300">
       <div class="flex-1" :class="{'mask hidden lg:block':step!==1}">
         <div
-          class="text-center text-pink-500 border-b border-pink-500 bg-white py-4 hidden lg:block"
+          class="text-center bg-white py-4 hidden lg:block"
+          :class="{'text-pink-500 border-b border-pink-500':step==1}"
         >Select</div>
         <div
           class="text-gray-700 text-sm px-6 bg-white border-b border-gray-300 py-4 font-semibold"
@@ -85,13 +92,16 @@
       <div class="lg:block flex-1 text-center bg-white" :class="{'mask hidden lg:block':step!==2}">
         <div class="bg-white">
           <div class="hidden lg:block">
-            <div class="flex justify-between py-4">
+            <div
+              class="flex justify-between py-4"
+              :class="{'text-pink-500 border-b border-pink-500':step==2}"
+            >
               <div>
-                <i class="fa fa-angle-right text-gray-500" aria-hidden="true"></i>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
               </div>
-              <div class="text-gray-500">Reason</div>
+              <div class>Reason</div>
               <div>
-                <i class="fa fa-angle-right text-gray-500" aria-hidden="true"></i>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
               </div>
             </div>
           </div>
@@ -140,7 +150,10 @@
         </div>
       </div>
       <div class="flex-1 bg-white" :class="{'mask hidden lg:block':step!==3}">
-        <div class="text-gray-500 py-4 bg-white text-center hidden lg:block">Confirm</div>
+        <div
+          class="py-4 bg-white text-center hidden lg:block"
+          :class="{'text-pink-500 border-b border-pink-500':step==3}"
+        >Confirm</div>
         <div>
           <div
             class="text-gray-600 text-sm px-6 border-b border-gray-300 py-3"
