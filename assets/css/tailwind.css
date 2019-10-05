@@ -107,3 +107,10 @@ button:focus, a:focus{
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
+.mask{
+  background: #f5f5f5;
+  opacity: 0.5;
+  pointer-events: none;
+  display: none;
+}
