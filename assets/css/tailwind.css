@@ -98,19 +98,14 @@ button:focus, a:focus{
 }
 .text-primary{
    background: linear-gradient(87deg, #fb6340, #da1c5f);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 }
 
 .text-secondary{
    background: linear-gradient(87deg,#40c8fb,#1c45da);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 }
 
 .mask{
   background: #f5f5f5;
   opacity: 0.5;
   pointer-events: none;
-  display: none;
 }
