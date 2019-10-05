@@ -5,7 +5,7 @@
       style="margin-top:1px;"
     >
       <div class="text-gray">FILTERS</div>
-      <div class="text-right text-pink-500 cursor-pointer">CLEAR ALL</div>
+      <div class="text-right text-primary cursor-pointer">CLEAR ALL</div>
     </div>
     <div
       v-for="(v,k) in fl"

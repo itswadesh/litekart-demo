@@ -24,7 +24,7 @@
           </li>
           <li>
             <a href>Myntra Insider</a>
-            <span class="desktop-superscript">New</span>
+            <span class="desktop-superscript primary">New</span>
           </li>
         </ul>
       </div>
@@ -158,11 +158,9 @@ export default {};
   background: #fafbfc;
 }
 .desktop-superscript {
-  color: white;
   font-weight: 700;
   font-size: 12px;
   padding: 0px 5px;
-  background: red;
   border-radius: 90px;
   margin: 0px 0px 0px 5px;
 }

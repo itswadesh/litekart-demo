@@ -34,27 +34,27 @@
         <div class="my-2 font-semibold bg-white border border-gray-300">
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>CREDIT/DEBIT</div>
-            <div class="text-blue-700">SELECT</div>
+            <div class="text-secondary">SELECT</div>
           </div>
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>CASH/CARD ON DELIVERY</div>
-            <div class="text-blue-700">SELECT</div>
+            <div class="text-secondary">SELECT</div>
           </div>
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>NET BANKING</div>
-            <div class="text-blue-700">SELECT</div>
+            <div class="text-secondary">SELECT</div>
           </div>
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>PHONEPE/BHIM UPI</div>
-            <div class="text-blue-700">SELECT</div>
+            <div class="text-secondary">SELECT</div>
           </div>
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>WALLETS</div>
-            <div class="text-blue-700">SELECT</div>
+            <div class="text-secondary">SELECT</div>
           </div>
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>GIFT CARD</div>
-            <div class="text-blue-700">SELECT</div>
+            <div class="text-secondary">SELECT</div>
           </div>
         </div>
       </div>

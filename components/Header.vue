@@ -36,7 +36,7 @@
           <img class="h-4 ml-1" src="/bag.png" />
           <div class="flex text-xs inline-text-gray font-bold">
             Cart
-            <div class="text-white font-bold desktop-badge rounded-full px-1 absolute text-center">
+            <div class="primary font-bold desktop-badge rounded-full px-1 absolute text-center">
               <div class="number">{{cart.qty }}</div>
             </div>
           </div>
@@ -79,7 +79,6 @@ export default {
 <style scoped>
 .desktop-badge {
   font-size: 8px;
-  background: #ff3f6c;
   left: 11px;
   top: -6px;
   height: 15px;

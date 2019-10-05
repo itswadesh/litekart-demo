@@ -5,7 +5,7 @@
       <div class="flex-1 justify-start w-full lg:w-auto">
         <button
           v-if="current>1"
-          class="lg:mx-5 bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 p-2 lg:px-4 border border-gray-400 rounded shadow rounded inline-flex items-center"
+          class="lg:mx-5 bg-white hover:bg-gray-100 text-primary font-semibold lg:py-2 p-2 lg:px-4 border border-gray-400 rounded shadow rounded inline-flex items-center"
           @click="$emit('change',current-1)"
         >
           <i class="fa fa-caret-left" />
@@ -20,7 +20,7 @@
           @click="$emit('change',i)"
         >{{i}}</li>
         <button
-          class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow rounded inline-flex items-center"
+          class="bg-white hover:bg-gray-100 text-primary font-semibold py-2 px-4 border border-gray-400 rounded shadow rounded inline-flex items-center"
           @click="$emit('change',current+1)"
         >
           <span>Next</span>

@@ -24,7 +24,7 @@
             class="border-t border-gray-300 text-center"
             @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
           >
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+            <button class="text-sm font-bold text-primary py-4">MOVE TO BAG</button>
           </div>
         </div>
       </a>
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="border-t border-gray-300 text-center">
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+            <button class="text-sm font-bold text-primary py-4">MOVE TO BAG</button>
           </div>
         </div>
       </a>
@@ -62,7 +62,7 @@
             </div>
           </div>
           <div class="border-t border-gray-300 text-center">
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+            <button class="text-sm font-bold text-primary py-4">MOVE TO BAG</button>
           </div>
         </div>
       </a>
@@ -81,7 +81,7 @@
             </div>
           </div>
           <div class="border-t border-gray-300 text-center">
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+            <button class="text-sm font-bold text-primary py-4">MOVE TO BAG</button>
           </div>
         </div>
       </a>
@@ -100,7 +100,7 @@
             </div>
           </div>
           <div class="border-t border-gray-300 text-center">
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+            <button class="text-sm font-bold text-primary py-4">MOVE TO BAG</button>
           </div>
         </div>
       </a>
@@ -119,7 +119,7 @@
             </div>
           </div>
           <div class="border-t border-gray-300 text-center">
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+            <button class="text-sm font-bold text-primary py-4">MOVE TO BAG</button>
           </div>
         </div>
       </a>
