@@ -67,7 +67,7 @@
             </div>
           </div>
         </div>
-        <div class="fixed bottom-0 relative border-t-2 border-gray-300 bg-white">
+        <div class="fixed bottom-0 lg:relative bg-white w-full">
           <div
             class="flex justify-between text-black font-semibold text-xs px-2 py-4 bg-white shadow"
           >
@@ -131,7 +131,7 @@
               </li>
             </ul>
           </div>
-          <div>
+          <div class="fixed bottom-0 lg:relative bg-white w-full">
             <button
               @click="step=3"
               class="rounded w-full mr-2 primary text-white py-2 px-6 font-bold text-sm"
@@ -149,7 +149,7 @@
             <div class="font-semibold">No refund applicable</div>
             <div>Cash on delivery was the payment method chosen from this order</div>
           </div>
-          <div>
+          <div class="fixed bottom-0 lg:relative bg-white w-full">
             <button
               @click="cancelOrder"
               class="rounded w-full mr-2 primary text-white py-2 px-6 font-bold text-sm"
