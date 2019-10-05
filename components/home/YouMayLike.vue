@@ -8,7 +8,7 @@
             class="text-gray-500 text-xs absolute inset-x-0 you"
           >Based on Your Order</span>
         </p>
-        <button class="primary text-xs right-0 py-1 px-2">View All</button>
+        <button class="primary text-xs right-0 py-1 px-2 rounded">View All</button>
       </div>
       <carousel
         :perPageCustom="[[425, 2], [768, 3], [1024, 5]]"

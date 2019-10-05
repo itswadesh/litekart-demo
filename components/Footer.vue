@@ -158,7 +158,6 @@ export default {};
   background: #fafbfc;
 }
 .desktop-superscript {
-  font-weight: 700;
   font-size: 12px;
   padding: 0px 5px;
   border-radius: 90px;

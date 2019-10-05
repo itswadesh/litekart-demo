@@ -5,7 +5,7 @@
         Deals Of the Day
         <span class="text-gray-500 text-xs">23:57:57 Left</span>
       </div>
-      <button class="primary text-xs px-2">View All</button>
+      <button class="primary text-xs px-2 rounded">View All</button>
     </div>
     <carousel
       :perPageCustom="[[425, 2], [768, 3], [1024, 5]]"
