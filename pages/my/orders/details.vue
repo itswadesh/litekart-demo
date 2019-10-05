@@ -25,27 +25,31 @@
         <p
           class="bg-green-500 text-white text-center p-1 rounded"
         >Please pay ₹689 to the delivery agent</p>
-        <div class="flex justify-between py-1 border-b border-gray-300 bg-white rounded mt-2">
+        <div
+          class="p-5 py-8 mt-2 flex justify-between py-1 border-b border-gray-300 bg-white rounded"
+        >
           <div>
             <img class="lg:rounded xs:rounded-b-none w-32" src="/cart-product.jpg" />
           </div>
           <div class="lg:w-4/5 right-0 xs:9/12">
             <div class="pl-4 font-hairline">
-              <p class="text-black mb-2">Stylish Green Floral Print Mid Thigh</p>
+              <p class="text-black">Stylish Green Floral Print Mid Thigh</p>
               <div class="flex">
-                <p class="text-gray-500 mb-2">
+                <p class="text-gray-500">
                   <span>Size:</span>
                   3-4 years
                 </p>
                 <span class="inline-block rounded-full bg-gray-300 h-2 w-2 m-2"></span>
               </div>
-              <p class="relative mb-2">
-                <span class="text-black font-bold mb-2 text-2xl">889</span>
-              </p>
-              <div class="justify-between text-sm">
-                <div class="flex flex-wrap">
-                  <div class="w-full lg:w-3/5 my-2"></div>
-                  <div class="w-full lg:w-2/5 text-right my-2"></div>
+              <div class="relative">
+                <span class="text-black font-bold text-2xl">889</span>
+              </div>
+              <div>
+                <div class="rnd-mnt flex">
+                  <div class="h-4">
+                    <img src="/return.svg" class="rounded-full p-2 w-6 bg-blue-500 mr-2" />
+                  </div>
+                  <div class="text-sm" style="margin-top:2px;">Cancelled on Sep 20</div>
                 </div>
               </div>
             </div>

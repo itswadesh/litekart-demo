@@ -30,7 +30,7 @@
         </nuxt-link>
         <nuxt-link class="w-auto" to="/wishlist">
           <img class="h-4 ml-3 center" src="/bookmark.png" />
-          <div class="text-xs inline-text-gray font-bold">Whistlist</div>
+          <div class="text-xs inline-text-gray font-bold">Wishlist</div>
         </nuxt-link>
         <nuxt-link class="relative" to="/cart">
           <img class="h-4 ml-1" src="/bag.png" />

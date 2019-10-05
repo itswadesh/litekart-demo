@@ -98,9 +98,7 @@
             </div>
           </div>
           <div class="flex-1 p-1">
-            <button
-              class="px-5 py-2 w-full bg-pink-500 hover:bg-pink-600 text-white rounded"
-            >Pay Now</button>
+            <button class="px-5 py-2 w-full primary text-white rounded">Pay Now</button>
           </div>
         </div>
       </div>

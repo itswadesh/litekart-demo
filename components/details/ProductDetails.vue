@@ -72,7 +72,7 @@
         <button
           :disabled="!selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
-          class="w-7/12 lg:w-1/3 mr-2 bg-red-600 hover:bg-red-500 text-white py-2 px-6 rounded font-bold text-sm lg:text-lg"
+          class="w-7/12 lg:w-1/3 mr-2 primary text-white py-2 px-6 rounded font-bold text-sm lg:text-lg"
         >
           <i class="fa fa-shopping-bag mr-2 hidden lg:block" aria-hidden="true"></i> ADD TO BAG
         </button>

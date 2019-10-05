@@ -34,6 +34,20 @@ button:focus, a:focus{
     align-items: center;
     text-align: center;
 }
+/*  rounded like myntra */
+.rnd-mnt {
+  width: max-content;
+  background-color: #fff;
+  text-transform: capitalize;
+  color: #3e4152;
+  cursor: default;
+  font-size: 10px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 20px;
+  border: solid 1px #d4d5d9;
+  margin: 1px;
+}
+/* rounded like myntra ends */
 .address{
     border: 1px dashed #eaeaec;
     box-shadow: 0 0 4px rgba(40,44,63,.08);
@@ -67,4 +81,14 @@ button:focus, a:focus{
   padding:0.5rem;
   font-weight: normal;
   max-width:14rem;
+}
+.primary {
+    background: linear-gradient(87deg, #fb6340, #da1c5f) !important;
+    border-color: #fb6340;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.secondary{
+  box-shadow: 10px 10px 30px -15px #1c45da;
+  background: linear-gradient(87deg,#40c8fb,#1c45da);
+  border-color: #69beda;
 }

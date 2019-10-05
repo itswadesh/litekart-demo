@@ -21,7 +21,7 @@
         </div>
         <div class="w-1/3 lg:w-1/2">
           <button
-            class="w-full bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 lg:px-4 px-1 rounded focus:outline-none"
+            class="w-full primary text-white font-bold py-2 lg:px-4 px-1 rounded focus:outline-none"
             type="button"
           >SAVE</button>
         </div>

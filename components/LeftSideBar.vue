@@ -11,7 +11,7 @@
       v-for="(v,k) in fl"
       :key="k"
       v-if="v && v.length>0 && k!='page' && k!='sort'"
-      class="flex flex-wrap items-center text-xs"
+      class="flex flex-wrap items-center text-xs my-2 ml-3 mr-2"
     >
       <div class="rnd-mnt" v-for="(i,ix) in v" :key="ix">
         {{i}}
@@ -202,18 +202,7 @@ export default {
 input[type="radio"] {
   margin-top: 0.4em;
 }
-.rnd-mnt {
-  margin-left: 0.8rem;
-  margin-bottom: 0.2rem;
-  background-color: #fff;
-  text-transform: capitalize;
-  color: #3e4152;
-  cursor: default;
-  font-size: 10px;
-  padding: 5px 10px 5px 10px;
-  border-radius: 20px;
-  border: solid 1px #d4d5d9;
-}
+
 .rnd-mnt:hover {
   border: solid 1px #94969f;
 }

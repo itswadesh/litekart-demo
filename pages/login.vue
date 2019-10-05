@@ -6,42 +6,18 @@
           <div class="border-teal border-t-12 bg-white mb-6 rounded shadow-2xl">
             <div class="p-0 bg-blue-700 text-white rounded rounded-b-none">
               <h1 class="text-xl mb-6 text-left p-3">
-                <span
-                  class="font-extrabold"
-                  v-if="!signup"
-                >SIGN IN</span><span
-                  class="font-extrabold"
-                  v-else
-                >SIGN UP</span> TO YOUR ACCOUNT
+                <span class="font-extrabold" v-if="!signup">SIGN IN</span>
+                <span class="font-extrabold" v-else>SIGN UP</span> TO YOUR ACCOUNT
               </h1>
             </div>
-            <form
-              novalidate
-              autocomplete="off"
-              @submit.stop.prevent="submit()"
-              class="center"
-            >
+            <form novalidate autocomplete="off" @submit.stop.prevent="submit()" class="center">
               <div class="p-6">
                 <div>
-                  <Textbox
-                    v-model="uid"
-                    label="Email/Phone"
-                    @keyup="onPhoneChange"
-                  />
+                  <Textbox v-model="uid" label="Email/Phone" @keyup="onPhoneChange" />
                 </div>
                 <div v-if="showOTP">
-                  <Textbox
-                    v-if="signup"
-                    v-model="firstName"
-                    label="Fisrt Name"
-                    class="w-full"
-                  />
-                  <Textbox
-                    v-if="signup"
-                    v-model="lastName"
-                    label="Last Name"
-                    class="w-full"
-                  />
+                  <Textbox v-if="signup" v-model="firstName" label="Fisrt Name" class="w-full" />
+                  <Textbox v-if="signup" v-model="lastName" label="Last Name" class="w-full" />
                   <!-- <p class="text-red-500 mb-5 text-xs font-hairline">Please enter password</p> -->
                   <!-- Show password box -->
                   <div v-if="!isPhone">
@@ -92,13 +68,10 @@
                     type="submit"
                     :disabled="loading"
                     class="flex items-center justify-center h-14 text-2xl outline-none w-full font-bold py-2 rounded"
-                    :class="{'big-button text-white':!loading,'border border-gray-400 bg-gray-300':loading}"
+                    :class="{'primary text-white':!loading,'border border-gray-400 bg-gray-300':loading}"
                   >
                     <div v-if="loading">
-                      <img
-                        src="/loading.svg"
-                        :class="{'loading':loading}"
-                      />
+                      <img src="/loading.svg" :class="{'loading':loading}" />
                     </div>
                     <span v-else>{{submitText}}</span>
                   </button>
@@ -313,11 +286,6 @@ export default {
 <style scoped>
 .border-t {
   border-bottom: 1px solid lightgray;
-}
-.big-button {
-  background: linear-gradient(87deg, #fb6340, #da1c5f) !important;
-  border-color: #fb6340;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .container {
   max-height: 80vh !important;
