@@ -21,9 +21,9 @@
       <p class="text-sm font-hairline">Additional tax shall apply, charged at checkout</p>
     </div>
     <div>
-      <div class="flex items-center px-3">
-        <span class="font-extrabold text-lg w-1/2 lg:w-32">SELECT SIZE</span>
-        <div class="font-extrabold text-lg lg:text-sm text-pink-500">
+      <div class="flex items-center text-sm lg:text-lg px-3">
+        <span class="font-extrabold w-1/2 lg:w-32">SELECT SIZE</span>
+        <div class="font-extrabold text-pink-500">
           <div class="flex items-center">
             <img
               class="mr-2 h-4"

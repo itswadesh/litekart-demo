@@ -54,14 +54,14 @@
           </li>
         </ul>
       </div>
-      <div class="lg:p-8 p-2 items-center">
+      <div class="lg:p-8 p-2 items-center my-4 lg:my-0">
         <div class="font-bold text-sm">EXPERIENCE MYNTRA APP ON MOBILE</div>
         <div class="flex mb-2">
           <img class="mt-2 h-10" src="/playstore.png" />
           <img class="mt-2 h-10" src="/appstore.png" />
         </div>
         <div>
-          <h6 class="text-left text-sm">KEEP IN TOUCH</h6>
+          <h6 class="text-left text-lg lg:text-xs">KEEP IN TOUCH</h6>
           <div class="text-gray-700">
             <a href="#">
               <i class="fa fa-facebook-official" aria-hidden="true"></i>
