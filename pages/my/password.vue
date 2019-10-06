@@ -1,7 +1,7 @@
 <template>
   <div class="lg:w-1/2 mt-0 lg:mt-10 xs:w-full bg-white shadow lg:ml-10 p-5 w-full">
     <div class="border-b border-gray-300">
-      <div class="text-lg text-gray-700 lg:px-8 px-0 font-bold border-b border-gray-200 py-4">
+      <div class="text-lg headings lg:px-8 px-0 font-bold border-b border-gray-200 py-4">
         <i
           class="fa fa-arrow-left mr-2 block lg:invisible"
           @click="$router.push('/my/')"
@@ -14,7 +14,7 @@
         <span class="text-sm">Minimum 6 characters</span>
         <div class="mb-4 lg:w-1/2 w-full mt-3">
           <input
-            class="bg-gray-300 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+            class="bg-gray-300 appearance-none border rounded w-full py-2 px-3 headings leading-tight focus:outline-none"
             type="text"
             placeholder="New Password"
           />

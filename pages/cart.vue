@@ -6,7 +6,7 @@
       <div class="xs:w-full lg:w-2/4 px-2">
         <div class="w-full hr-line justify-between pb-2">
           <!-- <Offers /> -->
-          <div class="hidden lg:block font-bold text-gray-700 w-full text-lg bg-white mt-10">
+          <div class="hidden lg:block font-bold headings w-full text-lg bg-white mt-10">
             <div class="flex flex-wrap">
               <div class="text-left w-1/2">My Shopping Bag ({{cart.qty}} Items)</div>
               <div class="text-right w-1/2">Total {{cart.total | currency}}</div>
@@ -14,9 +14,7 @@
           </div>
 
           <div class="block lg:hidden w-full p-3 bg-white mt-3 flex flex-wrap">
-            <div
-              class="text-left text-gray-700 text-3xl w-20 border-r border-gray-200 font-bold"
-            >Cart</div>
+            <div class="text-left headings text-3xl w-20 border-r border-gray-200 font-bold">Cart</div>
             <span class="text-sm mx-4 text-gray-500">
               {{cart.qty}} items
               <br />

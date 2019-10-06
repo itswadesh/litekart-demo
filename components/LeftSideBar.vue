@@ -1,5 +1,5 @@
 <template>
-  <div class="py-6 w-1/5" v-if="facets">
+  <div class="py-6 w-1/5" v-if="facets" style="box-shadow: 10px 0px 5px -2px rgba(0, 0, 0, 0.04);">
     <div
       class="font-bold flex justify-between md:px-3 lg:px-4 items-center pt-3 text-sm md:text-xs headings"
       style="margin-top:1px;"

@@ -4,10 +4,15 @@
       class="w-full font-semibold text-xs justify-between flex border-b-2 border-gray-300 lg:hidden block"
     >
       <div
+        @click="step=1"
         class="flex-1 text-center bg-white py-4"
         :class="{'text-pink-500 border-b border-pink-500':step==1}"
       >Select</div>
-      <div class="flex-1 py-4 bg-white" :class="{'text-pink-500 border-b border-pink-500':step==2}">
+      <div
+        @click="step=2"
+        class="flex-1 py-4 bg-white"
+        :class="{'text-pink-500 border-b border-pink-500':step==2}"
+      >
         <div class="flex justify-between">
           <div>
             <i class="fa fa-angle-right text-gray-500" aria-hidden="true"></i>
@@ -141,7 +146,7 @@
               </li>
             </ul>
           </div>
-          <div class="fixed bottom-0 lg:relative bg-white w-full">
+          <div class="z-50 fixed bottom-0 lg:relative bg-white w-full">
             <button
               @click="step=3"
               class="rounded w-full mr-2 primary text-white py-2 px-6 font-bold text-sm"

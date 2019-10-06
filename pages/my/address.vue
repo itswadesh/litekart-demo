@@ -1,6 +1,6 @@
 <template>
   <div class="lg:w-1/2 mt-0 lg:mt-10 xs:w-full bg-white shadow lg:ml-10 ml-0 p-5">
-    <div class="text-xl text-black font-bold">
+    <div class="text-xl headings font-bold">
       <i
         class="fa fa-arrow-left mr-2 block lg:invisible"
         @click="$router.push('/my/')"

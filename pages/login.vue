@@ -4,7 +4,7 @@
       <div class="container mx-auto h-full flex items-center">
         <div class="lg:w-1/3 w-full">
           <div class="border-teal border-t-12 bg-white mb-6 rounded shadow-2xl">
-            <div class="p-0 bg-blue-700 text-white rounded rounded-b-none">
+            <div class="p-0 secondary text-white rounded rounded-b-none">
               <h1 class="text-xl mb-6 text-left p-3">
                 <span class="font-extrabold" v-if="!signup">SIGN IN</span>
                 <span class="font-extrabold" v-else>SIGN UP</span> TO YOUR ACCOUNT

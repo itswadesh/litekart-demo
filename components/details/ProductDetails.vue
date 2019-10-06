@@ -22,8 +22,8 @@
     </div>
     <div>
       <div class="flex items-center text-sm lg:text-lg px-3">
-        <span class="font-extrabold w-1/2 lg:w-32">SELECT SIZE</span>
-        <div class="font-extrabold text-pink-500">
+        <span class="heading w-1/2 lg:w-32">SELECT SIZE</span>
+        <div class="text-primary">
           <div class="flex items-center">
             <img
               class="mr-2 h-4"
@@ -43,10 +43,10 @@
           class="focus:outline:none mr-3 rounded-full bg-white border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
         >
           <p class="text-xs">{{v.size}}</p>
-          <span
+          <div
             v-if="v.stock<5"
-            class="text-xs font-semibold absolute left-0 w-12 bg-orange-500 text-white text-center px-1 rounded"
-          >{{v.stock}} left</span>
+            class="text-xs font-semibold absolute w-12 bg-orange-500 text-white rounded"
+          >{{v.stock}} left</div>
         </button>
       </div>
       <div class="flex py-4 px-3" v-if="groupProducts.data && groupProducts.data.length>0">
@@ -197,7 +197,7 @@
               <span class="headings text-sm">Tie-Up Neck</span>
             </div>
           </div>
-          <span class="font-bold text-pink-500">See More</span>
+          <span class="font-bold text-primary">See More</span>
         </div>
       </div>
       <div class="p-3">
@@ -213,7 +213,7 @@
               placeholder="PinCode"
             />
             <button
-              class="absolute right-0 text-sm mt-2 font-bold text-pink-500 pr-2 hover:text-gray-600 cursor-pointer"
+              class="absolute right-0 text-sm mt-2 font-bold text-primary pr-2 hover:text-gray-600 cursor-pointer"
             >Check</button>
           </div>
           <span class="text-gray-500 text-xs">Please enter PIN code to check Availability</span>

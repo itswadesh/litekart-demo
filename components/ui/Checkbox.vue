@@ -58,7 +58,7 @@
 }
 .common-customCheckbox input:checked ~ .common-checkboxIndicator {
   border: none;
-  background: #ff3f6c;
+  background: linear-gradient(87deg, #fb6340, #da1c5f) !important;
 }
 .common-checkboxIndicator:after {
   content: "";
