@@ -1,7 +1,7 @@
 <template>
   <div class="py-6 w-1/5" v-if="facets">
     <div
-      class="font-bold flex justify-between md:px-3 lg:px-4 items-center pt-3 text-sm md:text-xs"
+      class="font-bold flex justify-between md:px-3 lg:px-4 items-center pt-3 text-sm md:text-xs headings"
       style="margin-top:1px;"
     >
       <div class="text-gray">FILTERS</div>
@@ -21,7 +21,7 @@
     <div
       v-if="facets.categories && facets.categories.all.buckets && facets.categories.all.buckets.length>0"
     >
-      <p class="ml-2 py-2 font-semibold text-sm px-2">CATEGORY</p>
+      <p class="ml-2 headings py-2 font-semibold text-sm px-2">CATEGORY</p>
       <ul class="ml-2 py-2 px-2 filter-container">
         <li v-for="b in facets.categories && facets.categories.all.buckets" :key="b.key">
           <Checkbox
@@ -35,7 +35,7 @@
     </div>
 
     <div v-if="facets.brands && facets.brands.all.buckets && facets.brands.all.buckets.length>0">
-      <p class="ml-2 py-2 font-semibold text-sm px-2">BRAND</p>
+      <p class="ml-2 headings py-2 font-semibold text-sm px-2">BRAND</p>
       <ul class="ml-2 py-2 px-2 filter-container">
         <li v-for="b in facets.brands && facets.brands.all.buckets" :key="b.key">
           <Checkbox
@@ -49,7 +49,7 @@
     </div>
 
     <div v-if="facets.sizes && facets.sizes.all.buckets && facets.sizes.all.buckets.length>0">
-      <p class="ml-2 py-2 font-semibold text-sm px-2">SIZES</p>
+      <p class="ml-2 headings py-2 font-semibold text-sm px-2">SIZES</p>
       <ul class="ml-2 py-2 px-2 filter-container">
         <li v-for="b in facets.sizes && facets.sizes.all.buckets" :key="b.key">
           <Checkbox
@@ -67,7 +67,7 @@
       :key="k"
       v-if="v.key!='Color' && v.val && v.val.buckets.length>0"
     >
-      <p class="ml-2 py-2 font-semibold text-sm px-2">{{v.key}}</p>
+      <p class="ml-2 headings py-2 font-semibold text-sm px-2">{{v.key}}</p>
       <ul class="ml-2 py-2 px-2 filter-container">
         <li v-for="f in v.val.buckets" :key="f.key">
           <Checkbox
@@ -83,7 +83,7 @@
     <div
       v-if="facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets && facets.colors.colors.name.buckets.length>0"
     >
-      <p class="ml-2 py-2 font-semibold text-sm px-2">COLOR</p>
+      <p class="ml-2 headings py-2 font-semibold text-sm px-2">COLOR</p>
       <ul class="ml-2 py-2 px-2 filter-container">
         <li
           class="colour-listItem"

@@ -1,7 +1,7 @@
 <template>
   <div class="w-full shadow my-2">
     <div class="w-full p-3 border-b flex justify-between">
-      <div class="flex-1">
+      <div class="flex-1 headings">
         Deals Of the Day
         <span class="text-gray-500 text-xs">23:57:57 Left</span>
       </div>

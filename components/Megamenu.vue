@@ -20,7 +20,7 @@
           <ul
             v-for="(c,ix) in category.children"
             :key="c._id"
-            class="bg-gray-100 px-4 w-full sm:w-1/2 lg:w-1/6 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3"
+            class="bg-gray-100 px-4 w-full sm:w-1/2 text-1 lg:w-1/6 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3"
             :class="{'bg-gray-200':Math.abs(ix % 2)}"
           >
             <div class="flex">

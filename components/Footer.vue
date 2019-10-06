@@ -1,8 +1,8 @@
 <template>
-  <footer class="txtxlr">
+  <footer class="footer">
     <div class="flex flex-wrap justify-between py-8">
       <div class="lg:p-8 p-2">
-        <div class="text-left mr-2 font-bold text-sm">ONLINE SHOPPING</div>
+        <div class="text-left mr-2 font-bold text-sm headings">ONLINE SHOPPING</div>
         <ul class="font-hairline text-sm">
           <li>
             <a href>Men</a>
@@ -29,7 +29,7 @@
         </ul>
       </div>
       <div class="lg:p-8 p-2">
-        <div class="text-center mr-2 font-bold text-sm">USEFUL LINKS</div>
+        <div class="text-center mr-2 font-bold text-sm headings">USEFUL LINKS</div>
         <ul class="font-hairline text-sm">
           <li>
             <a href>Men</a>
@@ -55,14 +55,14 @@
         </ul>
       </div>
       <div class="lg:p-8 p-2 items-center my-4 lg:my-0">
-        <div class="font-bold text-sm">EXPERIENCE MYNTRA APP ON MOBILE</div>
+        <div class="font-bold text-sm headings">EXPERIENCE MYNTRA APP ON MOBILE</div>
         <div class="flex mb-2">
           <img class="mt-2 h-10" src="/playstore.png" />
           <img class="mt-2 h-10" src="/appstore.png" />
         </div>
         <div>
           <h6 class="text-left text-lg lg:text-xs">KEEP IN TOUCH</h6>
-          <div class="text-gray-700">
+          <div class>
             <a href="#">
               <i class="fa fa-facebook-official" aria-hidden="true"></i>
             </a>
@@ -83,7 +83,7 @@
           <img class="my-3 h-10" src="/original.png" alt />
           <div class="text-sm">
             <div>
-              <span class="font-bold ml-1">100% ORIGINAL</span> guarantee for all products
+              <span class="font-bold ml-1 headings">100% ORIGINAL</span> guarantee for all products
               at myntra.com
             </div>
           </div>
@@ -92,7 +92,7 @@
           <img class="ml-1 my-2 h-10" src="/return.png" alt />
           <div class="text-sm">
             <div>
-              <span class="font-bold ml-1">Return within 30days</span> of receiving your order
+              <span class="font-bold ml-1 headings">Return within 30days</span> of receiving your order
             </div>
           </div>
         </div>
@@ -100,15 +100,15 @@
           <img class="ml-1 my-2 h-10" src="/truck.png" alt />
           <div class="text-sm">
             <div>
-              <span class="font-bold ml-1">Get free delivery</span> for every order above Rs. 1199
+              <span class="font-bold ml-1 headings">Get free delivery</span> for every order above Rs. 1199
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="lg:p-8 p-2 text-gray-700 text-sm">
-      <div class="font-medium hr-line">POPULAR SEARCHES</div>
-      <hr class="text-gray-100" />
+    <div class="lg:p-8 p-2 text-sm">
+      <div class="font-medium hr-line headings">POPULAR SEARCHES</div>
+      <hr class="text-gray-800" />
       <div class="mt-5 mb-5 font-normal">
         Adidas | Arrow | Fila | Online Shopping | Nike | Pepe Jeans | Puma | United Colors of Benetton |
         Fastrack | Shorts | Being Human | Skirts | Woodland | Supra | Dresses | Clothing | Jewellery |
@@ -118,7 +118,7 @@
         Running Shoes | Nike Sports Shoes | Jeans | Being Human | Tshirts | Converse Shoes | Cricket Shoes
       </div>
     </div>
-    <div class="flex lg:p-8 p-2 text-gray-700 flex-wrap justify-between">
+    <div class="flex lg:p-8 p-2 flex-wrap justify-between footer">
       <div>
         In case of any concern,
         <span class="px-2 text-indigo-600">Contact Us</span>
@@ -152,10 +152,6 @@ export default {};
 <style scoped>
 .hr-line {
   border-bottom: 1px solid #fafbfc;
-}
-. {
-  color: #696b79;
-  background: #fafbfc;
 }
 .desktop-superscript {
   font-size: 12px;

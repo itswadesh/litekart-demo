@@ -6,9 +6,9 @@
         <span class="font-semibold">Clothing Dresses</span>
       </div>-->
       <Breadcrumb :product="{}" class="px-1 py-0" />
-      <div class="font-semibold flex p-1">
+      <div class="font-semibold flex p-1 headings">
         TOTAL-
-        <div class="font-hairline">{{count}} items</div>
+        <div class="font-hairline text-1">{{count}} items</div>
       </div>
 
       <div class="flex-wrap p-1">

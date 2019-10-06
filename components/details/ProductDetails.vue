@@ -1,10 +1,10 @@
 <template>
   <div class="w-full md:w-6/12 lg:w-7/12 leading-relaxed">
     <div class="pb-4 border-b border-gray-200 px-3">
-      <p class="text-2xl text-gray-700 font-semibold">{{product.brandName}}</p>
+      <p class="text-2xl headings font-semibold">{{product.brandName}}</p>
       <p>{{product.name}}</p>
     </div>
-    <div class="px-3 text-gray-700 font-semibold py-3 tracking-wider" v-if="selectedVariant">
+    <div class="px-3 headings font-semibold py-3 tracking-wider" v-if="selectedVariant">
       <!-- <div v-if="!selectedVariant._id">
         <span class="text-2xl mr-2">{{product.price | currency}}</span>
         <span class="font-hairline line-through text-lg mr-2">{{product.mrp | currency}}</span>
@@ -147,10 +147,10 @@
           class="text-gray-500"
         >Black printed woven fit and flare dress, has a tie-up neck, three-quarter sleeves, flared hem</span>
         <p class="font-bold text-lg">Size & Fit</p>
-        <span class="text-gray-700">he model (height 5'8") is wearing a size S</span>
+        <span class="headings">he model (height 5'8") is wearing a size S</span>
 
         <p class="font-bold text-lg">Material & Care</p>
-        <span class="text-gray-700">
+        <span class="headings">
           Polyester
           <br />Machine-wash
         </span>
@@ -160,41 +160,41 @@
           <div class="w-full flex py-1">
             <div class="w-1/2 border-b border-gray-400 mr-4">
               <p class="text-xs text-gray-500">Shape</p>
-              <span class="text-gray-700 text-sm">Fit and Flare</span>
+              <span class="headings text-sm">Fit and Flare</span>
             </div>
             <div class="w-1/2 border-b border-gray-400 mr-4">
               <p class="text-xs text-gray-500">Neck</p>
-              <span class="text-gray-700 text-sm">Tie-Up Neck</span>
+              <span class="headings text-sm">Tie-Up Neck</span>
             </div>
           </div>
           <div class="w-full flex py-4">
             <div class="w-1/2 border-b border-gray-400 mr-4">
               <p class="text-xs text-gray-500">Shape</p>
-              <span class="text-gray-700 text-sm">Fit and Flare</span>
+              <span class="headings text-sm">Fit and Flare</span>
             </div>
             <div class="w-1/2 border-b border-gray-400 mr-4">
               <p class="text-xs text-gray-500">Neck</p>
-              <span class="text-gray-700 text-sm">Tie-Up Neck</span>
+              <span class="headings text-sm">Tie-Up Neck</span>
             </div>
           </div>
           <div class="w-full flex py-4">
             <div class="w-1/2 border-b border-gray-400 mr-4">
               <p class="text-xs text-gray-500">Shape</p>
-              <span class="text-gray-700 text-sm">Fit and Flare</span>
+              <span class="headings text-sm">Fit and Flare</span>
             </div>
             <div class="w-1/2 border-b border-gray-400 mr-4">
               <p class="text-xs text-gray-500">Neck</p>
-              <span class="text-gray-700 text-sm">Tie-Up Neck</span>
+              <span class="headings text-sm">Tie-Up Neck</span>
             </div>
           </div>
           <div class="w-full flex py-4">
             <div class="w-1/2 border-b border-gray-400 mr-4">
               <p class="text-xs text-gray-500">Shape</p>
-              <span class="text-gray-700 text-sm">Fit and Flare</span>
+              <span class="headings text-sm">Fit and Flare</span>
             </div>
             <div class="w-1/2 border-b border-gray-400 mr-4">
               <p class="text-xs text-gray-500">Neck</p>
-              <span class="text-gray-700 text-sm">Tie-Up Neck</span>
+              <span class="headings text-sm">Tie-Up Neck</span>
             </div>
           </div>
           <span class="font-bold text-pink-500">See More</span>
@@ -217,7 +217,7 @@
             >Check</button>
           </div>
           <span class="text-gray-500 text-xs">Please enter PIN code to check Availability</span>
-          <ul class="text-sm font-hairline text-gray-700">
+          <ul class="text-sm font-hairline headings">
             <li>Tax: Applicable tax on the basis of exact location & discount will be charged at the time of checkout</li>
             <li>100% Original Products</li>
             <li>Free Delivery on order above Rs. 1199</li>

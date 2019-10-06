@@ -1,10 +1,10 @@
 <template>
   <header>
     <nav
-      class="flex items-center justify-between flex-wrap bg-white-800"
+      class="flex items-center justify-between flex-wrap bg-white lg:px-12"
       style="box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);"
     >
-      <div class="flex items-center flex-shrink-0 text-orange order-1 w-1/2">
+      <div class="flex items-center flex-shrink-0 text-orange order-1 w-1/2 lg:w-auto">
         <nuxt-link to="/">
           <img class="w-12 h-10 ml-2" src="/logo.svg" />
         </nuxt-link>
@@ -14,27 +14,27 @@
           <Megamenu />
         </div>
       </div>
-      <div class="mx-2 py-2 relative order-4 sm:order-3 w-full" style="flex:1">
+      <div class="mx-2 py-2 relative order-4 sm:order-3 w-full lg:mr-6" style="flex:1">
         <Search />
       </div>
       <div
-        class="flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mr-3 w-40"
+        class="flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mr-3 w-40 headings"
       >
         <nuxt-link class="w-auto" to="/login" v-if="!user">
           <img class="h-4 ml-2" src="/avatar.png" />
-          <div class="inline-text-gray text-xs font-bold">Profile</div>
+          <div class="text-xs font-bold headings">Profile</div>
         </nuxt-link>
         <nuxt-link class="w-auto" to="/my" v-else>
           <img class="h-4 ml-2" src="/avatar.png" />
-          <div class="inline-text-gray text-xs font-bold">Profile</div>
+          <div class="text-xs font-bold headings">Profile</div>
         </nuxt-link>
         <nuxt-link class="w-auto" to="/wishlist">
           <img class="h-4 ml-3 center" src="/bookmark.png" />
-          <div class="text-xs inline-text-gray font-bold">Wishlist</div>
+          <div class="text-xs font-bold headings">Wishlist</div>
         </nuxt-link>
         <nuxt-link class="relative" to="/cart">
           <img class="h-4 ml-1" src="/bag.png" />
-          <div class="flex text-xs inline-text-gray font-bold">
+          <div class="flex text-xs font-bold">
             Cart
             <div class="primary font-bold desktop-badge rounded-full px-1 absolute text-center">
               <div class="number">{{cart.qty }}</div>

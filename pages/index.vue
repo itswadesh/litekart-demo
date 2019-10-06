@@ -1,7 +1,7 @@
 <template>
   <div>
     <MegamenuMobile />
-    <div class="px-2 home">
+    <div class="px-2 home text-1">
       <Hero />
       <Deals />
       <div>

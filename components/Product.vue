@@ -9,15 +9,15 @@
           v-lazy="product._source.imgUrls[0]"
           alt
         />
-        <div class="p-1 text-center">
+        <div class="p-1 text-center text-1">
           <div
-            class="text-gray-900 lg:font-bold sm:font-normal text-sm"
+            class="text-gray-900 lg:font-bold sm:font-normal text-sm headings"
           >{{product._source.name | truncate(18)}}</div>
           <div
-            class="text-black font-thin text-sm"
+            class="font-thin text-sm"
             v-if="product._source.categories && product._source.categories[0]"
           >{{product._source.categories[0].name}}</div>
-          <div class="text-gray-700">{{product._source.variants[0].price | currency}}</div>
+          <div class>{{product._source.variants[0].price | currency}}</div>
         </div>
       </div>
     </nuxt-link>

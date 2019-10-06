@@ -3,6 +3,19 @@
 @import 'tailwindcss/utilities';
 body{
   font-family: 'Rubik', sans-serif;
+  color:#282c3f;
+}
+.footer{
+  font-size: 1rem;
+  color:#696b79;
+  line-height: 25px;
+}
+.headings{
+  color:#282c3f;
+}
+.text-1{
+  color:#282c3f;
+  line-height: 25px;
 }
 @media only screen and (min-width: 1000px) {
   ::-webkit-scrollbar-track {
