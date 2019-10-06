@@ -1,11 +1,10 @@
 <template>
   <div>
-    <div class="flex-none lg:flex justify-between px-2 py-6 text-sm items-center">
-      <!-- <div class="hidden md:flex">
-        Home / Clothing / Dresses /
-        <span class="font-semibold">Clothing Dresses</span>
-      </div>-->
-      <Breadcrumb :product="{}" class="px-1 py-0" />
+    <div class="hidden flex-none lg:flex justify-between px-2 py-6 text-sm items-center">
+      <Breadcrumb
+        :product="{}"
+        class="px-1 py-0"
+      />
       <div class="font-semibold flex p-1 headings">
         TOTAL-
         <div class="font-hairline text-1">{{count}} items</div>
@@ -35,15 +34,18 @@
         <div class="text-sm">
           <div class="inline-block relative">
             <select
-              class="text-black border-gray-100 cursor-pointer cursor-pointer block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
+              class="hidden md:block text-black border-gray-100 cursor-pointer cursor-pointer block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
               v-model="sortBy"
               @change="sort"
             >
-              <option class="bg-white" v-for="(s,ix) in sorts" :key="ix" :value="s.val">{{s.name}}</option>
+              <option
+                class="bg-white"
+                v-for="(s,ix) in sorts"
+                :key="ix"
+                :value="s.val"
+              >{{s.name}}</option>
             </select>
-            <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-            >
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <i class="fa fa-caret-down px-1" />
             </div>
           </div>
@@ -51,12 +53,33 @@
       </div>
     </div>
     <div class="xs:block lg:hidden flex shadow-md py-4 bg-white w-full mb-1">
-      <div class="flex-1 text-gray-700 text-left text-pink-500" @click="$emit('showFilters')">
-        <i class="fa fa-sliders px-3 mr-2" aria-hidden="true"></i>Filter
+      <div
+        class="flex-1 flex items-center text-gray-700 text-left text-primary"
+        @click="$emit('showFilters')"
+      >
+        <i
+          class="fa fa-sliders px-3 mr-2"
+          aria-hidden="true"
+        ></i>Filter
       </div>
-      <div class="flex-1 text-gray-700 text-center font-normal px-4">0 Items</div>
-      <div class="flex-1 text-gray-700 text-center px-4 text-pink-500">
-        <i class="fa fa-sort mr-2" aria-hidden="true"></i>Sort
+      <div class="flex-1 hidden md:block text-gray-700 text-center font-normal px-4">{count} Items</div>
+      <div class="flex-1 flex items-center text-gray-700 text-center px-4 text-primary">
+        <i
+          class="fa fa-sort mr-2"
+          aria-hidden="true"
+        ></i>
+        <select
+          class="text-primary border-gray-100 cursor-pointer cursor-pointer block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
+          v-model="sortBy"
+          @change="sort"
+        >
+          <option
+            class="bg-white"
+            v-for="(s,ix) in sorts"
+            :key="ix"
+            :value="s.val"
+          >{{s.name}}</option>
+        </select>
       </div>
     </div>
   </div>

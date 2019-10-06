@@ -7,8 +7,15 @@
       v-if="showMobileFilter"
       @hide="showMobileFilter=false"
     />
-    <div v-else class="flex">
-      <LeftSideBar class="flex-none max-w-xs hidden md:block" :facets="facets" :fl="fl" />
+    <div
+      v-else
+      class="flex"
+    >
+      <DesktopFilters
+        class="flex-none max-w-xs hidden md:block"
+        :facets="facets"
+        :fl="fl"
+      />
       <div class="w-full">
         <HeaderBody
           :count="productCount"
@@ -23,8 +30,15 @@
                 src="/loading.svg"
                 alt="loading ..."
           />-->
-          <div v-if="products && products.length>0" class="flex flex-wrap">
-            <Product v-for="p in products" :key="p._id" :product="p" />
+          <div
+            v-if="products && products.length>0"
+            class="flex flex-wrap"
+          >
+            <Product
+              v-for="p in products"
+              :key="p._id"
+              :product="p"
+            />
           </div>
           <!-- <div class="pagination_box">
             <v-pagination
@@ -38,7 +52,11 @@
             ></v-pagination>
           </div>-->
         </div>
-        <Pagination :count="10" :current="parseInt($route.query.page || 1)" @change="changePage" />
+        <Pagination
+          :count="10"
+          :current="parseInt($route.query.page || 1)"
+          @change="changePage"
+        />
       </div>
     </div>
     <!-- <RightSideBar /> -->
@@ -48,7 +66,7 @@
 import Pagination from "~/components/Pagination";
 import Skeleton from "~/components/Skeleton";
 import Product from "~/components/Product";
-import LeftSideBar from "~/components/LeftSideBar";
+import DesktopFilters from "~/components/DesktopFilters";
 import MobileFilters from "~/components/MobileFilters";
 import HeaderBody from "~/components/HeaderBody";
 import Logo from "~/components/Logo";
@@ -106,7 +124,7 @@ export default {
   components: {
     Logo,
     HeaderBody,
-    LeftSideBar,
+    DesktopFilters,
     MobileFilters,
     Pagination,
     Product,
