@@ -39,7 +39,7 @@
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  margin-top: -2.5px;
+  margin-top: -2.4px;
 }
 .vertical-filters-filters .vertical-filters-label {
   display: block;
