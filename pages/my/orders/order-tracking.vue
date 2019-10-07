@@ -2,45 +2,44 @@
   <div>
     <div class="bg-gray-100">
       <div class="flex flex-wrap py-4">
-        <div class="w-1/12"></div>
-        <div class="w-5/6 bg-white p-1 shadow">
-          <div class="w-full flex text-xs p-1 border-b border-gray-200">
-            <div class="w-4/12 px-2 border-r border-gray-200">
-              <span class="text-gray-500">COURIER</span>
-              <p class="font-semibold text-gray-700">Delivery</p>
+        <div class="lg:w-1/12"></div>
+        <div class="flex-1 bg-white shadow">
+          <div class="w-full flex text-xs border-b border-gray-200">
+            <div class="flex-1 p-2 border-r border-gray-200">
+              <span class="text-gray-600">COURIER</span>
+              <p class="headings text-gray-700">Delivery</p>
             </div>
-            <div class="w-4/12 px-2 border-r border-gray-200">
-              <span class="text-gray-500">TRACKING ID</span>
-              <p class="font-semibold text-gray-700">701836265094</p>
+            <div class="flex-1 p-2 border-r border-gray-200">
+              <span class="text-gray-600">TRACKING ID</span>
+              <p class="headings text-gray-700">701836265094</p>
             </div>
-            <div class="w-4/12 px-2 border-r border-gray-200">
-              <span class="text-gray-500">ORDER ID</span>
-              <p class="font-semibold text-gray-700">052212543788</p>
+            <div class="flex-1 p-2 border-r border-gray-200">
+              <span class="text-gray-600">ORDER ID</span>
+              <p class="headings text-gray-700">052212543788</p>
             </div>
-            <div class="w-4/5 px-2">
-              <span class="text-gray-500">LAST UPDATE</span>
-              <p class="font-semibold text-gray-700">Lost on 24th june,o1:22pm</p>
+            <div class="flex-1 p-2">
+              <span class="text-gray-600">LAST UPDATE</span>
+              <p class="headings text-gray-700">Lost on 24th june,o1:22pm</p>
             </div>
           </div>
           <div class="w-full flex text-xs p-2">
             <div class="w-11/12">
-              <span class="text-gray-500">ORDER PLACED</span>
-              <p class="font-semibold text-gray-700">22nd may 19</p>
+              <span class="text-gray-600">ORDER PLACED</span>
+              <p class="headings text-gray-700">22nd may 19</p>
             </div>
-            <button class="px-5 right-0 focus:outline-none px-3 py-0 bg-pink-500 text-white font-semibold rounded-full">
-              <i
-                class="fa fa-share-alt"
-                aria-hidden="true"
-              ></i> Share
+            <button
+              class="px-6 right-0 focus:outline-none bg-pink-500 text-white rounded-full flex items-center"
+            >
+              <i class="fa fa-share-alt mr-2" aria-hidden="true"></i> Share
             </button>
           </div>
         </div>
-        <div class="w-1/12"></div>
+        <div class="lg:w-1/12"></div>
       </div>
       <div class="flex flex-wrap pb-3">
         <div class="w-1/12"></div>
-        <div class="w-5/6 flex">
-          <div class="w-8/12 shadow bg-white pb-5">
+        <div class="lg:w-5/6 lg:flex">
+          <div class="lg:w-8/12 shadow bg-white pb-5">
             <div class="border-b border-gray-200">
               <div class="flex justify-between p-3 text-gray-500 text-xs">
                 <div>
@@ -162,11 +161,8 @@
             </div>
           </div>
           <div class="w-4"></div>
-          <div class="w-4/12 shadow">
-            <img
-              src="banner-imgs.jpg"
-              class="w-full h-56 object-cover"
-            />
+          <div class="lg:w-4/12 mt-2 lg:mt-0 shadow">
+            <img src="/banner-imgs.jpg" class="w-full h-56 object-cover" />
             <p class="p-3 bg-white text-gray-600">Hop300</p>
           </div>
         </div>
@@ -239,16 +235,10 @@ export default {
 .steps > .step:last-child:after {
   display: none;
 }
-.steps > .step.is-complete {
-  color: #6d6875;
-}
 .steps > .step.is-complete:before {
   color: red;
   background: #fef0e2;
   border: 2px solid red;
-}
-.steps > .step.is-complete:after {
-  background: #f68e20;
 }
 .steps > .step.is-active {
   font-size: 1.5rem;
@@ -289,14 +279,8 @@ li {
   line-height: 1px;
 }
 
-.blue {
-  background-color: rgba(82, 165, 255, 1);
-}
 .green {
   background-color: rgb(224, 34, 174);
-}
-.red {
-  background-color: rgba(255, 148, 148, 1);
 }
 .grey {
   background-color: rgb(224, 34, 174);
@@ -305,4 +289,40 @@ li {
   margin-left: 0.5rem;
 }
 /* vertical scroll bar ends */
+@media only screen and (max-width: 640px) {
+  .second:before {
+    margin-left: 4rem;
+  }
+  .third:before {
+    margin-left: 6rem;
+  }
+  .steps > .step:after {
+    width: 12rem;
+    left: 30%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .second:before {
+    margin-left: 4rem;
+  }
+  .third:before {
+    margin-left: 14rem;
+  }
+  .steps > .step:after {
+    width: 27.5rem;
+    left: 17%;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1266px) {
+  .second:before {
+    margin-left: 4rem;
+  }
+  .third:before {
+    margin-left: 10rem;
+  }
+  .steps > .step:after {
+    width: 20rem;
+    left: 18%;
+  }
+}
 </style>

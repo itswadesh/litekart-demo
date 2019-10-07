@@ -1,8 +1,5 @@
 <template>
-  <label
-    class="vertical-filters-label common-customCheckbox hover:bg-none"
-    :for="id || uniqueId"
-  >
+  <label class="vertical-filters-label common-customCheckbox hover:bg-none" :for="id || uniqueId">
     <input
       type="checkbox"
       :id="id || uniqueId"
@@ -23,10 +20,7 @@
     <span class="text-gray-800 ml-2 text-sm">
       <slot />
     </span>
-    <span
-      class="text-gray-500 text-xs"
-      v-if="count"
-    >({{count}})</span>
+    <span class="text-gray-500 text-xs" v-if="count">({{count}})</span>
     <div class="common-checkboxIndicator"></div>
   </label>
 </template>
