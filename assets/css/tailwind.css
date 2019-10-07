@@ -36,8 +36,8 @@ body{
     background: linear-gradient(87deg, #fb6340, #da1c5f) !important;
   }
 }
-button:focus, a:focus{
-   outline:none;
+button,button:focus{
+  outline: none;
 }
 .container {
     margin: 0 auto;
