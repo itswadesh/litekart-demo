@@ -28,7 +28,7 @@
               <p class="headings text-gray-700">22nd may 19</p>
             </div>
             <button
-              class="px-6 right-0 focus:outline-none bg-pink-500 text-white rounded-full flex items-center"
+              class="px-6 right-0 focus:outline-none primary text-white rounded-full flex items-center"
             >
               <i class="fa fa-share-alt mr-2" aria-hidden="true"></i> Share
             </button>

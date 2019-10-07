@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row w-full px-1">
+  <div class="flex flex-row w-full">
     <ul class="flex-1 pagination-container justify-start w-full text-xs lg:text-sm">
       <li class="pagination-paginationMeta w-full lg:w-auto">Page {{current}} of {{count}}</li>
       <div class="flex-1 justify-start w-full lg:w-auto">
