@@ -209,8 +209,7 @@ export default {
   content: attr(data-step);
   display: block;
   background: #fff;
-  border: 2px solid red;
-  color: red;
+  background-image: linear-gradient(to bottom, #fb6340 0%, #da1c5f 100%);
   width: 0.8rem;
   height: 0.8rem;
   text-align: center;
@@ -226,7 +225,7 @@ export default {
   content: "";
   position: absolute;
   display: block;
-  background: red;
+  background: linear-gradient(87deg, #fb6340, #da1c5f);
   width: 25rem;
   height: 0.125rem;
   top: 0.4rem;
@@ -236,17 +235,17 @@ export default {
   display: none;
 }
 .steps > .step.is-complete:before {
-  color: red;
+  color: linear-gradient(87deg, #fb6340, #da1c5f) !important;
   background: #fef0e2;
-  border: 2px solid red;
+  border: 2px solid linear-gradient(87deg, #fb6340, #da1c5f);
 }
 .steps > .step.is-active {
   font-size: 1.5rem;
 }
 .steps > .step.is-active:before {
   color: #fff;
-  border: 2px solid red;
-  background: red;
+  border: 2px solid linear-gradient(87deg, #fb6340, #da1c5f);
+  background: linear-gradient(87deg, #fb6340, #da1c5f) !important;
   margin-bottom: -4.9rem;
 }
 /* vertical scroll bar starts */
@@ -257,11 +256,6 @@ export default {
   display: inline-block;
   transition: all 1000ms ease;
 }
-
-.activated {
-  box-shadow: 0px 0px 3px 2px rgb(224, 34, 174);
-}
-
 .divider {
   height: 40px;
   width: 2px;
