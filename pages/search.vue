@@ -7,15 +7,8 @@
       v-if="showMobileFilter"
       @hide="showMobileFilter=false"
     />
-    <div
-      v-else
-      class="flex"
-    >
-      <DesktopFilters
-        class="flex-none max-w-xs hidden md:block"
-        :facets="facets"
-        :fl="fl"
-      />
+    <div v-else class="flex">
+      <DesktopFilters class="flex-none max-w-xs hidden md:block" :facets="facets" :fl="fl" />
       <div class="w-full">
         <HeaderBody
           :count="productCount"
@@ -25,28 +18,15 @@
         />
         <NoProduct v-if="products.length==0 && !loading" />
         <div v-else>
-          <div
-            class="flex justify-between flex-wrap"
-            v-if="loading"
-          >
-            <ProductSkeleton
-              v-for="(p,ix) in 10"
-              :key="ix+'-1'"
-            />
+          <div class="flex justify-between flex-wrap" v-if="loading">
+            <ProductSkeleton v-for="(p,ix) in 10" :key="ix+'-1'" />
           </div>
           <!-- <img
                 src="/loading.svg"
                 alt="loading ..."
           />-->
-          <div
-            v-if="products && products.length>0"
-            class="flex flex-wrap"
-          >
-            <Product
-              v-for="p in products"
-              :key="p._id"
-              :product="p"
-            />
+          <div v-if="products && products.length>0" class="flex flex-wrap">
+            <Product v-for="p in products" :key="p._id" :product="p" />
           </div>
           <!-- <div class="pagination_box">
             <v-pagination
@@ -60,11 +40,7 @@
             ></v-pagination>
           </div>-->
         </div>
-        <Pagination
-          :count="10"
-          :current="parseInt($route.query.page || 1)"
-          @change="changePage"
-        />
+        <Pagination :count="10" :current="parseInt($route.query.page || 1)" @change="changePage" />
       </div>
     </div>
     <!-- <RightSideBar /> -->
@@ -181,7 +157,7 @@ export default {
         // }
       } catch (e) {
       } finally {
-        this.loading = false;
+        // this.loading = false;
       }
     }
   },

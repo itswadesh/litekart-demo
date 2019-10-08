@@ -77,12 +77,15 @@ button,button:focus{
 }
 .containerr {
   margin: 0 auto;
-  min-height: 10vh;
+  min-height: 8vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+
+
+
 
 .container-fluid{
   padding-left: 5.2em;

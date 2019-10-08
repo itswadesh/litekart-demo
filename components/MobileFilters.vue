@@ -1,6 +1,6 @@
 <template>
   <div
-    class="py-2\1 bg-white-800 shadow bg-white w-screen top-0 left-0 fixed h-screen max-w-lg"
+    class="py-2\1 bg-white-800 shadow bg-white top-0 left-0 fixed max-w-lg filters-demo"
     v-if="facets"
   >
     <!-- Mobile version starts here -->
@@ -121,6 +121,14 @@ ul > li {
   color: gray;
   padding: 10px;
   font-size: 1.1rem;
+}
+
+.filters-demo {
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  overflow: hidden;
+  background-color: white;
 }
 .show-for-small-only {
   background: #f5f5f5;

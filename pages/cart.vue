@@ -44,13 +44,14 @@
             </button>
           </div>-->
         </div>
-        <CartItem v-for="(item,ix) in cart.items" :key="ix" :item="item" />
-        <div class="hidden lg:block">
+        <!-- <CartItem v-for="(item,ix) in cart.items" :key="ix" :item="item" /> -->
+        <CartItemSkeleton />
+        <!-- <div class="hidden lg:block">
           <nuxt-link to="wishlist" class="w-full shadow flex flex-wrap p-4 mt-6 mb-6">
             <i class="fa fa-bookmark-o mt-1 mr-2" aria-hidden="true"></i> Add More From Wishlist
             <i class="fa fa-angle-right mt-1 ml-2" aria-hidden="true"></i>
           </nuxt-link>
-        </div>
+        </div>-->
         <CartBanners />
       </div>
       <CartSummary :cart="cart">
@@ -65,7 +66,7 @@
 import EmptyCart from "~/components/cart/EmptyCart";
 import CartSummary from "~/components/cart/CartSummary";
 import CartBanners from "~/components/cart/CartBanners";
-import CartItem from "~/components/cart/CartItem";
+import CartItemSkeleton from "~/components/cart/CartItemSkeleton";
 import Button from "~/components/ui/Button";
 import { mapGetters } from "vuex";
 
@@ -85,6 +86,6 @@ export default {
       showCart: "cart/showCart"
     })
   },
-  components: { EmptyCart, CartSummary, CartBanners, CartItem, Button }
+  components: { EmptyCart, CartSummary, CartBanners, CartItemSkeleton, Button }
 };
 </script>

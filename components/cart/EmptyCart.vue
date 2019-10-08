@@ -2,14 +2,12 @@
   <div>
     <div class="flex flex-wrap justify-between">
       <div class="lg:w-16 xs:w-0"></div>
-      <div class="xs:w-full lg:w-2/4 mt-10 px-2">
-        <div class="w-full hr-line pb-2">
-          <p class="font-semibold text-3xl text-black">
-            Cart
-            <span class="text-gray-600 text-3xl font-hairline">is empty :(</span>
-          </p>
+      <div class="xs:w-full lg:w-2/4 px-2">
+        <div class="block lg:hidden w-full p-3 bg-white flex flex-wrap">
+          <div class="text-left headings text-3xl w-20 border-r border-gray-200 font-bold">Cart</div>
+          <div class="text-sm mx-2 mt-3 text-gray-500">is empty</div>
         </div>
-        <div class="pt-5 pb-5">
+        <div class="pb-5">
           <div class="w-full left-0">
             <div class="mt-16">
               <img class="containerr w-1/2" src="/emptycart.png" alt="empty cary image" />
@@ -23,7 +21,7 @@
               >You have not added any items to your cart yet.</p>
             </div>
           </div>
-          <div class="mt-8 margin-0 flex justify-center">
+          <div class="mt-2 margin-0 flex justify-center">
             <button
               @click="$router.push('/search')"
               class="mt-10 py-3 px-12 tracking-wide primary tet-2xl font-bold rounded"

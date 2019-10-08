@@ -7,122 +7,144 @@
       </div>
     </div>
     <div class="flex flex-wrap justify-between">
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close button" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-          <div class="px-2 leading-loose">
-            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
-            <div class="text-gray-500 mb-2 text-xs">
-              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
-              <span class="line-through">₹904</span>
-              <span class>|</span>
-              <span class="text-green-500 font-hairline">40% OFF</span>
+      <div class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
+        <a href="#">
+          <div class="shadow relative m-3">
+            <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+            <img
+              src="/close-img.png"
+              alt="close button"
+              class="absolute w-4 top-0 right-0 mt-2 mr-2"
+            />
+            <div class="px-2 leading-loose">
+              <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
+              <div class="text-gray-500 text-xs">
+                <span class="text-2xl font-bold text-black">₹8,999</span>
+                <span class="line-through">₹904</span>
+                <span class>|</span>
+                <span class="text-green-500 font-hairline">40% OFF</span>
+              </div>
+            </div>
+            <div
+              class="border-t border-gray-300 text-center"
+              @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
+            >
+              <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
             </div>
           </div>
-          <div
-            class="border-t border-gray-300 text-center"
-            @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
-          >
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
-          </div>
-        </div>
-      </a>
+        </a>
+      </div>
 
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close button" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-          <div class="px-2 leading-loose">
-            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
-            <div class="text-gray-500 mb-2 text-xs">
-              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
-              <span class="line-through">₹904</span>
-              <span class>|</span>
-              <span class="text-green-500 font-hairline">40% OFF</span>
+      <div class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
+        <a href="#">
+          <div class="shadow relative m-3">
+            <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+            <img
+              src="/close-img.png"
+              alt="close button"
+              class="absolute w-4 top-0 right-0 mt-2 mr-2"
+            />
+            <div class="px-2 leading-loose">
+              <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
+              <div class="text-gray-500 text-xs">
+                <span class="text-2xl font-bold text-black">₹8,999</span>
+                <span class="line-through">₹904</span>
+                <span class>|</span>
+                <span class="text-green-500 font-hairline">40% OFF</span>
+              </div>
+            </div>
+            <div
+              class="border-t border-gray-300 text-center"
+              @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
+            >
+              <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
             </div>
           </div>
-          <div class="border-t border-gray-300 text-center">
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
-          </div>
-        </div>
-      </a>
+        </a>
+      </div>
 
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close button" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-          <div class="px-2 leading-loose">
-            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
-            <div class="text-gray-500 mb-2 text-xs">
-              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
-              <span class="line-through">₹904</span>
-              <span class>|</span>
-              <span class="text-green-500 font-hairline">40% OFF</span>
+      <div class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
+        <a href="#">
+          <div class="shadow relative m-3">
+            <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+            <img
+              src="/close-img.png"
+              alt="close button"
+              class="absolute w-4 top-0 right-0 mt-2 mr-2"
+            />
+            <div class="px-2 leading-loose">
+              <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
+              <div class="text-gray-500 text-xs">
+                <span class="text-2xl font-bold text-black">₹8,999</span>
+                <span class="line-through">₹904</span>
+                <span class>|</span>
+                <span class="text-green-500 font-hairline">40% OFF</span>
+              </div>
+            </div>
+            <div
+              class="border-t border-gray-300 text-center"
+              @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
+            >
+              <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
             </div>
           </div>
-          <div class="border-t border-gray-300 text-center">
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+        </a>
+      </div>
+      <div class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
+        <a href="#">
+          <div class="shadow relative m-3">
+            <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+            <img
+              src="/close-img.png"
+              alt="close button"
+              class="absolute w-4 top-0 right-0 mt-2 mr-2"
+            />
+            <div class="px-2 leading-loose">
+              <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
+              <div class="text-gray-500 text-xs">
+                <span class="text-2xl font-bold text-black">₹8,999</span>
+                <span class="line-through">₹904</span>
+                <span class>|</span>
+                <span class="text-green-500 font-hairline">40% OFF</span>
+              </div>
+            </div>
+            <div
+              class="border-t border-gray-300 text-center"
+              @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
+            >
+              <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
 
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close button" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-          <div class="px-2 leading-loose">
-            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
-            <div class="text-gray-500 mb-2 text-xs">
-              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
-              <span class="line-through">₹904</span>
-              <span class>|</span>
-              <span class="text-green-500 font-hairline">40% OFF</span>
+      <div class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
+        <a href="#">
+          <div class="shadow relative m-3">
+            <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+            <img
+              src="/close-img.png"
+              alt="close button"
+              class="absolute w-4 top-0 right-0 mt-2 mr-2"
+            />
+            <div class="px-2 leading-loose">
+              <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
+              <div class="text-gray-500 text-xs">
+                <span class="text-2xl font-bold text-black">₹8,999</span>
+                <span class="line-through">₹904</span>
+                <span class>|</span>
+                <span class="text-green-500 font-hairline">40% OFF</span>
+              </div>
+            </div>
+            <div
+              class="border-t border-gray-300 text-center"
+              @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
+            >
+              <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
             </div>
           </div>
-          <div class="border-t border-gray-300 text-center">
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close button" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-          <div class="px-2 leading-loose">
-            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
-            <div class="text-gray-500 mb-2 text-xs">
-              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
-              <span class="line-through">₹904</span>
-              <span class>|</span>
-              <span class="text-green-500 font-hairline">40% OFF</span>
-            </div>
-          </div>
-          <div class="border-t border-gray-300 text-center">
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
-          </div>
-        </div>
-      </a>
-
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
-        <div class="shadow m-2 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close button" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
-          <div class="px-2 leading-loose">
-            <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
-            <div class="text-gray-500 mb-2 text-xs">
-              <span class="text-2xl font-bold text-black mt-2">₹8,999</span>
-              <span class="line-through">₹904</span>
-              <span class>|</span>
-              <span class="text-green-500 font-hairline">40% OFF</span>
-            </div>
-          </div>
-          <div class="border-t border-gray-300 text-center">
-            <button class="text-sm font-bold text-black text-red-500 py-4">MOVE TO BAG</button>
-          </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
   </div>
 </template>

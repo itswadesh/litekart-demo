@@ -51,7 +51,7 @@
         class="flex-1 flex items-center text-gray-700 text-left text-primary"
         @click="$emit('showFilters')"
       >
-        <i class="fa fa-sliders px-3 mr-2" aria-hidden="true"></i>Filter
+        <i class="fa fa-sliders px-2" aria-hidden="true"></i>Filter
       </div>
       <div class="flex-1 hidden md:block text-gray-700 text-center font-normal px-4">{count} Items</div>
       <div class="flex-1 flex items-center text-gray-700 text-center px-4 text-primary">

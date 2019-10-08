@@ -4,8 +4,8 @@
     <div class="flex flex-wrap justify-start">
       <ProductImage :product="product" />
       <ProductDetails :product="product" :selectedVariant="selectedVariant" />
-      <SimilarProducts :product="product" />
     </div>
+    <SimilarProducts :product="product" />
   </div>
 </template>
 

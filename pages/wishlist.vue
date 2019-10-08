@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="flex flex-wrap justify-between">
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
         <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
           <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
@@ -29,7 +29,7 @@
         </div>
       </a>
 
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
         <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
           <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
@@ -48,7 +48,7 @@
         </div>
       </a>
 
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
         <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
           <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
@@ -67,7 +67,7 @@
         </div>
       </a>
 
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
         <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
           <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
@@ -86,7 +86,7 @@
         </div>
       </a>
 
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
         <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
           <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
@@ -105,7 +105,7 @@
         </div>
       </a>
 
-      <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
+      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
         <div class="shadow m-3 relative">
           <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
           <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />

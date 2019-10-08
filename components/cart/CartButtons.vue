@@ -13,7 +13,7 @@
     <div v-else>
       <div class="flex flex-wrap">
         <button class="muted rounded-full w-8 h-8" @click="addToBag(-1)">
-          <img src="/minus.svg" alt="minus icon" class="m-auto" />
+          <i class="fa fa-minus m-auto" aria-hidden="true"></i>
         </button>
         <div class="px-2 flex items-center text-center">
           <div v-if="!loading">{{getQty({pid:product._id, vid:variant._id})}}</div>
@@ -24,7 +24,7 @@
           :disabled="!variant || variant.price<1 || variant.stock<1 || loading"
           @click="addToBag(1)"
         >
-          <img src="/plus.svg" alt="plus icon" class="m-auto" />
+          <i class="fa fa-plus m-auto" aria-hidden="true"></i>
         </button>
       </div>
     </div>
