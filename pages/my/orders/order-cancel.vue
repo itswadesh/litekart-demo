@@ -1,5 +1,6 @@
 <template>
   <div style="background:#f5f5f5">
+    <!-- mobile -->
     <div
       class="w-full font-semibold text-xs justify-between flex border-b-2 border-gray-300 lg:hidden block"
     >
@@ -28,72 +29,80 @@
         :class="{'text-pink-500 border-b border-pink-500':step==3}"
       >Confirm</div>
     </div>
+    <!-- mobile ends -->
+    <!-- desktop starts -->
     <div class="w-full lg:w-4/5 m-auto flex lg:border lg:border-gray-300">
+      <!-- select div starts -->
       <div class="flex-1" :class="{'mask hidden lg:block':step!==1}">
         <div
+          @click="step=1"
           class="text-center bg-white py-4 hidden lg:block"
           :class="{'text-pink-500 border-b border-pink-500':step==1}"
         >Select</div>
-        <div
-          class="text-gray-700 text-sm px-6 bg-white border-b border-gray-300 py-4 font-semibold"
-        >Select items for cancellation</div>
-        <div class="p-5 py-4 flex justify-between bg-white rounded">
-          <div>
-            <Checkbox></Checkbox>
-          </div>
-          <div>
-            <img class="lg:rounded xs:rounded-b-none w-16" src="/cart-product.jpg" alt="cart" />
-          </div>
-          <div class="lg:w-4/5 xs:9/12">
-            <div class="pl-4 font-hairline text-sm text-gray-500">
-              <div class="text-gray-700">Stylish Green Floral Print</div>
-              <div class="flex">
-                <div>
-                  <span>Size:</span>
-                  3-4 years
-                </div>
-              </div>
-              <div class="flex justify-between text-xs mt-2">
-                <div>
+        <div class="w-full">
+          <div
+            class="text-gray-700 text-sm px-6 bg-white border-b border-gray-300 py-4 font-semibold"
+          >Select items for cancellation</div>
+          <div class="p-5 py-4 flex justify-between bg-white rounded">
+            <div>
+              <Checkbox></Checkbox>
+            </div>
+            <div>
+              <img class="lg:rounded xs:rounded-b-none w-16" src="/cart-product.jpg" alt="cart" />
+            </div>
+            <div class="lg:w-4/5 xs:9/12">
+              <div class="pl-4 font-hairline text-sm text-gray-500">
+                <div class="text-gray-700">Stylish Green Floral Print</div>
+                <div class="flex">
                   <div>
-                    <div class="text-gray-700 font-semibold">Cancel Qty</div>
-                    <select
-                      class="rounded focus:outline-none text-left w-full border border-gray-400"
-                    >
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                    </select>
+                    <span>Size:</span>
+                    3-4 years
                   </div>
                 </div>
-                <div class="text-gray-700 font-semibold">
-                  Refund
-                  <br />
-                  <div class="font-hairline text-green-500">₹0</div>
+                <div class="flex justify-between text-xs mt-2">
+                  <div>
+                    <div>
+                      <div class="text-gray-700 font-semibold">Cancel Qty</div>
+                      <select
+                        class="rounded focus:outline-none text-left w-full border border-gray-400"
+                      >
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="text-gray-700 font-semibold">
+                    Refund
+                    <br />
+                    <div class="font-hairline text-green-500">₹0</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="fixed bottom-0 lg:relative bg-white w-full">
-          <div
-            class="flex justify-between text-black font-semibold text-xs px-2 py-4 bg-white shadow"
-          >
-            <div>1 item selected</div>
-            <div>₹0</div>
-          </div>
-          <div>
-            <button
-              @click="step=2"
-              class="rounded w-full mr-2 primary text-white py-2 px-6 font-bold text-sm"
-            >Proceed to reason</button>
+          <div class="fixed bottom-0 lg:relative bg-white w-full">
+            <div
+              class="flex justify-between text-black font-semibold text-xs px-2 py-4 bg-white shadow"
+            >
+              <div>1 item selected</div>
+              <div>₹0</div>
+            </div>
+            <div>
+              <button
+                @click="step=2"
+                class="rounded w-full mr-2 primary text-white py-2 px-6 font-bold text-sm"
+              >Proceed to reason</button>
+            </div>
           </div>
         </div>
       </div>
+      <!-- select div ends -->
+      <!-- reason div starts -->
       <div class="lg:block flex-1 text-center bg-white" :class="{'mask hidden lg:block':step!==2}">
         <div class="bg-white">
           <div class="hidden lg:block">
@@ -154,6 +163,8 @@
           </div>
         </div>
       </div>
+      <!-- reason div ends -->
+      <!-- confirm div starts -->
       <div class="flex-1 bg-white" :class="{'mask hidden lg:block':step!==3}">
         <div
           class="py-4 bg-white text-center hidden lg:block"
@@ -176,6 +187,7 @@
         </div>
       </div>
     </div>
+    <!-- confirm div ends -->
   </div>
 </template>
 
