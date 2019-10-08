@@ -18,7 +18,7 @@
         />
         <NoProduct v-if="products.length==0 && !loading" />
         <div v-else>
-          <!-- <Skeleton v-if="loading" /> -->
+          <ProductSkeleton v-if="loading" />
           <!-- <img
                 src="/loading.svg"
                 alt="loading ..."
@@ -46,7 +46,7 @@
 </template>
 <script>
 import Pagination from "~/components/Pagination";
-import Skeleton from "~/components/Skeleton";
+import ProductSkeleton from "~/components/ProductSkeleton";
 import Product from "~/components/Product";
 import DesktopFilters from "~/components/DesktopFilters";
 import MobileFilters from "~/components/MobileFilters";
@@ -113,7 +113,7 @@ export default {
     Loading,
     vPagination,
     NoProduct,
-    Skeleton,
+    ProductSkeleton,
     BackToTopDark
   },
   computed: {
