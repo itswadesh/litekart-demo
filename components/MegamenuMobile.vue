@@ -8,9 +8,9 @@
       id="nay"
     >
       <img
-        alt="category images"
+        :alt="c.name.toUpperCase()"
         :src="$store.state.settings.CDN_URL+c.img"
-        class="object-cover rounded-full h-10"
+        class="object-cover rounded-full h-10 text-sm"
       />
       <div class="text text-center">{{c.name.toUpperCase()}}</div>
     </nuxt-link>
