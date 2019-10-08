@@ -1,5 +1,12 @@
 <template>
-  <img :src="imageSrc" ref="lazyload" :class="fitLoader" @click="$emit('click')" draggable="false">
+  <img
+    :src="imageSrc"
+    ref="lazyload"
+    alt="lazyload"
+    :class="fitLoader"
+    @click="$emit('click')"
+    draggable="false"
+  />
 </template>
 
 <script>
@@ -11,7 +18,7 @@ export default {
       intersecting: false,
       loading: false,
       options: {
-        rootMargin: '50px',
+        rootMargin: "50px",
         threshold: 0
       }
     };

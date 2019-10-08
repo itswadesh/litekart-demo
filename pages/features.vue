@@ -74,11 +74,11 @@
           <li>Product Discounts</li>
           <li>Download and Printable Invoice</li>
           <li>Sorting and Filters Product List</li>
-          <li> Product and Brand Search</li>
-          <li> Add Wish List</li>
-          <li> Product Quick View</li>
-          <li> Product Option Based Price</li>
-          <li> Guest Checkout</li>
+          <li>Product and Brand Search</li>
+          <li>Add Wish List</li>
+          <li>Product Quick View</li>
+          <li>Product Option Based Price</li>
+          <li>Guest Checkout</li>
           <li>Multiple Delivery Address</li>
           <li>Featured Products</li>
           <li>Product Discounts (Promotions)</li>

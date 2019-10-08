@@ -1,12 +1,6 @@
 <template>
-  <button
-    @click="toTop"
-    v-if="scrolled > 1000"
-  >
-    <img
-      class="m-auto w-1/3"
-      src="/up-arrow.png"
-    >
+  <button @click="toTop" v-if="scrolled > 1000">
+    <img class="m-auto w-1/3" src="/up-arrow.png" alt="arrow icon" />
   </button>
 </template>
 

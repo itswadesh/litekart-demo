@@ -11,8 +11,8 @@
       :perPageCustom="[[425, 2], [768, 3], [1024, 5]]"
       :paginationEnabled="false"
       :navigationEnabled="true"
-      navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)'>"
-      navigation-prev-label="<img src='/chevron-right.svg'/>"
+      navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)' alt='right'>"
+      navigation-prev-label="<img src='/chevron-right.svg' alt='right'/>"
       class="mx-2"
     >
       <slide v-for="product in products" :key="product._id">
@@ -21,7 +21,7 @@
             style="height:255px;object-fit: cover;"
             v-if="product.imgUrls"
             v-lazy="product.imgUrls[0]"
-            alt
+            alt="todays deals"
           />
           <div class>
             <div class="font-bold text-xs mb-2">{{product.name | truncate(45)}}</div>

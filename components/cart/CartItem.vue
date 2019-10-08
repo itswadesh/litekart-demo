@@ -2,7 +2,11 @@
   <div class="flex justify-between pt-5 pb-5 border-b border-gray-300">
     <div class="w-1/2 lg:w-1/3">
       <div>
-        <img class="lg:rounded xs:rounded-b-none w-64" v-lazy="item.product.img" alt />
+        <img
+          class="lg:rounded xs:rounded-b-none w-64"
+          v-lazy="item.product.img"
+          alt="product image"
+        />
         <!-- <div class="lg:hidden xs:visible text-black p-2 bg-gray-300 rounded rounded-t-none">Arrives 19 Sep</div> -->
       </div>
     </div>
@@ -48,7 +52,7 @@
                   @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
                   :disabled="loading"
                 >
-                  <img src="/loading.svg" v-if="loading" alt="..." />
+                  <img src="/loading.svg" v-if="loading" alt="loading icon" />
                   <i class="fa fa-trash" v-else></i>
                 </button>
               </div>

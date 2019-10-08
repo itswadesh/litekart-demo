@@ -12,7 +12,7 @@
         <div class="pt-5 pb-5">
           <div class="w-full left-0">
             <div class="mt-16">
-              <img class="containerr w-1/2" src="/emptycart.png" />
+              <img class="containerr w-1/2" src="/emptycart.png" alt="empty cary image" />
             </div>
           </div>
           <div class="w-full left-0">

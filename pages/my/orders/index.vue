@@ -4,15 +4,15 @@
     <div class="bg-white shadow rounded flex flex-wrap py-3 px-8 justify-between hover:shadow-xl">
       <div class="flex items-center">
         <div>
-          <img src="/return.svg" class="rounded-full p-2 bg-blue-500 mr-2" />
+          <img src="/return.svg" class="rounded-full p-2 bg-blue-500 mx-2" alt="return" />
         </div>
         <div>
           <div class="text-sm font-semibold">Arrives by Sep 12</div>
           <div class="text-gray-500 text-xs">1 item</div>
         </div>
       </div>
-      <div class="p-3 shadow">
-        <img src="/cart-product.jpg" class="w-12 h-12" />
+      <div class="p-2 shadow ml-3">
+        <img src="/cart-product.jpg" class="w-12 h-12" alt="cart" />
       </div>
     </div>
   </div>

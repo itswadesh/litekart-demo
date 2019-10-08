@@ -5,14 +5,14 @@
     :autoplayTimeout="5000"
     :paginationEnabled="true"
     :navigationEnabled="true"
-    navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)'>"
-    navigation-prev-label="<img src='/chevron-right.svg'/>"
+    navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)' alt='right icon'>"
+    navigation-prev-label="<img src='/chevron-right.svg' alt='right icon'/>"
   >
     <slide v-for="(image, index) in heroImages" :key="index">
       <nuxt-link :to="image.link">
         <img
           v-lazy="$store.state.settings.CDN_URL+image.img"
-          alt
+          alt="categories"
           class="h-48 lg:h-auto object-cover"
         />
       </nuxt-link>

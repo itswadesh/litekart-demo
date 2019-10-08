@@ -6,6 +6,7 @@
         <div class="text-gray-700 font-bold text-xl mb-2">All done</div>
         <div>
           <img
+            alt="thanks for the purchase"
             src="/order-success.png"
             class="mb-2 h-56 object-cover"
           />
@@ -17,10 +18,7 @@
         <div class="flex justify-between pt-5 pb-5">
           <div class="lg:w-1/5 left-0 xs:w-3/12">
             <div>
-              <img
-                class="lg:rounded xs:rounded-b-none"
-                src="/cart-product.jpg"
-              />
+              <img alt="product image" class="lg:rounded xs:rounded-b-none" src="/cart-product.jpg" />
             </div>
           </div>
           <div class="lg:w-4/5 right-0 text-sm xs:9/12">
@@ -39,7 +37,9 @@
               <div class="flex justify-between">
                 <div class="w-1/2 left-0">
                   <div class="inline-block relative w-16">
-                    <div class="text-xs font-hairline text-black p-1 text-center block appearance-none w-full bg-gray-200 rounded">Qty 1</div>
+                    <div
+                      class="text-xs font-hairline text-black p-1 text-center block appearance-none w-full bg-gray-200 rounded"
+                    >Qty 1</div>
                   </div>
                 </div>
               </div>
@@ -47,11 +47,12 @@
           </div>
         </div>
       </div>
-      <div class="lg:w-1/4 mt-10 lg:pr-20 xs:w-full p-10">
+      <div class="lg:w-1/4 mt-2 lg:mt-10 lg:pr-20 w-full lg:p-10 p-2">
         <div class="w-full flex flex-wrap justify-between pb-2 relative">
           <img
+            alt="banner"
             src="/order-success-side.png"
-            class="w-64 h-56 object-cover rounded"
+            class="w-full lg:w-64 lg:h-56 object-cover rounded"
           />
         </div>
         <div class="4/5 right-0 pb-3 bb">

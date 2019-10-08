@@ -162,7 +162,7 @@
           </div>
           <div class="w-4"></div>
           <div class="lg:w-4/12 mt-2 lg:mt-0 shadow">
-            <img src="/banner-imgs.jpg" class="w-full h-56 object-cover" />
+            <img src="/banner-imgs.jpg" class="w-full h-56 object-cover" alt="tracking banner" />
             <p class="p-3 bg-white text-gray-600">Hop300</p>
           </div>
         </div>

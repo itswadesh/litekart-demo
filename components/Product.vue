@@ -7,7 +7,7 @@
           style="object-fit: cover; max-height:316px;"
           v-if="product._source.imgUrls"
           v-lazy="product._source.imgUrls[0]"
-          alt
+          alt="product image"
         />
         <div class="p-1 text-center text-1">
           <div

@@ -8,7 +8,7 @@
     >
       <img
         v-lazy="$store.state.settings.CDN_URL+b.img"
-        alt
+        alt="home page banners"
         class="w-full h-full lg:pr-1 p-0 object-cover object-center"
       />
     </nuxt-link>

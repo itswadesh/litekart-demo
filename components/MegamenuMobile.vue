@@ -7,7 +7,11 @@
       class="flex-1 bg-white circletag"
       id="nay"
     >
-      <img :src="$store.state.settings.CDN_URL+c.img" class="object-cover rounded-full h-10" />
+      <img
+        alt="category images"
+        :src="$store.state.settings.CDN_URL+c.img"
+        class="object-cover rounded-full h-10"
+      />
       <div class="text text-center">{{c.name.toUpperCase()}}</div>
     </nuxt-link>
   </div>

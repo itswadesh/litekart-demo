@@ -6,15 +6,19 @@
         :key="ix"
         class="w-24 cursor-pointer"
         v-lazy="i"
-        alt
+        alt="product image"
         @click="showAsCurrentImage(i)"
       />
     </div>
     <div class="flex-1 xs:order-1 md:order-2 overflow-hidden">
-      <img class="hidden md:inline-block w-full zoom" v-lazy="`${currentImage}`" />
+      <img
+        class="hidden md:inline-block w-full zoom"
+        v-lazy="`${currentImage}`"
+        alt="product image"
+      />
       <carousel class="md:hidden" :perPage="1" :paginationEnabled="false">
         <slide class="md:hidden inline-block w-full" v-for="i in product.imgUrls" :key="i">
-          <img class="inline-block w-full" v-lazy="`${i}`" />
+          <img class="inline-block w-full" v-lazy="`${i}`" alt="product image" />
         </slide>
       </carousel>
       <!-- <div class="w-full flex p-2">

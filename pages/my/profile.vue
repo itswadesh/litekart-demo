@@ -22,7 +22,7 @@
           <a href="#">
             <li class="flex-wrap flex mt-5 mb-5 py-5 px-8">
               <div class="w-1/12">
-                <img src="/name.png" class="w-5" />
+                <img src="/name.png" class="w-5" alt="name" />
               </div>
               <div class="w-10/12">{{profile.firstName}} {{profile.lastName}}</div>
               <div class="w-1/12">

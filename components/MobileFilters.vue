@@ -4,19 +4,10 @@
     v-if="facets"
   >
     <!-- Mobile version starts here -->
-    <div
-      class="block md:hidden h-full"
-      v-if="showMobileFilter"
-    >
+    <div class="block md:hidden h-full" v-if="showMobileFilter">
       <div class="flex shadow-md py-4 bg-white w-full">
-        <div
-          class="flex-1 text-gray-700 text-left"
-          @click="$emit('hide')"
-        >
-          <i
-            class="fa fa-times ml-2"
-            aria-hidden="true"
-          ></i>
+        <div class="flex-1 text-gray-700 text-left" @click="$emit('hide')">
+          <i class="fa fa-times ml-2" aria-hidden="true"></i>
         </div>
         <div class="flex-1 text-gray-700 text-center font-bold">FILTER</div>
         <div class="flex-1 text-gray-700 text-right mr-2">Clear all</div>
@@ -27,39 +18,27 @@
             <li
               :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='categories'}"
               @click="selected='categories'"
-            >
-              Category
-            </li>
+            >Category</li>
             <li
               :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='brands'}"
               @click="selected='brands'"
-            >
-              Brands
-            </li>
+            >Brands</li>
             <li
               :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='sizes'}"
               @click="selected='sizes'"
-            >
-              Sizes
-            </li>
+            >Sizes</li>
             <li
               :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='colors'}"
               @click="selected='colors'"
-            >
-              Colour
-            </li>
+            >Colour</li>
             <li
               :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='Price'}"
               @click="selected='Price'"
-            >
-              Price
-            </li>
+            >Price</li>
             <li
               :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='Gender'}"
               @click="selected='Gender'"
-            >
-              Gender
-            </li>
+            >Gender</li>
           </ul>
         </div>
         <div class="w-full overflow-y-scroll">
@@ -130,7 +109,7 @@
           </ul>
         </div>
       </div>
-      <div class="w-full text-center bg-pink-500 text-white absolute bottom-0">
+      <div class="w-full text-center primary absolute bottom-0">
         <button class="w-full p-4 cursor-pointer font-bold focus:outline-none">APPLY</button>
       </div>
     </div>

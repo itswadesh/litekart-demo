@@ -29,7 +29,7 @@
           class="p-5 py-8 mt-2 flex justify-between py-1 border-b border-gray-300 bg-white rounded"
         >
           <div>
-            <img class="lg:rounded xs:rounded-b-none w-32" src="/cart-product.jpg" />
+            <img class="lg:rounded xs:rounded-b-none w-32" src="/cart-product.jpg" alt="cart icon" />
           </div>
           <div class="lg:w-4/5 right-0 xs:9/12">
             <div class="pl-4 font-hairline">
@@ -47,7 +47,11 @@
               <div>
                 <div class="rnd-mnt flex">
                   <div class="h-4">
-                    <img src="/return.svg" class="rounded-full p-2 w-6 bg-blue-500 mr-2" />
+                    <img
+                      src="/return.svg"
+                      class="rounded-full p-2 w-6 bg-blue-500 mr-2"
+                      alt="return icon"
+                    />
                   </div>
                   <div class="text-sm" style="margin-top:2px;">Cancelled on Sep 20</div>
                 </div>
@@ -104,7 +108,7 @@
           class="flex-no-wrap justify-center mt-3 text-center rounded shadow bg-white p-2 border-b border-gray-200 text-gray-700 text-sm"
         >
           <div>
-            <img src="/help.png" class="m-auto" />
+            <img src="/help.png" class="m-auto" alt="help icon" />
           </div>
           <div>Need help with this order?</div>
           <br />

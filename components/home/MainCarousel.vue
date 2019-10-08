@@ -8,9 +8,9 @@
         id="carousel-1"
         name="carousel"
         aria-hidden="true"
-        hidden=""
+        hidden
         checked="checked"
-      >
+      />
       <div class="carousel-item absolute opacity-0 h-64">
         <div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center">Slide 1</div>
       </div>
@@ -20,7 +20,7 @@
       >‹</label>
       <label
         for="carousel-2"
-        class="next control-1 w-10 h-10  md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+        class="next control-1 w-10 h-10 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
       >›</label>
 
       <!--Slide 2-->
@@ -30,8 +30,8 @@
         id="carousel-2"
         name="carousel"
         aria-hidden="true"
-        hidden=""
-      >
+        hidden
+      />
       <div class="carousel-item absolute opacity-0 h-64">
         <div class="block h-full w-full bg-orange-500 text-white text-5xl text-center">Slide 2</div>
       </div>
@@ -51,8 +51,8 @@
         id="carousel-3"
         name="carousel"
         aria-hidden="true"
-        hidden=""
-      >
+        hidden
+      />
       <div class="carousel-item absolute opacity-0 h-64">
         <div class="block h-full w-full bg-green-500 text-white text-5xl text-center">Slide 3</div>
       </div>
@@ -70,19 +70,19 @@
         <li class="inline-block mr-3">
           <label
             for="carousel-1"
-            class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
+            class="focus:outline-none carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
           >•</label>
         </li>
         <li class="inline-block mr-3">
           <label
             for="carousel-2"
-            class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
+            class="focus:outline-none carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
           >•</label>
         </li>
         <li class="inline-block mr-3">
           <label
             for="carousel-3"
-            class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
+            class="focus:outline-none carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
           >•</label>
         </li>
       </ol>

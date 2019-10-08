@@ -27,6 +27,7 @@
           <div class="flex items-center">
             <img
               class="mr-2 h-4"
+              alt="size chart icon"
               src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIxMiI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMyODc0RjAiIHN0cm9rZS13aWR0aD0iMS4zIj48cGF0aCBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0zNy4zNS42NUguNjV2MTAuN2gzNi43Vi42NXoiLz48cGF0aCBmaWxsPSIjODc4Nzg3IiBkPSJNNi42NSA4LjY1aDF2Mi43aC0xem00LTNIMTFsLS4zNS0uMzVWNWwtLjE1LjE1LS4xNS0uMTV2LjNsLS4zNS4zNWguMzV2NS43SDEwbC4zNS4zNXYuM2wuMTUtLjE1LjE1LjE1di0uM2wuMzUtLjM1aC0uMzV2LTUuN3ptNSAzSDE2bC0uMzUtLjM1VjhsLS4xNS4xNS0uMTUtLjE1di4zbC0uMzUuMzVoLjM1djIuN0gxNWwuMzUuMzV2LjNsLjE1LS4xNS4xNS4xNXYtLjNsLjM1LS4zNWgtLjM1di0yLjd6bTQtM2gxdjUuN2gtMXptNCAzaDF2Mi43aC0xem05IDBoMXYyLjdoLTF6bS00LTNoMXY1LjdoLTF6Ii8+PC9nPjwvc3ZnPg=="
             />SIZE CHART
             <i class="fa fa-angle-right ml-3" style="margin-top:-1px;"></i>
@@ -302,10 +303,10 @@ export default {
       this.$toast
         .show(
           `
-      <div class="flex">
+      <div class="flex w-full">
         <img class="w-12 h-12 object-cover" src="${this.product.imgUrls &&
-          this.product.imgUrls[0]}"/>
-        <div>
+          this.product.imgUrls[0]}" alt='{{product.name}}' />
+        <div class="toasted-text items-center">
           <div>${this.product.name.substr(0, 20) + "..."}</div>
           <div class="text-gray-600 text-xs">Added to your cart</div>
           <div class="text-pink-600">View cart</div>
@@ -319,6 +320,7 @@ export default {
             singleton: false
           }
         )
+        // .goAway(500000000000000);
         .goAway(1000);
     },
     showDescription() {

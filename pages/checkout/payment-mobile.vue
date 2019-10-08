@@ -34,31 +34,31 @@
         <div class="my-2 font-semibold bg-white border border-gray-300">
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>CREDIT/DEBIT</div>
-            <div class="text-secondary">SELECT</div>
+            <a href="#" class="text-secondary">SELECT</a>
           </div>
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>CASH/CARD ON DELIVERY</div>
-            <div class="text-secondary">SELECT</div>
+            <a href="#" class="text-secondary">SELECT</a>
           </div>
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>NET BANKING</div>
-            <div class="text-secondary">SELECT</div>
+            <a href="#" class="text-secondary">SELECT</a>
           </div>
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>PHONEPE/BHIM UPI</div>
-            <div class="text-secondary">SELECT</div>
+            <a href="#" class="text-secondary">SELECT</a>
           </div>
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>WALLETS</div>
-            <div class="text-secondary">SELECT</div>
+            <a href="#" class="text-secondary">SELECT</a>
           </div>
           <div class="px-3 flex justify-between px-2 py-3 border-b border-gray-300">
             <div>GIFT CARD</div>
-            <div class="text-secondary">SELECT</div>
+            <a href="#" class="text-secondary">SELECT</a>
           </div>
         </div>
       </div>
-      <div class="p-2 lg:px-0 text-sm text-gray-700 p-2 lg:w-1/2 m-auto">
+      <div class="p-2 lg:px-0 text-sm text-gray-700 p-2 lg:w-1/2 m-auto mb-32 lg:mb-2">
         <div>DELIVER TO:</div>
         <br />
         <div class="w-full flex justify-between bg-white shadow rounded">

@@ -25,7 +25,7 @@
                 style="height:255px;object-fit: cover;"
                 v-if="product.imgUrls"
                 v-lazy="product.imgUrls[0]"
-                alt
+                alt="you also like"
               />
               <i
                 class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"

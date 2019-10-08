@@ -9,8 +9,8 @@
     <div class="flex flex-wrap justify-between">
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
-          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">
@@ -31,8 +31,8 @@
 
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
-          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">
@@ -50,8 +50,8 @@
 
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
-          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">
@@ -69,8 +69,8 @@
 
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
-          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">
@@ -88,8 +88,8 @@
 
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
-          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">
@@ -107,8 +107,8 @@
 
       <a href="#" class="w-1/2 lg:w-56 md:w-1/3">
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" />
-          <img src="/close-img.png" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">

@@ -6,15 +6,9 @@
     @click="showInstantSearch=true"
     v-on-clickaway="onClose"
   >
-    <div
-      class="search_fix"
-      @click="showInstantSearch=false"
-    ></div>
+    <div class="search_fix" @click="showInstantSearch=false"></div>
     <div class="absolute">
-      <i
-        class="fa fa-search ml-2 mt-3 text-gray-500"
-        aria-hidden="true"
-      ></i>
+      <i class="fa fa-search ml-2 mt-3 text-gray-500" aria-hidden="true"></i>
     </div>
     <input
       type="text"
@@ -23,29 +17,23 @@
       placeholder="Search for products,brands and more"
       name="search"
       @keyup="search(q)"
-    >
-    <div
-      class="search_options"
-      v-if="showInstantSearch"
-    >
+    />
+    <div class="search_options" v-if="showInstantSearch">
       <ul v-if="data.length>0">
-        <li
-          v-for="i in data"
-          :key="i._id"
-        >
-          <div
-            @click="go(i._source.name)"
-            class="current_item"
-          >
-            <span> <img
-                :src="i._source.imgUrls[0]"
-                alt=""
-              > </span> {{i._source.name | truncate(50)}}<span class="category_tag">in t-shirt</span>
+        <li v-for="i in data" :key="i._id">
+          <div @click="go(i._source.name)" class="current_item">
+            <span>
+              <img :src="i._source.imgUrls[0]" alt="..." />
+            </span>
+            {{i._source.name | truncate(50)}}
+            <span class="category_tag">in t-shirt</span>
           </div>
         </li>
       </ul>
       <ul v-else>
-        <li><span></span>No match found!</li>
+        <li>
+          <span></span>No match found!
+        </li>
       </ul>
     </div>
   </form>
