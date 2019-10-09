@@ -3,7 +3,7 @@
     <EmptyCart v-if="!cart || !cart.qty || cart.qty==0" />
     <div class="flex flex-wrap justify-between" v-else>
       <div class="lg:w-16 xs:w-0"></div>
-      <div class="xs:w-full lg:w-2/4 px-2">
+      <div class="w-full lg:w-2/4 px-2">
         <div class="w-full hr-line justify-between pb-2">
           <!-- <Offers /> -->
           <div class="hidden lg:block font-bold headings w-full text-lg bg-white mt-10">

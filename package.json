@@ -34,6 +34,7 @@
     "cookie-universal-nuxt": "^2.0.17",
     "cross-env": "^5.2.1",
     "dotenv": "^8.1.0",
+    "jquery": "^3.4.1",
     "node-sass": "^4.11.0",
     "nuxt": "^2.9.2",
     "sass-loader": "^7.1.0",

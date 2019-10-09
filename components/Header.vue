@@ -14,7 +14,7 @@
           <Megamenu />
         </div>
       </div>
-      <div class="mx-2 py-2 relative order-4 sm:order-3 w-full lg:mr-6" style="flex:1">
+      <div class="m-2 py-2 order-4 sm:order-3 w-full lg:mr-6" style="flex:1" :class="cls">
         <Search />
       </div>
       <div
@@ -50,6 +50,20 @@ import { mapGetters } from "vuex";
 import Megamenu from "~/components/Megamenu";
 import Search from "~/components/Search";
 export default {
+  data() {
+    return {
+      cls: ""
+    };
+  },
+  mounted() {
+    if (process.client) {
+      window.addEventListener("scroll", () => {
+        let scrolled = window.scrollY;
+        this.cls = scrolled > 147 ? "fix-search" : "";
+      });
+    }
+  },
+
   components: { Megamenu, Search },
   computed: {
     user() {
@@ -89,5 +103,15 @@ export default {
 .desktop-badge .number {
   margin-top: 1.5px;
   margin-left: -1px;
+}
+
+.fix-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0px;
+  z-index: 999;
+  padding: 0rem 0.5rem;
+  margin: 0px;
 }
 </style>
