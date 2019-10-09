@@ -1,6 +1,6 @@
 <template>
   <div class="group">
-    <input
+    <!-- <input
       v-bind="$attrs"
       v-model="content"
       @input="$emit('input', $event.target.value)"
@@ -9,7 +9,25 @@
       required
       :aria-label="label"
     />
-    <label class="text-gray-500">{{label}}</label>
+    <label class="text-gray-500">{{label}}</label>-->
+
+    <center>
+      <div class="floating-form">
+        <div class="floating-label">
+          <input
+            class="floating-input bg-gray-100 border-b w-full rounded hover:bg-gray-300 focus:outline-none focus:border-pink-500"
+            placeholder=" "
+            v-bind="$attrs"
+            v-model="content"
+            @input="$emit('input', $event.target.value)"
+            :type="type"
+            :aria-label="label"
+          />
+          <span class="highlight"></span>
+          <label>{{label}}</label>
+        </div>
+      </div>
+    </center>
   </div>
 </template>
 
@@ -29,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-.group {
+/* .group {
   position: relative;
   margin-bottom: 1.5rem;
 }
@@ -59,5 +77,53 @@ input:valid + label {
   transform: translate3d(0, -10%, 0);
   opacity: 1;
   top: 5px;
+} */
+
+/****  floating-Lable style start ****/
+.floating-label {
+  position: relative;
+  margin-bottom: 20px;
+}
+.floating-input {
+  font-size: 14px;
+  padding: 4px 4px;
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 14px 12px 0;
+  /* background-color: lightgray; */
+  border: none;
+}
+
+.floating-input:focus {
+  outline: none;
+  border-bottom: 2px solid #da1c5f;
+}
+
+label {
+  color: #999;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 8px;
+  top: 13px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.floating-input:focus ~ label,
+.floating-input:not(:placeholder-shown) ~ label {
+  top: -1px;
+  font-size: 14px;
+  color: #fb6340;
+}
+
+.floating-select:focus ~ label,
+.floating-select:not([value=""]):valid ~ label {
+  top: -18px;
+  font-size: 14px;
+  color: #fb6340;
 }
 </style>

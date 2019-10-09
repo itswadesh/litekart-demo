@@ -1,55 +1,60 @@
 <template>
-  <div class="w-full md:w-6/12 lg:w-7/12 leading-relaxed">
-    <div class="pb-4 border-b border-gray-200 px-3">
-      <p class="text-2xl headings font-semibold">{{product.brandName}}</p>
-      <p>{{product.name}}</p>
-    </div>
-    <div class="px-3 headings font-semibold py-3 tracking-wider" v-if="selectedVariant">
-      <!-- <div v-if="!selectedVariant._id">
+  <div class="w-full md:w-6/12 lg:w-7/12 leading-relaxed bg-gray-100">
+    <div class="bg-white mb-3 lg:mb-0">
+      <div class="pb-4 border-b border-gray-200 px-3">
+        <p class="text-2xl headings font-semibold">{{product.brandName}}</p>
+        <p>{{product.name}}</p>
+      </div>
+      <div class="px-3 headings font-semibold py-3 tracking-wider" v-if="selectedVariant">
+        <!-- <div v-if="!selectedVariant._id">
         <span class="text-2xl mr-2">{{product.price | currency}}</span>
         <span class="font-hairline line-through text-lg mr-2">{{product.mrp | currency}}</span>
-      </div>-->
-      <span class="text-2xl mr-2">{{selectedVariant.price | currency}}</span>
-      <span
-        class="font-hairline line-through text-lg mr-2"
-        v-if="selectedVariant.mrp > selectedVariant.price"
-      >{{selectedVariant.mrp | currency}}</span>
-      <span
-        class="text-orange-500 text-xl"
-        v-if="calculateOffPercent>0"
-      >({{calculateOffPercent}}% OFF)</span>
-      <p class="text-sm font-hairline">Additional tax shall apply, charged at checkout</p>
+        </div>-->
+        <span class="text-2xl mr-2">{{selectedVariant.price | currency}}</span>
+        <span
+          class="font-hairline line-through text-lg mr-2"
+          v-if="selectedVariant.mrp > selectedVariant.price"
+        >{{selectedVariant.mrp | currency}}</span>
+        <span
+          class="text-orange-500 text-xl"
+          v-if="calculateOffPercent>0"
+        >({{calculateOffPercent}}% OFF)</span>
+        <p class="text-sm font-hairline">Additional tax shall apply, charged at checkout</p>
+      </div>
     </div>
     <div>
-      <div class="flex items-center text-sm lg:text-lg px-3">
-        <span class="heading w-1/2 lg:w-32">SELECT SIZE</span>
-        <div class="text-primary">
-          <div class="flex items-center">
-            <img
-              class="mr-2 h-4"
-              alt="size chart icon"
-              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIxMiI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMyODc0RjAiIHN0cm9rZS13aWR0aD0iMS4zIj48cGF0aCBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0zNy4zNS42NUguNjV2MTAuN2gzNi43Vi42NXoiLz48cGF0aCBmaWxsPSIjODc4Nzg3IiBkPSJNNi42NSA4LjY1aDF2Mi43aC0xem00LTNIMTFsLS4zNS0uMzVWNWwtLjE1LjE1LS4xNS0uMTV2LjNsLS4zNS4zNWguMzV2NS43SDEwbC4zNS4zNXYuM2wuMTUtLjE1LjE1LjE1di0uM2wuMzUtLjM1aC0uMzV2LTUuN3ptNSAzSDE2bC0uMzUtLjM1VjhsLS4xNS4xNS0uMTUtLjE1di4zbC0uMzUuMzVoLjM1djIuN0gxNWwuMzUuMzV2LjNsLjE1LS4xNS4xNS4xNXYtLjNsLjM1LS4zNWgtLjM1di0yLjd6bTQtM2gxdjUuN2gtMXptNCAzaDF2Mi43aC0xem05IDBoMXYyLjdoLTF6bS00LTNoMXY1LjdoLTF6Ii8+PC9nPjwvc3ZnPg=="
-            />SIZE CHART
-            <i class="fa fa-angle-right ml-3" style="margin-top:-1px;"></i>
+      <div class="items-center text-sm lg:text-lg px-3 bg-white my-3 p-3 lg:my-0">
+        <div class="flex">
+          <span class="heading w-1/2 lg:w-32">SELECT SIZE</span>
+          <div class="text-primary">
+            <div class="flex items-center">
+              <img
+                class="mr-2 h-4"
+                alt="size chart icon"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIxMiI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMyODc0RjAiIHN0cm9rZS13aWR0aD0iMS4zIj48cGF0aCBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0zNy4zNS42NUguNjV2MTAuN2gzNi43Vi42NXoiLz48cGF0aCBmaWxsPSIjODc4Nzg3IiBkPSJNNi42NSA4LjY1aDF2Mi43aC0xem00LTNIMTFsLS4zNS0uMzVWNWwtLjE1LjE1LS4xNS0uMTV2LjNsLS4zNS4zNWguMzV2NS43SDEwbC4zNS4zNXYuM2wuMTUtLjE1LjE1LjE1di0uM2wuMzUtLjM1aC0uMzV2LTUuN3ptNSAzSDE2bC0uMzUtLjM1VjhsLS4xNS4xNS0uMTUtLjE1di4zbC0uMzUuMzVoLjM1djIuN0gxNWwuMzUuMzV2LjNsLjE1LS4xNS4xNS4xNXYtLjNsLjM1LS4zNWgtLjM1di0yLjd6bTQtM2gxdjUuN2gtMXptNCAzaDF2Mi43aC0xem05IDBoMXYyLjdoLTF6bS00LTNoMXY1LjdoLTF6Ii8+PC9nPjwvc3ZnPg=="
+              />SIZE CHART
+              <i class="fa fa-angle-right ml-3" style="margin-top:-1px;"></i>
+            </div>
           </div>
         </div>
+        <div class="flex py-4 relative px-3" :class="{'shake-animation': shake}">
+          <button
+            v-for="v in product.variants"
+            :key="v._id"
+            @click="selectVariant(v)"
+            :class="{'bg-gray-700 text-white': v.size==(userSelectedVariant && userSelectedVariant.size)}"
+            v-if="v.stock>0"
+            class="focus:outline:none mr-3 rounded-full bg-white border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
+          >
+            <p class="text-xs">{{v.size}}</p>
+            <div
+              v-if="v.stock<5"
+              class="text-xs font-semibold absolute w-12 bg-orange-500 text-white rounded"
+            >{{v.stock}} left</div>
+          </button>
+        </div>
       </div>
-      <div class="flex py-6 relative px-3" :class="{'shake-animation': shake}">
-        <button
-          v-for="v in product.variants"
-          :key="v._id"
-          @click="selectVariant(v)"
-          :class="{'bg-gray-700 text-white': v.size==(userSelectedVariant && userSelectedVariant.size)}"
-          v-if="v.stock>0"
-          class="focus:outline:none mr-3 rounded-full bg-white border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
-        >
-          <p class="text-xs">{{v.size}}</p>
-          <div
-            v-if="v.stock<5"
-            class="text-xs font-semibold absolute w-12 bg-orange-500 text-white rounded"
-          >{{v.stock}} left</div>
-        </button>
-      </div>
+
       <div class="flex py-4 px-3" v-if="groupProducts.data && groupProducts.data.length>0">
         <nuxt-link
           v-for="p in groupProducts.data"
@@ -67,7 +72,7 @@
         </nuxt-link>
       </div>
       <div
-        class="flex mt-4 fixed bottom-0 lg:relative bg-white lg:px-3 p-2 w-full"
+        class="flex fixed bottom-0 lg:relative bg-white lg:px-3 p-2 w-full"
         style="z-index:9999;"
       >
         <button
@@ -83,7 +88,7 @@
           <i class="fa fa-bookmark mr-2 hidden lg:block" aria-hidden="true"></i> WISHLIST
         </button>
       </div>
-      <div class="py-8 border-b border-gray-300 px-3">
+      <div class="py-8 border-b border-gray-300 px-3 bg-white my-3 lg:my-0">
         <p class="font-bold text-lg">
           BEST OFFERS
           <i class="fa fa-tag ml-2 text-gray-600" aria-hidden="true"></i>
@@ -139,7 +144,7 @@
           </button>
         </div>
       </div>
-      <div class="py-8 border-b border-gray-300 px-3">
+      <div class="py-8 border-b border-gray-300 px-3 bg-white my-3 lg:my-0">
         <p class="font-bold text-lg">
           PRODUCT DETAILS
           <i class="fa fa-list-alt ml-2 text-gray-600" aria-hidden="true"></i>
@@ -201,7 +206,7 @@
           <span class="font-bold text-primary">See More</span>
         </div>
       </div>
-      <div class="p-3">
+      <div class="p-3 bg-white lg:my-0 my-3">
         <p class="font-bold text-lg">
           DELIVERY OPTIONS
           <i class="fa fa-truck ml-2 text-gray-600" aria-hidden="true"></i>

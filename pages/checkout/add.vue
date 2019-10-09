@@ -19,8 +19,8 @@
           <Textbox label="Landmark" class="w-full" />
 
           <div class="w-full flex justify-between">
-            <Textbox label="City" class="flex-1 mr-1" />
-            <Textbox label="State" class="flex-1 ml-1" />
+            <Textbox label="City" class="w-1/2 mr-1" />
+            <Textbox label="State" class="w-1/2 ml-1" />
           </div>
           <Textbox label="Mobile" class="w-full" />
         </div>
