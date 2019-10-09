@@ -52,7 +52,12 @@
                   @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
                   :disabled="loading"
                 >
-                  <img src="/loading.svg" v-if="loading" alt="loading icon" />
+                  <img
+                    src="/loading.svg"
+                    class="w-3 h-3 rotateOutDownLeft"
+                    v-if="loading"
+                    alt="loading icon"
+                  />
                   <i class="fa fa-trash" v-else></i>
                 </button>
               </div>

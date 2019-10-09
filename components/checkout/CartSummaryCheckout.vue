@@ -1,6 +1,6 @@
 <template>
   <div class="mt-10 w-full">
-    <div class="4/5 right-0 pb-3 bb text-sm text-gray-500 leading-relaxed">
+    <div class="4/5 right-0 pb-3 bb text-sm text-gray-500 leading-relaxed mb-6">
       <div>
         <p class="text-gray-500 mt-4 font-semibold text-xs">Price Details</p>
         <div class="flex justify-between mt-1">

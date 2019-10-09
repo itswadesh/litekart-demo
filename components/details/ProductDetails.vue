@@ -37,14 +37,14 @@
             </div>
           </div>
         </div>
-        <div class="flex py-4 relative px-3" :class="{'shake-animation': shake}">
+        <div class="flex flex-wrap py-4 relative px-3" :class="{'shake-animation': shake}">
           <button
             v-for="v in product.variants"
             :key="v._id"
             @click="selectVariant(v)"
             :class="{'bg-gray-700 text-white': v.size==(userSelectedVariant && userSelectedVariant.size)}"
             v-if="v.stock>0"
-            class="focus:outline:none mr-3 rounded-full bg-white border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
+            class="focus:outline:none m-1 rounded-full bg-white border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
           >
             <p class="text-xs">{{v.size}}</p>
             <div
@@ -71,10 +71,7 @@
           <span class="tooltiptext" v-if="p.color">{{p.color.name}}</span>
         </nuxt-link>
       </div>
-      <div
-        class="flex fixed bottom-0 lg:relative bg-white lg:px-3 p-2 w-full"
-        style="z-index:9999;"
-      >
+      <div class="flex fixed bottom-0 lg:relative bg-white lg:px-3 p-2 w-full z-10">
         <button
           :disabled="!selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
