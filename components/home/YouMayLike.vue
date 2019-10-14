@@ -4,11 +4,12 @@
       <div class="w-full p-3 border-b h-14 flex justify-between">
         <p class="w-1/2 float-left relative headings">
           You may also Like
-          <span
-            class="text-gray-500 text-xs absolute inset-x-0 you"
-          >Based on Your Order</span>
+          <span class="text-gray-500 text-xs absolute inset-x-0 you">Based on Your Order</span>
         </p>
-        <button class="primary text-xs right-0 py-1 px-2 rounded">View All</button>
+        <button
+          class="primary text-xs right-0 py-1 px-2 rounded"
+          @click="$router.push('/search')"
+        >View All</button>
       </div>
       <div v-if="loading">
         <ProductSkeleton class="w-full" />

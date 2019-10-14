@@ -5,7 +5,10 @@
         Deals Of the Day
         <span class="text-gray-500 text-xs">23:57:57 Left</span>
       </div>
-      <button class="primary text-xs px-2 rounded">View All</button>
+      <button
+        class="primary text-xs px-2 rounded"
+        @click="$router.push('/search')"
+      >View All</button>
     </div>
     <carousel
       :perPageCustom="[[425, 2], [768, 3], [1024, 5]]"
@@ -15,7 +18,10 @@
       navigation-prev-label="<img src='/chevron-right.svg' alt='right'/>"
       class="mx-2"
     >
-      <slide v-for="product in products" :key="product._id">
+      <slide
+        v-for="product in products"
+        :key="product._id"
+      >
         <nuxt-link :to="'/'+product.slug+'?id='+product._id">
           <img
             style="height:255px;object-fit: cover;"

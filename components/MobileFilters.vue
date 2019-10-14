@@ -4,13 +4,25 @@
     v-if="facets"
   >
     <!-- Mobile version starts here -->
-    <div class="block md:hidden h-full" v-if="showMobileFilter">
+    <div
+      class="block md:hidden h-full"
+      v-if="showMobileFilter"
+    >
       <div class="flex shadow-md py-4 bg-white w-full">
-        <div class="flex-1 text-gray-700 text-left" @click="$emit('hide')">
-          <i class="fa fa-times ml-2" aria-hidden="true"></i>
+        <div
+          class="flex-1 text-gray-700 text-left"
+          @click="$emit('hide')"
+        >
+          <i
+            class="fa fa-times ml-2"
+            aria-hidden="true"
+          ></i>
         </div>
         <div class="flex-1 text-gray-700 text-center font-bold">FILTER</div>
-        <div class="flex-1 text-gray-700 text-right mr-2">Clear all</div>
+        <button
+          class="flex-1 text-gray-700 text-right mr-2"
+          @click="clearAll"
+        >Clear all</button>
       </div>
       <div class="w-full flex mt-1 h-full">
         <div class="w-2/5">
@@ -178,6 +190,10 @@ export default {
     checkCategory() {},
     go(slug) {
       this.$router.push("/" + slug);
+    },
+    clearAll() {
+      this.$router.push(`/search`);
+      this.$emit("hide");
     }
   }
 };
