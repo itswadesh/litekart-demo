@@ -23,7 +23,7 @@
             <a href>Gift Cards</a>
           </li>
           <li>
-            <a href>Myntra Insider</a>
+            <a href>Litekart Insider</a>
             <span class="desktop-superscript primary">New</span>
           </li>
         </ul>
@@ -50,46 +50,74 @@
             <a href>Gift Cards</a>
           </li>
           <li>
-            <a href>Myntra Insider</a>
+            <a href>Litekart Insider</a>
           </li>
         </ul>
       </div>
       <div class="lg:p-8 p-2 items-center my-4 lg:my-0">
-        <div class="font-bold text-sm headings">EXPERIENCE MYNTRA APP ON MOBILE</div>
+        <div class="font-bold text-sm headings">EXPERIENCE LITEKART APP ON MOBILE</div>
         <div class="flex mb-2">
-          <img class="mt-2 h-10" src="/playstore.png" alt="playstore image" />
-          <img class="mt-2 h-10" src="/appstore.png" alt="app store image" />
+          <img
+            class="mt-2 h-10"
+            src="/playstore.png"
+            alt="playstore image"
+          />
+          <img
+            class="mt-2 h-10"
+            src="/appstore.png"
+            alt="app store image"
+          />
         </div>
         <div>
           <h6 class="text-left text-lg lg:text-xs">KEEP IN TOUCH</h6>
           <div class>
             <a href="#">
-              <i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <i
+                class="fa fa-facebook-official"
+                aria-hidden="true"
+              ></i>
             </a>
             <a href="#">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <i
+                class="fa fa-twitter"
+                aria-hidden="true"
+              ></i>
             </a>
             <a href="#">
-              <i class="fa fa-youtube-play" aria-hidden="true"></i>
+              <i
+                class="fa fa-youtube-play"
+                aria-hidden="true"
+              ></i>
             </a>
             <a href="#">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
+              <i
+                class="fa fa-instagram"
+                aria-hidden="true"
+              ></i>
             </a>
           </div>
         </div>
       </div>
       <div class="lg:p-6 p-1 items-center">
         <div class="flex items-center">
-          <img class="my-3 h-10" src="/original.png" alt="100% original" />
+          <img
+            class="my-3 h-10"
+            src="/original.png"
+            alt="100% original"
+          />
           <div class="text-sm">
             <div>
               <span class="font-bold ml-1 headings">100% ORIGINAL</span> guarantee for all products
-              at myntra.com
+              at litekart.in
             </div>
           </div>
         </div>
         <div class="flex items-center">
-          <img class="ml-1 my-2 h-10" src="/return.png" alt="return" />
+          <img
+            class="ml-1 my-2 h-10"
+            src="/return.png"
+            alt="return"
+          />
           <div class="text-sm">
             <div>
               <span class="font-bold ml-1 headings">Return within 30days</span> of receiving your order
@@ -97,7 +125,11 @@
           </div>
         </div>
         <div class="flex items-center">
-          <img class="ml-1 my-2 h-10" src="/truck.png" alt="truck" />
+          <img
+            class="ml-1 my-2 h-10"
+            src="/truck.png"
+            alt="truck"
+          />
           <div class="text-sm">
             <div>
               <span class="font-bold ml-1 headings">Get free delivery</span> for every order above Rs. 1199
@@ -121,9 +153,12 @@
     <div class="flex lg:p-8 p-2 flex-wrap justify-between text-sm">
       <div>
         In case of any concern,
-        <a href="#" class="px-2 text-indigo-600">Contact Us</a>
+        <a
+          href="#"
+          class="px-2 text-indigo-600"
+        >Contact Us</a>
       </div>
-      <div>© 2019 www.myntra.com. All rights reserved.</div>
+      <div>© 2019 www.litekart.in. All rights reserved.</div>
     </div>
   </footer>
 </template>

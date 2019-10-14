@@ -19,7 +19,6 @@
       <!-- <DealsSkeleton /> -->
       <Banners />
       <!-- <BannersSkeleton /> -->
-      <!-- <YouMayLikeSkeleton /> -->
       <YouMayLike />
     </div>
   </div>
@@ -32,7 +31,6 @@ import Banners from "~/components/home/Banners";
 import YouMayLike from "~/components/home/YouMayLike";
 import MegamenuMobile from "~/components/MegamenuMobile";
 // skeletons
-import YouMayLikeSkeleton from "~/components/home/YouMayLikeSkeleton";
 import BannersSkeleton from "~/components/home/BannersSkeleton";
 import DealsSkeleton from "~/components/home/DealsSkeleton";
 export default {
@@ -43,7 +41,6 @@ export default {
     Banners,
     YouMayLike,
     //Skeletons
-    YouMayLikeSkeleton,
     BannersSkeleton,
     DealsSkeleton
   }
