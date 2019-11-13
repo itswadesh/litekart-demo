@@ -1,11 +1,11 @@
 const shell = require('shelljs');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
 // Start Config
 const PM2_NAME = 'lwww'
 const REMOTE_DIR = '/var/www/litekart/www'
-const REMOTE_HOST = '165.22.222.60'
-const REMOTE_USER = 'root'
+const REMOTE_HOST = '137.116.115.92'
+const REMOTE_USER = 'ubuntu'
 const PRIVATE_KEY = process.env.LIVE_KEY
 const FILE_NAMES = '.nuxt static config nuxt.config.js package.json'
 // End Config
