@@ -50,7 +50,6 @@ button,button:focus{
     align-items: center;
     text-align: center;
 }
-/*  rounded like myntra */
 .rnd-mnt {
   width: max-content;
   background-color: #fff;
@@ -63,7 +62,6 @@ button,button:focus{
   border: solid 1px #d4d5d9;
   margin: 1px;
 }
-/* rounded like myntra ends */
 .address{
     border: 1px dashed #eaeaec;
     box-shadow: 0 0 4px rgba(40,44,63,.08);
@@ -83,10 +81,6 @@ button,button:focus{
   align-items: center;
   text-align: center;
 }
-
-
-
-
 .container-fluid{
   padding-left: 5.2em;
   padding-right: 5.2em;
