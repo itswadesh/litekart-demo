@@ -3,7 +3,7 @@
     <div class="w-full p-3 border-b flex justify-between">
       <div class="flex-1 headings">
         Deals Of the Day
-        <span class="text-gray-500 text-xs">23:57:57 Left</span>
+        <span class="text-gray-500 text-xs">23:57:50 Left</span>
       </div>
       <button
         class="primary text-xs px-2 rounded"
@@ -40,8 +40,6 @@
 </template>
 
 <script>
-import { Carousel, Slide } from "vue-carousel";
-
 export default {
   data() {
     return {

@@ -77,9 +77,11 @@ export default {
   },
 
   mounted() {
-    if ("IntersectionObserver" in window) {
-      // this.loading = true
-      this.startObserving();
+    if (process.client) {
+      if ("IntersectionObserver" in window) {
+        // this.loading = true
+        this.startObserving();
+      }
     }
   },
 

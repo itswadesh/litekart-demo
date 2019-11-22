@@ -16,7 +16,7 @@
           />
         </nuxt-link>-->
       </div>
-      <!-- <DealsSkeleton /> -->
+      <DealsSkeleton />
       <Banners />
       <!-- <BannersSkeleton /> -->
       <YouMayLike />

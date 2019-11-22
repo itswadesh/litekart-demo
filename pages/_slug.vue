@@ -87,11 +87,13 @@ export default {
   methods: {
     ...mapMutations(["setErr"]),
     scrollTo() {
+      if (process.client) {
       window.scroll({
         behavior: "smooth",
         left: 0,
         top: 0
       });
+      }
     },
     go(url) {
       this.$router.push(url);

@@ -11,7 +11,7 @@
     <slide v-for="(image, index) in heroImages" :key="index">
       <nuxt-link :to="image.link">
         <img
-          v-lazy="$store.state.settings.CDN_URL+image.img"
+          v-lazy="$store.state.settings.CDN_URL+image.img+'?tr=w-1680,h-280'"
           alt="categories"
           class="h-48 lg:h-auto object-cover"
         />
@@ -21,15 +21,12 @@
 </template>
 
 <script>
-import { Carousel, Slide } from "vue-carousel";
-
 export default {
   data() {
     return {
-      heroImages: []
+      heroImages: [],
     };
   },
-  components: { Carousel, Slide },
   async created() {
     this.heroImages =
       this.$store.state.settings &&

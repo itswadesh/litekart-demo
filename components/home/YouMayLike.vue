@@ -51,7 +51,6 @@
 </template>
 
 <script>
-import { Carousel, Slide } from "vue-carousel";
 import ProductSkeleton from "~/components/ProductSkeleton";
 
 export default {
@@ -60,7 +59,7 @@ export default {
       products: []
     };
   },
-  components: { Carousel, Slide, ProductSkeleton },
+  components: { ProductSkeleton },
   async created() {
     try {
       this.loading = true;
