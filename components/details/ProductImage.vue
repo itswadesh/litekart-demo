@@ -16,9 +16,21 @@
         v-lazy="`${currentImage}`"
         alt="product image"
       />
-      <carousel class="md:hidden" :perPage="1" :paginationEnabled="false">
-        <slide class="md:hidden inline-block w-full" v-for="i in product.imgUrls" :key="i">
-          <img class="inline-block w-full" v-lazy="`${i}`" alt="product image" />
+      <carousel
+        class="md:hidden"
+        :perPage="1"
+        :paginationEnabled="false"
+      >
+        <slide
+          class="md:hidden inline-block w-full"
+          v-for="i in product.imgUrls"
+          :key="i"
+        >
+          <img
+            class="inline-block w-full"
+            v-lazy="`${i}`"
+            alt="product image"
+          />
         </slide>
       </carousel>
       <!-- <div class="w-full flex p-2">
@@ -46,7 +58,6 @@
 
 <script>
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
-import { Carousel, Slide } from "vue-carousel";
 export default {
   props: {
     product: { type: Object }
@@ -91,7 +102,6 @@ export default {
       checkCart: "cart/checkCart"
     })
   },
-  components: { Carousel, Slide },
   methods: {
     showAsCurrentImage(image) {
       this.currentImage = image;

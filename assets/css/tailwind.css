@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 body{
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color:#282c3f;
 }
 html,body,div,span,p,input,textarea,button,img{

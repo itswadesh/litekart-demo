@@ -3,7 +3,10 @@
     <Breadcrumb :product="product" />
     <div class="flex flex-wrap justify-start">
       <ProductImage :product="product" />
-      <ProductDetails :product="product" :selectedVariant="selectedVariant" />
+      <ProductDetails
+        :product="product"
+        :selectedVariant="selectedVariant"
+      />
     </div>
     <SimilarProducts :product="product" />
   </div>
@@ -12,7 +15,6 @@
   <script>
 import { HOST, TITLE, DESCRIPTION, KEYWORDS, sharingLogo } from "~/config";
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
-import { Carousel, Slide } from "vue-carousel";
 import ProductImage from "~/components/details/ProductImage";
 import Breadcrumb from "~/components/details/Breadcrumb";
 import ProductDetails from "~/components/details/ProductDetails";
@@ -88,11 +90,11 @@ export default {
     ...mapMutations(["setErr"]),
     scrollTo() {
       if (process.client) {
-      window.scroll({
-        behavior: "smooth",
-        left: 0,
-        top: 0
-      });
+        window.scroll({
+          behavior: "smooth",
+          left: 0,
+          top: 0
+        });
       }
     },
     go(url) {

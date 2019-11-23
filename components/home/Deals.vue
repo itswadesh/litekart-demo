@@ -21,6 +21,7 @@
       <slide
         v-for="product in products"
         :key="product._id"
+        v-if="product"
       >
         <nuxt-link :to="'/'+product.slug+'?id='+product._id">
           <img
@@ -61,7 +62,6 @@ export default {
       }
     }
   },
-  components: { Carousel, Slide },
   methods: {
     go(url) {
       this.$router.push(url);

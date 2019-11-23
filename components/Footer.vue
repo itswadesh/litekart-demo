@@ -142,12 +142,11 @@
       <div class="font-medium hr-line headings">POPULAR SEARCHES</div>
       <hr class="text-gray-800" />
       <div class="mt-5 mb-5 font-normal">
-        Adidas | Arrow | Fila | Online Shopping | Nike | Pepe Jeans | Puma | United Colors of Benetton |
-        Fastrack | Shorts | Being Human | Skirts | Woodland | Supra | Dresses | Clothing | Jewellery |
-        T-shirts | Shoes | Bags | Watches | Caps | Shirts | Backpacks | Flip Flops | Sunglasses | Kurtas |
-        Lingerie | Jackets | Skechers | Saree | Sandals | Puma Tshirts | Woodland Shoes | Titan Watches |
-        Fastrack Watches | Wrangler Shirts | Adidas Tshirts | Nike Shoes | Roadster Shirts | Casual Shoes |
-        Running Shoes | Nike Sports Shoes | Jeans | Being Human | Tshirts | Converse Shoes | Cricket Shoes
+        <nuxt-link
+          v-for="(s,ix) in popularSearches"
+          :key="ix"
+          :to="`/search?q=${s}`"
+        >{{s}} | </nuxt-link>
       </div>
     </div>
     <div class="flex lg:p-8 p-2 flex-wrap justify-between text-sm">
@@ -164,7 +163,12 @@
 </template>
 
 <script>
-export default {};
+import { popularSearches } from "~/config/";
+export default {
+  data() {
+    return { popularSearches };
+  }
+};
 // var mybutton = document.getElementById("myBtn");
 
 // // When the user scrolls down 20px from the top of the document, show the button

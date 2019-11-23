@@ -148,9 +148,6 @@ export default {
     }
   },
   methods: {
-    // setPage(p) {
-    //   console.log(p)
-    // },
     changePage(p) {
       let fl = { ...this.fl };
       delete fl.page;
@@ -171,14 +168,6 @@ export default {
         this.productCount = products.count;
         this.products = products.data;
         this.facets = products.facets.all_aggs;
-        // const lastClick = this.$route.query.lastClick;
-        // if (
-        //   lastClick == "categories" ||
-        //   lastClick == "brands" ||
-        //   lastClick == "sizes"
-        // ) {
-        //   delete this.facets[lastClick];
-        // }
       } catch (e) {
       } finally {
         this.loading = false;
