@@ -51,6 +51,7 @@ export const mutations = {
 }
 export const actions = {
   async nuxtServerInit({ state, commit, dispatch }, { req }) {
+    // console.log('nuxtServerInit...............');
     commit('setGuest', this.$cookies.get('guest')) // Required only at server
     // Categories
     try {
@@ -84,36 +85,36 @@ export const actions = {
     } catch (e) { }
   },
   async nuxtClientInit({ commit, dispatch }, context) {
-    // Categories
-    try {
-      let categories = await this.$axios.$get('categories/megamenu')
-      commit('categories', categories.data)
-    } catch (err) {
-      commit('setErr', err)
-    }
-    // Settings
-    try {
-      let settings = await this.$axios.$get('settings')
-      commit('settings', settings)
-    } catch (e) {
-      commit('settings', {})
-      commit('setErr', e)
-    }
-    // Authorization
-    let auth = this.$cookies.get('Authorization')
-    if (auth) {
-      this.$axios.setToken(auth, 'Bearer')
-      try {
-        await dispatch('auth/fetch')
-      }
-      catch (error) {
-        this.$axios.setToken(null)
-      }
-    } else {
-      this.$axios.setToken(null)
-    }
-    try {
-      await dispatch('cart/fetch')
-    } catch (e) { }
+    // // Categories
+    // try {
+    //   let categories = await this.$axios.$get('categories/megamenu')
+    //   commit('categories', categories.data)
+    // } catch (err) {
+    //   commit('setErr', err)
+    // }
+    // // Settings
+    // try {
+    //   let settings = await this.$axios.$get('settings')
+    //   commit('settings', settings)
+    // } catch (e) {
+    //   commit('settings', {})
+    //   commit('setErr', e)
+    // }
+    // // Authorization
+    // let auth = this.$cookies.get('Authorization')
+    // if (auth) {
+    //   this.$axios.setToken(auth, 'Bearer')
+    //   try {
+    //     await dispatch('auth/fetch')
+    //   }
+    //   catch (error) {
+    //     this.$axios.setToken(null)
+    //   }
+    // } else {
+    //   this.$axios.setToken(null)
+    // }
+    // try {
+    //   await dispatch('cart/fetch')
+    // } catch (e) { }
   }
 }

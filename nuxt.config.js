@@ -10,10 +10,11 @@ export default {
   css: [],
   plugins: [
     '~/plugins/filters.js',
-    { src: '~/plugins/init.js', mode:'client' },
-    { src: '~/plugins/lazy.js', mode:'client' },
-    { src: '~/plugins/carousel.js', mode:'client' },
-    { src: '~/plugins/vue-slider-component', mode:'client' } // Price slider
+    '~/plugins/axios',
+    { src: '~/plugins/init.js', mode: 'client' },
+    { src: '~/plugins/lazy.js', mode: 'client' },
+    { src: '~/plugins/carousel.js', mode: 'client' },
+    { src: '~/plugins/vue-slider-component', mode: 'client' } // Price slider
   ],
   buildModules: [
     '@nuxtjs/tailwindcss',

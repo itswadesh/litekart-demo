@@ -1,6 +1,11 @@
 <template>
   <div class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
-    <nuxt-link :to="'/'+product._source.slug+'?id='+product._id" class="w-full" v-if="product">
+    <!-- <button @click="del(product._id)">x</button> -->
+    <nuxt-link
+      :to="'/'+product._source.slug+'?id='+product._id"
+      class="w-full"
+      v-if="product"
+    >
       <div>
         <img
           class="w-full h-64 lg:p-2"
@@ -10,9 +15,7 @@
           alt="product image"
         />
         <div class="p-1 text-center text-1">
-          <div
-            class="text-gray-900 lg:font-bold sm:font-normal text-sm headings"
-          >{{product._source.name | truncate(18)}}</div>
+          <div class="text-gray-900 lg:font-bold sm:font-normal text-sm headings">{{product._source.name | truncate(18)}}</div>
           <div
             class="font-thin text-sm"
             v-if="product._source.categories && product._source.categories[0]"
@@ -29,6 +32,13 @@ export default {
   props: {
     product: {
       type: Object
+    }
+  },
+  methods: {
+    async del(id) {
+      try {
+        await this.$axios.$delete(`products/${id}`);
+      } catch (e) {}
     }
   }
 };

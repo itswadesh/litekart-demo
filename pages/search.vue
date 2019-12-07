@@ -149,12 +149,22 @@ export default {
   },
   methods: {
     changePage(p) {
+      this.scrollToTop();
       let fl = { ...this.fl };
       delete fl.page;
       delete fl.categories;
       const url = constructURL("/", fl);
       let page = parseInt(p || 1);
       this.$router.push(`${url}page=${page}`);
+    },
+    scrollToTop() {
+      if (process.client) {
+        window.scroll({
+          behavior: "smooth",
+          left: 0,
+          top: 0
+        });
+      }
     },
     facetRemoved(f) {
       this.fl = f;

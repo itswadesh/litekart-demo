@@ -88,7 +88,7 @@
       </div>
       <div class="flex fixed bottom-0 lg:relative bg-white lg:px-3 p-2 w-full z-10">
         <button
-          :disabled="!selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
+          :disabled="!selectedVariant || !selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
           class="w-7/12 lg:w-1/3 mr-2 primary text-white py-2 px-6 rounded font-bold text-sm lg:text-lg"
         >
@@ -302,6 +302,7 @@ export default {
       checkCart: "cart/checkCart"
     }),
     calculateOffPercent() {
+      if (!this.product || !this.product.variants[0]) return 0;
       let percent =
         ((this.product.variants[0].mrp - this.product.variants[0].price) *
           100) /
@@ -438,8 +439,9 @@ export default {
       }
     },
     selectVariant(s) {
-      this.selectedVariant = s;
+      // this.selectedVariant = s;
       this.userSelectedVariant = s;
+      this.$emit("variantChanged", s);
       this.selectedImgIndex = 0;
     },
     error(err) {

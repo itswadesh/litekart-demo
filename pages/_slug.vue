@@ -6,13 +6,14 @@
       <ProductDetails
         :product="product"
         :selectedVariant="selectedVariant"
+        @variantChanged="variantChanged"
       />
     </div>
     <SimilarProducts :product="product" />
   </div>
 </template>
 
-  <script>
+<script>
 import { HOST, TITLE, DESCRIPTION, KEYWORDS, sharingLogo } from "~/config";
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
 import ProductImage from "~/components/details/ProductImage";
@@ -96,6 +97,9 @@ export default {
           top: 0
         });
       }
+    },
+    variantChanged(v) {
+      this.selectedVariant = v;
     },
     go(url) {
       this.$router.push(url);

@@ -1,8 +1,8 @@
 {
   "name": "litekart",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Litekart Store Front",
-  "author": "coolnaveesh",
+  "author": "Swadesh Behera",
   "private": true,
   "config": {
     "nuxt": {

@@ -16,6 +16,7 @@
         v-lazy="`${currentImage}`"
         alt="product image"
       />
+      <!-- Triggers the virtual dom not matching issue -->
       <carousel
         class="md:hidden"
         :perPage="1"

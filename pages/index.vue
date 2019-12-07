@@ -2,9 +2,9 @@
   <div>
     <MegamenuMobile />
     <div class="px-2 home text-1">
-      <!-- <Hero />
-      <Deals /> -->
-      <!-- <div>
+      <Hero />
+      <Deals />
+      <div v-if="$store.state.settings.banners">
         <nuxt-link
           :to="$store.state.settings.banners.hero.link || '/search'"
           class="lg:w-1/4 shadow xs:w-full"
@@ -15,11 +15,11 @@
             class="w-full h-full object-cover object-center"
           />
         </nuxt-link>
-      </div>-->
-      <!-- <DealsSkeleton />
-      <Banners /> -->
-      <!-- <BannersSkeleton /> -->
-      <!-- <YouMayLike /> -->
+      </div>
+      <DealsSkeleton />
+      <Banners />
+      <BannersSkeleton />
+      <YouMayLike />
     </div>
   </div>
 </template>
