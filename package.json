@@ -32,6 +32,7 @@
     "@nuxtjs/sitemap": "^2.0.1",
     "@nuxtjs/toast": "^3.3.0",
     "cookie-universal-nuxt": "^2.0.19",
+    "cookieparser": "^0.1.0",
     "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",
     "node-sass": "^4.13.0",

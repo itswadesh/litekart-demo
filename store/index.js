@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex);
+const cookieparser = process.server ? require('cookieparser') : undefined
 
 export const state = () => ({
   categories: [],
@@ -68,9 +69,19 @@ export const actions = {
       commit('setErr', err)
     }
     // Authorization
-    let auth = this.$cookies.get('Authorization')
-    if (auth) {
-      this.$axios.setToken(auth, 'Bearer')
+    let token = null
+    if (req.headers.cookie) {
+      const parsed = cookieparser.parse(req.headers.cookie)
+      try {
+        token = parsed.token
+      } catch (err) {
+        // No valid cookie found
+      }
+    }
+    commit('auth/setToken', token)
+    // let auth = this.$cookies.get('Authorization')
+    if (token) {
+      this.$axios.setToken(token, 'Bearer')
       try {
         await dispatch('auth/fetch')
       }
@@ -84,7 +95,7 @@ export const actions = {
       await dispatch('cart/fetch')
     } catch (e) { }
   },
-  async nuxtClientInit({ commit, dispatch }, context) {
+  async nuxtClientInit({ state, commit, dispatch }, context) {
     // // Categories
     // try {
     //   let categories = await this.$axios.$get('categories/megamenu')
@@ -100,19 +111,21 @@ export const actions = {
     //   commit('settings', {})
     //   commit('setErr', e)
     // }
-    // // Authorization
+
+    // Authorization
     // let auth = this.$cookies.get('Authorization')
-    // if (auth) {
-    //   this.$axios.setToken(auth, 'Bearer')
-    //   try {
-    //     await dispatch('auth/fetch')
-    //   }
-    //   catch (error) {
-    //     this.$axios.setToken(null)
-    //   }
-    // } else {
-    //   this.$axios.setToken(null)
-    // }
+    let token = state.auth.token
+    if (token) {
+      this.$axios.setToken(token, 'Bearer')
+      // try {
+      //   await dispatch('auth/fetch')
+      // }
+      // catch (error) {
+      //   this.$axios.setToken(null)
+      // }
+    } else {
+      this.$axios.setToken(null)
+    }
     // try {
     //   await dispatch('cart/fetch')
     // } catch (e) { }

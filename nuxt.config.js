@@ -28,8 +28,9 @@ export default {
     'cookie-universal-nuxt'
   ],
   axios: {
-    baseURL: PROXY + '/api/',
-    browserBaseURL: '/api/',
+    // baseURL: PROXY + '/api/',
+    // browserBaseURL: '/api/',
+    prefix: '/api/',
     proxy: true,
     credentials: true
   },

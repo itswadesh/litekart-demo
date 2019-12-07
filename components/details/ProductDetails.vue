@@ -424,17 +424,6 @@ export default {
         return;
       } else {
         this.addToCart(obj);
-        if (
-          this.$store.state.settings.analytics.fbPixels_status === "enabled"
-        ) {
-          this.$fb.track("AddToCart", {
-            content_type: "product",
-            content_ids: this.product._id,
-            content_name: this.product.name,
-            currency: "INR",
-            value: this.calculatePrice
-          });
-        }
         this.toast();
       }
     },

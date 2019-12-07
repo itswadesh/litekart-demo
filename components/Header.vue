@@ -6,34 +6,68 @@
     >
       <div class="flex items-center flex-shrink-0 text-orange order-1 w-1/2 lg:w-auto">
         <nuxt-link to="/">
-          <img class="w-12 h-10 ml-2" src="/logo.svg" alt="logo" />
+          <img
+            class="w-12 h-10 ml-2"
+            src="/logo.svg"
+            alt="logo"
+          />
         </nuxt-link>
-        <div
-          class="hidden lg:block flex flex-none text-sm py-4 xs:justify-between items-center text-gray order-2"
-        >
+        <div class="hidden lg:block flex flex-none text-sm py-4 xs:justify-between items-center text-gray order-2">
           <Megamenu />
         </div>
       </div>
-      <div class="m-2 py-2 order-4 sm:order-3 w-full lg:mr-6" style="flex:1" :class="cls">
+      <div
+        class="m-2 py-2 order-4 sm:order-3 w-full lg:mr-6"
+        style="flex:1"
+        :class="cls"
+      >
         <Search />
       </div>
-      <div
-        class="flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mr-3 w-40 headings"
-      >
-        <nuxt-link class="w-auto" to="/login" v-if="!user">
-          <img class="h-4 ml-2" src="/avatar.png" alt="profile icon" />
+      <div class="flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mr-3 w-40 headings">
+        <nuxt-link
+          class="w-auto"
+          to="/login"
+          v-if="!user"
+        >
+          <img
+            class="h-4 ml-2"
+            src="/avatar.png"
+            alt="profile icon"
+          />
           <div class="text-xs font-bold headings">Profile</div>
         </nuxt-link>
-        <nuxt-link class="w-auto" to="/my" v-else>
-          <img class="h-4 ml-2" src="/avatar.png" alt="profile icon" />
+        <nuxt-link
+          class="w-auto"
+          to="/my"
+          v-else
+        >
+          <img
+            class="h-4 ml-2"
+            src="/avatar.png"
+            alt="profile icon"
+          />
           <div class="text-xs font-bold headings">Profile</div>
         </nuxt-link>
-        <nuxt-link class="w-auto" to="/wishlist">
-          <img class="h-4 ml-3 center" src="/bookmark.png" alt="wishlist icon" />
+        <nuxt-link
+          class="w-auto"
+          to="/wishlist"
+        >
+          <img
+            class="h-4 ml-3 center"
+            src="/bookmark.png"
+            alt="wishlist icon"
+          />
           <div class="text-xs font-bold headings">Wishlist</div>
         </nuxt-link>
-        <nuxt-link class="relative" to="/cart">
-          <img class="h-4 ml-1" src="/bag.png" alt="cart icon" />
+        <nuxt-link
+          class="relative"
+          to="/cart"
+        >
+          <img
+            class="h-4 ml-1"
+            src="/bag.png"
+            alt="cart icon"
+          />
           <div class="flex text-xs font-bold">
             Cart
             <div class="primary font-bold desktop-badge rounded-full px-1 absolute text-center">

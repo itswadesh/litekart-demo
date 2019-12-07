@@ -3,7 +3,7 @@
     <MegamenuMobile />
     <div class="px-2 home text-1">
       <Hero />
-      <Deals />
+      <RecentlyViewed />
       <div v-if="$store.state.settings.banners">
         <nuxt-link
           :to="$store.state.settings.banners.hero.link || '/search'"
@@ -27,6 +27,7 @@
 <script>
 import Hero from "~/components/home/Hero";
 import Deals from "~/components/home/Deals";
+import RecentlyViewed from "~/components/home/RecentlyViewed";
 import Banners from "~/components/home/Banners";
 import YouMayLike from "~/components/home/YouMayLike";
 import MegamenuMobile from "~/components/MegamenuMobile";
@@ -40,6 +41,7 @@ export default {
     Deals,
     Banners,
     YouMayLike,
+    RecentlyViewed,
     //Skeletons
     BannersSkeleton,
     DealsSkeleton

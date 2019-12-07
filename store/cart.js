@@ -31,7 +31,7 @@ const getters = {
 const actions = {
     async fetch({ commit, state, getters }) {// This is only to get data from saved cart
         try {
-            const data = await this.$axios.$get('cart')
+            const data = await this.$axios.$get('api/cart')
             commit('setCart', data)
             return data
         }

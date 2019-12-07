@@ -7,10 +7,21 @@
       </div>
     </div>
     <div class="flex flex-wrap justify-between">
-      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
+      <a
+        href="#"
+        class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between"
+      >
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img
+            class="h-48 w-full object-cover"
+            src="/cart-product.jpg"
+            alt="product image"
+          />
+          <img
+            src="/close-img.png"
+            alt="close icon"
+            class="absolute w-4 top-0 right-0 mt-2 mr-2"
+          />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">
@@ -29,10 +40,21 @@
         </div>
       </a>
 
-      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
+      <a
+        href="#"
+        class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between"
+      >
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img
+            class="h-48 w-full object-cover"
+            src="/cart-product.jpg"
+            alt="product image"
+          />
+          <img
+            src="/close-img.png"
+            alt="close icon"
+            class="absolute w-4 top-0 right-0 mt-2 mr-2"
+          />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">
@@ -48,10 +70,21 @@
         </div>
       </a>
 
-      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
+      <a
+        href="#"
+        class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between"
+      >
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img
+            class="h-48 w-full object-cover"
+            src="/cart-product.jpg"
+            alt="product image"
+          />
+          <img
+            src="/close-img.png"
+            alt="close icon"
+            class="absolute w-4 top-0 right-0 mt-2 mr-2"
+          />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">
@@ -67,10 +100,21 @@
         </div>
       </a>
 
-      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
+      <a
+        href="#"
+        class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between"
+      >
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img
+            class="h-48 w-full object-cover"
+            src="/cart-product.jpg"
+            alt="product image"
+          />
+          <img
+            src="/close-img.png"
+            alt="close icon"
+            class="absolute w-4 top-0 right-0 mt-2 mr-2"
+          />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">
@@ -86,10 +130,21 @@
         </div>
       </a>
 
-      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
+      <a
+        href="#"
+        class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between"
+      >
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img
+            class="h-48 w-full object-cover"
+            src="/cart-product.jpg"
+            alt="product image"
+          />
+          <img
+            src="/close-img.png"
+            alt="close icon"
+            class="absolute w-4 top-0 right-0 mt-2 mr-2"
+          />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">
@@ -105,10 +160,21 @@
         </div>
       </a>
 
-      <a href="#" class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
+      <a
+        href="#"
+        class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between"
+      >
         <div class="shadow m-3 relative">
-          <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
-          <img src="/close-img.png" alt="close icon" class="absolute w-4 top-0 right-0 mt-2 mr-2" />
+          <img
+            class="h-48 w-full object-cover"
+            src="/cart-product.jpg"
+            alt="product image"
+          />
+          <img
+            src="/close-img.png"
+            alt="close icon"
+            class="absolute w-4 top-0 right-0 mt-2 mr-2"
+          />
           <div class="px-2 leading-loose">
             <p class="text-sm font-hairline text-black">Fitbit Inspire HR</p>
             <div class="text-gray-500 mb-2 text-xs">
@@ -135,6 +201,9 @@ export default {
       variant: {}
     };
   },
+  created() {
+    this.$axios.$get("wishlists");
+  },
   methods: {
     addToBag(obj) {
       // if (!this.userSelectedVariant) {
@@ -146,15 +215,6 @@ export default {
       //   return;
       // } else {
       this.addToCart(obj);
-      if (this.$store.state.settings.analytics.fbPixels_status === "enabled") {
-        this.$fb.track("AddToCart", {
-          content_type: "product",
-          content_ids: this.product._id,
-          content_name: this.product.name,
-          currency: "INR",
-          value: this.calculatePrice
-        });
-      }
       this.toast();
       // }
     }
