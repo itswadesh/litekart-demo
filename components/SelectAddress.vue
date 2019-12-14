@@ -1,6 +1,6 @@
 <template>
   <div class="shadow bg-white p-2 rounded">
-    <div class="w-full flex justify-between">
+    <label class="cursor-pointer w-full flex justify-between">
       <div>
         <Radio />
       </div>
@@ -20,7 +20,7 @@
       <div>
         <div class="rounded-full text-xs bg-gray-200 py-1 px-2">OFFICE</div>
       </div>
-    </div>
+    </label>
     <div class="border-t border-gray-200 flex w-full">
       <button
         @click="go('/checkout/list')"

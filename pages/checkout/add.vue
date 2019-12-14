@@ -5,31 +5,78 @@
       <div>
         <div class="p-3 flex shadow lg:shadow-none items-center justify-between">
           <div class="flex items-center">
-            <i @click="go('/checkout/list')" class="fa fa-arrow-left mb-1" aria-hidden="true"></i>
+            <i
+              @click="go('/checkout/list')"
+              class="fa fa-arrow-left mb-1"
+              aria-hidden="true"
+            ></i>
             <div class="font-bold text-gray-700 text-xl ml-3">Add address</div>
           </div>
           <div class="text-xs text-gray-600">Step 2 of 3</div>
         </div>
       </div>
-      <form class="lg:mx-15 form w-full mb-1">
+      <form
+        class="lg:mx-15 form w-full mb-1"
+        novalidate
+        autocomplete="off"
+        @submit.stop.prevent="submit(a)"
+      >
         <div class="p-2">
-          <Textbox label="Full Name" class="w-full" />
-          <Textbox label="Pin Code" class="w-full" />
-          <Textbox label="Address" class="w-full" />
-          <Textbox label="Landmark" class="w-full" />
+          <Textbox
+            label="Full Name"
+            class="w-full"
+            name="name"
+            v-model="a.name"
+          />
+          <Textbox
+            label="Pin Code"
+            class="w-full"
+            name="name"
+            v-model="a.zip"
+          />
+          <Textbox
+            label="Address"
+            class="w-full"
+            name="name"
+            v-model="a.address"
+          />
+          <Textbox
+            label="Landmark"
+            class="w-full"
+            name="name"
+            v-model="a.landmark"
+          />
 
           <div class="w-full flex justify-between">
-            <Textbox label="City" class="w-1/2 mr-1" />
-            <Textbox label="State" class="w-1/2 ml-1" />
+            <Textbox
+              label="City"
+              class="w-1/2 mr-1"
+              name="name"
+              v-model="a.city"
+            />
+            <Textbox
+              label="State"
+              class="w-1/2 ml-1"
+              name="name"
+              v-model="a.state"
+            />
           </div>
-          <Textbox label="Mobile" class="w-full" />
+          <Textbox
+            label="Mobile"
+            class="w-full"
+            name="name"
+            v-model="a.mobile"
+          />
         </div>
         <div class="flex shadow lg:shadow-none fixed bottom-0 justify-between w-full lg:w-1/3">
           <button
             @click="$router.push('/checkout/address')"
             class="tracking-widest p-3 w-1/2 bg-white text-black text-sm font-semibold"
           >CANCEL</button>
-          <button class="tracking-widest p-3 w-1/2 primary text-sm font-semibold">CONTINUE</button>
+          <button
+            type="submit"
+            class="tracking-widest p-3 w-1/2 primary text-sm font-semibold"
+          >CONTINUE</button>
         </div>
       </form>
     </div>
@@ -40,6 +87,11 @@
 const Textbox = () => import("~/components/ui/Textbox");
 const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
 export default {
+  data() {
+    return {
+      a: {}
+    };
+  },
   components: {
     CheckoutHeader,
     Textbox
@@ -47,6 +99,17 @@ export default {
   methods: {
     go(url) {
       this.$router.push(url);
+    },
+    async submit(address) {
+      this.loading = true;
+      // this.a = address;
+      try {
+        if (address._id)
+          await this.$axios.$put("addresses/" + address._id, address);
+        else await this.$axios.$post("addresses", address);
+      } catch (e) {
+        console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzz", e);
+      }
     }
   },
   layout: "none"

@@ -1,11 +1,9 @@
 <template>
-  <div class="container my-5">
-    <div class="row">
-      <div class="col-md-6 mx-auto">
-        <Button color="primary">Buy Now</Button>
-      </div>
-    </div>
-  </div>
+  <table>
+    <tr>
+      <td>aaaaaaaaaaaaa</td>
+    </tr>
+  </table>
 </template>
 
 <script>
@@ -16,4 +14,7 @@ export default {
 </script>
 
 <style>
+table {
+  border: 1px solid black;
+}
 </style>
