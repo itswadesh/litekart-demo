@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{order}}
     <div class="flex flex-wrap justify-start">
       <div class="lg:w-1/4 xs:w-0"></div>
       <div class="xs:w-full lg:w-1/3 mt-10 px-2">
@@ -13,12 +14,16 @@
         </div>
         <div class="font-hairline text-sm">
           Your Order number is
-          <span class="font-semibold">091714264468</span>
+          <span class="font-semibold">{{order.orderNo}}</span>
         </div>
         <div class="flex justify-between pt-5 pb-5">
           <div class="lg:w-1/5 left-0 xs:w-3/12">
             <div>
-              <img alt="product image" class="lg:rounded xs:rounded-b-none" src="/cart-product.jpg" />
+              <img
+                alt="product image"
+                class="lg:rounded xs:rounded-b-none"
+                src="/cart-product.jpg"
+              />
             </div>
           </div>
           <div class="lg:w-4/5 right-0 text-sm xs:9/12">
@@ -37,9 +42,7 @@
               <div class="flex justify-between">
                 <div class="w-1/2 left-0">
                   <div class="inline-block relative w-16">
-                    <div
-                      class="text-xs font-hairline text-black p-1 text-center block appearance-none w-full bg-gray-200 rounded"
-                    >Qty 1</div>
+                    <div class="text-xs font-hairline text-black p-1 text-center block appearance-none w-full bg-gray-200 rounded">Qty 1</div>
                   </div>
                 </div>
               </div>
@@ -63,22 +66,23 @@
         <div class="4/5 right-0 pb-10 pt-2 border-b border-gray-300">
           <div class="flex justify-between mt-2 text-sm">
             <div class="w-1/2 font-bold text-left">Total</div>
-            <div class="ml-2 w-1/2 font-bold text-black-400 text-right">₹532</div>
+            <div class="ml-2 w-1/2 font-bold text-black-400 text-right">{{order.total}}</div>
           </div>
           <div class="flex justify-between mt-2 text-xs">
             <div class="w-10/12 text-left">Pay by cash on delivery</div>
-            <div class="ml-2 text-black-400 text-right">₹532</div>
+            <div class="ml-2 text-black-400 text-right">{{order.total}}</div>
           </div>
         </div>
         <div>
           <div class="py-3 font-semibold text-gray-700">Shipping address</div>
           <div class="text-sm">
-            <span class="font-bold text-gray-700">Swadesh Bahera</span>
-            <br />+91 8895092508
+            <span class="font-bold text-gray-700">{{address.firstName}} {{address.lastName}}</span>
+            <br />{{address.phone}}
             <div class="pt-2">
-              Y-276, HAL Township
-              <br />Sunabeda-2
-              <br />Koraput-763002
+              {{address.address}}
+              {{address.city}}
+              {{address.state}}
+              {{address.zip}}
             </div>
           </div>
         </div>
@@ -88,7 +92,32 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    async asyncData({ params, query, route, redirect, $axios, store }) {
+      let order = [],
+        err = null;
+      if (store.getters["cart/getTotal"] <= 0) {
+        redirect("/");
+      }
+      try {
+        order = await $axios.$get(`orders/public/${route.query.id}`);
+        err = null;
+      } catch (e) {
+        order = {};
+        if (e && e.response && e.response.data) {
+          err = e.response.data;
+        } else if (e && e.response) {
+          err = e.response;
+        } else {
+          err = e;
+        }
+        console.log("err...", `${err}`);
+      }
+      return { order };
+    }
+  }
+};
 </script>
 
 <style scoped>

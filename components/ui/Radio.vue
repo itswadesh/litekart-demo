@@ -1,10 +1,12 @@
 <template>
   <label class="common-customRadio vertical-filters-label">
     <input
+      :checked="checked"
       type="radio"
       class="discount-input"
       name="discount-product"
-      value="10.0 TO 100.0"
+      :value="value"
+      @change="$emit('changed', value)"
     >
     <slot />
     <div class="common-radioIndicator"></div>
@@ -12,7 +14,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    value: { type: String },
+    checked: { type: Boolean }
+  }
+  // data() {
+  //   return {
+  //     content: this.value
+  //   };
+  // }
+};
 </script>
 
 <style scoped>

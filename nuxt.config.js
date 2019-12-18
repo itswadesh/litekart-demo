@@ -27,6 +27,11 @@ export default {
     '@nuxtjs/toast',
     'cookie-universal-nuxt'
   ],
+  toast: {
+    theme: "bubble",
+    position: 'top-center',
+    singleton: true
+  },
   axios: {
     // baseURL: PROXY + '/api/',
     // browserBaseURL: '/api/',

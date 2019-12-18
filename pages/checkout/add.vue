@@ -4,14 +4,16 @@
     <div class="w-full pb-4 lg:w-1/3 m-auto">
       <div>
         <div class="p-3 flex shadow lg:shadow-none items-center justify-between">
-          <div class="flex items-center">
+          <nuxt-link
+            class="flex items-center"
+            to="/checkout/address"
+          >
             <i
-              @click="go('/checkout/list')"
               class="fa fa-arrow-left mb-1"
               aria-hidden="true"
             ></i>
             <div class="font-bold text-gray-700 text-xl ml-3">Add address</div>
-          </div>
+          </nuxt-link>
           <div class="text-xs text-gray-600">Step 2 of 3</div>
         </div>
       </div>
@@ -23,10 +25,16 @@
       >
         <div class="p-2">
           <Textbox
-            label="Full Name"
+            label="First Name"
             class="w-full"
-            name="name"
-            v-model="a.name"
+            name="firstName"
+            v-model="a.firstName"
+          />
+          <Textbox
+            label="Last Name"
+            class="w-full"
+            name="lastName"
+            v-model="a.lastName"
           />
           <Textbox
             label="Pin Code"
@@ -62,10 +70,10 @@
             />
           </div>
           <Textbox
-            label="Mobile"
+            label="Phone"
             class="w-full"
             name="name"
-            v-model="a.mobile"
+            v-model="a.phone"
           />
         </div>
         <div class="flex shadow lg:shadow-none fixed bottom-0 justify-between w-full lg:w-1/3">

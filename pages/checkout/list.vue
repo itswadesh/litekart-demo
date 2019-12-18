@@ -16,7 +16,7 @@
             <div class="flex-1 ml-2">
               <div class="font-semibold">{{a.firstName}} {{a.lastName}} <span v-if="ix===0">(Default)</span></div>
               <div class="py-2 text-xs">
-                <div>{{address}}</div>
+                <div>{{a.address}}</div>
                 <div>{{a.phone}}</div>
                 <div>{{a.state}}</div>
                 <div>{{a.city}}</div>
@@ -28,7 +28,7 @@
                 </div>
               </div>
             </div>
-            <div>
+            <div v-if="office">
               <div class="rounded-full text-xs bg-gray-200 py-1 px-2">OFFICE</div>
             </div>
           </label>
@@ -68,7 +68,9 @@ const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
 export default {
   data() {
     return {
-      a: {}
+      office: false,
+      a: {},
+      addresses: []
     };
   },
   created() {
@@ -79,7 +81,10 @@ export default {
     Radio
   },
   methods: {
-    getAddress() {},
+    async getAddress() {
+      const a = await this.$axios.$get("addresses/my");
+      this.addresses = a.data;
+    },
     go(url) {
       this.$router.push(url);
     }

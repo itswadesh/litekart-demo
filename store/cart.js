@@ -56,7 +56,7 @@ const actions = {
                 try {
                     commit('busy', true, { root: true })
                     let order = await this.$axios.$post('orders', { address, paymentMethod: 'COD' })
-                    this.$router.push('/grocery/success?id=' + order._id + '&amount=' + order.amount.total)
+                    this.$router.push('/order-success?id=' + order._id + '&amount=' + order.amount.total)
                 } catch (err) {
                     commit('setErr', err, { root: true })
                 }

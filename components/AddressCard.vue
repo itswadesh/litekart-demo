@@ -20,7 +20,7 @@
     </div>
     <div class="border-t border-gray-200 flex w-full">
       <button
-        @click="go('/checkout/list')"
+        @click="go('/checkout/address')"
         class="tracking-widest w-1/2 text-blue-500 py-1 border-r border-gray-200 mt-1"
       >Edit/Change</button>
       <button
