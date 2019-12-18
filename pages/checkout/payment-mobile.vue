@@ -169,7 +169,7 @@ export default {
       }
       try {
         await vm.checkout({
-          address: vm.address.address,
+          address: vm.address,
           paymentMethod: vm.paymentMethod
         });
       } catch (e) {

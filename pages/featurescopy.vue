@@ -7,174 +7,198 @@
         </p>
         <div class="shadow-md">
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-one" type="checkbox" name="tabs" />
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-one"
+              type="checkbox"
+              name="tabs"
+            />
             <label
               class="block p-5 leading-normal cursor-pointer"
               for="tab-multi-one"
             >SITE MANAGEMENT</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-two" type="checkbox" name="tabs" />
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-two"
+              type="checkbox"
+              name="tabs"
+            />
             <label
               class="block p-5 leading-normal cursor-pointer"
               for="tab-multi-two"
             >CATALOGUE MANAGEMENT</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-three" type="checkbox" name="tabs" />
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-three"
+              type="checkbox"
+              name="tabs"
+            />
             <label
               class="block p-5 leading-normal cursor-pointer"
               for="tab-multi-three"
             >PRODUCT BROWSING</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
 
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-four" type="checkbox" name="tabs" />
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-four"
+              type="checkbox"
+              name="tabs"
+            />
             <label
               class="block p-5 leading-normal cursor-pointer"
               for="tab-multi-four"
             >CATALOGUE BROWSING</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-five" type="checkbox" name="tabs" />
-            <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-five">SEO</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-five"
+              type="checkbox"
+              name="tabs"
+            />
+            <label
+              class="block p-5 leading-normal cursor-pointer"
+              for="tab-multi-five"
+            >SEO</label>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-six" type="checkbox" name="tabs" />
-            <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-six">REPORTS</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-six"
+              type="checkbox"
+              name="tabs"
+            />
+            <label
+              class="block p-5 leading-normal cursor-pointer"
+              for="tab-multi-six"
+            >REPORTS</label>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-seven" type="checkbox" name="tabs" />
-            <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-seven">MARKETING</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-seven"
+              type="checkbox"
+              name="tabs"
+            />
+            <label
+              class="block p-5 leading-normal cursor-pointer"
+              for="tab-multi-seven"
+            >MARKETING</label>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-eight" type="checkbox" name="tabs" />
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-eight"
+              type="checkbox"
+              name="tabs"
+            />
             <label
               class="block p-5 leading-normal cursor-pointer"
               for="tab-multi-eight"
             >ORDER MANAGEMENT</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-nine" type="checkbox" name="tabs" />
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-nine"
+              type="checkbox"
+              name="tabs"
+            />
             <label
               class="block p-5 leading-normal cursor-pointer"
               for="tab-multi-nine"
             >CUSTOMER CARE</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-ten" type="checkbox" name="tabs" />
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-ten"
+              type="checkbox"
+              name="tabs"
+            />
             <label
               class="block p-5 leading-normal cursor-pointer"
               for="tab-multi-ten"
             >CUSTOMER ACCOUNTS</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-eleven" type="checkbox" name="tabs" />
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-eleven"
+              type="checkbox"
+              name="tabs"
+            />
             <label
               class="block p-5 leading-normal cursor-pointer"
               for="tab-multi-eleven"
             >ADDITIONAL FEATURES</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-twelve" type="checkbox" name="tabs" />
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-twelve"
+              type="checkbox"
+              name="tabs"
+            />
             <label
               class="block p-5 leading-normal cursor-pointer"
               for="tab-multi-twelve"
             >CODING / DEVELOPMENT</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
-              <p
-                class="p-5"
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
+              <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
             </div>
           </div>
           <div class="tab w-full overflow-hidden border-t">
-            <input class="absolute opacity-0" id="tab-multi-thirteen" type="checkbox" name="tabs" />
+            <input
+              class="absolute opacity-0"
+              id="tab-multi-thirteen"
+              type="checkbox"
+              name="tabs"
+            />
             <label
               class="block p-5 leading-normal cursor-pointer"
               for="tab-multi-thirteen"
             >Technologies Used</label>
-            <div
-              class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal"
-            >
+            <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-pink-600 leading-normal">
               <ul class="p-5">
                 <li>Docker</li>
                 <li>Elastic Search</li>
@@ -195,19 +219,19 @@
 
 <script>
 /* Optional Javascript to close the radio button version by clicking it again */
-var myRadios = document.getElementsByName("tabs2");
-var setCheck;
-var x = 0;
-for (x = 0; x < myRadios.length; x++) {
-  myRadios[x].onclick = function() {
-    if (setCheck != this) {
-      setCheck = this;
-    } else {
-      this.checked = false;
-      setCheck = null;
-    }
-  };
-}
+// var myRadios = document.getElementsByName("tabs2");
+// var setCheck;
+// var x = 0;
+// for (x = 0; x < myRadios.length; x++) {
+//   myRadios[x].onclick = function() {
+//     if (setCheck != this) {
+//       setCheck = this;
+//     } else {
+//       this.checked = false;
+//       setCheck = null;
+//     }
+//   };
+// }
 export default {
   layout: "none"
 };
