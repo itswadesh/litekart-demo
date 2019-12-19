@@ -24,6 +24,7 @@
         @submit.stop.prevent="submit(a)"
       >
         <div class="p-2">
+          {{a.firstName}}
           <Textbox
             label="First Name"
             class="w-full"
@@ -103,6 +104,11 @@ export default {
   components: {
     CheckoutHeader,
     Textbox
+  },
+  async created() {
+    try {
+      this.a = await this.$axios.$get(`addresses/${this.$route.query.id}`);
+    } catch (e) {}
   },
   methods: {
     go(url) {

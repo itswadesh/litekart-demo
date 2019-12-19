@@ -2,7 +2,7 @@
   <div>
     <CheckoutHeader selected="address" />
     <div style="max-width: 1000px;margin: 0 auto;">
-      <div class="mx-auto lg:mx-10 p-2 flex justify-between items-start">
+      <div class="mx-auto lg:mx-10 p-2 flex justify-between flex-wrap items-start">
         <!-- Left sidebar -->
         <div class="flex w-full md:w-2/3 flex-wrap justify-start desktop1-base-left">
           <div
@@ -49,7 +49,7 @@
                   class="tracking-widest w-1/2 text-blue-500 py-1 border-r border-gray-200 mt-1"
                 >Remove</button>
                 <button
-                  @click="go('/checkout/add')"
+                  @click="go(`/checkout/add?id=${a._id}`)"
                   class="tracking-widest w-1/2 text-blue-500 py-1 mt-1"
                 >Edit</button>
               </div>

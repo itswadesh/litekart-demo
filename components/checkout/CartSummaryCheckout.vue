@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div class="fixed bottom-0 lg:relative bg-white w-full pr-4 pb-2 lg:pr-0">
+    <div class="fixed left-0 bottom-0 lg:relative bg-white w-full px-4 pb-2 lg:pr-0">
       <div class="flex justify-between mt-2">
         <div class="text-lg font-bold text-left">Total</div>
         <div class="font-bold text-black text-right">{{cart.total | currency}}</div>
