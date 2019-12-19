@@ -33,7 +33,7 @@ export default {
     singleton: true
   },
   axios: {
-    // baseURL: PROXY + '/api/',
+    baseURL: PROXY + '/api/',
     // browserBaseURL: '/api/',
     prefix: '/api/',
     proxy: true,
