@@ -24,7 +24,6 @@
         @submit.stop.prevent="submit(a)"
       >
         <div class="p-2">
-          {{a.firstName}}
           <Textbox
             label="First Name"
             class="w-full"
@@ -79,6 +78,7 @@
         </div>
         <div class="flex shadow lg:shadow-none fixed bottom-0 justify-between w-full lg:w-1/3">
           <button
+            type="button"
             @click="$router.push('/checkout/address')"
             class="tracking-widest p-3 w-1/2 bg-white text-black text-sm font-semibold"
           >CANCEL</button>
@@ -107,7 +107,7 @@ export default {
   },
   async created() {
     try {
-      this.a = await this.$axios.$get(`addresses/${this.$route.query.id}`);
+      this.a = await this.$axios.$get(`api/addresses/${this.$route.query.id}`);
     } catch (e) {}
   },
   methods: {
@@ -115,14 +115,15 @@ export default {
       this.$router.push(url);
     },
     async submit(address) {
-      this.loading = true;
-      // this.a = address;
+      this.$store.commit("busy", true);
       try {
         if (address._id)
-          await this.$axios.$put("addresses/" + address._id, address);
-        else await this.$axios.$post("addresses", address);
+          await this.$axios.$put("api/addresses/" + address._id, address);
+        else await this.$axios.$post("api/addresses", address);
+        this.$store.commit("busy", false);
+        this.go("/checkout/address");
       } catch (e) {
-        console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzz", e);
+        this.$store.commit("busy", false);
       }
     }
   },
@@ -132,7 +133,6 @@ export default {
 
 <style scoped>
 /* form */
-
 form {
   display: inline-block;
 }

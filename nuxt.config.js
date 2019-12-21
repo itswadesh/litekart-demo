@@ -21,6 +21,7 @@ export default {
   ],
   modules: [
     '@nuxtjs/axios',
+    // '@nuxtjs/proxy',
     // '@nuxtjs/sitemap',
     '@nuxtjs/font-awesome',
     '@nuxtjs/pwa',
@@ -33,14 +34,15 @@ export default {
     singleton: true
   },
   axios: {
-    baseURL: PROXY + '/api/',
+    // host: PROXY,
+    // baseURL: '/api/',
     // browserBaseURL: '/api/',
-    prefix: '/api/',
+    // prefix: '/api/',
     proxy: true,
     credentials: true
   },
   proxy: {
-    '/api': PROXY,
+    '/api/': PROXY,
     '/auth': PROXY,
     '/images': PROXY,
   },

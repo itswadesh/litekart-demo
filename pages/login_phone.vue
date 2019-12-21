@@ -110,7 +110,9 @@ export default {
         // When request OTP clicked 1st
         try {
           this.loading = true;
-          const otp = await this.$axios.get("/users/phone/" + this.user.phone);
+          const otp = await this.$axios.get(
+            "api/users/phone/" + this.user.phone
+          );
           if (otp.status == 200 || otp.status == 201) {
             this.showOTP = true;
             this.msg = "Please enter OTP sent to your Mobile";

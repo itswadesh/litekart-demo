@@ -172,7 +172,7 @@ export default {
     async getData() {
       try {
         this.loading = true;
-        const products = await this.$axios.$get("/products/es", {
+        const products = await this.$axios.$get("api/products/es", {
           params: { ...this.$route.query }
         });
         this.productCount = products.count;

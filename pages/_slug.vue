@@ -23,7 +23,7 @@ import SimilarProducts from "~/components/details/SimilarProducts";
 export default {
   async validate({ query, $axios }) {
     try {
-      let product = await $axios.$get("products/" + query.id);
+      let product = await $axios.$get("api/products/" + query.id);
       return !!product;
     } catch (e) {
       return false;
@@ -45,7 +45,7 @@ export default {
       selectedVariant = null,
       err = null;
     try {
-      product = await $axios.$get(`products/${query.id}`);
+      product = await $axios.$get(`api/products/${query.id}`);
       if (!product || product == "null") product = {};
       else {
         for (let v of product && product.variants) {
@@ -182,7 +182,7 @@ export default {
 
         if (recentlyViewd && recentlyViewd.length > 0) {
           let recentProduct = await this.$axios.$post(
-            "products/ids",
+            "api/products/ids",
             recentlyViewd
           );
           this.RecentlyViewedProducts = recentProduct;

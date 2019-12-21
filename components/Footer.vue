@@ -5,25 +5,24 @@
         <div class="text-left mr-2 font-bold text-sm headings">ONLINE SHOPPING</div>
         <ul class="font-hairline text-sm">
           <li>
-            <a href>Men</a>
+            <nuxt-link to="/search?q=men">Men</nuxt-link>
           </li>
           <li>
-            <a href>Women</a>
+            <nuxt-link to="/search?q=women">Women</nuxt-link>
           </li>
           <li>
-            <a href>Kids</a>
+            <nuxt-link to="/search?q=kids">Kids</nuxt-link>
           </li>
           <li>
-            <a href>Home & Living</a>
+            <nuxt-link to="/search?q=home">Home & Living</nuxt-link>
           </li>
           <li>
-            <a href>Discover</a>
-          </li>
-          <li>
-            <a href>Gift Cards</a>
-          </li>
-          <li>
-            <a href>Litekart Insider</a>
+            <a
+              target="_blank"
+              href="https://www.angularcode.com/"
+            >
+              Litekart
+              Insider</a>
             <span class="desktop-superscript primary">New</span>
           </li>
         </ul>
@@ -32,60 +31,63 @@
         <div class="text-center mr-2 font-bold text-sm headings">USEFUL LINKS</div>
         <ul class="font-hairline text-sm">
           <li>
-            <a href>Men</a>
+            <nuxt-link to="/sell-online">Sell on Litekart</nuxt-link>
           </li>
           <li>
-            <a href>Women</a>
+            <nuxt-link to="/returns-and-refunds">Returns & Refunds</nuxt-link>
           </li>
           <li>
-            <a href>Kids</a>
+            <nuxt-link to="/privacy-statement">Privacy Statement</nuxt-link>
           </li>
           <li>
-            <a href>Home & Living</a>
+            <nuxt-link to="/about-us">About Us</nuxt-link>
           </li>
           <li>
-            <a href>Discover</a>
+            <nuxt-link to="/faq-for-buyers">FAQ for Buyers</nuxt-link>
           </li>
           <li>
-            <a href>Gift Cards</a>
+            <nuxt-link to="/faq-for-sellers">FAQ for Sellers</nuxt-link>
           </li>
           <li>
-            <a href>Litekart Insider</a>
+            <a
+              target="_blank"
+              href="https://www.angularcode.com/"
+            >Litekart Insider</a>
           </li>
         </ul>
       </div>
       <div class="lg:p-8 p-2 items-center my-4 lg:my-0">
         <div class="font-bold text-sm headings">EXPERIENCE LITEKART APP ON MOBILE</div>
         <div class="flex mb-2">
-          <img
-            class="mt-2 h-10"
-            src="/playstore.png"
-            alt="playstore image"
-          />
-          <img
-            class="mt-2 h-10"
-            src="/appstore.png"
-            alt="app store image"
-          />
+          <a href="https://play.google.com/store/apps/details?id=com.codenx.misiki&hl=en"><img
+              class="mt-2 h-10"
+              src="/playstore.png"
+              alt="playstore image"
+            /></a>
+          <a href="https://play.google.com/store/apps/details?id=com.codenx.misiki&hl=en"><img
+              class="mt-2 h-10"
+              src="/appstore.png"
+              alt="app store image"
+            /></a>
         </div>
         <div>
           <h6 class="text-left text-lg lg:text-xs">KEEP IN TOUCH</h6>
           <div class>
-            <a href="#">
+            <a href="https://facebook.com/codenx2">
               <i
                 class="fa fa-facebook-official"
                 aria-hidden="true"
               ></i>
             </a>
-            <a href="#">
+            <a href="https://twitter.com/itswadesh">
               <i
                 class="fa fa-twitter"
                 aria-hidden="true"
               ></i>
             </a>
-            <a href="#">
+            <a href="https://github.com/itswadesh">
               <i
-                class="fa fa-youtube-play"
+                class="fa fa-github"
                 aria-hidden="true"
               ></i>
             </a>
@@ -132,7 +134,7 @@
           />
           <div class="text-sm">
             <div>
-              <span class="font-bold ml-1 headings">Get free delivery</span> for every order above Rs. 1199
+              <span class="font-bold ml-1 headings">Get free delivery</span> for every order above ₹1199
             </div>
           </div>
         </div>
@@ -152,12 +154,12 @@
     <div class="flex lg:p-8 p-2 flex-wrap justify-between text-sm">
       <div>
         In case of any concern,
-        <a
-          href="#"
+        <nuxt-link
+          to="/contact-us"
           class="px-2 text-indigo-600"
-        >Contact Us</a>
+        >Contact Us</nuxt-link>
       </div>
-      <div>© 2019 www.litekart.in. All rights reserved.</div>
+      <div>© 2020 www.litekart.in. All rights reserved.</div>
     </div>
   </footer>
 </template>
@@ -169,24 +171,6 @@ export default {
     return { popularSearches };
   }
 };
-// var mybutton = document.getElementById("myBtn");
-
-// // When the user scrolls down 20px from the top of the document, show the button
-// window.onscroll = function() {scrollFunction()};
-
-// function scrollFunction() {
-//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-//     mybutton.style.display = "block";
-//   } else {
-//     mybutton.style.display = "none";
-//   }
-// }
-
-// // When the user clicks on the button, scroll to the top of the document
-// function topFunction() {
-//   document.body.scrollTop = 0;
-//   document.documentElement.scrollTop = 0;
-// }
 </script>
 <style scoped>
 .hr-line {

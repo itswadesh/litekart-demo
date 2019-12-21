@@ -36,7 +36,7 @@ export const mutations = {
 export const actions = {
     async fetch({ commit }) {
         try {
-            const res = await this.$axios.$get('/users/me')
+            const res = await this.$axios.$get('api/users/me')
             commit('setUser', res)
             return res
         } catch (err) {
@@ -49,7 +49,7 @@ export const actions = {
         try {
             if (token) {
                 this.$axios.setToken(token, 'Bearer')
-                const user = await this.$axios.$get('users/me')
+                const user = await this.$axios.$get('api/users/me')
                 commit('setUser', user)
                 this.$cookies.set('token', token, { path: '/', maxAge: tokenExpiry })
                 return user
@@ -63,7 +63,7 @@ export const actions = {
             throw "Please enter otp"
         }
         try {
-            const data = await this.$axios.$post('auth/phone', payload)
+            const data = await this.$axios.$post('api/auth/phone', payload)
             if (data && data.token) {
                 this.$axios.setToken(data.token, 'Bearer')
                 commit('setUser', data.user)
@@ -85,7 +85,7 @@ export const actions = {
             throw "Please enter password"
         }
         try {
-            const data = await this.$axios.$post('auth/local', payload)
+            const data = await this.$axios.$post('api/auth/local', payload)
             if (data && data.token) {
                 this.$axios.setToken(data.token, 'Bearer')
                 commit('setUser', data.user)
@@ -104,7 +104,7 @@ export const actions = {
     },
     async signup({ commit }, payload) {
         try {
-            let data = await this.$axios.$post('users', payload)
+            let data = await this.$axios.$post('api/users', payload)
             if (data && data.token) {
                 this.$axios.setToken(data.token, 'Bearer')
                 commit('setUser', data.user)
@@ -123,7 +123,7 @@ export const actions = {
     },
     async forgotPassword({ commit }, payload) {
         try {
-            return await this.$axios.$post('/users/forgot', payload)
+            return await this.$axios.$post('api/users/forgot', payload)
         } catch (err) {
             commit('setErr', err, { root: true })
         }
@@ -134,7 +134,7 @@ export const actions = {
             return
         }
         try {
-            const data = await this.$axios.$put('/users/password', payload)
+            const data = await this.$axios.$put('api/users/password', payload)
             commit('info', data.message, { root: true })
             this.$router.push('/my')
             return data
@@ -144,7 +144,7 @@ export const actions = {
     },
     async resetPassword({ commit }, payload) {
         try {
-            const data = await this.$axios.$post('/users/reset/' + payload.id, payload)
+            const data = await this.$axios.$post('api/users/reset/' + payload.id, payload)
             if (data) {
                 commit('info', data, { root: true })
                 // router.push('/')
@@ -160,7 +160,7 @@ export const actions = {
             return
         }
         try {
-            const data = await this.$axios.$put('/users/profile', { firstName, lastName, state, city, zip, phone, avatar, gender, dob, language })
+            const data = await this.$axios.$put('api/users/profile', { firstName, lastName, state, city, zip, phone, avatar, gender, dob, language })
             if (data) {
                 commit('setUser', { firstName: data.firstName, lastName: data.lastName, avatar: data.avatar, dob: data.dob, gender: data.gender, language: data.language, state: data.state, city: data.city, zip: data.zip, phone: data.phone })
                 commit('info', 'Profile updated.', { root: true })

@@ -68,7 +68,10 @@
             <p class="text-black mt-4 font-normal text-sm">Price Summary</p>
           </div>
         </div>
-        <div class="4/5 right-0 pb-10 pt-2 border-b border-gray-300">
+        <div
+          class="4/5 right-0 pb-10 pt-2 border-b border-gray-300"
+          v-if="order.amount"
+        >
           <div class="flex justify-between mt-2 text-sm">
             <div class="w-1/2 font-bold text-left">Total</div>
             <div class="ml-2 w-1/2 font-bold text-black-400 text-right">{{order.amount.total | currency}}</div>

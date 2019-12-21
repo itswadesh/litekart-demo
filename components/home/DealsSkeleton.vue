@@ -6,7 +6,7 @@
           Deals Of the Day
           <span class="ml-2 text-gray-500 text-xs">23:57:58 Left</span>
         </p>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white text-xs right-0 py-1 px-2">View All</button>
+        <button class="primary text-xs px-2 rounded">View All</button>
       </div>
       <div class="flex flex-wrap flex justify-between p-4">
         <div class="w-32 ml-1">

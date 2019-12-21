@@ -37,7 +37,7 @@ export default {
   methods: {
     async del(id) {
       try {
-        await this.$axios.$delete(`products/${id}`);
+        await this.$axios.$delete(`api/products/${id}`);
       } catch (e) {}
     }
   }

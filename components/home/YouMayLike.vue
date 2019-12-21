@@ -63,7 +63,7 @@ export default {
   async created() {
     try {
       this.loading = true;
-      const res = await this.$axios.$get("products/sale");
+      const res = await this.$axios.$get("api/products/sale");
       this.products = res.data;
     } catch (e) {
     } finally {

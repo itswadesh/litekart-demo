@@ -142,7 +142,7 @@ export default {
   },
   async mounted() {
     this.address = await this.$axios.$get(
-      `/addresses/${this.$route.query.address}`
+      `api/addresses/${this.$route.query.address}`
     );
   },
   methods: {

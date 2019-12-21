@@ -130,13 +130,12 @@ export default {
   },
   methods: {
     addressChanged(e) {
-      console.log("addressChanged...........", e);
       this.selectedAddress = e;
     },
     del(a) {
       try {
         this.$store.commit("busy", true);
-        this.$axios.$delete(`addresses/${a._id}`);
+        this.$axios.$delete(`api/addresses/${a._id}`);
         this.getAddress();
         this.$store.commit("busy", false);
       } catch (e) {
@@ -145,7 +144,7 @@ export default {
     },
     async getAddress() {
       try {
-        const a = await this.$axios.$get("addresses/my");
+        const a = await this.$axios.$get("api/addresses/my");
         this.addresses = a.data;
         this.selectedAddress = a.data[0] && a.data[0]._id;
       } catch (e) {}

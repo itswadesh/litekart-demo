@@ -82,7 +82,7 @@ export default {
   },
   methods: {
     async getAddress() {
-      const a = await this.$axios.$get("addresses/my");
+      const a = await this.$axios.$get("api/addresses/my");
       this.addresses = a.data;
     },
     go(url) {

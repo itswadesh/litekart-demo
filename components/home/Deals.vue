@@ -55,7 +55,7 @@ export default {
       recentlyViewd.reverse();
       if (recentlyViewd && recentlyViewd.length > 0) {
         let recentProduct = await this.$axios.$post(
-          "products/ids",
+          "api/products/ids",
           recentlyViewd
         );
         this.products = recentProduct;

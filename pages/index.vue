@@ -4,28 +4,19 @@
     <div class="px-2 home text-1">
       <Hero />
       <RecentlyViewed />
-      <div v-if="$store.state.settings.banners">
-        <nuxt-link
-          :to="$store.state.settings.banners.hero.link || '/search'"
-          class="lg:w-1/4 shadow xs:w-full"
-        >
-          <img
-            v-lazy="$store.state.settings.CDN_URL+$store.state.settings.banners.hero.img"
-            alt=""
-            class="w-full h-full object-cover object-center"
-          />
-        </nuxt-link>
-      </div>
-      <DealsSkeleton />
-      <Banners />
-      <BannersSkeleton />
+      <Heros />
       <YouMayLike />
+      <!-- <Deals v-if="1==1" />
+      <DealsSkeleton v-else /> -->
+      <Banners :banners="$store.state.settings && $store.state.settings.banners && $store.state.settings.banners.offers" />
+      <!-- <BannersSkeleton /> -->
     </div>
   </div>
 </template>
 
 <script>
 import Hero from "~/components/home/Hero";
+import Heros from "~/components/home/Heros";
 import Deals from "~/components/home/Deals";
 import RecentlyViewed from "~/components/home/RecentlyViewed";
 import Banners from "~/components/home/Banners";
@@ -37,6 +28,7 @@ import DealsSkeleton from "~/components/home/DealsSkeleton";
 export default {
   components: {
     Hero,
+    Heros,
     MegamenuMobile,
     Deals,
     Banners,

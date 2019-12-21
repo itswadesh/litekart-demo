@@ -202,7 +202,7 @@ export default {
     };
   },
   created() {
-    this.$axios.$get("wishlists");
+    this.$axios.$get("api/wishlists");
   },
   methods: {
     addToBag(obj) {

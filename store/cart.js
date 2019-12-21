@@ -39,7 +39,7 @@ const actions = {
     },
     async addToCart({ commit }, payload) {
         try {
-            const data = await this.$axios.$post("cart/add", payload);
+            const data = await this.$axios.$post("api/cart/add", payload);
             commit('setCart', data)
         }
         catch (e) {
@@ -55,7 +55,7 @@ const actions = {
             case "COD":
                 try {
                     commit('busy', true, { root: true })
-                    let order = await this.$axios.$post('orders', { address, paymentMethod })
+                    let order = await this.$axios.$post('api/orders', { address, paymentMethod })
                     this.$router.push('/order-success?id=' + order._id + '&amount=' + order.amount.total)
                 } catch (err) {
                     commit('setErr', err, { root: true })

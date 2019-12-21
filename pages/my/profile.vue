@@ -10,9 +10,7 @@
     <div class="px-0 lg:px-10">
       <div class="w-full text-sm text-center mt-5 mb-5 py-5 px-8">
         Just 2 step(s) to go and your profile's complete
-        <div
-          class="w-full h-1 bg-green-500 rounded-lg m-1 text-xs leading-none text-center text-white"
-        ></div>
+        <div class="w-full h-1 bg-green-500 rounded-lg m-1 text-xs leading-none text-center text-white"></div>
       </div>
     </div>
 
@@ -22,11 +20,18 @@
           <a href="#">
             <li class="flex-wrap flex mt-5 mb-5 py-5 px-8">
               <div class="w-1/12">
-                <img src="/name.png" class="w-5" alt="name" />
+                <img
+                  src="/name.png"
+                  class="w-5"
+                  alt="name"
+                />
               </div>
               <div class="w-10/12">{{profile.firstName}} {{profile.lastName}}</div>
               <div class="w-1/12">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <i
+                  class="fa fa-angle-right"
+                  aria-hidden="true"
+                ></i>
               </div>
             </li>
           </a>
@@ -36,11 +41,17 @@
           <a href="#">
             <li class="flex-wrap flex mt-5 mb-5 hover:bg-gray-200 py-5 px-8">
               <div class="w-1/12 text-xl">
-                <i class="fa fa-mobile" aria-hidden="true"></i>
+                <i
+                  class="fa fa-mobile"
+                  aria-hidden="true"
+                ></i>
               </div>
               <div class="w-10/12">{{profile.phone}}</div>
               <div class="w-1/12">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <i
+                  class="fa fa-angle-right"
+                  aria-hidden="true"
+                ></i>
               </div>
             </li>
           </a>
@@ -50,11 +61,17 @@
           <a href="#">
             <li class="flex-wrap flex mt-5 mb-5 hover:bg-gray-200 py-5 px-8">
               <div class="w-1/12">
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <i
+                  class="fa fa-envelope-o"
+                  aria-hidden="true"
+                ></i>
               </div>
               <div class="w-10/12">{{profile.email}}</div>
               <div class="w-1/12">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <i
+                  class="fa fa-angle-right"
+                  aria-hidden="true"
+                ></i>
               </div>
             </li>
           </a>
@@ -64,11 +81,17 @@
           <a href="#">
             <li class="flex-wrap flex mt-5 mb-5 hover:bg-gray-200 py-5 px-8">
               <div class="w-1/12">
-                <i class="fa fa-key" aria-hidden="true"></i>
+                <i
+                  class="fa fa-key"
+                  aria-hidden="true"
+                ></i>
               </div>
               <div class="w-10/12">Password</div>
               <div class="w-1/12">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <i
+                  class="fa fa-angle-right"
+                  aria-hidden="true"
+                ></i>
               </div>
             </li>
           </a>
@@ -117,12 +140,12 @@ export default {
   },
   methods: {
     async getCities(state) {
-      this.cities = await this.$axios.$get("countries/cities", {
+      this.cities = await this.$axios.$get("api/countries/cities", {
         params: { state }
       });
     },
     async getStates() {
-      this.states = await this.$axios.$get("countries/states");
+      this.states = await this.$axios.$get("api/countries/states");
     },
     ...mapActions({
       updateProfile: "auth/updateProfile"
