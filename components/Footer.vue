@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="flex flex-wrap justify-between py-8">
       <div class="lg:p-8 p-2">
-        <div class="text-left mr-2 font-bold text-sm headings">ONLINE SHOPPING</div>
+        <div class="mr-2 font-bold text-sm headings">ONLINE SHOPPING</div>
         <ul class="font-hairline text-sm">
           <li>
             <nuxt-link to="/search?q=men">Men</nuxt-link>
@@ -28,7 +28,7 @@
         </ul>
       </div>
       <div class="lg:p-8 p-2">
-        <div class="text-center mr-2 font-bold text-sm headings">USEFUL LINKS</div>
+        <div class="mr-2 font-bold text-sm headings">USEFUL LINKS</div>
         <ul class="font-hairline text-sm">
           <li>
             <nuxt-link to="/sell-online">Sell on Litekart</nuxt-link>

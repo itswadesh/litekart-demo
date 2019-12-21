@@ -55,7 +55,7 @@
               </div>
             </div>
           </div>
-          <div class="hidden lg:block">
+          <div class="lg:block">
             <AddressNewCard class="mx-2 mb-2" />
           </div>
         </div>

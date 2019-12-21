@@ -70,7 +70,7 @@
           />
           <div class="flex text-xs font-bold">
             Cart
-            <div class="primary font-bold desktop-badge rounded-full px-1 absolute text-center">
+            <div class="primary font-bold desktop-badge rounded-full px-1 absolute text-center" v-if="cart.qty>0">
               <div class="number">{{cart.qty }}</div>
             </div>
           </div>

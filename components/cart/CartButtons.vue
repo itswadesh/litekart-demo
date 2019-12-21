@@ -17,7 +17,7 @@
         </button>
         <div class="px-2 flex items-center text-center">
           <div v-if="!loading">{{getQty({pid:product._id, vid:variant._id})}}</div>
-          <img alt="loading svg" class="w-3 h-4" src="/loading.svg" v-else />
+          <img alt="..." class="w-3 h-4" src="/loading.svg" v-else />
         </div>
         <button
           class="primary rounded-full w-8 h-8"

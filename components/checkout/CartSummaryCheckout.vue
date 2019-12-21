@@ -38,7 +38,7 @@
         <div class="font-bold text-black text-right">{{cart.total | currency}}</div>
       </div>
       <Button
-        @click="$router.push(`/checkout/payment-mobile?address=${selectedAddress}`)"
+        @click="proceed"
         color="primary"
       >CONTINUE</Button>
     </div>
@@ -58,6 +58,15 @@ export default {
   },
   components: {
     Button
+  },
+  methods:{
+    proceed(){
+      if(!this.selectedAddress){
+        this.$router.push(`/checkout/add`)
+        return
+      }
+      this.$router.push(`/checkout/payment-mobile?address=${this.selectedAddress}`)
+    }
   }
 };
 </script>

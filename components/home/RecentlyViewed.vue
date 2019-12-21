@@ -5,10 +5,10 @@
         Recently Viewed
         <!-- <span class="text-gray-500 text-xs">23:57:50 Left</span> -->
       </div>
-      <button
+      <!-- <button
         class="primary text-xs px-2 rounded"
         @click="$router.push('/search')"
-      >View All</button>
+      >View All</button> -->
     </div>
     <carousel
       :perPageCustom="[[425, 2], [768, 3], [1024, 5]]"
