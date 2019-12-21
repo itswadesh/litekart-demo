@@ -5,10 +5,11 @@
       <Hero />
       <RecentlyViewed />
       <Heros />
-      <YouMayLike />
+      <Sale />
       <!-- <Deals v-if="1==1" />
       <DealsSkeleton v-else /> -->
       <Banners :banners="$store.state.settings && $store.state.settings.banners && $store.state.settings.banners.offers" />
+      <YouMayLike />
       <!-- <BannersSkeleton /> -->
     </div>
   </div>
@@ -18,6 +19,7 @@
 import Hero from "~/components/home/Hero";
 import Heros from "~/components/home/Heros";
 import Deals from "~/components/home/Deals";
+import Sale from "~/components/home/Sale";
 import RecentlyViewed from "~/components/home/RecentlyViewed";
 import Banners from "~/components/home/Banners";
 import YouMayLike from "~/components/home/YouMayLike";
@@ -31,6 +33,7 @@ export default {
     Heros,
     MegamenuMobile,
     Deals,
+    Sale,
     Banners,
     YouMayLike,
     RecentlyViewed,

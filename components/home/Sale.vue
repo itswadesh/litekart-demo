@@ -3,8 +3,8 @@
     <div class="w-full shadow">
       <div class="w-full p-3 border-b h-14 flex justify-between">
         <p class="w-1/2 float-left relative headings">
-          You may also Like
-          <span class="text-gray-500 text-xs absolute inset-x-0 you">Based on Your Order</span>
+          Sale
+          <span class="text-gray-500 text-xs absolute inset-x-0 you">Items on huge discount</span>
         </p>
         <button
           class="primary text-xs right-0 py-1 px-2 rounded"
@@ -63,7 +63,7 @@ export default {
   async created() {
     try {
       this.loading = true;
-      const res = await this.$axios.$get("api/products/featured");
+      const res = await this.$axios.$get("api/products/sale");
       this.products = res.data;
     } catch (e) {
     } finally {

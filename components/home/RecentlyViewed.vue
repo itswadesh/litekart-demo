@@ -32,7 +32,7 @@
           />
           <div class>
             <div class="font-bold text-xs mb-2">{{product.name | truncate(45)}}</div>
-            <p class="text-green-700 text-xs text-center">Extra 5% off</p>
+            <p class="text-green-700 text-xs text-center">Extra {{Math.round(((product.mrp-product.price) *100) / product.mrp)}}% off</p>
           </div>
         </nuxt-link>
       </slide>
