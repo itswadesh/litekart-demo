@@ -9,7 +9,9 @@
         @variantChanged="variantChanged"
       />
     </div>
-    <SimilarProducts :product="product" />
+    <YouMayLike />
+    <!-- <SimilarProducts :product="product" /> -->
+
   </div>
 </template>
 
@@ -20,6 +22,7 @@ import ProductImage from "~/components/details/ProductImage";
 import Breadcrumb from "~/components/details/Breadcrumb";
 import ProductDetails from "~/components/details/ProductDetails";
 import SimilarProducts from "~/components/details/SimilarProducts";
+import YouMayLike from "~/components/home/YouMayLike";
 export default {
   async validate({ query, $axios }) {
     try {
@@ -33,7 +36,7 @@ export default {
     ProductImage,
     Breadcrumb,
     ProductDetails,
-    SimilarProducts
+    YouMayLike
   },
   mounted() {
     if (this.product) {

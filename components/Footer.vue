@@ -21,8 +21,7 @@
               target="_blank"
               href="https://www.angularcode.com/"
             >
-              Litekart
-              Insider</a>
+              Litekart Insider</a>
             <span class="desktop-superscript primary">New</span>
           </li>
         </ul>
@@ -47,12 +46,6 @@
           </li>
           <li>
             <nuxt-link to="/faq-for-sellers">FAQ for Sellers</nuxt-link>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://www.angularcode.com/"
-            >Litekart Insider</a>
           </li>
         </ul>
       </div>

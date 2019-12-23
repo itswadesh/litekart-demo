@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full md:w-6/12 lg:w-7/12 leading-relaxed bg-gray-100">
-    <div class="bg-white mb-3 lg:mb-0">
+  <div class="w-full md:w-6/12 lg:w-7/12 leading-relaxed">
+    <div class="bg-gray mb-3 lg:mb-0">
       <div class="pb-4 border-b border-gray-200 px-3">
         <p class="text-2xl headings font-semibold">{{product.brandName}}</p>
         <p>{{product.name}}</p>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div>
-      <div class="items-center text-sm lg:text-lg px-3 bg-white my-3 p-3 lg:my-0">
+      <div class="items-center text-sm lg:text-lg px-3 bg-gray-100 my-3 p-3 lg:my-0">
         <div class="flex">
           <span class="heading w-1/2 lg:w-32">SELECT SIZE</span>
           <div class="text-primary">
@@ -53,7 +53,7 @@
             @click="selectVariant(v)"
             :class="{'bg-gray-700 text-white': v.size==(userSelectedVariant && userSelectedVariant.size)}"
             v-if="v.stock>0"
-            class="focus:outline:none m-1 rounded-full bg-white border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
+            class="focus:outline:none m-1 rounded-full border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
           >
             <p class="text-xs">{{v.size}}</p>
             <div
@@ -86,7 +86,7 @@
           >{{p.color.name}}</span>
         </nuxt-link>
       </div>
-      <div class="flex fixed bottom-0 lg:relative bg-white lg:px-3 p-2 w-full z-10">
+      <div class="flex fixed bottom-0 lg:relative lg:px-3 p-2 w-full z-10">
         <button
           :disabled="!selectedVariant || !selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
@@ -97,14 +97,28 @@
             aria-hidden="true"
           ></i> ADD TO BAG
         </button>
-        <button class="w-5/12 lg:w-1/3 bg-white border border-grey-300 text-black py-2 px-6 rounded font-bold text-sm lg:text-lg">
+        <button
+          @click="toggleWishlist"
+          v-if="wished"
+          class="w-5/12 lg:w-1/3 border border-grey-300 text-green-500 py-2 px-6 rounded font-bold text-sm lg:text-lg"
+        >
+          <i
+            class="fa fa-check mr-2 hidden lg:block"
+            aria-hidden="true"
+          ></i> WISHED
+        </button>
+        <button
+          @click="toggleWishlist"
+          v-else
+          class="w-5/12 lg:w-1/3 border border-grey-300 text-black py-2 px-6 rounded font-bold text-sm lg:text-lg"
+        >
           <i
             class="fa fa-bookmark mr-2 hidden lg:block"
             aria-hidden="true"
           ></i> WISHLIST
         </button>
       </div>
-      <div class="py-8 border-b border-gray-300 px-3 bg-white my-3 lg:my-0">
+      <div class="py-8 border-b border-gray-300 px-3 my-3 lg:my-0">
         <p class="font-bold text-lg">
           BEST OFFERS
           <i
@@ -126,7 +140,7 @@
             </span>
           </button>
 
-          <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
+          <!-- <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
             <div class="font-bold">10 super cashback on MobiWiki</div>
             <div class="font-hairline text-gray-500 text-sm">Max super cashback of Rs.250. TCA</div>
             <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
@@ -160,10 +174,13 @@
                 aria-hidden="true"
               ></i>
             </span>
-          </button>
+          </button> -->
         </div>
       </div>
-      <div class="py-8 border-b border-gray-300 px-3 bg-white my-3 lg:my-0">
+      <div
+        class="py-8 border-b border-gray-300 px-3 bg-gray-100 my-3 lg:my-0"
+        v-if="product.details"
+      >
         <p class="font-bold text-lg">
           PRODUCT DETAILS
           <i
@@ -171,62 +188,31 @@
             aria-hidden="true"
           ></i>
         </p>
-        <span class="text-gray-500">Black printed woven fit and flare dress, has a tie-up neck, three-quarter sleeves, flared hem</span>
-        <p class="font-bold text-lg">Size & Fit</p>
+        <span class="text-gray-500">{{product.detail}}</span>
+        <!-- <p class="font-bold text-lg">Size & Fit</p>
         <span class="headings">he model (height 5'8") is wearing a size S</span>
 
         <p class="font-bold text-lg">Material & Care</p>
         <span class="headings">
           Polyester
           <br />Machine-wash
-        </span>
-
-        <p class="font-bold text-lg">Specifications</p>
-        <div>
-          <div class="w-full flex py-1">
-            <div class="w-1/2 border-b border-gray-400 mr-4">
-              <p class="text-xs text-gray-500">Shape</p>
-              <span class="headings text-sm">Fit and Flare</span>
-            </div>
-            <div class="w-1/2 border-b border-gray-400 mr-4">
-              <p class="text-xs text-gray-500">Neck</p>
-              <span class="headings text-sm">Tie-Up Neck</span>
-            </div>
-          </div>
-          <div class="w-full flex py-4">
-            <div class="w-1/2 border-b border-gray-400 mr-4">
-              <p class="text-xs text-gray-500">Shape</p>
-              <span class="headings text-sm">Fit and Flare</span>
-            </div>
-            <div class="w-1/2 border-b border-gray-400 mr-4">
-              <p class="text-xs text-gray-500">Neck</p>
-              <span class="headings text-sm">Tie-Up Neck</span>
-            </div>
-          </div>
-          <div class="w-full flex py-4">
-            <div class="w-1/2 border-b border-gray-400 mr-4">
-              <p class="text-xs text-gray-500">Shape</p>
-              <span class="headings text-sm">Fit and Flare</span>
-            </div>
-            <div class="w-1/2 border-b border-gray-400 mr-4">
-              <p class="text-xs text-gray-500">Neck</p>
-              <span class="headings text-sm">Tie-Up Neck</span>
-            </div>
-          </div>
-          <div class="w-full flex py-4">
-            <div class="w-1/2 border-b border-gray-400 mr-4">
-              <p class="text-xs text-gray-500">Shape</p>
-              <span class="headings text-sm">Fit and Flare</span>
-            </div>
-            <div class="w-1/2 border-b border-gray-400 mr-4">
-              <p class="text-xs text-gray-500">Neck</p>
-              <span class="headings text-sm">Tie-Up Neck</span>
-            </div>
-          </div>
-          <span class="font-bold text-primary">See More</span>
-        </div>
+        </span> -->
       </div>
-      <div class="p-3 bg-white lg:my-0 my-3">
+      <div class="px-3">
+        <p class="font-bold text-lg">Specifications</p>
+        <div class="w-full flex py-1">
+          <div
+            class="w-1/2 border-b border-gray-400 mr-4"
+            v-for="f in product.features"
+            :key="f._id"
+          >
+            <p class="text-xs text-gray-500">{{f.key}}</p>
+            <span class="headings text-sm">{{f.val}}</span>
+          </div>
+        </div>
+        <!-- <span class="font-bold text-primary">See More</span> -->
+      </div>
+      <!-- <div class="p-3 bg-white lg:my-0 my-3">
         <p class="font-bold text-lg">
           DELIVERY OPTIONS
           <i
@@ -272,7 +258,7 @@
           <p class="font-semibold text-sm text-black">Country of origin</p>
           <span class="text-xs">India</span>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -290,6 +276,8 @@ export default {
   },
   data() {
     return {
+      wished: false,
+      loading: false,
       userSelectedVariant: null,
       shake: false,
       groupProducts: [],
@@ -301,6 +289,9 @@ export default {
     ...mapGetters({
       checkCart: "cart/checkCart"
     }),
+    user() {
+      return (this.$store.state.auth || {}).user || null;
+    },
     calculateOffPercent() {
       if (!this.product || !this.product.variants[0]) return 0;
       let percent =
@@ -320,15 +311,87 @@ export default {
     }
   },
   async created() {
-    if (this.product.group && this.product.group.trim()) {
-      this.groupProducts = await this.$axios.get(
-        "api/products/groupItems/" + this.product.group
+    try {
+      // Check if this product at wishlist
+      this.loading = true;
+      const w = await this.$axios.$get(
+        "api/wishlists/product/" +
+          this.product._id +
+          "/" +
+          this.selectedVariant._id
       );
+      this.loading = false;
+      this.wished = w.data.length > 0 ? true : false;
+      // Find other available colors (grouped products)
+      if (this.product.group && this.product.group.trim()) {
+        this.groupProducts = await this.$axios.get(
+          "api/products/groupItems/" + this.product.group
+        );
+      }
+    } catch (e) {
+      this.loading = false;
     }
   },
   methods: {
     ...mapMutations(["setErr"]),
     ...mapActions({ addToCart: "cart/addToCart" }),
+    toggleWishlist() {
+      if (!this.userSelectedVariant) {
+        this.setErr("Please select a size");
+        if (process.client) {
+          const el = this.$el.getElementsByClassName("sizeSelector")[0];
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+        this.shake = true;
+        setTimeout(() => {
+          this.shake = false;
+        }, 3000);
+        return;
+      } else if (!this.user) {
+        this.pushToLogin();
+        return;
+      }
+      this.save();
+    },
+    async save() {
+      let sourceCatgID;
+      if (this.product.categories && this.product.categories[0])
+        sourceCatgID = this.product.categories[0]._id;
+      this.loading = true;
+      this.product.img = this.product.imgA;
+      let p = { product: this.product, variant: this.userSelectedVariant };
+      try {
+        let data = await this.$axios.$post("api/wishlists", p);
+        if (data.msg !== "deleted") {
+          this.wished = true;
+          this.$store.commit("success", "Added to your wishlist"); // Should be at end because it returns false
+        } else {
+          this.wished = false;
+          // Could not do commit('setErr') because it throws back error
+          this.$store.commit("setErr", "Removed from wishlist");
+          // this.$store.commit("setErr", "Removed from wishlist"); // Should be at end because it returns false
+        }
+        this.loading = false;
+      } catch (err) {
+        if (err.response) {
+          if (err.response.status == 401) {
+            this.pushToLogin();
+          }
+        }
+        this.loading = false;
+        // this.err(err);
+      }
+    },
+    pushToLogin() {
+      const query = this.$route.query;
+      let route = this.$route.path;
+      route = route.substr(1);
+      if (!query || !query.id) this.$router.push(`/login?return=${route}`);
+      else this.$router.push(`/login?return=${route}?id=${query.id}&wish=true`);
+      // &vid=${this.variant._id}
+    },
     toast() {
       this.$toast
         .show(

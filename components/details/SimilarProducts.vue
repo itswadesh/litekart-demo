@@ -10,7 +10,11 @@
       <div class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
         <a href="#">
           <div class="shadow relative m-3">
-            <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+            <img
+              class="h-48 w-full object-cover"
+              src="/cart-product.jpg"
+              alt="product image"
+            />
             <img
               src="/close-img.png"
               alt="close button"
@@ -38,7 +42,11 @@
       <div class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
         <a href="#">
           <div class="shadow relative m-3">
-            <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+            <img
+              class="h-48 w-full object-cover"
+              src="/cart-product.jpg"
+              alt="product image"
+            />
             <img
               src="/close-img.png"
               alt="close button"
@@ -66,7 +74,11 @@
       <div class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
         <a href="#">
           <div class="shadow relative m-3">
-            <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+            <img
+              class="h-48 w-full object-cover"
+              src="/cart-product.jpg"
+              alt="product image"
+            />
             <img
               src="/close-img.png"
               alt="close button"
@@ -93,7 +105,11 @@
       <div class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
         <a href="#">
           <div class="shadow relative m-3">
-            <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+            <img
+              class="h-48 w-full object-cover"
+              src="/cart-product.jpg"
+              alt="product image"
+            />
             <img
               src="/close-img.png"
               alt="close button"
@@ -121,7 +137,11 @@
       <div class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between">
         <a href="#">
           <div class="shadow relative m-3">
-            <img class="h-48 w-full object-cover" src="/cart-product.jpg" alt="product image" />
+            <img
+              class="h-48 w-full object-cover"
+              src="/cart-product.jpg"
+              alt="product image"
+            />
             <img
               src="/close-img.png"
               alt="close button"
