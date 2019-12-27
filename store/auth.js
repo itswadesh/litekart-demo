@@ -125,7 +125,7 @@ export const actions = {
         try {
             return await this.$axios.$post('api/users/forgot', payload)
         } catch (err) {
-            commit('setErr', err, { root: true })
+            throw err
         }
     },
     async changePassword({ commit, rootState }, payload) {

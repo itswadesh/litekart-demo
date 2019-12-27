@@ -13,11 +13,7 @@
       <form class="px-0 lg:px-16 py-8">
         <span class="text-sm">Minimum 6 characters</span>
         <div class="mb-4 lg:w-1/2 w-full mt-3">
-          <input
-            class="bg-gray-300 appearance-none border rounded w-full py-2 px-3 headings leading-tight focus:outline-none"
-            type="text"
-            placeholder="New Password"
-          />
+         <Textbox v-model="password"                  name="password"                      label="Password"                      ref="password"                      type="password"                      class="w-full"                    />
         </div>
         <div class="w-1/3 lg:w-1/2">
           <button
@@ -32,7 +28,30 @@
 </template>
 
 <script>
+import Textbox from "~/components/ui/Textbox";
+
 export default {
-  layout: "account"
+  layout: "account",
+  components:{Textbox},
+  methods:{
+    async submit() {
+      if (!this.password || this.password === "") {
+        this.$store.commit("setErr", "Current Password can not be blank");
+        return;
+      } else if (!this.password || this.password === "") {
+        this.$store.commit("setErr", "New Password can not be blank");
+        return;
+      }
+      try {
+        await this.$store.dispatch("auth/changePassword", this.password);
+        this.$router.push("/my/orders");
+      } catch (e) {}
+    }
+  },
+  head() {
+    return {
+      title: "Change Password"
+    };
+  }
 };
 </script>

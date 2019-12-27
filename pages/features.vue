@@ -16,6 +16,7 @@
     </div>
     <div class="border border-gray-400 bg-gray-300 p-10">
       <h1 class="text-2xl">Technologies Used</h1>
+      <p>Serverless</p>
       <p>Docker</p>
       <p>Elastic Search</p>
       <p>MongoDB</p>

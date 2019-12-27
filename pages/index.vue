@@ -10,6 +10,7 @@
       <DealsSkeleton v-else /> -->
       <Banners :banners="$store.state.settings && $store.state.settings.banners && $store.state.settings.banners.offers" />
       <YouMayLike />
+      <WhatsNew />
       <!-- <BannersSkeleton /> -->
     </div>
   </div>
@@ -23,6 +24,7 @@ import Sale from "~/components/home/Sale";
 import RecentlyViewed from "~/components/home/RecentlyViewed";
 import Banners from "~/components/home/Banners";
 import YouMayLike from "~/components/home/YouMayLike";
+import WhatsNew from "~/components/home/WhatsNew";
 import MegamenuMobile from "~/components/MegamenuMobile";
 // skeletons
 import BannersSkeleton from "~/components/home/BannersSkeleton";
@@ -36,6 +38,7 @@ export default {
     Sale,
     Banners,
     YouMayLike,
+    WhatsNew,
     RecentlyViewed,
     //Skeletons
     BannersSkeleton,

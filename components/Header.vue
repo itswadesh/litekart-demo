@@ -26,7 +26,7 @@
       <div class="flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mr-3 w-40 headings">
         <nuxt-link
           class="w-auto"
-          to="/login"
+          to="/account/login"
           v-if="!user"
         >
           <img

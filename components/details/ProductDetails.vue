@@ -388,8 +388,8 @@ export default {
       const query = this.$route.query;
       let route = this.$route.path;
       route = route.substr(1);
-      if (!query || !query.id) this.$router.push(`/login?return=${route}`);
-      else this.$router.push(`/login?return=${route}?id=${query.id}&wish=true`);
+      if (!query || !query.id) this.$router.push(`/account/login?return=${route}`);
+      else this.$router.push(`/account/login?return=${route}?id=${query.id}&wish=true`);
       // &vid=${this.variant._id}
     },
     toast() {

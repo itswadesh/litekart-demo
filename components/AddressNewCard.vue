@@ -10,7 +10,7 @@
       >
         <img
           src="/rounded-plus.png"
-          alt="plus"
+          alt="+"
           class="w-10 m-auto"
         />
         <div>Add new address</div>

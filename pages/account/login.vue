@@ -88,7 +88,7 @@
                     />
                   </div>
                 </div>
-                <div class="flex items-center justify-between">
+                <div class="flex-col items-center justify-between">
                   <button
                     type="submit"
                     :disabled="loading"
@@ -103,6 +103,7 @@
                     </div>
                     <span v-else>{{submitText}}</span>
                   </button>
+                  <p class="text-xs mt-2"><nuxt-link to="/account/forgot-password">Forgot Password?</nuxt-link></p>
                 </div>
               </div>
             </form>
