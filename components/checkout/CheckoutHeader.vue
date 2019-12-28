@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap justify-between p-2">
+  <div class="flex flex-wrap justify-between p-2 lg:px-8 lg:pb-8">
     <div class="order-0 lg:order-0">
       <nuxt-link to="/">
         <img
@@ -24,10 +24,7 @@
         class="flex-1 mx-4 my-2"
         style="border-top:dashed 1px;"
       />
-      <nuxt-link
-        to="/checkout/payment-mobile"
-        :class="{'text-green-500 border-green-500 border-b-2':selected=='payment'}"
-      >PAYMENT</nuxt-link>
+      <div :class="{'text-green-500 border-green-500 border-b-2':selected=='payment'}">PAYMENT</div>
     </div>
     <div class="order-1 lg:order-3 text-center flex items-center">
       <img

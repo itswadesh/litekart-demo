@@ -16,6 +16,7 @@
         <div class="text-xs text-gray-600">Step 3 of 3</div>
       </div>
     </div>
+    <br />
     <div class>
       <!-- <div class="p-2 lg:px-0 lg:w-1/2 m-auto">
         <ul class="shadow rounded text-sm bg-white border-l-4 border-green-600 text-gray-500 font-hairline">

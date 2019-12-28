@@ -6,7 +6,6 @@
       :slugPath="category.slugPath" class="px-1 py-0" />
     /> -->
       <div class="font-semibold flex p-1 headings">
-        TOTAL-
         <div class="font-hairline text-1">{{count}} items</div>
       </div>
 

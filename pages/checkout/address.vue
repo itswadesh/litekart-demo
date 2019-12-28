@@ -98,7 +98,7 @@ const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
 export default {
   fetch({ store, redirect }) {
     if (!(store.state.auth || {}).user)
-      return redirect("/login?return=checkout/address");
+      return redirect("/account/login?return=/checkout/address");
   },
   data() {
     return {

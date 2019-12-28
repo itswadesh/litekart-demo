@@ -11,7 +11,7 @@
           <img
             alt="thanks for the purchase"
             src="/order-success.png"
-            class="mb-2 object-cover"
+            class="mb-2 object-cover rounded"
           />
         </div>
         <div class="font-hairline text-sm">

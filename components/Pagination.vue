@@ -1,26 +1,26 @@
 <template>
   <div class="flex flex-row w-full">
-    <ul class="flex-1 pagination-container justify-start w-full text-xs lg:text-sm">
-      <li class="pagination-paginationMeta w-full lg:w-auto">Page {{current}} of {{count}}</li>
+    <div class="flex-1 pagination-container justify-start w-full text-xs lg:text-sm">
+      <div class="pagination-paginationMeta w-full lg:w-auto">Page {{current}} of {{count}}</div>
       <div class="flex-1 justify-start w-full lg:w-auto">
         <button
           v-if="current>1"
-          class="lg:mx-5 bg-white hover:bg-gray-100 text-primary font-semibold lg:py-2 p-2 lg:px-4 border border-gray-400 rounded shadow rounded inline-flex items-center"
+          class="hidden lg:inline-flex lg:mx-5 bg-white hover:bg-gray-100 text-primary font-semibold lg:py-2 p-2 lg:px-4 border border-gray-400 rounded shadow rounded  items-center"
           @click="$emit('change',current-1)"
         >
           <i class="fa fa-caret-left" />
           &nbsp;
           <span>Previous</span>
         </button>
-        <li
-          class="lg:py-2 lg:px-3 py-2 px-1 lg:mx-2"
+        <button
+          class=" w-8 h-8 rounded-full"
           :class="{'bg-black font-medium text-white tracking-wide rounded-sm':current==i}"
           v-for="i in pages"
           :key="i"
           @click="$emit('change',i)"
-        >{{i}}</li>
+        >{{i}}</button>
         <button
-          class="bg-white hover:bg-gray-100 text-primary font-semibold py-2 px-4 border border-gray-400 rounded shadow rounded inline-flex items-center"
+          class="hidden lg:inline-flex bg-white hover:bg-gray-100 text-primary font-semibold py-2 px-4 border border-gray-400 rounded shadow rounded inline-flex items-center"
           @click="$emit('change',current+1)"
         >
           <span>Next</span>
@@ -28,7 +28,7 @@
           <i class="fa fa-caret-right" />
         </button>
       </div>
-    </ul>
+    </div>
   </div>
 </template>
 

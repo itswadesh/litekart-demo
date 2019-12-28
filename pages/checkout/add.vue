@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CheckoutHeader />
+    <CheckoutHeader selected="address" />
     <div class="w-full pb-4 lg:w-1/3 m-auto">
       <div>
         <div class="p-3 flex shadow lg:shadow-none items-center justify-between">
@@ -76,15 +76,15 @@
             v-model="a.phone"
           />
         </div>
-        <div class="flex shadow lg:shadow-none fixed bottom-0 justify-between w-full lg:w-1/3">
+        <div class="flex shadow lg:shadow-none fixed lg:relative bottom-0 justify-between w-full">
           <button
             type="button"
             @click="$router.push('/checkout/address')"
-            class="tracking-widest p-3 w-1/2 bg-white text-black text-sm font-semibold"
+            class="tracking-widest p-3 w-1/2 bg-white text-black text-sm font-semibold lg:rounded"
           >CANCEL</button>
           <button
             type="submit"
-            class="tracking-widest p-3 w-1/2 primary text-sm font-semibold"
+            class="tracking-widest p-3 w-1/2 primary text-sm font-semibold lg:rounded"
           >CONTINUE</button>
         </div>
       </form>
@@ -106,9 +106,14 @@ export default {
     Textbox
   },
   async created() {
-    try {
-      this.a = await this.$axios.$get(`api/addresses/${this.$route.query.id}`);
-    } catch (e) {}
+    if (this.$route.query.id) {
+      // If editing
+      try {
+        this.a = await this.$axios.$get(
+          `api/addresses/${this.$route.query.id}`
+        );
+      } catch (e) {}
+    }
   },
   methods: {
     go(url) {

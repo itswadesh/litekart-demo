@@ -80,6 +80,7 @@ import HeaderBody from "~/components/HeaderBody";
 import Logo from "~/components/Logo";
 import NoProduct from "~/components/NoProduct";
 import { constructURL } from "~/lib/";
+import { sorts } from "~/config/";
 import vPagination from "vue-plain-pagination";
 import { BackToTopDark, Loading } from "~/components/ui";
 export default {
@@ -96,12 +97,7 @@ export default {
         price: [1, 100],
         sort: null,
         features: { Type: [], Fit: [], Fabric: [], Neck: [], Color: [] },
-        sorts: [
-          { name: "Relevance", val: null },
-          { name: "Whats New", val: "-createdAt" },
-          { name: "Price low to high", val: "variants.price" },
-          { name: "Price high to low", val: "-variants.price" }
-        ]
+        sorts: sorts
       },
       products: [],
       facets: [],
