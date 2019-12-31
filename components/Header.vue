@@ -7,9 +7,9 @@
       <div class="flex items-center flex-shrink-0 text-orange order-1 w-1/2 lg:w-auto">
         <nuxt-link to="/">
           <img
-            class="w-12 h-10 ml-2"
-            src="/logo.svg"
-            alt="logo"
+            class="h-10 ml-2"
+            :src="`${$store.state.settings.CDN_URL}/${$store.state.settings.logo}`"
+            alt=""
           />
         </nuxt-link>
         <div class="hidden lg:block flex flex-none text-sm py-4 xs:justify-between items-center text-gray order-2">
@@ -70,7 +70,10 @@
           />
           <div class="flex text-xs font-bold">
             Cart
-            <div class="primary font-bold desktop-badge rounded-full px-1 absolute text-center" v-if="cart.qty>0">
+            <div
+              class="primary font-bold desktop-badge rounded-full px-1 absolute text-center"
+              v-if="cart.qty>0"
+            >
               <div class="number">{{cart.qty }}</div>
             </div>
           </div>
