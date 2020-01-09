@@ -8,10 +8,13 @@
     navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)' alt='right icon'>"
     navigation-prev-label="<img src='/chevron-right.svg' alt='right icon'/>"
   >
-    <slide v-for="(image, index) in heroImages" :key="index">
+    <slide
+      v-for="(image, index) in heroImages"
+      :key="index"
+    >
       <nuxt-link :to="image.link">
         <img
-          v-lazy="$store.state.settings.CDN_URL+image.img+'?tr=w-1680,h-280'"
+          v-lazy="$store.state.settings.CDN_URL+image.img+'?tr=w-1920,h-360'"
           alt="categories"
           class="h-48 lg:h-auto object-cover"
         />
@@ -24,7 +27,7 @@
 export default {
   data() {
     return {
-      heroImages: [],
+      heroImages: []
     };
   },
   async created() {

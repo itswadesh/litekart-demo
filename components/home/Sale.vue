@@ -30,8 +30,8 @@
             <div class="relative">
               <img
                 style="height:255px;object-fit: cover;"
-                v-if="product.imgUrls"
-                v-lazy="product.imgUrls[0]"
+                v-if="product.img"
+                v-lazy="$store.state.settings.CDN_URL+product.img[0]"
                 alt="you also like"
               />
               <i

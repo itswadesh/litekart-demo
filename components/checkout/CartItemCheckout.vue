@@ -2,17 +2,22 @@
   <div class="flex hr-line justify-between shadow rounded">
     <div class="lg:w-1/5 left-0 xs:w-3/12 h-32">
       <nuxt-link :to="`/${item.product.slug}?id=${item.product._id}`">
-        <img class="h-40 object-cover" v-lazy="item.product.img" alt="product image" />
-        <div
-          class="lg:hidden xs:visible text-black p-2 bg-gray-300 rounded rounded-t-none"
-        >Arrives 19 Sep</div>
+        <img
+          class="h-40 object-cover"
+          v-lazy="$store.state.settings.CDN_URL+item.product.img"
+          alt=""
+        />
+        <div class="lg:hidden xs:visible text-black p-2 bg-gray-300 rounded rounded-t-none">Arrives 19 Sep</div>
       </nuxt-link>
     </div>
     <div class="lg:w-4/5 right-0 xs:9/12">
       <div class="pl-4 font-hairline">
         <div class="w-full flex flex-wrap p-2">
           <div class="w-3/4">
-            <a href="#" class="text-black text-lg">{{item.product.name}}</a>
+            <a
+              href="#"
+              class="text-black text-lg"
+            >{{item.product.name}}</a>
             <div class="text-xs font-hairline text-gray-700">Sold By: {{item.product.brand}}</div>
           </div>
           <div class="w-1/4 text-right">
@@ -20,9 +25,7 @@
             <div class="text-gray-500 mb-2 text-xs">
               <span class="line-through">{{item.variant.mrp | currency}}</span>
               <span class>|</span>
-              <span
-                class="text-orange-500 font-hairline"
-              >{{calculateOffPercent(item.variant.mrp, item.variant.price)}}% OFF</span>
+              <span class="text-orange-500 font-hairline">{{calculateOffPercent(item.variant.mrp, item.variant.price)}}% OFF</span>
             </div>
           </div>
         </div>
@@ -31,7 +34,10 @@
             <div class="inline-block relative">Size: {{item.variant.size}}</div>
 
             <div class="flex justify-between">
-              <CartButtons :product="{_id:item.product._id}" :variant="{_id:item.variant._id}" />
+              <CartButtons
+                :product="{_id:item.product._id}"
+                :variant="{_id:item.variant._id}"
+              />
               <div>
                 <button class="p-4 focus:outline-none">MOVE TO WISHLIST</button>
                 <button
@@ -39,8 +45,15 @@
                   @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
                   :disabled="loading"
                 >
-                  <img src="/loading.svg" v-if="loading" alt="..." />
-                  <i class="fa fa-trash" v-else></i>
+                  <img
+                    src="/loading.svg"
+                    v-if="loading"
+                    alt="..."
+                  />
+                  <i
+                    class="fa fa-trash"
+                    v-else
+                  ></i>
                 </button>
               </div>
             </div>

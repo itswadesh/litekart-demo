@@ -1,7 +1,11 @@
 <template>
   <div class="lg:w-2/4 mt-0 lg:mt-10 lg:pr-20 xs:w-full lg:px-10 px-2 headings">
     <div class="text-2xl font-bold py-6 text-center lg:text-left">
-      <i class="fa fa-arrow-left mr-2 block lg:invisible"  @click="$router.push('/my/')"   aria-hidden="true"  ></i>Orders</div>
+      <i
+        class="fa fa-arrow-left mr-2 block lg:invisible"
+        @click="$router.push('/my/')"
+        aria-hidden="true"
+      ></i>Orders</div>
     <nuxt-link
       :to="`/my/orders/${o._id}`"
       v-for="o in orders"
@@ -22,7 +26,7 @@
           <div class="flex items-center">
             <div>
               <img
-                :src="i.img"
+                :src="$store.state.settings.CDN_URL+i.img"
                 class="rounded-full bg-blue-500 mr-2 w-12 h-12"
                 alt=""
               />

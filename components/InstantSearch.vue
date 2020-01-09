@@ -39,7 +39,7 @@
           >
             <span>
               <img
-                :src="i._source.imgUrls[0]"
+                :src="$store.state.settings.CDN_URL+i._source.img[0]"
                 alt="..."
               />
             </span>

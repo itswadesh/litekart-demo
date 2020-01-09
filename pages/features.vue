@@ -174,9 +174,9 @@
       <div class="bg-blue-300 p-4">
         <h1 class="text-4xl">Developer Features</h1>
         <ul>
-          <li>Administration Permission System Roles and Users</li>
+          <li>User roles for better store administration</li>
           <li>Web Services API for easy integration with any third-party application</li>
-          <li>Fully 100% customizable design using templates</li>
+          <li>Fully customizable design using templates</li>
           <li>Content Management System for Informational Pages</li>
           <li>Google and Fb analytics and pixel integration</li>
           <li>100% Search Engine Friendly URLs</li>

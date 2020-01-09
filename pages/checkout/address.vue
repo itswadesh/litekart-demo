@@ -75,8 +75,8 @@
           >
             <img
               class="lg:rounded xs:rounded-b-none w-20"
-              v-lazy="item.product.img"
-              alt="product image"
+              v-lazy="$store.state.settings.CDN_URL+item.product.img"
+              alt=""
             />
             {{item.product.name | truncate(30)}}
           </div>

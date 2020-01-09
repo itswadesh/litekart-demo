@@ -1,5 +1,8 @@
 <template>
-  <div class="flex h-auto p-5 xs:block lg:hidden" style="overflow-x:scroll">
+  <div
+    class="flex h-auto p-5 xs:block lg:hidden"
+    style="overflow-x:scroll"
+  >
     <nuxt-link
       v-for="c in $store.state.categories"
       :key="c._id"

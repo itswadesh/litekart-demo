@@ -10,9 +10,9 @@
         <img
           class="w-full h-64 lg:p-2"
           style="object-fit: cover; max-height:316px;"
-          v-if="product._source.imgUrls"
-          v-lazy="product._source.imgUrls[0]"
-          alt="product image"
+          v-if="product._source.img"
+          v-lazy="$store.state.settings.CDN_URL+product._source.img[0]"
+          alt=""
         />
         <div class="p-1 text-center text-1">
           <div class="text-gray-900 lg:font-bold sm:font-normal text-sm headings">{{product._source.name | truncate(18)}}</div>

@@ -40,7 +40,7 @@
           <div>
             <img
               class="lg:rounded xs:rounded-b-none w-32"
-              :src="i.img"
+              :src="$store.state.settings.CDN_URL+i.img"
               alt=""
             />
           </div>

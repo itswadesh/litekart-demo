@@ -2,19 +2,19 @@
   <div class="w-full md:w-6/12 lg:w-5/12 flex justify-start flex-wrap px-2">
     <div class="flex md:flex-col hidden md:block md:order-1">
       <img
-        v-for="(i,ix) in product.imgUrls"
+        v-for="(i,ix) in product.img"
         :key="ix"
         class="w-24 cursor-pointer"
-        v-lazy="i"
-        alt="product image"
+        v-lazy="$store.state.settings.CDN_URL+i"
+        alt=""
         @click="showAsCurrentImage(i)"
       />
     </div>
     <div class="flex-1 xs:order-1 md:order-2 overflow-hidden">
       <img
         class="hidden md:inline-block w-full zoom"
-        v-lazy="`${currentImage}`"
-        alt="product image"
+        v-lazy="$store.state.settings.CDN_URL+currentImage"
+        alt=""
       />
       <!-- Triggers the virtual dom not matching issue -->
       <carousel
@@ -24,13 +24,13 @@
       >
         <slide
           class="md:hidden inline-block w-full"
-          v-for="i in product.imgUrls"
+          v-for="i in product.img"
           :key="i"
         >
           <img
             class="inline-block w-full"
-            v-lazy="`${i}`"
-            alt="product image"
+            v-lazy="$store.state.settings.CDN_URL+i"
+            alt=""
           />
         </slide>
       </carousel>
@@ -96,7 +96,7 @@ export default {
     };
   },
   created() {
-    this.currentImage = this.product.imgUrls && this.product.imgUrls[0];
+    this.currentImage = this.product.img && this.product.img[0];
   },
   computed: {
     ...mapGetters({

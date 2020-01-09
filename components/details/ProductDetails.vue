@@ -76,7 +76,7 @@
           :class="{'border-red-500': product.color.name=== (p.color && p.color.name)}"
         >
           <img
-            v-lazy="p.imgUrls && p.imgUrls[0]"
+            v-lazy="p.img && $store.state.settings.CDN_URL+p.img[0]"
             :alt="p.color && p.color.name"
             class="rounded-full w-12 h-10"
           />
@@ -86,7 +86,7 @@
           >{{p.color.name}}</span>
         </nuxt-link>
       </div>
-      <div class="flex fixed bottom-0 lg:relative lg:px-3 p-2 w-full z-10">
+      <div class="bg-white flex fixed bottom-0 lg:relative lg:px-3 p-2 w-full z-10">
         <button
           :disabled="!selectedVariant || !selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
@@ -360,7 +360,6 @@ export default {
       if (this.product.categories && this.product.categories[0])
         sourceCatgID = this.product.categories[0]._id;
       this.loading = true;
-      this.product.img = this.product.imgA;
       let p = { product: this.product, variant: this.userSelectedVariant };
       try {
         let data = await this.$axios.$post("api/wishlists", p);
@@ -388,8 +387,12 @@ export default {
       const query = this.$route.query;
       let route = this.$route.path;
       route = route.substr(1);
-      if (!query || !query.id) this.$router.push(`/account/login?return=${route}`);
-      else this.$router.push(`/account/login?return=${route}?id=${query.id}&wish=true`);
+      if (!query || !query.id)
+        this.$router.push(`/account/login?return=${route}`);
+      else
+        this.$router.push(
+          `/account/login?return=${route}?id=${query.id}&wish=true`
+        );
       // &vid=${this.variant._id}
     },
     toast() {
@@ -397,8 +400,8 @@ export default {
         .show(
           `
       <div class="flex w-full">
-        <img class="w-12 h-12 object-cover" src="${this.product.imgUrls &&
-          this.product.imgUrls[0]}" alt='{{product.name}}' />
+        <img class="w-12 h-12 object-cover" src="${this.product.img &&
+          this.$store.state.settings.CDN_URL + this.product.img[0]}" alt="" />
         <div class="toasted-text items-center">
           <div>${this.product.name.substr(0, 20) + "..."}</div>
           <div class="text-gray-600 text-xs">Added to your cart</div>

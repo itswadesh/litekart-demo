@@ -13,7 +13,7 @@
             <img
               class="h-48 w-full object-cover"
               src="/cart-product.jpg"
-              alt="product image"
+              alt=""
             />
             <img
               src="/close-img.png"
@@ -45,7 +45,7 @@
             <img
               class="h-48 w-full object-cover"
               src="/cart-product.jpg"
-              alt="product image"
+              alt=""
             />
             <img
               src="/close-img.png"
@@ -77,7 +77,7 @@
             <img
               class="h-48 w-full object-cover"
               src="/cart-product.jpg"
-              alt="product image"
+              alt=""
             />
             <img
               src="/close-img.png"
@@ -108,7 +108,7 @@
             <img
               class="h-48 w-full object-cover"
               src="/cart-product.jpg"
-              alt="product image"
+              alt=""
             />
             <img
               src="/close-img.png"
@@ -140,7 +140,7 @@
             <img
               class="h-48 w-full object-cover"
               src="/cart-product.jpg"
-              alt="product image"
+              alt=""
             />
             <img
               src="/close-img.png"

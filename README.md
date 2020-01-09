@@ -1,6 +1,6 @@
 # arialshop-tailwind
 
-> Fashion e-Commerce Project like Myntra
+> Fashion e-Commerce Project based on Litekart
 
 ## Build Setup
 

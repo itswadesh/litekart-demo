@@ -26,8 +26,8 @@
         <nuxt-link :to="'/'+product.slug+'?id='+product._id">
           <img
             style="height:255px;object-fit: cover;"
-            v-if="product.imgUrls"
-            v-lazy="product.imgUrls[0]"
+            v-if="product.img"
+            v-lazy="$store.state.settings.CDN_URL+product.img[0]"
             alt="todays deals"
           />
           <div class>

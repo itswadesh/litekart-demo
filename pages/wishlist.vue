@@ -30,7 +30,7 @@
           <nuxt-link :to="`${w.product.slug}?id=${w.product._id}`">
             <img
               class="h-48 w-full object-cover"
-              :src="w.product.img"
+              :src="$store.state.settings.CDN_URL+w.product.img"
               alt=""
             />
           </nuxt-link>

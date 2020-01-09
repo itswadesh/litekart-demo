@@ -28,7 +28,7 @@
               <img
                 alt=""
                 class="lg:rounded xs:rounded-b-none"
-                :src="i.img"
+                :src="$store.state.settings.CDN_URL+i.img"
               />
             </div>
           </div>

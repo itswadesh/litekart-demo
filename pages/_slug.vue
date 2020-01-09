@@ -43,7 +43,7 @@ export default {
       this.scrollTo();
     }
   },
-  async asyncData({ params, query, $axios }) {
+  async asyncData({ params, query, $axios, store }) {
     let product = {},
       selectedVariant = null,
       err = null;
@@ -77,7 +77,11 @@ export default {
       name: product && product.name,
       description: product && product.description,
       sku: product && product.sku,
-      image: HOST + (product && product.imgUrls && product.imgUrls[0])
+      image:
+        HOST +
+        (product &&
+          product.img &&
+          store.state.settings.CDN_URL + product.img[0])
     };
     return { product, selectedVariant, err, structuredData };
   },
@@ -254,7 +258,7 @@ export default {
             (this.product &&
               this.product.imgA &&
               this.product.imgA[0] &&
-              this.product.imgA[0].large) ||
+              this.$store.state.settings.CDN_URL + this.product.imgA[0]) ||
             sharingLogo
         },
         {
@@ -286,7 +290,7 @@ export default {
             (this.product &&
               this.product.imgA &&
               this.product.imgA[0] &&
-              this.product.imgA[0].large) ||
+              $store.state.settings.CDN_URL + this.product.imgA[0]) ||
             sharingLogo
         },
         // Google / Schema.org markup:
@@ -310,7 +314,7 @@ export default {
             (this.product &&
               this.product.imgA &&
               this.product.imgA[0] &&
-              this.product.imgA[0].large) ||
+              $store.state.settings.CDN_URL + this.product.imgA[0].large) ||
             sharingLogo
         },
         {
