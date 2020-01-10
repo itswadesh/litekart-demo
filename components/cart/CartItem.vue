@@ -110,7 +110,7 @@ export default {
     async saveToWishlist(item) {
       this.loading = true;
       try {
-        let data = await this.$axios.$post("wishlists/add", item);
+        let data = await this.$axios.$post("api/wishlists/add", item);
         this.$store.commit("success", "Added to your wishlist");
         this.loading = false;
       } catch (err) {

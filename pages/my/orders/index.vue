@@ -26,7 +26,7 @@
           <div class="flex items-center">
             <div>
               <img
-                :src="$store.state.settings.CDN_URL+i.img"
+                :src="$store.state.settings.CDN_URL+i.img[0]"
                 class="rounded-full bg-blue-500 mr-2 w-12 h-12"
                 alt=""
               />

@@ -30,16 +30,18 @@
           <nuxt-link :to="`${w.product.slug}?id=${w.product._id}`">
             <img
               class="h-48 w-full object-cover"
-              :src="$store.state.settings.CDN_URL+w.product.img"
+              :src="$store.state.settings.CDN_URL+w.product.img[0]"
               alt=""
             />
           </nuxt-link>
-          <img
-            @click="remove(w._id)"
-            src="/close-img.png"
-            alt="x"
-            class="absolute w-4 top-0 right-0 mt-2 mr-2"
-          />
+          <button>
+            <img
+              @click="remove(w._id)"
+              src="/close-img.png"
+              alt="x"
+              class="absolute w-4 top-0 right-0 mt-2 mr-2"
+            />
+          </button>
           <div class="px-2 leading-loose">
             <nuxt-link :to="`${w.product.slug}?id=${w.product._id}`">
               <p class="text-sm font-hairline text-black">{{w.product.name | truncate(50)}}</p>

@@ -31,7 +31,10 @@
             <span class="text-gray-600">{{order.amount.total | currency}} for 1 item</span>
           </div>
         </div>
-        <p class="bg-green-500 text-white text-center p-1 rounded">Please pay {{order.amount.total | currency}} to the delivery agent</p>
+        <p
+          v-if="order.payment.method=='COD'"
+          class="bg-green-500 text-white text-center p-1 rounded"
+        >Please pay {{order.amount.total | currency}} to the delivery agent</p>
         <div
           v-for="i in order.items"
           :key="i._id"
@@ -40,7 +43,7 @@
           <div>
             <img
               class="lg:rounded xs:rounded-b-none w-32"
-              :src="$store.state.settings.CDN_URL+i.img"
+              :src="$store.state.settings.CDN_URL+i.img[0]"
               alt=""
             />
           </div>
@@ -57,19 +60,19 @@
               <div class="relative">
                 <span class="text-black font-bold text-2xl">{{i.price | currency}}</span>
               </div>
-              <div>
+              <div v-if="order.status=='Cancelled'">
                 <div class="rnd-mnt flex">
                   <div class="h-4">
                     <img
                       src="/return.svg"
                       class="rounded-full p-2 w-6 bg-blue-500 mr-2"
-                      alt="return icon"
+                      alt=""
                     />
                   </div>
                   <div
                     class="text-sm"
                     style="margin-top:2px;"
-                  >Cancelled on Sep 20</div>
+                  >Cancelled on {{order.date | date}}</div>
                 </div>
               </div>
             </div>
@@ -115,9 +118,9 @@
               <div>Cash on delivery</div>
               <div>{{order.amount.total | currency}}</div>
             </div>
-            <div class="flex justify-center">
+            <!-- <div class="flex justify-center">
               <button class="text-center px-12 ml-2 mt-2 py-1 bg-gray-300 rounded-full focus:outline-none">₹689 due</button>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="flex-no-wrap justify-center mt-3 text-center rounded shadow bg-white p-2 border-b border-gray-200 text-gray-700 text-sm">
@@ -125,7 +128,7 @@
             <img
               src="/help.png"
               class="m-auto"
-              alt="help icon"
+              alt=""
             />
           </div>
           <div>Need help with this order?</div>
