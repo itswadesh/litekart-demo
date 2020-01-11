@@ -33,10 +33,10 @@
             <nuxt-link to="/sell-online">Sell on Litekart</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/returns-and-refunds">Returns & Refunds</nuxt-link>
+            <nuxt-link to="/refund-policy">Returns & Refunds</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/privacy-statement">Privacy Statement</nuxt-link>
+            <nuxt-link to="/privacy-policy">Privacy Statement</nuxt-link>
           </li>
           <li>
             <nuxt-link to="/about-us">About Us</nuxt-link>
