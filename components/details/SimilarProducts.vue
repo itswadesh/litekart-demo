@@ -17,7 +17,7 @@
             />
             <img
               src="/close-img.png"
-              alt="close button"
+              alt="x"
               class="absolute w-4 top-0 right-0 mt-2 mr-2"
             />
             <div class="px-2 leading-loose">
@@ -49,7 +49,7 @@
             />
             <img
               src="/close-img.png"
-              alt="close button"
+              alt="x"
               class="absolute w-4 top-0 right-0 mt-2 mr-2"
             />
             <div class="px-2 leading-loose">
@@ -81,7 +81,7 @@
             />
             <img
               src="/close-img.png"
-              alt="close button"
+              alt="x"
               class="absolute w-4 top-0 right-0 mt-2 mr-2"
             />
             <div class="px-2 leading-loose">
@@ -112,7 +112,7 @@
             />
             <img
               src="/close-img.png"
-              alt="close button"
+              alt="x"
               class="absolute w-4 top-0 right-0 mt-2 mr-2"
             />
             <div class="px-2 leading-loose">
@@ -144,7 +144,7 @@
             />
             <img
               src="/close-img.png"
-              alt="close button"
+              alt="x"
               class="absolute w-4 top-0 right-0 mt-2 mr-2"
             />
             <div class="px-2 leading-loose">

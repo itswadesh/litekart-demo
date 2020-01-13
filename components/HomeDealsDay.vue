@@ -14,7 +14,7 @@
             <img
               src="/cardimage.webp"
               class="h-32 w-32 mt-2 object-cover"
-              alt="todays deals"
+              alt=""
             />
             <div class="px-2 py-4">
               <div class="font-bold text-xs mb-2">Laptop Accessories</div>
@@ -25,7 +25,7 @@
             <img
               src="/cardimage.webp"
               class="px-2 h-32 w-32 mt-2"
-              alt="todays deals"
+              alt=""
             />
             <div class="px-2 py-4">
               <div class="font-bold text-xs mb-2">Laptop Accessories</div>
@@ -36,7 +36,7 @@
             <img
               src="/cardimage.webp"
               class="px-2 h-32 w-32 mt-2"
-              alt="todays deals"
+              alt=""
             />
             <div class="px-2 py-4">
               <div class="font-bold text-xs mb-2">Laptop Accessories</div>
@@ -47,7 +47,7 @@
             <img
               src="/cardimage.webp"
               class="px-2 h-32 w-32 mt-2"
-              alt="todays deals"
+              alt=""
             />
             <div class="px-2 py-4">
               <div class="font-bold text-xs mb-2">Laptop Accessories</div>
@@ -58,7 +58,7 @@
             <img
               src="/cardimage.webp"
               class="px-2 h-32 w-32 mt-2"
-              alt="todays deals"
+              alt=""
             />
             <div class="px-2 py-4">
               <div class="font-bold text-xs mb-2">Laptop Accessories</div>
@@ -69,7 +69,7 @@
             <img
               src="/cardimage.webp"
               class="px-2 h-32 w-32 mt-2"
-              alt="todays deals"
+              alt=""
             />
             <div class="px-2 py-4">
               <div class="font-bold text-xs mb-2">Laptop Accessories</div>
@@ -83,7 +83,7 @@
           <img
             src="/cardimage.webp"
             class="px-2 w-full h-64 mt-2"
-            alt="todays deals"
+            alt=""
           />
         </div>
       </div>

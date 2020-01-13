@@ -99,6 +99,7 @@
                       <img
                         src="/loading.svg"
                         :class="{'loading':loading}"
+                        alt=""
                       />
                     </div>
                     <span v-else>{{submitText}}</span>

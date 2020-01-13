@@ -42,6 +42,7 @@
                       <img
                         src="/loading.svg"
                         :class="{'loading':loading}"
+                        alt=""
                       />
                     </div>
                     <span v-else>Reset Password</span>

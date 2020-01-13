@@ -94,14 +94,17 @@
         <img
           class="w-14 h-12 cursor-pointer"
           src="/small-product.png"
+          alt=""
         />
         <img
           class="w-14 h-12 cursor-pointer"
           src="/small-product.png"
+          alt=""
         />
         <img
           class="w-14 h-12 cursor-pointer"
           src="/small-product.png"
+          alt=""
         />
       </div>
     </div>

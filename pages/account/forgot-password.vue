@@ -46,6 +46,7 @@
                       <img
                         src="/loading.svg"
                         :class="{'loading':loading}"
+                        alt=""
                       />
                     </div>
                     <span v-else>Send Password Reset Email</span>

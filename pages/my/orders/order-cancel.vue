@@ -48,7 +48,7 @@
               <Checkbox></Checkbox>
             </div>
             <div>
-              <img class="lg:rounded xs:rounded-b-none w-16" src="/cart-product.jpg" alt="cart" />
+              <img class="lg:rounded xs:rounded-b-none w-16" src="/cart-product.jpg" alt="" />
             </div>
             <div class="lg:w-4/5 xs:9/12">
               <div class="pl-4 font-hairline text-sm text-gray-500">

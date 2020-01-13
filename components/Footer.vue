@@ -55,12 +55,12 @@
           <a href="https://play.google.com/store/apps/details?id=com.codenx.misiki&hl=en"><img
               class="mt-2 h-10"
               src="/playstore.png"
-              alt="playstore image"
+              alt=""
             /></a>
           <a href="https://play.google.com/store/apps/details?id=com.codenx.misiki&hl=en"><img
               class="mt-2 h-10"
               src="/appstore.png"
-              alt="app store image"
+              alt=""
             /></a>
         </div>
         <div>

@@ -15,7 +15,7 @@
       <nuxt-link :to="image.link">
         <img
           v-lazy="$store.state.settings.CDN_URL+image.img+'?tr=w-1920,h-360'"
-          alt="categories"
+          alt=""
           class="h-48 lg:h-auto object-cover"
         />
       </nuxt-link>

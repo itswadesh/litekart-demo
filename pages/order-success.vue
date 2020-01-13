@@ -9,7 +9,7 @@
         <div class="text-gray-700 font-bold text-xl mb-2">All done</div>
         <div>
           <img
-            alt="thanks for the purchase"
+            alt=""
             src="/order-success.png"
             class="mb-2 object-cover rounded"
           />

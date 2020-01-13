@@ -18,8 +18,8 @@
         :perPageCustom="[[425, 2], [768, 3], [1024, 5]]"
         :paginationEnabled="false"
         :navigationEnabled="true"
-        navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)'>"
-        navigation-prev-label="<img src='/chevron-right.svg'/>"
+        navigation-next-label="<img src='/chevron-right.svg' alt='' style='transform: rotate(180deg)'>"
+        navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
         class="flex flex-wrap justify-between p-4"
       >
         <slide
@@ -32,7 +32,7 @@
                 style="height:255px;object-fit: cover;"
                 v-if="product.img"
                 v-lazy="$store.state.settings.CDN_URL+product.img[0]"
-                alt="you also like"
+                alt=""
               />
               <i
                 class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"

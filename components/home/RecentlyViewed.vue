@@ -14,8 +14,8 @@
       :perPageCustom="[[425, 2], [768, 3], [1024, 5]]"
       :paginationEnabled="false"
       :navigationEnabled="true"
-      navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)' alt='right'>"
-      navigation-prev-label="<img src='/chevron-right.svg' alt='right'/>"
+      navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)' alt=''>"
+      navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
       class="mx-2"
     >
       <slide
@@ -28,7 +28,7 @@
             style="height:255px;object-fit: cover;"
             v-if="product.img"
             v-lazy="$store.state.settings.CDN_URL+product.img[0]"
-            alt="todays deals"
+            alt=""
           />
           <div class>
             <div class="font-bold text-xs mb-2">{{product.name | truncate(45)}}</div>

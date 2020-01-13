@@ -1,6 +1,6 @@
 <template>
   <div class="ar-spinner" v-if="visible">
-    <img src="@/static/oval.svg" alt="spinner" />
+    <img src="@/static/oval.svg" alt="" />
   </div>
 </template>
 

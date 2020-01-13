@@ -14,8 +14,8 @@
       :perPageCustom="[[425, 2], [768, 3], [1024, 5]]"
       :paginationEnabled="false"
       :navigationEnabled="true"
-      navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)' alt='right'>"
-      navigation-prev-label="<img src='/chevron-right.svg' alt='right'/>"
+      navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)' alt=''>"
+      navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
       class="mx-2"
     >
       <slide

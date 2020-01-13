@@ -2,7 +2,7 @@
   <img
     :src="imageSrc"
     ref="lazyload"
-    alt="lazyload"
+    alt=""
     :class="fitLoader"
     @click="$emit('click')"
     draggable="false"

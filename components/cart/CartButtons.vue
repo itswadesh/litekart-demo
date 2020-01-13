@@ -7,7 +7,7 @@
       @click="addToBag(1);"
     >
       <button class="text-gray-600 bg-gray-200 rounded px-2 rounded">
-        <img src="/plus.svg" alt="plus icon" />
+        <img src="/plus.svg" alt="+" />
       </button>
     </div>
     <div v-else>

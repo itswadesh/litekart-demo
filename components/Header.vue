@@ -32,7 +32,7 @@
           <img
             class="h-4 ml-2"
             src="/avatar.png"
-            alt="profile icon"
+            alt=""
           />
           <div class="text-xs font-bold headings">Profile</div>
         </nuxt-link>
@@ -44,7 +44,7 @@
           <img
             class="h-4 ml-2"
             src="/avatar.png"
-            alt="profile icon"
+            alt=""
           />
           <div class="text-xs font-bold headings">Profile</div>
         </nuxt-link>
@@ -55,7 +55,7 @@
           <img
             class="h-4 ml-3 center"
             src="/bookmark.png"
-            alt="wishlist icon"
+            alt=""
           />
           <div class="text-xs font-bold headings">Wishlist</div>
         </nuxt-link>
@@ -66,7 +66,7 @@
           <img
             class="h-4 ml-1"
             src="/bag.png"
-            alt="cart icon"
+            alt=""
           />
           <div class="flex text-xs font-bold">
             Cart

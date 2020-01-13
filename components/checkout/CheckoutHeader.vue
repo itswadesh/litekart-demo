@@ -3,7 +3,7 @@
     <div class="order-0 lg:order-0">
       <nuxt-link to="/">
         <img
-          alt="logo"
+          alt="Litekart"
           class="w-12 h-10"
           src="/logo.svg"
         />
@@ -28,7 +28,7 @@
     </div>
     <div class="order-1 lg:order-3 text-center flex items-center">
       <img
-        alt="secure hield"
+        alt=""
         src="/secure.png"
         class="w-10"
       />

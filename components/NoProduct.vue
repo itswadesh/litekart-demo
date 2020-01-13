@@ -2,7 +2,7 @@
   <div>
     <div class="w-full container">
       <div class="text-gray-700 text-center">
-        <img class src="/empty-listing.png" alt="empty bag icon" />
+        <img class src="/empty-listing.png" alt="" />
         <div class="headings">We are unable to find items matching</div>
         <div class="text-1 text-center">{{$route.query.q}}</div>
       </div>

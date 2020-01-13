@@ -22,7 +22,7 @@
               <img
                 src="/name.png"
                 class="w-5"
-                alt="name"
+                alt=""
               />
             </div>
             <div class="w-10/12 flex">

@@ -60,7 +60,7 @@
                     src="/loading.svg"
                     class="w-3 h-3 rotateOutDownLeft"
                     v-if="loading"
-                    alt="loading icon"
+                    alt=""
                   />
                   <i
                     class="fa fa-trash"
