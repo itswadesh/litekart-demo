@@ -34,7 +34,7 @@
             <div class="flex items-center py-3">
               <ul>
                 <li class="py-1 text-gray-600" v-for="(c, index) in c.children" :key="index">
-                  <nuxt-link :to="`/search?q=${c.slug}`">{{c.name}}</nuxt-link>
+                  <nuxt-link :to="`/${c.slug}?page=1`">{{c.name}}</nuxt-link>
                 </li>
               </ul>
             </div>

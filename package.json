@@ -39,6 +39,7 @@
     "node-sass": "^4.13.0",
     "nuxt": "^2.11.0",
     "sass-loader": "^8.0.2",
+    "shortcode-tokenizer": "^0.6.1",
     "tailwindcss-animatecss": "^0.2.7",
     "vue-carousel": "^0.18.0",
     "vue-clickaway": "^2.2.2",

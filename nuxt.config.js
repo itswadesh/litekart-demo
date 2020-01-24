@@ -20,6 +20,8 @@ export default {
     '@nuxtjs/tailwindcss',
   ],
   modules: [
+    '~/modules/routes',
+    '@nuxtjs/robots',
     '@nuxtjs/axios',
     // '@nuxtjs/proxy',
     // '@nuxtjs/sitemap',
