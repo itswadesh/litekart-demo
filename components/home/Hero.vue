@@ -2,6 +2,7 @@
   <carousel
     :perPage="1"
     :autoplay="true"
+    :loop="true"
     :autoplayTimeout="5000"
     :paginationEnabled="true"
     :navigationEnabled="true"

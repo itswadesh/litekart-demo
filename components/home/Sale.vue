@@ -56,7 +56,8 @@ import ProductSkeleton from "~/components/ProductSkeleton";
 export default {
   data() {
     return {
-      products: []
+      products: [],
+       loading:false
     };
   },
   components: { ProductSkeleton },

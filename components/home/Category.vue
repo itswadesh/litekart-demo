@@ -3,12 +3,12 @@
     <div class="w-full shadow">
       <div class="w-full p-3 border-b h-14 flex justify-between">
         <p class="w-1/2 float-left relative headings">
-          You may also Like
-          <span class="text-gray-500 text-xs absolute inset-x-0 you">Based on Your Interest</span>
+          {{title}}
+          <span class="text-gray-500 text-xs absolute inset-x-0 you">Shop the edit</span>
         </p>
         <button
           class="primary text-xs right-0 py-1 px-2 rounded"
-          @click="$router.push('/search')"
+          @click="$router.push(slug)"
         >View All</button>
       </div>
       <div v-if="loading">
@@ -52,25 +52,29 @@
 
 <script>
 import ProductSkeleton from "~/components/ProductSkeleton";
-
 export default {
+  props:{
+    title:String,
+    slug:String,
+    category:String,
+  },
   data() {
     return {
       products: [],
-       loading:false
+      loading:false
     };
   },
-  components: { ProductSkeleton },
   async created() {
     try {
       this.loading = true;
-      const res = await this.$axios.$get("api/products/featured");
+      const res = await this.$axios.$get(`api/products/es?categories=${category}`);
       this.products = res.data;
     } catch (e) {
     } finally {
       this.loading = false;
     }
-  }
+  },
+  components: { ProductSkeleton },
 };
 </script>
 
