@@ -28,7 +28,6 @@ export const sorts = [
     { name: "Price low to high", val: "price" },
     { name: "Price high to low", val: "-price" }
 ]
-
 export const popularSearches = [
     'Adidas', 'Arrow', 'Fila', 'Online Shopping', 'Nike', 'Pepe Jeans', 'Puma', 'United Colors of Benetton', 'Fastrack', 'Shorts', 'Being Human', 'Skirts', 'Woodland', 'Supra', 'Dresses', 'Clothing', 'Jewellery', 'T-shirts', 'Shoes', 'Bags', 'Watches', 'Caps', 'Shirts', 'Backpacks', 'Flip Flops', 'Sunglasses', 'Kurtas', 'Lingerie', 'Jackets', 'Skechers', 'Saree', 'Sandals', 'Puma Tshirts', 'Woodland Shoes', 'Titan Watches', 'Fastrack Watches', 'Wrangler Shirts', 'Adidas Tshirts', 'Nike Shoes', 'Roadster Shirts', 'Casual Shoes', 'Running Shoes', 'Nike Sports Shoes', 'Jeans', 'Being Human', 'Tshirts', 'Converse Shoes', 'Cricket Shoes'
 ]

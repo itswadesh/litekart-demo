@@ -6,7 +6,7 @@
       :slugPath="category.slugPath" class="px-1 py-0" />
     /> -->
       <div class="font-semibold flex p-1 headings">
-        <div class="font-hairline text-1">{{count}} items</div>
+        <div class="font-hairline text-1">{{count}} {{category.name}}</div>
       </div>
 
       <div class="flex-wrap p-1">
@@ -61,7 +61,7 @@
           aria-hidden="true"
         ></i>Filter
       </div>
-      <div class="flex-1 hidden md:block text-gray-700 text-center font-normal px-4">{count} Items</div>
+      <div class="flex-1 hidden md:block text-gray-700 text-center font-normal px-4">{{count}} Items</div>
       <div class="flex-1 flex items-center text-gray-700 text-center px-4 text-primary">
         <select
           class="text-primary border-gray-100 cursor-pointer cursor-pointer block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
@@ -97,6 +97,9 @@ export default {
     this.sortBy = this.$route.query.sort || "-createdAt";
   },
   props: {
+    category: {
+      type: Object
+    },
     count: {
       type: Number
     },

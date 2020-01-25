@@ -1,8 +1,15 @@
 <template>
-  <form novalidate autocomplete="off" @submit.stop.prevent="submit(search)">
+  <form
+    novalidate
+    autocomplete="off"
+    @submit.stop.prevent="submit(search)"
+  >
     <div class="search_fix"></div>
     <div class="absolute">
-      <i class="fa fa-search m-3 text-gray-500" aria-hidden="true"></i>
+      <i
+        class="fa fa-search m-3 text-gray-500"
+        aria-hidden="true"
+      ></i>
     </div>
     <input
       type="text"
@@ -24,7 +31,7 @@ export default {
   },
   methods: {
     submit(q) {
-      this.$router.push("/search?q=" + q);
+      this.$router.push(`/search/${q}`);
     }
   },
   watch: {
@@ -38,7 +45,7 @@ export default {
         this.typingTimer = setTimeout(function() {
           if (!value || value == "undefined") value = ""; // When clear button clicked
           vm.searchString = value;
-          vm.$router.push("/search?q=" + value);
+          vm.$router.push(`/search/${value}`);
         }, typingTimeout);
       }
     },

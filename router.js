@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import axios from 'axios'
-import { PROXY } from "~/config";
+import { API_URL } from "~/config/";
+const PROXY = process.env.API_URL || API_URL
 Vue.use(Router)
 
 const Home = () => import('~/pages/index').then(m => m.default || m)
@@ -36,7 +37,7 @@ const DynamicPages = () => import('~/pages/page/dynamic').then(m => m.default ||
 const Categories = () => import('~/pages/c').then(m => m.default || m)
 // const CategoryDetails = () => import('~/pages/c/_c').then(m => m.default || m)
 const Search = () => import('~/pages/search').then(m => m.default || m)
-const SearchDetails = () => import('~/pages/search').then(m => m.default || m)
+// const SearchDetails = () => import('~/pages/search').then(m => m.default || m)
 // const Brand = () => import('~/pages/b').then(m => m.default || m)
 // const BrandDetails = () => import('~/pages/b/_c').then(m => m.default || m)
 // const Vendor = () => import('~/pages/v').then(m => m.default || m)
@@ -86,7 +87,7 @@ export async function createRouter() {
         component: Search,
         children: [{
             path: ':q?',
-            component: SearchDetails
+            component: Search
         }]
     })
     // routes.push({
@@ -108,19 +109,19 @@ export async function createRouter() {
     try {
         let router = await axios.get(PROXY + '/api/pages/router')
         for (let p of router.data.pages) {
-          if(p.page_type=='dynamic'){
-            routes.push({ path: '/' + p.slug, component: DynamicPages })
-          }else{
-            routes.push({ path: '/' + p.slug, component: Pages })
-          }
+            if (p.page_type == 'dynamic') {
+                routes.push({ path: '/' + p.slug, component: DynamicPages })
+            } else {
+                routes.push({ path: '/' + p.slug, component: Pages })
+            }
         }
         for (let c of router.data.categories) {
             routes.push({
                 path: '/' + c.slug, component: Categories,
-                children: [{
-                    path: ':c?',
-                    component: CategoryDetails
-                }]
+                //     children: [{
+                //         path: ':c?',
+                //         component: CategoryDetails
+                // }]
             })
         };
     } catch (e) {

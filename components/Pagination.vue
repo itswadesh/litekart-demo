@@ -1,5 +1,8 @@
 <template>
-  <div class="flex flex-row w-full">
+  <div
+    class="flex flex-row w-full"
+    v-if="count>1"
+  >
     <div class="flex-1 pagination-container justify-start w-full text-xs lg:text-sm">
       <div class="pagination-paginationMeta w-full lg:w-auto">Page {{current}} of {{count}}</div>
       <div class="flex-1 justify-start w-full lg:w-auto">
@@ -22,6 +25,7 @@
         <button
           class="hidden lg:inline-flex bg-white hover:bg-gray-100 text-primary font-semibold py-2 px-4 border border-gray-400 rounded shadow rounded inline-flex items-center"
           @click="$emit('change',current+1)"
+          v-if="current<count"
         >
           <span>Next</span>
           &nbsp;
@@ -36,14 +40,14 @@
 export default {
   computed: {
     pages() {
-      if (this.count > 10) this.count = 10;
-      return parseInt(this.count);
+      let count = this.count > 10 ? 10 : this.count;
+      return parseInt(count);
     }
   },
   props: {
     count: {
       type: Number,
-      default: 2
+      default: 1
     },
     current: {
       type: Number,

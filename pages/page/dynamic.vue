@@ -14,21 +14,20 @@
 
 <style scoped type="scss">
 /* @import "@/assets/styles/Modules/_content_pages.scss"; */
-
 </style>
 <script>
 import { TITLE, DESCRIPTION, KEYWORDS } from "~/config";
 const Shortcode = () => import("~/components/Shortcode");
 
 export default {
-    layout: "bottomNavigationWithFooter",
+  layout: "bottomNavigationWithFooter",
   async asyncData({ params, route, $axios }) {
     const slug = route.path.substr(1);
     let page = {},
       err = null;
     try {
       if (slug) {
-        page = await $axios.$get("pages/public/" + slug);
+        page = await $axios.$get("api/pages/public/" + slug);
       }
       err = null;
     } catch (e) {

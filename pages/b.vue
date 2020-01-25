@@ -18,7 +18,6 @@
       />
       <div class="w-full">
         <HeaderBody
-          :category="category"
           :count="productCount"
           :fl="fl"
           @removed="facetRemoved"
@@ -72,68 +71,105 @@
   </div>
 </template>
 <script>
-import c from "~/mixins/c.js";
-import { TITLE, DESCRIPTION, KEYWORDS, sharingLogo } from "~/config";
+import Pagination from "~/components/Pagination";
+import ProductSkeleton from "~/components/ProductSkeleton";
+import Product from "~/components/Product";
+import DesktopFilters from "~/components/DesktopFilters";
+import MobileFilters from "~/components/MobileFilters";
+import HeaderBody from "~/components/HeaderBody";
+import Logo from "~/components/Logo";
+import NoProduct from "~/components/NoProduct";
+import { constructURL } from "~/lib/";
+import { sorts } from "~/config/";
+import vPagination from "vue-plain-pagination";
+import { BackToTopDark, Loading } from "~/components/ui";
 export default {
-  mixins: [c],
   name: "ProductListing",
-  async asyncData({ route, query, params, $axios }) {
-    let products = [],
-      category = {},
-      facets = [],
-      fl = {},
-      err = null,
-      productCount = 0;
-    try {
-      const cslug = route.path.substr(1);
-      if (cslug) {
-        let c = await $axios.$get("api/categories/detail/" + cslug);
-        category = c.data;
+  data() {
+    return {
+      showMobileFilter: false,
+      fl: {
+        brands: [],
+        price: [],
+        categories: [],
+        colors: [],
+        sizes: [],
+        price: [],
+        sort: null,
+        features: { Type: [], Fit: [], Fabric: [], Neck: [], Color: [] },
+        sorts: sorts
+      },
+      products: [],
+      facets: [],
+      category: {},
+      productCount: 0,
+      currentPage: 1,
+      loading: false,
+      bootstrapPaginationClasses: {
+        ul: "pagination",
+        li: "page-item",
+        liActive: "active",
+        liDisable: "disabled",
+        button: "page-link"
+      },
+      paginationAnchorTexts: {
+        first: "&laquo;",
+        prev: "&lsaquo;",
+        next: "&rsaquo;",
+        last: "&raquo;"
       }
-      const q = params.q || null,
-        qry = { ...query };
-      if (q) qry.q = q;
-      if (cslug) qry.categories = cslug;
-      const result = await $axios.$get("api/products/es", {
-        params: { ...qry }
-      });
-      products = result.data;
-      productCount = result.count;
-      facets = result.facets.all_aggs;
-      Object.keys(qry).map(function(k, i) {
-        if (qry[k] && !Array.isArray(qry[k]) && qry[k] != null && qry[k] != "")
-          qry[k] = qry[k].split(",");
-      });
-      fl = qry; // For selected filters
-      return { products, category, productCount, facets, fl, err: null };
-    } catch (e) {
-      if (e && e.response && e.response.data) {
-        err = e.response.data;
-      } else if (e && e.response) {
-        err = e.response;
-      } else {
-        err = e;
-      }
-      console.log("err...", e);
-      return { products, category, productCount, facets: [], fl: {}, err };
-    }
+    };
   },
   created() {
     this.currentPage = parseInt(this.$route.query.page);
     // let query = { ...this.$route.query };
     // this.fl = query;
   },
-  mounted() {
-    this.getWishlist();
+  components: {
+    Logo,
+    HeaderBody,
+    DesktopFilters,
+    MobileFilters,
+    Pagination,
+    Product,
+    Loading,
+    vPagination,
+    NoProduct,
+    ProductSkeleton,
+    BackToTopDark
+  },
+  computed: {
+    noOfPages() {
+      return Math.ceil(this.productCount / this.products.length);
+    }
   },
   methods: {
+    changePage(p) {
+      this.scrollToTop();
+      let fl = { ...this.fl };
+      delete fl.page;
+      delete fl.categories;
+      const url = constructURL("/", fl);
+      let page = parseInt(p || 1);
+      this.$router.push(`${url}page=${page}`);
+    },
+    scrollToTop() {
+      if (process.client) {
+        window.scroll({
+          behavior: "smooth",
+          left: 0,
+          top: 0
+        });
+      }
+    },
+    facetRemoved(f) {
+      this.fl = f;
+    },
     async getData() {
-      let q = this.$route.query || {};
-      q.categories = this.$route.path.substr(1);
       try {
         this.loading = true;
         const products = await this.$axios.$get("api/products/es", {
-          params: q
+          params: { ...this.$route.query }
         });
         this.productCount = products.count;
         this.products = products.data;
@@ -144,76 +180,25 @@ export default {
       }
     }
   },
-  head() {
-    const host = process.server
-      ? this.$ssrContext.req.headers.host
-      : window.location.host;
-    return {
-      title:
-        (this.category && this.category.metaTitle) ||
-        (this.category && "Category: " + this.category.name) ||
-        "Category: " + this.$route.path.substr(1),
-      meta: [
-        {
-          hid: "og:description",
-          name: "Description",
-          property: "og:description",
-          content:
-            (this.category && this.category.metaDescription) || DESCRIPTION
-        },
-        {
-          hid: "keywords",
-          name: "Keywords",
-          property: "keywords",
-          content: (this.category && this.category.metaKeywords) || KEYWORDS
-        },
-        {
-          hid: "og:title",
-          name: "og_title",
-          property: "og:title",
-          content:
-            (this.category && this.category.metaTitle) ||
-            (this.category && "Category: " + this.category.name) ||
-            "Category: " + this.$route.path.substr(1)
-        },
-        // Google+ / Schema.org
-        {
-          name: "og_url",
-          property: "og:url",
-          content: host + "/" + this.$route.path.substr(1) || ""
-        },
-        {
-          property: "og:image",
-          content:
-            host +
-            ((this.category &&
-              this.category.imgA &&
-              this.category.imgA.large) ||
-              sharingLogo)
-        },
-        {
-          property: "og:image:width",
-          content: "600"
-        },
-        {
-          property: "og:image:height",
-          content: "600"
-        },
-        // Twitter
-        {
-          name: "twitter:title",
-          content:
-            (this.category && this.category.metaTitle) ||
-            (this.category && "Category: " + this.category.name) ||
-            "Category: " + this.$route.path.substr(1)
-        },
-        {
-          name: "twitter:description",
-          content:
-            (this.category && this.category.metaDescription) || DESCRIPTION
-        }
-      ]
-    };
+  watch: {
+    "$route.query": {
+      immediate: true,
+      handler(value, oldValue) {
+        let query = { ...this.$route.query };
+        Object.keys(query).map(function(k, i) {
+          if (
+            query[k] &&
+            !Array.isArray(query[k]) &&
+            query[k] != null &&
+            query[k] != ""
+          )
+            query[k] = query[k].split(",");
+        });
+        // if (query.q && query.q[0]) query.q = query.q[0];
+        this.fl = query;
+        this.getData();
+      }
+    }
   }
 };
 </script>

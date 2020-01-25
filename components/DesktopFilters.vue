@@ -17,7 +17,7 @@
     <div
       v-for="(v,k) in fl"
       :key="k"
-      v-if="v && v.length>0 && k!='page' && k!='sort'"
+      v-if="v && v.length>0 && k!='page' && k!='sort' && k!='categories'"
       class="flex flex-wrap items-center text-xs my-2 ml-3 mr-2"
     >
       <div
@@ -123,32 +123,6 @@
         </li>
       </ul>
     </div>
-    <!-- <div>
-      <p class="ml-2 py-2 font-semibold text-sm px-5 py-2">DISCOUNT RANGE</p>
-      <ul class="ml-2 py-2 text-gray-600 text-sm px-5 py-2 filter-container">
-        <li>
-          <Radio />
-        </li>
-        <li>
-          <Radio />
-        </li>
-        <li>
-          <Radio />
-        </li>
-        <li>
-          <Radio />
-        </li>
-        <li>
-          <Radio />
-        </li>
-        <li>
-          <Radio />
-        </li>
-        <li>
-          <Radio />
-        </li>
-      </ul>
-    </div>-->
   </div>
 </template>
 <script>
