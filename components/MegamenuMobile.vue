@@ -6,7 +6,7 @@
     <nuxt-link
       v-for="c in $store.state.categories"
       :key="c._id"
-      :to="`/search?q=${c.slug}`"
+      :to="`/${c.slug}`"
       class="flex-1 bg-white circletag"
       id="nay"
     >

@@ -26,6 +26,10 @@ module.exports = {
           '900': '#9cdbf1',
         }
       },
+      spacing: {
+        '72': '18rem',
+        '108': '27rem',
+      },
       margin: {
         '96': '24rem',
         '128': '32rem',

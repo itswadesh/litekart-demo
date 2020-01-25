@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-wrap justify-between">
-      <div class="w-full p-2 font-semibold text-lg">
+      <div class="w-full p-2 font-semibold text-lg text-center">
         My Wishlist
         <span
           class="font-hairline"
@@ -11,9 +11,10 @@
     </div>
     <div class="flex flex-wrap">
       <div
-        class="w-full text-center m-32 "
+        class="w-full text-center mx-32 "
         v-if="wishlist.length==0"
       >
+      <img class="containerr w-1/2" src="/empty.png" alt="" />
         <h1>Wishlist is empty</h1><br />
         <nuxt-link
           to="/"

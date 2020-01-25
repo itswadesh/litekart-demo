@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="hidden flex-none lg:flex justify-between px-2 py-6 text-sm items-center">
+    <div class="hidden flex-none lg:flex justify-between py-4 text-sm items-center">
       <!-- <Breadcrumb v-if="category && category.slugPath && category.slugPath.length>0"
       :namePath="category.namePath"
       :slugPath="category.slugPath" class="px-1 py-0" />

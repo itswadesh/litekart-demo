@@ -10,7 +10,7 @@
         <div class="pb-5">
           <div class="w-full left-0">
             <div class="mt-16">
-              <img class="containerr w-1/2" src="/emptycart.png" alt="" />
+              <img class="containerr w-1/2" src="/empty.png" alt="" />
             </div>
           </div>
           <div class="w-full left-0">

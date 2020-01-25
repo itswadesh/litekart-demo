@@ -16,7 +16,7 @@
         :facets="facets"
         :fl="fl"
       />
-      <div class="w-full">
+      <div class="w-full pl-4 pr-6">
         <HeaderBody
           :category="category"
           :count="productCount"
@@ -119,6 +119,7 @@ export default {
     }
   },
   created() {
+    this.scrollToTop()
     this.currentPage = parseInt(this.$route.query.page);
     // let query = { ...this.$route.query };
     // this.fl = query;

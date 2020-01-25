@@ -15,9 +15,9 @@
     >
       <nuxt-link :to="image.link">
         <img
-          v-lazy="$store.state.settings.CDN_URL+image.img+'?tr=w-1920,h-360'"
+          v-lazy="$store.state.settings.CDN_URL+image.img"
           alt=""
-          class="h-48 lg:h-auto object-cover"
+          class="h-64 lg:h-108 object-cover"
         />
       </nuxt-link>
     </slide>

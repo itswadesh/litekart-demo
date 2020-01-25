@@ -13,7 +13,7 @@
       <YouMayLike />
       <Category slug="women-lingerie" title="Lingerie"/>
       <Category slug="coats" title="Coats & Blazers"/>
-      <Category slug="kurtis" title="Kurtis"/>
+      <!-- <Category slug="kurtis" title="Kurtis"/> -->
       <WhatsNew />
       <Category slug="women-winter-wear" title="Winter Collection"/>
       <Category slug="plus-sizes" title="Plus Size Collection"/>

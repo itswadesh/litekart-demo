@@ -7,23 +7,22 @@
       <div class="flex items-center flex-shrink-0 text-orange order-1 w-1/2 lg:w-auto">
         <nuxt-link to="/">
           <img
-            class="h-10 ml-2"
+            class="h-10 mx-2"
             :src="`${$store.state.settings.CDN_URL}/${$store.state.settings.logo}`"
             alt=""
           />
         </nuxt-link>
-        <div class="hidden lg:block flex flex-none text-sm py-4 xs:justify-between items-center text-gray order-2">
+        <div class="hidden lg:block flex flex-none text-sm xs:justify-between items-center text-gray order-2">
           <Megamenu />
         </div>
       </div>
       <div
-        class="m-2 py-2 order-4 sm:order-3 w-full lg:mr-6"
-        style="flex:1"
+        class="mx-4 order-4 sm:order-3 w-full lg:mr-6 flex-1"
         :class="cls"
       >
         <Search />
       </div>
-      <div class="flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mr-3 w-40 headings">
+      <div class="ml-10 flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mr-3 w-40 headings">
         <nuxt-link
           class="w-auto"
           to="/account/login"

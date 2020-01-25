@@ -1,26 +1,26 @@
 <template>
-  <ul class="flex">
+  <ul class="flex mx-8">
     <li
-      class="hoverable hover:bg-gray-300"
+      class="cursor-pointer hoverable border-white border-b-2 hover:border-pink-500"
       v-for="category in $store.state.categories"
       :key="category._id"
     >
       <nuxt-link
-        :to="`/search?q=${category.slug}`"
-        class="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold items-center"
+        :to="`/${category.slug}`"
+        class="p-5 relative block font-bold items-center"
       >
         {{category.name && category.name.toUpperCase()}}
-        <i
+        <!-- <i
           class="fa fa-angle-down"
           aria-hidden="true"
-        ></i>
+        ></i> -->
       </nuxt-link>
       <div class="mega-menu mb-16 sm:mb-0 shadow-xl bg-gray-100">
         <div class="mx-auto w-full flex flex-wrap justify-start mx-2">
           <ul
             v-for="(c,ix) in category.children"
             :key="c._id"
-            class="bg-gray-100 px-4 w-full sm:w-1/2 text-1 lg:w-1/6 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3"
+            class="px-4 w-full sm:w-1/2 text-1 lg:w-1/6 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3"
             :class="{'bg-gray-200':Math.abs(ix % 2)}"
           >
             <div class="flex">
@@ -66,10 +66,8 @@ export default {};
 }
 
 .hoverable > a:after {
-  font-size: 10px;
   padding-left: 6px;
   position: relative;
-  top: -1px;
 }
 
 .hoverable:hover .mega-menu {

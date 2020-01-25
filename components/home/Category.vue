@@ -2,10 +2,9 @@
   <div class="w-full flex flex-wrap mt-2">
     <div class="w-full shadow">
       <div class="w-full p-3 border-b h-14 flex justify-between">
-        <p class="w-1/2 float-left relative headings">
-          {{title}}
-          <span class="text-gray-500 text-xs absolute inset-x-0 you">Shop the edit</span>
-        </p>
+        <div class="w-1/2 flex items-center">
+         <h3 class="text-xl font-bold"> {{title}}</h3>
+        </div>
         <button
           class="primary text-xs right-0 py-1 px-2 rounded"
           @click="$router.push(slug)"
@@ -25,13 +24,15 @@
         <slide
           v-for="product in products"
           :key="product._id"
+          class="w-64"
         >
-          <nuxt-link :to="'/'+product.slug+'?id='+product._id">
-            <div class="relative">
+          <nuxt-link :to="'/'+product._source.slug+'?id='+product._id">
+            <div class="flex justify-center">
               <img
-                style="height:255px;object-fit: cover;"
-                v-if="product.img"
-                v-lazy="$store.state.settings.CDN_URL+product.img[0]"
+                style="height:255px;"
+                class="object-cover"
+                v-if="product._source.img"
+                v-lazy="$store.state.settings.CDN_URL+product._source.img[0]"
                 alt=""
               />
               <i
@@ -40,8 +41,8 @@
               ></i>
             </div>
             <div class="px-2 py-4">
-              <div class="font-bold text-xs mb-2">{{product.name | truncate(40)}}</div>
-              <p class="text-green-700 text-xs text-center">Extra {{Math.round(((product.mrp-product.price) *100) / product.mrp)}}% off</p>
+              <div class="font-bold text-xs mb-2 truncate">{{product._source.name}}</div>
+              <p class="text-green-700 text-xs text-center">Extra {{Math.round(((product._source.mrp-product._source.price) *100) / product._source.mrp)}}% off</p>
             </div>
           </nuxt-link>
         </slide>
@@ -55,8 +56,7 @@ import ProductSkeleton from "~/components/ProductSkeleton";
 export default {
   props:{
     title:String,
-    slug:String,
-    category:String,
+    slug:String
   },
   data() {
     return {
@@ -67,7 +67,7 @@ export default {
   async created() {
     try {
       this.loading = true;
-      const res = await this.$axios.$get(`api/products/es?categories=${category}`);
+      const res = await this.$axios.$get(`api/products/es?categories=${this.slug}`);
       this.products = res.data;
     } catch (e) {
     } finally {
@@ -79,10 +79,20 @@ export default {
 </script>
 
 <style scoped>
-.border-b {
-  border-bottom: 1px solid lightgray;
+img[lazy="loaded"] {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
 }
-.you {
-  margin-top: 1.5em;
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>

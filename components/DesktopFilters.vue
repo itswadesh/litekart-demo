@@ -1,6 +1,6 @@
 <template>
   <div
-    class="py-6 w-1/5"
+    class="py-6 w-64"
     v-if="facets"
     style="box-shadow: 10px 0px 5px -2px rgba(0, 0, 0, 0.04);"
   >
