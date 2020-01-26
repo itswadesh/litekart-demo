@@ -16,7 +16,7 @@
         :facets="facets"
         :fl="fl"
       />
-      <div class="w-full pl-4 pr-6">
+      <div class="w-full pl-4 pr-6 bg-gray-200">
         <HeaderBody
           :category="category"
           :count="productCount"
@@ -43,7 +43,7 @@
             v-else-if="products && products.length>0"
             class="flex flex-wrap"
           >
-            <Product
+            <ProductNew
               v-for="p in products"
               :key="p._id"
               :product="p"
@@ -62,7 +62,7 @@
           </div>-->
         </div>
         <Pagination
-          :count="10"
+          :count="noOfPages"
           :current="parseInt($route.query.page || 1)"
           @change="changePage"
         />

@@ -8,28 +8,7 @@
       <div class="font-semibold flex p-1 headings">
         <div class="font-hairline text-1">{{count}} {{category.name}}</div>
       </div>
-
       <div class="flex-wrap p-1">
-        <!-- <div class="hidden lg:flex text-sm w-full">
-          <a
-            href="#"
-            class="block inline-block mb-1 rounded-full p-1 mr-8 bg-gray-200 text-black"
-          >
-            Bundles<i class="fa fa-caret-down px-1" />
-          </a>
-          <a
-            href="#"
-            class="block inline-block mb-1 rounded-full  p-1 mr-8 bg-gray-200 text-black "
-          >
-            Pattern<i class="fa fa-caret-down px-1" />
-          </a>
-          <a
-            href="#"
-            class="block  text-black m-4 sm:inline-block  sm:mt-0 "
-          >
-            +8 more
-          </a>
-        </div>-->
         <div class="text-sm">
           <div class="inline-block relative">
             <select
@@ -51,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="xs:block lg:hidden flex shadow-md py-4 bg-white w-full mb-1">
+    <div class="xs:block lg:hidden flex py-4 w-full mb-1">
       <div
         class="flex-1 flex items-center text-gray-700 text-left text-primary"
         @click="$emit('showFilters')"
@@ -62,7 +41,7 @@
         ></i>Filter
       </div>
       <div class="flex-1 hidden md:block text-gray-700 text-center font-normal px-4">{{count}} Items</div>
-      <div class="flex-1 flex items-center text-gray-700 text-center px-4 text-primary">
+      <div class="flex-1 flex items-center text-gray-700 text-center text-primary">
         <select
           class="text-primary border-gray-100 cursor-pointer cursor-pointer block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
           v-model="sortBy"

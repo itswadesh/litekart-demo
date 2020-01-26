@@ -4,7 +4,7 @@
       class="flex items-center justify-between flex-wrap bg-white lg:px-12"
       style="box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);"
     >
-      <div class="flex items-center flex-shrink-0 text-orange order-1 w-1/2 lg:w-auto">
+      <div class="flex items-center flex-shrink-0 text-orange order-1">
         <nuxt-link to="/">
           <img
             class="h-10 mx-2"
@@ -17,7 +17,7 @@
         </div>
       </div>
       <div
-        class="mx-4 order-4 sm:order-3 w-full lg:mr-6 flex-1"
+        class="mx-2 mb-4 lg:mb-0 lg:mr-6 order-4 sm:order-3 w-full flex-1"
         :class="cls"
       >
         <Search />

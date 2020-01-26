@@ -118,17 +118,17 @@
           ></i> WISHLIST
         </button>
       </div>
-      <div class="py-8 border-b border-gray-300 px-3 my-3 lg:my-0">
-        <p class="font-bold text-lg">
+      <!-- <div class="py-8 border-b border-gray-300 px-3 my-3 lg:my-0"> -->
+        <!-- <p class="font-bold text-lg">
           BEST OFFERS
           <i
             class="fa fa-tag ml-2 text-gray-600"
             aria-hidden="true"
           ></i>
         </p>
-        <span class="text-gray-500">This product is already at its best price</span>
-        <div>
-          <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
+        <span class="text-gray-500">This product is already at its best price</span> -->
+        <!-- <div> -->
+          <!-- <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
             <div class="font-bold">10% instant discount on Federal Bank Cards</div>
             <div class="font-hairline text-gray-500 text-sm">This product is already at its best price</div>
             <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
@@ -138,7 +138,7 @@
                 aria-hidden="true"
               ></i>
             </span>
-          </button>
+          </button> -->
 
           <!-- <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
             <div class="font-bold">10 super cashback on MobiWiki</div>
@@ -175,8 +175,8 @@
               ></i>
             </span>
           </button> -->
-        </div>
-      </div>
+        <!-- </div>
+      </div> -->
       <div
         class="py-8 border-b border-gray-300 px-3 bg-gray-100 my-3 lg:my-0"
         v-if="product.details"

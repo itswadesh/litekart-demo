@@ -20,6 +20,18 @@ html,body,div,span,p,input,textarea,button,img{
   color:#282c3f;
   line-height: 25px;
 }
+.underline {
+  background-image: linear-gradient(
+    to right,
+    rgb(250, 112, 154) 0%,
+    rgb(254, 225, 64) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  text-decoration: none;
+}
 @media only screen and (min-width: 1000px) {
   ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);

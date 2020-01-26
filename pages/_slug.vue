@@ -11,7 +11,6 @@
     </div>
     <YouMayLike />
     <!-- <SimilarProducts :product="product" /> -->
-
   </div>
 </template>
 

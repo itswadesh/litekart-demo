@@ -1,7 +1,7 @@
 import { currency, sorts } from "~/config";
 import Pagination from "~/components/Pagination";
 import ProductSkeleton from "~/components/ProductSkeleton";
-import Product from "~/components/Product";
+import ProductNew from "~/components/ProductNew";
 import DesktopFilters from "~/components/DesktopFilters";
 import MobileFilters from "~/components/MobileFilters";
 import HeaderBody from "~/components/HeaderBody";
@@ -17,7 +17,7 @@ export default {
     DesktopFilters,
     MobileFilters,
     Pagination,
-    Product,
+    ProductNew,
     Loading,
     vPagination,
     NoProduct,
