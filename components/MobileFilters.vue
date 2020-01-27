@@ -27,10 +27,10 @@
       <div class="w-full flex mt-1 h-full">
         <div class="w-2/5">
           <ul class="bg-gray-200 h-full">
-            <li
+            <!-- <li
               :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='categories'}"
               @click="selected='categories'"
-            >Category</li>
+            >Category</li> -->
             <li
               :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='brands'}"
               @click="selected='brands'"
@@ -42,7 +42,7 @@
             <li
               :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='colors'}"
               @click="selected='colors'"
-            >Colour</li>
+            >Color</li>
             <li
               :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='Price'}"
               @click="selected='Price'"
@@ -172,7 +172,7 @@ export default {
   components: { Checkbox, Radio },
   data() {
     return {
-      selected: "categories",
+      selected: "brands",
       loadingPrice: true, // Required because after loading finished then only we will initiate the price slider component
       showMobileFilter: true
     };

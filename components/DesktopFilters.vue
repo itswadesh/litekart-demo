@@ -1,13 +1,9 @@
 <template>
   <div
-    class="py-6 w-64"
+    class="w-64"
     v-if="facets"
-    style="box-shadow: 10px 0px 5px -2px rgba(0, 0, 0, 0.04);"
   >
-    <div
-      class="font-bold flex justify-between md:px-3 lg:px-4 items-center pt-3 text-sm md:text-xs headings"
-      style="margin-top:1px;"
-    >
+    <div class="border-b border-dashed py-3 font-bold flex justify-between md:px-3 lg:px-4 items-center text-sm md:text-xs headings">
       <div class="text-gray">FILTERS</div>
       <button
         @click="$router.push(`/search`)"
@@ -51,9 +47,12 @@
       </ul>
     </div> -->
 
-    <div v-if="facets.brands && facets.brands.all.buckets && facets.brands.all.buckets.length>0">
-      <p class="ml-2 headings py-2 font-semibold text-sm px-2">BRAND</p>
-      <ul class="ml-2 py-2 px-2 filter-container">
+    <div
+      class="border-b my-3 pb-5 pt-2"
+      v-if="facets.brands && facets.brands.all.buckets && facets.brands.all.buckets.length>0"
+    >
+      <h4 class="ml-2 px-2 font-semibold uppercase text-sm">BRAND</h4>
+      <ul class="ml-2 px-2 filter-container">
         <li
           v-for="b in facets.brands && facets.brands.all.buckets"
           :key="b.key"
@@ -68,9 +67,12 @@
       </ul>
     </div>
 
-    <div v-if="facets.sizes && facets.sizes.all.buckets && facets.sizes.all.buckets.length>0">
-      <p class="ml-2 headings py-2 font-semibold text-sm px-2">SIZES</p>
-      <ul class="ml-2 py-2 px-2 filter-container">
+    <div
+      class="border-b my-3 pt-3 pb-3"
+      v-if="facets.sizes && facets.sizes.all.buckets && facets.sizes.all.buckets.length>0"
+    >
+      <h4 class="ml-2 px-2 font-semibold uppercase text-sm">SIZES</h4>
+      <ul class="ml-2 px-2 filter-container">
         <li
           v-for="b in facets.sizes && facets.sizes.all.buckets"
           :key="b.key"
@@ -86,12 +88,13 @@
     </div>
 
     <div
+      class="border-b my-3 pt-2 pb-5"
       v-for="(v,k) in facets.features && facets.features.name.buckets"
       :key="k"
       v-if="v.key!='Color' && v.val && v.val.buckets.length>0"
     >
-      <p class="ml-2 headings py-2 font-semibold text-sm px-2">{{v.key}}</p>
-      <ul class="ml-2 py-2 px-2 filter-container">
+      <h4 class="ml-2 px-2 font-semibold uppercase text-sm">{{v.key}}</h4>
+      <ul class="ml-2 px-2 filter-container">
         <li
           v-for="f in v.val.buckets"
           :key="f.key"
@@ -106,9 +109,12 @@
       </ul>
     </div>
 
-    <div v-if="facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets && facets.colors.colors.name.buckets.length>0">
-      <p class="ml-2 headings py-2 font-semibold text-sm px-2">COLOR</p>
-      <ul class="ml-2 py-2 px-2 filter-container">
+    <div
+      class="border-b my-3 pt-3 pb-3"
+      v-if="facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets && facets.colors.colors.name.buckets.length>0"
+    >
+      <h4 class="ml-2 px-2 font-semibold uppercase text-sm">COLOR</h4>
+      <ul class="ml-2 px-2 filter-container">
         <li
           class="colour-listItem"
           v-for="b in facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets"
