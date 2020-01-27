@@ -15,6 +15,7 @@
         class="flex-none max-w-xs hidden md:block"
         :facets="facets"
         :fl="fl"
+        @clearAllFilters="clearAllFilters"
       />
       <div class="w-full pl-4 pr-6 bg-gray-200">
         <HeaderBody

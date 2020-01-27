@@ -51,7 +51,9 @@ export default {};
 
 <style scoped>
 .mega-menu {
-  display: none;
+ visibility: hidden;
+  transition: 0.2s 0.1s; /* delay of 1 seconds on hover off */
+  opacity: 0;
   left: 0;
   position: absolute;
   text-align: left;
@@ -71,6 +73,8 @@ export default {};
 }
 
 .hoverable:hover .mega-menu {
-  display: block;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.1s;
 }
 </style>

@@ -6,7 +6,7 @@
     <div class="border-b border-dashed py-3 font-bold flex justify-between md:px-3 lg:px-4 items-center text-sm md:text-xs headings">
       <div class="text-gray">FILTERS</div>
       <button
-        @click="$router.push(`/search`)"
+        @click="$emit('clearAllFilters')"
         class="text-right text-primary cursor-pointer"
       >CLEAR ALL</button>
     </div>

@@ -139,6 +139,10 @@ export default {
     },
     clearAllFilters() {
       this.fl = {};
+      const c = this.$route.path.slice(1)
+      let fl = {};
+      const url = this.constructURL("/", c, fl);
+      this.$router.push(`${url}page=1`);
     },
     async mergeToWishlist(products, wishlist) {
       try {
