@@ -43,7 +43,7 @@
             v-else-if="products && products.length>0"
             class="flex flex-wrap"
           >
-            <Product
+            <ProductNew
               v-for="p in products"
               :key="p._id"
               :product="p"

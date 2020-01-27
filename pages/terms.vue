@@ -82,3 +82,8 @@ h2 {
     <p>Dedicated 24/7 support through email.</p>
   </div>
 </template>
+<script>
+export default {
+  layout: "support"
+};
+</script>

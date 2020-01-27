@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center items-center text-lg h-screen">
+  <div class="flex flex-col justify-center items-center text-lg antialiased" style="min-height:71.8vh">
     <h1 v-if="error.statusCode === 404">Not found</h1>
     <h1 v-else>{{error}}</h1>&nbsp;
     <nuxt-link to="/" class="primary text-2xl px-4 rounded">Home page</nuxt-link>

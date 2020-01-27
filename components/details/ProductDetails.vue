@@ -26,21 +26,17 @@
       </div>
     </div>
     <div>
-      <div class="items-center text-sm lg:text-lg px-3 bg-gray-100 my-3 p-3 lg:my-0">
-        <div class="flex">
-          <span class="heading w-1/2 lg:w-32">SELECT SIZE</span>
-          <div class="text-primary">
-            <div class="flex items-center">
-              <img
-                class="mr-2 h-4"
-                alt=""
-                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIxMiI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMyODc0RjAiIHN0cm9rZS13aWR0aD0iMS4zIj48cGF0aCBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0zNy4zNS42NUguNjV2MTAuN2gzNi43Vi42NXoiLz48cGF0aCBmaWxsPSIjODc4Nzg3IiBkPSJNNi42NSA4LjY1aDF2Mi43aC0xem00LTNIMTFsLS4zNS0uMzVWNWwtLjE1LjE1LS4xNS0uMTV2LjNsLS4zNS4zNWguMzV2NS43SDEwbC4zNS4zNXYuM2wuMTUtLjE1LjE1LjE1di0uM2wuMzUtLjM1aC0uMzV2LTUuN3ptNSAzSDE2bC0uMzUtLjM1VjhsLS4xNS4xNS0uMTUtLjE1di4zbC0uMzUuMzVoLjM1djIuN0gxNWwuMzUuMzV2LjNsLjE1LS4xNS4xNS4xNXYtLjNsLjM1LS4zNWgtLjM1di0yLjd6bTQtM2gxdjUuN2gtMXptNCAzaDF2Mi43aC0xem05IDBoMXYyLjdoLTF6bS00LTNoMXY1LjdoLTF6Ii8+PC9nPjwvc3ZnPg=="
-              />SIZE CHART
-              <i
-                class="fa fa-angle-right ml-3"
-                style="margin-top:-1px;"
-              ></i>
-            </div>
+      <div class="items-center text-sm px-3 bg-gray-100 my-3 p-3 lg:my-0">
+        <div class="flex items-center">
+          <span class="mr-4"> SELECT SIZE</span>
+          <img
+            class="h-3 ml-6 mr-2 -mt-1"
+            alt=""
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIxMiI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMyODc0RjAiIHN0cm9rZS13aWR0aD0iMS4zIj48cGF0aCBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0zNy4zNS42NUguNjV2MTAuN2gzNi43Vi42NXoiLz48cGF0aCBmaWxsPSIjODc4Nzg3IiBkPSJNNi42NSA4LjY1aDF2Mi43aC0xem00LTNIMTFsLS4zNS0uMzVWNWwtLjE1LjE1LS4xNS0uMTV2LjNsLS4zNS4zNWguMzV2NS43SDEwbC4zNS4zNXYuM2wuMTUtLjE1LjE1LjE1di0uM2wuMzUtLjM1aC0uMzV2LTUuN3ptNSAzSDE2bC0uMzUtLjM1VjhsLS4xNS4xNS0uMTUtLjE1di4zbC0uMzUuMzVoLjM1djIuN0gxNWwuMzUuMzV2LjNsLjE1LS4xNS4xNS4xNXYtLjNsLjM1LS4zNWgtLjM1di0yLjd6bTQtM2gxdjUuN2gtMXptNCAzaDF2Mi43aC0xem05IDBoMXYyLjdoLTF6bS00LTNoMXY1LjdoLTF6Ii8+PC9nPjwvc3ZnPg=="
+          />
+          <div class="text-primary flex items-center">
+            <span class="">SIZE CHART</span>
+            <i class="block fa fa-angle-right ml-2 -mt-1"></i>
           </div>
         </div>
         <div
@@ -119,7 +115,7 @@
         </button>
       </div>
       <!-- <div class="py-8 border-b border-gray-300 px-3 my-3 lg:my-0"> -->
-        <!-- <p class="font-bold text-lg">
+      <!-- <p class="font-bold text-lg">
           BEST OFFERS
           <i
             class="fa fa-tag ml-2 text-gray-600"
@@ -127,8 +123,8 @@
           ></i>
         </p>
         <span class="text-gray-500">This product is already at its best price</span> -->
-        <!-- <div> -->
-          <!-- <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
+      <!-- <div> -->
+      <!-- <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
             <div class="font-bold">10% instant discount on Federal Bank Cards</div>
             <div class="font-hairline text-gray-500 text-sm">This product is already at its best price</div>
             <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
@@ -140,7 +136,7 @@
             </span>
           </button> -->
 
-          <!-- <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
+      <!-- <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
             <div class="font-bold">10 super cashback on MobiWiki</div>
             <div class="font-hairline text-gray-500 text-sm">Max super cashback of Rs.250. TCA</div>
             <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
@@ -175,7 +171,7 @@
               ></i>
             </span>
           </button> -->
-        <!-- </div>
+      <!-- </div>
       </div> -->
       <div
         class="py-8 border-b border-gray-300 px-3 bg-gray-100 my-3 lg:my-0"
@@ -198,7 +194,7 @@
           <br />Machine-wash
         </span> -->
       </div>
-      <div class="px-3">
+      <div class="px-3 py-3">
         <p class="font-bold text-lg">Specifications</p>
         <div class="w-full flex py-1">
           <div

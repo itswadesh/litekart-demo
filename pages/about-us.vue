@@ -5,6 +5,11 @@ h1 {
   font-weight: bold;
 }
 </style>
+<script>
+export default {
+  layout: "support"
+};
+</script>
 <template>
   <div>
     <div class="mb-16 mx-2 lg:mx-48">

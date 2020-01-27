@@ -33,6 +33,7 @@
         ></i>
       </div>
     </div>
+    <!-- {{facets.categories.all.buckets[0].key}} == {{facets.categories.all.buckets[0].val.buckets[0].key}}
     <div v-if="facets.categories && facets.categories.all.buckets && facets.categories.all.buckets.length>0">
       <p class="ml-2 headings py-2 font-semibold text-sm px-2">CATEGORY</p>
       <ul class="ml-2 py-2 px-2 filter-container">
@@ -45,10 +46,10 @@
             :value="b.key"
             v-model="fl.categories"
             @change="changed({model:'categories',checked:fl.categories})"
-          >{{b.key}}</Checkbox>
+          >{{b.val.buckets[0].key}}</Checkbox>
         </li>
       </ul>
-    </div>
+    </div> -->
 
     <div v-if="facets.brands && facets.brands.all.buckets && facets.brands.all.buckets.length>0">
       <p class="ml-2 headings py-2 font-semibold text-sm px-2">BRAND</p>

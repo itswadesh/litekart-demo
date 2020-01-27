@@ -14,7 +14,11 @@ h2 {
   margin-bottom: 1rem;
 }
 </style>
-
+<script>
+export default {
+  layout: "support"
+};
+</script>
 <template>
   <div class="mb-16 mx-2 lg:mx-48 ">
     <h1 class="text-4xl text-center">Privacy Policy</h1>

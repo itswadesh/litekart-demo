@@ -1,6 +1,22 @@
 <template>
   <div>
-    <Breadcrumb :product="product" />
+    <div
+      class="ml-4 mt-2"
+      v-if="product.categories && product.categories.length>0"
+    >
+      <router-link to="/">Home</router-link>
+      <span
+        v-for="(c,ix) in product.categories"
+        :key="ix"
+      >
+        <span class="arrow"> › </span>
+        <router-link
+          v-if="c.slug && c.slug!=''"
+          :to="'/'+c.slug"
+        >{{c.name}}</router-link>
+        <span v-else>{{c.name}}</span>
+      </span>
+    </div>
     <div class="flex flex-wrap justify-start">
       <ProductImage :product="product" />
       <ProductDetails
@@ -331,4 +347,3 @@ export default {
   }
 };
 </script>
-

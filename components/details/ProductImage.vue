@@ -24,8 +24,8 @@
       >
         <slide
           class="md:hidden inline-block w-full"
-          v-for="i in product.img"
-          :key="i"
+          v-for="(i,ix) in product.img"
+          :key="ix"
         >
           <img
             class="inline-block w-full"

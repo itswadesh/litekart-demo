@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <div
+    style="min-height:71.8vh"
+    class="antialiased "
+  >
     <Header />
     <nuxt />
     <Footer />

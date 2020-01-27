@@ -1,7 +1,10 @@
 <template>
   <div>
     <Header />
-    <div class="flex flex-wrap justify-center bg-gray-100 pb-5">
+    <div
+      class="flex flex-wrap justify-center bg-gray-100 pb-5 antialiased"
+      style="min-height:71.8vh"
+    >
       <AccountMenu class="hidden md:block" />
       <nuxt />
     </div>

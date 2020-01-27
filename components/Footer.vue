@@ -5,16 +5,16 @@
         <div class="mr-2 font-bold text-sm headings">ONLINE SHOPPING</div>
         <ul class="font-hairline text-sm">
           <li>
-            <nuxt-link to="/search?q=men">Men</nuxt-link>
+            <nuxt-link to="/men">Men</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/search?q=women">Women</nuxt-link>
+            <nuxt-link to="/women">Women</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/search?q=kids">Kids</nuxt-link>
+            <nuxt-link to="/kids">Kids</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/search?q=home">Home & Living</nuxt-link>
+            <nuxt-link to="/home">Home & Living</nuxt-link>
           </li>
           <li>
             <a
@@ -30,10 +30,10 @@
         <div class="mr-2 font-bold text-sm headings">USEFUL LINKS</div>
         <ul class="font-hairline text-sm">
           <li>
-            <nuxt-link to="/sell-online">Sell on Litekart</nuxt-link>
+            <nuxt-link to="/terms">Terms & Conditions</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/refund-policy">Returns & Refunds</nuxt-link>
+            <nuxt-link to="/help-center/bulk-orders-business-inquiry">Sell on Litekart</nuxt-link>
           </li>
           <li>
             <nuxt-link to="/privacy-policy">Privacy Statement</nuxt-link>
@@ -41,11 +41,22 @@
           <li>
             <nuxt-link to="/about-us">About Us</nuxt-link>
           </li>
+        </ul>
+      </div>
+      <div class="lg:p-8 p-2">
+        <div class="mr-2 font-bold text-sm headings">HELP</div>
+        <ul class="font-hairline text-sm">
           <li>
-            <nuxt-link to="/faq-for-buyers">FAQ for Buyers</nuxt-link>
+            <nuxt-link to="/help-center/return-replacement">Returns & Replacement</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/faq-for-sellers">FAQ for Sellers</nuxt-link>
+            <nuxt-link to="/help-center/shipping-delivery">Shipping & Delivery</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/help-center/payments-refunds">Payments & Refunds</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/help-center/cancellations">Cancellations</nuxt-link>
           </li>
         </ul>
       </div>
@@ -96,38 +107,40 @@
       <div class="lg:p-6 p-1 items-center">
         <div class="flex items-center">
           <img
-            class="my-3 h-10"
+            class="my-1 h-10"
             src="/original.png"
             alt="100% original"
           />
           <div class="text-sm">
             <div>
-              <span class="font-bold ml-1 headings">100% ORIGINAL</span> guarantee for all products
-              at litekart.in
+              <span class="font-bold ml-1 headings">100% ORIGINAL</span>
+              <!-- guarantee for all products              at litekart.in -->
             </div>
           </div>
         </div>
         <div class="flex items-center">
           <img
-            class="ml-1 my-2 h-10"
+            class="ml-1 my-1 h-10"
             src="/return.png"
             alt="return"
           />
           <div class="text-sm">
             <div>
-              <span class="font-bold ml-1 headings">Return within 30days</span> of receiving your order
+              <span class="font-bold ml-1 headings">Return within 30days</span>
+              <!-- of receiving your order -->
             </div>
           </div>
         </div>
         <div class="flex items-center">
           <img
-            class="ml-1 my-2 h-10"
+            class="ml-1 my-1 h-10"
             src="/truck.png"
             alt="truck"
           />
           <div class="text-sm">
             <div>
-              <span class="font-bold ml-1 headings">Get free delivery</span> for every order above ₹1199
+              <span class="font-bold ml-1 headings">Get free delivery</span>
+              <!-- for every order above ₹1199 -->
             </div>
           </div>
         </div>
