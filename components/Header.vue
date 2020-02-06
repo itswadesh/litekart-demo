@@ -9,7 +9,7 @@
           <img
             class="h-10 mx-2"
             :src="`${$store.state.settings.CDN_URL}/${$store.state.settings.logo}`"
-            alt=""
+            alt="Home"
           />
         </nuxt-link>
         <div class="hidden lg:block flex flex-none text-sm xs:justify-between items-center text-gray order-2">

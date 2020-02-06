@@ -51,7 +51,7 @@ export const actions = {
                 this.$axios.setToken(token, 'Bearer')
                 const user = await this.$axios.$get('api/users/me')
                 commit('setUser', user)
-                this.$cookies.set('token', token, { path: '/', maxAge: tokenExpiry })
+                this.$cookies.set('Authorization', token, { path: '/', maxAge: tokenExpiry })
                 return user
             }
         } catch (err) {
@@ -68,7 +68,7 @@ export const actions = {
                 this.$axios.setToken(data.token, 'Bearer')
                 commit('setUser', data.user)
                 commit('success', "Verified! Thank You.", { root: true })
-                this.$cookies.set('token', data.token, { path: '/', maxAge: tokenExpiry })
+                this.$cookies.set('Authorization', data.token, { path: '/', maxAge: tokenExpiry })
                 let returnUrl = payload.route || "/my";
                 this.$router.push(returnUrl)
                 commit('cart/setCart', data.cart, { root: true })
@@ -90,7 +90,7 @@ export const actions = {
                 this.$axios.setToken(data.token, 'Bearer')
                 commit('setUser', data.user)
                 commit('success', "Verified! Thank You.", { root: true })
-                this.$cookies.set('token', data.token, { path: '/', maxAge: tokenExpiry })
+                this.$cookies.set('Authorization', data.token, { path: '/', maxAge: tokenExpiry })
                 let returnUrl = payload.route || "/my";
                 this.$router.push(returnUrl)
                 commit('cart/setCart', data.cart, { root: true })
@@ -109,7 +109,7 @@ export const actions = {
                 this.$axios.setToken(data.token, 'Bearer')
                 commit('setUser', data.user)
                 commit('success', "Verified! Thank You.", { root: true })
-                this.$cookies.set('token', data.token, { path: '/', maxAge: tokenExpiry })
+                this.$cookies.set('Authorization', data.token, { path: '/', maxAge: tokenExpiry })
                 let returnUrl = payload.route || "/my";
                 this.$router.push(returnUrl)
                 commit('cart/setCart', data.cart, { root: true })
