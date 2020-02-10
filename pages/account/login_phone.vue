@@ -159,7 +159,6 @@ export default {
       if (index == 4) {
         this.submit(); // Submit code
       }
-      // console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", index, eventCode);
     },
     onFocusEvent(index) {
       // for (let item = 1; item < index; item++) {

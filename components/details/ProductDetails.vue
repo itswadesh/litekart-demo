@@ -43,20 +43,30 @@
           class="flex flex-wrap py-4 relative px-3"
           :class="{'shake-animation': shake}"
         >
+        <div v-for="v in product.variants" :key="v._id">
           <button
-            v-for="v in product.variants"
-            :key="v._id"
+           
             @click="selectVariant(v)"
             :class="{'bg-gray-700 text-white': v.size==(userSelectedVariant && userSelectedVariant.size)}"
             v-if="v.stock>0"
             class="focus:outline:none m-1 rounded-full border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
           >
-            <p class="text-xs">{{v.size}}</p>
+            <div class="text-xs">{{v.size}}</div>
             <div
               v-if="v.stock<5"
               class="text-xs font-semibold absolute w-12 bg-orange-500 text-white rounded"
             >{{v.stock}} left</div>
           </button>
+          <button
+            v-else
+            class="bg-gray-700 text-white focus:outline:none m-1 rounded-full border border-gray-400 w-12 h-12"
+          >
+            <div class="text-xs">{{v.size}}</div>
+            <div
+              class="text-xs font-semibold absolute w-12 bg-orange-500 text-white rounded"
+            >No stock</div>
+          </button>
+        </div>
         </div>
       </div>
 
@@ -399,9 +409,8 @@ export default {
         <img class="w-12 h-12 object-cover" src="${this.product.img &&
           this.$store.state.settings.CDN_URL + this.product.img[0]}" alt="" />
         <div class="toasted-text items-center">
-          <div>${this.product.name.substr(0, 20) + "..."}</div>
+          <div>${this.product.name.substr(0, 40) + "..."}</div>
           <div class="text-gray-600 text-xs">Added to your cart</div>
-          <div class="text-pink-600">View cart</div>
         </div>
       </div>
       `,
@@ -409,11 +418,17 @@ export default {
             containerClass: "sw-toast-container",
             theme: "outline",
             position: "top-right",
-            singleton: false
+            singleton: false,
+            action : {
+                text : 'View Cart',
+                onClick : (e, toastObject) => {
+                  this.$router.push('/cart')
+                    toastObject.goAway(0);
+                }
+            },
           }
         )
-        // .goAway(500000000000000);
-        .goAway(1000);
+        .goAway(500000);
     },
     showDescription() {
       this.productDescription = true;

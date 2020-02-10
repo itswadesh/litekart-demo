@@ -78,7 +78,7 @@
           </div>
           <div class="flex justify-between mt-2 text-xs">
             <div class="w-10/12 text-left">Pay by {{order.payment.method}}</div>
-            <div class="ml-2 text-black-400 text-right">{{order.amount.total | currency}}</div>
+            <div class="text-black-400 text-right">{{order.amount.total | currency}}</div>
           </div>
         </div>
         <div v-if="order && order.address">

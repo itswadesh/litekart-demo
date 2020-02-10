@@ -38,7 +38,7 @@
         <CartBanners />
       </div>
       <CartSummary :cart="cart">
-        <Button @click="$router.push('/checkout/address')" color="primary">PLACE ORDER</Button>
+        <Button @click="$router.push('/checkout/address')" color="primary">SELECT ADDRESS</Button>
       </CartSummary>
       <div class="w-8"></div>
     </div>

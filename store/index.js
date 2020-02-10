@@ -64,7 +64,7 @@ export const actions = {
     // Settings
     try {
       let settings = await this.$axios.$get('api/settings')
-      commit('settings', settings)
+      commit('settings', settings.data)
     } catch (err) {
       commit('setErr', err)
     }
