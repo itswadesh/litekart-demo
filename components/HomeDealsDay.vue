@@ -1,79 +1,79 @@
 <template>
   <carousel>
-    <div class="w-full flex flex-wrap">
+    <div class="flex flex-wrap w-full">
       <div class="w-3/4 shadow">
         <div class="w-full p-3 border-b">
-          <p class="w-1/2 float-left">
+          <p class="float-left w-1/2">
             Deals Of the Day
-            <!-- <span class="ml-2 text-gray-500 text-xs">23:57:59 Left</span> -->
+            <!-- <span class="ml-2 text-xs text-gray-500">23:57:59 Left</span> -->
           </p>
-          <button class="primary text-xs px-2 rounded">View All</button>
+          <button class="px-2 text-xs rounded primary">View All</button>
         </div>
         <div class="flex flex-wrap">
           <div class="w-full ml-1">
             <img
               src="/cardimage.webp"
-              class="h-32 w-32 mt-2 object-cover"
+              class="object-cover w-32 h-32 mt-2"
               alt=""
             />
             <div class="px-2 py-4">
-              <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-              <p class="text-green-700 text-xs text-center">Extra 5% off</p>
+              <div class="mb-2 text-xs font-bold">Laptop Accessories</div>
+              <p class="text-xs text-center text-green-700">Extra 5% off</p>
             </div>
           </div>
           <div class="w-32 ml-1">
             <img
               src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2"
+              class="w-32 h-32 px-2 mt-2"
               alt=""
             />
             <div class="px-2 py-4">
-              <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-              <p class="text-green-700 text-xs text-center">Extra 5% off</p>
+              <div class="mb-2 text-xs font-bold">Laptop Accessories</div>
+              <p class="text-xs text-center text-green-700">Extra 5% off</p>
             </div>
           </div>
           <div class="w-32 ml-1">
             <img
               src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2"
+              class="w-32 h-32 px-2 mt-2"
               alt=""
             />
             <div class="px-2 py-4">
-              <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-              <p class="text-green-700 text-xs text-center">Extra 5% off</p>
+              <div class="mb-2 text-xs font-bold">Laptop Accessories</div>
+              <p class="text-xs text-center text-green-700">Extra 5% off</p>
             </div>
           </div>
           <div class="w-32 ml-1">
             <img
               src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2"
+              class="w-32 h-32 px-2 mt-2"
               alt=""
             />
             <div class="px-2 py-4">
-              <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-              <p class="text-green-700 text-xs text-center">Extra 5% off</p>
+              <div class="mb-2 text-xs font-bold">Laptop Accessories</div>
+              <p class="text-xs text-center text-green-700">Extra 5% off</p>
             </div>
           </div>
           <div class="w-32 ml-1">
             <img
               src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2"
+              class="w-32 h-32 px-2 mt-2"
               alt=""
             />
             <div class="px-2 py-4">
-              <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-              <p class="text-green-700 text-xs text-center">Extra 5% off</p>
+              <div class="mb-2 text-xs font-bold">Laptop Accessories</div>
+              <p class="text-xs text-center text-green-700">Extra 5% off</p>
             </div>
           </div>
           <div class="w-32 ml-1">
             <img
               src="/cardimage.webp"
-              class="px-2 h-32 w-32 mt-2"
+              class="w-32 h-32 px-2 mt-2"
               alt=""
             />
             <div class="px-2 py-4">
-              <div class="font-bold text-xs mb-2">Laptop Accessories</div>
-              <p class="text-green-700 text-xs text-center">Extra 5% off</p>
+              <div class="mb-2 text-xs font-bold">Laptop Accessories</div>
+              <p class="text-xs text-center text-green-700">Extra 5% off</p>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@
         <div class="h-64">
           <img
             src="/cardimage.webp"
-            class="px-2 w-full h-64 mt-2"
+            class="w-full h-64 px-2 mt-2"
             alt=""
           />
         </div>

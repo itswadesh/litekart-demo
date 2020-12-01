@@ -15,7 +15,7 @@ h2 {
 </style>
 
 <template>
-  <div class="mb-16 mx-2 lg:mx-48 ">
+  <div class="mx-2 mb-16 lg:mx-48 ">
     <h1 class="text-4xl text-center">Terms</h1>
     <h2 class="text-xl">Refund Policy</h2>
     <p>Full Refund witin 7 days if it does not work the way you wish</p>

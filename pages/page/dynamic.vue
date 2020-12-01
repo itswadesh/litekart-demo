@@ -1,5 +1,5 @@
 <template>
-  <div class="dynamic_container container ">
+  <div class="container dynamic_container ">
     <div class="content_container">
       <div class="content_card">
 

@@ -6,25 +6,25 @@
       :disabled="!variant || variant.price<1 || variant.stock<1 || $store.state.loading"
       @click="addToBag(1);"
     >
-      <button class="text-gray-600 bg-gray-200 rounded px-2 rounded">
+      <button class="px-2 text-gray-600 bg-gray-200 rounded">
         <img src="/plus.svg" alt="+" />
       </button>
     </div>
     <div v-else>
       <div class="flex flex-wrap">
-        <button class="muted rounded-full w-8 h-8" @click="addToBag(-1)">
-          <i class="fa fa-minus m-auto" aria-hidden="true"></i>
+        <button class="w-8 h-8 rounded-full muted" @click="addToBag(-1)">
+          <i class="m-auto fa fa-minus" aria-hidden="true"></i>
         </button>
-        <div class="px-2 flex items-center text-center">
+        <div class="flex items-center px-2 text-center">
           <div v-if="!loading">{{getQty({pid:product._id, vid:variant._id})}}</div>
           <img alt="..." class="w-3 h-4" src="/loading.svg" v-else />
         </div>
         <button
-          class="primary rounded-full w-8 h-8"
+          class="w-8 h-8 rounded-full primary"
           :disabled="!variant || variant.price<1 || variant.stock<1 || loading"
           @click="addToBag(1)"
         >
-          <i class="fa fa-plus m-auto" aria-hidden="true"></i>
+          <i class="m-auto fa fa-plus" aria-hidden="true"></i>
         </button>
       </div>
     </div>

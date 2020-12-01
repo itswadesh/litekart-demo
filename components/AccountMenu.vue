@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full text-center lg:w-1/5 lg:mt-10 bg-white shadow leading-loose rounded">
+  <div class="w-full leading-loose text-center bg-white rounded shadow lg:w-1/5 lg:mt-10">
     <div class="w-full p-10 border-b border-gray-200">
-      <span class="h-20 w-20 p-2 text-4xl text-gray-600 rounded-full bg-gray-200 inline-block">{{user.firstName | first}}</span>
+      <span class="inline-block w-20 h-20 p-2 text-4xl text-gray-600 bg-gray-200 rounded-full">{{user.firstName | first}}</span>
       <br />
       <span class="text-lg">{{user.firstName}}</span>
       <span class="text-sm text-gray-500">{{user.email}}</span>
@@ -11,97 +11,97 @@
         <nuxt-link
           to="/my/orders"
           active-class="text-pink-500"
-          class="w-full flex flex-wrap text-lg"
+          class="flex flex-wrap w-full text-lg"
         >
           <div class="w-1/5">
             <i
-              class="fa fa-archive p-5"
+              class="p-5 fa fa-archive"
               aria-hidden="true"
             ></i>
           </div>
-          <div class="w-4/5 text-left p-3">Orders</div>
+          <div class="w-4/5 p-3 text-left">Orders</div>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link
           to="/my/address"
           active-class="text-pink-500"
-          class="w-full flex flex-wrap text-lg"
+          class="flex flex-wrap w-full text-lg"
         >
           <div class="w-1/5">
             <i
-              class="fa fa-address-card p-5"
+              class="p-5 fa fa-address-card"
               aria-hidden="true"
             ></i>
           </div>
-          <div class="w-4/5 text-left p-3">Address</div>
+          <div class="w-4/5 p-3 text-left">Address</div>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link
           to="/my/profile"
           active-class="text-pink-500"
-          class="w-full flex flex-wrap text-lg"
+          class="flex flex-wrap w-full text-lg"
         >
           <div class="w-1/5">
             <i
-              class="fa fa-user-circle p-5"
+              class="p-5 fa fa-user-circle"
               aria-hidden="true"
             ></i>
           </div>
-          <div class="w-4/5 text-left p-3">Profile Details</div>
+          <div class="w-4/5 p-3 text-left">Profile Details</div>
         </nuxt-link>
       </li>
 
       <!-- <li>
-        <nuxt-link to="/my/orders/details" class="w-full flex flex-wrap text-lg">
+        <nuxt-link to="/my/orders/details" class="flex flex-wrap w-full text-lg">
           <div class="w-1/5">
-            <i class="fa fa-heart-o p-5" aria-hidden="true"></i>
+            <i class="p-5 fa fa-heart-o" aria-hidden="true"></i>
           </div>
-          <div class="w-4/5 text-left p-3">Order Details</div>
+          <div class="w-4/5 p-3 text-left">Order Details</div>
         </nuxt-link>
       </li> -->
       <li>
         <nuxt-link
           to="/my/password"
           active-class="text-pink-500"
-          class="w-full flex flex-wrap text-lg"
+          class="flex flex-wrap w-full text-lg"
         >
           <div class="w-1/5">
             <i
-              class="fa fa-key p-5"
+              class="p-5 fa fa-key"
               aria-hidden="true"
             ></i>
           </div>
-          <div class="w-4/5 text-left p-3">Password</div>
+          <div class="w-4/5 p-3 text-left">Password</div>
         </nuxt-link>
       </li>
       <li>
         <a
           href="#"
-          class="w-full flex flex-wrap text-lg"
+          class="flex flex-wrap w-full text-lg"
         >
           <div class="w-1/5">
             <i
-              class="fa fa-credit-card p-5"
+              class="p-5 fa fa-credit-card"
               aria-hidden="true"
             ></i>
           </div>
-          <div class="w-4/5 text-left p-3">Credits</div>
+          <div class="w-4/5 p-3 text-left">Credits</div>
         </a>
       </li>
       <li>
         <div
           @click="logout"
-          class="logout w-full flex flex-wrap text-lg"
+          class="flex flex-wrap w-full text-lg logout"
         >
           <div class="w-1/5">
             <i
-              class="fa fa-power-off p-5"
+              class="p-5 fa fa-power-off"
               aria-hidden="true"
             ></i>
           </div>
-          <div class="w-4/5 text-left p-3">Sign Out</div>
+          <div class="w-4/5 p-3 text-left">Sign Out</div>
         </div>
       </li>
     </ul>

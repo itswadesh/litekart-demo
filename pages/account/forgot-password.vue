@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="bg-gray-100 xs:mobile-login h-full px-4">
-      <div class="container mx-auto h-full flex items-center">
-        <div class="lg:w-1/3 w-full">
+    <div class="h-full px-4 bg-gray-100 xs:mobile-login">
+      <div class="container flex items-center h-full mx-auto">
+        <div class="w-full lg:w-1/3">
                 <p
                   class="err"
                   v-if="err"
@@ -15,9 +15,9 @@
                   class="info"
                   v-else
                 >Type in your Phone / Email below and we'll send you  instructions on how to create a new password</p>
-          <div class="border-teal border-t-12 bg-white mb-6 rounded shadow-2xl">
-            <div class="p-0 secondary text-white rounded rounded-b-none">
-              <h1 class="text-xl mb-6 text-left p-3">
+          <div class="mb-6 bg-white rounded shadow-2xl border-teal border-t-12">
+            <div class="p-0 text-white rounded rounded-b-none secondary">
+              <h1 class="p-3 mb-6 text-xl text-left">
                 <span class="font-extrabold">FORGOT PASSWORD</span>
               </h1>
                
@@ -39,7 +39,7 @@
                   <button
                     type="submit"
                     :disabled="loading"
-                    class="flex items-center justify-center h-14 text-lg outline-none w-full font-bold py-2 rounded"
+                    class="flex items-center justify-center w-full py-2 text-lg font-bold rounded outline-none h-14"
                     :class="{'primary text-white':!loading,'border border-gray-400 bg-gray-300':loading}"
                   >
                     <div v-if="loading">

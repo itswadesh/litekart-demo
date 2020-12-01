@@ -1,6 +1,6 @@
 require('dotenv').config()
 const axios = require('axios')
-const { API_URL, head, HOST } = require("./config");
+const { API_URL, head, HOST } = require('./config')
 const PROXY = process.env.API_URL || API_URL
 
 export default {
@@ -9,16 +9,17 @@ export default {
   loading: '~/components/ui/Loading.vue',
   css: [],
   plugins: [
-    '~/plugins/filters.js',
-    '~/plugins/axios',
+    { src: '~/plugins/VueYoutube.js', mode: 'client' },
+    { src: '~/plugins/swal.js', mode: 'client' },
+    { src: '~/plugins/ui.js' },
+    { src: '~/plugins/filters.js' },
     { src: '~/plugins/init.js', mode: 'client' },
     { src: '~/plugins/lazy.js', mode: 'client' },
+    { src: '~/plugins/scroll.js', mode: 'client' },
     { src: '~/plugins/carousel.js', mode: 'client' },
-    { src: '~/plugins/vue-slider-component', mode: 'client' } // Price slider
+    { src: '~/plugins/vue-slider-component', mode: 'client' }, // Price slider
   ],
-  buildModules: [
-    '@nuxtjs/tailwindcss',
-  ],
+  buildModules: ['@nuxtjs/tailwindcss'],
   modules: [
     '~/modules/routes',
     '@nuxtjs/robots',
@@ -28,12 +29,12 @@ export default {
     '@nuxtjs/font-awesome',
     '@nuxtjs/pwa',
     '@nuxtjs/toast',
-    'cookie-universal-nuxt'
+    'cookie-universal-nuxt',
   ],
   toast: {
-    theme: "bubble",
+    theme: 'bubble',
     position: 'top-center',
-    singleton: true
+    singleton: true,
   },
   axios: {
     // host: PROXY,
@@ -41,7 +42,7 @@ export default {
     // browserBaseURL: '/api/',
     // prefix: '/api/',
     proxy: true,
-    credentials: true
+    credentials: true,
   },
   proxy: {
     '/api/': PROXY,
@@ -50,8 +51,8 @@ export default {
   },
   generate: {
     dir: 'dist',
-    fallback: true
-  }
+    fallback: true,
+  },
   // sitemap: {
   //   path: '/sitemap.xml',
   //   hostname: HOST,

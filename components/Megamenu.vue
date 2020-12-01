@@ -1,31 +1,33 @@
 <template>
   <ul class="flex mx-8">
     <li
-      class="cursor-pointer hoverable border-white border-b-2 hover:border-pink-500"
+      class="border-b-2 border-white cursor-pointer hoverable hover:border-pink-500"
       v-for="category in $store.state.categories"
       :key="category._id"
     >
       <nuxt-link
         :to="`/${category.slug}`"
-        class="p-5 relative block font-bold items-center"
+        class="relative items-center block p-5 font-bold"
       >
-        {{category.name && category.name.toUpperCase()}}
+        {{ category.name && category.name.toUpperCase() }}
         <!-- <i
           class="fa fa-angle-down"
           aria-hidden="true"
         ></i> -->
       </nuxt-link>
-      <div class="mega-menu mb-16 sm:mb-0 shadow-xl bg-gray-100">
-        <div class="mx-auto w-full flex flex-wrap justify-start mx-2">
+      <div class="mb-16 bg-gray-100 shadow-xl mega-menu sm:mb-0">
+        <div class="flex flex-wrap justify-start w-full mx-auto">
           <ul
-            v-for="(c,ix) in category.children"
+            v-for="(c, ix) in category.children"
             :key="c._id"
-            class="px-4 w-full sm:w-1/2 text-1 lg:w-1/6 border-gray-600 border-b lg:border-b-0 pb-6 pt-6 lg:pt-3"
-            :class="{'bg-gray-200':Math.abs(ix % 2)}"
+            class="w-full px-4 pt-6 pb-6 border-b border-gray-600 sm:w-1/2 text-1 lg:w-1/6 lg:border-b-0 lg:pt-3"
+            :class="{ 'bg-gray-200': Math.abs(ix % 2) }"
           >
             <div class="flex">
-              <div class="flex font-bold text-sm text-black text-bold mb-1 items-center">
-                {{c.name}}
+              <div
+                class="flex items-center mb-1 text-sm font-bold text-black text-bold"
+              >
+                {{ c.name }}
                 <div class="pl-1" style="padding-top:2px;">
                   <i class="fa fa-caret-right" aria-hidden="true"></i>
                 </div>
@@ -33,8 +35,12 @@
             </div>
             <div class="flex items-center py-3">
               <ul>
-                <li class="py-1 text-gray-600" v-for="(c, index) in c.children" :key="index">
-                  <nuxt-link :to="`/${c.slug}?page=1`">{{c.name}}</nuxt-link>
+                <li
+                  class="py-1 text-gray-600"
+                  v-for="(c, index) in c.children"
+                  :key="index"
+                >
+                  <nuxt-link :to="`/${c.slug}?page=1`">{{ c.name }}</nuxt-link>
                 </li>
               </ul>
             </div>
@@ -46,12 +52,12 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style scoped>
 .mega-menu {
- visibility: hidden;
+  visibility: hidden;
   transition: 0.2s 0.1s; /* delay of 1 seconds on hover off */
   opacity: 0;
   left: 0;

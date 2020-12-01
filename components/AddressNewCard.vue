@@ -1,12 +1,12 @@
 <template>
   <div
-    class="shadow bg-white p-2 rounded address"
+    class="p-2 bg-white rounded shadow address"
     @click="go('/checkout/add')"
   >
-    <div class="w-full flex justify-between">
+    <div class="flex justify-between w-full">
       <nuxt-link
         to=""
-        class="flextext-gray-600 font-sm m-auto"
+        class="m-auto flextext-gray-600 font-sm"
       >
         <img
           src="/rounded-plus.png"

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-wrap justify-between">
-      <div class="w-full p-2 font-semibold text-lg text-center">
+      <div class="w-full p-2 text-lg font-semibold text-center">
         My Wishlist
         <span
           class="font-hairline"
@@ -11,26 +11,26 @@
     </div>
     <div class="flex flex-wrap">
       <div
-        class="w-full text-center mx-32 "
+        class="w-full mx-32 text-center "
         v-if="wishlist.length==0"
       >
-      <img class="containerr w-1/2" src="/empty.png" alt="" />
+      <img class="w-1/2 containerr" src="/empty.png" alt="" />
         <h1>Wishlist is empty</h1><br />
         <nuxt-link
           to="/"
-          class="w-full p-3 text-lg font-bold rounded primary text-white"
+          class="w-full p-3 text-lg font-bold text-white rounded primary"
         >Add some items</nuxt-link>
       </div>
       <div
         v-else
-        class="flex w-1/2 lg:w-1/4 xl:w-1/5 justify-between"
+        class="flex justify-between w-1/2 lg:w-1/4 xl:w-1/5"
         v-for="w in wishlist"
         :key="w._id"
       >
-        <div class="shadow m-3 relative">
+        <div class="relative m-3 shadow">
           <nuxt-link :to="`${w.product.slug}?id=${w.product._id}`">
             <img
-              class="h-48 w-full object-cover"
+              class="object-cover w-full h-48"
               :src="$store.state.settings.CDN_URL+w.product.img[0]"
               alt=""
             />
@@ -40,25 +40,25 @@
               @click="remove(w._id)"
               src="/close-img.png"
               alt="x"
-              class="absolute w-4 top-0 right-0 mt-2 mr-2"
+              class="absolute top-0 right-0 w-4 mt-2 mr-2"
             />
           </button>
           <div class="px-2 leading-loose">
             <nuxt-link :to="`${w.product.slug}?id=${w.product._id}`">
               <p class="text-sm font-hairline text-black">{{w.product.name | truncate(50)}}</p>
             </nuxt-link>
-            <div class="text-gray-500 mb-2 text-xs">
-              <span class="text-2xl font-bold text-black mt-2">{{w.variant.price | currency}}</span>
+            <div class="mb-2 text-xs text-gray-500">
+              <span class="mt-2 text-2xl font-bold text-black">{{w.variant.price | currency}}</span>
               <span class="line-through">{{w.variant.mrp | currency}}</span>
               <span class>|</span>
-              <span class="text-green-500 font-hairline">{{Math.round(((w.variant.mrp-w.variant.price) *100) / w.variant.mrp)}}% OFF</span>
+              <span class="font-hairline text-green-500">{{Math.round(((w.variant.mrp-w.variant.price) *100) / w.variant.mrp)}}% OFF</span>
             </div>
           </div>
           <div
-            class="border-t border-gray-300 text-center"
+            class="text-center border-t border-gray-300"
             @click="addToBag({pid:w.product._id, vid:w.variant._id,qty:1})"
           >
-            <button class="text-sm font-bold text-primary py-4">MOVE TO BAG</button>
+            <button class="py-4 text-sm font-bold text-primary">MOVE TO BAG</button>
           </div>
         </div>
       </div>

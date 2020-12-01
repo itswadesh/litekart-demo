@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="bg-gray-100">
-      <div class="mx-auto h-full flex justify-center items-center">
+      <div class="flex items-center justify-center h-full mx-auto">
         <div class="lg:w-1/3 xs:3/3">
-          <div class="border-teal border-t-12 bg-white mb-6 rounded shadow-2xl">
-            <div class="p-0 bg-blue-700 text-white rounded rounded-b-none">
-              <h1 class="text-xl mb-6 text-left p-3">
+          <div class="mb-6 bg-white rounded shadow-2xl border-teal border-t-12">
+            <div class="p-0 text-white bg-blue-700 rounded rounded-b-none">
+              <h1 class="p-3 mb-6 text-xl text-left">
                 <span class="font-extrabold">SIGN IN</span> TO YOUR ACCOUNT
               </h1>
             </div>
@@ -16,10 +16,10 @@
               class="center"
             >
               <div class="p-6">
-                <div class="mb-10 flex items-center border-b border-b-2 border-grey-500">
+                <div class="flex items-center mb-10 border-b border-b-2 border-grey-500">
                   <input
                     v-model="user.phone"
-                    class="appearance-none bg-gray-200 border-none w-full text-gray-700 p-4 leading-tight focus:outline-none"
+                    class="w-full p-4 leading-tight text-gray-700 bg-gray-200 border-none appearance-none focus:outline-none"
                     type="text"
                     placeholder="Phone No"
                     aria-label="Enter mobile no"
@@ -27,39 +27,39 @@
                   />
                 </div>
 
-                <p class="text-red-500 mb-5 text-xs font-hairline">Please enter OTP sent to mobile number</p>
+                <p class="mb-5 text-xs font-hairline text-red-500">Please enter OTP sent to mobile number</p>
 
-                <div class="otp-container relative inline-block rounded p-2 w-32 w-12 mb-10 bg-gray-200">
+                <div class="relative inline-block w-12 w-32 p-2 mb-10 bg-gray-200 rounded otp-container">
                   <div
                     id="wraper1"
-                    class="otp-seperator w-1 h-1 rounded absolute"
+                    class="absolute w-1 h-1 rounded otp-seperator"
                     :class="{'wraper-hide':otp.length>0}"
                   ></div>
                   <div
                     id="wraper2"
-                    class="otp-seperator w-1 h-1 rounded absolute"
+                    class="absolute w-1 h-1 rounded otp-seperator"
                     :class="{'wraper-hide':otp.length>1}"
                   ></div>
                   <div
                     id="wraper3"
-                    class="otp-seperator w-1 h-1 rounded absolute"
+                    class="absolute w-1 h-1 rounded otp-seperator"
                     :class="{'wraper-hide':otp.length>2}"
                   ></div>
                   <div
                     id="wraper4"
-                    class="otp-seperator w-1 h-1 rounded absolute"
+                    class="absolute w-1 h-1 rounded otp-seperator"
                     :class="{'wraper-hide':otp.length>3}"
                   ></div>
                   <input
                     v-model="otp"
-                    class="outline-none pl-4 otp-content w-32 bg-transparent"
+                    class="w-32 pl-4 bg-transparent outline-none otp-content"
                     maxlength="4"
                     autocomplete="off"
                     @keyup="onKeyUpEvent(otp.length, $event)"
                   />
                 </div>
                 <div class="flex items-center justify-between">
-                  <button class="text-2xl big-button outline-none text-xl hover:bg-red-200 w-full text-white font-bold py-2 px-4 rounded">Verify Phone</button>
+                  <button class="w-full px-4 py-2 text-xl text-2xl font-bold text-white rounded outline-none big-button hover:bg-red-200">Verify Phone</button>
                 </div>
               </div>
             </form>

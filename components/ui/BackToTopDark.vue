@@ -1,6 +1,6 @@
 <template>
   <button @click="toTop" v-if="scrolled > 1000">
-    <img class="m-auto w-1/3" src="/up-arrow.png" alt="" />
+    <img class="w-1/3 m-auto" src="/up-arrow.png" alt="" />
   </button>
 </template>
 

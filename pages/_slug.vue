@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="ml-4 mt-2"
+      class="mt-2 ml-4"
       v-if="product.categories && product.categories.length>0"
     >
       <router-link to="/">Home</router-link>

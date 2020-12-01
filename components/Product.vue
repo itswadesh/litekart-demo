@@ -16,12 +16,12 @@
           alt=""
         />
         <div class="p-3 text-center text-1">
-          <div class="text-gray-900 text-sm headings truncate">{{product._source.name}}</div>
+          <div class="text-sm text-gray-900 truncate headings">{{product._source.name}}</div>
           <!-- <div
-            class="font-thin text-sm"
+            class="text-sm font-thin"
             v-if="product._source.categories && product._source.categories[0]"
           >{{product._source.categories[0].name}}</div> -->
-          <div><span class="font-bold">{{product._source.price | currency}}</span> <del class="text-xs text-gray-600" v-if="product._source.mrp>product._source.price">{{product._source.mrp | currency}}</del> <span class="text-pink-500 text-xs" v-if="product._source.mrp>product._source.price">({{Math.round(((product._source.mrp-product._source.price) *100) / product._source.mrp)}}% off)</span> </div>
+          <div><span class="font-bold">{{product._source.price | currency}}</span> <del class="text-xs text-gray-600" v-if="product._source.mrp>product._source.price">{{product._source.mrp | currency}}</del> <span class="text-xs text-pink-500" v-if="product._source.mrp>product._source.price">({{Math.round(((product._source.mrp-product._source.price) *100) / product._source.mrp)}}% off)</span> </div>
         </div>
       </div>
     </nuxt-link>

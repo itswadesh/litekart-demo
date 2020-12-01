@@ -2,20 +2,20 @@
   <div>
     <CheckoutHeader selected="address" />
     <div style="max-width: 1000px;margin: 0 auto;">
-      <div class="mx-auto lg:mx-10 p-2 flex justify-between flex-wrap items-start">
+      <div class="flex flex-wrap items-start justify-between p-2 mx-auto lg:mx-10">
         <!-- Left sidebar -->
-        <div class="flex w-full md:w-2/3 flex-wrap justify-start desktop1-base-left">
+        <div class="flex flex-wrap justify-start w-full md:w-2/3 desktop1-base-left">
           <div
-            class="w-full md:w-1/2 p-2 flex flex-wrap justify-between "
+            class="flex flex-wrap justify-between w-full p-2 md:w-1/2 "
             v-for="(a,ix) in addresses"
             :key="a._id"
           >
             <div
-              class="w-full shadow bg-white rounded border p-2"
+              class="w-full p-2 bg-white border rounded shadow"
               :class="{'border-green-500':selectedAddress==a._id}"
             >
               <div class="flex">
-                <label class="cursor-pointer w-full flex justify-between">
+                <label class="flex justify-between w-full cursor-pointer">
                   <div>
                     <Radio
                       :checked="selectedAddress==a._id"
@@ -39,18 +39,18 @@
                     </div>
                   </div>
                   <div v-if="ix==0">
-                    <div class="rounded-full text-xs bg-gray-200 py-1 px-2">Default</div>
+                    <div class="px-2 py-1 text-xs bg-gray-200 rounded-full">Default</div>
                   </div>
                 </label>
               </div>
-              <div class="border-t border-gray-200 flex w-full">
+              <div class="flex w-full border-t border-gray-200">
                 <button
                   @click="del(a)"
-                  class="tracking-widest w-1/2 text-blue-500 py-1 border-r border-gray-200 mt-1"
+                  class="w-1/2 py-1 mt-1 tracking-widest text-blue-500 border-r border-gray-200"
                 >Remove</button>
                 <button
                   @click="go(`/checkout/add?id=${a._id}`)"
-                  class="tracking-widest w-1/2 text-blue-500 py-1 mt-1"
+                  class="w-1/2 py-1 mt-1 tracking-widest text-blue-500"
                 >Edit</button>
               </div>
             </div>
@@ -61,7 +61,7 @@
         </div>
         <!-- Right sidebar -->
         <div class="w-full md:w-1/3 desktop1-base-right">
-          <label class="flex justify-start border rounded p-2 text-sm border-green-300 bg-green-100">
+          <label class="flex justify-start p-2 text-sm bg-green-100 border border-green-300 rounded">
             <div class="ml-2">
               <div class="font-bold text-black">Standard Delivery</div>
               <div class="text-gray-500">Delivery Charge ₹149</div>
@@ -74,7 +74,7 @@
             class="flex my-5"
           >
             <img
-              class="lg:rounded xs:rounded-b-none w-20"
+              class="w-20 lg:rounded xs:rounded-b-none"
               v-lazy="$store.state.settings.CDN_URL+item.product.img"
               alt=""
             />

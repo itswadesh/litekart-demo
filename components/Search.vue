@@ -7,14 +7,14 @@
     <div class="search_fix"></div>
     <div class="absolute">
       <i
-        class="fa fa-search m-3 text-gray-500"
+        class="m-3 text-gray-500 fa fa-search"
         aria-hidden="true"
       ></i>
     </div>
     <input
       type="text"
       v-model="search"
-      class="w-full px-10 bg-purple-white pr-4 shadow rounded-b-sm border-0 h-10 focus:outline-none text-xs text-2"
+      class="w-full h-10 px-10 pr-4 text-xs border-0 rounded-b-sm shadow bg-purple-white focus:outline-none text-2"
       placeholder="Search for products,brands and more"
       name="search"
     />

@@ -1,9 +1,9 @@
 <template>
   <footer class="footer">
     <div class="flex flex-wrap justify-between py-8">
-      <div class="lg:p-8 p-2">
-        <div class="mr-2 font-bold text-sm headings">ONLINE SHOPPING</div>
-        <ul class="font-hairline text-sm">
+      <div class="p-2 lg:p-8">
+        <div class="mr-2 text-sm font-bold headings">ONLINE SHOPPING</div>
+        <ul class="text-sm font-hairline">
           <li>
             <nuxt-link to="/men">Men</nuxt-link>
           </li>
@@ -26,9 +26,9 @@
           </li>
         </ul>
       </div>
-      <div class="lg:p-8 p-2">
-        <div class="mr-2 font-bold text-sm headings">USEFUL LINKS</div>
-        <ul class="font-hairline text-sm">
+      <div class="p-2 lg:p-8">
+        <div class="mr-2 text-sm font-bold headings">USEFUL LINKS</div>
+        <ul class="text-sm font-hairline">
           <li>
             <nuxt-link to="/terms">Terms & Conditions</nuxt-link>
           </li>
@@ -43,9 +43,9 @@
           </li>
         </ul>
       </div>
-      <div class="lg:p-8 p-2">
-        <div class="mr-2 font-bold text-sm headings">HELP</div>
-        <ul class="font-hairline text-sm">
+      <div class="p-2 lg:p-8">
+        <div class="mr-2 text-sm font-bold headings">HELP</div>
+        <ul class="text-sm font-hairline">
           <li>
             <nuxt-link to="/help-center/return-replacement">Returns & Replacement</nuxt-link>
           </li>
@@ -60,22 +60,22 @@
           </li>
         </ul>
       </div>
-      <div class="lg:p-8 p-2 items-center my-4 lg:my-0">
-        <div class="font-bold text-sm headings">EXPERIENCE LITEKART APP ON MOBILE</div>
+      <div class="items-center p-2 my-4 lg:p-8 lg:my-0">
+        <div class="text-sm font-bold headings">EXPERIENCE LITEKART APP ON MOBILE</div>
         <div class="flex mb-2">
           <a href="https://play.google.com/store/apps/details?id=com.codenx.misiki&hl=en"><img
-              class="mt-2 h-10"
+              class="h-10 mt-2"
               src="/playstore.png"
               alt=""
             /></a>
           <a href="https://play.google.com/store/apps/details?id=com.codenx.misiki&hl=en"><img
-              class="mt-2 h-10"
+              class="h-10 mt-2"
               src="/appstore.png"
               alt=""
             /></a>
         </div>
         <div>
-          <h6 class="text-left text-lg lg:text-xs">KEEP IN TOUCH</h6>
+          <h6 class="text-lg text-left lg:text-xs">KEEP IN TOUCH</h6>
           <div class>
             <a href="https://facebook.com/codenx2">
               <i
@@ -104,49 +104,49 @@
           </div>
         </div>
       </div>
-      <div class="lg:p-6 p-1 items-center">
+      <div class="items-center p-1 lg:p-6">
         <div class="flex items-center">
           <img
-            class="my-1 h-10"
+            class="h-10 my-1"
             src="/original.png"
             alt="100% original"
           />
           <div class="text-sm">
             <div>
-              <span class="font-bold ml-1 headings">100% ORIGINAL</span>
+              <span class="ml-1 font-bold headings">100% ORIGINAL</span>
               <!-- guarantee for all products              at litekart.in -->
             </div>
           </div>
         </div>
         <div class="flex items-center">
           <img
-            class="ml-1 my-1 h-10"
+            class="h-10 my-1 ml-1"
             src="/return.png"
             alt="return"
           />
           <div class="text-sm">
             <div>
-              <span class="font-bold ml-1 headings">Return within 30days</span>
+              <span class="ml-1 font-bold headings">Return within 30days</span>
               <!-- of receiving your order -->
             </div>
           </div>
         </div>
         <div class="flex items-center">
           <img
-            class="ml-1 my-1 h-10"
+            class="h-10 my-1 ml-1"
             src="/truck.png"
             alt="truck"
           />
           <div class="text-sm">
             <div>
-              <span class="font-bold ml-1 headings">Get free delivery</span>
+              <span class="ml-1 font-bold headings">Get free delivery</span>
               <!-- for every order above ₹1199 -->
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="lg:p-8 p-2 text-sm">
+    <div class="p-2 text-sm lg:p-8">
       <div class="font-medium hr-line headings">POPULAR SEARCHES</div>
       <hr class="text-gray-800" />
       <div class="mt-5 mb-5 font-normal">
@@ -157,7 +157,7 @@
         >{{s}} | </nuxt-link>
       </div>
     </div>
-    <div class="flex lg:p-8 p-2 flex-wrap justify-between text-sm">
+    <div class="flex flex-wrap justify-between p-2 text-sm lg:p-8">
       <div>
         In case of any concern,
         <nuxt-link

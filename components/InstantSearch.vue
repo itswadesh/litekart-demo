@@ -12,14 +12,14 @@
     ></div>
     <div class="absolute">
       <i
-        class="fa fa-search ml-2 mt-3 text-gray-500"
+        class="mt-3 ml-2 text-gray-500 fa fa-search"
         aria-hidden="true"
       ></i>
     </div>
     <input
       type="text"
       v-model="q"
-      class="w-full px-10 bg-purple-white pr-4 shadow rounded border-0 h-10"
+      class="w-full h-10 px-10 pr-4 border-0 rounded shadow bg-purple-white"
       placeholder="Search for products,brands and more"
       name="search"
       @keyup="search(q)"

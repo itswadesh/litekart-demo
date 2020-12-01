@@ -3,18 +3,18 @@
     class="w-64"
     v-if="facets"
   >
-    <div class="border-b border-dashed py-3 font-bold flex justify-between md:px-3 lg:px-4 items-center text-sm md:text-xs headings">
+    <div class="flex items-center justify-between py-3 text-sm font-bold border-b border-dashed md:px-3 lg:px-4 md:text-xs headings">
       <div class="text-gray">FILTERS</div>
       <button
         @click="$emit('clearAllFilters')"
-        class="text-right text-primary cursor-pointer"
+        class="text-right cursor-pointer text-primary"
       >CLEAR ALL</button>
     </div>
     <div
       v-for="(v,k) in fl"
       :key="k"
       v-if="v && v.length>0 && k!='page' && k!='sort' && k!='categories'"
-      class="flex flex-wrap items-center text-xs my-2 ml-3 mr-2"
+      class="flex flex-wrap items-center my-2 ml-3 mr-2 text-xs"
     >
       <div
         class="rnd-mnt"
@@ -23,7 +23,7 @@
       >
         {{i}}
         <i
-          class="fa fa-times cursor-pointer ml-1"
+          class="ml-1 cursor-pointer fa fa-times"
           aria-hidden="true"
           @click="remove(k,i)"
         ></i>
@@ -31,8 +31,8 @@
     </div>
     <!-- {{facets.categories.all.buckets[0].key}} == {{facets.categories.all.buckets[0].val.buckets[0].key}}
     <div v-if="facets.categories && facets.categories.all.buckets && facets.categories.all.buckets.length>0">
-      <p class="ml-2 headings py-2 font-semibold text-sm px-2">CATEGORY</p>
-      <ul class="ml-2 py-2 px-2 filter-container">
+      <p class="px-2 py-2 ml-2 text-sm font-semibold headings">CATEGORY</p>
+      <ul class="px-2 py-2 ml-2 filter-container">
         <li
           v-for="b in facets.categories && facets.categories.all.buckets"
           :key="b.key"
@@ -48,11 +48,11 @@
     </div> -->
 
     <div
-      class="border-b my-3 pb-5 pt-2"
+      class="pt-2 pb-5 my-3 border-b"
       v-if="facets.brands && facets.brands.all.buckets && facets.brands.all.buckets.length>0"
     >
-      <h4 class="ml-2 px-2 font-semibold uppercase text-sm">BRAND</h4>
-      <ul class="ml-2 px-2 filter-container">
+      <h4 class="px-2 ml-2 text-sm font-semibold uppercase">BRAND</h4>
+      <ul class="px-2 ml-2 filter-container">
         <li
           v-for="b in facets.brands && facets.brands.all.buckets"
           :key="b.key"
@@ -68,11 +68,11 @@
     </div>
 
     <div
-      class="border-b my-3 pt-3 pb-3"
+      class="pt-3 pb-3 my-3 border-b"
       v-if="facets.sizes && facets.sizes.all.buckets && facets.sizes.all.buckets.length>0"
     >
-      <h4 class="ml-2 px-2 font-semibold uppercase text-sm">SIZES</h4>
-      <ul class="ml-2 px-2 filter-container">
+      <h4 class="px-2 ml-2 text-sm font-semibold uppercase">SIZES</h4>
+      <ul class="px-2 ml-2 filter-container">
         <li
           v-for="b in facets.sizes && facets.sizes.all.buckets"
           :key="b.key"
@@ -88,13 +88,13 @@
     </div>
 
     <div
-      class="border-b my-3 pt-2 pb-5"
+      class="pt-2 pb-5 my-3 border-b"
       v-for="(v,k) in facets.features && facets.features.name.buckets"
       :key="k"
       v-if="v.key!='Color' && v.val && v.val.buckets.length>0"
     >
-      <h4 class="ml-2 px-2 font-semibold uppercase text-sm">{{v.key}}</h4>
-      <ul class="ml-2 px-2 filter-container">
+      <h4 class="px-2 ml-2 text-sm font-semibold uppercase">{{v.key}}</h4>
+      <ul class="px-2 ml-2 filter-container">
         <li
           v-for="f in v.val.buckets"
           :key="f.key"
@@ -110,11 +110,11 @@
     </div>
 
     <div
-      class="border-b my-3 pt-3 pb-3"
+      class="pt-3 pb-3 my-3 border-b"
       v-if="facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets && facets.colors.colors.name.buckets.length>0"
     >
-      <h4 class="ml-2 px-2 font-semibold uppercase text-sm">COLOR</h4>
-      <ul class="ml-2 px-2 filter-container">
+      <h4 class="px-2 ml-2 text-sm font-semibold uppercase">COLOR</h4>
+      <ul class="px-2 ml-2 filter-container">
         <li
           class="colour-listItem"
           v-for="b in facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets"

@@ -12,7 +12,7 @@
       class="flex"
     >
       <DesktopFilters
-        class="flex-none max-w-xs hidden md:block"
+        class="flex-none hidden max-w-xs md:block"
         :facets="facets"
         :fl="fl"
         @clearAllFilters="clearAllFilters"
@@ -28,7 +28,7 @@
         <NoProduct v-if="products.length==0 && !loading" />
         <div v-else>
           <div
-            class="flex justify-between flex-wrap"
+            class="flex flex-wrap justify-between"
             v-if="loading"
           >
             <ProductSkeleton

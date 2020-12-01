@@ -4,7 +4,7 @@
       <div class="floating-form">
         <div class="floating-label">
           <textarea
-            class="floating-input bg-gray-100 border-b w-full rounded hover:bg-gray-300 focus:outline-none focus:border-pink-500"
+            class="w-full bg-gray-100 border-b rounded floating-input hover:bg-gray-300 focus:outline-none focus:border-pink-500"
             placeholder=" "
             v-bind="$attrs"
             :value="value"

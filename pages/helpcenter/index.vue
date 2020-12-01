@@ -1,5 +1,5 @@
 <template>
-  <div class="px-2 lg:px-64 bg-gray-100">
+  <div class="px-2 bg-gray-100 lg:px-64">
     <faq-blocks />
     <faq
       title="Frequently Asked Questions"

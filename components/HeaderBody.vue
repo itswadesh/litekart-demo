@@ -1,18 +1,18 @@
 <template>
   <div>
-    <div class="hidden flex-none lg:flex justify-between py-4 text-sm items-center">
+    <div class="items-center justify-between flex-none hidden py-4 text-sm lg:flex">
       <!-- <Breadcrumb v-if="category && category.slugPath && category.slugPath.length>0"
       :namePath="category.namePath"
       :slugPath="category.slugPath" class="px-1 py-0" />
     /> -->
-      <div class="font-semibold flex p-1 headings">
+      <div class="flex p-1 font-semibold headings">
         <div class="font-hairline text-1">{{count}} {{category.name}}</div>
       </div>
       <div class="flex-wrap p-1">
         <div class="text-sm">
-          <div class="inline-block relative">
+          <div class="relative inline-block">
             <select
-              class="hidden md:block text-black border-gray-100 cursor-pointer cursor-pointer block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
+              class="hidden block px-4 py-2 pr-8 leading-tight text-black bg-white border border-gray-100 border-gray-400 appearance-none cursor-pointer md:block hover:border-gray-500 focus:outline-none focus:none"
               v-model="sortBy"
               @change="sort"
             >
@@ -23,27 +23,27 @@
                 :value="s.val"
               >{{s.name}}</option>
             </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <i class="fa fa-caret-down px-1" />
+            <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+              <i class="px-1 fa fa-caret-down" />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="xs:block lg:hidden flex py-4 w-full mb-1">
+    <div class="flex w-full py-4 mb-1 xs:block lg:hidden">
       <div
-        class="flex-1 flex items-center text-gray-700 text-left text-primary"
+        class="flex items-center flex-1 text-left text-gray-700 text-primary"
         @click="$emit('showFilters')"
       >
         <i
-          class="fa fa-sliders px-2"
+          class="px-2 fa fa-sliders"
           aria-hidden="true"
         ></i>Filter
       </div>
-      <div class="flex-1 hidden md:block text-gray-700 text-center font-normal px-4">{{count}} Items</div>
-      <div class="flex-1 flex items-center text-gray-700 text-center text-primary">
+      <div class="flex-1 hidden px-4 font-normal text-center text-gray-700 md:block">{{count}} Items</div>
+      <div class="flex items-center flex-1 text-center text-gray-700 text-primary">
         <select
-          class="text-primary border-gray-100 cursor-pointer cursor-pointer block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:none"
+          class="block px-4 py-2 pr-8 leading-tight bg-white border border-gray-100 border-gray-400 appearance-none cursor-pointer text-primary hover:border-gray-500 focus:outline-none focus:none"
           v-model="sortBy"
           @change="sort"
         >

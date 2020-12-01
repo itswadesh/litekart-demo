@@ -17,7 +17,7 @@
           <div class="flex">
             <nuxt-link
               to="/"
-              class="flex header-color mr-4"
+              class="flex mr-4 header-color"
             >
               <svg
                 _ngcontent-c8=""

@@ -1,23 +1,23 @@
 <template>
-  <div class="lg:w-1/2 mt-0 lg:mt-10 w-full bg-white shadow lg:ml-10 ml-0 py-5">
-    <div class="text-xl headings font-bold p-5 border-b border-gray-200 text-center items-center px-10">
+  <div class="w-full py-5 mt-0 ml-0 bg-white shadow lg:w-1/2 lg:mt-10 lg:ml-10">
+    <div class="items-center p-5 px-10 text-xl font-bold text-center border-b border-gray-200 headings">
       <i
-        class="fa fa-arrow-left mr-2 block lg:invisible"
+        class="block mr-2 fa fa-arrow-left lg:invisible"
         @click="$router.push('/my/')"
         aria-hidden="true"
       ></i>Profile details
     </div>
     <div class="px-0 lg:px-10">
-      <div class="w-full text-sm text-center mb-5 px-8">
+      <div class="w-full px-8 mb-5 text-sm text-center">
         <!-- Just 2 step(s) to go and your profile's complete -->
-        <div class="w-full h-1 bg-green-500 rounded-lg m-1 text-xs leading-none text-center text-white"></div>
+        <div class="w-full h-1 m-1 text-xs leading-none text-center text-white bg-green-500 rounded-lg"></div>
       </div>
     </div>
 
     <div class="w-full">
       <ul class="w-full">
         <div class="px-0 lg:px-10 hover:bg-gray-200">
-          <li class="flex-wrap flex mb-5 px-8">
+          <li class="flex flex-wrap px-8 mb-5">
             <div class="w-1/12">
               <img
                 src="/name.png"
@@ -25,11 +25,11 @@
                 alt=""
               />
             </div>
-            <div class="w-10/12 flex">
+            <div class="flex w-10/12">
               <Textbox
                 v-model="profile.firstName"
                 label="First Name"
-                class=" mr-4 flex-1"
+                class="flex-1 mr-4 "
               />
               <Textbox
                 v-model="profile.lastName"
@@ -47,7 +47,7 @@
         </div>
 
         <div class="px-0 lg:px-10 hover:bg-gray-200">
-          <li class="flex-wrap flex mb-5 hover:bg-gray-200 px-8">
+          <li class="flex flex-wrap px-8 mb-5 hover:bg-gray-200">
             <div class="w-1/12 text-xl">
               <i
                 class="fa fa-mobile"
@@ -70,7 +70,7 @@
         </div>
 
         <div class="px-0 lg:px-10 hover:bg-gray-200">
-          <li class="flex-wrap flex mb-5 hover:bg-gray-200 px-8">
+          <li class="flex flex-wrap px-8 mb-5 hover:bg-gray-200">
             <div class="w-1/12">
               <i
                 class="fa fa-envelope-o"
@@ -94,7 +94,7 @@
 
         <div class="px-0 lg:px-10 hover:bg-gray-200">
           <nuxt-link to="/my/password">
-            <li class="flex-wrap flex mb-5 hover:bg-gray-200 py-5 px-8">
+            <li class="flex flex-wrap px-8 py-5 mb-5 hover:bg-gray-200">
               <div class="w-1/12">
                 <i
                   class="fa fa-key"

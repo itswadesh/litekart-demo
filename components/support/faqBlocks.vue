@@ -1,13 +1,13 @@
 <template>
   <div class="">
-    <h1 class="text-5xl text-center font-bold mt-8 mb:8 lg:mb-16">
+    <h1 class="mt-8 text-5xl font-bold text-center mb:8 lg:mb-16">
       <span class="underline">Help </span> topics
     </h1>
     <div class="flex flex-wrap">
-      <div class="w-full lg:w-1/3 mb-4 pr-4">
+      <div class="w-full pr-4 mb-4 lg:w-1/3">
         <nuxt-link
           to="/help-center/shipping-delivery"
-          class="flex justify-start items-center hover:shadow p-4 rounded-lg bg-white"
+          class="flex items-center justify-start p-4 bg-white rounded-lg hover:shadow"
         >
           <img
             class="w-20 h-20 mr-4"
@@ -16,10 +16,10 @@
           <div class="self-align">Shipping &<br> Delivery</div>
         </nuxt-link>
       </div>
-      <div class="w-full lg:w-1/3 mb-4 pr-4">
+      <div class="w-full pr-4 mb-4 lg:w-1/3">
         <nuxt-link
           to="/help-center/return-replacement"
-          class="flex justify-start items-center hover:shadow p-4 rounded-lg bg-white"
+          class="flex items-center justify-start p-4 bg-white rounded-lg hover:shadow"
         >
           <img
             class="w-20 h-20 mr-4"
@@ -28,10 +28,10 @@
           <div class="self-align">Returns &<br> Replacements</div>
         </nuxt-link>
       </div>
-      <div class="w-full lg:w-1/3 mb-4 pr-4">
+      <div class="w-full pr-4 mb-4 lg:w-1/3">
         <nuxt-link
           to="/help-center/cancellations"
-          class="flex justify-start items-center hover:shadow p-4 rounded-lg bg-white"
+          class="flex items-center justify-start p-4 bg-white rounded-lg hover:shadow"
         >
           <img
             class="w-20 h-20 mr-4"
@@ -43,10 +43,10 @@
       </div>
     </div>
     <div class="flex flex-wrap">
-      <div class="w-full lg:w-1/3 mb-4 pr-4">
+      <div class="w-full pr-4 mb-4 lg:w-1/3">
         <nuxt-link
           to="/help-center/payments-refunds"
-          class="flex justify-start items-center hover:shadow p-4 rounded-lg bg-white"
+          class="flex items-center justify-start p-4 bg-white rounded-lg hover:shadow"
         >
           <img
             class="w-20 h-20 mr-4"
@@ -55,10 +55,10 @@
           <div class="self-align">Payments & <br> Refunds</div>
         </nuxt-link>
       </div>
-      <div class="w-full lg:w-1/3 mb-4 pr-4">
+      <div class="w-full pr-4 mb-4 lg:w-1/3">
         <nuxt-link
           to="/help-center/bulk-orders-business-inquiry"
-          class="flex justify-start items-center hover:shadow p-4 rounded-lg bg-white"
+          class="flex items-center justify-start p-4 bg-white rounded-lg hover:shadow"
         >
           <img
             class="w-20 h-20 mr-4"
@@ -67,10 +67,10 @@
           <div class="self-align">Business Inquiry & <br> Bulk Orders</div>
         </nuxt-link>
       </div>
-      <div class="w-full lg:w-1/3 mb-4 pr-4">
+      <div class="w-full pr-4 mb-4 lg:w-1/3">
         <nuxt-link
           to="/help-center/account-settings"
-          class="flex justify-start items-center hover:shadow p-4 rounded-lg bg-white"
+          class="flex items-center justify-start p-4 bg-white rounded-lg hover:shadow"
         >
           <img
             class="w-20 h-20 mr-4"

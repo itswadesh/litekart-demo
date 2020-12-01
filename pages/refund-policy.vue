@@ -17,7 +17,7 @@ export default {
 };
 </script>
 <template>
-  <div class="hfull mb-16 mx-2 lg:mx-48 ">
+  <div class="mx-2 mb-16 hfull lg:mx-48 ">
     <h1 class="text-4xl text-center">Refund & Cancellation Policy</h1>
     <ul>
       <li>

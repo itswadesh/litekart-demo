@@ -1,32 +1,32 @@
 <template>
-  <div class="w-full md:w-6/12 lg:w-7/12 leading-relaxed">
-    <div class="bg-gray mb-3 lg:mb-0">
-      <div class="pb-4 border-b border-gray-200 px-3">
-        <p class="text-2xl headings font-semibold">{{product.brandName}}</p>
+  <div class="w-full leading-relaxed md:w-6/12 lg:w-7/12">
+    <div class="mb-3 bg-gray lg:mb-0">
+      <div class="px-3 pb-4 border-b border-gray-200">
+        <p class="text-2xl font-semibold headings">{{product.brandName}}</p>
         <p>{{product.name}}</p>
       </div>
       <div
-        class="sizeSelector px-3 headings font-semibold py-3 tracking-wider"
+        class="px-3 py-3 font-semibold tracking-wider sizeSelector headings"
         v-if="selectedVariant"
       >
         <!-- <div v-if="!selectedVariant._id">
-        <span class="text-2xl mr-2">{{product.price | currency}}</span>
-        <span class="font-hairline line-through text-lg mr-2">{{product.mrp | currency}}</span>
+        <span class="mr-2 text-2xl">{{product.price | currency}}</span>
+        <span class="mr-2 text-lg font-hairline line-through">{{product.mrp | currency}}</span>
         </div>-->
-        <span class="text-2xl mr-2">{{selectedVariant.price | currency}}</span>
+        <span class="mr-2 text-2xl">{{selectedVariant.price | currency}}</span>
         <span
-          class="font-hairline line-through text-lg mr-2"
+          class="mr-2 text-lg font-hairline line-through"
           v-if="selectedVariant.mrp > selectedVariant.price"
         >{{selectedVariant.mrp | currency}}</span>
         <span
-          class="text-orange-500 text-xl"
+          class="text-xl text-orange-500"
           v-if="calculateOffPercent>0"
         >({{calculateOffPercent}}% OFF)</span>
         <p class="text-sm font-hairline">Additional tax shall apply, charged at checkout</p>
       </div>
     </div>
     <div>
-      <div class="items-center text-sm px-3 bg-gray-100 my-3 p-3 lg:my-0">
+      <div class="items-center p-3 px-3 my-3 text-sm bg-gray-100 lg:my-0">
         <div class="flex items-center">
           <span class="mr-4"> SELECT SIZE</span>
           <img
@@ -34,13 +34,13 @@
             alt=""
             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIxMiI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMyODc0RjAiIHN0cm9rZS13aWR0aD0iMS4zIj48cGF0aCBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0zNy4zNS42NUguNjV2MTAuN2gzNi43Vi42NXoiLz48cGF0aCBmaWxsPSIjODc4Nzg3IiBkPSJNNi42NSA4LjY1aDF2Mi43aC0xem00LTNIMTFsLS4zNS0uMzVWNWwtLjE1LjE1LS4xNS0uMTV2LjNsLS4zNS4zNWguMzV2NS43SDEwbC4zNS4zNXYuM2wuMTUtLjE1LjE1LjE1di0uM2wuMzUtLjM1aC0uMzV2LTUuN3ptNSAzSDE2bC0uMzUtLjM1VjhsLS4xNS4xNS0uMTUtLjE1di4zbC0uMzUuMzVoLjM1djIuN0gxNWwuMzUuMzV2LjNsLjE1LS4xNS4xNS4xNXYtLjNsLjM1LS4zNWgtLjM1di0yLjd6bTQtM2gxdjUuN2gtMXptNCAzaDF2Mi43aC0xem05IDBoMXYyLjdoLTF6bS00LTNoMXY1LjdoLTF6Ii8+PC9nPjwvc3ZnPg=="
           />
-          <div class="text-primary flex items-center">
+          <div class="flex items-center text-primary">
             <span class="">SIZE CHART</span>
-            <i class="block fa fa-angle-right ml-2 -mt-1"></i>
+            <i class="block ml-2 -mt-1 fa fa-angle-right"></i>
           </div>
         </div>
         <div
-          class="flex flex-wrap py-4 relative px-3"
+          class="relative flex flex-wrap px-3 py-4"
           :class="{'shake-animation': shake}"
         >
         <div v-for="v in product.variants" :key="v._id">
@@ -49,21 +49,21 @@
             @click="selectVariant(v)"
             :class="{'bg-gray-700 text-white': v.size==(userSelectedVariant && userSelectedVariant.size)}"
             v-if="v.stock>0"
-            class="focus:outline:none m-1 rounded-full border border-gray-400 w-12 h-12 hover:border-black hover:font-bold"
+            class="w-12 h-12 m-1 border border-gray-400 rounded-full focus:outline:none hover:border-black hover:font-bold"
           >
             <div class="text-xs">{{v.size}}</div>
             <div
               v-if="v.stock<5"
-              class="text-xs font-semibold absolute w-12 bg-orange-500 text-white rounded"
+              class="absolute w-12 text-xs font-semibold text-white bg-orange-500 rounded"
             >{{v.stock}} left</div>
           </button>
           <button
             v-else
-            class="bg-gray-700 text-white focus:outline:none m-1 rounded-full border border-gray-400 w-12 h-12"
+            class="w-12 h-12 m-1 text-white bg-gray-700 border border-gray-400 rounded-full focus:outline:none"
           >
             <div class="text-xs">{{v.size}}</div>
             <div
-              class="text-xs font-semibold absolute w-12 bg-orange-500 text-white rounded"
+              class="absolute w-12 text-xs font-semibold text-white bg-orange-500 rounded"
             >No stock</div>
           </button>
         </div>
@@ -71,20 +71,20 @@
       </div>
 
       <div
-        class="flex py-4 px-3"
+        class="flex px-3 py-4"
         v-if="groupProducts.data && groupProducts.data.length>0"
       >
         <nuxt-link
           v-for="p in groupProducts.data"
           :key="p._id"
           :to="'/'+p.slug+'?id='+p._id"
-          class="mr-3 rounded-full w-12 h-12 tooltip border border-gray-100 hover:border-green-300 p-1"
+          class="w-12 h-12 p-1 mr-3 border border-gray-100 rounded-full tooltip hover:border-green-300"
           :class="{'border-red-500': product.color.name=== (p.color && p.color.name)}"
         >
           <img
             v-lazy="p.img && $store.state.settings.CDN_URL+p.img[0]"
             :alt="p.color && p.color.name"
-            class="rounded-full w-12 h-10"
+            class="w-12 h-10 rounded-full"
           />
           <span
             class="tooltiptext"
@@ -92,91 +92,91 @@
           >{{p.color.name}}</span>
         </nuxt-link>
       </div>
-      <div class="bg-white flex fixed bottom-0 lg:relative lg:px-3 p-2 w-full z-10">
+      <div class="fixed bottom-0 z-10 flex w-full p-2 bg-white lg:relative lg:px-3">
         <button
           :disabled="!selectedVariant || !selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
-          class="w-7/12 lg:w-1/3 mr-2 primary text-white py-2 px-6 rounded font-bold text-sm lg:text-lg"
+          class="w-7/12 px-6 py-2 mr-2 text-sm font-bold text-white rounded lg:w-1/3 primary lg:text-lg"
         >
           <i
-            class="fa fa-shopping-bag mr-2 hidden lg:block"
+            class="hidden mr-2 fa fa-shopping-bag lg:block"
             aria-hidden="true"
           ></i> ADD TO BAG
         </button>
         <button
           @click="toggleWishlist"
           v-if="wished"
-          class="w-5/12 lg:w-1/3 border border-grey-300 text-green-500 py-2 px-6 rounded font-bold text-sm lg:text-lg"
+          class="w-5/12 px-6 py-2 text-sm font-bold text-green-500 border rounded lg:w-1/3 border-grey-300 lg:text-lg"
         >
           <i
-            class="fa fa-check mr-2 hidden lg:block"
+            class="hidden mr-2 fa fa-check lg:block"
             aria-hidden="true"
           ></i> WISHED
         </button>
         <button
           @click="toggleWishlist"
           v-else
-          class="w-5/12 lg:w-1/3 border border-grey-300 text-black py-2 px-6 rounded font-bold text-sm lg:text-lg"
+          class="w-5/12 px-6 py-2 text-sm font-bold text-black border rounded lg:w-1/3 border-grey-300 lg:text-lg"
         >
           <i
-            class="fa fa-bookmark mr-2 hidden lg:block"
+            class="hidden mr-2 fa fa-bookmark lg:block"
             aria-hidden="true"
           ></i> WISHLIST
         </button>
       </div>
-      <!-- <div class="py-8 border-b border-gray-300 px-3 my-3 lg:my-0"> -->
-      <!-- <p class="font-bold text-lg">
+      <!-- <div class="px-3 py-8 my-3 border-b border-gray-300 lg:my-0"> -->
+      <!-- <p class="text-lg font-bold">
           BEST OFFERS
           <i
-            class="fa fa-tag ml-2 text-gray-600"
+            class="ml-2 text-gray-600 fa fa-tag"
             aria-hidden="true"
           ></i>
         </p>
         <span class="text-gray-500">This product is already at its best price</span> -->
       <!-- <div> -->
-      <!-- <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
+      <!-- <button class="relative w-full px-3 py-2 my-2 text-left border rounded lg:w-3/5 hover:border-gray-500">
             <div class="font-bold">10% instant discount on Federal Bank Cards</div>
-            <div class="font-hairline text-gray-500 text-sm">This product is already at its best price</div>
-            <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
+            <div class="text-sm font-hairline text-gray-500">This product is already at its best price</div>
+            <span class="absolute top-0 right-0 invisible mt-2 mr-3 hover:block">
               view
               <i
-                class="fa fa-angle-right ml-2"
+                class="ml-2 fa fa-angle-right"
                 aria-hidden="true"
               ></i>
             </span>
           </button> -->
 
-      <!-- <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
+      <!-- <button class="relative w-full px-3 py-2 my-2 text-left border rounded lg:w-3/5 hover:border-gray-500">
             <div class="font-bold">10 super cashback on MobiWiki</div>
-            <div class="font-hairline text-gray-500 text-sm">Max super cashback of Rs.250. TCA</div>
-            <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
+            <div class="text-sm font-hairline text-gray-500">Max super cashback of Rs.250. TCA</div>
+            <span class="absolute top-0 right-0 invisible mt-2 mr-3 hover:block">
               view
               <i
-                class="fa fa-angle-right ml-2"
+                class="ml-2 fa fa-angle-right"
                 aria-hidden="true"
               ></i>
             </span>
           </button>
 
-          <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
+          <button class="relative w-full px-3 py-2 my-2 text-left border rounded lg:w-3/5 hover:border-gray-500">
             <div class="font-bold">Flat 200 cashback on Airtel Payments Bank</div>
-            <div class="font-hairline text-gray-500 text-sm">Min spend 2,000;for first time transaction. TCA</div>
-            <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
+            <div class="text-sm font-hairline text-gray-500">Min spend 2,000;for first time transaction. TCA</div>
+            <span class="absolute top-0 right-0 invisible mt-2 mr-3 hover:block">
               view
               <i
-                class="fa fa-angle-right ml-2"
+                class="ml-2 fa fa-angle-right"
                 aria-hidden="true"
               ></i>
             </span>
           </button>
 
-          <button class="w-full my-2 lg:w-3/5 relative text-left px-3 py-2 rounded border hover:border-gray-500">
+          <button class="relative w-full px-3 py-2 my-2 text-left border rounded lg:w-3/5 hover:border-gray-500">
             <div class="font-bold">EMI option available</div>
-            <div class="font-hairline text-gray-500 text-sm">EMI starting from Rs.26/month</div>
-            <span class="absolute right-0 top-0 mt-2 mr-3 hover:block invisible">
+            <div class="text-sm font-hairline text-gray-500">EMI starting from Rs.26/month</div>
+            <span class="absolute top-0 right-0 invisible mt-2 mr-3 hover:block">
               view
               <i
-                class="fa fa-angle-right ml-2"
+                class="ml-2 fa fa-angle-right"
                 aria-hidden="true"
               ></i>
             </span>
@@ -184,58 +184,58 @@
       <!-- </div>
       </div> -->
       <div
-        class="py-8 border-b border-gray-300 px-3 bg-gray-100 my-3 lg:my-0"
+        class="px-3 py-8 my-3 bg-gray-100 border-b border-gray-300 lg:my-0"
         v-if="product.details"
       >
-        <p class="font-bold text-lg">
+        <p class="text-lg font-bold">
           PRODUCT DETAILS
           <i
-            class="fa fa-list-alt ml-2 text-gray-600"
+            class="ml-2 text-gray-600 fa fa-list-alt"
             aria-hidden="true"
           ></i>
         </p>
         <span class="text-gray-500">{{product.detail}}</span>
-        <!-- <p class="font-bold text-lg">Size & Fit</p>
+        <!-- <p class="text-lg font-bold">Size & Fit</p>
         <span class="headings">he model (height 5'8") is wearing a size S</span>
 
-        <p class="font-bold text-lg">Material & Care</p>
+        <p class="text-lg font-bold">Material & Care</p>
         <span class="headings">
           Polyester
           <br />Machine-wash
         </span> -->
       </div>
       <div class="px-3 py-3">
-        <p class="font-bold text-lg">Specifications</p>
-        <div class="w-full flex py-1">
+        <p class="text-lg font-bold">Specifications</p>
+        <div class="flex w-full py-1">
           <div
-            class="w-1/2 border-b border-gray-400 mr-4"
+            class="w-1/2 mr-4 border-b border-gray-400"
             v-for="f in product.features"
             :key="f._id"
           >
             <p class="text-xs text-gray-500">{{f.key}}</p>
-            <span class="headings text-sm">{{f.val}}</span>
+            <span class="text-sm headings">{{f.val}}</span>
           </div>
         </div>
         <!-- <span class="font-bold text-primary">See More</span> -->
       </div>
-      <!-- <div class="p-3 bg-white lg:my-0 my-3">
-        <p class="font-bold text-lg">
+      <!-- <div class="p-3 my-3 bg-white lg:my-0">
+        <p class="text-lg font-bold">
           DELIVERY OPTIONS
           <i
-            class="fa fa-truck ml-2 text-gray-600"
+            class="ml-2 text-gray-600 fa fa-truck"
             aria-hidden="true"
           ></i>
         </p>
-        <div class="text-gray-600 leading-loose">
-          <div class="w-full lg:w-1/3 flex flex-wrap hr-line justify-between pb-2 relative">
+        <div class="leading-loose text-gray-600">
+          <div class="relative flex flex-wrap justify-between w-full pb-2 lg:w-1/3 hr-line">
             <input
               type="search"
-              class="bg-gray-200 border p-2 w-full rounded"
+              class="w-full p-2 bg-gray-200 border rounded"
               placeholder="PinCode"
             />
-            <button class="absolute right-0 text-sm mt-2 font-bold text-primary pr-2 hover:text-gray-600 cursor-pointer">Check</button>
+            <button class="absolute right-0 pr-2 mt-2 text-sm font-bold cursor-pointer text-primary hover:text-gray-600">Check</button>
           </div>
-          <span class="text-gray-500 text-xs">Please enter PIN code to check Availability</span>
+          <span class="text-xs text-gray-500">Please enter PIN code to check Availability</span>
           <ul class="text-sm font-hairline headings">
             <li>Tax: Applicable tax on the basis of exact location & discount will be charged at the time of checkout</li>
             <li>100% Original Products</li>
@@ -258,10 +258,10 @@
             >SERA GROUP</a>
           </p>
 
-          <p class="font-semibold text-sm text-black">Manufacturer/Packer/Importer Details</p>
+          <p class="text-sm font-semibold text-black">Manufacturer/Packer/Importer Details</p>
           <span class="text-xs">Sera Group, 1st Floor, Gehlot Farms, Sector-47, Gurgaon</span>
 
-          <p class="font-semibold text-sm text-black">Country of origin</p>
+          <p class="text-sm font-semibold text-black">Country of origin</p>
           <span class="text-xs">India</span>
         </div>
       </div> -->
@@ -406,11 +406,11 @@ export default {
         .show(
           `
       <div class="flex w-full">
-        <img class="w-12 h-12 object-cover" src="${this.product.img &&
+        <img class="object-cover w-12 h-12" src="${this.product.img &&
           this.$store.state.settings.CDN_URL + this.product.img[0]}" alt="" />
-        <div class="toasted-text items-center">
+        <div class="items-center toasted-text">
           <div>${this.product.name.substr(0, 40) + "..."}</div>
-          <div class="text-gray-600 text-xs">Added to your cart</div>
+          <div class="text-xs text-gray-600">Added to your cart</div>
         </div>
       </div>
       `,

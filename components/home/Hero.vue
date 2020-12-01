@@ -17,7 +17,7 @@
         <img
           v-lazy="$store.state.settings.CDN_URL+image.img"
           alt=""
-          class="h-64 lg:h-108 object-cover"
+          class="object-cover h-64 lg:h-108"
         />
       </nuxt-link>
     </slide>

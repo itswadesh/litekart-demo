@@ -4,33 +4,33 @@
       <div class="flex flex-wrap py-4">
         <div class="lg:w-1/12"></div>
         <div class="flex-1 bg-white shadow">
-          <div class="w-full flex text-xs border-b border-gray-200">
+          <div class="flex w-full text-xs border-b border-gray-200">
             <div class="flex-1 p-2 border-r border-gray-200">
               <span class="text-gray-600">COURIER</span>
-              <p class="headings text-gray-700">Delivery</p>
+              <p class="text-gray-700 headings">Delivery</p>
             </div>
             <div class="flex-1 p-2 border-r border-gray-200">
               <span class="text-gray-600">TRACKING ID</span>
-              <p class="headings text-gray-700">701836265094</p>
+              <p class="text-gray-700 headings">701836265094</p>
             </div>
             <div class="flex-1 p-2 border-r border-gray-200">
               <span class="text-gray-600">ORDER ID</span>
-              <p class="headings text-gray-700">052212543788</p>
+              <p class="text-gray-700 headings">052212543788</p>
             </div>
             <div class="flex-1 p-2">
               <span class="text-gray-600">LAST UPDATE</span>
-              <p class="headings text-gray-700">Lost on 24th june,o1:22pm</p>
+              <p class="text-gray-700 headings">Lost on 24th june,o1:22pm</p>
             </div>
           </div>
-          <div class="w-full flex text-xs p-2">
+          <div class="flex w-full p-2 text-xs">
             <div class="w-11/12">
               <span class="text-gray-600">ORDER PLACED</span>
-              <p class="headings text-gray-700">22nd may 19</p>
+              <p class="text-gray-700 headings">22nd may 19</p>
             </div>
             <button
-              class="px-6 right-0 focus:outline-none primary text-white rounded-full flex items-center"
+              class="right-0 flex items-center px-6 text-white rounded-full focus:outline-none primary"
             >
-              <i class="fa fa-share-alt mr-2" aria-hidden="true"></i> Share
+              <i class="mr-2 fa fa-share-alt" aria-hidden="true"></i> Share
             </button>
           </div>
         </div>
@@ -39,9 +39,9 @@
       <div class="flex flex-wrap pb-3">
         <div class="w-1/12"></div>
         <div class="lg:w-5/6 lg:flex">
-          <div class="lg:w-8/12 shadow bg-white pb-5">
+          <div class="pb-5 bg-white shadow lg:w-8/12">
             <div class="border-b border-gray-200">
-              <div class="flex justify-between p-3 text-gray-500 text-xs">
+              <div class="flex justify-between p-3 text-xs text-gray-500">
                 <div>
                   ORDER
                   <br />PLACED
@@ -57,9 +57,9 @@
                 </ol>
               </div>
             </div>
-            <div class="p-3 h-40 overflow-y-scroll">
-              <div class="w-full flex text-xs text-gray-700 mb-1">
-                <div class="w-16 text-center font-semibold flex">
+            <div class="h-40 p-3 overflow-y-scroll">
+              <div class="flex w-full mb-1 text-xs text-gray-700">
+                <div class="flex w-16 font-semibold text-center">
                   24
                   <br />Jun
                   <ul id="progress">
@@ -71,7 +71,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="w-full flex p-2 bg-pink-100">
+                <div class="flex w-full p-2 bg-pink-100">
                   <div class="w-1/3">
                     <span class="font-semibold">Location:</span>(Haryana)
                   </div>
@@ -83,8 +83,8 @@
                   </div>
                 </div>
               </div>
-              <div class="w-full flex text-xs text-gray-700 mb-1">
-                <div class="w-16 text-center font-semibold flex">
+              <div class="flex w-full mb-1 text-xs text-gray-700">
+                <div class="flex w-16 font-semibold text-center">
                   24
                   <br />Jun
                   <ul id="progress">
@@ -96,7 +96,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="w-full flex p-2 bg-pink-100">
+                <div class="flex w-full p-2 bg-pink-100">
                   <div class="w-1/3">
                     <span class="font-semibold">Location:</span>(Haryana)
                   </div>
@@ -108,8 +108,8 @@
                   </div>
                 </div>
               </div>
-              <div class="w-full flex text-xs text-gray-700 mb-1">
-                <div class="w-16 text-center font-semibold flex">
+              <div class="flex w-full mb-1 text-xs text-gray-700">
+                <div class="flex w-16 font-semibold text-center">
                   24
                   <br />Jun
                   <ul id="progress">
@@ -121,7 +121,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="w-full flex p-2 bg-pink-100">
+                <div class="flex w-full p-2 bg-pink-100">
                   <div class="w-1/3">
                     <span class="font-semibold">Location:</span>(Haryana)
                   </div>
@@ -133,8 +133,8 @@
                   </div>
                 </div>
               </div>
-              <div class="w-full flex text-xs text-gray-700 mb-1">
-                <div class="w-16 text-center font-semibold flex">
+              <div class="flex w-full mb-1 text-xs text-gray-700">
+                <div class="flex w-16 font-semibold text-center">
                   24
                   <br />Jun
                   <ul id="progress">
@@ -146,7 +146,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="w-full flex p-2 bg-pink-100">
+                <div class="flex w-full p-2 bg-pink-100">
                   <div class="w-1/3">
                     <span class="font-semibold">Location:</span>(Haryana)
                   </div>
@@ -161,9 +161,9 @@
             </div>
           </div>
           <div class="w-4"></div>
-          <div class="lg:w-4/12 mt-2 lg:mt-0 shadow">
-            <img src="/banner-imgs.jpg" class="w-full h-56 object-cover" alt="" />
-            <p class="p-3 bg-white text-gray-600">Hop300</p>
+          <div class="mt-2 shadow lg:w-4/12 lg:mt-0">
+            <img src="/banner-imgs.jpg" class="object-cover w-full h-56" alt="" />
+            <p class="p-3 text-gray-600 bg-white">Hop300</p>
           </div>
         </div>
         <div class="w-1/12"></div>

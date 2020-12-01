@@ -20,11 +20,11 @@
       class="colour-label colour-colorDisplay"
       :style="{'background-color':color}"
     ></span>
-    <span class="text-gray-800 ml-2 text-sm">
+    <span class="ml-2 text-sm text-gray-800">
       <slot />
     </span>
     <span
-      class="text-gray-500 text-xs"
+      class="text-xs text-gray-500"
       v-if="count"
     >({{count}})</span>
     <div class="common-checkboxIndicator"></div>

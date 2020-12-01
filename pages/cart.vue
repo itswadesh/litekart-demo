@@ -66,7 +66,6 @@ export default {
       return this.$store.state.cart || {};
     },
     ...mapGetters({
-      checkCart: "cart/checkCart",
       showCart: "cart/showCart"
     })
   },

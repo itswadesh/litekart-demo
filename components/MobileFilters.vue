@@ -5,28 +5,28 @@
   >
     <!-- Mobile version starts here -->
     <div
-      class="block md:hidden h-full"
+      class="block h-full md:hidden"
       v-if="showMobileFilter"
     >
-      <div class="flex shadow-md py-4 bg-white w-full">
+      <div class="flex w-full py-4 bg-white shadow-md">
         <div
-          class="flex-1 text-gray-700 text-left"
+          class="flex-1 text-left text-gray-700"
           @click="$emit('hide')"
         >
           <i
-            class="fa fa-times ml-2"
+            class="ml-2 fa fa-times"
             aria-hidden="true"
           ></i>
         </div>
-        <div class="flex-1 text-gray-700 text-center font-bold">FILTER</div>
+        <div class="flex-1 font-bold text-center text-gray-700">FILTER</div>
         <button
-          class="flex-1 text-gray-700 text-right mr-2"
+          class="flex-1 mr-2 text-right text-gray-700"
           @click="clearAll"
         >Clear all</button>
       </div>
-      <div class="w-full flex mt-1 h-full">
+      <div class="flex w-full h-full mt-1">
         <div class="w-2/5">
-          <ul class="bg-gray-200 h-full">
+          <ul class="h-full bg-gray-200">
             <!-- <li
               :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='categories'}"
               @click="selected='categories'"
@@ -55,7 +55,7 @@
         </div>
         <div class="w-full overflow-y-scroll">
           <ul
-            class="ml-2 py-2 px-5 w-full"
+            class="w-full px-5 py-2 ml-2"
             v-if="selected == 'categories' && facets.categories && facets.categories.all && facets.categories.all.buckets"
           >
             <li
@@ -71,7 +71,7 @@
             </li>
           </ul>
           <ul
-            class="ml-2 py-2 px-5 w-full"
+            class="w-full px-5 py-2 ml-2"
             v-if="selected == 'brands' && facets.brands && facets.brands.all && facets.brands.all.buckets"
           >
             <li
@@ -87,7 +87,7 @@
             </li>
           </ul>
           <ul
-            class="ml-2 py-2 px-5 w-full"
+            class="w-full px-5 py-2 ml-2"
             v-if="selected == 'sizes' && facets.sizes && facets.sizes.all.buckets && facets.sizes.all.buckets.length>0"
           >
             <li
@@ -103,7 +103,7 @@
             </li>
           </ul>
           <ul
-            class="ml-2 py-2 px-5 w-full"
+            class="w-full px-5 py-2 ml-2"
             v-if="selected == 'colors' && facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets && facets.colors.colors.name.buckets.length>0"
           >
             <li
@@ -121,8 +121,8 @@
           </ul>
         </div>
       </div>
-      <div class="w-full text-center primary absolute bottom-0">
-        <button class="w-full p-4 cursor-pointer font-bold focus:outline-none">APPLY</button>
+      <div class="absolute bottom-0 w-full text-center primary">
+        <button class="w-full p-4 font-bold cursor-pointer focus:outline-none">APPLY</button>
       </div>
     </div>
   </div>

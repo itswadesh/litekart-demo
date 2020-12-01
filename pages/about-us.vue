@@ -12,19 +12,19 @@ export default {
 </script>
 <template>
   <div>
-    <div class="mb-16 mx-2 lg:mx-48">
+    <div class="mx-2 mb-16 lg:mx-48">
       <h1 class="text-4xl text-center">About</h1>
       <div class="py-6 mx-5">
         <h1 class="flex justify-center text-4xl ">
           “Helping You Build An Online Brand”
         </h1>
-        <p class=" flex justify-center mb-4 text-center text-xl">
+        <p class="flex justify-center mb-4 text-xl text-center ">
           Litekart, formerly Arialshop, is a product of Odisha, India based
           Javascript e-commerce Solution. It offers an fullstack eCommerce website
           to Enterprise businesses to strengthen their footprints in the eCommerce
           space.
         </p>
-        <p class="flex justify-center text-center text-ms mb-6 leading-loose">
+        <p class="flex justify-center mb-6 leading-loose text-center text-ms">
           Founded in 2010, Litekart has acquired 5,000 happy clients to date. If
           you’re an eCommerce business owner, all you need to do is choose your
           goal and we will help you develop the optimal technology platform for
@@ -36,12 +36,12 @@ export default {
       </div>
     </div>
 
-    <div class=" flex bg-gray-100 justify-between lg:py-12 lg:px-64 flex-wrap ">
-      <div class="flex-1 flex flex-col bg-white text-center shadow m-6 rounded-lg">
+    <div class="flex flex-wrap justify-between bg-gray-100  lg:py-12 lg:px-64">
+      <div class="flex flex-col flex-1 m-6 text-center bg-white rounded-lg shadow">
         <img
           src="img/mission.png"
           alt=" "
-          class=" "
+          class=""
         />
         <p class="p-4">
           With a mission of “Amazing customer experience” Litekart aims to offer
@@ -49,11 +49,11 @@ export default {
           can start their online store with their brand name, at the best prices.
         </p>
       </div>
-      <div class="flex-1 flex flex-col bg-white text-center shadow m-6 rounded ">
+      <div class="flex flex-col flex-1 m-6 text-center bg-white rounded shadow ">
         <img
           src="img/vison.png"
           alt=""
-          class=" "
+          class=""
         />
         <p class="p-4">
           To simplify administration, cart checkout and payments for merchants by
@@ -61,11 +61,11 @@ export default {
           up with their online store and start selling online.
         </p>
       </div>
-      <div class="flex-1 flex flex-col bg-white text-center shadow m-6 rounded ">
+      <div class="flex flex-col flex-1 m-6 text-center bg-white rounded shadow ">
         <img
           src="img/values.png"
           alt=""
-          class=" "
+          class=""
         />
         <p class="p-4">
           Litekart wants to reduce ecommerce to its bare bones for small
@@ -75,17 +75,17 @@ export default {
       </div>
     </div>
 
-    <div class="py-12 justify-center mx-5">
-      <h3 class="text-center text-4xl font-medium ">
+    <div class="justify-center py-12 mx-5">
+      <h3 class="text-4xl font-medium text-center ">
         Experience Work As A Innovator!
       </h3>
-      <p class=" flex justify-center">__________________</p>
-      <p class="py-6 flex justify-center text-center ">
+      <p class="flex justify-center ">__________________</p>
+      <p class="flex justify-center py-6 text-center ">
         At Litekart, we don’t just offer jobs, but a career. If you are crazy
         about work and party, then we are waiting for you, eagerly!
       </p>
       <div class="flex justify-center">
-        <button class=" flex jusify-center bg-primary m-6 px-4 py-2 rounded text-white">
+        <button class="flex px-4 py-2 m-6 text-white rounded  jusify-center bg-primary">
           Apply Now
         </button>
       </div>

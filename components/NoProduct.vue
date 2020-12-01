@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="w-full container">
-      <div class="text-gray-700 text-center">
+    <div class="container w-full">
+      <div class="text-center text-gray-700">
         <img class src="/empty-listing.png" alt="" />
         <div class="headings">We are unable to find items matching</div>
-        <div class="text-1 text-center">{{$route.query.q}}</div>
+        <div class="text-center text-1">{{$route.query.q}}</div>
       </div>
     </div>
-    <div class="w-full flex text-center shadow-md">
+    <div class="flex w-full text-center shadow-md">
       <MegamenuMobile />
     </div>
   </div>

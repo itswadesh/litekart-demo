@@ -5,16 +5,16 @@
       class="flex flex-wrap justify-start"
     >
       <div class="lg:w-1/4 xs:w-0"></div>
-      <div class="xs:w-full lg:w-1/3 mt-10 px-2">
-        <div class="text-gray-700 font-bold text-xl mb-2">All done</div>
+      <div class="px-2 mt-10 xs:w-full lg:w-1/3">
+        <div class="mb-2 text-xl font-bold text-gray-700">All done</div>
         <div>
           <img
             alt=""
             src="/order-success.png"
-            class="mb-2 object-cover rounded"
+            class="object-cover mb-2 rounded"
           />
         </div>
-        <div class="font-hairline text-sm">
+        <div class="text-sm font-hairline">
           Your Order number is:
           <span class="font-semibold">{{order.orderNo}}</span>
         </div>
@@ -23,7 +23,7 @@
           v-for="i in order.items"
           :key="i._id"
         >
-          <div class="lg:w-1/5 left-0 xs:w-3/12">
+          <div class="left-0 lg:w-1/5 xs:w-3/12">
             <div>
               <img
                 alt=""
@@ -32,7 +32,7 @@
               />
             </div>
           </div>
-          <div class="lg:w-4/5 right-0 text-sm xs:9/12">
+          <div class="right-0 text-sm lg:w-4/5 xs:9/12">
             <div class="pl-4 font-hairline">
               <p class="text-black">
                 <a href="#">{{i.name}}</a>
@@ -41,13 +41,13 @@
                 <span>Size:</span>{{i.size}}
               </p>
               <p class="relative mb-2">
-                <span class="text-black font-bold mb-2 text-lg ml-2">{{i.price | currency}}</span>
-                <span class="text-gray-300 line-through ml-2">{{i.mrp | currency}}</span>
+                <span class="mb-2 ml-2 text-lg font-bold text-black">{{i.price | currency}}</span>
+                <span class="ml-2 text-gray-300 line-through">{{i.mrp | currency}}</span>
               </p>
               <div class="flex justify-between">
-                <div class="w-1/2 left-0">
-                  <div class="inline-block relative w-16">
-                    <div class="text-xs font-hairline text-black p-1 text-center block appearance-none w-full bg-gray-200 rounded">Qty {{i.qty}}</div>
+                <div class="left-0 w-1/2">
+                  <div class="relative inline-block w-16">
+                    <div class="block w-full p-1 text-xs font-hairline text-center text-black bg-gray-200 rounded appearance-none">Qty {{i.qty}}</div>
                   </div>
                 </div>
               </div>
@@ -55,30 +55,30 @@
           </div>
         </div>
       </div>
-      <div class="lg:w-1/4 mt-2 lg:mt-10 lg:pr-20 w-full lg:p-10 p-2">
-        <!-- <div class="w-full flex flex-wrap justify-between pb-2 relative">
+      <div class="w-full p-2 mt-2 lg:w-1/4 lg:mt-10 lg:pr-20 lg:p-10">
+        <!-- <div class="relative flex flex-wrap justify-between w-full pb-2">
           <img
             alt="banner"
             src="/order-success-side.png"
-            class="w-full lg:w-64 lg:h-56 object-cover rounded"
+            class="object-cover w-full rounded lg:w-64 lg:h-56"
           />
         </div> -->
-        <div class="4/5 right-0 pb-3 bb">
+        <div class="right-0 pb-3 4/5 bb">
           <div>
-            <p class="text-black mt-4 font-normal text-sm">Price Summary</p>
+            <p class="mt-4 text-sm font-normal text-black">Price Summary</p>
           </div>
         </div>
         <div
-          class="4/5 right-0 pb-10 pt-2 border-b border-gray-300"
+          class="right-0 pt-2 pb-10 border-b border-gray-300 4/5"
           v-if="order.amount"
         >
           <div class="flex justify-between mt-2 text-sm">
             <div class="w-1/2 font-bold text-left">Total</div>
-            <div class="ml-2 w-1/2 font-bold text-black-400 text-right">{{order.amount.total | currency}}</div>
+            <div class="w-1/2 ml-2 font-bold text-right text-black-400">{{order.amount.total | currency}}</div>
           </div>
           <div class="flex justify-between mt-2 text-xs">
             <div class="w-10/12 text-left">Pay by {{order.payment.method}}</div>
-            <div class="text-black-400 text-right">{{order.amount.total | currency}}</div>
+            <div class="text-right text-black-400">{{order.amount.total | currency}}</div>
           </div>
         </div>
         <div v-if="order && order.address">

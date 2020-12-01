@@ -12,10 +12,10 @@
       class="colour-label colour-colorDisplay"
       :style="{'background-color':color}"
     ></span>
-    <span class="text-gray-800 text-sm">
+    <span class="text-sm text-gray-800">
       FOREVER 21
     </span>
-    <span class="text-gray-500 text-xs">(1295)</span>
+    <span class="text-xs text-gray-500">(1295)</span>
     <div class="common-checkboxIndicator"></div>
 
   </label>

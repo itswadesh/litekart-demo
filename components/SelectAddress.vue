@@ -1,11 +1,11 @@
 <template>
-  <div class="shadow bg-white p-2 rounded">
+  <div class="p-2 bg-white rounded shadow">
     <div
       class="flex justify-between"
       v-for="(a,ix) in addresses"
       :key="a._id"
     >
-      <label class="cursor-pointer w-full flex justify-between">
+      <label class="flex justify-between w-full cursor-pointer">
         <div>
           <Radio />
         </div>
@@ -23,17 +23,17 @@
           </div>
         </div>
         <div v-if="office">
-          <div class="rounded-full text-xs bg-gray-200 py-1 px-2">OFFICE</div>
+          <div class="px-2 py-1 text-xs bg-gray-200 rounded-full">OFFICE</div>
         </div>
       </label>
-      <label class="border-t border-gray-200 flex w-full">
+      <label class="flex w-full border-t border-gray-200">
         <button
           @click="go('/checkout/address')"
-          class="tracking-widest w-1/2 text-blue-500 py-1 border-r border-gray-200 mt-1"
+          class="w-1/2 py-1 mt-1 tracking-widest text-blue-500 border-r border-gray-200"
         >Edit/Change</button>
         <button
           @click="go('/checkout/add')"
-          class="tracking-widest w-1/2 text-blue-500 py-1 mt-1"
+          class="w-1/2 py-1 mt-1 tracking-widest text-blue-500"
         >Add New Address</button>
       </label>
     </div>

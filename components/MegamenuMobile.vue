@@ -13,9 +13,9 @@
       <img
         :alt="c.name.toUpperCase()"
         :src="$store.state.settings.CDN_URL+c.img"
-        class="object-cover rounded-full h-10 text-sm"
+        class="object-cover h-10 text-sm rounded-full"
       />
-      <div class="text text-center">{{c.name.toUpperCase()}}</div>
+      <div class="text-center text">{{c.name.toUpperCase()}}</div>
     </nuxt-link>
   </div>
 </template>

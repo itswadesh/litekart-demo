@@ -1,9 +1,9 @@
 <template>
   <div class="mx-2 lg:mx-64">
-    <h1 class="text-5xl mt-8 mb:8 lg:mb-16 text-center font-bold">
+    <h1 class="mt-8 text-5xl font-bold text-center mb:8 lg:mb-16">
       Sell On <span class="underline">Litekart</span>
     </h1>
-    <div class="mx-auto w-full lg:w-1/2">
+    <div class="w-full mx-auto lg:w-1/2">
       <form
         novalidate
         autocomplete="off"
@@ -45,7 +45,7 @@
           <button
             type="submit"
             :disabled="loading"
-            class="flex items-center justify-center h-14 text-2xl outline-none w-full font-bold py-2 rounded"
+            class="flex items-center justify-center w-full py-2 text-2xl font-bold rounded outline-none h-14"
             :class="{'primary text-white':!loading,'border border-gray-400 bg-gray-300':loading}"
           >
             <span v-if="!loading">Join Litekart</span>
@@ -58,7 +58,7 @@
         </div>
       </form>
     </div>
-    <div class="text-center mt-4 text-xs">
+    <div class="mt-4 text-xs text-center">
       <p>By creating your account, you agree to our
         <router-link to="/terms">Terms and Conditions</router-link> &
         <router-link to="/privacy-policy">Privacy Policy </router-link>

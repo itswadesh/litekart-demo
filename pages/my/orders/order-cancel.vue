@@ -2,11 +2,11 @@
   <div style="background:#f5f5f5">
     <!-- mobile -->
     <div
-      class="w-full font-semibold text-xs justify-between flex border-b-2 border-gray-300 lg:hidden block"
+      class="flex justify-between block w-full text-xs font-semibold border-b-2 border-gray-300 lg:hidden"
     >
       <div
         @click="step=1"
-        class="flex-1 text-center bg-white py-4"
+        class="flex-1 py-4 text-center bg-white"
         :class="{'text-pink-500 border-b border-pink-500':step==1}"
       >Select</div>
       <div
@@ -16,42 +16,42 @@
       >
         <div class="flex justify-between">
           <div>
-            <i class="fa fa-angle-right text-gray-500" aria-hidden="true"></i>
+            <i class="text-gray-500 fa fa-angle-right" aria-hidden="true"></i>
           </div>
           <div class="text-gray-500">Reason</div>
           <div>
-            <i class="fa fa-angle-right text-gray-500" aria-hidden="true"></i>
+            <i class="text-gray-500 fa fa-angle-right" aria-hidden="true"></i>
           </div>
         </div>
       </div>
       <div
-        class="flex-1 text-gray-500 py-4 bg-white text-center"
+        class="flex-1 py-4 text-center text-gray-500 bg-white"
         :class="{'text-pink-500 border-b border-pink-500':step==3}"
       >Confirm</div>
     </div>
     <!-- mobile ends -->
     <!-- desktop starts -->
-    <div class="w-full lg:w-4/5 m-auto flex lg:border lg:border-gray-300">
+    <div class="flex w-full m-auto lg:w-4/5 lg:border lg:border-gray-300">
       <!-- select div starts -->
       <div class="flex-1" :class="{'mask hidden lg:block':step!==1}">
         <div
           @click="step=1"
-          class="text-center bg-white py-4 hidden lg:block"
+          class="hidden py-4 text-center bg-white lg:block"
           :class="{'text-pink-500 border-b border-pink-500':step==1}"
         >Select</div>
         <div class="w-full">
           <div
-            class="text-gray-700 text-sm px-6 bg-white border-b border-gray-300 py-4 font-semibold"
+            class="px-6 py-4 text-sm font-semibold text-gray-700 bg-white border-b border-gray-300"
           >Select items for cancellation</div>
-          <div class="p-5 py-4 flex justify-between bg-white rounded">
+          <div class="flex justify-between p-5 py-4 bg-white rounded">
             <div>
               <Checkbox></Checkbox>
             </div>
             <div>
-              <img class="lg:rounded xs:rounded-b-none w-16" src="/cart-product.jpg" alt="" />
+              <img class="w-16 lg:rounded xs:rounded-b-none" src="/cart-product.jpg" alt="" />
             </div>
             <div class="lg:w-4/5 xs:9/12">
-              <div class="pl-4 font-hairline text-sm text-gray-500">
+              <div class="pl-4 text-sm font-hairline text-gray-500">
                 <div class="text-gray-700">Stylish Green Floral Print</div>
                 <div class="flex">
                   <div>
@@ -59,12 +59,12 @@
                     3-4 years
                   </div>
                 </div>
-                <div class="flex justify-between text-xs mt-2">
+                <div class="flex justify-between mt-2 text-xs">
                   <div>
                     <div>
-                      <div class="text-gray-700 font-semibold">Cancel Qty</div>
+                      <div class="font-semibold text-gray-700">Cancel Qty</div>
                       <select
-                        class="rounded focus:outline-none text-left w-full border border-gray-400"
+                        class="w-full text-left border border-gray-400 rounded focus:outline-none"
                       >
                         <option>1</option>
                         <option>2</option>
@@ -76,7 +76,7 @@
                       </select>
                     </div>
                   </div>
-                  <div class="text-gray-700 font-semibold">
+                  <div class="font-semibold text-gray-700">
                     Refund
                     <br />
                     <div class="font-hairline text-green-500">₹0</div>
@@ -85,9 +85,9 @@
               </div>
             </div>
           </div>
-          <div class="fixed bottom-0 lg:relative bg-white w-full">
+          <div class="fixed bottom-0 w-full bg-white lg:relative">
             <div
-              class="flex justify-between text-black font-semibold text-xs px-2 py-4 bg-white shadow"
+              class="flex justify-between px-2 py-4 text-xs font-semibold text-black bg-white shadow"
             >
               <div>1 item selected</div>
               <div>₹0</div>
@@ -95,7 +95,7 @@
             <div>
               <button
                 @click="step=2"
-                class="rounded w-full mr-2 primary text-white py-2 px-6 font-bold text-sm"
+                class="w-full px-6 py-2 mr-2 text-sm font-bold text-white rounded primary"
               >Proceed to reason</button>
             </div>
           </div>
@@ -103,7 +103,7 @@
       </div>
       <!-- select div ends -->
       <!-- reason div starts -->
-      <div class="lg:block flex-1 text-center bg-white" :class="{'mask hidden lg:block':step!==2}">
+      <div class="flex-1 text-center bg-white lg:block" :class="{'mask hidden lg:block':step!==2}">
         <div class="bg-white">
           <div class="hidden lg:block">
             <div
@@ -122,7 +122,7 @@
         </div>
         <div class="border-r border-gray-300">
           <div
-            class="text-gray-600 text-sm text-left px-10 border-b border-gray-300 py-3"
+            class="px-10 py-3 text-sm text-left text-gray-600 border-b border-gray-300"
           >Why are you cancelling these items?</div>
           <div class="text-left">
             <ul class="pl-4 text-xs text-gray-600">
@@ -155,10 +155,10 @@
               </li>
             </ul>
           </div>
-          <div class="z-50 fixed bottom-0 lg:relative bg-white w-full">
+          <div class="fixed bottom-0 z-50 w-full bg-white lg:relative">
             <button
               @click="step=3"
-              class="rounded w-full mr-2 primary text-white py-2 px-6 font-bold text-sm"
+              class="w-full px-6 py-2 mr-2 text-sm font-bold text-white rounded primary"
             >Proceed to refund</button>
           </div>
         </div>
@@ -167,21 +167,21 @@
       <!-- confirm div starts -->
       <div class="flex-1 bg-white" :class="{'mask hidden lg:block':step!==3}">
         <div
-          class="py-4 bg-white text-center hidden lg:block"
+          class="hidden py-4 text-center bg-white lg:block"
           :class="{'text-pink-500 border-b border-pink-500':step==3}"
         >Confirm</div>
         <div>
           <div
-            class="text-gray-600 text-sm px-6 border-b border-gray-300 py-3"
+            class="px-6 py-3 text-sm text-gray-600 border-b border-gray-300"
           >You are cancelling 1 item</div>
-          <div class="text-gray-600 text-xs mt-2 px-6 border-b border-gray-300 py-3">
+          <div class="px-6 py-3 mt-2 text-xs text-gray-600 border-b border-gray-300">
             <div class="font-semibold">No refund applicable</div>
             <div>Cash on delivery was the payment method chosen from this order</div>
           </div>
-          <div class="fixed bottom-0 lg:relative bg-white w-full">
+          <div class="fixed bottom-0 w-full bg-white lg:relative">
             <button
               @click="cancelOrder"
-              class="rounded w-full mr-2 primary text-white py-2 px-6 font-bold text-sm"
+              class="w-full px-6 py-2 mr-2 text-sm font-bold text-white rounded primary"
             >Confirm Cancellation</button>
           </div>
         </div>

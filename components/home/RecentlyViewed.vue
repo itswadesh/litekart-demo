@@ -1,12 +1,12 @@
 <template>
-  <div class="w-full shadow my-2">
-    <div class="w-full p-3 border-b flex justify-between">
+  <div class="w-full my-2 shadow">
+    <div class="flex justify-between w-full p-3 border-b">
       <div class="flex-1 headings">
         Recently Viewed
-        <!-- <span class="text-gray-500 text-xs">23:57:50 Left</span> -->
+        <!-- <span class="text-xs text-gray-500">23:57:50 Left</span> -->
       </div>
       <!-- <button
-        class="primary text-xs px-2 rounded"
+        class="px-2 text-xs rounded primary"
         @click="$router.push('/search')"
       >View All</button> -->
     </div>
@@ -31,8 +31,8 @@
             alt=""
           />
           <div class>
-            <div class="font-bold text-xs mb-2">{{product.name | truncate(45)}}</div>
-            <p class="text-green-700 text-xs text-center">Extra {{Math.round(((product.mrp-product.price) *100) / product.mrp)}}% off</p>
+            <div class="mb-2 text-xs font-bold">{{product.name | truncate(45)}}</div>
+            <p class="text-xs text-center text-green-700">Extra {{Math.round(((product.mrp-product.price) *100) / product.mrp)}}% off</p>
           </div>
         </nuxt-link>
       </slide>

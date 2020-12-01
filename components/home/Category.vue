@@ -1,12 +1,12 @@
 <template>
-  <div class="w-full flex flex-wrap mt-2">
+  <div class="flex flex-wrap w-full mt-2">
     <div class="w-full shadow">
-      <div class="w-full p-3 border-b h-14 flex justify-between">
-        <div class="w-1/2 flex items-center">
+      <div class="flex justify-between w-full p-3 border-b h-14">
+        <div class="flex items-center w-1/2">
          <h3 class="text-xl font-bold"> {{title}}</h3>
         </div>
         <button
-          class="primary text-xs right-0 py-1 px-2 rounded"
+          class="right-0 px-2 py-1 text-xs rounded primary"
           @click="$router.push(slug)"
         >View All</button>
       </div>
@@ -36,13 +36,13 @@
                 alt=""
               />
               <i
-                class="fa fa-heart h-6 w-6 text-white fill-current absolute top-0 right-0 p-1 mr-2 text-gray-400"
+                class="absolute top-0 right-0 w-6 h-6 p-1 mr-2 text-white text-gray-400 fill-current fa fa-heart"
                 aria-hidden="true"
               ></i>
             </div>
             <div class="px-2 py-4">
-              <div class="font-bold text-xs mb-2 truncate">{{product._source.name}}</div>
-              <p class="text-green-700 text-xs text-center">Extra {{Math.round(((product._source.mrp-product._source.price) *100) / product._source.mrp)}}% off</p>
+              <div class="mb-2 text-xs font-bold truncate">{{product._source.name}}</div>
+              <p class="text-xs text-center text-green-700">Extra {{Math.round(((product._source.mrp-product._source.price) *100) / product._source.mrp)}}% off</p>
             </div>
           </nuxt-link>
         </slide>

@@ -1,10 +1,10 @@
 <template>
   <header>
     <nav
-      class="flex items-center justify-between flex-wrap bg-white lg:px-12"
+      class="flex flex-wrap items-center justify-between bg-white lg:px-12"
       style="box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);"
     >
-      <div class="flex items-center flex-shrink-0 text-orange order-1">
+      <div class="flex items-center flex-shrink-0 order-1 text-orange">
         <nuxt-link to="/">
           <img
             class="h-10 mx-2"
@@ -12,17 +12,17 @@
             alt="Home"
           />
         </nuxt-link>
-        <div class="hidden lg:block flex flex-none text-sm xs:justify-between items-center text-gray order-2">
+        <div class="flex items-center flex-none order-2 hidden text-sm lg:block xs:justify-between text-gray">
           <Megamenu />
         </div>
       </div>
       <div
-        class="mx-2 mb-4 lg:mb-0 lg:mr-6 order-4 sm:order-3 w-full flex-1"
+        class="flex-1 order-4 w-full mx-2 mb-4 lg:mb-0 lg:mr-6 sm:order-3"
         :class="cls"
       >
         <Search />
       </div>
-      <div class="ml-10 flex items-center justify-between flex-shrink-0 py-4 order-3 sm:order-4 mr-3 w-40 headings">
+      <div class="flex items-center justify-between flex-shrink-0 order-3 w-40 py-4 ml-10 mr-3 sm:order-4 headings">
         <nuxt-link
           class="w-auto"
           to="/account/login"
@@ -70,7 +70,7 @@
           <div class="flex text-xs font-bold">
             Cart
             <div
-              class="primary font-bold desktop-badge rounded-full px-1 absolute text-center"
+              class="absolute px-1 font-bold text-center rounded-full primary desktop-badge"
               v-if="cart.qty>0"
             >
               <div class="number">{{cart.qty }}</div>

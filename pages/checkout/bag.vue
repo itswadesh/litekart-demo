@@ -3,11 +3,11 @@
     <CheckoutHeader />
     <div class="flex flex-wrap justify-between">
       <div class="lg:w-16 xs:w-0"></div>
-      <div class="xs:w-full lg:w-2/4 mt-10 px-2">
+      <div class="px-2 mt-10 xs:w-full lg:w-2/4">
         <!-- <Offers /> -->
-        <div class="font-bold text-gray-700 w-full p-3 text-lg bg-white mt-3 flex flex-wrap">
-          <div class="text-left w-1/2">My Shopping Bag ({{cart.qty}} Items)</div>
-          <div class="text-right w-1/2">Total {{cart.total | currency}}</div>
+        <div class="flex flex-wrap w-full p-3 mt-3 text-lg font-bold text-gray-700 bg-white">
+          <div class="w-1/2 text-left">My Shopping Bag ({{cart.qty}} Items)</div>
+          <div class="w-1/2 text-right">Total {{cart.total | currency}}</div>
         </div>
         <CartItem
           v-for="item in cart.items"
@@ -17,14 +17,14 @@
         <div class="hidden lg:block">
           <nuxt-link
             to="wishlist"
-            class="w-full shadow flex flex-wrap p-4 mt-6 mb-6"
+            class="flex flex-wrap w-full p-4 mt-6 mb-6 shadow"
           >
             <i
-              class="fa fa-bookmark-o mt-1 mr-2"
+              class="mt-1 mr-2 fa fa-bookmark-o"
               aria-hidden="true"
             ></i> Add More From Wishlist
             <i
-              class="fa fa-angle-right mt-1 ml-2"
+              class="mt-1 ml-2 fa fa-angle-right"
               aria-hidden="true"
             ></i>
           </nuxt-link>
@@ -34,7 +34,7 @@
       <CartSummary :cart="cart">
         <button
           @click="$router.push('/checkout/address')"
-          class="tracking-widest w-full mt-3 p-3 bg-red-600 text-white text-sm font-semibold rounded"
+          class="w-full p-3 mt-3 text-sm font-semibold tracking-widest text-white bg-red-600 rounded"
         >SELECT ADDRESS</button>
       </CartSummary>
 

@@ -1,37 +1,37 @@
 <template>
-  <div class="flex hr-line justify-between shadow rounded">
-    <div class="lg:w-1/5 left-0 xs:w-3/12 h-32">
+  <div class="flex justify-between rounded shadow hr-line">
+    <div class="left-0 h-32 lg:w-1/5 xs:w-3/12">
       <nuxt-link :to="`/${item.product.slug}?id=${item.product._id}`">
         <img
-          class="h-40 object-cover"
+          class="object-cover h-40"
           v-lazy="$store.state.settings.CDN_URL+item.product.img"
           alt=""
         />
-        <div class="lg:hidden xs:visible text-black p-2 bg-gray-300 rounded rounded-t-none">Arrives 19 Sep</div>
+        <div class="p-2 text-black bg-gray-300 rounded rounded-t-none lg:hidden xs:visible">Arrives 19 Sep</div>
       </nuxt-link>
     </div>
-    <div class="lg:w-4/5 right-0 xs:9/12">
+    <div class="right-0 lg:w-4/5 xs:9/12">
       <div class="pl-4 font-hairline">
-        <div class="w-full flex flex-wrap p-2">
+        <div class="flex flex-wrap w-full p-2">
           <div class="w-3/4">
             <a
               href="#"
-              class="text-black text-lg"
+              class="text-lg text-black"
             >{{item.product.name}}</a>
             <div class="text-xs font-hairline text-gray-700">Sold By: {{item.product.brand}}</div>
           </div>
           <div class="w-1/4 text-right">
-            <div class="text-black mb-2 text-sm font-bold">{{item.variant.price | currency}}</div>
-            <div class="text-gray-500 mb-2 text-xs">
+            <div class="mb-2 text-sm font-bold text-black">{{item.variant.price | currency}}</div>
+            <div class="mb-2 text-xs text-gray-500">
               <span class="line-through">{{item.variant.mrp | currency}}</span>
               <span class>|</span>
-              <span class="text-orange-500 font-hairline">{{calculateOffPercent(item.variant.mrp, item.variant.price)}}% OFF</span>
+              <span class="font-hairline text-orange-500">{{calculateOffPercent(item.variant.mrp, item.variant.price)}}% OFF</span>
             </div>
           </div>
         </div>
         <div class>
-          <div class="w-full text-hairline p-2">
-            <div class="inline-block relative">Size: {{item.variant.size}}</div>
+          <div class="w-full p-2 text-hairline">
+            <div class="relative inline-block">Size: {{item.variant.size}}</div>
 
             <div class="flex justify-between">
               <CartButtons
@@ -41,7 +41,7 @@
               <div>
                 <button class="p-4 focus:outline-none">MOVE TO WISHLIST</button>
                 <button
-                  class="text-gray-600 font-medium text-2xl right-0 bg-gray-200 rounded px-3 py-1"
+                  class="right-0 px-3 py-1 text-2xl font-medium text-gray-600 bg-gray-200 rounded"
                   @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
                   :disabled="loading"
                 >
@@ -58,7 +58,7 @@
               </div>
             </div>
           </div>
-          <div class="w-full p-2 border-t border-gray-300 text-gray-500"></div>
+          <div class="w-full p-2 text-gray-500 border-t border-gray-300"></div>
         </div>
       </div>
     </div>

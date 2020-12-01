@@ -9,7 +9,7 @@
         />
       </nuxt-link>
     </div>
-    <div class="order-2 lg:order-1 w-full lg:w-1/3 tracking-widest text-center text-gray-700 font-bold pt-3 text-xs flex justify-between">
+    <div class="flex justify-between order-2 w-full pt-3 text-xs font-bold tracking-widest text-center text-gray-700 lg:order-1 lg:w-1/3">
       <nuxt-link to="/cart">BAG</nuxt-link>
       <hr
         class="flex-1 mx-4 my-2"
@@ -17,7 +17,7 @@
       />
       <nuxt-link
         to="/checkout/address"
-        class=" pb-1"
+        class="pb-1 "
         :class="{'text-green-500 border-green-500 border-b-2':selected=='address'}"
       >ADDRESS</nuxt-link>
       <hr
@@ -26,13 +26,13 @@
       />
       <div :class="{'text-green-500 border-green-500 border-b-2':selected=='payment'}">PAYMENT</div>
     </div>
-    <div class="order-1 lg:order-3 text-center flex items-center">
+    <div class="flex items-center order-1 text-center lg:order-3">
       <img
         alt=""
         src="/secure.png"
         class="w-10"
       />
-      <span class="text-gray-500 text-lg">100% secure</span>
+      <span class="text-lg text-gray-500">100% secure</span>
     </div>
   </div>
 </template>

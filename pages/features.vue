@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="border border-gray-400 bg-gray-300 p-10">
+    <div class="p-10 bg-gray-300 border border-gray-400">
       <p>SITE MANAGEMENT</p>
       <p>CATALOGUE MANAGEMENT</p>
       <p>PRODUCT BROWSING</p>
@@ -14,7 +14,7 @@
       <p>ADDITIONAL FEATURES</p>
       <p>CODING / DEVELOPMENT</p>
     </div>
-    <div class="border border-gray-400 bg-gray-300 p-10">
+    <div class="p-10 bg-gray-300 border border-gray-400">
       <h1 class="text-2xl">Technologies Used</h1>
       <p>Serverless</p>
       <p>Docker</p>
@@ -28,7 +28,7 @@
     </div>
     <br />
     <div class="flex">
-      <div class="bg-yellow-300 p-4">
+      <div class="p-4 bg-yellow-300">
         <h1 class="text-4xl">Community</h1>
         <ul>
           <li>PWA for eCommerce</li>
@@ -52,7 +52,7 @@
           <li>Settings</li>
         </ul>
       </div>
-      <div class="bg-pink-300 p-4">
+      <div class="p-4 bg-pink-300">
         <h1 class="text-4xl">Developer</h1>
         <h4 class="text-2xl">Store Front</h4>
         <ul>
@@ -171,7 +171,7 @@
           <li>Call Center (phone) order creation</li>
         </ul>
       </div>
-      <div class="bg-blue-300 p-4">
+      <div class="p-4 bg-blue-300">
         <h1 class="text-4xl">Developer Features</h1>
         <ul>
           <li>User roles for better store administration</li>

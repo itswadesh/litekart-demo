@@ -3,7 +3,7 @@
     <CheckoutHeader />
     <div class="flex flex-wrap justify-between">
       <div class="lg:w-1/5 xs:w-0"></div>
-      <div class="lg:w-8 xs:w-0 mt-10 px-2">
+      <div class="px-2 mt-10 lg:w-8 xs:w-0">
         <div class="pt-8">
           <div class="text-left">
             <ul id="progress">
@@ -24,46 +24,46 @@
           </div>
         </div>
       </div>
-      <div class="xs:w-full lg:w-1/2 mt-10 px-2">
-        <div class="font-bold text-gray-700 w-full py-3 text-lg bg-white mt-3 flex flex-wrap">
+      <div class="px-2 mt-10 xs:w-full lg:w-1/2">
+        <div class="flex flex-wrap w-full py-3 mt-3 text-lg font-bold text-gray-700 bg-white">
           <div class="text-left">Checkout</div>
         </div>
-        <div class="flex justify-between border-b border-gray-200 w-full">
+        <div class="flex justify-between w-full border-b border-gray-200">
           <div class="w-1/4 bg-gray-100">
-            <div class="pt-12 pb-2 text-center text-gray-700 text-xl">Ship to</div>
+            <div class="pt-12 pb-2 text-xl text-center text-gray-700">Ship to</div>
             <ul class="text-center">
-              <li class="py-5 hover:bg-gray-200 font-hairline">
+              <li class="py-5 font-hairline hover:bg-gray-200">
                 <a href="#">Saved Address</a>
               </li>
-              <li class="py-5 bg-white border-l-4 border-pink-500 font-normal">
+              <li class="py-5 font-normal bg-white border-l-4 border-pink-500">
                 <a href="#">New Address</a>
               </li>
             </ul>
           </div>
           <div class="w-8/12 pb-4">
-            <div class="pt-12 pb-2 text-left text-gray-700 text-xl">Add an address</div>
-            <form class="form w-full p-2">
+            <div class="pt-12 pb-2 text-xl text-left text-gray-700">Add an address</div>
+            <form class="w-full p-2 form">
               <Textbox label="Full Name" class="w-full" />
               <Textbox label="Pin Code" class="w-full" />
               <Textbox label="Address" class="w-full" />
               <Textbox label="Landmark" class="w-full" />
 
-              <div class="w-full flex justify-between">
+              <div class="flex justify-between w-full">
                 <Textbox label="Landmark" class="w-1/2" />
                 <Textbox label="Landmark" class="w-1/2" />
               </div>
               <Textbox label="Mobile" class="w-full" />
               <button
-                class="tracking-widest w-full mt-3 p-3 hover:bg-pink-600 bg-pink-500 text-white text-sm font-semibold rounded"
+                class="w-full p-3 mt-3 text-sm font-semibold tracking-widest text-white bg-pink-500 rounded hover:bg-pink-600"
               >CONTINUE</button>
             </form>
           </div>
         </div>
-        <div class="flex py-8 border-b border-gray-200 mb-4">
-          <div class="w-1/3 font-bold text-black mt-3">Pay by</div>
-          <div class="w-1/2 font-hairline text-gray-600 mt-3">Select a payment method</div>
+        <div class="flex py-8 mb-4 border-b border-gray-200">
+          <div class="w-1/3 mt-3 font-bold text-black">Pay by</div>
+          <div class="w-1/2 mt-3 font-hairline text-gray-600">Select a payment method</div>
           <div class="w-1/3 text-right">
-            <button class="p-3 rounded bg-gray-300 text-gray-600 font-bold">CHANGE</button>
+            <button class="p-3 font-bold text-gray-600 bg-gray-300 rounded">CHANGE</button>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
       <CartSummary :cart="cart" hidden lg:block>
         <button
           @click="$router.push('/checkout/payment')"
-          class="tracking-widest w-full mt-3 p-3 bg-red-600 text-white text-sm font-semibold rounded"
+          class="w-full p-3 mt-3 text-sm font-semibold tracking-widest text-white bg-red-600 rounded"
         >MAKE PAYMENT</button>
       </CartSummary>
       <div class="w-1/5"></div>

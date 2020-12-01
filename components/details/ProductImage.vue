@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full md:w-6/12 lg:w-5/12 flex justify-start flex-wrap px-2">
-    <div class="flex md:flex-col hidden md:block md:order-1">
+  <div class="flex flex-wrap justify-start w-full px-2 md:w-6/12 lg:w-5/12">
+    <div class="flex hidden md:flex-col md:block md:order-1">
       <img
         v-for="(i,ix) in product.img"
         :key="ix"
@@ -10,9 +10,9 @@
         @click="showAsCurrentImage(i)"
       />
     </div>
-    <div class="flex-1 xs:order-1 md:order-2 overflow-hidden">
+    <div class="flex-1 overflow-hidden xs:order-1 md:order-2">
       <img
-        class="hidden md:inline-block w-full zoom"
+        class="hidden w-full md:inline-block zoom"
         v-lazy="$store.state.settings.CDN_URL+currentImage"
         alt=""
       />
@@ -23,7 +23,7 @@
         :paginationEnabled="false"
       >
         <slide
-          class="md:hidden inline-block w-full"
+          class="inline-block w-full md:hidden"
           v-for="(i,ix) in product.img"
           :key="ix"
         >
@@ -34,21 +34,21 @@
           />
         </slide>
       </carousel>
-      <!-- <div class="w-full flex p-2">
+      <!-- <div class="flex w-full p-2">
         <button
           v-if="!checkCart({pid:product._id, vid:selectedVariant._id})"
           :disabled="!selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
-          class="bg-orange-500 flex-1 my-3 p-3 md:p-5 mr-2 text-center font-bold text-white focus:outline-none text-xs lg:text-lg"
+          class="flex-1 p-3 my-3 mr-2 text-xs font-bold text-center text-white bg-orange-500 md:p-5 focus:outline-none lg:text-lg"
         >
           <i
-            class="fa fa-shopping-cart mr-2"
+            class="mr-2 fa fa-shopping-cart"
             aria-hidden="true"
           ></i> ADD TO CART
         </button>
-        <button class="bg-yellow-600 flex-1 my-3 p-3 md:p-5 text-center font-bold text-white focus:outline-none text-xs lg:text-lg">
+        <button class="flex-1 p-3 my-3 text-xs font-bold text-center text-white bg-yellow-600 md:p-5 focus:outline-none lg:text-lg">
           <i
-            class="fa fa-bolt mr-2"
+            class="mr-2 fa fa-bolt"
             aria-hidden="true"
           ></i>BUY NOW
         </button>

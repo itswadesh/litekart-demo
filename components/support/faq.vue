@@ -2,7 +2,7 @@
   <div>
     <h1
       v-if="back"
-      class="text-5xl text-center font-bold mt-8 mb:8 lg:mb-16"
+      class="mt-8 text-5xl font-bold text-center mb:8 lg:mb-16"
     >
       <nuxt-link
         to="/help-center"
@@ -10,7 +10,7 @@
       >Help </nuxt-link>
       Center
     </h1>
-    <h3 class="text-2xl font-bold my-6">{{title}}</h3>
+    <h3 class="my-6 text-2xl font-bold">{{title}}</h3>
     <div class="faq-block">
       <div class="card-faq faqs">
         <div style="padding-top: 15px;padding-bottom: 15px">

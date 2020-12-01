@@ -3,56 +3,56 @@
     <div class="w-1/2 lg:w-1/3">
       <div>
         <img
-          class="lg:rounded xs:rounded-b-none w-64"
+          class="w-64 lg:rounded xs:rounded-b-none"
           v-lazy="$store.state.settings.CDN_URL+item.product.img[0]"
           alt=""
         />
-        <!-- <div class="lg:hidden xs:visible text-black p-2 bg-gray-300 rounded rounded-t-none">Arrives 19 Sep</div> -->
+        <!-- <div class="p-2 text-black bg-gray-300 rounded rounded-t-none lg:hidden xs:visible">Arrives 19 Sep</div> -->
       </div>
     </div>
-    <div class="lg:w-4/5 right-0 xs:9/12">
+    <div class="right-0 lg:w-4/5 xs:9/12">
       <div class="pl-4 font-hairline">
-        <p class="text-black mb-2">
+        <p class="mb-2 text-black">
           <nuxt-link :to="`/${item.product.slug}?id=${item.product._id}`">{{item.product.name | truncate(30)}}</nuxt-link>
         </p>
         <div class="flex">
-          <p class="text-gray-500 mb-2">
+          <p class="mb-2 text-gray-500">
             <span>Size:</span>
             {{item.variant.size}}
           </p>
-          <span class="inline-block rounded-full bg-gray-300 h-2 w-2 m-2"></span>
+          <span class="inline-block w-2 h-2 m-2 bg-gray-300 rounded-full"></span>
           <span
             style="color: rgb(237, 113, 0);"
             v-if="item.variant.stock<5"
           >{{item.variant.stock}} left</span>
         </div>
         <p class="relative mb-2">
-          <span class="text-black font-bold mb-2 text-2xl">{{item.variant.price | currency}}</span>
+          <span class="mb-2 text-2xl font-bold text-black">{{item.variant.price | currency}}</span>
           <span
-            class="text-gray-400 line-through ml-2 text-xs lg:text-sm"
+            class="ml-2 text-xs text-gray-400 line-through lg:text-sm"
             v-if="calculateOffPercent(item.variant.mrp, item.variant.price)>0"
           >{{item.variant.mrp | currency}}</span>
           <span
-            class="ml-2 text-green-400 text-xs lg:text-sm"
+            class="ml-2 text-xs text-green-400 lg:text-sm"
             v-if="calculateOffPercent(item.variant.mrp, item.variant.price)>0"
           >{{calculateOffPercent(item.variant.mrp, item.variant.price)}}% off</span>
         </p>
         <div class="justify-between text-sm">
           <div class="flex flex-wrap">
-            <div class="w-full lg:w-3/5 my-2">
+            <div class="w-full my-2 lg:w-3/5">
               <CartButtons
                 :product="{_id:item.product._id}"
                 :variant="{_id:item.variant._id}"
               />
             </div>
-            <div class="w-full lg:w-2/5 text-right my-2">
+            <div class="w-full my-2 text-right lg:w-2/5">
               <div class="flex text-xs">
                 <button
-                  class="mr-1 focus:outline-none primary rounded p-1"
+                  class="p-1 mr-1 rounded focus:outline-none primary"
                   @click="saveForLater(item)"
                 >MOVE TO WISHLIST</button>
                 <button
-                  class="ml-3 muted rounded py-2 px-3"
+                  class="px-3 py-2 ml-3 rounded muted"
                   @click="checkAndAddToCart({pid: item.product._id, vid: item.variant._id, qty: -10000})"
                   :disabled="loading"
                 >

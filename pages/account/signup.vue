@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="bg-gray-100 xs:mobile-login h-full px-4">
-      <div class="container mx-auto h-full flex items-center">
-        <div class="lg:w-1/3 w-full">
-          <div class="border-teal border-t-12 bg-white mb-6 rounded shadow-2xl">
-            <div class="p-0 secondary text-white rounded rounded-b-none">
-              <h1 class="text-xl mb-6 text-left p-3">
+    <div class="h-full px-4 bg-gray-100 xs:mobile-login">
+      <div class="container flex items-center h-full mx-auto">
+        <div class="w-full lg:w-1/3">
+          <div class="mb-6 bg-white rounded shadow-2xl border-teal border-t-12">
+            <div class="p-0 text-white rounded rounded-b-none secondary">
+              <h1 class="p-3 mb-6 text-xl text-left">
                 <span
                   class="font-extrabold"
                   v-if="!signup"
@@ -43,7 +43,7 @@
                     label="Last Name"
                     class="w-full"
                   />
-                  <!-- <p class="text-red-500 mb-5 text-xs font-hairline">Please enter password</p> -->
+                  <!-- <p class="mb-5 text-xs font-hairline text-red-500">Please enter password</p> -->
                   <!-- Show password box -->
                   <div v-if="!isPhone">
                     <Textbox
@@ -59,29 +59,29 @@
                   <div v-else>
                     <div
                       id="wraper1"
-                      class="otp-seperator w-1 h-1 rounded absolute"
+                      class="absolute w-1 h-1 rounded otp-seperator"
                       :class="{'wraper-hide':otp.length>0}"
                     ></div>
                     <div
                       id="wraper2"
-                      class="otp-seperator w-1 h-1 rounded absolute"
+                      class="absolute w-1 h-1 rounded otp-seperator"
                       :class="{'wraper-hide':otp.length>1}"
                     ></div>
                     <div
                       id="wraper3"
-                      class="otp-seperator w-1 h-1 rounded absolute"
+                      class="absolute w-1 h-1 rounded otp-seperator"
                       :class="{'wraper-hide':otp.length>2}"
                     ></div>
                     <div
                       id="wraper4"
-                      class="otp-seperator w-1 h-1 rounded absolute"
+                      class="absolute w-1 h-1 rounded otp-seperator"
                       :class="{'wraper-hide':otp.length>3}"
                     ></div>
                     <input
                       v-model="otp"
                       name="otp"
                       ref="otp"
-                      class="outline-none pl-4 otp-content w-32 bg-transparent border border-gray-400"
+                      class="w-32 pl-4 bg-transparent border border-gray-400 outline-none otp-content"
                       maxlength="4"
                       autocomplete="off"
                       @keyup="onKeyUpEvent(otp.length, $event)"
@@ -92,7 +92,7 @@
                   <button
                     type="submit"
                     :disabled="loading"
-                    class="flex items-center justify-center h-14 text-2xl outline-none w-full font-bold py-2 rounded"
+                    class="flex items-center justify-center w-full py-2 text-2xl font-bold rounded outline-none h-14"
                     :class="{'primary text-white':!loading,'border border-gray-400 bg-gray-300':loading}"
                   >
                     <div v-if="loading">
@@ -104,7 +104,7 @@
                     </div>
                     <span v-else>{{submitText}}</span>
                   </button>
-                  <p class="text-xs mt-2"><nuxt-link to="/account/forgot-password">Forgot Password?</nuxt-link></p>
+                  <p class="mt-2 text-xs"><nuxt-link to="/account/forgot-password">Forgot Password?</nuxt-link></p>
                 </div>
               </div>
             </form>

@@ -2,14 +2,14 @@
   <div>
     <CheckoutHeader />
     <div>
-      <div class="text-sm font-hairline text-gray-600 p-3">CHOOSE DELIVERY ADDRESS</div>
+      <div class="p-3 text-sm font-hairline text-gray-600">CHOOSE DELIVERY ADDRESS</div>
       <div class="m-2 lg:flex">
         <div
-          class="m-1 lg:w-1/3 shadow bg-white p-2 rounded flex flex-wrap justify-between border border-green-500"
+          class="flex flex-wrap justify-between p-2 m-1 bg-white border border-green-500 rounded shadow lg:w-1/3"
           v-for="(a,ix) in addresses"
           :key="a._id"
         >
-          <label class="cursor-pointer w-full flex justify-between">
+          <label class="flex justify-between w-full cursor-pointer">
             <div>
               <Radio />
             </div>
@@ -29,34 +29,34 @@
               </div>
             </div>
             <div v-if="office">
-              <div class="rounded-full text-xs bg-gray-200 py-1 px-2">OFFICE</div>
+              <div class="px-2 py-1 text-xs bg-gray-200 rounded-full">OFFICE</div>
             </div>
           </label>
-          <div class="border-t border-gray-200 flex w-full">
-            <button class="tracking-widest w-1/2 text-blue-500 py-1 border-r border-gray-200 mt-1">Remove</button>
+          <div class="flex w-full border-t border-gray-200">
+            <button class="w-1/2 py-1 mt-1 tracking-widest text-blue-500 border-r border-gray-200">Remove</button>
             <button
               @click="go('/checkout/add')"
-              class="tracking-widest w-1/2 text-blue-500 py-1 mt-1"
+              class="w-1/2 py-1 mt-1 tracking-widest text-blue-500"
             >Edit</button>
           </div>
         </div>
 
         <nuxt-link
           to="/checkout/add"
-          class="m-1 shadow bg-white pointer my-2 py-2 px-4 rounded flex justify-between lg:w-1/3"
+          class="flex justify-between px-4 py-2 m-1 my-2 bg-white rounded shadow pointer lg:w-1/3"
         >
           <div>Add New Address</div>
           <i
-            class="fa fa-angle-right text-right"
+            class="text-right fa fa-angle-right"
             aria-hidden="true"
           ></i>
         </nuxt-link>
       </div>
     </div>
-    <div class="fixed bottom-0 lg:inset-auto w-full lg:w-1/4 lg:absolute p-2 bg-white right-0">
+    <div class="fixed bottom-0 right-0 w-full p-2 bg-white lg:inset-auto lg:w-1/4 lg:absolute">
       <button
         @click="$router.push('/checkout/address')"
-        class="tracking-widest w-full mt-3 p-3 bg-red-500 text-white text-sm font-semibold rounded"
+        class="w-full p-3 mt-3 text-sm font-semibold tracking-widest text-white bg-red-500 rounded"
       >CONFIRM</button>
     </div>
   </div>
