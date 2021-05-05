@@ -222,7 +222,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style  scoped>
 .apply_for_vendor_heading {
   text-align: center;
 }

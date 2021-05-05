@@ -11,7 +11,6 @@ export default {
   plugins: [
     { src: '~/plugins/VueYoutube.js', mode: 'client' },
     { src: '~/plugins/swal.js', mode: 'client' },
-    { src: '~/plugins/ui.js' },
     { src: '~/plugins/filters.js' },
     { src: '~/plugins/init.js', mode: 'client' },
     { src: '~/plugins/lazy.js', mode: 'client' },
@@ -52,6 +51,20 @@ export default {
   generate: {
     dir: 'dist',
     fallback: true,
+  },
+  build: {
+    babel: {
+      presets({ isServer }) {
+        const targets = isServer ? { node: 'current' } : { ie: 11 }
+        return [[require.resolve('@babel/preset-env'), { targets }]]
+      },
+      plugins: [
+        '@babel/syntax-dynamic-import',
+        '@babel/transform-runtime',
+        '@babel/transform-async-to-generator',
+      ],
+    },
+    parallel: true,
   },
   // sitemap: {
   //   path: '/sitemap.xml',

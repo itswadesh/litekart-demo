@@ -69,7 +69,7 @@ export const actions = {
                 commit('setUser', data.user)
                 commit('success', "Verified! Thank You.", { root: true })
                 this.$cookies.set('Authorization', data.token, { path: '/', maxAge: tokenExpiry })
-                let returnUrl = payload.route || "/my";
+                let returnUrl = "/";
                 this.$router.push(returnUrl)
                 commit('cart/setCart', data.cart, { root: true })
                 return data
@@ -91,7 +91,7 @@ export const actions = {
                 commit('setUser', data.user)
                 commit('success', "Verified! Thank You.", { root: true })
                 this.$cookies.set('Authorization', data.token, { path: '/', maxAge: tokenExpiry })
-                let returnUrl = payload.route || "/my";
+                let returnUrl = "/";
                 this.$router.push(returnUrl)
                 commit('cart/setCart', data.cart, { root: true })
                 return data
@@ -110,7 +110,7 @@ export const actions = {
                 commit('setUser', data.user)
                 commit('success', "Verified! Thank You.", { root: true })
                 this.$cookies.set('Authorization', data.token, { path: '/', maxAge: tokenExpiry })
-                let returnUrl = payload.route || "/my";
+                let returnUrl = "/";
                 this.$router.push(returnUrl)
                 commit('cart/setCart', data.cart, { root: true })
                 return data

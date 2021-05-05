@@ -20,11 +20,9 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.image-card
-  width: 100%
-  height: auto
-  // margin
-  
-
+<style scoped>
+.image-card{
+  width: 100%;
+  height: auto;
+}
 </style>

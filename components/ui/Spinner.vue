@@ -38,21 +38,22 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-.ar-spinner
-  width: 100%
-  height: 100%
-  padding: 10px
-  z-index: 100
-  background-color: #f5f5f5b3
-  @apply mx-auto absolute top-0 left-0
-
-  img
-    display: block
-    width: 100%
-    max-width: 100px
-    height: auto
-    max-height: 100%
-    margin: 0 auto
-    background-size: contain
+<style scoped>
+.ar-spinner{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  z-index: 100;
+  background-color: #f5f5f5b3;
+  @apply mx-auto absolute top-0 left-0;
+}
+  img{
+    display: block;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    max-height: 100%;
+    margin: 0 auto;
+    background-size: contain;
+  }
 </style>
