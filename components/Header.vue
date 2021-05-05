@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <header class="bg-white border-b shadow-md">
     <nav
-      class="flex flex-wrap items-center justify-between bg-white lg:px-12"
+      class="flex flex-wrap items-center justify-between lg:px-5"
       style="box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);"
     >
       <div class="flex items-center flex-shrink-0 order-1 text-orange">
@@ -15,16 +15,16 @@
           />
         </nuxt-link>
         <div
-          class="flex items-center flex-none order-2 hidden text-sm lg:block xs:justify-between text-gray"
+          class="items-center flex-none order-2 hidden text-sm lg:block xs:justify-between text-gray"
         >
           <Megamenu />
         </div>
       </div>
       <div
-        class="flex-1 order-4 w-full mx-2 mb-4 lg:mb-0 lg:mr-6 sm:order-3"
+        class="flex-1 order-3 hidden w-full ml-6 lg:ml-0 sm:flex"
         :class="cls"
       >
-        <Search />
+        <Search class="w-full my-auto" />
       </div>
       <div
         class="flex items-center justify-between flex-shrink-0 order-3 w-40 py-4 ml-10 mr-3 sm:order-4 headings"
@@ -34,15 +34,15 @@
           <div class="text-xs font-bold headings">Profile</div>
         </nuxt-link>
         <nuxt-link class="w-auto" to="/my" v-else>
-          <img class="h-4 ml-2" src="/avatar.png" alt="" />
+          <img class="h-4 mx-auto" src="/avatar.png" alt="" />
           <div class="text-xs font-bold headings">Profile</div>
         </nuxt-link>
         <nuxt-link class="w-auto" to="/wishlist">
-          <img class="h-4 ml-3 center" src="/bookmark.png" alt="" />
+          <img class="h-4 mx-auto center" src="/bookmark.png" alt="" />
           <div class="text-xs font-bold headings">Wishlist</div>
         </nuxt-link>
         <nuxt-link class="relative" to="/cart">
-          <img class="h-4 ml-1" src="/bag.png" alt="" />
+          <img class="h-4 mx-auto" src="/bag.png" alt="" />
           <div class="flex text-xs font-bold">
             Cart
             <div
@@ -55,6 +55,9 @@
         </nuxt-link>
       </div>
     </nav>
+    <div class="sticky top-0">
+    <Search class="pb-3 mx-2 my-auto sm:hidden" />
+    </div>
   </header>
 </template>
 <script>

@@ -2,7 +2,7 @@
   <div>
     <MegamenuMobile />
     <div class="px-2 home text-1">
-      <Hero />
+      <Hero class="mt-2" />
       <Banners
         :banners="
           $store.state.settings &&

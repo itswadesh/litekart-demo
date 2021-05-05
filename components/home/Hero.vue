@@ -14,7 +14,7 @@
         <img
           v-lazy="$store.state.settings.CDN_URL + image.img"
           alt=""
-          class="object-cover h-64 lg:h-108"
+          class="object-cover w-full md:h-96 h-80"
         />
       </nuxt-link>
     </slide>
@@ -59,7 +59,7 @@ export default {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.11);
 }
 .VueCarousel-navigation button.VueCarousel-navigation-prev {
-  left: 27px !important;
+  left: 47px !important;
 }
 .VueCarousel-navigation button.VueCarousel-navigation-next {
   right: 47px !important;

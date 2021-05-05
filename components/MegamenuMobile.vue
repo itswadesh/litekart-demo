@@ -1,16 +1,16 @@
 <template>
-  <div class="flex h-auto p-5 xs:block lg:hidden" style="overflow-x:scroll">
+  <div class="flex h-auto p-2 bg-white border-b shadow-md xs:block lg:hidden">
     <nuxt-link
       v-for="c in $store.state.categories"
       :key="c._id"
       :to="`/${c.slug}`"
-      class="flex-1 bg-white circletag"
+      class="flex-1 circletag"
       id="nay"
     >
       <img
         :alt="c.name.toUpperCase()"
         :src="$store.state.settings.CDN_URL + c.img"
-        class="object-cover h-10 text-sm rounded-full"
+        class="object-cover h-10 text-sm rounded-full sm:h-12"
       />
       <div class="text-center text">{{ c.name.toUpperCase() }}</div>
     </nuxt-link>
