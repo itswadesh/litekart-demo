@@ -1,12 +1,14 @@
 <template>
   <div>
-    <div class="items-center justify-between flex-none hidden py-4 text-sm lg:flex">
+    <div
+      class="items-center justify-between flex-none hidden py-4 text-sm lg:flex"
+    >
       <!-- <Breadcrumb v-if="category && category.slugPath && category.slugPath.length>0"
       :namePath="category.namePath"
       :slugPath="category.slugPath" class="px-1 py-0" />
     /> -->
       <div class="flex p-1 font-semibold headings">
-        <div class="font-hairline text-1">{{count}} {{category.name}}</div>
+        <div class="font-hairline text-1">{{ count }} {{ category.name }}</div>
       </div>
       <div class="flex-wrap p-1">
         <div class="text-sm">
@@ -18,12 +20,15 @@
             >
               <option
                 class="bg-white"
-                v-for="(s,ix) in sorts"
+                v-for="(s, ix) in sorts"
                 :key="ix"
                 :value="s.val"
-              >{{s.name}}</option>
+                >{{ s.name }}</option
+              >
             </select>
-            <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+            <div
+              class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none"
+            >
               <i class="px-1 fa fa-caret-down" />
             </div>
           </div>
@@ -35,13 +40,16 @@
         class="flex items-center flex-1 text-left text-gray-700 text-primary"
         @click="$emit('showFilters')"
       >
-        <i
-          class="px-2 fa fa-sliders"
-          aria-hidden="true"
-        ></i>Filter
+        <i class="px-2 fa fa-sliders" aria-hidden="true"></i>Filter
       </div>
-      <div class="flex-1 hidden px-4 font-normal text-center text-gray-700 md:block">{{count}} Items</div>
-      <div class="flex items-center flex-1 text-center text-gray-700 text-primary">
+      <div
+        class="flex-1 hidden px-4 font-normal text-center text-gray-700 md:block"
+      >
+        {{ count }} Items
+      </div>
+      <div
+        class="flex items-center flex-1 text-center text-gray-700 text-primary"
+      >
         <select
           class="block px-4 py-2 pr-8 leading-tight bg-white border border-gray-100 border-gray-400 appearance-none cursor-pointer text-primary hover:border-gray-500 focus:outline-none focus:none"
           v-model="sortBy"
@@ -49,10 +57,11 @@
         >
           <option
             class="bg-white"
-            v-for="(s,ix) in sorts"
+            v-for="(s, ix) in sorts"
             :key="ix"
             :value="s.val"
-          >{{s.name}}</option>
+            >{{ s.name }}</option
+          >
         </select>
       </div>
     </div>
@@ -69,7 +78,7 @@ export default {
   data() {
     return {
       sorts,
-      sortBy: null
+      sortBy: null,
     };
   },
   created() {
@@ -77,14 +86,14 @@ export default {
   },
   props: {
     category: {
-      type: Object
+      type: Object,
     },
     count: {
-      type: Number
+      type: Number,
     },
     fl: {
-      type: [Object, Array]
-    }
+      type: [Object, Array],
+    },
   },
   methods: {
     sort() {
@@ -99,8 +108,8 @@ export default {
       // this.$emit("removed", this.fl);
       let url = constructURL("/search", this.fl);
       this.$router.push(url);
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -1,18 +1,8 @@
 <template>
   <div>
-    <div
-      v-for="(a,ix) in ast"
-      :key="ix"
-    >
-      <component
-        :is="a.name"
-        v-if="a.type=='SELF_CLOSING'"
-      ></component>
-      <div
-        v-else
-        v-html="a.body"
-      >
-      </div>
+    <div v-for="(a, ix) in ast" :key="ix">
+      <component :is="a.name" v-if="a.type == 'SELF_CLOSING'"></component>
+      <div v-else v-html="a.body"></div>
     </div>
   </div>
 </template>
@@ -37,18 +27,18 @@ function renderSelfClosing(token) {
 export default {
   data() {
     return {
-      ast: []
+      ast: [],
     };
   },
   props: {
     content: {
       type: String,
-      required: true
+      required: true,
     },
     strict: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   components: { TrendingProducts },
   methods: {
@@ -57,18 +47,18 @@ export default {
         let ast = this.tokenizer.input(this.content).ast();
         this.ast = ast;
 
-          /*for (let a of ast) {
+        /*for (let a of ast) {
             console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzz", a.name, a.body, a.type);
           }*/
       } catch (e) {
         console.log("page render err...", e);
       }
-    }
+    },
   },
   created() {
     this.tokenizer = new Tokenizer();
     this.tokenizer.strict = this.strict;
     this.renderContent();
-  }
+  },
 };
 </script>

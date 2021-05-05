@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       shouldShow: false,
-      scrolled: 0
+      scrolled: 0,
     };
   },
   components: {},
@@ -19,7 +19,7 @@ export default {
       if (process.client) {
         window.scroll({ behavior: "smooth", left: 0, top: 100 });
       }
-    }
+    },
   },
   mounted() {
     if (process.client) {
@@ -27,7 +27,7 @@ export default {
         this.scrolled = window.scrollY;
       });
     }
-  }
+  },
 };
 </script>
 <style scoped>

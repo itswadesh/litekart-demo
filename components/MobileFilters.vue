@@ -4,25 +4,15 @@
     v-if="facets"
   >
     <!-- Mobile version starts here -->
-    <div
-      class="block h-full md:hidden"
-      v-if="showMobileFilter"
-    >
+    <div class="block h-full md:hidden" v-if="showMobileFilter">
       <div class="flex w-full py-4 bg-white shadow-md">
-        <div
-          class="flex-1 text-left text-gray-700"
-          @click="$emit('hide')"
-        >
-          <i
-            class="ml-2 fa fa-times"
-            aria-hidden="true"
-          ></i>
+        <div class="flex-1 text-left text-gray-700" @click="$emit('hide')">
+          <i class="ml-2 fa fa-times" aria-hidden="true"></i>
         </div>
         <div class="flex-1 font-bold text-center text-gray-700">FILTER</div>
-        <button
-          class="flex-1 mr-2 text-right text-gray-700"
-          @click="clearAll"
-        >Clear all</button>
+        <button class="flex-1 mr-2 text-right text-gray-700" @click="clearAll">
+          Clear all
+        </button>
       </div>
       <div class="flex w-full h-full mt-1">
         <div class="w-2/5">
@@ -32,82 +22,143 @@
               @click="selected='categories'"
             >Category</li> -->
             <li
-              :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='brands'}"
-              @click="selected='brands'"
-            >Brands</li>
+              :class="{
+                'bg-white text-pink-500 border-l-4 border-pink-600':
+                  selected == 'brands',
+              }"
+              @click="selected = 'brands'"
+            >
+              Brands
+            </li>
             <li
-              :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='sizes'}"
-              @click="selected='sizes'"
-            >Sizes</li>
+              :class="{
+                'bg-white text-pink-500 border-l-4 border-pink-600':
+                  selected == 'sizes',
+              }"
+              @click="selected = 'sizes'"
+            >
+              Sizes
+            </li>
             <li
-              :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='colors'}"
-              @click="selected='colors'"
-            >Color</li>
+              :class="{
+                'bg-white text-pink-500 border-l-4 border-pink-600':
+                  selected == 'colors',
+              }"
+              @click="selected = 'colors'"
+            >
+              Color
+            </li>
             <li
-              :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='Price'}"
-              @click="selected='Price'"
-            >Price</li>
+              :class="{
+                'bg-white text-pink-500 border-l-4 border-pink-600':
+                  selected == 'Price',
+              }"
+              @click="selected = 'Price'"
+            >
+              Price
+            </li>
             <li
-              :class="{'bg-white text-pink-500 border-l-4 border-pink-600':selected=='Gender'}"
-              @click="selected='Gender'"
-            >Gender</li>
+              :class="{
+                'bg-white text-pink-500 border-l-4 border-pink-600':
+                  selected == 'Gender',
+              }"
+              @click="selected = 'Gender'"
+            >
+              Gender
+            </li>
           </ul>
         </div>
         <div class="w-full overflow-y-scroll">
           <ul
             class="w-full px-5 py-2 ml-2"
-            v-if="selected == 'categories' && facets.categories && facets.categories.all && facets.categories.all.buckets"
+            v-if="
+              selected == 'categories' &&
+                facets.categories &&
+                facets.categories.all &&
+                facets.categories.all.buckets
+            "
           >
             <li
-              v-for="b in facets.categories && facets.categories.all && facets.categories.all.buckets"
+              v-for="b in facets.categories &&
+                facets.categories.all &&
+                facets.categories.all.buckets"
               :key="b.key"
             >
               <Checkbox
                 :count="b.doc_count"
                 :value="b.key"
                 v-model="fl.categories"
-                @change="changed({model:'categories',checked:fl.categories})"
-              >{{b.key}}</Checkbox>
+                @change="
+                  changed({ model: 'categories', checked: fl.categories })
+                "
+                >{{ b.key }}</Checkbox
+              >
             </li>
           </ul>
           <ul
             class="w-full px-5 py-2 ml-2"
-            v-if="selected == 'brands' && facets.brands && facets.brands.all && facets.brands.all.buckets"
+            v-if="
+              selected == 'brands' &&
+                facets.brands &&
+                facets.brands.all &&
+                facets.brands.all.buckets
+            "
           >
             <li
-              v-for="b in facets.brands && facets.brands.all && facets.brands.all.buckets"
+              v-for="b in facets.brands &&
+                facets.brands.all &&
+                facets.brands.all.buckets"
               :key="b.key"
             >
               <Checkbox
                 :count="b.doc_count"
                 :value="b.key"
                 v-model="fl.brands"
-                @change="changed({model:'brands',checked:fl.brands})"
-              >{{b.key}}</Checkbox>
+                @change="changed({ model: 'brands', checked: fl.brands })"
+                >{{ b.key }}</Checkbox
+              >
             </li>
           </ul>
           <ul
             class="w-full px-5 py-2 ml-2"
-            v-if="selected == 'sizes' && facets.sizes && facets.sizes.all.buckets && facets.sizes.all.buckets.length>0"
+            v-if="
+              selected == 'sizes' &&
+                facets.sizes &&
+                facets.sizes.all.buckets &&
+                facets.sizes.all.buckets.length > 0
+            "
           >
             <li
-              v-for="b in facets.sizes && facets.sizes.all && facets.sizes.all.buckets"
+              v-for="b in facets.sizes &&
+                facets.sizes.all &&
+                facets.sizes.all.buckets"
               :key="b.key"
             >
               <Checkbox
                 :count="b.doc_count"
                 :value="b.key"
                 v-model="fl.sizes"
-                @change="changed({model:'sizes',checked:fl.sizes})"
-              >{{b.key}}</Checkbox>
+                @change="changed({ model: 'sizes', checked: fl.sizes })"
+                >{{ b.key }}</Checkbox
+              >
             </li>
           </ul>
           <ul
             class="w-full px-5 py-2 ml-2"
-            v-if="selected == 'colors' && facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets && facets.colors.colors.name.buckets.length>0"
+            v-if="
+              selected == 'colors' &&
+                facets.colors &&
+                facets.colors.colors &&
+                facets.colors.colors.name &&
+                facets.colors.colors.name.buckets &&
+                facets.colors.colors.name.buckets.length > 0
+            "
           >
             <li
-              v-for="b in facets.colors && facets.colors.colors && facets.colors.colors.name && facets.colors.colors.name.buckets"
+              v-for="b in facets.colors &&
+                facets.colors.colors &&
+                facets.colors.colors.name &&
+                facets.colors.colors.name.buckets"
               :key="b.key"
             >
               <Checkbox
@@ -115,14 +166,17 @@
                 :count="b.doc_count"
                 :value="b.key"
                 v-model="fl.color"
-                @change="changed({model:'colors',checked:fl.color})"
-              >{{b.key}}</Checkbox>
+                @change="changed({ model: 'colors', checked: fl.color })"
+                >{{ b.key }}</Checkbox
+              >
             </li>
           </ul>
         </div>
       </div>
       <div class="absolute bottom-0 w-full text-center primary">
-        <button class="w-full p-4 font-bold cursor-pointer focus:outline-none">APPLY</button>
+        <button class="w-full p-4 font-bold cursor-pointer focus:outline-none">
+          APPLY
+        </button>
       </div>
     </div>
   </div>
@@ -160,21 +214,21 @@ export default {
   props: {
     clear: Boolean,
     fl: {
-      type: [Object, Array]
+      type: [Object, Array],
     },
     facets: {
       type: [Object, Array],
       default: () => {
         return {};
-      }
-    }
+      },
+    },
   },
   components: { Checkbox, Radio },
   data() {
     return {
       selected: "brands",
       loadingPrice: true, // Required because after loading finished then only we will initiate the price slider component
-      showMobileFilter: true
+      showMobileFilter: true,
     };
   },
   methods: {
@@ -194,8 +248,8 @@ export default {
     clearAll() {
       this.$router.push(`/search`);
       this.$emit("hide");
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

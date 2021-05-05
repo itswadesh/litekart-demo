@@ -1,9 +1,5 @@
 <template>
-  <button
-    class="back-to-top"
-    @click="toTop"
-    v-if="scrolled > 1000"
-  >
+  <button class="back-to-top" @click="toTop" v-if="scrolled > 1000">
     Back To Top
     <i class="fa fa-chevron-up" />
   </button>
@@ -15,7 +11,7 @@ export default {
   data() {
     return {
       shouldShow: false,
-      scrolled: 0
+      scrolled: 0,
     };
   },
   components: {},
@@ -24,7 +20,7 @@ export default {
       if (process.client) {
         window.scrollTo(0, 0);
       }
-    }
+    },
   },
   mounted() {
     if (process.client) {
@@ -32,12 +28,12 @@ export default {
         this.scrolled = window.scrollY;
       });
     }
-  }
+  },
 };
 </script>
 
 <style scoped>
-.back-to-top{
+.back-to-top {
   width: 150px;
   height: 50px;
   border-radius: 3px;
@@ -46,7 +42,7 @@ export default {
   left: calc(50% - 50px);
   z-index: 9999999999;
 }
-  .ar-icon{
-    margin-left: 10px;
-    }
+.ar-icon {
+  margin-left: 10px;
+}
 </style>

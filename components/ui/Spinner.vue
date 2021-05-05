@@ -16,30 +16,30 @@ export default {
   name: "ArSpinner",
   data() {
     return {
-      visible: false
+      visible: false,
     };
   },
   props: {
     visibility: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   watch: {
     visibility() {
       this.visible = this.visibility;
-    }
+    },
   },
   methods: {
     click(e) {
       e.preventDefault();
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
-.ar-spinner{
+.ar-spinner {
   width: 100%;
   height: 100%;
   padding: 10px;
@@ -47,13 +47,13 @@ export default {
   background-color: #f5f5f5b3;
   @apply mx-auto absolute top-0 left-0;
 }
-  img{
-    display: block;
-    width: 100%;
-    max-width: 100px;
-    height: auto;
-    max-height: 100%;
-    margin: 0 auto;
-    background-size: contain;
-  }
+img {
+  display: block;
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  max-height: 100%;
+  margin: 0 auto;
+  background-size: contain;
+}
 </style>

@@ -1,4 +1,4 @@
-const state = state => ({
+const state = (state) => ({
   items: [],
   qty: 0,
   subtotal: 0,
@@ -6,7 +6,7 @@ const state = state => ({
   total: 0,
   offer_total: 0,
   showCart: false,
-  promo: null
+  promo: null,
 });
 
 // getters
@@ -14,80 +14,80 @@ const getters = {
   showCart(state) {
     return state.showCart;
   },
-  checkCart: state => ({ pid, vid }) => {
+  checkCart: (state) => ({ pid, vid }) => {
     // Returns true when there is item in cart
-    console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzz');
+    console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzz");
     var found = state.items.some(function(el) {
       return el.product._id === pid && el.variant._id === vid;
     });
     return found;
   },
-  getQty: state => ({ pid, vid }) => {
+  getQty: (state) => ({ pid, vid }) => {
     // Gets cart qty of that item
     for (let i of state.items) {
       if (i.product._id === pid && i.variant._id === vid) {
         return i.qty;
       }
     }
-  }
+  },
 };
 const actions = {
   async fetch({ commit, state, getters }) {
     // This is only to get data from saved cart
     try {
-      const data = await this.$axios.$get('api/cart');
-      commit('setCart', data);
+      const data = await this.$axios.$get("api/cart");
+      commit("setCart", data);
       return data;
     } catch (e) {}
   },
   async addToCart({ commit }, payload) {
     try {
-      const data = await this.$axios.$post('api/cart/add', payload);
-      commit('setCart', data);
+      const data = await this.$axios.$post("api/cart/add", payload);
+      commit("setCart", data);
     } catch (e) {
-      commit('setErr', e, { root: true });
+      commit("setErr", e, { root: true });
     }
   },
   applyDiscount({ commit }, payload) {
-    commit('applyDiscount', payload);
+    commit("applyDiscount", payload);
   },
   async checkout(
     { commit, state, rootState, getters },
     { paymentMethod, address }
   ) {
-    paymentMethod = paymentMethod || 'COD';
+    paymentMethod = paymentMethod || "COD";
     switch (paymentMethod) {
-      case 'COD':
+      case "COD":
         try {
-          commit('busy', true, { root: true });
-          let order = await this.$axios.$post('api/orders', {
+          commit("busy", true, { root: true });
+          let order = await this.$axios.$post("api/orders", {
             address,
-            paymentMethod
+            paymentMethod,
           });
           this.$router.push(
-            '/order-success?id=' + order._id + '&amount=' + order.amount.total
+            "/order-success?id=" + order._id + "&amount=" + order.amount.total
           );
         } catch (err) {
-          commit('setErr', err, { root: true });
+          commit("setErr", err, { root: true });
         } finally {
-          commit('busy', false, { root: true });
+          commit("busy", false, { root: true });
         }
         break;
-      case 'Stripe':
-        commit('setErr', 'Stripe not implemented yet. Proceed with COD', {
-          root: true
+      case "Stripe":
+        commit("setErr", "Stripe not implemented yet. Proceed with COD", {
+          root: true,
         });
         break;
       default:
         commit(
-          'setErr',
-          'The checkout service ' + paymentMethod + ' not yet implemented',
+          "setErr",
+          "The checkout service " + paymentMethod + " not yet implemented",
           { root: true }
         );
-        console.log('Unknown checkout service: ' + paymentMethod);
+        console.log("Unknown checkout service: " + paymentMethod);
         break;
     }
-  }
+  },
 };
 
 const mutations = {
@@ -111,12 +111,12 @@ const mutations = {
   },
   applyDiscount(state, amount) {
     state.discount = amount;
-  }
+  },
 };
 export default {
   namespaced: true,
   state,
   getters,
   actions,
-  mutations
+  mutations,
 };

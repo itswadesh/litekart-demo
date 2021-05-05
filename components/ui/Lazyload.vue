@@ -19,21 +19,21 @@ export default {
       loading: false,
       options: {
         rootMargin: "50px",
-        threshold: 0
-      }
+        threshold: 0,
+      },
     };
   },
   props: {
     src: {
       type: String,
-      default: ""
-    }
+      default: "",
+    },
   },
   watch: {
     src() {
       this.$refs.lazyload.setAttribute("src", require("@/static/oval.svg"));
       this.startObserving();
-    }
+    },
   },
   computed: {
     imageSrc() {
@@ -41,9 +41,9 @@ export default {
     },
     fitLoader() {
       return {
-        "fit--loader": this.loading
+        "fit--loader": this.loading,
       };
-    }
+    },
   },
   methods: {
     /*
@@ -73,7 +73,7 @@ export default {
         this.observer.disconnect();
       };
       image.src = this.src;
-    }
+    },
   },
 
   mounted() {
@@ -88,18 +88,18 @@ export default {
   destroyed() {
     this.loading = false;
     this.observer.disconnect();
-  }
+  },
 };
 </script>
 
-<style  scoped>
-.fit--loader{
-	display: flex;
+<style scoped>
+.fit--loader {
+  display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
-	width: 50px !important;
-	height: 50px !important;
-	margin-top: 50% auto;
+  width: 50px !important;
+  height: 50px !important;
+  margin-top: 50% auto;
 }
 </style>

@@ -22,7 +22,7 @@ export default {
     vPagination,
     NoProduct,
     ProductSkeleton,
-    BackToTopDark
+    BackToTopDark,
   },
   data() {
     return {
@@ -42,20 +42,20 @@ export default {
         limit: 40,
         sort: null, // null will honour the search result weight
         search: "",
-        end: false
+        end: false,
       },
       products: [],
       facets: [],
       category: {},
       productCount: 0,
       currentPage: 1,
-      loading: false
+      loading: false,
     };
   },
   computed: {
     noOfPages() {
       return Math.ceil(this.productCount / this.$store.state.settings.pageSize);
-    }
+    },
   },
   mounted() {
     this.currentPage = parseInt(this.$route.query.page);
@@ -68,9 +68,9 @@ export default {
         let query = { ...this.$route.query };
         let qry = { ...this.$route.query }; // Prevent query sync
         // Remove extra q & page param => Add page param only on page change & refresh
-        delete query.page
-        delete query.q
-        Object.keys(query).map(function (k, i) {
+        delete query.page;
+        delete query.q;
+        Object.keys(query).map(function(k, i) {
           if (
             query[k] &&
             !Array.isArray(query[k]) &&
@@ -82,8 +82,8 @@ export default {
         this.fl = query; // For selected filters
         if (q) qry.q = q;
         this.getData(qry);
-      }
-    }
+      },
+    },
   },
   methods: {
     changePage(p) {
@@ -101,22 +101,22 @@ export default {
         window.scroll({
           behavior: "smooth",
           left: 0,
-          top: 0
+          top: 0,
         });
       }
     },
     changed(e) {
-      this.fl[e.model] = e.checked.join(',');
-      const c = this.$route.path.slice(1)
+      this.fl[e.model] = e.checked.join(",");
+      const c = this.$route.path.slice(1);
       let fl = Object.assign({}, this.fl);
-      delete fl.page
-      delete fl.categories
+      delete fl.page;
+      delete fl.categories;
       const url = this.constructURL("/", c, fl);
       this.$router.push(`${url}page=1`);
     },
     constructURL(url, category, fl) {
       if (category) url += category + "?";
-      Object.keys(fl).forEach(e => {
+      Object.keys(fl).forEach((e) => {
         if (fl[e] && fl[e] !== "undefined" && fl[e].length > 0)
           url += `${e}=${fl[e]}&`;
       });
@@ -131,7 +131,7 @@ export default {
     filterRemoved(filter, name, data, multiple) {
       let list = this.$route.query[name].split(",");
       list.splice(list.indexOf(filter), 1);
-      let mappedList = list.map(b => {
+      let mappedList = list.map((b) => {
         return b;
       });
       this.fl[name] = mappedList;
@@ -139,7 +139,7 @@ export default {
     },
     clearAllFilters() {
       this.fl = {};
-      const c = this.$route.path.slice(1)
+      const c = this.$route.path.slice(1);
       let fl = {};
       const url = this.constructURL("/", c, fl);
       this.$router.push(`${url}page=1`);
@@ -147,7 +147,7 @@ export default {
     async mergeToWishlist(products, wishlist) {
       try {
         if (wishlist.length > 0) {
-          products.map(p => {
+          products.map((p) => {
             for (const w of wishlist) {
               if (
                 p._id == w.product._id &&
@@ -158,10 +158,10 @@ export default {
             }
           });
         }
-      } catch (e) { }
+      } catch (e) {}
     },
     loadMore() {
-      this.changePage()
+      this.changePage();
     },
     sortNow() {
       this.flush(); // To allow http get request
@@ -180,7 +180,7 @@ export default {
           let auth = this.$cookies.get("Authorization");
           this.$axios.setToken(auth, "Bearer");
           this.wishlist = await this.$axios.$get("api/wishlists/my");
-        } catch (e) { }
+        } catch (e) {}
       } else {
       }
     },
@@ -192,6 +192,6 @@ export default {
           this.$router.currentRoute.fullPath;
         localStorage.setItem("lastVisit", lastVisit);
       }
-    }
+    },
   },
-}
+};

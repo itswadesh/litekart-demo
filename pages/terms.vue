@@ -84,6 +84,6 @@ h2 {
 </template>
 <script>
 export default {
-  layout: "support"
+  layout: "support",
 };
 </script>

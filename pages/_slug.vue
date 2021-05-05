@@ -2,19 +2,15 @@
   <div>
     <div
       class="mt-2 ml-4"
-      v-if="product.categories && product.categories.length>0"
+      v-if="product.categories && product.categories.length > 0"
     >
       <router-link to="/">Home</router-link>
-      <span
-        v-for="(c,ix) in product.categories"
-        :key="ix"
-      >
+      <span v-for="(c, ix) in product.categories" :key="ix">
         <span class="arrow"> › </span>
-        <router-link
-          v-if="c.slug && c.slug!=''"
-          :to="'/'+c.slug"
-        >{{c.name}}</router-link>
-        <span v-else>{{c.name}}</span>
+        <router-link v-if="c.slug && c.slug != ''" :to="'/' + c.slug">{{
+          c.name
+        }}</router-link>
+        <span v-else>{{ c.name }}</span>
       </span>
     </div>
     <div class="flex flex-wrap justify-start">
@@ -51,7 +47,7 @@ export default {
     ProductImage,
     Breadcrumb,
     ProductDetails,
-    YouMayLike
+    YouMayLike,
   },
   mounted() {
     if (this.product) {
@@ -96,7 +92,7 @@ export default {
         HOST +
         (product &&
           product.img &&
-          store.state.settings.CDN_URL + product.img[0])
+          store.state.settings.CDN_URL + product.img[0]),
     };
     return { product, selectedVariant, err, structuredData };
   },
@@ -106,7 +102,7 @@ export default {
       RecentlyViewedProducts: [],
       YouMightAlsoLikeProducts: [],
       carouselShow: false,
-      loading: false
+      loading: false,
     };
   },
   methods: {
@@ -116,7 +112,7 @@ export default {
         window.scroll({
           behavior: "smooth",
           left: 0,
-          top: 0
+          top: 0,
         });
       }
     },
@@ -150,7 +146,7 @@ export default {
         r1: 0,
         count: 0,
         total: 0,
-        avg: 0
+        avg: 0,
       };
       r.forEach(function(i) {
         if (i.message) reviewCount++;
@@ -172,7 +168,7 @@ export default {
     },
     clearRecentItems() {
       this.RecentlyViewedProducts = [];
-    }
+    },
   },
   async created() {
     if (
@@ -230,7 +226,7 @@ export default {
           content:
             (this.product && this.product.metaDescription) ||
             (this.product && this.product.description) ||
-            DESCRIPTION
+            DESCRIPTION,
         },
         {
           hid: "keywords",
@@ -239,7 +235,7 @@ export default {
           content:
             (this.product && this.product.metaKeywords) ||
             (this.product && this.product.keywords) ||
-            KEYWORDS
+            KEYWORDS,
         },
 
         // OpenGraph data
@@ -250,7 +246,7 @@ export default {
           content:
             (this.product && this.product.metaTitle) ||
             (this.product && this.product.name) ||
-            TITLE
+            TITLE,
         },
         {
           hid: "og:description",
@@ -259,12 +255,12 @@ export default {
           content:
             (this.product && this.product.metaDescription) ||
             (this.product && this.product.description) ||
-            DESCRIPTION
+            DESCRIPTION,
         },
         {
           name: "og_url",
           property: "og:url",
-          content: host + "/" + this.product.slug + "?id=" + this.product._id
+          content: host + "/" + this.product.slug + "?id=" + this.product._id,
         },
         {
           name: "og_image",
@@ -274,15 +270,15 @@ export default {
               this.product.imgA &&
               this.product.imgA[0] &&
               this.$store.state.settings.CDN_URL + this.product.imgA[0]) ||
-            sharingLogo
+            sharingLogo,
         },
         {
           property: "og:image:width",
-          content: "600"
+          content: "600",
         },
         {
           property: "og:image:height",
-          content: "600"
+          content: "600",
         },
         // Twitter
         {
@@ -290,14 +286,14 @@ export default {
           content:
             (this.product && this.product.metaTitle) ||
             (this.product && this.product.name) ||
-            TITLE
+            TITLE,
         },
         {
           name: "twitter:description",
           content:
             (this.product && this.product.metaDescription) ||
             (this.product && this.product.description) ||
-            DESCRIPTION
+            DESCRIPTION,
         },
         {
           name: "twitter:image:src",
@@ -306,13 +302,13 @@ export default {
               this.product.imgA &&
               this.product.imgA[0] &&
               $store.state.settings.CDN_URL + this.product.imgA[0]) ||
-            sharingLogo
+            sharingLogo,
         },
         // Google / Schema.org markup:
         {
           hid: "product_name",
           itemprop: "name",
-          content: (this.product && this.product.name) || TITLE
+          content: (this.product && this.product.name) || TITLE,
         },
         {
           hid: "product_description",
@@ -320,7 +316,7 @@ export default {
           content:
             (this.product && this.product.metaDescription) ||
             (this.product && this.product.description) ||
-            DESCRIPTION
+            DESCRIPTION,
         },
         {
           hid: "product_image",
@@ -330,7 +326,7 @@ export default {
               this.product.imgA &&
               this.product.imgA[0] &&
               $store.state.settings.CDN_URL + this.product.imgA[0].large) ||
-            sharingLogo
+            sharingLogo,
         },
         {
           hid: "product_price",
@@ -340,10 +336,10 @@ export default {
             this.product &&
             this.product.variants &&
             this.product.variants[0] &&
-            this.product.variants[0].price
-        }
-      ]
+            this.product.variants[0].price,
+        },
+      ],
     };
-  }
+  },
 };
 </script>

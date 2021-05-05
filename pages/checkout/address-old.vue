@@ -25,12 +25,16 @@
         </div>
       </div>
       <div class="px-2 mt-10 xs:w-full lg:w-1/2">
-        <div class="flex flex-wrap w-full py-3 mt-3 text-lg font-bold text-gray-700 bg-white">
+        <div
+          class="flex flex-wrap w-full py-3 mt-3 text-lg font-bold text-gray-700 bg-white"
+        >
           <div class="text-left">Checkout</div>
         </div>
         <div class="flex justify-between w-full border-b border-gray-200">
           <div class="w-1/4 bg-gray-100">
-            <div class="pt-12 pb-2 text-xl text-center text-gray-700">Ship to</div>
+            <div class="pt-12 pb-2 text-xl text-center text-gray-700">
+              Ship to
+            </div>
             <ul class="text-center">
               <li class="py-5 font-hairline hover:bg-gray-200">
                 <a href="#">Saved Address</a>
@@ -41,7 +45,9 @@
             </ul>
           </div>
           <div class="w-8/12 pb-4">
-            <div class="pt-12 pb-2 text-xl text-left text-gray-700">Add an address</div>
+            <div class="pt-12 pb-2 text-xl text-left text-gray-700">
+              Add an address
+            </div>
             <form class="w-full p-2 form">
               <Textbox label="Full Name" class="w-full" />
               <Textbox label="Pin Code" class="w-full" />
@@ -55,15 +61,21 @@
               <Textbox label="Mobile" class="w-full" />
               <button
                 class="w-full p-3 mt-3 text-sm font-semibold tracking-widest text-white bg-pink-500 rounded hover:bg-pink-600"
-              >CONTINUE</button>
+              >
+                CONTINUE
+              </button>
             </form>
           </div>
         </div>
         <div class="flex py-8 mb-4 border-b border-gray-200">
           <div class="w-1/3 mt-3 font-bold text-black">Pay by</div>
-          <div class="w-1/2 mt-3 font-hairline text-gray-600">Select a payment method</div>
+          <div class="w-1/2 mt-3 font-hairline text-gray-600">
+            Select a payment method
+          </div>
           <div class="w-1/3 text-right">
-            <button class="p-3 font-bold text-gray-600 bg-gray-300 rounded">CHANGE</button>
+            <button class="p-3 font-bold text-gray-600 bg-gray-300 rounded">
+              CHANGE
+            </button>
           </div>
         </div>
       </div>
@@ -72,7 +84,9 @@
         <button
           @click="$router.push('/checkout/payment')"
           class="w-full p-3 mt-3 text-sm font-semibold tracking-widest text-white bg-red-600 rounded"
-        >MAKE PAYMENT</button>
+        >
+          MAKE PAYMENT
+        </button>
       </CartSummary>
       <div class="w-1/5"></div>
     </div>
@@ -96,7 +110,7 @@ export default {
     CartSummary,
     CheckoutHeader,
     CheckoutFooter,
-    Textbox
+    Textbox,
   },
   computed: {
     user() {
@@ -107,9 +121,9 @@ export default {
     },
     ...mapGetters({
       checkCart: "cart/checkCart",
-      showCart: "cart/showCart"
-    })
-  }
+      showCart: "cart/showCart",
+    }),
+  },
 };
 </script>
 

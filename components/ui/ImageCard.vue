@@ -1,27 +1,27 @@
 <template>
   <div class="image-card image">
-    <img :src="src" :alt="alt">
+    <img :src="src" :alt="alt" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ImageCard',
+  name: "ImageCard",
   props: {
     src: {
       type: String,
-      default: ''
+      default: "",
     },
     alt: {
       type: String,
-      default: ''
-    }
-  }
-}
+      default: "",
+    },
+  },
+};
 </script>
 
 <style scoped>
-.image-card{
+.image-card {
   width: 100%;
   height: auto;
 }

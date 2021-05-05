@@ -3,22 +3,18 @@
     <div class="top-header">
       <div class="responsive-top-logo-and-login">
         <div class="faq-logo">
-          <nuxt-link
-            to="/"
-            style="color: white"
-          >
+          <nuxt-link to="/" style="color: white">
             <img
-              :src="`${$store.state.settings.CDN_URL}/${$store.state.settings.logo}`"
+              :src="
+                `${$store.state.settings.CDN_URL}/${$store.state.settings.logo}`
+              "
               alt=""
               style="width: 80px;height: 16px;position: relative;top:4px"
-            ></nuxt-link>
+          /></nuxt-link>
         </div>
         <div class="flex mr-4">
           <div class="flex">
-            <nuxt-link
-              to="/"
-              class="flex mr-4 header-color"
-            >
+            <nuxt-link to="/" class="flex mr-4 header-color">
               <svg
                 _ngcontent-c8=""
                 height="16"
@@ -40,13 +36,10 @@
             </nuxt-link>
           </div>
           <div>
-            <nuxt-link
-              to="/account/login"
-              class="header-color"
-            ><span v-if="!user">SIGN IN</span><span
-                v-else
-                @click="logout()"
-              >SIGN OUT</span></nuxt-link>
+            <nuxt-link to="/account/login" class="header-color"
+              ><span v-if="!user">SIGN IN</span
+              ><span v-else @click="logout()">SIGN OUT</span></nuxt-link
+            >
           </div>
         </div>
       </div>
@@ -60,18 +53,18 @@
 export default {
   data() {
     return {
-      user: null
+      user: null,
     };
   },
   methods: {
     logout() {
       this.$store.dispatch("auth/logout").then(() => {});
-    }
+    },
   },
   mounted() {
     this.user = this.$store.state.auth.user;
     console.log(this.user);
-  }
+  },
 };
 </script>
 <style scoped>

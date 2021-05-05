@@ -13,7 +13,7 @@ ul {
 </style>
 <script>
 export default {
-  layout: "support"
+  layout: "support",
 };
 </script>
 <template>
@@ -29,9 +29,9 @@ export default {
         sure that you do in fact want to cancel your account before doing so.
       </li>
       <li>
-        If you cancel the Service in the middle of the month, you will receive one
-        final invoice via email. Once that invoice has been paid you will not be
-        charged again.
+        If you cancel the Service in the middle of the month, you will receive
+        one final invoice via email. Once that invoice has been paid you will
+        not be charged again.
       </li>
       <li>
         We reserve the right to modify or terminate the Litekart service for any
@@ -39,11 +39,13 @@ export default {
       </li>
       <li>
         Fraud: Without limiting any other remedies, Litekart may suspend or
-        terminate your account if we suspect that you (by conviction, settlement,
-        insurance or escrow investigation, or otherwise) have engaged in
-        fraudulent activity in connection with the Site.
+        terminate your account if we suspect that you (by conviction,
+        settlement, insurance or escrow investigation, or otherwise) have
+        engaged in fraudulent activity in connection with the Site.
       </li>
-      <li>Note: no refunds are offered, even if a plan is canceled mid-month.</li>
+      <li>
+        Note: no refunds are offered, even if a plan is canceled mid-month.
+      </li>
     </ul>
   </div>
 </template>

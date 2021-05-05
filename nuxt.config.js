@@ -1,38 +1,38 @@
-require('dotenv').config()
-const axios = require('axios')
-const { API_URL, head, HOST } = require('./config')
-const PROXY = process.env.API_URL || API_URL
+require("dotenv").config();
+const axios = require("axios");
+const { API_URL, head, HOST } = require("./config");
+const PROXY = process.env.API_URL || API_URL;
 
 export default {
-  mode: 'universal',
+  mode: "universal",
   head,
-  loading: '~/components/ui/Loading.vue',
+  loading: "~/components/ui/Loading.vue",
   css: [],
   plugins: [
-    { src: '~/plugins/VueYoutube.js', mode: 'client' },
-    { src: '~/plugins/swal.js', mode: 'client' },
-    { src: '~/plugins/filters.js' },
-    { src: '~/plugins/init.js', mode: 'client' },
-    { src: '~/plugins/lazy.js', mode: 'client' },
-    { src: '~/plugins/scroll.js', mode: 'client' },
-    { src: '~/plugins/carousel.js', mode: 'client' },
-    { src: '~/plugins/vue-slider-component', mode: 'client' }, // Price slider
+    { src: "~/plugins/VueYoutube.js", mode: "client" },
+    { src: "~/plugins/swal.js", mode: "client" },
+    { src: "~/plugins/filters.js" },
+    { src: "~/plugins/init.js", mode: "client" },
+    { src: "~/plugins/lazy.js", mode: "client" },
+    { src: "~/plugins/scroll.js", mode: "client" },
+    { src: "~/plugins/carousel.js", mode: "client" },
+    { src: "~/plugins/vue-slider-component", mode: "client" }, // Price slider
   ],
-  buildModules: ['@nuxtjs/tailwindcss'],
+  buildModules: ["@nuxtjs/tailwindcss"],
   modules: [
-    '~/modules/routes',
-    '@nuxtjs/robots',
-    '@nuxtjs/axios',
+    "~/modules/routes",
+    "@nuxtjs/robots",
+    "@nuxtjs/axios",
     // '@nuxtjs/proxy',
     // '@nuxtjs/sitemap',
-    '@nuxtjs/font-awesome',
-    '@nuxtjs/pwa',
-    '@nuxtjs/toast',
-    'cookie-universal-nuxt',
+    "@nuxtjs/font-awesome",
+    "@nuxtjs/pwa",
+    "@nuxtjs/toast",
+    "cookie-universal-nuxt",
   ],
   toast: {
-    theme: 'bubble',
-    position: 'top-center',
+    theme: "bubble",
+    position: "top-center",
     singleton: true,
   },
   axios: {
@@ -44,24 +44,24 @@ export default {
     credentials: true,
   },
   proxy: {
-    '/api/': PROXY,
-    '/auth': PROXY,
-    '/images': PROXY,
+    "/api/": PROXY,
+    "/auth": PROXY,
+    "/images": PROXY,
   },
   generate: {
-    dir: 'dist',
+    dir: "dist",
     fallback: true,
   },
   build: {
     babel: {
       presets({ isServer }) {
-        const targets = isServer ? { node: 'current' } : { ie: 11 }
-        return [[require.resolve('@babel/preset-env'), { targets }]]
+        const targets = isServer ? { node: "current" } : { ie: 11 };
+        return [[require.resolve("@babel/preset-env"), { targets }]];
       },
       plugins: [
-        '@babel/syntax-dynamic-import',
-        '@babel/transform-runtime',
-        '@babel/transform-async-to-generator',
+        "@babel/syntax-dynamic-import",
+        "@babel/transform-runtime",
+        "@babel/transform-async-to-generator",
       ],
     },
     parallel: true,
@@ -83,4 +83,4 @@ export default {
   //       ]))
   //   }
   // }
-}
+};

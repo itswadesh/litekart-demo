@@ -3,20 +3,26 @@
     <MegamenuMobile />
     <div class="px-2 home text-1">
       <Hero />
-      <Banners :banners="$store.state.settings && $store.state.settings.banners && $store.state.settings.banners.offers" />
-      <Category slug="women" title="Fresh in Women"/>
-      <Category slug="men" title="Fresh in Men"/>
+      <Banners
+        :banners="
+          $store.state.settings &&
+            $store.state.settings.banners &&
+            $store.state.settings.banners.offers
+        "
+      />
+      <Category slug="women" title="Fresh in Women" />
+      <Category slug="men" title="Fresh in Men" />
       <Sale />
-      <Category slug="men-jeans" title="Men Jeans"/>
-      <Category slug="women-jeans" title="Women Jeans"/>
-      <Category slug="activewear" title="Sports Wear"/>
+      <Category slug="men-jeans" title="Men Jeans" />
+      <Category slug="women-jeans" title="Women Jeans" />
+      <Category slug="activewear" title="Sports Wear" />
       <YouMayLike />
-      <Category slug="women-lingerie" title="Lingerie"/>
-      <Category slug="coats" title="Coats & Blazers"/>
+      <Category slug="women-lingerie" title="Lingerie" />
+      <Category slug="coats" title="Coats & Blazers" />
       <!-- <Category slug="kurtis" title="Kurtis"/> -->
       <WhatsNew />
-      <Category slug="women-winter-wear" title="Winter Collection"/>
-      <Category slug="plus-sizes" title="Plus Size Collection"/>
+      <Category slug="women-winter-wear" title="Winter Collection" />
+      <Category slug="plus-sizes" title="Plus Size Collection" />
       <RecentlyViewed />
       <!-- <Heros /> -->
       <!-- <Deals v-if="1==1" />
@@ -54,8 +60,8 @@ export default {
     //Skeletons
     BannersSkeleton,
     DealsSkeleton,
-    Category
-  }
+    Category,
+  },
 };
 </script>
 

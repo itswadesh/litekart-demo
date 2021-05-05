@@ -18,15 +18,12 @@
       v-if="color"
       data-colorhex="black"
       class="colour-label colour-colorDisplay"
-      :style="{'background-color':color}"
+      :style="{ 'background-color': color }"
     ></span>
     <span class="ml-2 text-sm text-gray-800">
       <slot />
     </span>
-    <span
-      class="text-xs text-gray-500"
-      v-if="count"
-    >({{count}})</span>
+    <span class="text-xs text-gray-500" v-if="count">({{ count }})</span>
     <div class="common-checkboxIndicator"></div>
   </label>
 </template>
@@ -97,64 +94,64 @@ export default {
   name: "Checkbox",
   model: {
     prop: "model",
-    event: "change"
+    event: "change",
   },
   props: {
     id: {
       type: String,
-      required: false
+      required: false,
     },
     model: {
       type: String | Array,
-      default: undefined
+      default: undefined,
     },
     color: {
       type: String,
-      required: false
+      required: false,
     },
     circle: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
     },
     checked: {
       type: Boolean,
-      required: false
+      required: false,
     },
     value: {
       type: [String, Boolean],
       required: false,
-      default: ""
+      default: "",
     },
     count: {
       type: [String, Number],
-      required: false
+      required: false,
     },
     name: {
       type: String,
-      required: false
+      required: false,
     },
     required: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     size: {
       type: Number,
-      required: false
+      required: false,
     },
     fontSize: {
       type: Number,
-      required: false
-    }
+      required: false,
+    },
   },
   data: () => ({
-    uniqueId: ""
+    uniqueId: "",
   }),
   computed: {
     checkboxState() {
@@ -162,7 +159,7 @@ export default {
       if (Array.isArray(this.model))
         return this.model.indexOf(this.value) !== -1;
       return this.model && this.value;
-    }
+    },
   },
   methods: {
     toggle() {
@@ -187,18 +184,18 @@ export default {
       } else {
         this.uniqueId = this.id;
       }
-    }
+    },
   },
   watch: {
     checked(v) {
       if (v !== this.checkboxState) this.toggle();
-    }
+    },
   },
   mounted() {
     this.genId();
     if (this.checked && !this.checkboxState) {
       this.toggle();
     }
-  }
+  },
 };
 </script>

@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="flex h-auto p-5 xs:block lg:hidden"
-    style="overflow-x:scroll"
-  >
+  <div class="flex h-auto p-5 xs:block lg:hidden" style="overflow-x:scroll">
     <nuxt-link
       v-for="c in $store.state.categories"
       :key="c._id"
@@ -12,10 +9,10 @@
     >
       <img
         :alt="c.name.toUpperCase()"
-        :src="$store.state.settings.CDN_URL+c.img"
+        :src="$store.state.settings.CDN_URL + c.img"
         class="object-cover h-10 text-sm rounded-full"
       />
-      <div class="text-center text">{{c.name.toUpperCase()}}</div>
+      <div class="text-center text">{{ c.name.toUpperCase() }}</div>
     </nuxt-link>
   </div>
 </template>
@@ -23,7 +20,7 @@
 <script>
 export default {};
 </script>
-<style  scoped>
+<style scoped>
 .circletag img {
   border-radius: 50%;
 }

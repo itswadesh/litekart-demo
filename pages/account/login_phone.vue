@@ -16,7 +16,9 @@
               class="center"
             >
               <div class="p-6">
-                <div class="flex items-center mb-10 border-b border-b-2 border-grey-500">
+                <div
+                  class="flex items-center mb-10 border-b border-b-2 border-grey-500"
+                >
                   <input
                     v-model="user.phone"
                     class="w-full p-4 leading-tight text-gray-700 bg-gray-200 border-none appearance-none focus:outline-none"
@@ -27,28 +29,32 @@
                   />
                 </div>
 
-                <p class="mb-5 text-xs font-hairline text-red-500">Please enter OTP sent to mobile number</p>
+                <p class="mb-5 text-xs font-hairline text-red-500">
+                  Please enter OTP sent to mobile number
+                </p>
 
-                <div class="relative inline-block w-12 w-32 p-2 mb-10 bg-gray-200 rounded otp-container">
+                <div
+                  class="relative inline-block w-12 w-32 p-2 mb-10 bg-gray-200 rounded otp-container"
+                >
                   <div
                     id="wraper1"
                     class="absolute w-1 h-1 rounded otp-seperator"
-                    :class="{'wraper-hide':otp.length>0}"
+                    :class="{ 'wraper-hide': otp.length > 0 }"
                   ></div>
                   <div
                     id="wraper2"
                     class="absolute w-1 h-1 rounded otp-seperator"
-                    :class="{'wraper-hide':otp.length>1}"
+                    :class="{ 'wraper-hide': otp.length > 1 }"
                   ></div>
                   <div
                     id="wraper3"
                     class="absolute w-1 h-1 rounded otp-seperator"
-                    :class="{'wraper-hide':otp.length>2}"
+                    :class="{ 'wraper-hide': otp.length > 2 }"
                   ></div>
                   <div
                     id="wraper4"
                     class="absolute w-1 h-1 rounded otp-seperator"
-                    :class="{'wraper-hide':otp.length>3}"
+                    :class="{ 'wraper-hide': otp.length > 3 }"
                   ></div>
                   <input
                     v-model="otp"
@@ -59,7 +65,11 @@
                   />
                 </div>
                 <div class="flex items-center justify-between">
-                  <button class="w-full px-4 py-2 text-xl text-2xl font-bold text-white rounded outline-none big-button hover:bg-red-200">Verify Phone</button>
+                  <button
+                    class="w-full px-4 py-2 text-xl text-2xl font-bold text-white rounded outline-none big-button hover:bg-red-200"
+                  >
+                    Verify Phone
+                  </button>
                 </div>
               </div>
             </form>
@@ -81,14 +91,14 @@ export default {
       disable: "disable",
       p: {},
       showOTP: false,
-      msg: null
+      msg: null,
     };
   },
   components: {},
   computed: {
     user() {
       return (this.$store.state.auth || {}).user || {};
-    }
+    },
   },
   methods: {
     onPhoneChange(e) {
@@ -137,7 +147,7 @@ export default {
           const password = this.p.i1 + this.p.i2 + this.p.i3 + this.p.i4;
           const res = await this.$store.dispatch("auth/login", {
             phone: this.user.phone,
-            password
+            password,
           });
           if (res.token) {
             this.$store.commit("success", "Verified! Thank You.");
@@ -168,7 +178,7 @@ export default {
       //     break;
       //   }
       // }
-    }
+    },
   },
   head() {
     return {
@@ -178,35 +188,35 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "After this checkout process we will ship the item and it should be delivered within 7 working days"
+            "After this checkout process we will ship the item and it should be delivered within 7 working days",
         },
         {
           hid: "og:description",
           name: "Description",
           property: "og:description",
           content:
-            "After this checkout process we will ship the item and it should be delivered within 7 working days"
+            "After this checkout process we will ship the item and it should be delivered within 7 working days",
         },
 
         {
           hid: "og:title",
           name: "og:title",
           property: "og:title",
-          content: "Checkout with the products in your cart"
+          content: "Checkout with the products in your cart",
         },
         // Twitter
         {
           name: "twitter:title",
-          content: "Checkout with the products in your cart"
+          content: "Checkout with the products in your cart",
         },
         {
           name: "twitter:description",
           content:
-            "After this checkout process we will ship the item and it should be delivered within 7 working days"
-        }
-      ]
+            "After this checkout process we will ship the item and it should be delivered within 7 working days",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 

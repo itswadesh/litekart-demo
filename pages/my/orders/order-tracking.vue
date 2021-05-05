@@ -79,7 +79,8 @@
                     <span class="font-semibold">Time:</span>13:20
                   </div>
                   <div class="w-1/3">
-                    <span class="font-semibold">Remark:</span>Returned as per client
+                    <span class="font-semibold">Remark:</span>Returned as per
+                    client
                   </div>
                 </div>
               </div>
@@ -104,7 +105,8 @@
                     <span class="font-semibold">Time:</span>13:20
                   </div>
                   <div class="w-1/3">
-                    <span class="font-semibold">Remark:</span>Returned as per client
+                    <span class="font-semibold">Remark:</span>Returned as per
+                    client
                   </div>
                 </div>
               </div>
@@ -129,7 +131,8 @@
                     <span class="font-semibold">Time:</span>13:20
                   </div>
                   <div class="w-1/3">
-                    <span class="font-semibold">Remark:</span>Returned as per client
+                    <span class="font-semibold">Remark:</span>Returned as per
+                    client
                   </div>
                 </div>
               </div>
@@ -154,7 +157,8 @@
                     <span class="font-semibold">Time:</span>13:20
                   </div>
                   <div class="w-1/3">
-                    <span class="font-semibold">Remark:</span>Returned as per client
+                    <span class="font-semibold">Remark:</span>Returned as per
+                    client
                   </div>
                 </div>
               </div>
@@ -162,7 +166,11 @@
           </div>
           <div class="w-4"></div>
           <div class="mt-2 shadow lg:w-4/12 lg:mt-0">
-            <img src="/banner-imgs.jpg" class="object-cover w-full h-56" alt="" />
+            <img
+              src="/banner-imgs.jpg"
+              class="object-cover w-full h-56"
+              alt=""
+            />
             <p class="p-3 text-gray-600 bg-white">Hop300</p>
           </div>
         </div>
@@ -174,7 +182,7 @@
 
 <script>
 export default {
-  components: {}
+  components: {},
 };
 </script>
 

@@ -7,7 +7,7 @@
       name="discount-product"
       :value="value"
       @change="$emit('changed', value)"
-    >
+    />
     <slot />
     <div class="common-radioIndicator"></div>
   </label>
@@ -17,8 +17,8 @@
 export default {
   props: {
     value: { type: String },
-    checked: { type: Boolean }
-  }
+    checked: { type: Boolean },
+  },
   // data() {
   //   return {
   //     content: this.value

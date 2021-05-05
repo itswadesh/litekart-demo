@@ -11,28 +11,35 @@
       >View All</button> -->
     </div>
     <carousel
-      :perPageCustom="[[425, 2], [768, 3], [1024, 5]]"
+      :perPageCustom="[
+        [425, 2],
+        [768, 3],
+        [1024, 5],
+      ]"
       :paginationEnabled="false"
       :navigationEnabled="true"
       navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)' alt=''>"
       navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
       class="mx-2"
     >
-      <slide
-        v-for="product in products"
-        :key="product._id"
-        v-if="product"
-      >
-        <nuxt-link :to="'/'+product.slug+'?id='+product._id">
+      <slide v-for="product in products" :key="product._id" v-if="product">
+        <nuxt-link :to="'/' + product.slug + '?id=' + product._id">
           <img
             style="height:255px;object-fit: cover;"
             v-if="product.img"
-            v-lazy="$store.state.settings.CDN_URL+product.img[0]"
+            v-lazy="$store.state.settings.CDN_URL + product.img[0]"
             alt=""
           />
           <div class>
-            <div class="mb-2 text-xs font-bold">{{product.name | truncate(45)}}</div>
-            <p class="text-xs text-center text-green-700">Extra {{Math.round(((product.mrp-product.price) *100) / product.mrp)}}% off</p>
+            <div class="mb-2 text-xs font-bold">
+              {{ product.name | truncate(45) }}
+            </div>
+            <p class="text-xs text-center text-green-700">
+              Extra
+              {{
+                Math.round(((product.mrp - product.price) * 100) / product.mrp)
+              }}% off
+            </p>
           </div>
         </nuxt-link>
       </slide>
@@ -44,7 +51,7 @@
 export default {
   data() {
     return {
-      products: []
+      products: [],
     };
   },
   async created() {
@@ -69,7 +76,7 @@ export default {
     clearRecentItems() {
       localStorage.setItem("recent", []);
       this.$emit("clearRecentItems");
-    }
-  }
+    },
+  },
 };
 </script>

@@ -3,7 +3,10 @@
     <div class="hover-table-layout">
       <div class="listing-item">
         <figure class="image">
-          <img src="https://i.ytimg.com/vi/MTrzTABzLfY/maxresdefault.jpg" alt="" />
+          <img
+            src="https://i.ytimg.com/vi/MTrzTABzLfY/maxresdefault.jpg"
+            alt=""
+          />
           <figcaption>
             <div class="caption">
               <h1>$10000</h1>
@@ -20,7 +23,10 @@
       </div>
       <div class="listing-item">
         <figure class="image">
-          <img src="https://i.ytimg.com/vi/MTrzTABzLfY/maxresdefault.jpg" alt="" />
+          <img
+            src="https://i.ytimg.com/vi/MTrzTABzLfY/maxresdefault.jpg"
+            alt=""
+          />
           <figcaption>
             <div class="caption">
               <h1>$ 2000</h1>
@@ -38,7 +44,10 @@
       </div>
       <div class="listing-item">
         <figure class="image">
-          <img src="https://i.ytimg.com/vi/MTrzTABzLfY/maxresdefault.jpg" alt="" />
+          <img
+            src="https://i.ytimg.com/vi/MTrzTABzLfY/maxresdefault.jpg"
+            alt=""
+          />
           <figcaption>
             <div class="caption">
               <h1>$100</h1>

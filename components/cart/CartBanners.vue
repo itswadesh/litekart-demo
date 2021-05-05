@@ -9,12 +9,16 @@
       <div class="p-3 m-1 bg-gray-200 rounded">
         <i class="text-gray-500 fa fa-undo"></i>
         <p class="text-lg font-normal text-gray-500">Easy returns</p>
-        <p class="text-xs text-gray-500">Send items back for free within 15 days</p>
+        <p class="text-xs text-gray-500">
+          Send items back for free within 15 days
+        </p>
       </div>
       <div class="p-3 my-1 bg-gray-200 rounded">
         <i class="text-gray-500 fa fa-shield"></i>
         <p class="text-lg font-normal text-gray-500">Secure shopping</p>
-        <p class="text-xs text-gray-500">Your payment details are fully encrypted</p>
+        <p class="text-xs text-gray-500">
+          Your payment details are fully encrypted
+        </p>
       </div>
     </div>
   </div>

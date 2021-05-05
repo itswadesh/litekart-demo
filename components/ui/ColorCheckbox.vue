@@ -1,23 +1,16 @@
 <template>
-  <label
-    data-count="4957"
-    class="vertical-filters-label common-customCheckbox"
-  >
-    <input
-      type="checkbox"
-      value="Black"
-    >
+  <label data-count="4957" class="vertical-filters-label common-customCheckbox">
+    <input type="checkbox" value="Black" />
     <span
       data-colorhex="black"
       class="colour-label colour-colorDisplay"
-      :style="{'background-color':color}"
+      :style="{ 'background-color': color }"
     ></span>
     <span class="text-sm text-gray-800">
       FOREVER 21
     </span>
     <span class="text-xs text-gray-500">(1295)</span>
     <div class="common-checkboxIndicator"></div>
-
   </label>
 </template>
 
@@ -26,21 +19,21 @@ export default {
   props: {
     color: {
       type: String,
-      default: "red"
+      default: "red",
     },
     count: {
       type: Number,
-      default: 1295
+      default: 1295,
     },
     text: {
       type: String,
-      default: ""
+      default: "",
     },
     val: {
       type: String,
-      default: ""
-    }
-  }
+      default: "",
+    },
+  },
 };
 </script>
 

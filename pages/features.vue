@@ -100,13 +100,21 @@
           <li>Abandoned Shopping Cart Report</li>
           <li>Best Purchased Products Report</li>
           <li>Product Reviews Report</li>
-          <li>Catalog Promotional Pricing by percentage or fixed amount with ability to restrict to stores, categories, Products</li>
-          <li>Flexible Coupons (pricing rules) with ability to restrict to stores, customer groups, time period, products, and categories</li>
+          <li>
+            Catalog Promotional Pricing by percentage or fixed amount with
+            ability to restrict to stores, categories, Products
+          </li>
+          <li>
+            Flexible Coupons (pricing rules) with ability to restrict to stores,
+            customer groups, time period, products, and categories
+          </li>
           <li>Free Shipping Options</li>
           <li>Bundled Products Options</li>
           <li>Recently Viewed Products</li>
           <li>New Items Promotional Tool</li>
-          <li>SSL security support for orders on both front-end and back-end</li>
+          <li>
+            SSL security support for orders on both front-end and back-end
+          </li>
           <li>Guest Checkout and Checkout with account to use address book</li>
           <li>Flat rate shipping per order</li>
           <li>Free Shipping</li>
@@ -115,17 +123,28 @@
           <li>Contact Us form</li>
           <li>Feature-rich Customer Accounts</li>
           <li>Order History with Status Updates</li>
-          <li>Password Reset email from front-end and admin panel • Order and Account Update Emails</li>
+          <li>
+            Password Reset email from front-end and admin panel • Order and
+            Account Update Emails
+          </li>
           <li>Customizable Order Emails</li>
           <li>Order status and history</li>
           <li>Address Book with unlimited addresses</li>
           <li>Default Billing and Shipping addresses</li>
           <li>Wishlist with ability to add comments</li>
           <li>Product Reviews submitted</li>
-          <li>Account Dashboard for overview of: recent orders, personal information, newsletter subscription status, primary billing address, primary shipping address, shopping cart, wishlist, recently ordered items, recent reviews and recent tags</li>
+          <li>
+            Account Dashboard for overview of: recent orders, personal
+            information, newsletter subscription status, primary billing
+            address, primary shipping address, shopping cart, wishlist, recently
+            ordered items, recent reviews and recent tags
+          </li>
           <li>Batch Import and Export of catalog</li>
           <li>Batch Updates to products in admin panel</li>
-          <li>Simple, Con gurable (e.g. size, color, etc.), Bundled and Grouped Products</li>
+          <li>
+            Simple, Con gurable (e.g. size, color, etc.), Bundled and Grouped
+            Products
+          </li>
           <li>Media Manager with automatic image resizing and watermarking</li>
           <li>Approve, Edit and Delete Product Reviews</li>
           <li>Multiple Images Per Product</li>
@@ -137,7 +156,9 @@
           <li>Grouped Products View</li>
           <li>Add to Wishlist</li>
           <li>Send to a Friend with Email</li>
-          <li>Layered / Faceted Navigation for filtering of products in categories</li>
+          <li>
+            Layered / Faceted Navigation for filtering of products in categories
+          </li>
           <li>Recently viewed products</li>
           <li>Filter by Product Tags</li>
           <li>Product Reviews</li>
@@ -152,7 +173,10 @@
           <li>Instant search</li>
           <li>Modern JS Stack</li>
           <li>Replace your frontend without backend changes</li>
-          <li>Bulletproof infrastructure for seasonal traffic peaks like Black Friday</li>
+          <li>
+            Bulletproof infrastructure for seasonal traffic peaks like Black
+            Friday
+          </li>
           <li>Cloud hosting</li>
           <li>Automated backups</li>
           <li>static assets served from CDN</li>
@@ -162,7 +186,9 @@
           <li>Product update on order page</li>
           <li>Custom OrderID</li>
           <li>Combos (buy one get one free)</li>
-          <li>Inbuilt editable fields for keywords, meta title and description.</li>
+          <li>
+            Inbuilt editable fields for keywords, meta title and description.
+          </li>
           <li>SEO optimized themes for better brand presence.</li>
           <li>Most advanced technology stack</li>
           <li>Best Viewed Products Report</li>
@@ -175,7 +201,10 @@
         <h1 class="text-4xl">Developer Features</h1>
         <ul>
           <li>User roles for better store administration</li>
-          <li>Web Services API for easy integration with any third-party application</li>
+          <li>
+            Web Services API for easy integration with any third-party
+            application
+          </li>
           <li>Fully customizable design using templates</li>
           <li>Content Management System for Informational Pages</li>
           <li>Google and Fb analytics and pixel integration</li>
@@ -191,9 +220,8 @@
 
 <script>
 export default {
-  layout: "none"
+  layout: "none",
 };
 </script>
 
-<style>
-</style>
+<style></style>

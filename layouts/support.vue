@@ -1,8 +1,5 @@
 <template>
-  <div
-    style="min-height:71.8vh"
-    class="antialiased "
-  >
+  <div style="min-height:71.8vh" class="antialiased ">
     <support-header />
     <nuxt />
     <new-footer />
@@ -14,8 +11,8 @@ const supportHeader = () => import("~/components/support/supportHeader");
 export default {
   components: {
     newFooter,
-    supportHeader
-  }
+    supportHeader,
+  },
 };
 </script>
 <style scoped>

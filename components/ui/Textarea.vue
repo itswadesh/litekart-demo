@@ -14,7 +14,7 @@
             :rows="rows"
           />
           <span class="highlight"></span>
-          <label class="bg-gray-100">{{label}}</label>
+          <label class="bg-gray-100">{{ label }}</label>
         </div>
       </div>
     </center>
@@ -27,8 +27,8 @@ export default {
     label: { type: String },
     type: { type: String, default: "text" },
     value: { type: String },
-    rows: { type: Number, default: 4 }
-  }
+    rows: { type: Number, default: 4 },
+  },
 };
 </script>
 

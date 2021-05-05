@@ -5,12 +5,9 @@
       :facets="facets"
       :fl="fl"
       v-if="showMobileFilter"
-      @hide="showMobileFilter=false"
+      @hide="showMobileFilter = false"
     />
-    <div
-      v-else
-      class="flex"
-    >
+    <div v-else class="flex">
       <DesktopFilters
         class="flex-none hidden max-w-xs md:block"
         :facets="facets"
@@ -23,32 +20,22 @@
           :count="productCount"
           :fl="fl"
           @removed="facetRemoved"
-          @showFilters="showMobileFilter=true"
+          @showFilters="showMobileFilter = true"
         />
-        <NoProduct v-if="products.length==0 && !loading" />
+        <NoProduct v-if="products.length == 0 && !loading" />
         <div v-else>
-          <div
-            class="flex flex-wrap justify-between"
-            v-if="loading"
-          >
-            <ProductSkeleton
-              v-for="(p,ix) in 10"
-              :key="ix+'-1'"
-            />
+          <div class="flex flex-wrap justify-between" v-if="loading">
+            <ProductSkeleton v-for="(p, ix) in 10" :key="ix + '-1'" />
           </div>
           <!-- <img
                 src="/loading.svg"
                 alt="loading ..."
           />-->
           <div
-            v-else-if="products && products.length>0"
+            v-else-if="products && products.length > 0"
             class="flex flex-wrap"
           >
-            <ProductNew
-              v-for="p in products"
-              :key="p._id"
-              :product="p"
-            />
+            <ProductNew v-for="p in products" :key="p._id" :product="p" />
           </div>
           <!-- <div class="pagination_box">
             <v-pagination
@@ -90,7 +77,7 @@ export default {
         qry = { ...query };
       if (q) qry.q = q;
       const result = await $axios.$get("api/products/es", {
-        params: { ...qry }
+        params: { ...qry },
       });
       products = result.data;
       productCount = result.count;
@@ -119,7 +106,7 @@ export default {
       try {
         this.loading = true;
         const products = await this.$axios.$get("api/products/es", {
-          params: { ...query }
+          params: { ...query },
         });
         this.productCount = products.count;
         this.products = products.data;
@@ -128,8 +115,8 @@ export default {
       } finally {
         this.loading = false;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

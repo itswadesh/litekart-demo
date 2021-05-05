@@ -3,18 +3,12 @@
     novalidate
     autocomplete="off"
     @submit.stop.prevent="submit(q)"
-    @click="showInstantSearch=true"
+    @click="showInstantSearch = true"
     v-on-clickaway="onClose"
   >
-    <div
-      class="search_fix"
-      @click="showInstantSearch=false"
-    ></div>
+    <div class="search_fix" @click="showInstantSearch = false"></div>
     <div class="absolute">
-      <i
-        class="mt-3 ml-2 text-gray-500 fa fa-search"
-        aria-hidden="true"
-      ></i>
+      <i class="mt-3 ml-2 text-gray-500 fa fa-search" aria-hidden="true"></i>
     </div>
     <input
       type="text"
@@ -24,34 +18,23 @@
       name="search"
       @keyup="search(q)"
     />
-    <div
-      class="search_options"
-      v-if="showInstantSearch"
-    >
-      <ul v-if="data.length>0">
-        <li
-          v-for="i in data"
-          :key="i._id"
-        >
-          <div
-            @click="go(i._source.name)"
-            class="current_item"
-          >
+    <div class="search_options" v-if="showInstantSearch">
+      <ul v-if="data.length > 0">
+        <li v-for="i in data" :key="i._id">
+          <div @click="go(i._source.name)" class="current_item">
             <span>
               <img
-                :src="$store.state.settings.CDN_URL+i._source.img[0]"
+                :src="$store.state.settings.CDN_URL + i._source.img[0]"
                 alt="..."
               />
             </span>
-            {{i._source.name | truncate(50)}}
+            {{ i._source.name | truncate(50) }}
             <span class="category_tag">in t-shirt</span>
           </div>
         </li>
       </ul>
       <ul v-else>
-        <li>
-          <span></span>No match found!
-        </li>
+        <li><span></span>No match found!</li>
       </ul>
     </div>
   </form>
@@ -67,7 +50,7 @@ export default {
       q: "",
       data: [],
       typingTimeout,
-      showInstantSearch: false
+      showInstantSearch: false,
     };
   },
   created() {
@@ -83,13 +66,13 @@ export default {
     },
     async search(q) {
       const res = await this.$axios.$get("api/products/autocomplete", {
-        params: { q }
+        params: { q },
       });
       this.data = res.data;
     },
     submit(q) {
       this.$router.push("/search?q=" + q);
-    }
+    },
   },
   watch: {
     search: {
@@ -103,7 +86,7 @@ export default {
           vm.searchString = value;
           vm.$router.push("/search?q=" + value);
         }, vm.typingTimeout);
-      }
+      },
     },
     "$route.query.q": {
       immediate: true,
@@ -112,9 +95,9 @@ export default {
         if (!value || value == "undefined") value = "";
         if (value == "") return;
         if (this.search == "") this.search = value;
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
 

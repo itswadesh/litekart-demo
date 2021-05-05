@@ -1,16 +1,21 @@
 <template>
   <div class="w-full py-5 mt-0 ml-0 bg-white shadow lg:w-1/2 lg:mt-10 lg:ml-10">
-    <div class="items-center p-5 px-10 text-xl font-bold text-center border-b border-gray-200 headings">
+    <div
+      class="items-center p-5 px-10 text-xl font-bold text-center border-b border-gray-200 headings"
+    >
       <i
         class="block mr-2 fa fa-arrow-left lg:invisible"
         @click="$router.push('/my/')"
         aria-hidden="true"
-      ></i>Profile details
+      ></i
+      >Profile details
     </div>
     <div class="px-0 lg:px-10">
       <div class="w-full px-8 mb-5 text-sm text-center">
         <!-- Just 2 step(s) to go and your profile's complete -->
-        <div class="w-full h-1 m-1 text-xs leading-none text-center text-white bg-green-500 rounded-lg"></div>
+        <div
+          class="w-full h-1 m-1 text-xs leading-none text-center text-white bg-green-500 rounded-lg"
+        ></div>
       </div>
     </div>
 
@@ -19,11 +24,7 @@
         <div class="px-0 lg:px-10 hover:bg-gray-200">
           <li class="flex flex-wrap px-8 mb-5">
             <div class="w-1/12">
-              <img
-                src="/name.png"
-                class="w-5"
-                alt=""
-              />
+              <img src="/name.png" class="w-5" alt="" />
             </div>
             <div class="flex w-10/12">
               <Textbox
@@ -49,16 +50,10 @@
         <div class="px-0 lg:px-10 hover:bg-gray-200">
           <li class="flex flex-wrap px-8 mb-5 hover:bg-gray-200">
             <div class="w-1/12 text-xl">
-              <i
-                class="fa fa-mobile"
-                aria-hidden="true"
-              ></i>
+              <i class="fa fa-mobile" aria-hidden="true"></i>
             </div>
             <div class="w-10/12">
-              <Textbox
-                v-model="profile.phone"
-                label="Phone"
-              />
+              <Textbox v-model="profile.phone" label="Phone" />
             </div>
             <!-- <div class="w-1/12">
                 <i
@@ -72,16 +67,10 @@
         <div class="px-0 lg:px-10 hover:bg-gray-200">
           <li class="flex flex-wrap px-8 mb-5 hover:bg-gray-200">
             <div class="w-1/12">
-              <i
-                class="fa fa-envelope-o"
-                aria-hidden="true"
-              ></i>
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
             </div>
             <div class="w-10/12">
-              <Textbox
-                v-model="profile.email"
-                label="Email"
-              />
+              <Textbox v-model="profile.email" label="Email" />
             </div>
             <!-- <div class="w-1/12">
                 <i
@@ -96,17 +85,11 @@
           <nuxt-link to="/my/password">
             <li class="flex flex-wrap px-8 py-5 mb-5 hover:bg-gray-200">
               <div class="w-1/12">
-                <i
-                  class="fa fa-key"
-                  aria-hidden="true"
-                ></i>
+                <i class="fa fa-key" aria-hidden="true"></i>
               </div>
               <div class="w-10/12">Password</div>
               <div class="w-1/12">
-                <i
-                  class="fa fa-angle-right"
-                  aria-hidden="true"
-                ></i>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
               </div>
             </li>
           </nuxt-link>
@@ -115,7 +98,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 import { mapGetters, mapActions } from "vuex";
@@ -143,13 +125,13 @@ export default {
       cities: [],
       dd: null,
       mm: null,
-      yyyy: null
+      yyyy: null,
     };
   },
   computed: {
     ...mapGetters({
-      loading: "loading"
-    })
+      loading: "loading",
+    }),
   },
   components: { Textbox },
   async mounted() {
@@ -159,14 +141,14 @@ export default {
   methods: {
     async getCities(state) {
       this.cities = await this.$axios.$get("api/countries/cities", {
-        params: { state }
+        params: { state },
       });
     },
     async getStates() {
       this.states = await this.$axios.$get("api/countries/states");
     },
     ...mapActions({
-      updateProfile: "auth/updateProfile"
+      updateProfile: "auth/updateProfile",
     }),
     splitDate(date) {
       if (!date) return {};
@@ -181,14 +163,13 @@ export default {
       }
       var date = { dd, mm, yyyy };
       return date;
-    }
+    },
   },
   head() {
     return {
-      title: "Update your profile"
+      title: "Update your profile",
     };
   },
-  layout: "account"
+  layout: "account",
 };
 </script>
-

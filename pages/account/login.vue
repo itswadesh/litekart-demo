@@ -6,14 +6,9 @@
           <div class="mb-6 bg-white rounded shadow-2xl border-teal border-t-12">
             <div class="p-0 text-white rounded rounded-b-none secondary">
               <h1 class="p-3 mb-6 text-xl text-left">
-                <span
-                  class="font-extrabold"
-                  v-if="!signup"
-                >SIGN IN</span>
-                <span
-                  class="font-extrabold"
-                  v-else
-                >SIGN UP</span> TO YOUR ACCOUNT
+                <span class="font-extrabold" v-if="!signup">SIGN IN</span>
+                <span class="font-extrabold" v-else>SIGN UP</span> TO YOUR
+                ACCOUNT
               </h1>
             </div>
             <form
@@ -60,22 +55,22 @@
                     <div
                       id="wraper1"
                       class="absolute w-1 h-1 rounded otp-seperator"
-                      :class="{'wraper-hide':otp.length>0}"
+                      :class="{ 'wraper-hide': otp.length > 0 }"
                     ></div>
                     <div
                       id="wraper2"
                       class="absolute w-1 h-1 rounded otp-seperator"
-                      :class="{'wraper-hide':otp.length>1}"
+                      :class="{ 'wraper-hide': otp.length > 1 }"
                     ></div>
                     <div
                       id="wraper3"
                       class="absolute w-1 h-1 rounded otp-seperator"
-                      :class="{'wraper-hide':otp.length>2}"
+                      :class="{ 'wraper-hide': otp.length > 2 }"
                     ></div>
                     <div
                       id="wraper4"
                       class="absolute w-1 h-1 rounded otp-seperator"
-                      :class="{'wraper-hide':otp.length>3}"
+                      :class="{ 'wraper-hide': otp.length > 3 }"
                     ></div>
                     <input
                       v-model="otp"
@@ -93,18 +88,25 @@
                     type="submit"
                     :disabled="loading"
                     class="flex items-center justify-center w-full py-2 text-2xl font-bold rounded outline-none h-14"
-                    :class="{'primary text-white':!loading,'border border-gray-400 bg-gray-300':loading}"
+                    :class="{
+                      'primary text-white': !loading,
+                      'border border-gray-400 bg-gray-300': loading,
+                    }"
                   >
                     <div v-if="loading">
                       <img
                         src="/loading.svg"
-                        :class="{'loading':loading}"
+                        :class="{ loading: loading }"
                         alt=""
                       />
                     </div>
-                    <span v-else>{{submitText}}</span>
+                    <span v-else>{{ submitText }}</span>
                   </button>
-                  <p class="mt-2 text-xs"><nuxt-link to="/account/forgot-password">Forgot Password?</nuxt-link></p>
+                  <p class="mt-2 text-xs">
+                    <nuxt-link to="/account/forgot-password"
+                      >Forgot Password?</nuxt-link
+                    >
+                  </p>
                 </div>
               </div>
             </form>
@@ -131,7 +133,7 @@ export default {
       firstName: "",
       lastName: "",
       otp: "",
-      showOTP: false
+      showOTP: false,
     };
   },
   components: { Textbox },
@@ -159,7 +161,7 @@ export default {
       } else {
         return "Login Now";
       }
-    }
+    },
   },
   methods: {
     async submit() {
@@ -200,7 +202,7 @@ export default {
           const res = await this.$store.dispatch("auth/login", {
             uid: this.uid,
             password: this.otp,
-            route: this.$route.query.return
+            route: this.$route.query.return,
           });
         } catch (e) {
         } finally {
@@ -238,13 +240,13 @@ export default {
               firstName: this.firstName,
               lastName: this.lastName,
               password: this.password,
-              route: this.$route.query.return
+              route: this.$route.query.return,
             });
           } else {
             const res = await this.$store.dispatch("auth/login", {
               uid: this.uid,
               password: this.password,
-              route: this.$route.query.return
+              route: this.$route.query.return,
             });
           }
           this.showOTP = true;
@@ -272,7 +274,7 @@ export default {
         this.p = {};
         return;
       }
-    }
+    },
   },
   head() {
     return {
@@ -282,35 +284,35 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "After this checkout process we will ship the item and it should be delivered within 7 working days"
+            "After this checkout process we will ship the item and it should be delivered within 7 working days",
         },
         {
           hid: "og:description",
           name: "Description",
           property: "og:description",
           content:
-            "After this checkout process we will ship the item and it should be delivered within 7 working days"
+            "After this checkout process we will ship the item and it should be delivered within 7 working days",
         },
 
         {
           hid: "og:title",
           name: "og:title",
           property: "og:title",
-          content: "Checkout with the products in your cart"
+          content: "Checkout with the products in your cart",
         },
         // Twitter
         {
           name: "twitter:title",
-          content: "Checkout with the products in your cart"
+          content: "Checkout with the products in your cart",
         },
         {
           name: "twitter:description",
           content:
-            "After this checkout process we will ship the item and it should be delivered within 7 working days"
-        }
-      ]
+            "After this checkout process we will ship the item and it should be delivered within 7 working days",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 <style scoped>

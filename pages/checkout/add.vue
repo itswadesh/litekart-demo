@@ -3,15 +3,11 @@
     <CheckoutHeader selected="address" />
     <div class="w-full pb-4 m-auto lg:w-1/3">
       <div>
-        <div class="flex items-center justify-between p-3 shadow lg:shadow-none">
-          <nuxt-link
-            class="flex items-center"
-            to="/checkout/address"
-          >
-            <i
-              class="mb-1 fa fa-arrow-left"
-              aria-hidden="true"
-            ></i>
+        <div
+          class="flex items-center justify-between p-3 shadow lg:shadow-none"
+        >
+          <nuxt-link class="flex items-center" to="/checkout/address">
+            <i class="mb-1 fa fa-arrow-left" aria-hidden="true"></i>
             <div class="ml-3 text-xl font-bold text-gray-700">Add address</div>
           </nuxt-link>
           <div class="text-xs text-gray-600">Step 2 of 3</div>
@@ -69,23 +65,24 @@
               v-model="a.state"
             />
           </div>
-          <Textbox
-            label="Phone"
-            class="w-full"
-            name="name"
-            v-model="a.phone"
-          />
+          <Textbox label="Phone" class="w-full" name="name" v-model="a.phone" />
         </div>
-        <div class="fixed bottom-0 flex justify-between w-full shadow lg:shadow-none lg:relative">
+        <div
+          class="fixed bottom-0 flex justify-between w-full shadow lg:shadow-none lg:relative"
+        >
           <button
             type="button"
             @click="$router.push('/checkout/address')"
             class="w-1/2 p-3 text-sm font-semibold tracking-widest text-black bg-white lg:rounded"
-          >CANCEL</button>
+          >
+            CANCEL
+          </button>
           <button
             type="submit"
             class="w-1/2 p-3 text-sm font-semibold tracking-widest primary lg:rounded"
-          >CONTINUE</button>
+          >
+            CONTINUE
+          </button>
         </div>
       </form>
     </div>
@@ -98,12 +95,12 @@ const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
 export default {
   data() {
     return {
-      a: {}
+      a: {},
     };
   },
   components: {
     CheckoutHeader,
-    Textbox
+    Textbox,
   },
   async created() {
     if (this.$route.query.id) {
@@ -130,9 +127,9 @@ export default {
       } catch (e) {
         this.$store.commit("busy", false);
       }
-    }
+    },
   },
-  layout: "none"
+  layout: "none",
 };
 </script>
 

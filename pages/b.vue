@@ -5,12 +5,9 @@
       :facets="facets"
       :fl="fl"
       v-if="showMobileFilter"
-      @hide="showMobileFilter=false"
+      @hide="showMobileFilter = false"
     />
-    <div
-      v-else
-      class="flex"
-    >
+    <div v-else class="flex">
       <DesktopFilters
         class="flex-none hidden max-w-xs md:block"
         :facets="facets"
@@ -21,32 +18,22 @@
           :count="productCount"
           :fl="fl"
           @removed="facetRemoved"
-          @showFilters="showMobileFilter=true"
+          @showFilters="showMobileFilter = true"
         />
-        <NoProduct v-if="products.length==0 && !loading" />
+        <NoProduct v-if="products.length == 0 && !loading" />
         <div v-else>
-          <div
-            class="flex flex-wrap justify-between"
-            v-if="loading"
-          >
-            <ProductSkeleton
-              v-for="(p,ix) in 10"
-              :key="ix+'-1'"
-            />
+          <div class="flex flex-wrap justify-between" v-if="loading">
+            <ProductSkeleton v-for="(p, ix) in 10" :key="ix + '-1'" />
           </div>
           <!-- <img
                 src="/loading.svg"
                 alt="loading ..."
           />-->
           <div
-            v-else-if="products && products.length>0"
+            v-else-if="products && products.length > 0"
             class="flex flex-wrap"
           >
-            <Product
-              v-for="p in products"
-              :key="p._id"
-              :product="p"
-            />
+            <Product v-for="p in products" :key="p._id" :product="p" />
           </div>
           <!-- <div class="pagination_box">
             <v-pagination
@@ -97,7 +84,7 @@ export default {
         price: [],
         sort: null,
         features: { Type: [], Fit: [], Fabric: [], Neck: [], Color: [] },
-        sorts: sorts
+        sorts: sorts,
       },
       products: [],
       facets: [],
@@ -110,14 +97,14 @@ export default {
         li: "page-item",
         liActive: "active",
         liDisable: "disabled",
-        button: "page-link"
+        button: "page-link",
       },
       paginationAnchorTexts: {
         first: "&laquo;",
         prev: "&lsaquo;",
         next: "&rsaquo;",
-        last: "&raquo;"
-      }
+        last: "&raquo;",
+      },
     };
   },
   created() {
@@ -136,12 +123,12 @@ export default {
     vPagination,
     NoProduct,
     ProductSkeleton,
-    BackToTopDark
+    BackToTopDark,
   },
   computed: {
     noOfPages() {
       return Math.ceil(this.productCount / this.products.length);
-    }
+    },
   },
   methods: {
     changePage(p) {
@@ -158,7 +145,7 @@ export default {
         window.scroll({
           behavior: "smooth",
           left: 0,
-          top: 0
+          top: 0,
         });
       }
     },
@@ -169,7 +156,7 @@ export default {
       try {
         this.loading = true;
         const products = await this.$axios.$get("api/products/es", {
-          params: { ...this.$route.query }
+          params: { ...this.$route.query },
         });
         this.productCount = products.count;
         this.products = products.data;
@@ -178,7 +165,7 @@ export default {
       } finally {
         this.loading = false;
       }
-    }
+    },
   },
   watch: {
     "$route.query": {
@@ -197,9 +184,9 @@ export default {
         // if (query.q && query.q[0]) query.q = query.q[0];
         this.fl = query;
         this.getData();
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
 <style>

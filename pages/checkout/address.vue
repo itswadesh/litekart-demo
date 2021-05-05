@@ -2,44 +2,52 @@
   <div>
     <CheckoutHeader selected="address" />
     <div style="max-width: 1000px;margin: 0 auto;">
-      <div class="flex flex-wrap items-start justify-between p-2 mx-auto lg:mx-10">
+      <div
+        class="flex flex-wrap items-start justify-between p-2 mx-auto lg:mx-10"
+      >
         <!-- Left sidebar -->
-        <div class="flex flex-wrap justify-start w-full md:w-2/3 desktop1-base-left">
+        <div
+          class="flex flex-wrap justify-start w-full md:w-2/3 desktop1-base-left"
+        >
           <div
             class="flex flex-wrap justify-between w-full p-2 md:w-1/2 "
-            v-for="(a,ix) in addresses"
+            v-for="(a, ix) in addresses"
             :key="a._id"
           >
             <div
               class="w-full p-2 bg-white border rounded shadow"
-              :class="{'border-green-500':selectedAddress==a._id}"
+              :class="{ 'border-green-500': selectedAddress == a._id }"
             >
               <div class="flex">
                 <label class="flex justify-between w-full cursor-pointer">
                   <div>
                     <Radio
-                      :checked="selectedAddress==a._id"
+                      :checked="selectedAddress == a._id"
                       @changed="addressChanged"
                       :value="a._id"
                     />
                   </div>
                   <div class="flex-1 ml-2">
-                    <div class="font-semibold">{{a.firstName}} {{a.lastName}} </div>
+                    <div class="font-semibold">
+                      {{ a.firstName }} {{ a.lastName }}
+                    </div>
                     <div class="py-2 text-xs">
-                      <div>{{a.address}}</div>
-                      <div>{{a.phone}}</div>
-                      <div>{{a.state}}</div>
-                      <div>{{a.city}}</div>
-                      <div>{{a.country}}</div>
-                      <div>{{a.zip}}</div>
+                      <div>{{ a.address }}</div>
+                      <div>{{ a.phone }}</div>
+                      <div>{{ a.state }}</div>
+                      <div>{{ a.city }}</div>
+                      <div>{{ a.country }}</div>
+                      <div>{{ a.zip }}</div>
                       <div class="py-2">
                         Mobile:
-                        <span class="font-bold">{{a.phone}}</span>
+                        <span class="font-bold">{{ a.phone }}</span>
                       </div>
                     </div>
                   </div>
-                  <div v-if="ix==0">
-                    <div class="px-2 py-1 text-xs bg-gray-200 rounded-full">Default</div>
+                  <div v-if="ix == 0">
+                    <div class="px-2 py-1 text-xs bg-gray-200 rounded-full">
+                      Default
+                    </div>
                   </div>
                 </label>
               </div>
@@ -47,11 +55,15 @@
                 <button
                   @click="del(a)"
                   class="w-1/2 py-1 mt-1 tracking-widest text-blue-500 border-r border-gray-200"
-                >Remove</button>
+                >
+                  Remove
+                </button>
                 <button
                   @click="go(`/checkout/add?id=${a._id}`)"
                   class="w-1/2 py-1 mt-1 tracking-widest text-blue-500"
-                >Edit</button>
+                >
+                  Edit
+                </button>
               </div>
             </div>
           </div>
@@ -61,24 +73,26 @@
         </div>
         <!-- Right sidebar -->
         <div class="w-full md:w-1/3 desktop1-base-right">
-          <label class="flex justify-start p-2 text-sm bg-green-100 border border-green-300 rounded">
+          <label
+            class="flex justify-start p-2 text-sm bg-green-100 border border-green-300 rounded"
+          >
             <div class="ml-2">
               <div class="font-bold text-black">Standard Delivery</div>
               <div class="text-gray-500">Delivery Charge ₹149</div>
             </div>
           </label>
           <div
-            v-for="(item,ix) in cart.items"
+            v-for="(item, ix) in cart.items"
             :key="ix"
             :item="item"
             class="flex my-5"
           >
             <img
               class="w-20 lg:rounded xs:rounded-b-none"
-              v-lazy="$store.state.settings.CDN_URL+item.product.img"
+              v-lazy="$store.state.settings.CDN_URL + item.product.img"
               alt=""
             />
-            {{item.product.name | truncate(30)}}
+            {{ item.product.name | truncate(30) }}
           </div>
           <CartSummaryCheckout :selectedAddress="selectedAddress" />
         </div>
@@ -105,7 +119,7 @@ export default {
       office: false,
       a: {},
       addresses: [],
-      selectedAddress: ""
+      selectedAddress: "",
     };
   },
   created() {
@@ -117,7 +131,7 @@ export default {
     },
     cart() {
       return this.$store.state.cart || {};
-    }
+    },
   },
   components: {
     CartItem,
@@ -126,7 +140,7 @@ export default {
     SelectAddress,
     AddressNewCard,
     AddressCard,
-    CartSummaryCheckout
+    CartSummaryCheckout,
   },
   methods: {
     addressChanged(e) {
@@ -151,9 +165,9 @@ export default {
     },
     go(url) {
       this.$router.push(url);
-    }
+    },
   },
-  layout: "none"
+  layout: "none",
 };
 </script>
 

@@ -5,28 +5,23 @@
       <div class="lg:w-16 xs:w-0"></div>
       <div class="px-2 mt-10 xs:w-full lg:w-2/4">
         <!-- <Offers /> -->
-        <div class="flex flex-wrap w-full p-3 mt-3 text-lg font-bold text-gray-700 bg-white">
-          <div class="w-1/2 text-left">My Shopping Bag ({{cart.qty}} Items)</div>
-          <div class="w-1/2 text-right">Total {{cart.total | currency}}</div>
+        <div
+          class="flex flex-wrap w-full p-3 mt-3 text-lg font-bold text-gray-700 bg-white"
+        >
+          <div class="w-1/2 text-left">
+            My Shopping Bag ({{ cart.qty }} Items)
+          </div>
+          <div class="w-1/2 text-right">Total {{ cart.total | currency }}</div>
         </div>
-        <CartItem
-          v-for="item in cart.items"
-          :key="item._id"
-          :item="item"
-        />
+        <CartItem v-for="item in cart.items" :key="item._id" :item="item" />
         <div class="hidden lg:block">
           <nuxt-link
             to="wishlist"
             class="flex flex-wrap w-full p-4 mt-6 mb-6 shadow"
           >
-            <i
-              class="mt-1 mr-2 fa fa-bookmark-o"
-              aria-hidden="true"
-            ></i> Add More From Wishlist
-            <i
-              class="mt-1 ml-2 fa fa-angle-right"
-              aria-hidden="true"
-            ></i>
+            <i class="mt-1 mr-2 fa fa-bookmark-o" aria-hidden="true"></i> Add
+            More From Wishlist
+            <i class="mt-1 ml-2 fa fa-angle-right" aria-hidden="true"></i>
           </nuxt-link>
         </div>
       </div>
@@ -35,7 +30,9 @@
         <button
           @click="$router.push('/checkout/address')"
           class="w-full p-3 mt-3 text-sm font-semibold tracking-widest text-white bg-red-600 rounded"
-        >SELECT ADDRESS</button>
+        >
+          SELECT ADDRESS
+        </button>
       </CartSummary>
 
       <div class="w-8"></div>
@@ -63,9 +60,9 @@ export default {
     },
     ...mapGetters({
       checkCart: "cart/checkCart",
-      showCart: "cart/showCart"
-    })
-  }
+      showCart: "cart/showCart",
+    }),
+  },
 };
 </script>
 

@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <div class="h-full px-4 bg-gray-100 xs:mobile-login">
@@ -10,8 +9,8 @@
                 <span class="font-extrabold">RESET PASSWORD</span>
               </h1>
             </div>
-            <p            class="success"            v-if="success"            >{{success}}</p>
-            <p            class="info"            v-else            >Enter your new password</p>
+            <p class="success" v-if="success">{{ success }}</p>
+            <p class="info" v-else>Enter your new password</p>
             <form
               novalidate
               autocomplete="off"
@@ -20,28 +19,48 @@
             >
               <div class="p-6">
                 <div>
-                  <Textbox v-model="password" name="newPassword" label="New Password" ref="newPassword" type="password" class="w-full" v-validate="'required|min:3'" />
+                  <Textbox
+                    v-model="password"
+                    name="newPassword"
+                    label="New Password"
+                    ref="newPassword"
+                    type="password"
+                    class="w-full"
+                    v-validate="'required|min:3'"
+                  />
+                  <p class="input_err" v-if="errors.first('password')">
+                    {{ errors.first("password") }}
+                  </p>
+                  <Textbox
+                    v-model="confirm"
+                    name="repeatPassword"
+                    label="Repeat Password"
+                    ref="repeatPassword"
+                    type="password"
+                    class="w-full"
+                    v-validate="'required|min:3'"
+                  />
                   <p
-          class="input_err"
-          v-if="errors.first('password')"
-        >{{errors.first('password')}}</p>
-                  <Textbox v-model="confirm" name="repeatPassword" label="Repeat Password" ref="repeatPassword" type="password" class="w-full" v-validate="'required|min:3'" />
-                  <p
-          class="input_err"
-          v-if="errors.first('password_confirmation')"
-        >{{errors.first('password_confirmation')}}</p>
+                    class="input_err"
+                    v-if="errors.first('password_confirmation')"
+                  >
+                    {{ errors.first("password_confirmation") }}
+                  </p>
                 </div>
                 <div class="flex items-center justify-between">
                   <button
                     type="submit"
                     :disabled="loading"
                     class="flex items-center justify-center w-full py-2 text-2xl font-bold rounded outline-none h-14"
-                    :class="{'primary text-white':!loading,'border border-gray-400 bg-gray-300':loading}"
+                    :class="{
+                      'primary text-white': !loading,
+                      'border border-gray-400 bg-gray-300': loading,
+                    }"
                   >
                     <div v-if="loading">
                       <img
                         src="/loading.svg"
-                        :class="{'loading':loading}"
+                        :class="{ loading: loading }"
                         alt=""
                       />
                     </div>
@@ -68,13 +87,13 @@ export default {
       token: null,
       password: "",
       confirm: "",
-      loading: false
+      loading: false,
     };
   },
   created() {
     this.token = this.$route.params.token;
   },
-  components:{Textbox},
+  components: { Textbox },
   methods: {
     async submit() {
       if (!this.password) {
@@ -94,7 +113,7 @@ export default {
           this.success = await this.$axios.$post(
             "/users/reset/" + this.$route.params.token,
             {
-              password: this.password
+              password: this.password,
             }
           );
           this.err = null;
@@ -111,7 +130,7 @@ export default {
           }
         }
       }
-    }
+    },
   },
   head() {
     return {
@@ -121,35 +140,35 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "We all are forgetful. Don't worry, this page will help you to recover your password"
+            "We all are forgetful. Don't worry, this page will help you to recover your password",
         },
         {
           hid: "og:description",
           name: "Description",
           property: "og:description",
           content:
-            "We all are forgetful. Don't worry, this page will help you to recover your password"
+            "We all are forgetful. Don't worry, this page will help you to recover your password",
         },
         {
           hid: "og:title",
           name: "og:title",
           property: "og:title",
-          content: "Reset Password"
+          content: "Reset Password",
         },
         // Twitter
         {
           name: "twitter:title",
-          content: "Reset Password"
+          content: "Reset Password",
         },
         {
           name: "twitter:description",
           content:
-            "We all are forgetful. Don't worry, this page will help you to recover your password"
-        }
-      ]
+            "We all are forgetful. Don't worry, this page will help you to recover your password",
+        },
+      ],
     };
   },
-  layout: "blank"
+  layout: "blank",
 };
 </script>
 <style scoped>

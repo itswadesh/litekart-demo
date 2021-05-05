@@ -8,11 +8,15 @@
         <nuxt-link to="/">
           <img
             class="h-10 mx-2"
-            :src="`${$store.state.settings.CDN_URL}/${$store.state.settings.logo}`"
+            :src="
+              `${$store.state.settings.CDN_URL}/${$store.state.settings.logo}`
+            "
             alt="Home"
           />
         </nuxt-link>
-        <div class="flex items-center flex-none order-2 hidden text-sm lg:block xs:justify-between text-gray">
+        <div
+          class="flex items-center flex-none order-2 hidden text-sm lg:block xs:justify-between text-gray"
+        >
           <Megamenu />
         </div>
       </div>
@@ -22,58 +26,30 @@
       >
         <Search />
       </div>
-      <div class="flex items-center justify-between flex-shrink-0 order-3 w-40 py-4 ml-10 mr-3 sm:order-4 headings">
-        <nuxt-link
-          class="w-auto"
-          to="/account/login"
-          v-if="!user"
-        >
-          <img
-            class="h-4 ml-2"
-            src="/avatar.png"
-            alt=""
-          />
+      <div
+        class="flex items-center justify-between flex-shrink-0 order-3 w-40 py-4 ml-10 mr-3 sm:order-4 headings"
+      >
+        <nuxt-link class="w-auto" to="/account/login" v-if="!user">
+          <img class="h-4 ml-2" src="/avatar.png" alt="" />
           <div class="text-xs font-bold headings">Profile</div>
         </nuxt-link>
-        <nuxt-link
-          class="w-auto"
-          to="/my"
-          v-else
-        >
-          <img
-            class="h-4 ml-2"
-            src="/avatar.png"
-            alt=""
-          />
+        <nuxt-link class="w-auto" to="/my" v-else>
+          <img class="h-4 ml-2" src="/avatar.png" alt="" />
           <div class="text-xs font-bold headings">Profile</div>
         </nuxt-link>
-        <nuxt-link
-          class="w-auto"
-          to="/wishlist"
-        >
-          <img
-            class="h-4 ml-3 center"
-            src="/bookmark.png"
-            alt=""
-          />
+        <nuxt-link class="w-auto" to="/wishlist">
+          <img class="h-4 ml-3 center" src="/bookmark.png" alt="" />
           <div class="text-xs font-bold headings">Wishlist</div>
         </nuxt-link>
-        <nuxt-link
-          class="relative"
-          to="/cart"
-        >
-          <img
-            class="h-4 ml-1"
-            src="/bag.png"
-            alt=""
-          />
+        <nuxt-link class="relative" to="/cart">
+          <img class="h-4 ml-1" src="/bag.png" alt="" />
           <div class="flex text-xs font-bold">
             Cart
             <div
               class="absolute px-1 font-bold text-center rounded-full primary desktop-badge"
-              v-if="cart.qty>0"
+              v-if="cart.qty > 0"
             >
-              <div class="number">{{cart.qty }}</div>
+              <div class="number">{{ cart.qty }}</div>
             </div>
           </div>
         </nuxt-link>
@@ -88,7 +64,7 @@ import Search from "~/components/Search";
 export default {
   data() {
     return {
-      cls: ""
+      cls: "",
     };
   },
   mounted() {
@@ -110,8 +86,8 @@ export default {
     },
     ...mapGetters({
       checkCart: "cart/checkCart",
-      showCart: "cart/showCart"
-    })
+      showCart: "cart/showCart",
+    }),
   },
   methods: {
     closeSidebar() {
@@ -122,8 +98,8 @@ export default {
     },
     go(url) {
       this.$router.push(url);
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

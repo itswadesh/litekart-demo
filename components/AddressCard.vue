@@ -22,11 +22,15 @@
       <button
         @click="go('/checkout/address')"
         class="w-1/2 py-1 mt-1 tracking-widest text-blue-500 border-r border-gray-200"
-      >Edit/Change</button>
+      >
+        Edit/Change
+      </button>
       <button
         @click="go('/checkout/add')"
         class="w-1/2 py-1 mt-1 tracking-widest text-blue-500"
-      >Add New Address</button>
+      >
+        Add New Address
+      </button>
     </div>
   </div>
 </template>
@@ -38,10 +42,9 @@ export default {
   methods: {
     go(url) {
       this.$router.push(url);
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

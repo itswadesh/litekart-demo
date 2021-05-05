@@ -9,10 +9,12 @@
               style="position: relative;top:-3px"
             >
               <img
-                :src="`${$store.state.settings.CDN_URL}/${$store.state.settings.logo}`"
+                :src="
+                  `${$store.state.settings.CDN_URL}/${$store.state.settings.logo}`
+                "
                 alt=""
                 style="width: 80px;height: 16px;position: relative;top:4px"
-              >
+              />
             </div>
           </nuxt-link>
           <div class="footer-sub-content">
@@ -46,7 +48,6 @@
             support@litekart.com
           </div>
         </div>
-
       </div>
       <div class="footer-block ">
         <div class="footer-icon">

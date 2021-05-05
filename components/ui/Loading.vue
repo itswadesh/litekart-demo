@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="wave"
-    v-if="thisLoading"
-  >
+  <div id="wave" v-if="thisLoading">
     <span class="dot olive"></span>
     <span class="dot blue"></span>
     <span class="dot green"></span>
@@ -16,10 +13,10 @@ import { loadingTimeout } from "@/config";
 export default {
   data: () => ({
     thisLoading: false,
-    loadingTimer: 10
+    loadingTimer: 10,
   }),
   computed: {
-    ...mapGetters(["error", "loading"])
+    ...mapGetters(["error", "loading"]),
   },
   watch: {
     loading(err) {
@@ -28,7 +25,7 @@ export default {
       this.loadingTimer = setTimeout(function() {
         vm.thisLoading = vm.loading;
       }, loadingTimeout);
-    }
+    },
   },
   methods: {
     start() {
@@ -36,8 +33,8 @@ export default {
     },
     finish() {
       this.thisLoading = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

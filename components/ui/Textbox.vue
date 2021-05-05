@@ -13,7 +13,7 @@
             :aria-label="label"
           />
           <span class="highlight"></span>
-          <label>{{label}}</label>
+          <label>{{ label }}</label>
         </div>
       </div>
     </center>
@@ -25,8 +25,8 @@ export default {
   props: {
     label: { type: String },
     type: { type: String, default: "text" },
-    value: { type: String }
-  }
+    value: { type: String },
+  },
 };
 </script>
 

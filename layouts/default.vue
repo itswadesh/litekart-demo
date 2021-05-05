@@ -1,8 +1,5 @@
 <template>
-  <div
-    style="min-height:71.8vh"
-    class="antialiased "
-  >
+  <div style="min-height:71.8vh" class="antialiased ">
     <Header />
     <nuxt />
     <Footer />
@@ -15,6 +12,6 @@ import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 
 export default {
-  components: { Header, Footer, BackToTopDark }
+  components: { Header, Footer, BackToTopDark },
 };
 </script>

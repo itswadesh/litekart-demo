@@ -3,11 +3,11 @@
     <div class="content_container">
       <div class="content_card">
         <div class="content_title">
-          <h3>{{page.name}}</h3>
+          <h3>{{ page.name }}</h3>
         </div>
         <div class="content_text">
           <Shortcode :content="page.content"> </Shortcode>
-          <center v-if="err">{{err}}</center>
+          <center v-if="err">{{ err }}</center>
         </div>
       </div>
     </div>
@@ -51,38 +51,37 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: (this.page && this.page.metaDescription) || DESCRIPTION
+          content: (this.page && this.page.metaDescription) || DESCRIPTION,
         },
         {
           hid: "og:description",
           name: "Description",
           property: "og:description",
-          content: (this.page && this.page.metaDescription) || DESCRIPTION
+          content: (this.page && this.page.metaDescription) || DESCRIPTION,
         },
         {
           hid: "keywords",
           name: "Keywords",
           property: "keywords",
-          content: (this.page && this.page.metaKeywords) || KEYWORDS
+          content: (this.page && this.page.metaKeywords) || KEYWORDS,
         },
         {
           hid: "og:title",
           name: "og:title",
           property: "og:title",
-          content: (this.page && this.page.metaTitle) || TITLE
+          content: (this.page && this.page.metaTitle) || TITLE,
         },
         // Twitter
         {
           name: "twitter:title",
-          content: (this.page && this.page.metaTitle) || TITLE
+          content: (this.page && this.page.metaTitle) || TITLE,
         },
         {
           name: "twitter:description",
-          content: (this.page && this.page.metaDescription) || DESCRIPTION
-        }
-      ]
+          content: (this.page && this.page.metaDescription) || DESCRIPTION,
+        },
+      ],
     };
-  }
+  },
 };
 </script>
-

@@ -31,9 +31,11 @@
             </div>
             <div
               class="text-center border-t border-gray-300"
-              @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
+              @click="addToBag({ pid: product._id, vid: variant._id, qty: 1 })"
             >
-              <button class="py-4 text-sm font-bold text-black text-red-500">MOVE TO BAG</button>
+              <button class="py-4 text-sm font-bold text-black text-red-500">
+                MOVE TO BAG
+              </button>
             </div>
           </div>
         </a>
@@ -63,9 +65,11 @@
             </div>
             <div
               class="text-center border-t border-gray-300"
-              @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
+              @click="addToBag({ pid: product._id, vid: variant._id, qty: 1 })"
             >
-              <button class="py-4 text-sm font-bold text-black text-red-500">MOVE TO BAG</button>
+              <button class="py-4 text-sm font-bold text-black text-red-500">
+                MOVE TO BAG
+              </button>
             </div>
           </div>
         </a>
@@ -95,9 +99,11 @@
             </div>
             <div
               class="text-center border-t border-gray-300"
-              @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
+              @click="addToBag({ pid: product._id, vid: variant._id, qty: 1 })"
             >
-              <button class="py-4 text-sm font-bold text-black text-red-500">MOVE TO BAG</button>
+              <button class="py-4 text-sm font-bold text-black text-red-500">
+                MOVE TO BAG
+              </button>
             </div>
           </div>
         </a>
@@ -126,9 +132,11 @@
             </div>
             <div
               class="text-center border-t border-gray-300"
-              @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
+              @click="addToBag({ pid: product._id, vid: variant._id, qty: 1 })"
             >
-              <button class="py-4 text-sm font-bold text-black text-red-500">MOVE TO BAG</button>
+              <button class="py-4 text-sm font-bold text-black text-red-500">
+                MOVE TO BAG
+              </button>
             </div>
           </div>
         </a>
@@ -158,9 +166,11 @@
             </div>
             <div
               class="text-center border-t border-gray-300"
-              @click="addToBag({pid:product._id, vid:variant._id,qty:1})"
+              @click="addToBag({ pid: product._id, vid: variant._id, qty: 1 })"
             >
-              <button class="py-4 text-sm font-bold text-black text-red-500">MOVE TO BAG</button>
+              <button class="py-4 text-sm font-bold text-black text-red-500">
+                MOVE TO BAG
+              </button>
             </div>
           </div>
         </a>
@@ -173,5 +183,4 @@
 export default {};
 </script>
 
-<style>
-</style>
+<style></style>

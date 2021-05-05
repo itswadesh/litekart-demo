@@ -3,7 +3,9 @@
     <div class="right-0 w-3/4">
       <img alt="" src="/payment-cards.png" class="w-3/5 ml-40" />
     </div>
-    <div class="w-1/4 text-sm font-bold text-center text-gray-700">Need Help? Contact Us</div>
+    <div class="w-1/4 text-sm font-bold text-center text-gray-700">
+      Need Help? Contact Us
+    </div>
   </div>
 </template>
 
@@ -11,5 +13,4 @@
 export default {};
 </script>
 
-<style>
-</style>
+<style></style>

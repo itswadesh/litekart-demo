@@ -1,24 +1,18 @@
 <template>
   <div>
-    <h1
-      v-if="back"
-      class="mt-8 text-5xl font-bold text-center mb:8 lg:mb-16"
-    >
-      <nuxt-link
-        to="/help-center"
-        class="underline"
-      >Help </nuxt-link>
+    <h1 v-if="back" class="mt-8 text-5xl font-bold text-center mb:8 lg:mb-16">
+      <nuxt-link to="/help-center" class="underline">Help </nuxt-link>
       Center
     </h1>
-    <h3 class="my-6 text-2xl font-bold">{{title}}</h3>
+    <h3 class="my-6 text-2xl font-bold">{{ title }}</h3>
     <div class="faq-block">
       <div class="card-faq faqs">
         <div style="padding-top: 15px;padding-bottom: 15px">
           <div class="faq-row">
             <div
               class="faq-list"
-              :class="question.active? 'faq-active':''"
-              v-for="(question,i) in questions"
+              :class="question.active ? 'faq-active' : ''"
+              v-for="(question, i) in questions"
               :key="i"
             >
               <div class="faq-list-item">
@@ -27,17 +21,21 @@
                   @click="activeInactiveFaq(i)"
                 >
                   <div
-                    :class="question.active? 'faq-heading-active':''"
+                    :class="question.active ? 'faq-heading-active' : ''"
                     style="max-width: 90%;text-align: justify-all"
-                  >{{question.question}}</div>
-                  <div
-                    v-if="question.active"
-                    class="faq-icon"
-                  ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAOVBMVEUAAABYUFBZUVFYUFBYUVFYUVFYUFBZT09AQECAgIBYUFBYUFBVVVVYUFBZT09ZUFBYUVFYUFAAAADX687fAAAAEXRSTlMAYF+Di4WipwQCoIAD8U1tbr++4GkAAAABYktHRACIBR1IAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH4wwbDSMbIvjTzQAAAE1JREFUGNNjYCAbMDKh8pkFBVnQ+CgirIKCbGyCgqxI8uwcnFxwNWA+AwNcBMqHi3AD9fNAlPIAzeFm4IXzwSK8DHz8PAjreAT4yPAUAJCkA0piuKtzAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTEyLTI3VDEzOjM1OjI2KzAwOjAwkv9asAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0xMi0yN1QxMzozNToyNiswMDowMOOi4gwAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC"></div>
-                  <div
-                    v-else
-                    class="faq-icon"
-                  ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAOVBMVEUAAABZT09ZUFBVVVVYUVFYUFBYUFBYUFBYUFBYUFBAQEBZUVFZT09YUVFYUVFYUFBYUFBYUFAAAADze8F2AAAAEXRSTlMATW0DbvGigIKoBKGKi4WGYFPOOTsAAAABYktHRACIBR1IAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH4wwbDSMwjkQqjQAAAFNJREFUGNOdj8sWgCAIRMdI7WU5//+zYYewlsXKe5VBgO8VBukgY0BkciOJEZlulJmBiZyXi1dyawczzmYalzts1xztP/o4ffO4N1Pe/6v1x1JWJ7ZJAzqimiZMAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTEyLTI3VDEzOjM1OjQ4KzAwOjAwBK8oagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0xMi0yN1QxMzozNTo0OCswMDowMHXykNYAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC"></div>
+                  >
+                    {{ question.question }}
+                  </div>
+                  <div v-if="question.active" class="faq-icon">
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAOVBMVEUAAABYUFBZUVFYUFBYUVFYUVFYUFBZT09AQECAgIBYUFBYUFBVVVVYUFBZT09ZUFBYUVFYUFAAAADX687fAAAAEXRSTlMAYF+Di4WipwQCoIAD8U1tbr++4GkAAAABYktHRACIBR1IAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH4wwbDSMbIvjTzQAAAE1JREFUGNNjYCAbMDKh8pkFBVnQ+CgirIKCbGyCgqxI8uwcnFxwNWA+AwNcBMqHi3AD9fNAlPIAzeFm4IXzwSK8DHz8PAjreAT4yPAUAJCkA0piuKtzAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTEyLTI3VDEzOjM1OjI2KzAwOjAwkv9asAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0xMi0yN1QxMzozNToyNiswMDowMOOi4gwAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC"
+                    />
+                  </div>
+                  <div v-else class="faq-icon">
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAOVBMVEUAAABZT09ZUFBVVVVYUVFYUFBYUFBYUFBYUFBYUFBAQEBZUVFZT09YUVFYUVFYUFBYUFBYUFAAAADze8F2AAAAEXRSTlMATW0DbvGigIKoBKGKi4WGYFPOOTsAAAABYktHRACIBR1IAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH4wwbDSMwjkQqjQAAAFNJREFUGNOdj8sWgCAIRMdI7WU5//+zYYewlsXKe5VBgO8VBukgY0BkciOJEZlulJmBiZyXi1dyawczzmYalzts1xztP/o4ffO4N1Pe/6v1x1JWJ7ZJAzqimiZMAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTEyLTI3VDEzOjM1OjQ4KzAwOjAwBK8oagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0xMi0yN1QxMzozNTo0OCswMDowMHXykNYAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC"
+                    />
+                  </div>
                 </div>
                 <p
                   v-show="question.active"
@@ -65,10 +63,10 @@ export default {
       type: Array,
       default: function() {
         return [];
-      }
+      },
     },
     back: { type: Boolean, default: false },
-    title: { type: String, default: "" }
+    title: { type: String, default: "" },
   },
   methods: {
     activeInactiveFaq(i) {
@@ -79,8 +77,8 @@ export default {
           val.active = false;
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

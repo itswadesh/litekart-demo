@@ -2,12 +2,15 @@
   <div class="flex flex-wrap w-full mt-2">
     <nuxt-link
       class="w-full mb-2 lg:w-1/3"
-      v-for="(b,ix) in banners"
+      v-for="(b, ix) in banners"
       :key="ix"
       :to="b.link || '/search'"
     >
       <img
-        v-lazy="$store.state.settings && $store.state.settings.CDN_URL+b.img+'?tr=w-493,h-264'"
+        v-lazy="
+          $store.state.settings &&
+            $store.state.settings.CDN_URL + b.img + '?tr=w-493,h-264'
+        "
         alt=""
         class="object-cover object-center w-full h-64 p-0 lg:pr-1"
       />
@@ -17,9 +20,8 @@
 
 <script>
 export default {
-  props: { banners: { type: Array } }
+  props: { banners: { type: Array } },
 };
 </script>
 
-<style>
-</style>
+<style></style>

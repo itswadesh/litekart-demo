@@ -5,12 +5,9 @@
       :facets="facets"
       :fl="fl"
       v-if="showMobileFilter"
-      @hide="showMobileFilter=false"
+      @hide="showMobileFilter = false"
     />
-    <div
-      v-else
-      class="flex"
-    >
+    <div v-else class="flex">
       <DesktopFilters
         class="flex-none hidden max-w-xs md:block"
         :facets="facets"
@@ -23,32 +20,22 @@
           :count="productCount"
           :fl="fl"
           @removed="facetRemoved"
-          @showFilters="showMobileFilter=true"
+          @showFilters="showMobileFilter = true"
         />
-        <NoProduct v-if="products.length==0 && !loading" />
+        <NoProduct v-if="products.length == 0 && !loading" />
         <div v-else>
-          <div
-            class="flex flex-wrap justify-between"
-            v-if="loading"
-          >
-            <ProductSkeleton
-              v-for="(p,ix) in 10"
-              :key="ix+'-1'"
-            />
+          <div class="flex flex-wrap justify-between" v-if="loading">
+            <ProductSkeleton v-for="(p, ix) in 10" :key="ix + '-1'" />
           </div>
           <!-- <img
                 src="/loading.svg"
                 alt="loading ..."
           />-->
           <div
-            v-else-if="products && products.length>0"
+            v-else-if="products && products.length > 0"
             class="flex flex-wrap"
           >
-            <ProductNew
-              v-for="p in products"
-              :key="p._id"
-              :product="p"
-            />
+            <ProductNew v-for="p in products" :key="p._id" :product="p" />
           </div>
           <!-- <div class="pagination_box">
             <v-pagination
@@ -96,7 +83,7 @@ export default {
       if (q) qry.q = q;
       if (cslug) qry.categories = cslug;
       const result = await $axios.$get("api/products/es", {
-        params: { ...qry }
+        params: { ...qry },
       });
       products = result.data;
       productCount = result.count;
@@ -120,7 +107,7 @@ export default {
     }
   },
   created() {
-    this.scrollToTop()
+    this.scrollToTop();
     this.currentPage = parseInt(this.$route.query.page);
     // let query = { ...this.$route.query };
     // this.fl = query;
@@ -135,7 +122,7 @@ export default {
       try {
         this.loading = true;
         const products = await this.$axios.$get("api/products/es", {
-          params: q
+          params: q,
         });
         this.productCount = products.count;
         this.products = products.data;
@@ -144,7 +131,7 @@ export default {
       } finally {
         this.loading = false;
       }
-    }
+    },
   },
   head() {
     const host = process.server
@@ -161,13 +148,13 @@ export default {
           name: "Description",
           property: "og:description",
           content:
-            (this.category && this.category.metaDescription) || DESCRIPTION
+            (this.category && this.category.metaDescription) || DESCRIPTION,
         },
         {
           hid: "keywords",
           name: "Keywords",
           property: "keywords",
-          content: (this.category && this.category.metaKeywords) || KEYWORDS
+          content: (this.category && this.category.metaKeywords) || KEYWORDS,
         },
         {
           hid: "og:title",
@@ -176,13 +163,13 @@ export default {
           content:
             (this.category && this.category.metaTitle) ||
             (this.category && "Category: " + this.category.name) ||
-            "Category: " + this.$route.path.substr(1)
+            "Category: " + this.$route.path.substr(1),
         },
         // Google+ / Schema.org
         {
           name: "og_url",
           property: "og:url",
-          content: host + "/" + this.$route.path.substr(1) || ""
+          content: host + "/" + this.$route.path.substr(1) || "",
         },
         {
           property: "og:image",
@@ -191,15 +178,15 @@ export default {
             ((this.category &&
               this.category.imgA &&
               this.category.imgA.large) ||
-              sharingLogo)
+              sharingLogo),
         },
         {
           property: "og:image:width",
-          content: "600"
+          content: "600",
         },
         {
           property: "og:image:height",
-          content: "600"
+          content: "600",
         },
         // Twitter
         {
@@ -207,16 +194,16 @@ export default {
           content:
             (this.category && this.category.metaTitle) ||
             (this.category && "Category: " + this.category.name) ||
-            "Category: " + this.$route.path.substr(1)
+            "Category: " + this.$route.path.substr(1),
         },
         {
           name: "twitter:description",
           content:
-            (this.category && this.category.metaDescription) || DESCRIPTION
-        }
-      ]
+            (this.category && this.category.metaDescription) || DESCRIPTION,
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 <style>
