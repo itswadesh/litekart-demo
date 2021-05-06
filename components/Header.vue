@@ -107,17 +107,17 @@ export default {
 </script>
 <style scoped>
 .desktop-badge {
-  font-size: 8px;
+  font-size: 9px;
   left: 11px;
   top: -6px;
-  height: 15px;
-  width: 14px;
+  height: 17px;
+  width: 17px;
   border-radius: 50%;
   display: inline-block;
 }
 .desktop-badge .number {
-  margin-top: 1.5px;
-  margin-left: -1px;
+  margin-top: 0px;
+  margin-left: 0px;
 }
 
 .fix-search {

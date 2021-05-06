@@ -1,7 +1,7 @@
 <template>
-  <div>
+   <div class="mt-1">
     <div
-      class="mt-2 ml-4"
+      class="py-2 ml-2"
       v-if="product.categories && product.categories.length > 0"
     >
       <router-link to="/">Home</router-link>
@@ -13,10 +13,10 @@
         <span v-else>{{ c.name }}</span>
       </span>
     </div>
-    <div class="flex flex-wrap justify-start mt-2">
+    <div class="flex flex-col w-full mt-1 md:flex-row">
       <ProductImage :product="product" class="w-full md:w-6/12 lg:w-5/12" />
       <ProductDetails
-        class="w-full md:w-6/12 lg:w-7/12"
+        class="w-full h-auto md:w-6/12 lg:w-7/12"
         :product="product"
         :selectedVariant="selectedVariant"
         @variantChanged="variantChanged"

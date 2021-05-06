@@ -1,12 +1,14 @@
 <template>
   <div class="w-full">
-    <div class="mb-3 bg-gray lg:mb-0">
-      <div class="px-3 border-b border-gray-200">
-        <p class="text-2xl font-semibold headings">{{product.brandName}}</p>
-        <p class="text-xl">{{product.name}}</p>
+    <div class="mb-3 lg:mb-0">
+      
+      <div class="w-full h-full px-3 pb-4 border-b border-gray-200">
+        <div class="text-2xl font-semibold">{{product.brandName}}</div>
+        <div class="text-xl">{{product.name}}</div>
       </div>
+      
       <div
-        class="px-3 py-3 font-semibold tracking-wider sizeSelector headings"
+        class="px-3 py-3 font-semibold tracking-wider sizeSelector"
         v-if="selectedVariant"
       >
         <!-- <div v-if="!selectedVariant._id">
@@ -196,10 +198,10 @@
         </p>
         <span class="text-gray-500">{{product.detail}}</span>
         <!-- <p class="text-lg font-bold">Size & Fit</p>
-        <span class="headings">he model (height 5'8") is wearing a size S</span>
+        <span class=">he model (height 5'8") is wearing a size S</span>
 
         <p class="text-lg font-bold">Material & Care</p>
-        <span class="headings">
+        <span class=">
           Polyester
           <br />Machine-wash
         </span> -->
@@ -213,7 +215,7 @@
             :key="f._id"
           >
             <p class="text-xs text-gray-500">{{f.key}}</p>
-            <span class="text-sm headings">{{f.val}}</span>
+            <span class="text-sm">{{f.val}}</span>
           </div>
         </div>
         <!-- <span class="font-bold text-primary">See More</span> -->
@@ -236,7 +238,7 @@
             <button class="absolute right-0 pr-2 mt-2 text-sm font-bold cursor-pointer text-primary hover:text-gray-600">Check</button>
           </div>
           <span class="text-xs text-gray-500">Please enter PIN code to check Availability</span>
-          <ul class="text-sm font-hairline headings">
+          <ul class="text-sm font-hairline">
             <li>Tax: Applicable tax on the basis of exact location & discount will be charged at the time of checkout</li>
             <li>100% Original Products</li>
             <li>Free Delivery on order above Rs. 1199</li>
