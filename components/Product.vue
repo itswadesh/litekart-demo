@@ -1,21 +1,22 @@
 <template>
-  <div class="w-1/2 lg:w-1/4 xl:w-1/5">
+  <div class="w-full">
     <!-- <button @click="del(product._id)">x</button> -->
     <!-- <button @click="activate(product._id)">_/</button> -->
     <nuxt-link
       :to="'/' + product._source.slug + '?id=' + product._id"
-      class="block w-full mx-4 lg:p-2"
+      class="w-full"
       v-if="product"
     >
-      <div>
+      <div class="relative w-full h-56 bg-white rounded-tr-2xl">
         <img
-          class="w-full h-64"
-          style="object-fit: cover; max-height:316px;"
+          class="object-cover w-full h-full rounded-tr-2xl"
           v-if="product._source.img"
           v-lazy="$store.state.settings.CDN_URL + product._source.img[0]"
           alt=""
         />
-        <div class="p-3 text-center text-1">
+      </div>
+      <div class="relative">
+        <div class="p-3 bg-white rounded-b-lg shadow-lg sm:p-6">
           <div class="text-sm text-gray-900 truncate headings">
             {{ product._source.name }}
           </div>
@@ -23,7 +24,7 @@
             class="text-sm font-thin"
             v-if="product._source.categories && product._source.categories[0]"
           >{{product._source.categories[0].name}}</div> -->
-          <div>
+          <div class="mt-2">
             <span class="font-bold">{{
               product._source.price | currency
             }}</span>
@@ -40,11 +41,10 @@
                   ((product._source.mrp - product._source.price) * 100) /
                     product._source.mrp
                 )
-              }}% off)</span
-            >
+              }}% off)</span>
           </div>
         </div>
-      </div>
+        </div>
     </nuxt-link>
   </div>
 </template>

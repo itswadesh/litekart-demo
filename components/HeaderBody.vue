@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="flex w-full py-4 mb-1 xs:block lg:hidden">
+    <div class="flex flex-row justify-between w-full py-4 mb-1 xs:block lg:hidden">
       <div
         class="flex items-center flex-1 text-left text-gray-700 text-primary"
         @click="$emit('showFilters')"
@@ -48,10 +48,10 @@
         {{ count }} Items
       </div>
       <div
-        class="flex items-center flex-1 text-center text-gray-700 text-primary"
+        class="text-center text-gray-700"
       >
         <select
-          class="block px-4 py-2 pr-8 leading-tight bg-white border border-gray-100 border-gray-400 appearance-none cursor-pointer text-primary hover:border-gray-500 focus:outline-none focus:none"
+          class="block px-4 py-2 leading-tight bg-white border border-gray-400 appearance-none cursor-pointer text-primary-200 hover:border-gray-500 focus:outline-none focus:none"
           v-model="sortBy"
           @change="sort"
         >
@@ -60,8 +60,8 @@
             v-for="(s, ix) in sorts"
             :key="ix"
             :value="s.val"
-            >{{ s.name }}</option
-          >
+            >{{ s.name }}
+          </option>
         </select>
       </div>
     </div>

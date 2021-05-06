@@ -7,7 +7,7 @@
       v-if="showMobileFilter"
       @hide="showMobileFilter = false"
     />
-    <div v-else class="flex">
+    <div v-else class="">
       <DesktopFilters
         class="flex-none hidden max-w-xs md:block"
         :facets="facets"
@@ -31,11 +31,11 @@
                 src="/loading.svg"
                 alt="loading ..."
           />-->
-          <div
-            v-else-if="products && products.length > 0"
-            class="flex flex-wrap"
-          >
-            <ProductNew v-for="p in products" :key="p._id" :product="p" />
+          <div v-else-if="products && products.length > 0"
+            class="grid grid-cols-2 gap-3 md:gap-4 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+            >
+                <ProductNew  :product="p" v-for="p in products" :key="p._id" />
+            </div>
           </div>
           <!-- <div class="pagination_box">
             <v-pagination

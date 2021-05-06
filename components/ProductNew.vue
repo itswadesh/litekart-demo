@@ -1,22 +1,22 @@
 <template>
-  <div class="w-1/2 px-3 mb-4 lg:w-1/3 xl:w-1/4">
+  <div class="w-full">
     <!-- <button @click="del(product._id)">x</button> -->
     <!-- <button @click="activate(product._id)">_/</button> -->
     <nuxt-link
       :to="'/' + product._source.slug + '?id=' + product._id"
-      class="block w-full mx-4 lg:p-2"
+      class="w-full"
       v-if="product"
     >
-      <div class="relative pb-5/6">
+      <div class="relative w-full h-56 bg-white rounded-t-lg">
         <img
           v-if="product._source.img"
           v-lazy="$store.state.settings.CDN_URL + product._source.img[0]"
           alt=""
-          class="absolute object-cover w-full h-full rounded-lg shadow-md"
+          class="object-cover w-full h-full rounded-t-lg"
         />
       </div>
-      <div class="relative px-4 -mt-16">
-        <div class="p-6 bg-white rounded-lg shadow-lg">
+      <div class="relative">
+        <div class="p-3 bg-white rounded-b-lg shadow-lg sm:p-6">
           <h4 class="mt-2 text-sm leading-tight truncate">
             {{ product._source.name }}
           </h4>
