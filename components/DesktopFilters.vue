@@ -147,51 +147,51 @@
   </div>
 </template>
 <script>
-import { Checkbox, Radio } from "~/components/ui";
-import { constructURL } from "~/lib/";
+import { Checkbox, Radio } from '~/components/ui'
+import { constructURL } from '~/lib/'
 export default {
-  name: "ProductSidebar",
+  name: 'ProductSidebar',
   props: {
     clear: Boolean,
     fl: {
-      type: [Object, Array],
+      type: [Object, Array]
     },
     facets: {
       type: [Object, Array],
       default: () => {
-        return {};
-      },
-    },
+        return {}
+      }
+    }
   },
   components: { Checkbox, Radio },
   data() {
     return {
-      loadingPrice: true, // Required because after loading finished then only we will initiate the price slider component
-    };
+      loadingPrice: true // Required because after loading finished then only we will initiate the price slider component
+    }
   },
   methods: {
     categoryChanged(i) {
-      console.error("categoryChanged", i);
+      console.error('categoryChanged', i)
     },
     changed(e) {
-      this.fl[e.model] = e.checked;
+      this.fl[e.model] = e.checked
       // this.fl.pilot = e.checked;
-      let url = constructURL("/search", this.fl);
-      this.$router.push(url);
+      let url = constructURL('/search', this.fl)
+      this.$router.push(url)
     },
     remove(k, i) {
-      let ix = this.fl[k].indexOf(i);
-      this.fl[k].splice(ix, 1);
+      let ix = this.fl[k].indexOf(i)
+      this.fl[k].splice(ix, 1)
       // this.$emit("removed", this.fl);
-      let url = constructURL("/search", this.fl);
-      this.$router.push(url);
+      let url = constructURL('/search', this.fl)
+      this.$router.push(url)
     },
     checkCategory() {},
     go(slug) {
-      this.$router.push("/" + slug);
-    },
-  },
-};
+      this.$router.push('/' + slug)
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -217,7 +217,7 @@ export default {
 .results-showMoreContainer {
   box-sizing: border-box;
 }
-input[type="radio"] {
+input[type='radio'] {
   margin-top: 0.4em;
 }
 

@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import Checkbox from "~/components/ui/Checkbox";
+import Checkbox from '~/components/ui/Checkbox'
 export default {
-  components: { Checkbox },
-};
+  components: { Checkbox }
+}
 </script>

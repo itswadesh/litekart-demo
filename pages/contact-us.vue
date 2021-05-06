@@ -22,7 +22,7 @@
               class="flex items-center justify-center w-full py-2 text-2xl font-bold rounded outline-none h-14"
               :class="{
                 'primary text-white': !loading,
-                'border border-gray-400 bg-gray-300': loading,
+                'border border-gray-400 bg-gray-300': loading
               }"
             >
               <div v-if="loading">
@@ -40,54 +40,54 @@
 </template>
 
 <script>
-import Textbox from "~/components/ui/Textbox";
-import Textarea from "~/components/ui/Textarea";
-import { CDN, HOST } from "~/config";
+import Textbox from '~/components/ui/Textbox'
+import Textarea from '~/components/ui/Textarea'
+import { CDN, HOST } from '~/config'
 export default {
   data() {
     return {
       loading: false,
-      disable: "disable",
+      disable: 'disable',
       msg: null,
       err: null,
-      email: "",
-      message: "",
-    };
+      email: '',
+      message: ''
+    }
   },
   components: { Textbox, Textarea },
   computed: {
     isEmail() {
-      if (this.email.includes("@")) return true;
-      else return false;
-    },
+      if (this.email.includes('@')) return true
+      else return false
+    }
   },
   methods: {
     async submit() {
-      if (!this.email || this.email == "") {
-        this.$store.commit("setErr", "Please enter your email/phone no");
-        return;
+      if (!this.email || this.email == '') {
+        this.$store.commit('setErr', 'Please enter your email/phone no')
+        return
       }
       if (!this.isEmail) {
-        this.$store.commit("setErr", "Entered email is not valid");
-        return;
+        this.$store.commit('setErr', 'Entered email is not valid')
+        return
       }
       try {
-        this.loading = true;
-        const res = this.$axios.$post("/api/email/contactus", {
+        this.loading = true
+        const res = this.$axios.$post('/api/email/contactus', {
           from: this.email,
-          subject: "Conact from Litekart Demo",
-          text: this.message,
-        });
-        this.msg = "Thank you for message. We will get back to you soon";
+          subject: 'Conact from Litekart Demo',
+          text: this.message
+        })
+        this.msg = 'Thank you for message. We will get back to you soon'
       } catch (e) {
-        this.err = e;
-        console.log("err...", e.toString());
+        this.err = e
+        console.log('err...', e.toString())
       } finally {
-        this.loading = false;
+        this.loading = false
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>

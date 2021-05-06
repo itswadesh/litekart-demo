@@ -102,36 +102,36 @@
 </template>
 
 <script>
-import AddressCard from "~/components/AddressCard";
-import SelectAddress from "~/components/SelectAddress";
-import AddressNewCard from "~/components/AddressNewCard";
-import CartSummaryCheckout from "~/components/checkout/CartSummaryCheckout";
-import Radio from "~/components/ui/Radio";
-import CartItem from "~/components/cart/CartItem";
-const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
+import AddressCard from '~/components/AddressCard'
+import SelectAddress from '~/components/SelectAddress'
+import AddressNewCard from '~/components/AddressNewCard'
+import CartSummaryCheckout from '~/components/checkout/CartSummaryCheckout'
+import Radio from '~/components/ui/Radio'
+import CartItem from '~/components/cart/CartItem'
+const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 export default {
   fetch({ store, redirect }) {
     if (!(store.state.auth || {}).user)
-      return redirect("/account/login?return=/checkout/address");
+      return redirect('/account/login?return=/checkout/address')
   },
   data() {
     return {
       office: false,
       a: {},
       addresses: [],
-      selectedAddress: "",
-    };
+      selectedAddress: ''
+    }
   },
   created() {
-    this.getAddress();
+    this.getAddress()
   },
   computed: {
     user() {
-      return (this.$store.state.auth || {}).user || null;
+      return (this.$store.state.auth || {}).user || null
     },
     cart() {
-      return this.$store.state.cart || {};
-    },
+      return this.$store.state.cart || {}
+    }
   },
   components: {
     CartItem,
@@ -140,35 +140,35 @@ export default {
     SelectAddress,
     AddressNewCard,
     AddressCard,
-    CartSummaryCheckout,
+    CartSummaryCheckout
   },
   methods: {
     addressChanged(e) {
-      this.selectedAddress = e;
+      this.selectedAddress = e
     },
     del(a) {
       try {
-        this.$store.commit("busy", true);
-        this.$axios.$delete(`api/addresses/${a._id}`);
-        this.getAddress();
-        this.$store.commit("busy", false);
+        this.$store.commit('busy', true)
+        this.$axios.$delete(`api/addresses/${a._id}`)
+        this.getAddress()
+        this.$store.commit('busy', false)
       } catch (e) {
-        this.$store.commit("busy", false);
+        this.$store.commit('busy', false)
       }
     },
     async getAddress() {
       try {
-        const a = await this.$axios.$get("api/addresses/my");
-        this.addresses = a.data;
-        this.selectedAddress = a.data[0] && a.data[0]._id;
+        const a = await this.$axios.$get('api/addresses/my')
+        this.addresses = a.data
+        this.selectedAddress = a.data[0] && a.data[0]._id
       } catch (e) {}
     },
     go(url) {
-      this.$router.push(url);
-    },
+      this.$router.push(url)
+    }
   },
-  layout: "none",
-};
+  layout: 'none'
+}
 </script>
 
 <style scoped>

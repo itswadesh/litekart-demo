@@ -41,64 +41,64 @@
 </template>
 
 <script>
-import { mixin as clickaway } from "vue-clickaway";
-import { typingTimeout } from "~/config";
+import { mixin as clickaway } from 'vue-clickaway'
+import { typingTimeout } from '~/config'
 export default {
   mixins: [clickaway],
   data() {
     return {
-      q: "",
+      q: '',
       data: [],
       typingTimeout,
-      showInstantSearch: false,
-    };
+      showInstantSearch: false
+    }
   },
   created() {
-    this.search("");
+    this.search('')
   },
   methods: {
     go(q) {
-      this.$router.push(`/search?q=${q}`);
-      this.showInstantSearch = false;
+      this.$router.push(`/search?q=${q}`)
+      this.showInstantSearch = false
     },
     onClose() {
-      this.showInstantSearch = false;
+      this.showInstantSearch = false
     },
     async search(q) {
-      const res = await this.$axios.$get("api/products/autocomplete", {
-        params: { q },
-      });
-      this.data = res.data;
+      const res = await this.$axios.$get('api/products/autocomplete', {
+        params: { q }
+      })
+      this.data = res.data
     },
     submit(q) {
-      this.$router.push("/search?q=" + q);
-    },
+      this.$router.push('/search?q=' + q)
+    }
   },
   watch: {
     search: {
       immediate: false,
       handler(value, oldValue) {
-        if (!oldValue) return; // Do not trigger on page load
-        clearTimeout(this.typingTimer);
-        let vm = this;
+        if (!oldValue) return // Do not trigger on page load
+        clearTimeout(this.typingTimer)
+        let vm = this
         this.typingTimer = setTimeout(function() {
-          if (!value || value == "undefined") value = ""; // When clear button clicked
-          vm.searchString = value;
-          vm.$router.push("/search?q=" + value);
-        }, vm.typingTimeout);
-      },
+          if (!value || value == 'undefined') value = '' // When clear button clicked
+          vm.searchString = value
+          vm.$router.push('/search?q=' + value)
+        }, vm.typingTimeout)
+      }
     },
-    "$route.query.q": {
+    '$route.query.q': {
       immediate: true,
       handler(value) {
-        let pathName = null;
-        if (!value || value == "undefined") value = "";
-        if (value == "") return;
-        if (this.search == "") this.search = value;
-      },
-    },
-  },
-};
+        let pathName = null
+        if (!value || value == 'undefined') value = ''
+        if (value == '') return
+        if (this.search == '') this.search = value
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -193,7 +193,7 @@ img {
 }
 .search_options ul li a:after {
   position: absolute;
-  content: "";
+  content: '';
   width: 15px;
   height: 14px;
   background-image: url(/dropdown_search_icon.png);

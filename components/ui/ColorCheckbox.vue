@@ -19,22 +19,22 @@ export default {
   props: {
     color: {
       type: String,
-      default: "red",
+      default: 'red'
     },
     count: {
       type: Number,
-      default: 1295,
+      default: 1295
     },
     text: {
       type: String,
-      default: "",
+      default: ''
     },
     val: {
       type: String,
-      default: "",
-    },
-  },
-};
+      default: ''
+    }
+  }
+}
 </script>
 
 <style>
@@ -72,7 +72,7 @@ export default {
   margin-top: -1.5em;
 }
 .common-checkboxIndicator:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 4px;
   left: 4px;

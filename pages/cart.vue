@@ -6,9 +6,7 @@
       <div class="w-full px-2 lg:w-2/4">
         <div class="w-full pb-2 hr-line">
           <!-- <Offers /> -->
-          <div
-            class="hidden w-full mt-10 text-lg font-bold lg:block headings"
-          >
+          <div class="hidden w-full mt-10 text-lg font-bold lg:block headings">
             <div class="flex flex-wrap">
               <div class="w-1/2 text-left">
                 My Shopping Bag ({{ cart.qty }} Items)
@@ -59,29 +57,29 @@
 </template>
 
 <script>
-import EmptyCart from "~/components/cart/EmptyCart";
-import CartSummary from "~/components/cart/CartSummary";
-import CartBanners from "~/components/cart/CartBanners";
-import CartItemSkeleton from "~/components/cart/CartItemSkeleton";
-import CartItem from "~/components/cart/CartItem";
-import Button from "~/components/ui/Button";
-import { mapGetters } from "vuex";
+import EmptyCart from '~/components/cart/EmptyCart'
+import CartSummary from '~/components/cart/CartSummary'
+import CartBanners from '~/components/cart/CartBanners'
+import CartItemSkeleton from '~/components/cart/CartItemSkeleton'
+import CartItem from '~/components/cart/CartItem'
+import Button from '~/components/ui/Button'
+import { mapGetters } from 'vuex'
 
 export default {
   data() {
-    return {};
+    return {}
   },
   computed: {
     user() {
-      return (this.$store.state.auth || {}).user || null;
+      return (this.$store.state.auth || {}).user || null
     },
     cart() {
-      return this.$store.state.cart || {};
+      return this.$store.state.cart || {}
     },
     ...mapGetters({
-      showCart: "cart/showCart",
-    }),
+      showCart: 'cart/showCart'
+    })
   },
-  components: { EmptyCart, CartSummary, CartBanners, CartItem, Button },
-};
+  components: { EmptyCart, CartSummary, CartBanners, CartItem, Button }
+}
 </script>

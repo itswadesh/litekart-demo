@@ -1,4 +1,4 @@
-import Vue from "vue";
-import VueYoutube from "vue-youtube";
+import Vue from 'vue'
+import VueYoutube from 'vue-youtube'
 
-Vue.use(VueYoutube);
+Vue.use(VueYoutube)

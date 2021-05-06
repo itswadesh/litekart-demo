@@ -92,21 +92,21 @@
 export default {
   data() {
     return {
-      selected: true,
-    };
+      selected: true
+    }
   },
   computed: {
     user() {
-      return (this.$store.state.auth || {}).user || {};
-    },
+      return (this.$store.state.auth || {}).user || {}
+    }
   },
   methods: {
     async logout() {
-      await this.$store.dispatch("auth/logout");
-      this.$router.push("/");
-    },
-  },
-};
+      await this.$store.dispatch('auth/logout')
+      this.$router.push('/')
+    }
+  }
+}
 </script>
 <style scoped>
 ul > li:hover {

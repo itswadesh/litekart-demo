@@ -25,16 +25,16 @@
 export default {
   data() {
     return {
-      heroImages: [],
-    };
+      heroImages: []
+    }
   },
   async created() {
     this.heroImages =
       this.$store.state.settings &&
       this.$store.state.settings.banners &&
-      this.$store.state.settings.banners.slider;
-  },
-};
+      this.$store.state.settings.banners.slider
+  }
+}
 </script>
 
 <style>

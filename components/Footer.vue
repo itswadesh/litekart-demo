@@ -153,12 +153,12 @@
 </template>
 
 <script>
-import { popularSearches } from "~/config/";
+import { popularSearches } from '~/config/'
 export default {
   data() {
-    return { popularSearches };
-  },
-};
+    return { popularSearches }
+  }
+}
 </script>
 <style scoped>
 .hr-line {

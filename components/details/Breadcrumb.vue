@@ -15,19 +15,19 @@
 
 <script>
 export default {
-  name: "Breadcrumb",
-  props: ["namePath", "slugPath"],
+  name: 'Breadcrumb',
+  props: ['namePath', 'slugPath'],
   data() {
-    return {};
+    return {}
   },
   computed: {
     names() {
-      return this.namePath && this.namePath.split("/");
+      return this.namePath && this.namePath.split('/')
     },
     slugs() {
-      return this.slugPath && this.slugPath.split("/");
-    },
+      return this.slugPath && this.slugPath.split('/')
+    }
   },
-  created() {},
-};
+  created() {}
+}
 </script>

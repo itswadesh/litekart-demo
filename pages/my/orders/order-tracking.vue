@@ -182,8 +182,8 @@
 
 <script>
 export default {
-  components: {},
-};
+  components: {}
+}
 </script>
 
 <style scoped>
@@ -230,7 +230,7 @@ export default {
   font-size: 1rem;
 }
 .steps > .step:after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   background: linear-gradient(87deg, #fb6340, #da1c5f);

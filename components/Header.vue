@@ -56,54 +56,54 @@
       </div>
     </nav>
     <div class="sticky top-0">
-    <Search class="pb-3 mx-2 my-auto sm:hidden" />
+      <Search class="pb-3 mx-2 my-auto sm:hidden" />
     </div>
   </header>
 </template>
 <script>
-import { mapGetters } from "vuex";
-import Megamenu from "~/components/Megamenu";
-import Search from "~/components/Search";
+import { mapGetters } from 'vuex'
+import Megamenu from '~/components/Megamenu'
+import Search from '~/components/Search'
 export default {
   data() {
     return {
-      cls: "",
-    };
+      cls: ''
+    }
   },
   mounted() {
     if (process.client) {
-      window.addEventListener("scroll", () => {
-        let scrolled = window.scrollY;
-        this.cls = scrolled > 147 ? "fix-search" : "";
-      });
+      window.addEventListener('scroll', () => {
+        let scrolled = window.scrollY
+        this.cls = scrolled > 147 ? 'fix-search' : ''
+      })
     }
   },
 
   components: { Megamenu, Search },
   computed: {
     user() {
-      return (this.$store.state.auth || {}).user || null;
+      return (this.$store.state.auth || {}).user || null
     },
     cart() {
-      return this.$store.state.cart || {};
+      return this.$store.state.cart || {}
     },
     ...mapGetters({
-      checkCart: "cart/checkCart",
-      showCart: "cart/showCart",
-    }),
+      checkCart: 'cart/checkCart',
+      showCart: 'cart/showCart'
+    })
   },
   methods: {
     closeSidebar() {
-      this.sidebar = false;
+      this.sidebar = false
     },
     logout() {
-      this.$store.dispatch("auth/logout").then(() => {});
+      this.$store.dispatch('auth/logout').then(() => {})
     },
     go(url) {
-      this.$router.push(url);
-    },
-  },
-};
+      this.$router.push(url)
+    }
+  }
+}
 </script>
 <style scoped>
 .desktop-badge {

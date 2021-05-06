@@ -20,10 +20,10 @@
 export default {
   data() {
     return {
-      skeletonCount: 8,
-    };
-  },
-};
+      skeletonCount: 8
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 img {

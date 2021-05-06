@@ -18,57 +18,57 @@
 </template>
 
 <script>
-import Textbox from "~/components/ui/Textbox";
+import Textbox from '~/components/ui/Textbox'
 export default {
   data() {
-    return { verification: null, err: null };
+    return { verification: null, err: null }
   },
   async created() {
     try {
       this.verification = await this.$axios.post(
-        "/users/verify/" + this.$route.params.token
-      );
-      this.err = null;
+        '/users/verify/' + this.$route.params.token
+      )
+      this.err = null
     } catch (e) {
-      this.err = e;
-      this.$store.commit("setErr", e, { root: true });
+      this.err = e
+      this.$store.commit('setErr', e, { root: true })
     }
   },
   head() {
     return {
-      title: "Verify Email - Litekart",
+      title: 'Verify Email - Litekart',
       meta: [
         {
-          hid: "description",
-          name: "description",
-          content: "Forgot Password",
+          hid: 'description',
+          name: 'description',
+          content: 'Forgot Password'
         },
         {
-          hid: "og:description",
-          name: "Description",
-          property: "og:description",
-          content: "Forgot Password",
+          hid: 'og:description',
+          name: 'Description',
+          property: 'og:description',
+          content: 'Forgot Password'
         },
 
         {
-          hid: "og:title",
-          name: "og:title",
-          property: "og:title",
-          content: "Forgot Password",
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Forgot Password'
         },
         // Twitter
         {
-          name: "twitter:title",
-          content: "Forgot Password",
+          name: 'twitter:title',
+          content: 'Forgot Password'
         },
         {
-          name: "twitter:description",
-          content: "Forgot Password",
-        },
-      ],
-    };
-  },
-};
+          name: 'twitter:description',
+          content: 'Forgot Password'
+        }
+      ]
+    }
+  }
+}
 </script>
 <style scoped>
 .border-t {

@@ -20,7 +20,7 @@
           class="w-8 h-8 rounded-full "
           :class="{
             'bg-black font-medium text-white tracking-wide rounded-sm':
-              current == i,
+              current == i
           }"
           v-for="i in pages"
           :key="i"
@@ -46,22 +46,22 @@
 export default {
   computed: {
     pages() {
-      let count = this.count > 10 ? 10 : this.count;
-      return parseInt(count);
-    },
+      let count = this.count > 10 ? 10 : this.count
+      return parseInt(count)
+    }
   },
   props: {
     count: {
       type: Number,
-      default: 1,
+      default: 1
     },
     current: {
       type: Number,
-      default: 1,
-    },
+      default: 1
+    }
   },
-  methods: {},
-};
+  methods: {}
+}
 </script>
 
 <style scoped>

@@ -35,7 +35,9 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-row justify-between w-full py-4 mb-1 xs:block lg:hidden">
+    <div
+      class="flex flex-row justify-between w-full py-4 mb-1 xs:block lg:hidden"
+    >
       <div
         class="flex items-center flex-1 text-left text-gray-700 text-primary"
         @click="$emit('showFilters')"
@@ -47,9 +49,7 @@
       >
         {{ count }} Items
       </div>
-      <div
-        class="text-center text-gray-700"
-      >
+      <div class="text-center text-gray-700">
         <select
           class="block px-4 py-2 leading-tight bg-white border border-gray-400 appearance-none cursor-pointer text-primary-200 hover:border-gray-500 focus:outline-none focus:none"
           v-model="sortBy"
@@ -69,48 +69,48 @@
 </template>
 
 <script>
-import Breadcrumb from "~/components/details/Breadcrumb";
-import Checkbox from "~/components/ui/Checkbox";
-import { constructURL } from "~/lib/";
-import { sorts } from "~/config";
+import Breadcrumb from '~/components/details/Breadcrumb'
+import Checkbox from '~/components/ui/Checkbox'
+import { constructURL } from '~/lib/'
+import { sorts } from '~/config'
 export default {
   components: { Checkbox, Breadcrumb },
   data() {
     return {
       sorts,
-      sortBy: null,
-    };
+      sortBy: null
+    }
   },
   created() {
-    this.sortBy = this.$route.query.sort || "-createdAt";
+    this.sortBy = this.$route.query.sort || '-createdAt'
   },
   props: {
     category: {
-      type: Object,
+      type: Object
     },
     count: {
-      type: Number,
+      type: Number
     },
     fl: {
-      type: [Object, Array],
-    },
+      type: [Object, Array]
+    }
   },
   methods: {
     sort() {
-      let fl = { ...this.fl };
-      fl.sort = this.sortBy;
-      let url = constructURL("/search", fl);
-      this.$router.push(url);
+      let fl = { ...this.fl }
+      fl.sort = this.sortBy
+      let url = constructURL('/search', fl)
+      this.$router.push(url)
     },
     remove(k, i) {
-      let ix = this.fl[k].indexOf(i);
-      this.fl[k].splice(ix, 1);
+      let ix = this.fl[k].indexOf(i)
+      this.fl[k].splice(ix, 1)
       // this.$emit("removed", this.fl);
-      let url = constructURL("/search", this.fl);
-      this.$router.push(url);
-    },
-  },
-};
+      let url = constructURL('/search', this.fl)
+      this.$router.push(url)
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -90,42 +90,42 @@
 </template>
 
 <script>
-const Textbox = () => import("~/components/ui/Textbox");
-const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
+const Textbox = () => import('~/components/ui/Textbox')
+const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 export default {
   data() {
     return {
-      a: {},
-    };
+      a: {}
+    }
   },
   components: {
     CheckoutHeader,
-    Textbox,
+    Textbox
   },
   async created() {
     try {
-      this.a = await this.$axios.$get(`api/addresses/${this.$route.query.id}`);
+      this.a = await this.$axios.$get(`api/addresses/${this.$route.query.id}`)
     } catch (e) {}
   },
   methods: {
     go(url) {
-      this.$router.push(url);
+      this.$router.push(url)
     },
     async submit(address) {
-      this.$store.commit("busy", true);
+      this.$store.commit('busy', true)
       try {
         if (address._id)
-          await this.$axios.$put("api/addresses/" + address._id, address);
-        else await this.$axios.$post("api/addresses", address);
-        this.$store.commit("busy", false);
-        this.go("/checkout/address");
+          await this.$axios.$put('api/addresses/' + address._id, address)
+        else await this.$axios.$post('api/addresses', address)
+        this.$store.commit('busy', false)
+        this.go('/checkout/address')
       } catch (e) {
-        this.$store.commit("busy", false);
+        this.$store.commit('busy', false)
       }
-    },
+    }
   },
-  layout: "none",
-};
+  layout: 'none'
+}
 </script>
 
 <style scoped>

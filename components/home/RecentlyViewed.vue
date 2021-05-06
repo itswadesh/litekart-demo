@@ -14,7 +14,7 @@
       :perPageCustom="[
         [425, 2],
         [768, 3],
-        [1024, 5],
+        [1024, 5]
       ]"
       :paginationEnabled="false"
       :navigationEnabled="true"
@@ -51,32 +51,32 @@
 export default {
   data() {
     return {
-      products: [],
-    };
+      products: []
+    }
   },
   async created() {
     if (!process.server) {
-      let recentlyViewd = localStorage.getItem("recent");
-      recentlyViewd = JSON.parse(recentlyViewd);
-      if (!recentlyViewd) recentlyViewd = [];
-      recentlyViewd.reverse();
+      let recentlyViewd = localStorage.getItem('recent')
+      recentlyViewd = JSON.parse(recentlyViewd)
+      if (!recentlyViewd) recentlyViewd = []
+      recentlyViewd.reverse()
       if (recentlyViewd && recentlyViewd.length > 0) {
         let recentProduct = await this.$axios.$post(
-          "api/products/ids",
+          'api/products/ids',
           recentlyViewd
-        );
-        this.products = recentProduct;
+        )
+        this.products = recentProduct
       }
     }
   },
   methods: {
     go(url) {
-      this.$router.push(url);
+      this.$router.push(url)
     },
     clearRecentItems() {
-      localStorage.setItem("recent", []);
-      this.$emit("clearRecentItems");
-    },
-  },
-};
+      localStorage.setItem('recent', [])
+      this.$emit('clearRecentItems')
+    }
+  }
+}
 </script>

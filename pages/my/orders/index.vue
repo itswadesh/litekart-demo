@@ -53,29 +53,29 @@
 
 <script>
 export default {
-  layout: "account",
+  layout: 'account',
   async asyncData({ params, query, route, redirect, $axios, store }) {
     let orders = [],
-      err = null;
-    if (store.getters["cart/getTotal"] <= 0) {
-      redirect("/");
+      err = null
+    if (store.getters['cart/getTotal'] <= 0) {
+      redirect('/')
     }
     try {
-      const o = await $axios.$get(`api/orders/my`);
-      orders = o.data;
-      err = null;
+      const o = await $axios.$get(`api/orders/my`)
+      orders = o.data
+      err = null
     } catch (e) {
-      orders = [];
+      orders = []
       if (e && e.response && e.response.data) {
-        err = e.response.data;
+        err = e.response.data
       } else if (e && e.response) {
-        err = e.response;
+        err = e.response
       } else {
-        err = e;
+        err = e
       }
-      console.log("err...", `${err}`);
+      console.log('err...', `${err}`)
     }
-    return { orders };
-  },
-};
+    return { orders }
+  }
+}
 </script>

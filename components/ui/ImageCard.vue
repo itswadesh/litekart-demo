@@ -6,18 +6,18 @@
 
 <script>
 export default {
-  name: "ImageCard",
+  name: 'ImageCard',
   props: {
     src: {
       type: String,
-      default: "",
+      default: ''
     },
     alt: {
       type: String,
-      default: "",
-    },
-  },
-};
+      default: ''
+    }
+  }
+}
 </script>
 
 <style scoped>

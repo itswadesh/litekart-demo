@@ -17,7 +17,10 @@
     </div>
     <div v-else>
       <div class="flex flex-wrap">
-        <button class="flex items-center justify-center w-8 h-8 rounded-full muted" @click="addToBag(-1)">
+        <button
+          class="flex items-center justify-center w-8 h-8 rounded-full muted"
+          @click="addToBag(-1)"
+        >
           <i class="m-auto fa fa-minus" aria-hidden="true"></i>
         </button>
         <div class="flex items-center px-2 text-center">
@@ -40,39 +43,39 @@
   </div>
 </template>
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex'
 export default {
-  props: ["product", "variant"],
+  props: ['product', 'variant'],
   data() {
     return {
-      loading: false,
-    };
+      loading: false
+    }
   },
   methods: {
-    ...mapActions({ addToCart: "cart/addToCart" }),
+    ...mapActions({ addToCart: 'cart/addToCart' }),
     async addToBag(qty) {
-      if (!this.variant) this.$store.commit("setErr", "Please select a size");
+      if (!this.variant) this.$store.commit('setErr', 'Please select a size')
       else {
-        this.loading = true;
+        this.loading = true
         await this.addToCart({
           pid: this.product._id,
           vid: this.variant._id,
-          qty,
-        });
-        this.loading = false;
+          qty
+        })
+        this.loading = false
       }
-    },
+    }
   },
   computed: {
     ...mapGetters({
-      checkCart: "cart/checkCart",
-      getQty: "cart/getQty",
+      checkCart: 'cart/checkCart',
+      getQty: 'cart/getQty'
     }),
     cart() {
-      return this.$store.state.cart;
-    },
-  },
-};
+      return this.$store.state.cart
+    }
+  }
+}
 </script>
 <style scoped>
 .cart-button {

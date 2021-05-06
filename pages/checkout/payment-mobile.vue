@@ -137,64 +137,64 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapMutations } from "vuex";
-import Radio from "~/components/ui/Radio";
-const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
+import { mapGetters, mapActions, mapMutations } from 'vuex'
+import Radio from '~/components/ui/Radio'
+const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 export default {
   data() {
     return {
       address: {},
-      paymentMethod: "COD",
-    };
+      paymentMethod: 'COD'
+    }
   },
   async mounted() {
     this.address = await this.$axios.$get(
       `api/addresses/${this.$route.query.address}`
-    );
+    )
   },
   methods: {
     ...mapActions({
-      checkout: "cart/checkout",
-      applyDiscount: "cart/applyDiscount",
+      checkout: 'cart/checkout',
+      applyDiscount: 'cart/applyDiscount'
     }),
     async placeOrder() {
-      let vm = this;
-      this.err = null;
+      let vm = this
+      this.err = null
       if (this.cart.subtotal === 0) {
-        this.$store.commit("setErr", "Your cart is empty!");
-        return;
+        this.$store.commit('setErr', 'Your cart is empty!')
+        return
       }
       if (!this.address.address) {
-        this.$store.commit("setErr", "Please Enter Your Delivery Address!");
-        this.scrollToDiv("address_box");
-        return;
+        this.$store.commit('setErr', 'Please Enter Your Delivery Address!')
+        this.scrollToDiv('address_box')
+        return
       }
       if (!this.paymentMethod) {
-        this.$store.commit("setErr", "Please Select Payment Method!");
-        this.scrollToDiv("payment_box");
-        return;
+        this.$store.commit('setErr', 'Please Select Payment Method!')
+        this.scrollToDiv('payment_box')
+        return
       }
       try {
         await vm.checkout({
           address: vm.address,
-          paymentMethod: vm.paymentMethod,
-        });
+          paymentMethod: vm.paymentMethod
+        })
       } catch (e) {
-        this.$store.commit("setErr", e.response.data.message);
+        this.$store.commit('setErr', e.response.data.message)
       }
-    },
+    }
   },
   components: {
     CheckoutHeader,
-    Radio,
+    Radio
   },
   computed: {
     cart() {
-      return this.$store.state.cart || {};
-    },
+      return this.$store.state.cart || {}
+    }
   },
-  layout: "none",
-};
+  layout: 'none'
+}
 </script>
 
 <style></style>

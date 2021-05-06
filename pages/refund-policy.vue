@@ -13,8 +13,8 @@ ul {
 </style>
 <script>
 export default {
-  layout: "support",
-};
+  layout: 'support'
+}
 </script>
 <template>
   <div class="mx-2 mb-16 hfull lg:mx-48 ">

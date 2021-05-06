@@ -114,27 +114,27 @@
 export default {
   async asyncData({ params, query, route, redirect, $axios, store }) {
     let order = null,
-      err = null;
-    if (store.getters["cart/getTotal"] <= 0) {
-      redirect("/");
+      err = null
+    if (store.getters['cart/getTotal'] <= 0) {
+      redirect('/')
     }
     try {
-      order = await $axios.$get(`api/orders/public/${route.query.id}`);
-      err = null;
+      order = await $axios.$get(`api/orders/public/${route.query.id}`)
+      err = null
     } catch (e) {
-      order = null;
+      order = null
       if (e && e.response && e.response.data) {
-        err = e.response.data;
+        err = e.response.data
       } else if (e && e.response) {
-        err = e.response;
+        err = e.response
       } else {
-        err = e;
+        err = e
       }
-      console.log("err...", `${err}`);
+      console.log('err...', `${err}`)
     }
-    return { order };
-  },
-};
+    return { order }
+  }
+}
 </script>
 
 <style scoped>

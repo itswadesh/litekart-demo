@@ -41,10 +41,11 @@
                   ((product._source.mrp - product._source.price) * 100) /
                     product._source.mrp
                 )
-              }}% off)</span>
+              }}% off)</span
+            >
           </div>
         </div>
-        </div>
+      </div>
     </nuxt-link>
   </div>
 </template>
@@ -53,21 +54,21 @@
 export default {
   props: {
     product: {
-      type: Object,
-    },
+      type: Object
+    }
   },
   methods: {
     async del(id) {
       try {
-        await this.$axios.$delete(`api/products/${id}`);
+        await this.$axios.$delete(`api/products/${id}`)
       } catch (e) {}
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>
-img[lazy="loaded"] {
+img[lazy='loaded'] {
   opacity: 1;
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;

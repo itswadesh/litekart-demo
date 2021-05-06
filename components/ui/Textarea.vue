@@ -25,11 +25,11 @@
 export default {
   props: {
     label: { type: String },
-    type: { type: String, default: "text" },
+    type: { type: String, default: 'text' },
     value: { type: String },
-    rows: { type: Number, default: 4 },
-  },
-};
+    rows: { type: Number, default: 4 }
+  }
+}
 </script>
 
 <style scoped>
@@ -75,7 +75,7 @@ label {
 }
 
 .floating-select:focus ~ label,
-.floating-select:not([value=""]):valid ~ label {
+.floating-select:not([value='']):valid ~ label {
   top: -18px;
   font-size: 14px;
   color: #fb6340;

@@ -80,41 +80,41 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
+import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'
 
 export default {
   data() {
     return {
-      wishlist: [],
-    };
+      wishlist: []
+    }
   },
   mounted() {
-    this.getData();
+    this.getData()
   },
   methods: {
-    ...mapActions({ addToCart: "cart/addToCart" }),
+    ...mapActions({ addToCart: 'cart/addToCart' }),
     async getData() {
       try {
-        const w = await this.$axios.$get("api/wishlists/my");
-        this.wishlist = w.data;
+        const w = await this.$axios.$get('api/wishlists/my')
+        this.wishlist = w.data
       } catch (e) {
-        this.wishlist = [];
+        this.wishlist = []
       }
     },
     addToBag(obj) {
-      this.addToCart(obj);
-      this.$store.commit("success", "Moved to cart");
+      this.addToCart(obj)
+      this.$store.commit('success', 'Moved to cart')
     },
     async remove(id) {
       try {
-        await this.$axios.$delete(`api/wishlists/my/${id}`);
-        this.getData();
+        await this.$axios.$delete(`api/wishlists/my/${id}`)
+        this.getData()
       } catch (err) {
-        console.log("er......", err);
+        console.log('er......', err)
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>

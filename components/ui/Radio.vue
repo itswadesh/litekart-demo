@@ -17,14 +17,14 @@
 export default {
   props: {
     value: { type: String },
-    checked: { type: Boolean },
-  },
+    checked: { type: Boolean }
+  }
   // data() {
   //   return {
   //     content: this.value
   //   };
   // }
-};
+}
 </script>
 
 <style scoped>
@@ -42,7 +42,7 @@ export default {
   box-shadow: inset 0 0 0 3px #fff;
 }
 .common-radioIndicator:before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: 1;
   width: 16px;

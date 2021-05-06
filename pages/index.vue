@@ -33,19 +33,19 @@
 </template>
 
 <script>
-import Hero from "~/components/home/Hero";
-import Heros from "~/components/home/Heros";
-import Deals from "~/components/home/Deals";
-import Sale from "~/components/home/Sale";
-import RecentlyViewed from "~/components/home/RecentlyViewed";
-import Banners from "~/components/home/Banners";
-import YouMayLike from "~/components/home/YouMayLike";
-import WhatsNew from "~/components/home/WhatsNew";
-import MegamenuMobile from "~/components/MegamenuMobile";
+import Hero from '~/components/home/Hero'
+import Heros from '~/components/home/Heros'
+import Deals from '~/components/home/Deals'
+import Sale from '~/components/home/Sale'
+import RecentlyViewed from '~/components/home/RecentlyViewed'
+import Banners from '~/components/home/Banners'
+import YouMayLike from '~/components/home/YouMayLike'
+import WhatsNew from '~/components/home/WhatsNew'
+import MegamenuMobile from '~/components/MegamenuMobile'
 // skeletons
-import BannersSkeleton from "~/components/home/BannersSkeleton";
-import DealsSkeleton from "~/components/home/DealsSkeleton";
-import Category from "~/components/home/Category";
+import BannersSkeleton from '~/components/home/BannersSkeleton'
+import DealsSkeleton from '~/components/home/DealsSkeleton'
+import Category from '~/components/home/Category'
 export default {
   components: {
     Hero,
@@ -60,9 +60,9 @@ export default {
     //Skeletons
     BannersSkeleton,
     DealsSkeleton,
-    Category,
-  },
-};
+    Category
+  }
+}
 </script>
 
 <style>
@@ -70,6 +70,6 @@ export default {
   width: 100%;
   height: auto;
   min-height: calc(100vh - 100px);
-  background-color: config("colors.grey-lighter");
+  background-color: config('colors.grey-lighter');
 }
 </style>

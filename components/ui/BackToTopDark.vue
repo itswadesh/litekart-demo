@@ -6,29 +6,29 @@
 
 <script>
 export default {
-  name: "BackToTop",
+  name: 'BackToTop',
   data() {
     return {
       shouldShow: false,
-      scrolled: 0,
-    };
+      scrolled: 0
+    }
   },
   components: {},
   methods: {
     toTop() {
       if (process.client) {
-        window.scroll({ behavior: "smooth", left: 0, top: 100 });
+        window.scroll({ behavior: 'smooth', left: 0, top: 100 })
       }
-    },
+    }
   },
   mounted() {
     if (process.client) {
-      window.addEventListener("scroll", () => {
-        this.scrolled = window.scrollY;
-      });
+      window.addEventListener('scroll', () => {
+        this.scrolled = window.scrollY
+      })
     }
-  },
-};
+  }
+}
 </script>
 <style scoped>
 button {

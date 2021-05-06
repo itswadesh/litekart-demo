@@ -53,31 +53,31 @@
 </template>
 
 <script>
-import Button from "~/components/ui/Button";
+import Button from '~/components/ui/Button'
 export default {
   props: {
-    selectedAddress: { type: String },
+    selectedAddress: { type: String }
   },
   computed: {
     cart() {
-      return this.$store.state.cart || {};
-    },
+      return this.$store.state.cart || {}
+    }
   },
   components: {
-    Button,
+    Button
   },
   methods: {
     proceed() {
       if (!this.selectedAddress) {
-        this.$router.push(`/checkout/add`);
-        return;
+        this.$router.push(`/checkout/add`)
+        return
       }
       this.$router.push(
         `/checkout/payment-mobile?address=${this.selectedAddress}`
-      );
-    },
-  },
-};
+      )
+    }
+  }
+}
 </script>
 
 <style></style>

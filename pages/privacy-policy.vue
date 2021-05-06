@@ -15,8 +15,8 @@ h2 {
 </style>
 <script>
 export default {
-  layout: "support",
-};
+  layout: 'support'
+}
 </script>
 <template>
   <div class="mx-2 mb-16 lg:mx-48 ">

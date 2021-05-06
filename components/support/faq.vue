@@ -62,24 +62,24 @@ export default {
     questions: {
       type: Array,
       default: function() {
-        return [];
-      },
+        return []
+      }
     },
     back: { type: Boolean, default: false },
-    title: { type: String, default: "" },
+    title: { type: String, default: '' }
   },
   methods: {
     activeInactiveFaq(i) {
       this.questions.forEach((val, index) => {
         if (index === i) {
-          val.active = !val.active;
+          val.active = !val.active
         } else {
-          val.active = false;
+          val.active = false
         }
-      });
-    },
-  },
-};
+      })
+    }
+  }
+}
 </script>
 <style scoped>
 .faq-block {

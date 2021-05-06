@@ -53,15 +53,15 @@
 
 <script>
 export default {
-  layout: "account",
+  layout: 'account',
   data() {
     return {
-      addresses: [],
-    };
+      addresses: []
+    }
   },
   async created() {
-    const res = await this.$axios.$get("api/addresses/my");
-    this.addresses = res.data;
-  },
-};
+    const res = await this.$axios.$get('api/addresses/my')
+    this.addresses = res.data
+  }
+}
 </script>

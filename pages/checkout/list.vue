@@ -77,34 +77,34 @@
 </template>
 
 <script>
-import Radio from "~/components/ui/Radio";
-const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
+import Radio from '~/components/ui/Radio'
+const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
 export default {
   data() {
     return {
       office: false,
       a: {},
-      addresses: [],
-    };
+      addresses: []
+    }
   },
   created() {
-    this.getAddress();
+    this.getAddress()
   },
   components: {
     CheckoutHeader,
-    Radio,
+    Radio
   },
   methods: {
     async getAddress() {
-      const a = await this.$axios.$get("api/addresses/my");
-      this.addresses = a.data;
+      const a = await this.$axios.$get('api/addresses/my')
+      this.addresses = a.data
     },
     go(url) {
-      this.$router.push(url);
-    },
+      this.$router.push(url)
+    }
   },
-  layout: "none",
-};
+  layout: 'none'
+}
 </script>
 
 <style scoped>

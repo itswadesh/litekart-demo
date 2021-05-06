@@ -24,7 +24,7 @@
             <li
               :class="{
                 'bg-white text-pink-500 border-l-4 border-pink-600':
-                  selected == 'brands',
+                  selected == 'brands'
               }"
               @click="selected = 'brands'"
             >
@@ -33,7 +33,7 @@
             <li
               :class="{
                 'bg-white text-pink-500 border-l-4 border-pink-600':
-                  selected == 'sizes',
+                  selected == 'sizes'
               }"
               @click="selected = 'sizes'"
             >
@@ -42,7 +42,7 @@
             <li
               :class="{
                 'bg-white text-pink-500 border-l-4 border-pink-600':
-                  selected == 'colors',
+                  selected == 'colors'
               }"
               @click="selected = 'colors'"
             >
@@ -51,7 +51,7 @@
             <li
               :class="{
                 'bg-white text-pink-500 border-l-4 border-pink-600':
-                  selected == 'Price',
+                  selected == 'Price'
               }"
               @click="selected = 'Price'"
             >
@@ -60,7 +60,7 @@
             <li
               :class="{
                 'bg-white text-pink-500 border-l-4 border-pink-600':
-                  selected == 'Gender',
+                  selected == 'Gender'
               }"
               @click="selected = 'Gender'"
             >
@@ -206,51 +206,51 @@ ul > li {
 }
 </style>
 <script>
-import { Checkbox, Radio } from "~/components/ui";
-import { constructURL } from "~/lib/";
+import { Checkbox, Radio } from '~/components/ui'
+import { constructURL } from '~/lib/'
 
 export default {
-  name: "ProductSidebar",
+  name: 'ProductSidebar',
   props: {
     clear: Boolean,
     fl: {
-      type: [Object, Array],
+      type: [Object, Array]
     },
     facets: {
       type: [Object, Array],
       default: () => {
-        return {};
-      },
-    },
+        return {}
+      }
+    }
   },
   components: { Checkbox, Radio },
   data() {
     return {
-      selected: "brands",
+      selected: 'brands',
       loadingPrice: true, // Required because after loading finished then only we will initiate the price slider component
-      showMobileFilter: true,
-    };
+      showMobileFilter: true
+    }
   },
   methods: {
     Changed(i) {
-      console.error("categoryChanged", i);
+      console.error('categoryChanged', i)
     },
     changed(e) {
-      this.fl[e.model] = e.checked;
+      this.fl[e.model] = e.checked
       // this.fl.pilot = e.checked;
-      let url = constructURL("/search", this.fl);
-      this.$router.push(url);
+      let url = constructURL('/search', this.fl)
+      this.$router.push(url)
     },
     checkCategory() {},
     go(slug) {
-      this.$router.push("/" + slug);
+      this.$router.push('/' + slug)
     },
     clearAll() {
-      this.$router.push(`/search`);
-      this.$emit("hide");
-    },
-  },
-};
+      this.$router.push(`/search`)
+      this.$emit('hide')
+    }
+  }
+}
 </script>
 <style scoped>
 ul > li {

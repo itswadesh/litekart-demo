@@ -6,14 +6,14 @@
   </div>
 </template>
 <script>
-const newFooter = () => import("~/components/footer/newFooter");
-const supportHeader = () => import("~/components/support/supportHeader");
+const newFooter = () => import('~/components/footer/newFooter')
+const supportHeader = () => import('~/components/support/supportHeader')
 export default {
   components: {
     newFooter,
-    supportHeader,
-  },
-};
+    supportHeader
+  }
+}
 </script>
 <style scoped>
 .footer-sub-content {
@@ -54,7 +54,7 @@ export default {
   font-size: 40px;
   font-weight: bolder;
   padding: 40px 0 40px 0;
-  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 }
 .faq-block {
   display: flex;

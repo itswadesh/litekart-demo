@@ -42,30 +42,30 @@
 </template>
 
 <script>
-import Textbox from "~/components/ui/Textbox";
+import Textbox from '~/components/ui/Textbox'
 
 export default {
-  layout: "account",
+  layout: 'account',
   components: { Textbox },
   methods: {
     async submit() {
-      if (!this.password || this.password === "") {
-        this.$store.commit("setErr", "Current Password can not be blank");
-        return;
-      } else if (!this.password || this.password === "") {
-        this.$store.commit("setErr", "New Password can not be blank");
-        return;
+      if (!this.password || this.password === '') {
+        this.$store.commit('setErr', 'Current Password can not be blank')
+        return
+      } else if (!this.password || this.password === '') {
+        this.$store.commit('setErr', 'New Password can not be blank')
+        return
       }
       try {
-        await this.$store.dispatch("auth/changePassword", this.password);
-        this.$router.push("/my/orders");
+        await this.$store.dispatch('auth/changePassword', this.password)
+        this.$router.push('/my/orders')
       } catch (e) {}
-    },
+    }
   },
   head() {
     return {
-      title: "Change Password",
-    };
-  },
-};
+      title: 'Change Password'
+    }
+  }
+}
 </script>

@@ -20,8 +20,8 @@
 
 <script>
 export default {
-  props: { banners: { type: Array } },
-};
+  props: { banners: { type: Array } }
+}
 </script>
 
 <style></style>

@@ -32,7 +32,7 @@
                     class="flex items-center justify-center w-full py-2 text-lg font-bold rounded outline-none h-14"
                     :class="{
                       'primary text-white': !loading,
-                      'border border-gray-400 bg-gray-300': loading,
+                      'border border-gray-400 bg-gray-300': loading
                     }"
                   >
                     <div v-if="loading">
@@ -55,87 +55,87 @@
 </template>
 
 <script>
-import Textbox from "~/components/ui/Textbox";
+import Textbox from '~/components/ui/Textbox'
 export default {
   data() {
     return {
       loading: false,
-      fadeIn: "",
-      disable: "disable",
-      email: "",
+      fadeIn: '',
+      disable: 'disable',
+      email: '',
       msg: null,
       err: null,
-      success: null,
-    };
+      success: null
+    }
   },
   components: { Textbox },
   computed: {
     isEmail() {
-      if (this.email.includes("@")) return true;
-      else return false;
-    },
+      if (this.email.includes('@')) return true
+      else return false
+    }
   },
   methods: {
     async submit() {
-      if (!this.email || this.email == "") {
-        this.$store.commit("setErr", "Please enter your email id");
-        return;
+      if (!this.email || this.email == '') {
+        this.$store.commit('setErr', 'Please enter your email id')
+        return
       } else if (!this.isEmail) {
-        this.$store.commit("setErr", "Entered email is not valid");
-        return;
+        this.$store.commit('setErr', 'Entered email is not valid')
+        return
       } else {
-        await this.resetPassword();
+        await this.resetPassword()
       }
     },
     async resetPassword() {
       try {
-        this.loading = true;
-        this.success = await this.$store.dispatch("auth/forgotPassword", {
-          email: this.email,
-        });
+        this.loading = true
+        this.success = await this.$store.dispatch('auth/forgotPassword', {
+          email: this.email
+        })
       } catch (e) {
-        this.err = e.response && e.response.data;
-        this.$store.commit("setErr", this.err, { root: true });
+        this.err = e.response && e.response.data
+        this.$store.commit('setErr', this.err, { root: true })
       } finally {
-        this.loading = false;
+        this.loading = false
       }
-    },
+    }
   },
   head() {
     return {
-      title: "Forgot Password - Litekart",
+      title: 'Forgot Password - Litekart',
       meta: [
         {
-          hid: "description",
-          name: "description",
-          content: "Forgot Password",
+          hid: 'description',
+          name: 'description',
+          content: 'Forgot Password'
         },
         {
-          hid: "og:description",
-          name: "Description",
-          property: "og:description",
-          content: "Forgot Password",
+          hid: 'og:description',
+          name: 'Description',
+          property: 'og:description',
+          content: 'Forgot Password'
         },
 
         {
-          hid: "og:title",
-          name: "og:title",
-          property: "og:title",
-          content: "Forgot Password",
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Forgot Password'
         },
         // Twitter
         {
-          name: "twitter:title",
-          content: "Forgot Password",
+          name: 'twitter:title',
+          content: 'Forgot Password'
         },
         {
-          name: "twitter:description",
-          content: "Forgot Password",
-        },
-      ],
-    };
-  },
-};
+          name: 'twitter:description',
+          content: 'Forgot Password'
+        }
+      ]
+    }
+  }
+}
 </script>
 <style scoped>
 .info {

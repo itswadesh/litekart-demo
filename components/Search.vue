@@ -15,46 +15,46 @@
 </template>
 
 <script>
-import { typingTimeout } from "~/config";
+import { typingTimeout } from '~/config'
 export default {
   data() {
     return {
-      search: "",
-    };
+      search: ''
+    }
   },
   methods: {
     submit(q) {
-      this.$router.push(`/search/${q}`);
-    },
+      this.$router.push(`/search/${q}`)
+    }
   },
   watch: {
     search: {
       immediate: false,
       handler(value, oldValue) {
         // if (value.length < 4) return;
-        if (!oldValue) return; // Do not trigger on page load
-        clearTimeout(this.typingTimer);
-        let vm = this;
+        if (!oldValue) return // Do not trigger on page load
+        clearTimeout(this.typingTimer)
+        let vm = this
         this.typingTimer = setTimeout(function() {
-          if (!value || value == "undefined") value = ""; // When clear button clicked
-          vm.searchString = value;
-          vm.$router.push(`/search/${value}`);
-        }, typingTimeout);
-      },
+          if (!value || value == 'undefined') value = '' // When clear button clicked
+          vm.searchString = value
+          vm.$router.push(`/search/${value}`)
+        }, typingTimeout)
+      }
     },
-    "$route.query.q": {
+    '$route.query.q': {
       immediate: true,
       handler(value) {
-        let pathName = null;
-        if (this.$route.name) pathName = this.$route.name.substr(0, 8);
-        if (pathName === "category") return;
-        if (!value || value == "undefined") value = "";
-        if (value == "") return;
-        if (this.search == "") this.search = value;
-      },
-    },
-  },
-};
+        let pathName = null
+        if (this.$route.name) pathName = this.$route.name.substr(0, 8)
+        if (pathName === 'category') return
+        if (!value || value == 'undefined') value = ''
+        if (value == '') return
+        if (this.search == '') this.search = value
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>

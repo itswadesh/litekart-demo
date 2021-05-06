@@ -23,7 +23,7 @@
             class="flex items-center justify-center w-full py-2 text-2xl font-bold rounded outline-none h-14"
             :class="{
               'primary text-white': !loading,
-              'border border-gray-400 bg-gray-300': loading,
+              'border border-gray-400 bg-gray-300': loading
             }"
           >
             <span v-if="!loading">Join Litekart</span>
@@ -43,82 +43,82 @@
 </template>
 
 <script>
-import Textbox from "~/components/ui/Textbox";
-import Textarea from "~/components/ui/Textarea";
+import Textbox from '~/components/ui/Textbox'
+import Textarea from '~/components/ui/Textarea'
 export default {
-  name: "Apply-for-vendor",
+  name: 'Apply-for-vendor',
   data() {
     return {
       err: null,
-      first_name: "",
-      last_name: "",
-      company_name: "",
-      request_email: "",
-      request_phone: "",
-      request_url: "",
-      request_address: "",
-      request_description: "",
-      request_city: "",
-      request_country: "India",
-      request_state: "Odisha",
-      request_zip: "0000",
+      first_name: '',
+      last_name: '',
+      company_name: '',
+      request_email: '',
+      request_phone: '',
+      request_url: '',
+      request_address: '',
+      request_description: '',
+      request_city: '',
+      request_country: 'India',
+      request_state: 'Odisha',
+      request_zip: '0000',
       loading: false,
-      errors: {},
-    };
+      errors: {}
+    }
   },
   components: { Textbox, Textarea },
   methods: {
     go(url) {
-      this.$router.push(url);
+      this.$router.push(url)
     },
     async submit() {
       if (!this.company_name) {
-        this.$store.commit("setErr", "Company Name is required", {
-          root: true,
-        });
-        return;
+        this.$store.commit('setErr', 'Company Name is required', {
+          root: true
+        })
+        return
       }
       if (!this.request_description) {
-        this.$store.commit("setErr", "Please enter your business description", {
-          root: true,
-        });
-        return;
+        this.$store.commit('setErr', 'Please enter your business description', {
+          root: true
+        })
+        return
       }
       if (!this.first_name) {
-        this.$store.commit("setErr", "Please fill up first name", {
-          root: true,
-        });
-        return;
+        this.$store.commit('setErr', 'Please fill up first name', {
+          root: true
+        })
+        return
       }
       if (!this.last_name) {
-        this.$store.commit("setErr", "Please fill up last name", {
-          root: true,
-        });
-        return;
+        this.$store.commit('setErr', 'Please fill up last name', {
+          root: true
+        })
+        return
       }
       if (!this.request_email) {
-        this.$store.commit("setErr", "Please fill up email", {
-          root: true,
-        });
-        return;
+        this.$store.commit('setErr', 'Please fill up email', {
+          root: true
+        })
+        return
       }
       if (!this.request_phone) {
-        this.$store.commit("setErr", "Please enter your phone no", {
-          root: true,
-        });
-        return;
+        this.$store.commit('setErr', 'Please enter your phone no', {
+          root: true
+        })
+        return
       }
       if (!this.request_address) {
-        this.$store.commit("setErr", "Please enter your business address", {
-          root: true,
-        });
-        return;
+        this.$store.commit('setErr', 'Please enter your business address', {
+          root: true
+        })
+        return
       }
       if (!this.request_city) {
-        this.$store.commit("setErr", "Please enter your business city", {
-          root: true,
-        });
-        return;
+        this.$store.commit('setErr', 'Please enter your business city', {
+          root: true
+        })
+        return
       }
       let requestDetails = {
         company_name: this.company_name,
@@ -132,70 +132,68 @@ export default {
         request_city: this.request_city,
         request_country: this.request_country,
         request_state: this.request_state,
-        request_zip: this.request_zip,
-      };
+        request_zip: this.request_zip
+      }
       try {
         let data = await this.$axios.$post(
-          "api/vendors/requests",
+          'api/vendors/requests',
           requestDetails
-        );
+        )
         if (data.status === 200) {
           this.$store.commit(
-            "success",
-            "Your Request has been sent successfully!"
-          ); // Should be at end because it returns false
-          this.go("/");
+            'success',
+            'Your Request has been sent successfully!'
+          ) // Should be at end because it returns false
+          this.go('/')
         } else {
           // Could not do commit('setErr') because it throws back error
-          this.$store.commit("setErr", "Something went wrong!");
+          this.$store.commit('setErr', 'Something went wrong!')
 
           // this.$store.commit("setErr", "Removed from wishlist"); // Should be at end because it returns false
         }
       } catch (err) {
-        this.$store.commit("setErr", "Something went wrong!");
+        this.$store.commit('setErr', 'Something went wrong!')
         // this.err(err);
       }
-    },
+    }
   },
   head() {
     return {
-      title: "Apply for vendor account",
+      title: 'Apply for vendor account',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "Apply for vendor account on " +
-            this.$store.state.settings.shopName,
+            'Apply for vendor account on ' + this.$store.state.settings.shopName
         },
         {
-          hid: "og:description",
-          name: "Description",
-          property: "og:description",
+          hid: 'og:description',
+          name: 'Description',
+          property: 'og:description',
           content:
-            "Apply for vendor account on " +
-            this.$store.state.settings.shopName,
+            'Apply for vendor account on ' + this.$store.state.settings.shopName
         },
         {
-          hid: "og:title",
-          name: "og:title",
-          property: "og:title",
-          content: "Apply for vendor account",
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Apply for vendor account'
         },
         // Twitter
         {
-          name: "twitter:title",
-          content: "Create a new account",
+          name: 'twitter:title',
+          content: 'Create a new account'
         },
         {
-          name: "twitter:description",
-          content: "Signup for " + this.$store.state.settings.shopName,
-        },
-      ],
-    };
+          name: 'twitter:description',
+          content: 'Signup for ' + this.$store.state.settings.shopName
+        }
+      ]
+    }
   },
-  layout: "blank",
-};
+  layout: 'blank'
+}
 </script>
 
 <style scoped>

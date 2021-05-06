@@ -28,64 +28,64 @@
 </template>
 
 <script>
-import { HOST, TITLE, DESCRIPTION, KEYWORDS, sharingLogo } from "~/config";
-import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
-import ProductImage from "~/components/details/ProductImage";
-import Breadcrumb from "~/components/details/Breadcrumb";
-import ProductDetails from "~/components/details/ProductDetails";
-import SimilarProducts from "~/components/details/SimilarProducts";
-import YouMayLike from "~/components/home/YouMayLike";
+import { HOST, TITLE, DESCRIPTION, KEYWORDS, sharingLogo } from '~/config'
+import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'
+import ProductImage from '~/components/details/ProductImage'
+import Breadcrumb from '~/components/details/Breadcrumb'
+import ProductDetails from '~/components/details/ProductDetails'
+import SimilarProducts from '~/components/details/SimilarProducts'
+import YouMayLike from '~/components/home/YouMayLike'
 export default {
   async validate({ query, $axios }) {
     try {
-      let product = await $axios.$get("api/products/" + query.id);
-      return !!product;
+      let product = await $axios.$get('api/products/' + query.id)
+      return !!product
     } catch (e) {
-      return false;
+      return false
     }
   },
   components: {
     ProductImage,
     Breadcrumb,
     ProductDetails,
-    YouMayLike,
+    YouMayLike
   },
   mounted() {
     if (this.product) {
-      this.scrollTo();
+      this.scrollTo()
     }
   },
   async asyncData({ params, query, $axios, store }) {
     let product = {},
       selectedVariant = null,
-      err = null;
+      err = null
     try {
-      product = await $axios.$get(`api/products/${query.id}`);
-      if (!product || product == "null") product = {};
+      product = await $axios.$get(`api/products/${query.id}`)
+      if (!product || product == 'null') product = {}
       else {
         for (let v of product && product.variants) {
           if (v.stock > 0) {
-            selectedVariant = v;
-            break;
+            selectedVariant = v
+            break
           }
         }
       }
     } catch (e) {
-      product = {};
-      selectedVariant = null;
+      product = {}
+      selectedVariant = null
       if (e && e.response && e.response.data) {
-        err = e.response.data;
+        err = e.response.data
       } else if (e && e.response) {
-        err = e.response;
+        err = e.response
       } else {
-        err = e;
+        err = e
       }
-      console.log("err...", `${err}`);
+      console.log('err...', `${err}`)
     }
 
     const structuredData = {
-      "@context": "http://schema.org/",
-      "@type": "Product",
+      '@context': 'http://schema.org/',
+      '@type': 'Product',
       name: product && product.name,
       description: product && product.description,
       sku: product && product.sku,
@@ -93,9 +93,9 @@ export default {
         HOST +
         (product &&
           product.img &&
-          store.state.settings.CDN_URL + product.img[0]),
-    };
-    return { product, selectedVariant, err, structuredData };
+          store.state.settings.CDN_URL + product.img[0])
+    }
+    return { product, selectedVariant, err, structuredData }
   },
   data() {
     return {
@@ -103,25 +103,25 @@ export default {
       RecentlyViewedProducts: [],
       YouMightAlsoLikeProducts: [],
       carouselShow: false,
-      loading: false,
-    };
+      loading: false
+    }
   },
   methods: {
-    ...mapMutations(["setErr"]),
+    ...mapMutations(['setErr']),
     scrollTo() {
       if (process.client) {
         window.scroll({
-          behavior: "smooth",
+          behavior: 'smooth',
           left: 0,
-          top: 0,
-        });
+          top: 0
+        })
       }
     },
     variantChanged(v) {
-      this.selectedVariant = v;
+      this.selectedVariant = v
     },
     go(url) {
-      this.$router.push(url);
+      this.$router.push(url)
     },
     // async getReviews() {
     //   if (!this.product || !this.product._id) return;
@@ -137,8 +137,8 @@ export default {
     //   }
     // },
     publishRatings(r) {
-      let vm = this;
-      let reviewCount = 0;
+      let vm = this
+      let reviewCount = 0
       let rating = {
         r5: 0,
         r4: 0,
@@ -147,29 +147,29 @@ export default {
         r1: 0,
         count: 0,
         total: 0,
-        avg: 0,
-      };
+        avg: 0
+      }
       r.forEach(function(i) {
-        if (i.message) reviewCount++;
-        if (i.rating) rating.count++;
-        if (i.rating) rating.total = rating.total + i.rating;
-        if (i.rating == 5) rating.r5++;
-        if (i.rating == 4) rating.r4++;
-        if (i.rating == 3) rating.r3++;
-        if (i.rating == 2) rating.r2++;
-        if (i.rating == 1) rating.r1++;
-      }, this);
-      this.reviewCount = reviewCount;
-      if (rating.count === 0) rating.avg = 0;
-      else rating.avg = Math.round((rating.total / rating.count) * 10) / 10;
-      this.rating = rating;
+        if (i.message) reviewCount++
+        if (i.rating) rating.count++
+        if (i.rating) rating.total = rating.total + i.rating
+        if (i.rating == 5) rating.r5++
+        if (i.rating == 4) rating.r4++
+        if (i.rating == 3) rating.r3++
+        if (i.rating == 2) rating.r2++
+        if (i.rating == 1) rating.r1++
+      }, this)
+      this.reviewCount = reviewCount
+      if (rating.count === 0) rating.avg = 0
+      else rating.avg = Math.round((rating.total / rating.count) * 10) / 10
+      this.rating = rating
     },
     error(err) {
-      this.setError(err.err);
+      this.setError(err.err)
     },
     clearRecentItems() {
-      this.RecentlyViewedProducts = [];
-    },
+      this.RecentlyViewedProducts = []
+    }
   },
   async created() {
     if (
@@ -177,34 +177,34 @@ export default {
       !this.product.categories ||
       !this.product.categories[0]
     )
-      return;
+      return
     if (!process.server) {
       if (this.product) {
-        let recentlyViewd = localStorage.getItem("recent");
-        const currentId = this.product._id;
+        let recentlyViewd = localStorage.getItem('recent')
+        const currentId = this.product._id
         if (recentlyViewd) {
-          recentlyViewd = JSON.parse(recentlyViewd);
-          if (!recentlyViewd) recentlyViewd = [];
-          recentlyViewd.reverse();
+          recentlyViewd = JSON.parse(recentlyViewd)
+          if (!recentlyViewd) recentlyViewd = []
+          recentlyViewd.reverse()
           if (!recentlyViewd.includes(currentId)) {
             // if (recentlyViewd.length > 10) {
             //   recentlyViewd = [];
             // }
-            recentlyViewd.push(currentId);
-            localStorage.setItem("recent", JSON.stringify(recentlyViewd));
+            recentlyViewd.push(currentId)
+            localStorage.setItem('recent', JSON.stringify(recentlyViewd))
           }
         } else {
-          let productId = [];
-          productId.push(currentId);
-          localStorage.setItem("recent", JSON.stringify(productId));
+          let productId = []
+          productId.push(currentId)
+          localStorage.setItem('recent', JSON.stringify(productId))
         }
 
         if (recentlyViewd && recentlyViewd.length > 0) {
           let recentProduct = await this.$axios.$post(
-            "api/products/ids",
+            'api/products/ids',
             recentlyViewd
-          );
-          this.RecentlyViewedProducts = recentProduct;
+          )
+          this.RecentlyViewedProducts = recentProduct
         }
       } else {
         // console.log("NO LOCALSTORAGE");
@@ -214,7 +214,7 @@ export default {
   head() {
     const host = process.server
       ? this.$ssrContext.req.headers.host
-      : window.location.host;
+      : window.location.host
     return {
       title:
         (this.product && this.product.metaTitle) ||
@@ -222,125 +222,125 @@ export default {
         TITLE,
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
             (this.product && this.product.metaDescription) ||
             (this.product && this.product.description) ||
-            DESCRIPTION,
+            DESCRIPTION
         },
         {
-          hid: "keywords",
-          name: "Keywords",
-          property: "keywords",
+          hid: 'keywords',
+          name: 'Keywords',
+          property: 'keywords',
           content:
             (this.product && this.product.metaKeywords) ||
             (this.product && this.product.keywords) ||
-            KEYWORDS,
+            KEYWORDS
         },
 
         // OpenGraph data
         {
-          hid: "og:title",
-          name: "og_title",
-          property: "og:title",
+          hid: 'og:title',
+          name: 'og_title',
+          property: 'og:title',
           content:
             (this.product && this.product.metaTitle) ||
             (this.product && this.product.name) ||
-            TITLE,
+            TITLE
         },
         {
-          hid: "og:description",
-          name: "Description",
-          property: "og:description",
+          hid: 'og:description',
+          name: 'Description',
+          property: 'og:description',
           content:
             (this.product && this.product.metaDescription) ||
             (this.product && this.product.description) ||
-            DESCRIPTION,
+            DESCRIPTION
         },
         {
-          name: "og_url",
-          property: "og:url",
-          content: host + "/" + this.product.slug + "?id=" + this.product._id,
+          name: 'og_url',
+          property: 'og:url',
+          content: host + '/' + this.product.slug + '?id=' + this.product._id
         },
         {
-          name: "og_image",
-          property: "og:image",
+          name: 'og_image',
+          property: 'og:image',
           content:
             (this.product &&
               this.product.imgA &&
               this.product.imgA[0] &&
               this.$store.state.settings.CDN_URL + this.product.imgA[0]) ||
-            sharingLogo,
+            sharingLogo
         },
         {
-          property: "og:image:width",
-          content: "600",
+          property: 'og:image:width',
+          content: '600'
         },
         {
-          property: "og:image:height",
-          content: "600",
+          property: 'og:image:height',
+          content: '600'
         },
         // Twitter
         {
-          name: "twitter:title",
+          name: 'twitter:title',
           content:
             (this.product && this.product.metaTitle) ||
             (this.product && this.product.name) ||
-            TITLE,
+            TITLE
         },
         {
-          name: "twitter:description",
+          name: 'twitter:description',
           content:
             (this.product && this.product.metaDescription) ||
             (this.product && this.product.description) ||
-            DESCRIPTION,
+            DESCRIPTION
         },
         {
-          name: "twitter:image:src",
+          name: 'twitter:image:src',
           content:
             (this.product &&
               this.product.imgA &&
               this.product.imgA[0] &&
               $store.state.settings.CDN_URL + this.product.imgA[0]) ||
-            sharingLogo,
+            sharingLogo
         },
         // Google / Schema.org markup:
         {
-          hid: "product_name",
-          itemprop: "name",
-          content: (this.product && this.product.name) || TITLE,
+          hid: 'product_name',
+          itemprop: 'name',
+          content: (this.product && this.product.name) || TITLE
         },
         {
-          hid: "product_description",
-          itemprop: "description",
+          hid: 'product_description',
+          itemprop: 'description',
           content:
             (this.product && this.product.metaDescription) ||
             (this.product && this.product.description) ||
-            DESCRIPTION,
+            DESCRIPTION
         },
         {
-          hid: "product_image",
-          itemprop: "image",
+          hid: 'product_image',
+          itemprop: 'image',
           content:
             (this.product &&
               this.product.imgA &&
               this.product.imgA[0] &&
               $store.state.settings.CDN_URL + this.product.imgA[0].large) ||
-            sharingLogo,
+            sharingLogo
         },
         {
-          hid: "product_price",
-          name: "product_price",
-          property: "product:price",
+          hid: 'product_price',
+          name: 'product_price',
+          property: 'product:price',
           content:
             this.product &&
             this.product.variants &&
             this.product.variants[0] &&
-            this.product.variants[0].price,
-        },
-      ],
-    };
-  },
-};
+            this.product.variants[0].price
+        }
+      ]
+    }
+  }
+}
 </script>

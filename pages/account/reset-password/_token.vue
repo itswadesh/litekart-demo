@@ -29,7 +29,7 @@
                     v-validate="'required|min:3'"
                   />
                   <p class="input_err" v-if="errors.first('password')">
-                    {{ errors.first("password") }}
+                    {{ errors.first('password') }}
                   </p>
                   <Textbox
                     v-model="confirm"
@@ -44,7 +44,7 @@
                     class="input_err"
                     v-if="errors.first('password_confirmation')"
                   >
-                    {{ errors.first("password_confirmation") }}
+                    {{ errors.first('password_confirmation') }}
                   </p>
                 </div>
                 <div class="flex items-center justify-between">
@@ -54,7 +54,7 @@
                     class="flex items-center justify-center w-full py-2 text-2xl font-bold rounded outline-none h-14"
                     :class="{
                       'primary text-white': !loading,
-                      'border border-gray-400 bg-gray-300': loading,
+                      'border border-gray-400 bg-gray-300': loading
                     }"
                   >
                     <div v-if="loading">
@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import Textbox from "~/components/ui/Textbox";
+import Textbox from '~/components/ui/Textbox'
 
 export default {
   data() {
@@ -85,91 +85,89 @@ export default {
       success: null,
       err: null,
       token: null,
-      password: "",
-      confirm: "",
-      loading: false,
-    };
+      password: '',
+      confirm: '',
+      loading: false
+    }
   },
   created() {
-    this.token = this.$route.params.token;
+    this.token = this.$route.params.token
   },
   components: { Textbox },
   methods: {
     async submit() {
       if (!this.password) {
-        this.success = null;
-        this.$store.commit("setErr", "Please enter a new password");
+        this.success = null
+        this.$store.commit('setErr', 'Please enter a new password')
       } else if (!this.confirm) {
-        this.success = null;
-        this.$store.commit("setErr", "Please repeat the password again");
+        this.success = null
+        this.$store.commit('setErr', 'Please repeat the password again')
       } else if (this.password !== this.confirm) {
-        this.success = null;
+        this.success = null
         this.$store.commit(
-          "setErr",
-          "New password and confirm password does not match"
-        );
+          'setErr',
+          'New password and confirm password does not match'
+        )
       } else {
         try {
           this.success = await this.$axios.$post(
-            "/users/reset/" + this.$route.params.token,
+            '/users/reset/' + this.$route.params.token,
             {
-              password: this.password,
+              password: this.password
             }
-          );
-          this.err = null;
-          this.$store.commit("info", "Password reset successful");
-          this.$router.push("/account/login");
+          )
+          this.err = null
+          this.$store.commit('info', 'Password reset successful')
+          this.$router.push('/account/login')
         } catch (e) {
-          this.success = null;
+          this.success = null
           if (e && e.response) {
-            this.err = e.response.data;
-            this.$store.commit("setErr", e.response.data);
-            this.$router.push(
-              "/account/forgot-password?err=" + e.response.data
-            );
+            this.err = e.response.data
+            this.$store.commit('setErr', e.response.data)
+            this.$router.push('/account/forgot-password?err=' + e.response.data)
           }
         }
       }
-    },
+    }
   },
   head() {
     return {
-      title: "Reset Password",
+      title: 'Reset Password',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "We all are forgetful. Don't worry, this page will help you to recover your password",
+            "We all are forgetful. Don't worry, this page will help you to recover your password"
         },
         {
-          hid: "og:description",
-          name: "Description",
-          property: "og:description",
+          hid: 'og:description',
+          name: 'Description',
+          property: 'og:description',
           content:
-            "We all are forgetful. Don't worry, this page will help you to recover your password",
+            "We all are forgetful. Don't worry, this page will help you to recover your password"
         },
         {
-          hid: "og:title",
-          name: "og:title",
-          property: "og:title",
-          content: "Reset Password",
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Reset Password'
         },
         // Twitter
         {
-          name: "twitter:title",
-          content: "Reset Password",
+          name: 'twitter:title',
+          content: 'Reset Password'
         },
         {
-          name: "twitter:description",
+          name: 'twitter:description',
           content:
-            "We all are forgetful. Don't worry, this page will help you to recover your password",
-        },
-      ],
-    };
+            "We all are forgetful. Don't worry, this page will help you to recover your password"
+        }
+      ]
+    }
   },
-  layout: "blank",
-};
+  layout: 'blank'
+}
 </script>
 <style scoped>
 .input_err {

@@ -100,21 +100,21 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
-import Textbox from "~/components/ui/Textbox";
+import { mapGetters, mapActions } from 'vuex'
+import Textbox from '~/components/ui/Textbox'
 
 export default {
   fetch({ store, redirect }) {
     if (!(store.state.auth || {}).user)
-      return redirect("/account/login?return=my/profile");
+      return redirect('/account/login?return=my/profile')
   },
   async asyncData({ store }) {
-    let profile = {};
-    let userDetails = await store.dispatch("auth/fetch");
-    profile = Object.assign({}, userDetails);
-    profile.dob = profile.dob || {};
-    profile.state = profile.state || {};
-    return { profile };
+    let profile = {}
+    let userDetails = await store.dispatch('auth/fetch')
+    profile = Object.assign({}, userDetails)
+    profile.dob = profile.dob || {}
+    profile.state = profile.state || {}
+    return { profile }
   },
   data() {
     return {
@@ -125,51 +125,51 @@ export default {
       cities: [],
       dd: null,
       mm: null,
-      yyyy: null,
-    };
+      yyyy: null
+    }
   },
   computed: {
     ...mapGetters({
-      loading: "loading",
-    }),
+      loading: 'loading'
+    })
   },
   components: { Textbox },
   async mounted() {
-    this.getStates(this.profile.country);
-    this.getCities(this.profile.state);
+    this.getStates(this.profile.country)
+    this.getCities(this.profile.state)
   },
   methods: {
     async getCities(state) {
-      this.cities = await this.$axios.$get("api/countries/cities", {
-        params: { state },
-      });
+      this.cities = await this.$axios.$get('api/countries/cities', {
+        params: { state }
+      })
     },
     async getStates() {
-      this.states = await this.$axios.$get("api/countries/states");
+      this.states = await this.$axios.$get('api/countries/states')
     },
     ...mapActions({
-      updateProfile: "auth/updateProfile",
+      updateProfile: 'auth/updateProfile'
     }),
     splitDate(date) {
-      if (!date) return {};
-      var dd = date.getDate();
-      var mm = date.getMonth() + 1; //January is 0!
-      var yyyy = date.getFullYear();
+      if (!date) return {}
+      var dd = date.getDate()
+      var mm = date.getMonth() + 1 //January is 0!
+      var yyyy = date.getFullYear()
       if (dd < 10) {
-        dd = "0" + dd;
+        dd = '0' + dd
       }
       if (mm < 10) {
-        mm = "0" + mm;
+        mm = '0' + mm
       }
-      var date = { dd, mm, yyyy };
-      return date;
-    },
+      var date = { dd, mm, yyyy }
+      return date
+    }
   },
   head() {
     return {
-      title: "Update your profile",
-    };
+      title: 'Update your profile'
+    }
   },
-  layout: "account",
-};
+  layout: 'account'
+}
 </script>

@@ -44,28 +44,28 @@
 </template>
 
 <script>
-import Radio from "~/components/ui/Radio";
+import Radio from '~/components/ui/Radio'
 export default {
   components: { Radio },
   data() {
     return {
       office: false,
-      addresses: [],
-    };
+      addresses: []
+    }
   },
   created() {
-    this.getAddress();
+    this.getAddress()
   },
   methods: {
     async getAddress() {
-      const a = await this.$axios.$get("api/addresses/my");
-      this.addresses = a.data;
+      const a = await this.$axios.$get('api/addresses/my')
+      this.addresses = a.data
     },
     go(url) {
-      this.$router.push(url);
-    },
-  },
-};
+      this.$router.push(url)
+    }
+  }
+}
 </script>
 
 <style></style>

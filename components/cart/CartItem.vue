@@ -13,9 +13,11 @@
     <div class="right-0 sm:pt-3 lg:w-4/5 xs:2/3">
       <div class="pl-4 font-hairline">
         <p class="mb-2 text-black">
-          <nuxt-link :to="`/${item.product.slug}?id=${item.product._id}`" class="">{{
-            item.product.name | truncate(30)
-          }}</nuxt-link>
+          <nuxt-link
+            :to="`/${item.product.slug}?id=${item.product._id}`"
+            class=""
+            >{{ item.product.name | truncate(30) }}</nuxt-link
+          >
         </p>
         <div class="flex">
           <p class="mb-2 text-gray-500">
@@ -67,7 +69,7 @@
                     checkAndAddToCart({
                       pid: item.product._id,
                       vid: item.variant._id,
-                      qty: -10000,
+                      qty: -10000
                     })
                   "
                   :disabled="loading"
@@ -90,62 +92,62 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
-const CartButtons = () => import("./CartButtons");
+import { mapActions } from 'vuex'
+const CartButtons = () => import('./CartButtons')
 
 export default {
   props: {
-    item: { type: Object },
+    item: { type: Object }
   },
   data() {
     return {
-      loading: false,
-    };
+      loading: false
+    }
   },
   components: { CartButtons },
   methods: {
     ...mapActions({
-      addToCart: "cart/addToCart",
+      addToCart: 'cart/addToCart'
     }),
     async saveForLater(item) {
       this.checkAndAddToCart({
         pid: item.product._id,
         vid: item.variant._id,
-        qty: -100000,
-      });
+        qty: -100000
+      })
       if (!(this.$store.state.auth || {}).user) {
-        this.$router.push("/account/login?return=checkout");
-        return;
+        this.$router.push('/account/login?return=checkout')
+        return
       } else {
-        this.saveToWishlist(item);
+        this.saveToWishlist(item)
       }
     },
     async saveToWishlist(item) {
-      this.loading = true;
+      this.loading = true
       try {
-        let data = await this.$axios.$post("api/wishlists/add", item);
-        this.$store.commit("success", "Added to your wishlist");
-        this.loading = false;
+        let data = await this.$axios.$post('api/wishlists/add', item)
+        this.$store.commit('success', 'Added to your wishlist')
+        this.loading = false
       } catch (err) {
-        this.loading = false;
-        this.$store.commit("setErr", err, { root: true });
+        this.loading = false
+        this.$store.commit('setErr', err, { root: true })
       }
     },
     async checkAndAddToCart(item) {
       try {
-        this.loading = true;
-        await this.addToCart(item);
-        this.loading = false;
+        this.loading = true
+        await this.addToCart(item)
+        this.loading = false
       } catch (e) {
-        console.log("err...", e.toString());
+        console.log('err...', e.toString())
       }
     },
     calculateOffPercent(mrp, price) {
-      let percent = ((mrp - price) * 100) / mrp;
-      return Math.round(percent);
-    },
-  },
-};
+      let percent = ((mrp - price) * 100) / mrp
+      return Math.round(percent)
+    }
+  }
+}
 </script>
 
 <style></style>

@@ -82,7 +82,7 @@ label {
 }
 
 .floating-select:focus ~ label,
-.floating-select:not([value=""]):valid ~ label {
+.floating-select:not([value='']):valid ~ label {
   top: -18px;
   font-size: 14px;
   color: #5264ae;

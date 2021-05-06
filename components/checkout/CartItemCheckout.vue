@@ -59,7 +59,7 @@
                     checkAndAddToCart({
                       pid: item.product._id,
                       vid: item.variant._id,
-                      qty: -10000,
+                      qty: -10000
                     })
                   "
                   :disabled="loading"
@@ -78,54 +78,54 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
-const CartButtons = () => import("~/components/cart/CartButtons");
+import { mapGetters, mapActions } from 'vuex'
+const CartButtons = () => import('~/components/cart/CartButtons')
 
 export default {
   props: { item: { type: Object } },
   data() {
     return {
-      loading: false,
-    };
+      loading: false
+    }
   },
   components: { CartButtons },
   methods: {
     ...mapActions({
-      addToCart: "cart/addToCart",
+      addToCart: 'cart/addToCart'
     }),
     async checkAndAddToCart(item) {
       try {
-        this.loading = true;
-        await this.addToCart(item);
-        this.loading = false;
+        this.loading = true
+        await this.addToCart(item)
+        this.loading = false
       } catch (e) {
-        console.log("err...", e.toString());
+        console.log('err...', e.toString())
       }
     },
     calculateOffPercent(mrp, price) {
-      let percent = ((mrp - price) * 100) / mrp;
-      return Math.round(percent);
-    },
+      let percent = ((mrp - price) * 100) / mrp
+      return Math.round(percent)
+    }
   },
   computed: {
     user() {
-      return (this.$store.state.auth || {}).user || null;
+      return (this.$store.state.auth || {}).user || null
     },
     cart() {
-      return this.$store.state.cart || {};
+      return this.$store.state.cart || {}
     },
     ...mapGetters({
-      checkCart: "cart/checkCart",
-      showCart: "cart/showCart",
-    }),
+      checkCart: 'cart/checkCart',
+      showCart: 'cart/showCart'
+    })
   },
   methods: {
     calculateOffPercent(mrp, price) {
-      let percent = ((mrp - price) * 100) / mrp;
-      return Math.round(percent);
-    },
-  },
-};
+      let percent = ((mrp - price) * 100) / mrp
+      return Math.round(percent)
+    }
+  }
+}
 </script>
 
 <style></style>

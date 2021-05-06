@@ -22,7 +22,7 @@
         :perPageCustom="[
           [425, 2],
           [768, 3],
-          [1024, 5],
+          [1024, 5]
         ]"
         :paginationEnabled="false"
         :navigationEnabled="true"
@@ -65,27 +65,27 @@
 </template>
 
 <script>
-import ProductSkeleton from "~/components/ProductSkeleton";
+import ProductSkeleton from '~/components/ProductSkeleton'
 
 export default {
   data() {
     return {
       products: [],
-      loading: false,
-    };
+      loading: false
+    }
   },
   components: { ProductSkeleton },
   async created() {
     try {
-      this.loading = true;
-      const res = await this.$axios.$get("api/products/sale");
-      this.products = res.data;
+      this.loading = true
+      const res = await this.$axios.$get('api/products/sale')
+      this.products = res.data
     } catch (e) {
     } finally {
-      this.loading = false;
+      this.loading = false
     }
-  },
-};
+  }
+}
 </script>
 
 <style scoped>

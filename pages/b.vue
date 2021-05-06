@@ -58,20 +58,20 @@
   </div>
 </template>
 <script>
-import Pagination from "~/components/Pagination";
-import ProductSkeleton from "~/components/ProductSkeleton";
-import Product from "~/components/Product";
-import DesktopFilters from "~/components/DesktopFilters";
-import MobileFilters from "~/components/MobileFilters";
-import HeaderBody from "~/components/HeaderBody";
-import Logo from "~/components/Logo";
-import NoProduct from "~/components/NoProduct";
-import { constructURL } from "~/lib/";
-import { sorts } from "~/config/";
-import vPagination from "vue-plain-pagination";
-import { BackToTopDark, Loading } from "~/components/ui";
+import Pagination from '~/components/Pagination'
+import ProductSkeleton from '~/components/ProductSkeleton'
+import Product from '~/components/Product'
+import DesktopFilters from '~/components/DesktopFilters'
+import MobileFilters from '~/components/MobileFilters'
+import HeaderBody from '~/components/HeaderBody'
+import Logo from '~/components/Logo'
+import NoProduct from '~/components/NoProduct'
+import { constructURL } from '~/lib/'
+import { sorts } from '~/config/'
+import vPagination from 'vue-plain-pagination'
+import { BackToTopDark, Loading } from '~/components/ui'
 export default {
-  name: "ProductListing",
+  name: 'ProductListing',
   data() {
     return {
       showMobileFilter: false,
@@ -84,7 +84,7 @@ export default {
         price: [],
         sort: null,
         features: { Type: [], Fit: [], Fabric: [], Neck: [], Color: [] },
-        sorts: sorts,
+        sorts: sorts
       },
       products: [],
       facets: [],
@@ -93,22 +93,22 @@ export default {
       currentPage: 1,
       loading: false,
       bootstrapPaginationClasses: {
-        ul: "pagination",
-        li: "page-item",
-        liActive: "active",
-        liDisable: "disabled",
-        button: "page-link",
+        ul: 'pagination',
+        li: 'page-item',
+        liActive: 'active',
+        liDisable: 'disabled',
+        button: 'page-link'
       },
       paginationAnchorTexts: {
-        first: "&laquo;",
-        prev: "&lsaquo;",
-        next: "&rsaquo;",
-        last: "&raquo;",
-      },
-    };
+        first: '&laquo;',
+        prev: '&lsaquo;',
+        next: '&rsaquo;',
+        last: '&raquo;'
+      }
+    }
   },
   created() {
-    this.currentPage = parseInt(this.$route.query.page);
+    this.currentPage = parseInt(this.$route.query.page)
     // let query = { ...this.$route.query };
     // this.fl = query;
   },
@@ -123,71 +123,71 @@ export default {
     vPagination,
     NoProduct,
     ProductSkeleton,
-    BackToTopDark,
+    BackToTopDark
   },
   computed: {
     noOfPages() {
-      return Math.ceil(this.productCount / this.products.length);
-    },
+      return Math.ceil(this.productCount / this.products.length)
+    }
   },
   methods: {
     changePage(p) {
-      this.scrollToTop();
-      let fl = { ...this.fl };
-      delete fl.page;
-      delete fl.categories;
-      const url = constructURL("/", fl);
-      let page = parseInt(p || 1);
-      this.$router.push(`${url}page=${page}`);
+      this.scrollToTop()
+      let fl = { ...this.fl }
+      delete fl.page
+      delete fl.categories
+      const url = constructURL('/', fl)
+      let page = parseInt(p || 1)
+      this.$router.push(`${url}page=${page}`)
     },
     scrollToTop() {
       if (process.client) {
         window.scroll({
-          behavior: "smooth",
+          behavior: 'smooth',
           left: 0,
-          top: 0,
-        });
+          top: 0
+        })
       }
     },
     facetRemoved(f) {
-      this.fl = f;
+      this.fl = f
     },
     async getData() {
       try {
-        this.loading = true;
-        const products = await this.$axios.$get("api/products/es", {
-          params: { ...this.$route.query },
-        });
-        this.productCount = products.count;
-        this.products = products.data;
-        this.facets = products.facets.all_aggs;
+        this.loading = true
+        const products = await this.$axios.$get('api/products/es', {
+          params: { ...this.$route.query }
+        })
+        this.productCount = products.count
+        this.products = products.data
+        this.facets = products.facets.all_aggs
       } catch (e) {
       } finally {
-        this.loading = false;
+        this.loading = false
       }
-    },
+    }
   },
   watch: {
-    "$route.query": {
+    '$route.query': {
       immediate: true,
       handler(value, oldValue) {
-        let query = { ...this.$route.query };
+        let query = { ...this.$route.query }
         Object.keys(query).map(function(k, i) {
           if (
             query[k] &&
             !Array.isArray(query[k]) &&
             query[k] != null &&
-            query[k] != ""
+            query[k] != ''
           )
-            query[k] = query[k].split(",");
-        });
+            query[k] = query[k].split(',')
+        })
         // if (query.q && query.q[0]) query.q = query.q[0];
-        this.fl = query;
-        this.getData();
-      },
-    },
-  },
-};
+        this.fl = query
+        this.getData()
+      }
+    }
+  }
+}
 </script>
 <style>
 /* Sample `apply` at-rules with Tailwind CSS

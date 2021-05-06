@@ -13,29 +13,29 @@
  * @props {boolean} visibility - Visibility state of the spinner
  */
 export default {
-  name: "ArSpinner",
+  name: 'ArSpinner',
   data() {
     return {
-      visible: false,
-    };
+      visible: false
+    }
   },
   props: {
     visibility: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   watch: {
     visibility() {
-      this.visible = this.visibility;
-    },
+      this.visible = this.visibility
+    }
   },
   methods: {
     click(e) {
-      e.preventDefault();
-    },
-  },
-};
+      e.preventDefault()
+    }
+  }
+}
 </script>
 
 <style scoped>

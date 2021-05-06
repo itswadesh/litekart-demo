@@ -64,7 +64,7 @@
   background: linear-gradient(87deg, #fb6340, #da1c5f) !important;
 }
 .common-checkboxIndicator:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 4px;
   left: 4px;
@@ -91,111 +91,111 @@ label {
 </style>
 <script>
 export default {
-  name: "Checkbox",
+  name: 'Checkbox',
   model: {
-    prop: "model",
-    event: "change",
+    prop: 'model',
+    event: 'change'
   },
   props: {
     id: {
       type: String,
-      required: false,
+      required: false
     },
     model: {
       type: String | Array,
-      default: undefined,
+      default: undefined
     },
     color: {
       type: String,
-      required: false,
+      required: false
     },
     circle: {
       type: Boolean,
       default: false,
-      required: false,
+      required: false
     },
     checked: {
       type: Boolean,
-      required: false,
+      required: false
     },
     value: {
       type: [String, Boolean],
       required: false,
-      default: "",
+      default: ''
     },
     count: {
       type: [String, Number],
-      required: false,
+      required: false
     },
     name: {
       type: String,
-      required: false,
+      required: false
     },
     required: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     disabled: {
       type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     size: {
       type: Number,
-      required: false,
+      required: false
     },
     fontSize: {
       type: Number,
-      required: false,
-    },
+      required: false
+    }
   },
   data: () => ({
-    uniqueId: "",
+    uniqueId: ''
   }),
   computed: {
     checkboxState() {
       // if (this.model === undefined) return this.value;
       if (Array.isArray(this.model))
-        return this.model.indexOf(this.value) !== -1;
-      return this.model && this.value;
-    },
+        return this.model.indexOf(this.value) !== -1
+      return this.model && this.value
+    }
   },
   methods: {
     toggle() {
-      if (this.disabled) return;
-      let value = this.model || this.value;
+      if (this.disabled) return
+      let value = this.model || this.value
       if (Array.isArray(value)) {
-        const i = value.indexOf(this.value);
-        if (i === -1) value.push(this.value);
-        else value.splice(i, 1);
+        const i = value.indexOf(this.value)
+        if (i === -1) value.push(this.value)
+        else value.splice(i, 1)
       } else {
-        value = [];
-        value.push(this.value);
+        value = []
+        value.push(this.value)
       }
-      this.$emit("change", value);
+      this.$emit('change', value)
     },
 
     genId() {
       if (this.id === undefined || typeof String) {
         this.uniqueId = `m-checkbox--${Math.random()
           .toString(36)
-          .substring(2, 10)}`;
+          .substring(2, 10)}`
       } else {
-        this.uniqueId = this.id;
+        this.uniqueId = this.id
       }
-    },
+    }
   },
   watch: {
     checked(v) {
-      if (v !== this.checkboxState) this.toggle();
-    },
-  },
-  mounted() {
-    this.genId();
-    if (this.checked && !this.checkboxState) {
-      this.toggle();
+      if (v !== this.checkboxState) this.toggle()
     }
   },
-};
+  mounted() {
+    this.genId()
+    if (this.checked && !this.checkboxState) {
+      this.toggle()
+    }
+  }
+}
 </script>

@@ -7,8 +7,8 @@ h1 {
 </style>
 <script>
 export default {
-  layout: "support",
-};
+  layout: 'support'
+}
 </script>
 <template>
   <div>

@@ -67,13 +67,13 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style>
 body {
   background: #5d3f6a;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 #title {
   text-align: center;
@@ -126,7 +126,7 @@ body {
   position: relative;
 }
 .listing-item .listing:before {
-  content: "";
+  content: '';
   position: absolute;
   top: -15px;
   left: -o-calc(50% - 15px);

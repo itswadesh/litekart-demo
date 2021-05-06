@@ -14,14 +14,14 @@
         to="/checkout/address"
         class="pb-1 "
         :class="{
-          'text-green-500 border-green-500 border-b-2': selected == 'address',
+          'text-green-500 border-green-500 border-b-2': selected == 'address'
         }"
         >ADDRESS</nuxt-link
       >
       <hr class="flex-1 mx-4 my-2" style="border-top:dashed 1px;" />
       <div
         :class="{
-          'text-green-500 border-green-500 border-b-2': selected == 'payment',
+          'text-green-500 border-green-500 border-b-2': selected == 'payment'
         }"
       >
         PAYMENT
@@ -36,8 +36,8 @@
 
 <script>
 export default {
-  props: ["selected"],
-};
+  props: ['selected']
+}
 </script>
 
 <style></style>

@@ -95,13 +95,13 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-const CartItem = () => import("~/components/cart/CartItem");
-const Offers = () => import("~/components/cart/Offers");
-const CartSummary = () => import("~/components/cart/CartSummary");
-const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
-const CheckoutFooter = () => import("~/components/checkout/CheckoutFooter");
-const Textbox = () => import("~/components/ui/Textbox");
+import { mapGetters } from 'vuex'
+const CartItem = () => import('~/components/cart/CartItem')
+const Offers = () => import('~/components/cart/Offers')
+const CartSummary = () => import('~/components/cart/CartSummary')
+const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
+const CheckoutFooter = () => import('~/components/checkout/CheckoutFooter')
+const Textbox = () => import('~/components/ui/Textbox')
 
 export default {
   components: {
@@ -110,21 +110,21 @@ export default {
     CartSummary,
     CheckoutHeader,
     CheckoutFooter,
-    Textbox,
+    Textbox
   },
   computed: {
     user() {
-      return (this.$store.state.auth || {}).user || null;
+      return (this.$store.state.auth || {}).user || null
     },
     cart() {
-      return this.$store.state.cart || {};
+      return this.$store.state.cart || {}
     },
     ...mapGetters({
-      checkCart: "cart/checkCart",
-      showCart: "cart/showCart",
-    }),
-  },
-};
+      checkCart: 'cart/checkCart',
+      showCart: 'cart/showCart'
+    })
+  }
+}
 </script>
 
 <style scoped>

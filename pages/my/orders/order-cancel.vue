@@ -206,18 +206,18 @@
 </template>
 
 <script>
-import { Checkbox, Radio } from "~/components/ui";
+import { Checkbox, Radio } from '~/components/ui'
 export default {
   components: { Checkbox, Radio },
   data() {
     return {
-      step: 1,
-    };
+      step: 1
+    }
   },
   methods: {
-    cancelOrder() {},
-  },
-};
+    cancelOrder() {}
+  }
+}
 </script>
 
 <style scoped>

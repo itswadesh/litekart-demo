@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import MegamenuMobile from "~/components/MegamenuMobile";
+import MegamenuMobile from '~/components/MegamenuMobile'
 export default {
-  components: { MegamenuMobile },
-};
+  components: { MegamenuMobile }
+}
 </script>
 
 <style></style>

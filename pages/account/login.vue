@@ -90,7 +90,7 @@
                     class="flex items-center justify-center w-full py-2 text-2xl font-bold rounded outline-none h-14"
                     :class="{
                       'primary text-white': !loading,
-                      'border border-gray-400 bg-gray-300': loading,
+                      'border border-gray-400 bg-gray-300': loading
                     }"
                   >
                     <div v-if="loading">
@@ -118,95 +118,95 @@
 </template>
 
 <script>
-import Textbox from "~/components/ui/Textbox";
+import Textbox from '~/components/ui/Textbox'
 export default {
   data() {
     return {
       loading: false,
-      fadeIn: "",
-      disable: "disable",
+      fadeIn: '',
+      disable: 'disable',
       p: {},
       msg: null,
       signup: false,
-      uid: "",
-      password: "",
-      firstName: "",
-      lastName: "",
-      otp: "",
-      showOTP: false,
-    };
+      uid: '',
+      password: '',
+      firstName: '',
+      lastName: '',
+      otp: '',
+      showOTP: false
+    }
   },
   components: { Textbox },
   computed: {
     isEmail() {
-      if (this.uid.includes("@")) return true;
-      else return false;
+      if (this.uid.includes('@')) return true
+      else return false
     },
     isPhone() {
-      const phoneno = /^[+()\d-]+$/;
-      if (this.uid.length >= 10 && this.uid.match(phoneno)) return true;
-      else return false;
+      const phoneno = /^[+()\d-]+$/
+      if (this.uid.length >= 10 && this.uid.match(phoneno)) return true
+      else return false
     },
     submitText() {
       if (this.signup) {
-        return "Signup New Account";
+        return 'Signup New Account'
       } else if (!this.isPhone && !this.isEmail && !this.showOTP) {
-        return "Verify";
+        return 'Verify'
       } else if (this.isPhone && !this.showOTP) {
-        return "Verify Phone"; //Login Now
+        return 'Verify Phone' //Login Now
       } else if (this.isEmail && !this.showOTP) {
-        return "Verify Email"; //Login Now
+        return 'Verify Email' //Login Now
       } else if (this.isPhone && this.showOTP) {
-        return "Verify OTP";
+        return 'Verify OTP'
       } else {
-        return "Login Now";
+        return 'Login Now'
       }
-    },
+    }
   },
   methods: {
     async submit() {
-      if (!this.uid || this.uid == "") {
-        this.$store.commit("setErr", "Please enter your email/phone no");
-        return;
+      if (!this.uid || this.uid == '') {
+        this.$store.commit('setErr', 'Please enter your email/phone no')
+        return
       }
       if (!this.isPhone && !this.isEmail) {
-        this.$store.commit("setErr", "Entered email is not valid");
-        return;
+        this.$store.commit('setErr', 'Entered email is not valid')
+        return
       }
       if (this.isPhone) {
-        await this.phoneLogin();
+        await this.phoneLogin()
       } else {
-        await this.emailLogin();
+        await this.emailLogin()
       }
     },
     async phoneLogin() {
-      this.loading = true;
+      this.loading = true
       if (!this.showOTP) {
         // When clicked 1st time
         try {
-          const otp = await this.$axios.get("api/users/phone/" + this.uid);
+          const otp = await this.$axios.get('api/users/phone/' + this.uid)
           if (otp.status == 200 || otp.status == 201) {
-            this.showOTP = true;
-            this.msg = "Please enter OTP sent to your Mobile";
+            this.showOTP = true
+            this.msg = 'Please enter OTP sent to your Mobile'
             // this.$refs.otp.focus();
-            return;
+            return
           }
         } catch (e) {
-          console.log("err...", e);
+          console.log('err...', e)
         } finally {
-          this.loading = false;
+          this.loading = false
         }
       } else {
         try {
-          this.loading = true;
-          const res = await this.$store.dispatch("auth/login", {
+          this.loading = true
+          const res = await this.$store.dispatch('auth/login', {
             uid: this.uid,
             password: this.otp,
-            route: this.$route.query.return,
-          });
+            route: this.$route.query.return
+          })
         } catch (e) {
         } finally {
-          this.loading = false;
+          this.loading = false
         }
       }
     },
@@ -214,106 +214,106 @@ export default {
       if (!this.showOTP) {
         // When clicked 1st time
         try {
-          const otp = await this.$axios.get("api/users/email/" + this.uid);
-          this.showOTP = true;
-          this.msg = "Please enter your password";
+          const otp = await this.$axios.get('api/users/email/' + this.uid)
+          this.showOTP = true
+          this.msg = 'Please enter your password'
           // this.$refs.otp.focus();
-          return;
+          return
         } catch (e) {
-          if (e.response && e.response.status == "400") {
-            this.signup = true;
-            this.showOTP = true;
-            console.log("err...", e.response.status);
+          if (e.response && e.response.status == '400') {
+            this.signup = true
+            this.showOTP = true
+            console.log('err...', e.response.status)
           } else {
-            console.log("err...", e.toString());
+            console.log('err...', e.toString())
           }
         } finally {
-          this.showOTP = true;
-          this.loading = false;
+          this.showOTP = true
+          this.loading = false
         }
       } else {
         try {
-          this.loading = true;
+          this.loading = true
           if (this.signup) {
-            const res = await this.$store.dispatch("auth/signup", {
+            const res = await this.$store.dispatch('auth/signup', {
               email: this.uid,
               firstName: this.firstName,
               lastName: this.lastName,
               password: this.password,
-              route: this.$route.query.return,
-            });
+              route: this.$route.query.return
+            })
           } else {
-            const res = await this.$store.dispatch("auth/login", {
+            const res = await this.$store.dispatch('auth/login', {
               uid: this.uid,
               password: this.password,
-              route: this.$route.query.return,
-            });
+              route: this.$route.query.return
+            })
           }
-          this.showOTP = true;
+          this.showOTP = true
           // this.$refs.password.focus();
         } catch (e) {
-          this.showOTP = false;
-          this.msg = this.err = e.response && e.response.data;
-          this.$store.commit("setErr", this.err, { root: true });
+          this.showOTP = false
+          this.msg = this.err = e.response && e.response.data
+          this.$store.commit('setErr', this.err, { root: true })
           // this.$refs.uid.focus();
         } finally {
-          this.showOTP = true;
-          this.loading = false;
+          this.showOTP = true
+          this.loading = false
         }
       }
     },
     onKeyUpEvent(index, event) {
-      const eventCode = event.which || event.keyCode;
+      const eventCode = event.which || event.keyCode
       if (index == 4) {
-        this.submit(); // Submit code
+        this.submit() // Submit code
       }
     },
     onPhoneChange(e) {
       if (e.keyCode != 13) {
-        this.showOTP = false;
-        this.p = {};
-        return;
+        this.showOTP = false
+        this.p = {}
+        return
       }
-    },
+    }
   },
   head() {
     return {
-      title: "Login to Litekart",
+      title: 'Login to Litekart',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "After this checkout process we will ship the item and it should be delivered within 7 working days",
+            'After this checkout process we will ship the item and it should be delivered within 7 working days'
         },
         {
-          hid: "og:description",
-          name: "Description",
-          property: "og:description",
+          hid: 'og:description',
+          name: 'Description',
+          property: 'og:description',
           content:
-            "After this checkout process we will ship the item and it should be delivered within 7 working days",
+            'After this checkout process we will ship the item and it should be delivered within 7 working days'
         },
 
         {
-          hid: "og:title",
-          name: "og:title",
-          property: "og:title",
-          content: "Checkout with the products in your cart",
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Checkout with the products in your cart'
         },
         // Twitter
         {
-          name: "twitter:title",
-          content: "Checkout with the products in your cart",
+          name: 'twitter:title',
+          content: 'Checkout with the products in your cart'
         },
         {
-          name: "twitter:description",
+          name: 'twitter:description',
           content:
-            "After this checkout process we will ship the item and it should be delivered within 7 working days",
-        },
-      ],
-    };
-  },
-};
+            'After this checkout process we will ship the item and it should be delivered within 7 working days'
+        }
+      ]
+    }
+  }
+}
 </script>
 <style scoped>
 .border-t {

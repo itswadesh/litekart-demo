@@ -11,39 +11,39 @@
 
 <script>
 export default {
-  name: "Lazyload",
+  name: 'Lazyload',
   data() {
     return {
       observer: null,
       intersecting: false,
       loading: false,
       options: {
-        rootMargin: "50px",
-        threshold: 0,
-      },
-    };
+        rootMargin: '50px',
+        threshold: 0
+      }
+    }
   },
   props: {
     src: {
       type: String,
-      default: "",
-    },
+      default: ''
+    }
   },
   watch: {
     src() {
-      this.$refs.lazyload.setAttribute("src", require("@/static/oval.svg"));
-      this.startObserving();
-    },
+      this.$refs.lazyload.setAttribute('src', require('@/static/oval.svg'))
+      this.startObserving()
+    }
   },
   computed: {
     imageSrc() {
-      return this.intersecting ? this.src : require("@/static/oval.svg");
+      return this.intersecting ? this.src : require('@/static/oval.svg')
     },
     fitLoader() {
       return {
-        "fit--loader": this.loading,
-      };
-    },
+        'fit--loader': this.loading
+      }
+    }
   },
   methods: {
     /*
@@ -56,40 +56,40 @@ export default {
     startObserving() {
       this.observer = new IntersectionObserver(([entry]) => {
         if (entry && entry.isIntersecting) {
-          this.loading = true;
-          this.loadImage();
+          this.loading = true
+          this.loadImage()
         }
-      }, this.options || {});
+      }, this.options || {})
 
-      this.observer.observe(this.$el);
+      this.observer.observe(this.$el)
     },
 
     loadImage() {
-      let imageTag = this.$refs.lazyload;
-      let image = new Image();
+      let imageTag = this.$refs.lazyload
+      let image = new Image()
       image.onload = () => {
-        imageTag.setAttribute("src", this.src);
-        this.loading = false;
-        this.observer.disconnect();
-      };
-      image.src = this.src;
-    },
+        imageTag.setAttribute('src', this.src)
+        this.loading = false
+        this.observer.disconnect()
+      }
+      image.src = this.src
+    }
   },
 
   mounted() {
     if (process.client) {
-      if ("IntersectionObserver" in window) {
+      if ('IntersectionObserver' in window) {
         // this.loading = true
-        this.startObserving();
+        this.startObserving()
       }
     }
   },
 
   destroyed() {
-    this.loading = false;
-    this.observer.disconnect();
-  },
-};
+    this.loading = false
+    this.observer.disconnect()
+  }
+}
 </script>
 
 <style scoped>

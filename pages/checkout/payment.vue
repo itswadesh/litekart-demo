@@ -42,31 +42,31 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-const CartItem = () => import("~/components/cart/CartItem");
-const Offers = () => import("~/components/cart/Offers");
-const CartSummary = () => import("~/components/cart/CartSummary");
-const CheckoutHeader = () => import("~/components/checkout/CheckoutHeader");
-const CheckoutFooter = () => import("~/components/checkout/CheckoutFooter");
+import { mapGetters } from 'vuex'
+const CartItem = () => import('~/components/cart/CartItem')
+const Offers = () => import('~/components/cart/Offers')
+const CartSummary = () => import('~/components/cart/CartSummary')
+const CheckoutHeader = () => import('~/components/checkout/CheckoutHeader')
+const CheckoutFooter = () => import('~/components/checkout/CheckoutFooter')
 
 export default {
   components: { CartItem, Offers, CartSummary, CheckoutHeader, CheckoutFooter },
   computed: {
     user() {
-      return (this.$store.state.auth || {}).user || null;
+      return (this.$store.state.auth || {}).user || null
     },
     cart() {
-      return this.$store.state.cart || {};
+      return this.$store.state.cart || {}
     },
     ...mapGetters({
-      checkCart: "cart/checkCart",
-      showCart: "cart/showCart",
-    }),
+      checkCart: 'cart/checkCart',
+      showCart: 'cart/showCart'
+    })
   },
   methods: {
-    placeOrder() {},
-  },
-};
+    placeOrder() {}
+  }
+}
 </script>
 
 <style scoped>

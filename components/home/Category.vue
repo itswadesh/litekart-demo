@@ -19,7 +19,7 @@
         :perPageCustom="[
           [425, 2],
           [768, 3],
-          [1024, 5],
+          [1024, 5]
         ]"
         :paginationEnabled="false"
         :navigationEnabled="true"
@@ -64,36 +64,36 @@
 </template>
 
 <script>
-import ProductSkeleton from "~/components/ProductSkeleton";
+import ProductSkeleton from '~/components/ProductSkeleton'
 export default {
   props: {
     title: String,
-    slug: String,
+    slug: String
   },
   data() {
     return {
       products: [],
-      loading: false,
-    };
+      loading: false
+    }
   },
   async created() {
     try {
-      this.loading = true;
+      this.loading = true
       const res = await this.$axios.$get(
         `api/products/es?categories=${this.slug}`
-      );
-      this.products = res.data;
+      )
+      this.products = res.data
     } catch (e) {
     } finally {
-      this.loading = false;
+      this.loading = false
     }
   },
-  components: { ProductSkeleton },
-};
+  components: { ProductSkeleton }
+}
 </script>
 
 <style scoped>
-img[lazy="loaded"] {
+img[lazy='loaded'] {
   opacity: 1;
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;

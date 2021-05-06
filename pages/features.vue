@@ -220,8 +220,8 @@
 
 <script>
 export default {
-  layout: "none",
-};
+  layout: 'none'
+}
 </script>
 
 <style></style>

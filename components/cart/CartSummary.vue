@@ -78,9 +78,9 @@
 <script>
 export default {
   props: {
-    cart: { type: Object },
-  },
-};
+    cart: { type: Object }
+  }
+}
 </script>
 
 <style></style>

@@ -8,34 +8,34 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import { loadingTimeout } from "@/config";
+import { mapGetters } from 'vuex'
+import { loadingTimeout } from '@/config'
 export default {
   data: () => ({
     thisLoading: false,
-    loadingTimer: 10,
+    loadingTimer: 10
   }),
   computed: {
-    ...mapGetters(["error", "loading"]),
+    ...mapGetters(['error', 'loading'])
   },
   watch: {
     loading(err) {
-      clearTimeout(this.loadingTimer);
-      let vm = this;
+      clearTimeout(this.loadingTimer)
+      let vm = this
       this.loadingTimer = setTimeout(function() {
-        vm.thisLoading = vm.loading;
-      }, loadingTimeout);
-    },
+        vm.thisLoading = vm.loading
+      }, loadingTimeout)
+    }
   },
   methods: {
     start() {
-      this.thisLoading = true;
+      this.thisLoading = true
     },
     finish() {
-      this.thisLoading = false;
-    },
-  },
-};
+      this.thisLoading = false
+    }
+  }
+}
 </script>
 
 <style lang="css" scoped>
