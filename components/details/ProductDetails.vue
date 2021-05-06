@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full leading-relaxed md:w-6/12 lg:w-7/12">
+  <div class="w-full">
     <div class="mb-3 bg-gray lg:mb-0">
-      <div class="px-3 pb-4 border-b border-gray-200">
+      <div class="px-3 border-b border-gray-200">
         <p class="text-2xl font-semibold headings">{{product.brandName}}</p>
-        <p>{{product.name}}</p>
+        <p class="text-xl">{{product.name}}</p>
       </div>
       <div
         class="px-3 py-3 font-semibold tracking-wider sizeSelector headings"
@@ -405,11 +405,11 @@ export default {
       this.$toast
         .show(
           `
-      <div class="flex w-full">
+      <div class="flex flex-row w-full">
         <img class="object-cover w-12 h-12" src="${this.product.img &&
           this.$store.state.settings.CDN_URL + this.product.img[0]}" alt="" />
-        <div class="items-center toasted-text">
-          <div>${this.product.name.substr(0, 40) + "..."}</div>
+        <div class="items-center w-full toasted-text">
+          <div class="w-full">${this.product.name.substr(0, 40) + "..."}</div>
           <div class="text-xs text-gray-600">Added to your cart</div>
         </div>
       </div>

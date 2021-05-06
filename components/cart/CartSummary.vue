@@ -1,13 +1,13 @@
 <template>
-  <div class="px-3 mt-10 lg:w-1/4 lg:pr-20 xs:w-full">
-    <div class="relative flex flex-wrap justify-between w-full pb-2 hr-line">
+  <div class="px-3 mx-auto mt-10 lg:w-1/4 xs:w-full">
+    <div class="relative flex flex-row justify-between w-full pb-2 hr-line">
       <input
         type="search"
         class="w-full p-2 bg-gray-200 border rounded focus:outline-none"
         placeholder="Promo Code"
       />
       <button
-        class="absolute right-0 pr-2 mt-2 text-sm text-gray-500 cursor-pointer focus:outline-none hover:text-gray-600"
+        class="absolute right-0 pr-2 mt-3 text-sm text-gray-500 cursor-pointer focus:outline-none hover:text-gray-600"
       >
         APPLY
       </button>

@@ -17,17 +17,17 @@
     </div>
     <div v-else>
       <div class="flex flex-wrap">
-        <button class="w-8 h-8 rounded-full muted" @click="addToBag(-1)">
+        <button class="flex items-center justify-center w-8 h-8 rounded-full muted" @click="addToBag(-1)">
           <i class="m-auto fa fa-minus" aria-hidden="true"></i>
         </button>
         <div class="flex items-center px-2 text-center">
-          <div v-if="!loading">
+          <div v-if="!loading" class="w-4 h-4">
             {{ getQty({ pid: product._id, vid: variant._id }) }}
           </div>
-          <img alt="..." class="w-3 h-4" src="/loading.svg" v-else />
+          <img alt="..." class="w-4 h-4" src="/loading.svg" v-else />
         </div>
         <button
-          class="w-8 h-8 rounded-full primary"
+          class="flex items-center justify-center w-8 h-8 rounded-full primary"
           :disabled="
             !variant || variant.price < 1 || variant.stock < 1 || loading
           "

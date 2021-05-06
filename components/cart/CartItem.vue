@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-between pt-5 pb-5 border-b border-gray-300">
-    <div class="w-1/2 lg:w-1/3">
+  <div class="flex pt-5 pb-5 border-b border-gray-300">
+    <div class="w-1/2 sm:w-1/3 lg:w-1/3">
       <div>
         <img
           class="w-64 lg:rounded xs:rounded-b-none"
@@ -10,10 +10,10 @@
         <!-- <div class="p-2 text-black bg-gray-300 rounded rounded-t-none lg:hidden xs:visible">Arrives 19 Sep</div> -->
       </div>
     </div>
-    <div class="right-0 lg:w-4/5 xs:9/12">
+    <div class="right-0 sm:pt-3 lg:w-4/5 xs:2/3">
       <div class="pl-4 font-hairline">
         <p class="mb-2 text-black">
-          <nuxt-link :to="`/${item.product.slug}?id=${item.product._id}`">{{
+          <nuxt-link :to="`/${item.product.slug}?id=${item.product._id}`" class="">{{
             item.product.name | truncate(30)
           }}</nuxt-link>
         </p>
@@ -56,7 +56,7 @@
             <div class="w-full my-2 text-right lg:w-2/5">
               <div class="flex text-xs">
                 <button
-                  class="p-1 mr-1 rounded focus:outline-none primary"
+                  class="p-1 px-2 mr-1 rounded focus:outline-none primary"
                   @click="saveForLater(item)"
                 >
                   MOVE TO WISHLIST
@@ -74,7 +74,7 @@
                 >
                   <img
                     src="/loading.svg"
-                    class="w-3 h-3 rotateOutDownLeft"
+                    class="w-4 h-4 rotateOutDownLeft"
                     v-if="loading"
                     alt=""
                   />

@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-wrap justify-start w-full px-2 md:w-6/12 lg:w-5/12">
-    <div class="flex hidden md:flex-col md:block md:order-1">
+  <div class="flex flex-wrap justify-start w-full px-2">
+    <div class="hidden  md:flex-col md:block md:order-1">
       <img
         v-for="(i,ix) in product.img"
         :key="ix"

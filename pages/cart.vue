@@ -4,10 +4,10 @@
     <div class="flex flex-wrap justify-between" v-else>
       <div class="lg:w-16 xs:w-0"></div>
       <div class="w-full px-2 lg:w-2/4">
-        <div class="justify-between w-full pb-2 hr-line">
+        <div class="w-full pb-2 hr-line">
           <!-- <Offers /> -->
           <div
-            class="hidden w-full mt-10 text-lg font-bold bg-white lg:block headings"
+            class="hidden w-full mt-10 text-lg font-bold lg:block headings"
           >
             <div class="flex flex-wrap">
               <div class="w-1/2 text-left">
@@ -19,7 +19,7 @@
             </div>
           </div>
 
-          <div class="flex flex-wrap block w-full p-3 mt-3 bg-white lg:hidden">
+          <div class="flex flex-wrap block w-full p-3 mt-3 lg:hidden">
             <div
               class="w-20 text-3xl font-bold text-left border-r border-gray-200 headings"
             >
@@ -48,7 +48,7 @@
         </div>
         <CartBanners />
       </div>
-      <CartSummary :cart="cart">
+      <CartSummary :cart="cart" class="">
         <Button @click="$router.push('/checkout/address')" color="primary"
           >SELECT ADDRESS</Button
         >
