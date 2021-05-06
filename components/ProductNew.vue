@@ -12,7 +12,7 @@
           v-if="product._source.img"
           v-lazy="$store.state.settings.CDN_URL + product._source.img[0]"
           alt=""
-          class="object-cover w-full h-full rounded-t-lg"
+          class="object-contain w-full h-full rounded-t-lg"
         />
       </div>
       <div class="relative">
