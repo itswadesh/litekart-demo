@@ -1,18 +1,18 @@
 <template>
   <div class="flex flex-wrap justify-start w-full px-2">
-    <div class="hidden  md:flex-col md:block md:order-1">
+    <div class="hidden overflow-y-scroll md:flex-col md:block md:order-1 h-96">
       <img
         v-for="(i,ix) in product.img"
         :key="ix"
-        class="w-24 cursor-pointer"
+        class="w-24 h-24 mb-1 mr-1 border cursor-pointer hover:border-2 hover:border-primary-200"
         v-lazy="$store.state.settings.CDN_URL+i"
         alt=""
-        @click="showAsCurrentImage(i)"
+        @mouseover="showAsCurrentImage(i)"
       />
     </div>
-    <div class="flex-1 overflow-hidden xs:order-1 md:order-2">
+    <div class="flex-1 overflow-hidden xs:order-1 md:order-2 h-96 w-96">
       <img
-        class="hidden w-full md:inline-block zoom"
+        class="hidden object-scale-down w-full h-full ml-1 lg:object-cover md:inline-block zoom"
         v-lazy="$store.state.settings.CDN_URL+currentImage"
         alt=""
       />
@@ -115,6 +115,9 @@ export default {
 </script>
 
 <style scoped>
+.h-96{
+  height: 27.4rem;
+}
 .zoom {
   transition: transform 0.7s;
 }

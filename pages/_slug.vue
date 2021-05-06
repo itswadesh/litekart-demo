@@ -13,10 +13,10 @@
         <span v-else>{{ c.name }}</span>
       </span>
     </div>
-    <div class="flex flex-col w-full mt-1 md:flex-row">
-      <ProductImage :product="product" class="w-full md:w-6/12 lg:w-5/12" />
+    <div class="flex flex-col w-full mt-1 lg:flex-row">
+      <ProductImage :product="product" class="w-full lg:w-5/12" />
       <ProductDetails
-        class="w-full h-auto md:w-6/12 lg:w-7/12"
+        class="w-full h-auto lg:w-7/12"
         :product="product"
         :selectedVariant="selectedVariant"
         @variantChanged="variantChanged"

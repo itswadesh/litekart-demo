@@ -2,7 +2,7 @@
   <div class="w-full">
     <div class="mb-3 lg:mb-0">
       
-      <div class="w-full h-full px-3 pb-4 border-b border-gray-200">
+      <div class="w-full h-full px-3 pb-4 mt-5 border-b border-gray-200 lg:mt-0">
         <div class="text-2xl font-semibold">{{product.brandName}}</div>
         <div class="text-xl">{{product.name}}</div>
       </div>

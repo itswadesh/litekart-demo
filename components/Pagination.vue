@@ -9,7 +9,7 @@
       <div class="justify-start flex-1 w-full lg:w-auto">
         <button
           v-if="current > 1"
-          class="items-center hidden p-2 font-semibold bg-white border border-gray-400 rounded shadow lg:inline-flex lg:mx-5 hover:bg-gray-100 text-primary lg:py-2 lg:px-4"
+          class="items-center hidden p-2 font-semibold border border-gray-400 rounded shadow hover:bg-white lg:inline-flex lg:mx-5 text-primary-200 lg:py-2 lg:px-4"
           @click="$emit('change', current - 1)"
         >
           <i class="fa fa-caret-left" />
@@ -17,7 +17,7 @@
           <span>Previous</span>
         </button>
         <button
-          class="w-8 h-8 rounded-full "
+          class="w-8 h-8 rounded-full hover:bg-white"
           :class="{
             'bg-black font-medium text-white tracking-wide rounded-sm':
               current == i
@@ -29,7 +29,7 @@
           {{ i }}
         </button>
         <button
-          class="inline-flex items-center hidden px-4 py-2 font-semibold bg-white border border-gray-400 rounded shadow lg:inline-flex hover:bg-gray-100 text-primary"
+          class="items-center hidden px-4 py-2 font-semibold border border-gray-400 rounded shadow hover:bg-white lg:inline-flex text-primary-200"
           @click="$emit('change', current + 1)"
           v-if="current < count"
         >
