@@ -4,7 +4,7 @@
       <img
         v-for="(i,ix) in product.img"
         :key="ix"
-        class="w-24 h-24 mb-1 mr-1 border cursor-pointer hover:border-2 hover:border-primary-200"
+        class="w-24 h-24 mb-1 mr-1 cursor-pointer"
         v-lazy="$store.state.settings.CDN_URL+i"
         alt=""
         @mouseover="showAsCurrentImage(i)"
