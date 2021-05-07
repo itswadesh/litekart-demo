@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-auto p-2 bg-white border-b shadow-md xs:block lg:hidden">
+  <div class="flex h-auto p-2 bg-white border-b xs:block lg:hidden">
     <nuxt-link
       v-for="c in $store.state.categories"
       :key="c._id"
