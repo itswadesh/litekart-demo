@@ -7,7 +7,7 @@
       class="w-full"
       v-if="product"
     >
-      <div class="relative w-full h-56 pt-2 bg-white rounded-t-lg ">
+      <div class="relative w-full h-56 pt-2 bg-white rounded-t-lg shadow">
         <img
           v-if="product._source.img"
           v-lazy="$store.state.settings.CDN_URL + product._source.img[0]"
@@ -16,7 +16,7 @@
         />
       </div>
       <div class="relative">
-        <div class="p-3 bg-white rounded-b-lg shadow-lg sm:p-6">
+        <div class="p-3 bg-white rounded-b-lg shadow sm:p-6">
           <h4 class="mt-2 text-sm leading-tight truncate">
             {{ product._source.name }}
           </h4>

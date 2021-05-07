@@ -1,12 +1,15 @@
 <template>
-  <div class="px-2 mt-0 lg:w-2/4 lg:mt-10 lg:pr-20 xs:w-full lg:px-10 headings">
-    <div class="py-6 text-2xl font-bold text-center lg:text-left">
-      <i
-        class="block mr-2 fa fa-arrow-left lg:invisible"
-        @click="$router.push('/my/')"
-        aria-hidden="true"
-      ></i
-      >Orders
+  <div class="w-full h-screen bg-white shadow md:h-full">
+    <div class="flex items-center justify-center p-5 text-xl font-bold text-center">
+      <div class="mx-auto text-2xl font-bold">
+       <div class="flex flex-row md:hidden">
+          <i class="mt-0.5 mr-2 fa fa-arrow-left"
+            @click="$router.push('/my/')"
+            aria-hidden="true"></i>
+          <div class=""> Orders </div>
+       </div>
+       <div class="hidden text-center md:flex">Orders </div>
+      </div>
     </div>
     <nuxt-link :to="`/my/orders/${o._id}`" v-for="o in orders" :key="o._id">
       <div class="w-full my-4 bg-white rounded shadow hover:shadow-xl">

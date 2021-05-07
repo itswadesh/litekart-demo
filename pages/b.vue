@@ -13,7 +13,7 @@
         :facets="facets"
         :fl="fl"
       />
-      <div class="w-full">
+      <div class="w-full bg-gray-100">
         <HeaderBody
           :count="productCount"
           :fl="fl"

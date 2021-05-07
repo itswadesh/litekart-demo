@@ -1,15 +1,14 @@
 <template>
   <div
-    class="w-full leading-loose text-center bg-white rounded shadow lg:w-1/5 lg:mt-10"
+    class="w-full leading-loose text-center bg-white rounded shadow"
   >
-    <div class="w-full p-10 border-b border-gray-200">
-      <span
-        class="inline-block w-20 h-20 p-2 text-4xl text-gray-600 bg-gray-200 rounded-full"
-        >{{ user.firstName | first }}</span
-      >
-      <br />
-      <span class="text-lg">{{ user.firstName }}</span>
-      <span class="text-sm text-gray-500">{{ user.email }}</span>
+    <div class="w-full py-8 border-b border-gray-200">
+      <div
+        class="flex items-center justify-center w-20 h-20 p-2 mx-auto text-4xl text-gray-600 bg-gray-200 rounded-full "
+        >{{ user.firstName | first }}
+      </div>
+      <div class="my-3 text-lg">{{ user.firstName }}</div>
+      <div class="w-full mx-auto text-sm text-center text-gray-500 ">{{ user.email }}</div>
     </div>
     <ul>
       <li>

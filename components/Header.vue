@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-white border-b shadow-md">
+  <header class="bg-white border-b shadow">
     <nav
       class="flex flex-wrap items-center justify-between lg:px-5"
       style="box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);"

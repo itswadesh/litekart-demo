@@ -14,7 +14,7 @@
         :fl="fl"
         @clearAllFilters="clearAllFilters"
       />
-      <div class="w-full px-3 bg-gray-200 sm:px-6">
+      <div class="w-full px-3 bg-gray-100 sm:px-6">
         <HeaderBody
           :category="{}"
           :count="productCount"

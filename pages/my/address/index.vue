@@ -1,18 +1,16 @@
 <template>
-  <div
-    class="w-full px-2 mt-0 lg:w-2/4 lg:mt-10 lg:pr-20 xs:w-full lg:px-10 headings"
-  >
-    <div class="py-6 text-2xl font-bold text-center lg:text-left">
-      <i
-        class="block mr-2 fa fa-arrow-left lg:invisible"
-        @click="$router.push('/my/')"
-        aria-hidden="true"
-      ></i
-      >Manage Addresses
+  <div class="w-full h-screen md:h-full">
+    <div class="text-2xl font-bold text-left">
+      <div class="flex flex-row md:hidden">
+          <i class="mt-0.5 mr-2 fa fa-arrow-left"
+            @click="$router.push('/my/')"
+            aria-hidden="true"></i>
+          <div class=""> Manage Address </div>
+      </div>
+      <div class="hidden md:flex">Manage Addresses </div>
     </div>
     <div class="w-full my-4">
-      <nuxt-link
-        :to="`address/add`"
+      <nuxt-link :to="`address/add`"
         class="flex items-center justify-center w-full p-5 mb-5 text-center bg-white border border-gray-100 rounded shadow hover:shadow-xl"
       >
         <img src="/rounded-plus.png" alt="+" class="w-10 mr-1" />ADD NEW ADDRESS

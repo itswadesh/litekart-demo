@@ -1,27 +1,27 @@
 <template>
-  <div class="w-full py-5 mt-0 ml-0 bg-white shadow lg:w-1/2 lg:mt-10 lg:ml-10">
-    <div
-      class="items-center p-5 px-10 text-xl font-bold text-center border-b border-gray-200 headings"
-    >
-      <i
-        class="block mr-2 fa fa-arrow-left lg:invisible"
-        @click="$router.push('/my/')"
-        aria-hidden="true"
-      ></i
-      >Profile details
+  <div class="w-full bg-white shadow">
+    <div class="flex items-center justify-center p-5 text-xl font-bold text-center">
+      <div class="mx-auto text-2xl font-bold">
+       <div class="flex flex-row md:hidden">
+          <i class="mt-0.5 mr-2 fa fa-arrow-left"
+            @click="$router.push('/my/')"
+            aria-hidden="true"></i>
+          <div class=""> Profile details </div>
+       </div>
+       <div class="hidden text-center md:flex">Profile details </div>
+      </div>
     </div>
     <div class="px-0 lg:px-10">
       <div class="w-full px-8 mb-5 text-sm text-center">
         <!-- Just 2 step(s) to go and your profile's complete -->
-        <div
-          class="w-full h-1 m-1 text-xs leading-none text-center text-white bg-green-500 rounded-lg"
+        <div class="w-full h-1 text-xs leading-none text-center text-white bg-green-500 rounded-lg"
         ></div>
       </div>
     </div>
 
     <div class="w-full">
       <ul class="w-full">
-        <div class="px-0 lg:px-10 hover:bg-gray-200">
+        <div class="px-0 lg:px-10 ">
           <li class="flex flex-wrap px-8 mb-5">
             <div class="w-1/12">
               <img src="/name.png" class="w-5" alt="" />
@@ -47,8 +47,8 @@
           </li>
         </div>
 
-        <div class="px-0 lg:px-10 hover:bg-gray-200">
-          <li class="flex flex-wrap px-8 mb-5 hover:bg-gray-200">
+        <div class="px-0 lg:px-10 ">
+          <li class="flex flex-wrap px-8 mb-5 ">
             <div class="w-1/12 text-xl">
               <i class="fa fa-mobile" aria-hidden="true"></i>
             </div>
@@ -64,8 +64,8 @@
           </li>
         </div>
 
-        <div class="px-0 lg:px-10 hover:bg-gray-200">
-          <li class="flex flex-wrap px-8 mb-5 hover:bg-gray-200">
+        <div class="px-0 lg:px-10 ">
+          <li class="flex flex-wrap px-8 mb-5 ">
             <div class="w-1/12">
               <i class="fa fa-envelope-o" aria-hidden="true"></i>
             </div>
@@ -81,9 +81,9 @@
           </li>
         </div>
 
-        <div class="px-0 lg:px-10 hover:bg-gray-200">
+        <div class="px-0 lg:px-10 ">
           <nuxt-link to="/my/password">
-            <li class="flex flex-wrap px-8 py-5 mb-5 hover:bg-gray-200">
+            <li class="flex flex-wrap px-8 py-5 mb-5 ">
               <div class="w-1/12">
                 <i class="fa fa-key" aria-hidden="true"></i>
               </div>
