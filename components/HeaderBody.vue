@@ -8,7 +8,12 @@
       :slugPath="category.slugPath" class="px-1 py-0" />
     /> -->
       <div class="flex p-1 font-semibold headings">
-        <div class="font-hairline text-1">{{ count }} {{ category.name }}</div>
+        <div class="font-hairline text-1">
+          <span v-if="count && count.value">
+            {{ count.value }} products found
+          </span>
+          {{ category.name }}
+        </div>
       </div>
       <div class="flex-wrap p-1">
         <div class="text-sm">

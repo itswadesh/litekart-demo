@@ -87,7 +87,7 @@ export default {
       })
       products = result.data
       productCount = result.count
-      facets = result.facets.all_aggs
+      facets = result.facets && result.facets.all_aggs
       Object.keys(qry).map(function(k, i) {
         if (qry[k] && !Array.isArray(qry[k]) && qry[k] != null && qry[k] != '')
           qry[k] = qry[k].split(',')

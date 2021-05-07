@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-wrap justify-start w-full px-2">
-    <div class="hidden overflow-y-scroll md:flex-col md:block md:order-1 h-96">
+    <div class="hidden overflow-y-auto md:flex-col md:block md:order-1 h-96">
       <img
-        v-for="(i,ix) in product.img"
+        v-for="(i, ix) in product.img"
         :key="ix"
         class="object-contain w-24 h-24 mb-1 mr-1 cursor-pointer"
-        v-lazy="$store.state.settings.CDN_URL+i"
+        v-lazy="$store.state.settings.CDN_URL + i"
         alt=""
         @mouseover="showAsCurrentImage(i)"
       />
@@ -13,23 +13,19 @@
     <div class="flex-1 overflow-hidden xs:order-1 md:order-2 h-96 w-96">
       <img
         class="hidden object-scale-down w-full h-full ml-1 lg:object-cover md:inline-block zoom"
-        v-lazy="$store.state.settings.CDN_URL+currentImage"
+        v-lazy="$store.state.settings.CDN_URL + currentImage"
         alt=""
       />
       <!-- Triggers the virtual dom not matching issue -->
-      <carousel
-        class="md:hidden"
-        :perPage="1"
-        :paginationEnabled="false"
-      >
+      <carousel class="md:hidden" :perPage="1" :paginationEnabled="false">
         <slide
           class="inline-block w-full md:hidden"
-          v-for="(i,ix) in product.img"
+          v-for="(i, ix) in product.img"
           :key="ix"
         >
           <img
             class="inline-block w-full"
-            v-lazy="$store.state.settings.CDN_URL+i"
+            v-lazy="$store.state.settings.CDN_URL + i"
             alt=""
           />
         </slide>
@@ -58,7 +54,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
+import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'
 export default {
   props: {
     product: { type: Object }
@@ -93,29 +89,29 @@ export default {
           }
         }
       }
-    };
+    }
   },
   created() {
-    this.currentImage = this.product.img && this.product.img[0];
+    this.currentImage = this.product.img && this.product.img[0]
   },
   computed: {
     ...mapGetters({
-      checkCart: "cart/checkCart"
+      checkCart: 'cart/checkCart'
     })
   },
   methods: {
     showAsCurrentImage(image) {
-      this.currentImage = image;
+      this.currentImage = image
     }
     //  selectImg(ix) {
     //       this.selectedImgIndex = ix;
     //     },
   }
-};
+}
 </script>
 
 <style scoped>
-.h-96{
+.h-96 {
   height: 27.4rem;
 }
 .zoom {

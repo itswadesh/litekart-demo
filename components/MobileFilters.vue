@@ -68,7 +68,7 @@
             </li>
           </ul>
         </div>
-        <div class="w-full overflow-y-scroll">
+        <div class="w-full overflow-y-auto">
           <ul
             class="w-full px-5 py-2 ml-2"
             v-if="

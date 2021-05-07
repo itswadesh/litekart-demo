@@ -57,7 +57,7 @@
                 </ol>
               </div>
             </div>
-            <div class="h-40 p-3 overflow-y-scroll">
+            <div class="h-40 p-3 overflow-y-auto">
               <div class="flex w-full mb-1 text-xs text-gray-700">
                 <div class="flex w-16 font-semibold text-center">
                   24

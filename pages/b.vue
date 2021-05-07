@@ -160,7 +160,7 @@ export default {
         })
         this.productCount = products.count
         this.products = products.data
-        this.facets = products.facets.all_aggs
+        this.facets = products.facets && products.facets.all_aggs
       } catch (e) {
       } finally {
         this.loading = false
