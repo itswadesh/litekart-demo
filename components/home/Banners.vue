@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap w-full mt-2">
+  <div class="flex flex-wrap w-full sm:mt-2">
     <nuxt-link
       class="w-full mb-2 lg:w-1/3"
       v-for="(b, ix) in banners"

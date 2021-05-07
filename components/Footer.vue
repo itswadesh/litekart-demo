@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="bg-white footer">
     <div class="flex flex-wrap justify-between py-8">
       <div class="p-2 lg:p-8">
         <div class="mr-2 text-sm font-bold headings">ONLINE SHOPPING</div>
