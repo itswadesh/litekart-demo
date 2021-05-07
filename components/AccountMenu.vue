@@ -109,7 +109,7 @@ export default {
 </script>
 <style scoped>
 ul > li:hover {
-  background-color: #f6f6f6;
+  background-color: #fae3f4;
 }
 .logout {
   cursor: pointer;

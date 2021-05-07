@@ -21,7 +21,7 @@
 
     <div class="w-full">
       <ul class="w-full">
-        <div class="px-0 lg:px-10 ">
+        <div class="px-0 lg:px-10">
           <li class="flex flex-wrap px-8 mb-5">
             <div class="w-1/12">
               <img src="/name.png" class="w-5" alt="" />

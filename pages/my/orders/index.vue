@@ -11,15 +11,23 @@
        <div class="hidden text-center md:flex">Orders </div>
       </div>
     </div>
-    <nuxt-link :to="`/my/orders/${o._id}`" v-for="o in orders" :key="o._id">
-      <div class="w-full my-4 bg-white rounded shadow hover:shadow-xl">
-        <div class="p-3 bg-gray-100 rounded">
+    <div class="px-0 lg:px-10">
+      <div class="w-full px-8 mb-5 text-sm text-center">
+        <!-- Just 2 step(s) to go and your profile's complete -->
+        <div class="w-full h-1 text-xs leading-none text-center text-white bg-green-500 rounded-lg"
+        ></div>
+      </div>
+    </div>
+
+    <nuxt-link :to="`/my/orders/${o._id}`" v-for="o in orders" :key="o._id" class="">
+    <div class="lg:px-20">
+      <div class="w-full px-0 my-4 bg-white rounded shadow hover:shadow-xl">
+        <div class="flex flex-row justify-between p-3">
           <h1>Order # {{ o.orderNo }}</h1>
           <p class="text-gray-800">
             Date: <span class="text-xs"> {{ o.createdAt | date }}</span>
           </p>
         </div>
-        <hr />
         <div
           v-for="(i, ix) in o.items"
           :key="i._id"
@@ -30,7 +38,7 @@
             <div>
               <img
                 :src="$store.state.settings.CDN_URL + i.img[0]"
-                class="w-12 h-12 mr-2 bg-blue-500 rounded-full"
+                class="object-contain w-20 h-20 mr-2 bg-white border rounded-full"
                 alt=""
               />
             </div>
@@ -41,14 +49,8 @@
               </div>
             </div>
           </div>
-          <!-- <div class="p-2 ml-3 shadow">
-          <img
-            :src="i.img"
-            class="w-12 h-12"
-            alt="cart"
-          />
-        </div> -->
         </div>
+      </div>
       </div>
     </nuxt-link>
   </div>
