@@ -7,14 +7,14 @@
       v-if="showMobileFilter"
       @hide="showMobileFilter = false"
     />
-    <div v-else class="">
+    <div v-else class="flex">
       <DesktopFilters
         class="flex-none hidden max-w-xs md:block"
         :facets="facets"
         :fl="fl"
         @clearAllFilters="clearAllFilters"
       />
-      <div class="w-full">
+      <div class="w-full px-3 bg-gray-200 sm:px-6">
         <HeaderBody
           :category="{}"
           :count="productCount"
@@ -32,11 +32,11 @@
                 alt="loading ..."
           />-->
           <div v-else-if="products && products.length > 0"
-            class="grid grid-cols-2 gap-3 md:gap-4 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+            class="grid grid-cols-2 gap-3 mb-6 md:gap-4 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
             >
-                <ProductNew  :product="p" v-for="p in products" :key="p._id" />
-            </div>
+              <ProductNew  :product="p" v-for="p in products" :key="p._id" />
           </div>
+          
           <!-- <div class="pagination_box">
             <v-pagination
               v-if="noOfPages>1"
@@ -53,7 +53,7 @@
           :count="noOfPages"
           :current="parseInt($route.query.page || 1)"
           @change="changePage"
-        />
+        />       
       </div>
     </div>
     <!-- <RightSideBar /> -->

@@ -1,7 +1,7 @@
 <template>
   <ul class="flex mx-8">
     <li
-      class="border-b-2 border-white cursor-pointer hoverable hover:border-pink-500"
+      class="border-b-4 border-white cursor-pointer hover:text-pink-500 hoverable hover:border-pink-500"
       v-for="category in $store.state.categories"
       :key="category._id"
     >
@@ -15,7 +15,7 @@
           aria-hidden="true"
         ></i> -->
       </nuxt-link>
-      <div class="mb-16 bg-gray-100 shadow-xl mega-menu sm:mb-0">
+      <div class="mt-1 mb-16 bg-gray-100 shadow-xl mega-menu sm:mb-0">
         <div class="flex flex-wrap justify-start w-full mx-auto">
           <ul
             v-for="(c, ix) in category.children"

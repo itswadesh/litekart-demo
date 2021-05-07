@@ -7,7 +7,7 @@
       class="w-full"
       v-if="product"
     >
-      <div class="relative w-full h-56 bg-white rounded-t-lg">
+      <div class="relative w-full h-56 pt-2 bg-white rounded-t-lg ">
         <img
           v-if="product._source.img"
           v-lazy="$store.state.settings.CDN_URL + product._source.img[0]"

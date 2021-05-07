@@ -58,7 +58,7 @@
             <div class="w-full my-2 text-right lg:w-2/5">
               <div class="flex text-xs">
                 <button
-                  class="p-1 px-2 mr-1 rounded focus:outline-none primary"
+                  class="flex items-center justify-center flex-shrink-0 p-1 px-2 mr-1 rounded w-36 focus:outline-none primary"
                   @click="saveForLater(item)"
                 >
                   MOVE TO WISHLIST
