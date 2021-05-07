@@ -12,7 +12,7 @@
             $store.state.settings.CDN_URL + b.img + '?tr=w-493,h-264'
         "
         alt=""
-        class="object-cover object-center w-full h-64 p-0 lg:pr-1"
+        class="object-cover object-center w-full h-48 p-0 sm:h-64 lg:pr-1"
       />
     </nuxt-link>
   </div>

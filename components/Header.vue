@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-white border-b shadow">
+  <header class="fixed top-0 z-50 w-full border-b shadow backdrop-filter backdrop-blur-lg bg">
     <nav
       class="flex flex-wrap items-center justify-between lg:px-5"
       style="box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);"
@@ -74,7 +74,7 @@ export default {
     if (process.client) {
       window.addEventListener('scroll', () => {
         let scrolled = window.scrollY
-        this.cls = scrolled > 147 ? 'fix-search' : ''
+        // this.cls = scrolled > 147 ? 'fix-search' : ''
       })
     }
   },
@@ -106,6 +106,9 @@ export default {
 }
 </script>
 <style scoped>
+.bg{
+  background-color: hsla(0, 0%, 100%, 0.80);
+}
 .desktop-badge {
   font-size: 9px;
   left: 11px;

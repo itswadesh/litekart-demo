@@ -2,6 +2,7 @@
   <carousel
     :perPage="1"
     :autoplay="true"
+    :dots="false"
     :loop="true"
     :autoplayTimeout="5000"
     :paginationEnabled="true"
@@ -25,6 +26,7 @@
 export default {
   data() {
     return {
+      
       heroImages: []
     }
   },

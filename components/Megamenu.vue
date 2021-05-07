@@ -37,8 +37,8 @@
                     'text-purple-500': ix % 6 == 1,
                     'text-red-500': ix % 6 == 2,
                     'text-green-500': ix % 6 == 3,
-                    'text-pink-500': ix % 6 == 4,
-                    'text-blue-500': ix % 6 == 5,
+                    'text-indigo-300': ix % 6 == 4,
+                    'text-red-300': ix % 6 == 5,
                 }"
               >
                 {{ c.name }}

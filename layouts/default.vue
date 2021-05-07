@@ -1,7 +1,7 @@
 <template>
   <div style="min-height:71.8vh" class="antialiased ">
     <Header />
-    <nuxt />
+    <nuxt  class="sm:mt-16 pt-0.5 mt-32" />
     <Footer />
     <BackToTopDark />
   </div>
