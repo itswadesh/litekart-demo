@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-20">
     <div class="flex flex-wrap justify-between">
       <div class="w-full p-2 text-lg font-semibold text-center">
         My Wishlist
@@ -22,14 +22,14 @@
       </div>
       <div
         v-else
-        class="flex justify-between w-1/2 lg:w-1/4 xl:w-1/5"
+        class="flex justify-between w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
         v-for="w in wishlist"
         :key="w._id"
       >
         <div class="relative m-3 shadow">
           <nuxt-link :to="`${w.product.slug}?id=${w.product._id}`">
             <img
-              class="object-cover w-full h-48"
+              class="object-contain w-full h-48"
               :src="$store.state.settings.CDN_URL + w.product.img[0]"
               alt=""
             />
