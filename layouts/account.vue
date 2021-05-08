@@ -6,14 +6,16 @@
       <nuxt class="w-full md:ml-10 md:w-3/4 lg:w-4/5" />
     </div>
     <Footer />
+    <StickyFooter />
   </div>
 </template>
 
 <script>
+import StickyFooter from '~/components/StickyFooter'
 import Header from '~/components/Header'
 import Footer from '~/components/Footer'
 import AccountMenu from '~/components/AccountMenu'
 export default {
-  components: { Header, Footer, AccountMenu }
+  components: { Header, Footer, AccountMenu, StickyFooter }
 }
 </script>
