@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-0 z-10 w-full pt-1 mt-20 overflow-x-auto text-gray-700 bg-white border-t shadow-lg">
+  <div class="fixed bottom-0 z-10 w-full pt-1 mt-20 overflow-x-auto text-gray-700 bg-white border-t shadow-lg sm:hidden">
     <div class="flex items-center justify-around">
       <nuxt-link
         to='/'
