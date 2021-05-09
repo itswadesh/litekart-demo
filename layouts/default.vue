@@ -3,7 +3,7 @@
     <Header />
     <nuxt class="lg:pt-2 mt-14 sm:mt-16" />
     <Footer  />
-    <BackToTopDark class="mb-12" />
+    <BackToTopDark class="mb-12 sm:mb-0" />
     <StickyFooter />
   </div>
 </template>
