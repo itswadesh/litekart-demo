@@ -2,22 +2,24 @@
   <div class="flex flex-col h-auto bg-white">
     <!-- <BagSkelton v-if="loading" /> -->
     <!-- v-if="categories" -->
-    <div class="grid grid-cols-3 gap-2 p-1 md:grid-cols-4 lg:grid-cols-6 lg:px-28 md:p-8 md:px-24">
+    <div class="grid grid-cols-3 gap-2 md:gap-4 md:grid-cols-4 lg:grid-cols-6">
       <div
         v-for="(c, ix) in categories" :key="c.ix"
-        class="mx-auto mt-6"
+        class="mx-auto"
        >
+       <div class="text-black capitalize hover:text-red-500 md:text-gray-600">
         <!-- <nuxt-link :to="localePath(`/c/${c.slug}`)"> -->
           <img
             v-lazy="c.img"
             alt="categories"
-            class="object-cover w-24 h-24 mx-auto border-2 rounded-full border-secondary-500 hover:shadow-xl md:w-32 md:h-32"
+            class="object-cover w-24 h-24 mx-auto border-2 rounded-full cursor-pointer hover:border-red-500 border-secondary-500 hover:shadow-xl md:w-32 md:h-32"
           />
           <span
-            class="flex justify-center mx-auto mt-4 text-sm font-semibold text-center text-black capitalize sm:font-normal sm:text-base"
+            class="flex justify-center mx-auto mt-4 text-sm font-semibold text-center md:font-bold sm:font-normal sm:text-base md:text-lg"
           >
             {{ c.name }}
           </span>
+        </div>
         <!-- </nuxt-link> -->
       </div>
     </div>
@@ -40,6 +42,9 @@ export default {
                 {img:'/img/categories/lee-campbell-GI6L2pkiZgQ-unsplash.jpg', name:'Headpones'},
                 {img:'/img/categories/jade-scarlato-R5gcTwsme68-unsplash.jpg', name:'Mens Casual Shoes'},
                 {img:'/img/categories/creaslim-0QDEj5dnUMk-unsplash.jpg', name:'Mens Jeans'},
+                {img:'/img/categories/danijela-prijovic-U8oa-BABTH0-unsplash.jpg', name:'Lingerie'},
+                {img:'/img/categories/content-pixie-ZB4eQcNqVUs-unsplash.jpg', name:'Hand Bags'},
+                {img:'/img/categories/kazuend-ejlRp5ktpfY-unsplash.jpg', name:'Infant Essentials'},
             ]
 
         }

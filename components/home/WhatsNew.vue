@@ -2,10 +2,10 @@
   <div class="flex flex-wrap w-full mt-2">
     <div class="w-full shadow">
       <div class="flex justify-between w-full p-3 border-b h-14">
-        <p class="relative float-left w-1/2 headings">
+        <p class="relative float-left w-4/5 text-sm font-semibold tracking-widest text-gray-600 uppercase md:w-1/2 md:text-lg lg:text-2xl">
           What's New
-          <span class="absolute inset-x-0 text-xs text-gray-500 you"
-            >From our catalogue</span
+          <span class="text-xs text-gray-500 you"
+            >( From our catalogue )</span
           >
         </p>
         <button

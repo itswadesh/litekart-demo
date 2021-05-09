@@ -3,7 +3,7 @@
     <MegamenuMobile />
     <div class="sm:px-2 home text-1">
       
-      <div class="p-3 mt-2 text-sm font-semibold text-gray-600 uppercase bg-white sm:hidden">
+      <div class="p-3 mt-2 text-sm font-semibold text-gray-600 uppercase bg-white sm:hidden ">
         Welcome to litekart
       </div>
       
@@ -15,7 +15,7 @@
             $store.state.settings.banners.offers
         "
       />
-       <div class="flex flex-row justify-center p-3 mb-2 text-sm font-semibold text-center text-gray-600 capitalize bg-white sm:hidden">
+       <div class="flex flex-row justify-center p-3 mb-2 text-sm font-semibold text-center text-gray-600 capitalize bg-white sm:hidden ">
         <p class="my-auto"> Free Shipping For You till midnight </p>
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 ml-2 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -31,81 +31,76 @@
             $store.state.settings.banners.offers
         "
       />
-       <div class="p-3 mt-2 text-sm font-semibold text-gray-600 uppercase bg-white sm:hidden">
-        Beauty and personnal care
-       <Hero class="mt-2 sm:hidden" />
+       <div class="p-3 mt-2 text-gray-600 uppercase bg-white border shadow">
+        <span class="text-sm font-semibold tracking-widest md:text-lg lg:text-2xl"> Beauty and personnal care </span>
+       <Hero class="mt-2 " />
        </div>
       <Category slug="women" title="Fresh in Women" class="bg-white" />
       
-      <div class="p-2 mt-2 bg-white sm:hidden">
-        <div class="p-3 text-sm font-semibold text-gray-600 uppercase">
+      <div class="p-2 mt-2 bg-white border shadow">
+        <div class="p-3 text-sm font-semibold tracking-widest text-gray-600 uppercase md:text-lg lg:text-2xl">
             400 off on top style
         </div>
         <div class="grid grid-cols-2 gap-3 ">
-          <img src="/img/mobile_home/lan-deng-quddu_dZKkQ-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1">
-          <img src="/img/mobile_home/keagan-henman-Won79_9oUEk-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 ">
-          <img src="/img/mobile_home/junko-nakase-Q-72wa9-7Dg-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1">
-          <img src="/img/mobile_home/hassan-ouajbir-ir9mB-4E1VI-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1">
+          <img src="/img/mobile_home/lan-deng-quddu_dZKkQ-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 md:h-56 lg:h-64 sm:h-48">
+          <img src="/img/mobile_home/keagan-henman-Won79_9oUEk-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 md:h-56 lg:h-64 sm:h-48 ">
+          <img src="/img/mobile_home/junko-nakase-Q-72wa9-7Dg-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 md:h-56 lg:h-64 sm:h-48">
+          <img src="/img/mobile_home/hassan-ouajbir-ir9mB-4E1VI-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 md:h-56 lg:h-64 sm:h-48">
         </div>
       </div>
       
-      <Category slug="men" title="Fresh in Men" class="bg-white" />
-      <Sale class="bg-white" />
-      <Category slug="men-jeans" title="Men Jeans" class="bg-white" />
-      <Category slug="women-jeans" title="Women Jeans" class="bg-white" />
-      
-      <div class="pb-2 mt-2 bg-white sm:hidden">
-        <div class="p-3 text-sm font-semibold text-gray-600 uppercase">
+      <div class="pb-2 mt-2 bg-white border shadow">
+        <div class="p-3 text-sm font-semibold tracking-widest text-gray-600 uppercase md:text-lg lg:text-2xl">
             Essential Store
         </div>
         <div class="grid grid-cols-3 gap-2 p-1 px-2">
-          <div class="h-32 border border-black rounded">
-            <img src="/img/mobile_home/kelly-sikkema-3FHp2yOPDxU-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t">
-            <p class="pt-1.5 text-xs font-semibold tracking-wider text-center capitalize">Sanitizers</p>
+          <div class="h-32 border border-black rounded sm:h-44 md:h-56 lg:h-64">
+            <img src="/img/mobile_home/kelly-sikkema-3FHp2yOPDxU-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
+            <p class="my-auto pt-1.5 text-xs md:text-medium font-semibold tracking-wider text-center sm:pt-0.5 md:pt-2 sm:text-lg lg:pt-0">Sanitizers</p>
           </div>
-          <div class="h-32 border border-red-400 rounded">
-            <img src="/img/mobile_home/charles-deluvio-pG67Tg7jGAw-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t">
-            <p class="pt-1.5 text-xs font-semibold tracking-wider text-center">Masks & PPE</p>
+          <div class="h-32 border border-red-400 rounded sm:h-44 md:h-56 lg:h-64">
+            <img src="/img/mobile_home/charles-deluvio-pG67Tg7jGAw-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
+            <p class="my-auto pt-1.5 text-xs font-semibold md:text-medium tracking-wider text-center sm:pt-0.5 md:pt-2 sm:text-lg lg:pt-0">Masks & PPE</p>
           </div>
-          <div class="h-32 border border-blue-400 rounded">
-            <img src="/img/mobile_home/mika-baumeister-WHPiIbMMgWY-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t">
-            <p class="pt-1.5 text-xs font-semibold tracking-wider text-center capitalize">Personnal Care</p>
+          <div class="h-32 border border-blue-400 rounded sm:h-44 md:h-56 lg:h-64">
+            <img src="/img/mobile_home/mika-baumeister-WHPiIbMMgWY-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
+            <p class="my-auto pt-1.5 text-xs font-semibold md:text-medium tracking-wider text-center sm:pt-0.5 md:pt-2 sm:text-lg lg:pt-0">Personnal Care</p>
           </div>
         </div>
       </div>
-
-      <div class="pb-2 mt-2 bg-white sm:hidden">
-        <div class="p-3 text-sm font-semibold text-gray-600 uppercase">
+<WhatsNew class="bg-white" />
+      <div class="pb-2 mt-2 bg-white border shadow">
+        <div class="p-3 text-sm font-semibold tracking-widest text-gray-600 uppercase md:text-lg lg:text-2xl">
             Summer care
         </div>
        <div class="px-2">
-          <div class="grid grid-cols-2 gap-2">
-            <div class="w-full h-56 border">
-              <img src="/img/mobile_home/kori-nori-3YrtBEpMh60-unsplash.jpg" alt="" class="object-cover w-full h-36">
+          <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
+            <div class="w-full h-56 border md:h-72">
+              <img src="/img/mobile_home/kori-nori-3YrtBEpMh60-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Sunscreens</span>
                 <span class="text-base font-semibold text-center">Starting At ₹179</span>
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>
-            <div class="w-full h-56 border">
-              <img src="/img/mobile_home/charisse-kenion-uIJSFejHvf8-unsplash.jpg" alt="" class="object-cover w-full h-36">
+            <div class="w-full h-56 border md:h-72">
+              <img src="/img/mobile_home/charisse-kenion-uIJSFejHvf8-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Body Wash</span>
                 <span class="text-base font-semibold text-center">Starting At ₹399</span>
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>
-            <div class="w-full h-56 border">
-              <img src="/img/mobile_home/charisse-kenion-qJhMIBceIic-unsplash.jpg" alt="" class="object-cover w-full h-36">
+            <div class="w-full h-56 border md:h-72">
+              <img src="/img/mobile_home/charisse-kenion-qJhMIBceIic-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Face Wash</span>
                 <span class="text-base font-semibold text-center">Starting At ₹99</span>
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>
-            <div class="w-full h-56 border">
-              <img src="/img/mobile_home/deepal-tamang-2ThEcWkaZ34-unsplash.jpg" alt="" class="object-cover w-full h-36">
+            <div class="w-full h-56 border md:h-72">
+              <img src="/img/mobile_home/deepal-tamang-2ThEcWkaZ34-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Body loation</span>
                 <span class="text-base font-semibold text-center">Starting At ₹99</span>
@@ -117,68 +112,70 @@
         </div>
       </div>
 
-      <div class="mt-2 bg-yellow-500 sm:hidden ">
+      <div class="mt-2 bg-yellow-500 sm:hidden">
         <img src="/img/mobile_home/fahad-waseem-AdjyrNhFVPI-unsplash.jpg" alt="" class="w-full h-56 p-1 rounded-lg filter brightness-50">
         <span class="absolute w-full -mt-24 text-xl text-center text-white">Bras & Briefs</span>
         <span class="absolute w-full -mt-16 text-3xl text-center text-white">Under 699 + 10% Off</span>
       </div>
       
-       <div class="p-3 py-5 mt-2 text-sm text-gray-600 uppercase bg-white">
-         <p class="font-semibold tracking-wider"> categories to bag </p>
-        <MobileCategories class="mt-2" />
+       <div class="p-3 py-5 mt-2 text-gray-600 uppercase bg-white border shadow">
+         <p class="pb-3 text-sm font-semibold tracking-wider md:text-lg lg:text-2xl"> categories to bag </p>
+         <MobileCategories class="mt-2" />
        </div>
-  
-      <Category slug="activewear" title="Sports Wear" class="relative bg-white" />
-      <YouMayLike class="bg-white" />
       
-      <div class="p-2 mt-2 bg-white sm:hidden">
-        <div class="p-3 text-sm font-semibold text-gray-600 uppercase">
+      <Sale class="bg-white" />
+      
+      <div class="p-2 mt-2 bg-white border shadow">
+        <div class="p-3 text-sm font-semibold tracking-widest text-gray-600 uppercase md:text-lg lg:text-2xl">
             New style for every occasions
         </div>
         <div class="grid grid-cols-3 gap-1">
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/pedram-normohamadian-_q4zr9i_IAs-unsplash.jpg" alt="" class="object-cover w-full h-44 filter brightness-50">
+            <img src="/img/occasion/pedram-normohamadian-_q4zr9i_IAs-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter hover:brightness-75 brightness-50">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ Every Day</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/tholaal-mohamed-Q7fDfQB_nSc-unsplash.jpg" alt="" class="object-cover w-full h-44 filter brightness-50">
+            <img src="/img/occasion/tholaal-mohamed-Q7fDfQB_nSc-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ Vacation</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/amy-hirschi-K0c8ko3e6AA-unsplash.jpg" alt="" class="object-cover w-full h-44 filter brightness-50">
+            <img src="/img/occasion/amy-hirschi-K0c8ko3e6AA-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full mx-auto text-sm tracking-wider text-center text-white uppercase bottom-2">+ Work</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/kumpan-electric-4KRsNO9QxwM-unsplash.jpg" alt="" class="object-cover w-full h-44 filter brightness-50">
+            <img src="/img/occasion/kumpan-electric-4KRsNO9QxwM-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ Bruch</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/bui-thanh-tam-Cnyqk0vTC3A-unsplash.jpg" alt="" class="object-cover w-full h-44 filter brightness-50">
+            <img src="/img/occasion/bui-thanh-tam-Cnyqk0vTC3A-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ summer</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/muhammad-murtaza-ghani-nUjfEYmJYl0-unsplash.jpg" alt="" class="object-cover w-full h-44 filter brightness-50">
+            <img src="/img/occasion/muhammad-murtaza-ghani-nUjfEYmJYl0-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ festive</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/alex-shaw-__AThUMXbUw-unsplash.jpg" alt="" class="object-cover w-full h-44 filter brightness-50">
+            <img src="/img/occasion/alex-shaw-__AThUMXbUw-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ louging</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/tobias-nii-kwatei-quartey-2-kfBa27AyU-unsplash.jpg" alt="" class="object-cover w-full h-44 filter brightness-50">
+            <img src="/img/occasion/tobias-nii-kwatei-quartey-2-kfBa27AyU-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter hover:brightness-75 brightness-50">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ workout</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/frederick-medina-3WLfe7fCix4-unsplash.jpg" alt="" class="object-cover w-full h-44 filter brightness-50">
+            <img src="/img/occasion/frederick-medina-3WLfe7fCix4-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ party</span>
           </div>
         </div>
       </div>
       
+      <Category slug="men" title="Fresh in Men" class="bg-white" />
+      <Category slug="men-jeans" title="Men Jeans" class="bg-white" />
+      <Category slug="women-jeans" title="Women Jeans" class="bg-white" />
+      <Category slug="activewear" title="Sports Wear" class="relative bg-white" />
+      <YouMayLike class="bg-white" />
       <Category slug="women-lingerie" title="Lingerie" class="bg-white" />
       <Category slug="coats" title="Coats & Blazers" class="bg-white" />
-      <!-- <Category slug="kurtis" title="Kurtis"/> -->
-      <WhatsNew class="bg-white" />
       <Category slug="women-winter-wear" title="Winter Collection" class="bg-white" />
       <Category slug="plus-sizes" title="Plus Size Collection" class="bg-white" />
       <RecentlyViewed class="bg-white" />

@@ -2,12 +2,12 @@
   <div class="flex flex-wrap w-full mt-2">
     <div class="w-full shadow">
       <div class="flex justify-between w-full p-3 border-b h-14">
-        <p class="relative float-left w-1/2 headings">
-          Sale
-          <span class="absolute inset-x-0 text-xs text-gray-500 you"
-            >Items on huge discount</span
+        <div class="relative float-left w-4/5 my-auto text-sm font-semibold tracking-widest text-gray-600 uppercase text-md md:w-1/2 md:text-lg lg:text-2xl">
+          <span> Sale </span>
+          <span class="text-xs text-gray-500 you"
+            >( Items on huge discount )</span
           >
-        </p>
+        </div>
         <button
           class="right-0 px-2 py-1 text-xs rounded primary"
           @click="$router.push('/search')"

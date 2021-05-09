@@ -1,7 +1,7 @@
 <template>
   <div class="w-full my-2 shadow">
     <div class="flex justify-between w-full p-3 border-b">
-      <div class="flex-1 headings">
+      <div class="flex-1 text-sm font-semibold tracking-widest text-gray-600 uppercase md:text-lg lg:text-2xl">
         Recently Viewed
         <!-- <span class="text-xs text-gray-500">23:57:50 Left</span> -->
       </div>

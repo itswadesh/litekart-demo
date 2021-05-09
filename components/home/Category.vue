@@ -3,7 +3,7 @@
     <div class="w-full shadow">
       <div class="flex justify-between w-full p-3 border-b h-14">
         <div class="flex items-center w-1/2">
-          <h3 class="text-xl font-bold">{{ title }}</h3>
+          <h3 class="text-sm font-semibold tracking-widest text-gray-600 uppercase md:text-lg lg:text-2xl">{{ title }}</h3>
         </div>
         <button
           class="right-0 px-2 py-1 text-xs rounded primary"
