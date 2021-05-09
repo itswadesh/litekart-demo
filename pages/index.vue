@@ -78,21 +78,37 @@
         <div class="p-3 text-sm font-semibold text-gray-600 uppercase">
             Summer care
         </div>
-       <div class="" >
-          <div class="flex flex-row">
-            <div class="w-1/2 h-56 mx-2 border">
+       <div class="px-2">
+          <div class="grid grid-cols-2 gap-2">
+            <div class="w-full h-56 border">
               <img src="/img/mobile_home/kori-nori-3YrtBEpMh60-unsplash.jpg" alt="" class="object-cover w-full h-36">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Sunscreens</span>
-                <span class="text-base font-semibold text-center">Starting At 179 Rs</span>
+                <span class="text-base font-semibold text-center">Starting At ₹179</span>
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>
-            <div class="w-1/2 h-56 mx-2 border">
+            <div class="w-full h-56 border">
               <img src="/img/mobile_home/charisse-kenion-uIJSFejHvf8-unsplash.jpg" alt="" class="object-cover w-full h-36">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Body Wash</span>
-                <span class="text-base font-semibold text-center">Starting At 399 Rs</span>
+                <span class="text-base font-semibold text-center">Starting At ₹399</span>
+                <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
+              </div>
+            </div>
+            <div class="w-full h-56 border">
+              <img src="/img/mobile_home/charisse-kenion-qJhMIBceIic-unsplash.jpg" alt="" class="object-cover w-full h-36">
+              <div class="flex flex-col h-auto ">
+                <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Face Wash</span>
+                <span class="text-base font-semibold text-center">Starting At ₹99</span>
+                <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
+              </div>
+            </div>
+            <div class="w-full h-56 border">
+              <img src="/img/mobile_home/deepal-tamang-2ThEcWkaZ34-unsplash.jpg" alt="" class="object-cover w-full h-36">
+              <div class="flex flex-col h-auto ">
+                <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Body loation</span>
+                <span class="text-base font-semibold text-center">Starting At ₹99</span>
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>

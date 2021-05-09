@@ -38,7 +38,7 @@
                 alt=""
               />
               <i
-                class="absolute top-0 right-0 w-6 h-6 p-1 mr-2 text-white text-gray-400 fill-current fa fa-heart"
+                class="absolute top-0 right-0 w-6 h-6 p-1 mr-2 text-gray-400 fill-current fa fa-heart"
                 aria-hidden="true"
               ></i>
             </div>
