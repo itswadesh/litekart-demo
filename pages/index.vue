@@ -42,10 +42,10 @@
             400 off on top style
         </div>
         <div class="grid grid-cols-2 gap-3 ">
-          <img src="/img/mobile_home/lan-deng-quddu_dZKkQ-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 md:h-56 lg:h-64 sm:h-48">
-          <img src="/img/mobile_home/keagan-henman-Won79_9oUEk-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 md:h-56 lg:h-64 sm:h-48 ">
-          <img src="/img/mobile_home/junko-nakase-Q-72wa9-7Dg-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 md:h-56 lg:h-64 sm:h-48">
-          <img src="/img/mobile_home/hassan-ouajbir-ir9mB-4E1VI-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 md:h-56 lg:h-64 sm:h-48">
+          <img src="/img/mobile_home/lan-deng-quddu_dZKkQ-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 hover:border-red-500 sm:h-48">
+          <img src="/img/mobile_home/keagan-henman-Won79_9oUEk-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
+          <img src="/img/mobile_home/junko-nakase-Q-72wa9-7Dg-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
+          <img src="/img/mobile_home/hassan-ouajbir-ir9mB-4E1VI-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
         </div>
       </div>
       
@@ -54,15 +54,15 @@
             Essential Store
         </div>
         <div class="grid grid-cols-3 gap-2 p-1 px-2">
-          <div class="h-32 border border-black rounded sm:h-44 md:h-56 lg:h-64">
+          <div class="h-32 border border-black rounded hover:border-2 sm:h-44 md:h-56 lg:h-64">
             <img src="/img/mobile_home/kelly-sikkema-3FHp2yOPDxU-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
             <p class="my-auto pt-1.5 text-xs md:text-medium font-semibold tracking-wider text-center sm:pt-0.5 md:pt-2 sm:text-lg lg:pt-0">Sanitizers</p>
           </div>
-          <div class="h-32 border border-red-400 rounded sm:h-44 md:h-56 lg:h-64">
+          <div class="h-32 border border-red-400 rounded hover:border-2 sm:h-44 md:h-56 lg:h-64">
             <img src="/img/mobile_home/charles-deluvio-pG67Tg7jGAw-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
             <p class="my-auto pt-1.5 text-xs font-semibold md:text-medium tracking-wider text-center sm:pt-0.5 md:pt-2 sm:text-lg lg:pt-0">Masks & PPE</p>
           </div>
-          <div class="h-32 border border-blue-400 rounded sm:h-44 md:h-56 lg:h-64">
+          <div class="h-32 border border-blue-400 rounded hover:border-2 sm:h-44 md:h-56 lg:h-64">
             <img src="/img/mobile_home/mika-baumeister-WHPiIbMMgWY-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
             <p class="my-auto pt-1.5 text-xs font-semibold md:text-medium tracking-wider text-center sm:pt-0.5 md:pt-2 sm:text-lg lg:pt-0">Personnal Care</p>
           </div>
@@ -75,7 +75,7 @@
         </div>
        <div class="px-2">
           <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
-            <div class="w-full h-56 border md:h-72">
+            <div class="w-full h-56 border border-blue-400 hover:border-blue-700 md:h-72">
               <img src="/img/mobile_home/kori-nori-3YrtBEpMh60-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Sunscreens</span>
@@ -83,7 +83,7 @@
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>
-            <div class="w-full h-56 border md:h-72">
+            <div class="w-full h-56 border border-gray-400 hover:border-gray-700 md:h-72">
               <img src="/img/mobile_home/charisse-kenion-uIJSFejHvf8-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Body Wash</span>
@@ -91,7 +91,7 @@
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>
-            <div class="w-full h-56 border md:h-72">
+            <div class="w-full h-56 border border-gray-300 hover:border-gray-600 md:h-72">
               <img src="/img/mobile_home/charisse-kenion-qJhMIBceIic-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Face Wash</span>
@@ -99,7 +99,7 @@
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>
-            <div class="w-full h-56 border md:h-72">
+            <div class="w-full h-56 border border-yellow-400 hover:border-yellow-600 md:h-72">
               <img src="/img/mobile_home/deepal-tamang-2ThEcWkaZ34-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Body loation</span>

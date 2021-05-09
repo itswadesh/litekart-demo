@@ -20,21 +20,31 @@
       :navigationEnabled="true"
       navigation-next-label="<img src='/chevron-right.svg' style='transform: rotate(180deg)' alt=''>"
       navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
-      class="mx-2"
+      class="flex flex-wrap justify-between p-4 bg-green-50"
     >
-      <slide v-for="product in products" :key="product._id" v-if="product">
+      <slide v-for="(product, index) in products" :key="product._id" v-if="product" class="w-64 p-0.5 mx-1 bg-white border rounded-t-3xl hover:border-green-300">
         <nuxt-link :to="'/' + product.slug + '?id=' + product._id">
           <img
-            style="height:255px;object-fit: cover;"
+            class="object-contain mx-auto rounded-t-3xl"
+            style="height:255px;"
             v-if="product.img"
             v-lazy="$store.state.settings.CDN_URL + product.img[0]"
             alt=""
           />
-          <div class>
-            <div class="mb-2 text-xs font-bold">
-              {{ product.name | truncate(45) }}
+          <div 
+           :class="{
+                    'bg-yellow-100': index % 6 == 0,
+                    'bg-purple-100': index % 6 == 1,
+                    'bg-red-100': index % 6 == 2,
+                    'bg-green-100': index % 6 == 3,
+                    'bg-pink-100': index % 6 == 4,
+                    'bg-blue-100': index % 6 == 5,
+                  }"
+          class="h-20 px-2 py-4">
+            <div class="mb-2 text-base font-bold truncate">
+              {{ product.name }}
             </div>
-            <p class="text-xs text-center text-green-700">
+            <p class="text-sm font-semibold text-center text-green-700">
               Extra
               {{
                 Math.round(((product.mrp - product.price) * 100) / product.mrp)

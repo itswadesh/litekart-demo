@@ -30,11 +30,11 @@
         navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
         class="flex flex-wrap justify-between p-4 bg-pink-50"
       >
-        <slide v-for="product in products" :key="product._id" class="w-64 mx-1 bg-white border rounded hover:border-pink-500 rounded-tr-2xl">
+        <slide v-for="(product, index) in products" :key="product._id" class="w-64 mx-1 bg-white border rounded hover:border-pink-500 rounded-tr-2xl">
           <nuxt-link :to="'/' + product.slug + '?id=' + product._id">
             <div class="relative ">
               <img
-                class="object-contain mx-auto"
+                class="object-contain pt-0.5 mx-auto"
                 style="height:255px;"
                 v-if="product.img"
                 v-lazy="$store.state.settings.CDN_URL + product.img[0]"
@@ -45,7 +45,16 @@
                 aria-hidden="true"
               ></i>
             </div>
-            <div class="h-20 px-2 py-4">
+            <div 
+             :class="{
+                    'text-yellow-500 bg-yellow-100': index % 6 == 0,
+                    'text-purple-500 bg-purple-100': index % 6 == 1,
+                    'text-red-500 bg-red-100': index % 6 == 2,
+                    'text-green-500 bg-green-100': index % 6 == 3,
+                    'text-pink-500 bg-pink-100': index % 6 == 4,
+                    'text-blue-500 bg-blue-100': index % 6 == 5,
+                  }"
+            class="h-20 px-2 py-4">
               <div class="mb-2 text-sm font-bold truncate ">
                 {{ product.name }}
               </div>

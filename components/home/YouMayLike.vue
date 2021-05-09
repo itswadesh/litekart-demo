@@ -30,25 +30,35 @@
         navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
         class="flex flex-wrap justify-between p-4"
       >
-        <slide v-for="product in products" :key="product._id">
+        <slide v-for="(product, index) in products" :key="product._id" class="w-64 mx-1 border rounded-3xl">
           <nuxt-link :to="'/' + product.slug + '?id=' + product._id">
             <div class="relative">
               <img
+                class="mx-auto rounded-t-3xl pt-0.5"
                 style="height:255px;object-fit: cover;"
                 v-if="product.img"
                 v-lazy="$store.state.settings.CDN_URL + product.img[0]"
                 alt=""
               />
               <i
-                class="absolute top-0 right-0 w-6 h-6 p-1 mr-2 text-white text-gray-400 fill-current fa fa-heart"
+                class="absolute top-0 right-0 w-6 h-6 p-1 mt-1 mr-2 text-white text-gray-400 fill-current fa fa-heart"
                 aria-hidden="true"
               ></i>
             </div>
-            <div class="px-2 py-4">
-              <div class="mb-2 text-xs font-bold">
-                {{ product.name | truncate(40) }}
+            <div 
+             :class="{
+                    'bg-yellow-100': index % 6 == 0,
+                    'bg-purple-100': index % 6 == 1,
+                    'bg-red-100': index % 6 == 2,
+                    'bg-green-100': index % 6 == 3,
+                    'bg-pink-100': index % 6 == 4,
+                    'bg-blue-100': index % 6 == 5,
+                  }"
+            class="h-20 px-2 py-4 bg-red-50 rounded-b-3xl">
+              <div class="mb-2 text-base font-semibold truncate">
+                {{ product.name }}
               </div>
-              <p class="text-xs text-center text-green-700">
+              <p class="text-center text-green-700">
                 Extra
                 {{
                   Math.round(

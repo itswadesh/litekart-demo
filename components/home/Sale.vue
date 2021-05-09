@@ -30,25 +30,26 @@
         navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
         class="flex flex-wrap justify-between p-4"
       >
-        <slide v-for="product in products" :key="product._id">
+        <slide v-for="product in products" :key="product._id" class="w-64 mx-1 border hover:border-green-500">
           <nuxt-link :to="'/' + product.slug + '?id=' + product._id">
             <div class="relative">
               <img
-                style="height:255px;object-fit: cover;"
+                class="object-contain pt-0.5 mx-auto"
+                style="height:255px;"
                 v-if="product.img"
                 v-lazy="$store.state.settings.CDN_URL + product.img[0]"
                 alt=""
               />
               <i
-                class="absolute top-0 right-0 w-6 h-6 p-1 mr-2 text-white text-gray-400 fill-current fa fa-heart"
+                class="absolute top-0 right-0 w-6 h-6 p-1 mt-1 mr-2 text-gray-400 fill-current fa fa-heart"
                 aria-hidden="true"
               ></i>
             </div>
-            <div class="px-2 py-4">
-              <div class="mb-2 text-xs font-bold">
-                {{ product.name | truncate(40) }}
+            <div class="h-20 px-2 py-4 m-0.5 bg-gray-100">
+              <div class="mb-2 text-xs font-bold truncate">
+                {{ product.name }}
               </div>
-              <p class="text-xs text-center text-green-700">
+              <p class="text-xs text-center text-green-700 ">
                 Extra
                 {{
                   Math.round(

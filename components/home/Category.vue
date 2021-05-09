@@ -27,12 +27,12 @@
         navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
         class="flex flex-wrap justify-between p-4 bg-purple-50"
       >
-        <slide v-for="product in products" :key="product._id" class="w-64 mx-1 bg-white border rounded-lg hover:border-red-400">
+        <slide v-for="(product, index) in products" :key="product._id" class="w-64 mx-1 bg-white p-0.5 border rounded-lg hover:border-red-400">
           <nuxt-link :to="'/' + product._source.slug + '?id=' + product._id">
             <div class="flex justify-center">
               <img
                 style="height:255px;"
-                class="object-cover rounded-t-lg"
+                class="object-cover pt-0.5 rounded-t-lg"
                 v-if="product._source.img"
                 v-lazy="$store.state.settings.CDN_URL + product._source.img[0]"
                 alt=""
@@ -42,7 +42,16 @@
                 aria-hidden="true"
               ></i>
             </div>
-            <div class="h-16 px-2 py-2">
+            <div 
+             :class="{
+                    'text-yellow-500': index % 6 == 0,
+                    'text-purple-500': index % 6 == 1,
+                    'text-red-500': index % 6 == 2,
+                    'text-green-500': index % 6 == 3,
+                    'text-pink-500': index % 6 == 4,
+                    'text-blue-500': index % 6 == 5,
+                  }"
+            class="h-16 px-2 py-2 rounded-b-lg">
               <div class="mb-2 text-sm font-bold truncate">
                 {{ product._source.name }}
               </div>
