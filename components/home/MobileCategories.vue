@@ -4,15 +4,38 @@
     <!-- v-if="categories" -->
     <div class="grid grid-cols-3 gap-2 md:gap-4 md:grid-cols-4 lg:grid-cols-6">
       <div
-        v-for="(c, ix) in categories" :key="c.ix"
+        v-for="(c, index) in categories" :key="c.index"
         class="mx-auto"
        >
-       <div class="text-black capitalize hover:text-red-500 md:text-gray-600">
+       <div class="text-black capitalize md:text-gray-600"
+        :class="{
+                'hover:text-yellow-500':index % 9==0,
+                'hover:text-purple-500':index % 9==1,
+                'hover:text-red-500':index % 9==2,
+                'hover:text-green-500':index % 9==3,
+                'hover:text-pink-500':index % 9==4,
+                'hover:text-blue-500':index % 9==5,
+                'hover:text-green-700':index % 9==6,
+                'hover:text-pink-700':index % 9==7,
+                'hover:text-blue-700':index % 9==8,
+              }"
+       >
         <!-- <nuxt-link :to="localePath(`/c/${c.slug}`)"> -->
           <img
             v-lazy="c.img"
             alt="categories"
-            class="object-cover w-24 h-24 mx-auto border-2 rounded-full cursor-pointer hover:border-red-500 border-secondary-500 hover:shadow-xl md:w-32 md:h-32"
+               :class="{
+                'hover:border-yellow-500':index % 9==0,
+                'hover:border-purple-500':index % 9==1,
+                'hover:border-red-500':index % 9==2,
+                'hover:border-green-500':index % 9==3,
+                'hover:border-pink-500':index % 9==4,
+                'hover:border-blue-500':index % 9==5,
+                'hover:border-green-700':index % 9==6,
+                'hover:border-pink-700':index % 9==7,
+                'hover:border-blue-700':index % 9==8,
+              }"
+            class="object-cover w-24 h-24 mx-auto border-2 rounded-full cursor-pointer border-secondary-500 hover:shadow-xl md:w-32 md:h-32"
           />
           <span
             class="flex justify-center mx-auto mt-4 text-sm font-semibold text-center md:font-bold sm:font-normal sm:text-base md:text-lg"

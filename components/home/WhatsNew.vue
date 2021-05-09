@@ -30,11 +30,20 @@
         navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
         class="flex flex-wrap justify-between p-4 bg-pink-50"
       >
-        <slide v-for="(product, index) in products" :key="product._id" class="w-64 mx-1 bg-white border rounded hover:border-pink-500 rounded-tr-2xl">
+        <slide v-for="(product, index) in products" :key="product._id" 
+        :class="{
+          'hover:border-yellow-500':index % 6==0,
+          'hover:border-purple-500':index % 6==1,
+          'hover:border-red-500':index % 6==2,
+          'hover:border-green-500':index % 6==3,
+          'hover:border-pink-500':index % 6==4,
+          'hover:border-blue-500':index % 6==5,
+        }"
+        class="w-64 mx-1 p-0.5 bg-white border rounded rounded-tr-2xl">
           <nuxt-link :to="'/' + product.slug + '?id=' + product._id">
             <div class="relative ">
               <img
-                class="object-contain pt-0.5 mx-auto"
+                class="object-contain mx-auto"
                 style="height:255px;"
                 v-if="product.img"
                 v-lazy="$store.state.settings.CDN_URL + product.img[0]"

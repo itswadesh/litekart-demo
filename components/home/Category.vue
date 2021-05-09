@@ -27,7 +27,16 @@
         navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
         class="flex flex-wrap justify-between p-4 bg-purple-50"
       >
-        <slide v-for="(product, index) in products" :key="product._id" class="w-64 mx-1 bg-white p-0.5 border rounded-lg hover:border-red-400">
+        <slide v-for="(product, index) in products" :key="product._id" 
+          :class="{
+          'hover:border-yellow-500':index % 6==0,
+          'hover:border-purple-500':index % 6==1,
+          'hover:border-red-500':index % 6==2,
+          'hover:border-green-500':index % 6==3,
+          'hover:border-pink-500':index % 6==4,
+          'hover:border-blue-500':index % 6==5,
+        }"
+        class="w-64 mx-1 bg-white p-0.5 border rounded-lg ">
           <nuxt-link :to="'/' + product._source.slug + '?id=' + product._id">
             <div class="flex justify-center">
               <img
