@@ -68,7 +68,7 @@
           </div>
         </div>
       </div>
-<WhatsNew class="bg-white" />
+      <WhatsNew class="bg-white" />
       <div class="pb-2 mt-2 bg-white border shadow">
         <div class="p-3 text-sm font-semibold tracking-widest text-gray-600 uppercase md:text-lg lg:text-2xl">
             Summer care

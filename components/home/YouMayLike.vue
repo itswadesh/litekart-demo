@@ -2,12 +2,12 @@
   <div class="flex flex-wrap w-full mt-2">
     <div class="w-full shadow">
       <div class="flex justify-between w-full p-3 border-b h-14">
-        <p class="relative float-left w-1/2 text-sm font-semibold tracking-widest text-gray-600 uppercase md:text-lg lg:text-2xl">
-          You may also Like
-          <span class="absolute inset-x-0 text-xs text-gray-500 you"
-            >Based on Your Interest</span
-          >
-        </p>
+       <div class="relative flex flex-col float-left w-4/5 my-auto text-sm font-semibold tracking-widest text-gray-600 uppercase md:w-1/2 sm:flex-row sm:text-lg lg:text-2xl">
+          <span> You may like </span>
+          <span class="text-xs text-gray-500 sm:pt-0.5 sm:mt-2">
+            ( Based on your interest )
+          </span>
+        </div>
         <button
           class="right-0 px-2 py-1 text-xs rounded primary"
           @click="$router.push('/search')"

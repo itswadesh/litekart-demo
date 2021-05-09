@@ -25,14 +25,14 @@
         :navigationEnabled="true"
         navigation-next-label="<img src='/chevron-right.svg' alt='' style='transform: rotate(180deg)'>"
         navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
-        class="flex flex-wrap justify-between p-4"
+        class="flex flex-wrap justify-between p-4 bg-purple-50"
       >
-        <slide v-for="product in products" :key="product._id" class="w-64">
+        <slide v-for="product in products" :key="product._id" class="w-64 mx-1 bg-white border rounded-lg hover:border-red-400">
           <nuxt-link :to="'/' + product._source.slug + '?id=' + product._id">
             <div class="flex justify-center">
               <img
                 style="height:255px;"
-                class="object-cover"
+                class="object-cover rounded-t-lg"
                 v-if="product._source.img"
                 v-lazy="$store.state.settings.CDN_URL + product._source.img[0]"
                 alt=""
@@ -42,8 +42,8 @@
                 aria-hidden="true"
               ></i>
             </div>
-            <div class="px-2 py-4">
-              <div class="mb-2 text-xs font-bold truncate">
+            <div class="h-16 px-2 py-2">
+              <div class="mb-2 text-sm font-bold truncate">
                 {{ product._source.name }}
               </div>
               <p class="text-xs text-center text-green-700">
