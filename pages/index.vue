@@ -41,7 +41,7 @@
         <div class="p-3 text-sm font-semibold tracking-widest text-gray-600 uppercase md:text-lg lg:text-2xl">
             400 off on top style
         </div>
-        <div class="grid grid-cols-2 gap-3 ">
+        <div class="grid grid-cols-2 gap-2 sm:gap-3 ">
           <img src="/img/mobile_home/lan-deng-quddu_dZKkQ-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 hover:border-red-500 sm:h-48">
           <img src="/img/mobile_home/keagan-henman-Won79_9oUEk-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
           <img src="/img/mobile_home/junko-nakase-Q-72wa9-7Dg-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">

@@ -28,7 +28,7 @@
         :navigationEnabled="true"
         navigation-next-label="<img src='/chevron-right.svg' alt='' style='transform: rotate(180deg)'>"
         navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
-        class="flex flex-wrap justify-between p-4"
+        class="flex flex-wrap justify-between py-4 sm:p-4"
       >
         <slide v-for="(product, index) in products" :key="product._id" 
         :class="{
