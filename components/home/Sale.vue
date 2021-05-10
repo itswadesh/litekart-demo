@@ -30,17 +30,16 @@
         navigation-prev-label="<img src='/chevron-right.svg' alt=''/>"
         class="flex flex-wrap justify-between p-4"
       >
-        <slide v-for="product in products" :key="product._id" 
-          :class="{
-                'border-yellow-300 hover:border-yellow-500':index % 6==0,
-                'border-purple-300 hover:border-purple-500':index % 6==1,
-                'border-red-300 hover:border-red-500':index % 6==2,
-                'border-green-300 hover:border-green-500':index % 6==3,
-                'border-pink-300 hover:border-pink-500':index % 6==4,
-                'border-blue-300 hover:border-blue-500':index % 6==5,
-                
+        <slide v-for="(product, index) in products" :key="product._id" 
+        :class="{
+                'border-yellow-300 border hover:border-yellow-700':index % 6==0,
+                'border-purple-300 border hover:border-purple-700':index % 6==1,
+                'border-red-300 border hover:border-red-700':index % 6==2,
+                'border-green-300 border hover:border-green-700':index % 6==3,
+                'border-pink-300 border hover:border-pink-700':index % 6==4,
+                'border-blue-300 border hover:border-blue-700':index % 6==5,
               }"
-        class="w-64 mx-1 border">
+         class="w-64 mx-1">
           <nuxt-link :to="'/' + product.slug + '?id=' + product._id">
             <div class="relative">
               <img
@@ -56,7 +55,7 @@
               ></i>
             </div>
             <div class="h-20 px-2 py-4 m-0.5 bg-gray-100">
-              <div class="mb-2 text-xs font-bold truncate">
+              <div class="mb-2 text-base font-bold truncate">
                 {{ product.name }}
               </div>
               <p class="text-xs text-center text-green-700 ">
