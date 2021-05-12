@@ -42,10 +42,10 @@
             400 off on top style
         </div>
         <div class="grid grid-cols-2 gap-2 sm:gap-3 ">
-          <img src="/img/mobile_home/lan-deng-quddu_dZKkQ-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 hover:border-red-500 sm:h-48">
-          <img src="/img/mobile_home/keagan-henman-Won79_9oUEk-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
-          <img src="/img/mobile_home/junko-nakase-Q-72wa9-7Dg-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
-          <img src="/img/mobile_home/hassan-ouajbir-ir9mB-4E1VI-unsplash.jpg" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
+          <img v-lazy="'/img/mobile_home/lan-deng-quddu_dZKkQ-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 hover:border-red-500 sm:h-48">
+          <img v-lazy="'/img/mobile_home/keagan-henman-Won79_9oUEk-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
+          <img v-lazy="'/img/mobile_home/junko-nakase-Q-72wa9-7Dg-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
+          <img v-lazy="'/img/mobile_home/hassan-ouajbir-ir9mB-4E1VI-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
         </div>
       </div>
       
@@ -55,15 +55,15 @@
         </div>
         <div class="grid grid-cols-3 gap-2 p-1 px-2">
           <div class="h-32 border border-black rounded hover:border-2 sm:h-44 md:h-56 lg:h-64">
-            <img src="/img/mobile_home/kelly-sikkema-3FHp2yOPDxU-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
+            <img v-lazy="'/img/mobile_home/kelly-sikkema-3FHp2yOPDxU-unsplash.jpg'" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
             <p class="my-auto pt-1.5 text-xs md:text-medium font-semibold tracking-wider text-center sm:pt-0.5 md:pt-2 sm:text-lg lg:pt-0">Sanitizers</p>
           </div>
           <div class="h-32 border border-red-400 rounded hover:border-2 sm:h-44 md:h-56 lg:h-64">
-            <img src="/img/mobile_home/charles-deluvio-pG67Tg7jGAw-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
+            <img v-lazy="'/img/mobile_home/charles-deluvio-pG67Tg7jGAw-unsplash.jpg'" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
             <p class="my-auto pt-1.5 text-xs font-semibold md:text-medium tracking-wider text-center sm:pt-0.5 md:pt-2 sm:text-lg lg:pt-0">Masks & PPE</p>
           </div>
           <div class="h-32 border border-blue-400 rounded hover:border-2 sm:h-44 md:h-56 lg:h-64">
-            <img src="/img/mobile_home/mika-baumeister-WHPiIbMMgWY-unsplash.jpg" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
+            <img v-lazy="'/img/mobile_home/mika-baumeister-WHPiIbMMgWY-unsplash.jpg'" alt="" class="object-cover w-full h-24 col-span-1 rounded-t sm:h-36 md:h-44 lg:h-56">
             <p class="my-auto pt-1.5 text-xs font-semibold md:text-medium tracking-wider text-center sm:pt-0.5 md:pt-2 sm:text-lg lg:pt-0">Personnal Care</p>
           </div>
         </div>
@@ -76,7 +76,7 @@
        <div class="px-2">
           <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
             <div class="w-full h-56 border border-blue-400 hover:border-blue-700 md:h-72">
-              <img src="/img/mobile_home/kori-nori-3YrtBEpMh60-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
+              <img v-lazy="'/img/mobile_home/kori-nori-3YrtBEpMh60-unsplash.jpg'" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Sunscreens</span>
                 <span class="text-base font-semibold text-center">Starting At ₹179</span>
@@ -84,7 +84,7 @@
               </div>
             </div>
             <div class="w-full h-56 border border-gray-400 hover:border-gray-700 md:h-72">
-              <img src="/img/mobile_home/charisse-kenion-uIJSFejHvf8-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
+              <img v-lazy="'/img/mobile_home/charisse-kenion-uIJSFejHvf8-unsplash.jpg'" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Body Wash</span>
                 <span class="text-base font-semibold text-center">Starting At ₹399</span>
@@ -92,7 +92,7 @@
               </div>
             </div>
             <div class="w-full h-56 border border-gray-300 hover:border-gray-600 md:h-72">
-              <img src="/img/mobile_home/charisse-kenion-qJhMIBceIic-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
+              <img v-lazy="'/img/mobile_home/charisse-kenion-qJhMIBceIic-unsplash.jpg'" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Face Wash</span>
                 <span class="text-base font-semibold text-center">Starting At ₹99</span>
@@ -100,7 +100,7 @@
               </div>
             </div>
             <div class="w-full h-56 border border-yellow-400 hover:border-yellow-600 md:h-72">
-              <img src="/img/mobile_home/deepal-tamang-2ThEcWkaZ34-unsplash.jpg" alt="" class="object-cover w-full h-36 md:h-52">
+              <img v-lazy="'/img/mobile_home/deepal-tamang-2ThEcWkaZ34-unsplash.jpg'" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
                 <span class="pt-1.5 text-sm font-semibold tracking-wider text-center capitalize">Body loation</span>
                 <span class="text-base font-semibold text-center">Starting At ₹99</span>
@@ -113,7 +113,7 @@
       </div>
 
       <div class="mt-2 bg-yellow-500 sm:hidden">
-        <img src="/img/mobile_home/fahad-waseem-AdjyrNhFVPI-unsplash.jpg" alt="" class="w-full h-56 p-1 rounded-lg filter brightness-50">
+        <img v-lazy="'/img/mobile_home/fahad-waseem-AdjyrNhFVPI-unsplash.jpg'" alt="" class="w-full h-56 p-1 rounded-lg filter brightness-50">
         <span class="absolute w-full -mt-24 text-xl text-center text-white">Bras & Briefs</span>
         <span class="absolute w-full -mt-16 text-3xl text-center text-white">Under 699 + 10% Off</span>
       </div>
@@ -131,39 +131,39 @@
         </div>
         <div class="grid grid-cols-3 gap-1">
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/pedram-normohamadian-_q4zr9i_IAs-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter hover:brightness-75 brightness-50">
+            <img v-lazy="'/img/occasion/pedram-normohamadian-_q4zr9i_IAs-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter hover:brightness-75 brightness-50">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ Every Day</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/tholaal-mohamed-Q7fDfQB_nSc-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
+            <img v-lazy="'/img/occasion/tholaal-mohamed-Q7fDfQB_nSc-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ Vacation</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/amy-hirschi-K0c8ko3e6AA-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
+            <img v-lazy="'/img/occasion/amy-hirschi-K0c8ko3e6AA-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full mx-auto text-sm tracking-wider text-center text-white uppercase bottom-2">+ Work</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/kumpan-electric-4KRsNO9QxwM-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
+            <img v-lazy="'/img/occasion/kumpan-electric-4KRsNO9QxwM-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ Bruch</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/bui-thanh-tam-Cnyqk0vTC3A-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
+            <img v-lazy="'/img/occasion/bui-thanh-tam-Cnyqk0vTC3A-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ summer</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/muhammad-murtaza-ghani-nUjfEYmJYl0-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
+            <img v-lazy="'/img/occasion/muhammad-murtaza-ghani-nUjfEYmJYl0-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ festive</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/alex-shaw-__AThUMXbUw-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
+            <img v-lazy="'/img/occasion/alex-shaw-__AThUMXbUw-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ louging</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/tobias-nii-kwatei-quartey-2-kfBa27AyU-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter hover:brightness-75 brightness-50">
+            <img v-lazy="'/img/occasion/tobias-nii-kwatei-quartey-2-kfBa27AyU-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter hover:brightness-75 brightness-50">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ workout</span>
           </div>
           <div class="relative w-full col-span-1">
-            <img src="/img/occasion/frederick-medina-3WLfe7fCix4-unsplash.jpg" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
+            <img v-lazy="'/img/occasion/frederick-medina-3WLfe7fCix4-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ party</span>
           </div>
         </div>
