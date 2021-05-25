@@ -6,7 +6,7 @@
           <p class="err" v-if="err">{{ err }}</p>
           <p class="success" v-else-if="success">{{ success }}</p>
           <p class="info" v-else>
-            Type in your Phone / Email below and we'll send you instructions on
+            Type in your Email below and we'll send you instructions on
             how to create a new password
           </p>
           <div class="mb-6 bg-white rounded shadow-2xl border-teal border-t-12">

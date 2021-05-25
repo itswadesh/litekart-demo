@@ -1,5 +1,5 @@
 <template>
-   <div class="mt-1">
+   <div class="mt-1 bg-white">
     <div
       class="py-2 ml-2"
       v-if="product.categories && product.categories.length > 0"
@@ -14,9 +14,9 @@
       </span>
     </div>
     <div class="flex flex-col w-full mt-1 lg:flex-row">
-      <ProductImage :product="product" class="w-full lg:w-5/12" />
+      <ProductImage :product="product" class="w-full lg:w-5/12 xl:w-3/5" />
       <ProductDetails
-        class="w-full h-auto lg:w-7/12"
+        class="w-full h-auto lg:w-7/12 xl:w-2/5"
         :product="product"
         :selectedVariant="selectedVariant"
         @variantChanged="variantChanged"

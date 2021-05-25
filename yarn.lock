@@ -6712,6 +6712,11 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
+photoswipe@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/photoswipe/-/photoswipe-4.1.3.tgz#59f49494eeb9ddab5888d03392926a19bc197550"
+  integrity sha512-89Z43IRUyw7ycTolo+AaiDn3W1EEIfox54hERmm9bI12IB9cvRfHSHez3XhAyU8XW2EAFrC+2sKMhh7SJwn0bA==
+
 picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.3.tgz#465547f359ccc206d3c48e46a1bcb89bf7ee619d"
@@ -9604,6 +9609,9 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.3:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.3.tgz#6d55863a51fa757ab24e89d9371465072aa7bc35"
   integrity sha512-sFuh0xfbtpRlKfm39ss/ikqs9AbKCoXZBpHeVZ8Tx650o0k0q/YCM7FRvigtxpACezfq6af+a7JeqVTWvncqDg==
+  dependencies:
+    hash-sum "^1.0.2"
+    loader-utils "^1.0.2"
 
 vue-sweetalert2@^4.3.1:
   version "4.3.1"
@@ -9980,22 +9988,3 @@ youtube-player@^5.4.0:
     debug "^2.6.6"
     load-script "^1.0.0"
     sister "^3.0.0"
-
-zego-express-engine-webrtc@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/zego-express-engine-webrtc/-/zego-express-engine-webrtc-2.6.0.tgz#934549d40845002d431c8eb6661fdfe3eec2f788"
-  integrity sha512-7ySMbjECE/ZzZCjfs293K9sKoFqdLghhgYs+UA+cIl35SXDXmaV9FBU3RBve5YdpniPsot+hnkJvs7dvsXnVfA==
-  dependencies:
-    zego-express-engine-webrtm "1.6.0"
-
-zego-express-engine-webrtm@1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/zego-express-engine-webrtm/-/zego-express-engine-webrtm-1.6.0.tgz#88fa4797da6ae16f57f27f59c7bf0c20749d56c5"
-  integrity sha512-oVw/ZzYP6pc305OuZMo6UejtGEZqTcidw7cJ2yIRIEQFxnPmIuEPTHvzln+SGfT+OeOn+D8IKppkU0/Cnogztg==
-  dependencies:
-    zego-express-logger "1.1.0"
-
-zego-express-logger@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/zego-express-logger/-/zego-express-logger-1.1.0.tgz#42c75fbb7f891f87ea3354086dcd52963b75e365"
-  integrity sha512-hs1oR0PgCYhgKYl5qx0xhnXBAPV7h2UWbQ6xup3evfU2bnCIJ7PEodYchT3/ncQqDFO7mfvelDC4nXq8jlt/uA==

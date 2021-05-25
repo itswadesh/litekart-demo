@@ -1,5 +1,6 @@
 <template>
-  <div class="flex flex-wrap justify-start w-full px-2">
+<div>
+  <div class="flex flex-wrap justify-start w-full px-2 xl:hidden">
     <div class="hidden overflow-y-auto md:flex-col md:block md:order-1 h-96">
       <img
         v-for="(i, ix) in product.img"
@@ -51,6 +52,17 @@
       </div>-->
     </div>
   </div>
+  <div class="hidden w-full grid-cols-2 gap-3 px-5 xl:grid ">
+    <div v-for="(i, ix) in product.img" :key="ix"  class="w-full h-full col-span-1 my-auto shadow">
+      <img
+        @click="$photoswipe.open(0, [{ src: $store.state.settings.CDN_URL + i, w: 800, h: 800 }])"
+        class="object-contain w-full h-full overflow-hidden cursor-pointer zoom zoom-in"
+        v-lazy="$store.state.settings.CDN_URL + i"
+        alt=""
+      />
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -111,6 +123,9 @@ export default {
 </script>
 
 <style scoped>
+.zoom-in {
+  cursor: zoom-in;
+}
 .h-96 {
   height: 27.4rem;
 }

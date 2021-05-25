@@ -23,17 +23,17 @@
         </svg>
       </div>
       <Hero class="mt-2" />
-      <Banners
+      <!-- <Banners
        class="mt-2"
         :banners="
           $store.state.settings &&
             $store.state.settings.banners &&
             $store.state.settings.banners.offers
         "
-      />
+      /> -->
        <div class="p-3 mt-2 text-gray-600 uppercase bg-white border shadow">
         <span class="text-sm font-semibold tracking-widest md:text-lg lg:text-2xl"> Beauty and personnal care </span>
-       <Hero class="mt-2 " />
+        <Hero class="mt-2 " />
        </div>
       <Category slug="women" title="Fresh in Women" class="bg-white" />
       

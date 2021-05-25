@@ -94,11 +94,11 @@
           >{{p.color.name}}</span>
         </nuxt-link>
       </div>
-      <div class="fixed bottom-0 z-10 flex w-full p-2 bg-white lg:relative lg:px-3">
+      <div class="fixed bottom-0 z-10 flex w-full p-2 lg:relative lg:px-3 xl:px-0">
         <button
           :disabled="!selectedVariant || !selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
-          class="w-7/12 px-6 py-2 mr-2 text-sm font-bold text-white rounded lg:w-1/3 primary lg:text-lg"
+          class="w-7/12 px-6 py-2 mr-2 text-sm font-bold text-white rounded lg:w-1/3 xl:w-1/2 primary lg:text-lg"
         >
           <i
             class="hidden mr-2 fa fa-shopping-bag lg:block"
@@ -108,7 +108,7 @@
         <button
           @click="toggleWishlist"
           v-if="wished"
-          class="w-5/12 px-6 py-2 text-sm font-bold text-green-500 border rounded lg:w-1/3 border-grey-300 lg:text-lg"
+          class="w-5/12 px-6 py-2 text-sm font-bold text-green-500 bg-white border rounded lg:w-1/3 xl:w-1/2 border-grey-300 lg:text-lg"
         >
           <i
             class="hidden mr-2 fa fa-check lg:block"
@@ -118,7 +118,7 @@
         <button
           @click="toggleWishlist"
           v-else
-          class="w-5/12 px-6 py-2 text-sm font-bold text-black border rounded lg:w-1/3 border-grey-300 lg:text-lg"
+          class="w-5/12 px-6 py-2 text-sm font-bold text-black bg-white border rounded lg:w-1/3 border-grey-300 lg:text-lg"
         >
           <i
             class="hidden mr-2 fa fa-bookmark lg:block"

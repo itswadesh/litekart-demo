@@ -39,7 +39,7 @@
           'hover:border-pink-500':index % 6==4,
           'hover:border-blue-500':index % 6==5,
         }"
-        class="w-64 mx-1 border rounded-3xl">
+        class="w-64 mx-1 bg-white border rounded-3xl">
           <nuxt-link :to="'/' + product.slug + '?id=' + product._id">
             <div class="relative">
               <img
@@ -54,16 +54,15 @@
                 aria-hidden="true"
               ></i>
             </div>
-            <div 
-             :class="{
-                    'bg-yellow-100': index % 6 == 0,
-                    'bg-purple-100': index % 6 == 1,
-                    'bg-red-100': index % 6 == 2,
-                    'bg-green-100': index % 6 == 3,
-                    'bg-pink-100': index % 6 == 4,
-                    'bg-blue-100': index % 6 == 5,
-                  }"
-            class="h-20 px-2 py-4 bg-red-50 rounded-b-3xl">
+            <div class="h-20 px-2 py-4 rounded-b-3xl"
+                :class="{
+                        'bg-yellow-100': index % 6 == 0,
+                        'bg-red-100': index % 6 == 1,
+                        'bg-green-100': index % 6 == 2,
+                        'bg-pink-100': index % 6 == 3,
+                        'bg-blue-100': index % 6 == 4,
+                        'bg-purple-100': index % 6 == 5,
+             }">
               <div class="mb-2 text-base font-semibold truncate">
                 {{ product.name }}
               </div>
