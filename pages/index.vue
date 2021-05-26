@@ -39,13 +39,21 @@
       
       <div class="p-2 mt-2 bg-white border shadow">
         <div class="p-3 text-sm font-semibold tracking-widest text-gray-600 uppercase md:text-lg lg:text-2xl">
-            400 off on top style
+            Top style
         </div>
         <div class="grid grid-cols-2 gap-2 sm:gap-3 ">
-          <img v-lazy="'/img/mobile_home/lan-deng-quddu_dZKkQ-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 hover:border-red-500 sm:h-48">
-          <img v-lazy="'/img/mobile_home/keagan-henman-Won79_9oUEk-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
-          <img v-lazy="'/img/mobile_home/junko-nakase-Q-72wa9-7Dg-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
-          <img v-lazy="'/img/mobile_home/hassan-ouajbir-ir9mB-4E1VI-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
+          <a href="https://demo.litekart.in/men-shirts?page=1">  
+            <img v-lazy="'/img/mobile_home/lan-deng-quddu_dZKkQ-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 hover:border-red-500 sm:h-48">
+          </a>
+          <a href="https://demo.litekart.in/men-t-shirts?page=1">
+            <img v-lazy="'/img/mobile_home/keagan-henman-Won79_9oUEk-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
+          </a>
+          <a href="https://demo.litekart.in/suiting?page=1">
+            <img v-lazy="'/img/mobile_home/junko-nakase-Q-72wa9-7Dg-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
+          </a>
+          <a href="https://demo.litekart.in/men-jackets?page=1">
+            <img v-lazy="'/img/mobile_home/hassan-ouajbir-ir9mB-4E1VI-unsplash.jpg'" alt="" class="object-cover w-full h-40 col-span-1 border-2 rounded-lg md:h-56 lg:h-64 sm:h-48 hover:border-red-500">
+          </a>
         </div>
       </div>
       
@@ -75,6 +83,7 @@
         </div>
        <div class="px-2">
           <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
+            <a href="https://demo.litekart.in/women-makeup?page=1">
             <div class="w-full h-56 border border-blue-400 hover:border-blue-700 md:h-72">
               <img v-lazy="'/img/mobile_home/kori-nori-3YrtBEpMh60-unsplash.jpg'" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
@@ -83,6 +92,8 @@
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>
+            </a>
+            <a href="https://demo.litekart.in/women-skin-care?page=1">
             <div class="w-full h-56 border border-gray-400 hover:border-gray-700 md:h-72">
               <img v-lazy="'/img/mobile_home/charisse-kenion-uIJSFejHvf8-unsplash.jpg'" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
@@ -91,6 +102,8 @@
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>
+            </a>
+            <a href="https://demo.litekart.in/women-bath-body?page=1">
             <div class="w-full h-56 border border-gray-300 hover:border-gray-600 md:h-72">
               <img v-lazy="'/img/mobile_home/charisse-kenion-qJhMIBceIic-unsplash.jpg'" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
@@ -99,6 +112,8 @@
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>
+            </a>
+            <a href="https://demo.litekart.in/women-bath-body?page=1">
             <div class="w-full h-56 border border-yellow-400 hover:border-yellow-600 md:h-72">
               <img v-lazy="'/img/mobile_home/deepal-tamang-2ThEcWkaZ34-unsplash.jpg'" alt="" class="object-cover w-full h-36 md:h-52">
               <div class="flex flex-col h-auto ">
@@ -107,16 +122,17 @@
                 <span class="pt-1 text-xs text-center uppercase "> + Shop now</span>
               </div>
             </div>
+            </a>
             
           </div>
         </div>
       </div>
 
-      <div class="mt-2 bg-yellow-500 sm:hidden">
+      <a href="https://demo.litekart.in/women-bras-panties?page=1" class="mt-2 bg-yellow-500 sm:hidden">
         <img v-lazy="'/img/mobile_home/fahad-waseem-AdjyrNhFVPI-unsplash.jpg'" alt="" class="w-full h-56 p-1 rounded-lg filter brightness-50">
         <span class="absolute w-full -mt-24 text-xl text-center text-white">Bras & Briefs</span>
         <span class="absolute w-full -mt-16 text-3xl text-center text-white">Under 699 + 10% Off</span>
-      </div>
+      </a>
       
        <div class="p-3 py-5 mt-2 text-gray-600 uppercase bg-white border shadow">
          <p class="pb-3 text-sm font-semibold tracking-wider md:text-lg lg:text-2xl"> categories to bag </p>
@@ -130,42 +146,42 @@
             New style for every occasions
         </div>
         <div class="grid grid-cols-3 gap-1">
-          <div class="relative w-full col-span-1">
+          <a href="https://demo.litekart.in/men-shirts?page=1" class="relative w-full col-span-1">
             <img v-lazy="'/img/occasion/pedram-normohamadian-_q4zr9i_IAs-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter hover:brightness-75 brightness-50">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ Every Day</span>
-          </div>
-          <div class="relative w-full col-span-1">
+          </a>
+          <a href="https://demo.litekart.in/women-t-shirts-tanktops?page=1" class="relative w-full col-span-1">
             <img v-lazy="'/img/occasion/tholaal-mohamed-Q7fDfQB_nSc-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ Vacation</span>
-          </div>
-          <div class="relative w-full col-span-1">
+          </a>
+          <a href="https://demo.litekart.in/suiting?page=1" class="relative w-full col-span-1">
             <img v-lazy="'/img/occasion/amy-hirschi-K0c8ko3e6AA-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full mx-auto text-sm tracking-wider text-center text-white uppercase bottom-2">+ Work</span>
-          </div>
-          <div class="relative w-full col-span-1">
+          </a>
+          <a href="https://demo.litekart.in/sleep-lounge?page=1" class="relative w-full col-span-1">
             <img v-lazy="'/img/occasion/kumpan-electric-4KRsNO9QxwM-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ Bruch</span>
-          </div>
-          <div class="relative w-full col-span-1">
+          </a>
+          <a href="https://demo.litekart.in/sets?page=1" class="relative w-full col-span-1">
             <img v-lazy="'/img/occasion/bui-thanh-tam-Cnyqk0vTC3A-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ summer</span>
-          </div>
-          <div class="relative w-full col-span-1">
+          </a>
+          <a href="https://demo.litekart.in/men-traditional-clothing?page=1" class="relative w-full col-span-1">
             <img v-lazy="'/img/occasion/muhammad-murtaza-ghani-nUjfEYmJYl0-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ festive</span>
-          </div>
-          <div class="relative w-full col-span-1">
+          </a>
+          <a href="https://demo.litekart.in/women-loungewear?page=1" class="relative w-full col-span-1">
             <img v-lazy="'/img/occasion/alex-shaw-__AThUMXbUw-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ louging</span>
-          </div>
-          <div class="relative w-full col-span-1">
+          </a>
+          <a href="https://demo.litekart.in/activewear?page=1" class="relative w-full col-span-1">
             <img v-lazy="'/img/occasion/tobias-nii-kwatei-quartey-2-kfBa27AyU-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter hover:brightness-75 brightness-50">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ workout</span>
-          </div>
-          <div class="relative w-full col-span-1">
+          </a>
+          <a href="https://demo.litekart.in/boots?page=1" class="relative w-full col-span-1">
             <img v-lazy="'/img/occasion/frederick-medina-3WLfe7fCix4-unsplash.jpg'" alt="" class="object-cover w-full cursor-pointer h-44 filter brightness-50 hover:brightness-75">
             <span class="absolute w-full text-sm tracking-wider text-center text-white uppercase bottom-2">+ party</span>
-          </div>
+          </a>
         </div>
       </div>
       
