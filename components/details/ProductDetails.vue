@@ -3,8 +3,8 @@
     <div class="mb-3 lg:mb-0">
       
       <div class="w-full h-full px-3 pb-4 mt-5 border-b border-gray-200 lg:mt-0">
-        <div class="text-2xl font-semibold">{{product.brandName}}</div>
-        <div class="text-xl">{{product.name}}</div>
+        <div class="text-xl font-semibold">{{product.brandName}}</div>
+        <div class="text-xl font-light text-gray-400">{{product.name}}</div>
       </div>
       
       <div
@@ -17,18 +17,18 @@
         </div>-->
         <span class="mr-2 text-2xl">{{selectedVariant.price | currency}}</span>
         <span
-          class="mr-2 text-lg font-hairline line-through"
+          class="mr-2 text-lg font-hairline text-gray-400 line-through"
           v-if="selectedVariant.mrp > selectedVariant.price"
         >{{selectedVariant.mrp | currency}}</span>
         <span
-          class="text-xl text-orange-500"
+          class="text-xl text-primary-400"
           v-if="calculateOffPercent>0"
         >({{calculateOffPercent}}% OFF)</span>
-        <p class="text-sm font-hairline">Additional tax shall apply, charged at checkout</p>
+        <p class="text-sm font-hairline text-green-600">Additional tax shall apply, charged at checkout</p>
       </div>
     </div>
     <div>
-      <div class="items-center p-3 px-3 my-3 text-sm bg-gray-100 lg:my-0">
+      <div class="items-center p-3 px-3 my-3 text-sm lg:my-0">
         <div class="flex items-center">
           <span class="mr-4"> SELECT SIZE</span>
           <img
@@ -36,11 +36,27 @@
             alt=""
             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIxMiI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMyODc0RjAiIHN0cm9rZS13aWR0aD0iMS4zIj48cGF0aCBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0zNy4zNS42NUguNjV2MTAuN2gzNi43Vi42NXoiLz48cGF0aCBmaWxsPSIjODc4Nzg3IiBkPSJNNi42NSA4LjY1aDF2Mi43aC0xem00LTNIMTFsLS4zNS0uMzVWNWwtLjE1LjE1LS4xNS0uMTV2LjNsLS4zNS4zNWguMzV2NS43SDEwbC4zNS4zNXYuM2wuMTUtLjE1LjE1LjE1di0uM2wuMzUtLjM1aC0uMzV2LTUuN3ptNSAzSDE2bC0uMzUtLjM1VjhsLS4xNS4xNS0uMTUtLjE1di4zbC0uMzUuMzVoLjM1djIuN0gxNWwuMzUuMzV2LjNsLjE1LS4xNS4xNS4xNXYtLjNsLjM1LS4zNWgtLjM1di0yLjd6bTQtM2gxdjUuN2gtMXptNCAzaDF2Mi43aC0xem05IDBoMXYyLjdoLTF6bS00LTNoMXY1LjdoLTF6Ii8+PC9nPjwvc3ZnPg=="
           />
-          <div class="flex items-center text-primary">
-            <span class="">SIZE CHART</span>
+          <div class="flex items-center cursor-pointer text-primary">
+            <!-- Sassy-Size-Chart_large.png -->
+            <div class="cursor-pointer" @click="sidebar = !sidebar" aria-label="Open Menu">
+              SIZE CHART</div>
             <i class="block ml-2 -mt-1 fa fa-angle-right"></i>
           </div>
+          <!-- size chart -->
+          <div v-if="sidebar" class="transition">
+           <div 
+              @click="sidebar = false"
+              class="fixed inset-0 z-30 w-screen h-screen bg-black opacity-50 cursor-auto"
+            />
+              <SizeChart
+                class="h-screen"
+                :show="sidebar"
+                :class="sidebar ? 'openSideBar' : 'closeSideBar'"
+                @hideSidebar="sidebar = false"
+              />
+          </div>
         </div>
+      </div>
         <div
           class="relative flex flex-wrap px-3 py-4"
           :class="{'shake-animation': shake}"
@@ -98,7 +114,7 @@
         <button
           :disabled="!selectedVariant || !selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
           @click="addToBag({pid:product._id, vid:selectedVariant._id,qty:1})"
-          class="w-7/12 px-6 py-2 mr-2 text-sm font-bold text-white rounded lg:w-1/3 xl:w-1/2 primary lg:text-lg"
+          class="w-7/12 px-6 py-2 mr-2 text-sm font-bold text-white border rounded hover:border-primary-200 lg:w-1/3 xl:w-1/2 primary lg:text-lg"
         >
           <i
             class="hidden mr-2 fa fa-shopping-bag lg:block"
@@ -118,7 +134,7 @@
         <button
           @click="toggleWishlist"
           v-else
-          class="w-5/12 px-6 py-2 text-sm font-bold text-black bg-white border rounded lg:w-1/3 border-grey-300 lg:text-lg"
+          class="w-5/12 px-6 py-2 text-sm font-bold text-black bg-white border rounded hover:border-gray-400 lg:w-1/3 border-grey-300 lg:text-lg"
         >
           <i
             class="hidden mr-2 fa fa-bookmark lg:block"
@@ -208,14 +224,14 @@
       </div>
       <div class="px-3 py-3">
         <p class="text-lg font-bold">Specifications</p>
-        <div class="flex w-full py-1">
+        <div class="flex w-full">
           <div
-            class="w-1/2 mr-4 border-b border-gray-400"
+            class="flex flex-col w-full -mt-3 border-b border-gray-400 sm:mt-0 sm:flex-row"
             v-for="f in product.features"
             :key="f._id"
           >
-            <p class="text-xs text-gray-500">{{f.key}}</p>
-            <span class="text-sm">{{f.val}}</span>
+            <p class="w-1/4 text-sm text-gray-500">{{f.key}} :</p>
+            <span class="w-3/4 -mt-4 text-black text-normal sm:mt-0">{{f.val}}</span>
           </div>
         </div>
         <!-- <span class="font-bold text-primary">See More</span> -->
@@ -268,22 +284,24 @@
         </div>
       </div> -->
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
 
 import Button from "~/components/ui/Button";
+import SizeChart from '~/components/details/SizeChart'
 
 export default {
-  components: { Button },
+  components: { Button , SizeChart},
   props: {
     product: { type: Object },
     selectedVariant: { type: Object }
   },
   data() {
     return {
+      sidebar: false,
       wished: false,
       loading: false,
       userSelectedVariant: null,
@@ -523,6 +541,14 @@ export default {
 </script>
 
 <style scoped>
+.openSideBar {
+  right: 0;
+  transition: 0.3s all;
+}
+.closeSideBar {
+  right: -100%;
+  transition: 0.3s all;
+}
 /** Hover Tooltip Css ***/
 .tooltip {
   position: relative;
