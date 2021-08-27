@@ -149,7 +149,7 @@
           <div>Need help with this order?</div>
           <br />
           <div>
-            <nuxt-link to="/help" class="text-pink-500"
+            <nuxt-link to="/helpcenter" class="text-pink-500"
               >Visit our help center</nuxt-link
             >
           </div>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed inset-0 z-50 flex flex-col w-4/5 overflow-x-hidden overflow-y-auto transition bg-white shadow-lg lg:w-3/5"
+    class="fixed inset-0 z-50 flex flex-col w-4/5 overflow-x-hidden overflow-y-auto transition bg-white shadow-lg ml-auto lg:w-3/5"
   >
     <button
       aria-label="Open sidebar"
@@ -23,21 +23,21 @@
       </svg>
     </button>
     <div class="mx-auto my-auto mt-24">
-      <img src="/Sassy-Size-Chart_large.png" alt="h-full w-full mx-auto">
+      <img src="/Sassy-Size-Chart_large.png" alt="h-full w-full mx-auto" />
     </div>
   </div>
 </template>
 <script>
 export default {
-    components:{
-        // Radio,
-    },
-    methods:{
-      hideSidebar(e) {
+  components: {
+    // Radio,
+  },
+  methods: {
+    hideSidebar(e) {
       this.sidebar = false
       if (e) this.$router.push(`/c/${e}`)
       this.$emit('hideSidebar', true)
-    },
     }
+  }
 }
 </script>

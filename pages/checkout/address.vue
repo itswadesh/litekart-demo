@@ -81,6 +81,7 @@
               <div class="text-gray-500">Delivery Charge ₹149</div>
             </div>
           </label>
+
           <div
             v-for="(item, ix) in cart.items"
             :key="ix"
@@ -89,11 +90,12 @@
           >
             <img
               class="w-20 lg:rounded xs:rounded-b-none"
-              v-lazy="$store.state.settings.CDN_URL + item.product.img"
+              v-lazy="$store.state.settings.CDN_URL + item.product.img[0]"
               alt=""
             />
             {{ item.product.name | truncate(30) }}
           </div>
+
           <CartSummaryCheckout :selectedAddress="selectedAddress" />
         </div>
       </div>

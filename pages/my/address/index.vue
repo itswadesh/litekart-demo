@@ -1,26 +1,32 @@
 <template>
   <div class="w-full h-screen bg-white shadow md:h-full">
-     <div class="flex items-center justify-center p-5 text-xl font-bold text-center">
+    <div
+      class="flex items-center justify-center p-5 text-xl font-bold text-center"
+    >
       <div class="mx-auto text-2xl font-bold">
-       <div class="flex flex-row md:hidden">
-          <i class="mt-0.5 mr-2 fa fa-arrow-left"
+        <div class="flex flex-row md:hidden">
+          <i
+            class="mt-0.5 mr-2 fa fa-arrow-left"
             @click="$router.push('/my/')"
-            aria-hidden="true"></i>
-          <div class=""> Manage Addresses </div>
-       </div>
-       <div class="hidden text-center md:flex">Manage Addresses </div>
+            aria-hidden="true"
+          ></i>
+          <div class="">Manage Addresses</div>
+        </div>
+        <div class="hidden text-center md:flex">Manage Addresses</div>
       </div>
     </div>
     <div class="px-0 lg:px-10">
       <div class="w-full px-8 mb-5 text-sm text-center">
         <!-- Just 2 step(s) to go and your profile's complete -->
-        <div class="w-full h-1 text-xs leading-none text-center text-white bg-green-500 rounded-lg"
+        <div
+          class="w-full h-1 text-xs leading-none text-center text-white bg-green-500 rounded-lg"
         ></div>
       </div>
     </div>
 
     <div class="w-full px-0 my-4 lg:px-20">
-      <nuxt-link :to="`address/add`"
+      <nuxt-link
+        :to="`address/add`"
         class="flex items-center justify-center w-full p-5 mb-5 text-center bg-white border border-gray-100 rounded shadow hover:shadow-xl"
       >
         <img src="/rounded-plus.png" alt="+" class="w-10 mr-1" />ADD NEW ADDRESS
