@@ -147,12 +147,14 @@
             <img src="/help.png" class="m-auto" alt="" />
           </div>
           <div>Need help with this order?</div>
+
           <br />
-          <div>
+
+          <!-- <div>
             <nuxt-link to="/help-center" class="text-pink-500"
               >Visit our help center</nuxt-link
             >
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="w-8"></div>

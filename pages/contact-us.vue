@@ -9,28 +9,40 @@
         <div
           class="w-full py-8 pr-0 my-4 mb-8 bg-white rounded shadow lg:bg-transparent lg:shadow-none lg:rounded-none lg:w-1/2 lg:pr-12"
         >
-          <form
-            novalidate
-            @submit.stop.prevent="submit()"
-            class="flex flex-col px-2 leading-loose lg:px-24"
-          >
-            <Textbox v-model="email" label="Your email" />
-            <Textarea v-model="message" label="Message" />
-            <button
-              type="submit"
-              :disabled="loading"
-              class="flex items-center justify-center w-full py-2 text-2xl font-bold rounded outline-none h-14"
-              :class="{
-                'primary text-white': !loading,
-                'border border-gray-400 bg-gray-300': loading
-              }"
+          <div
+            v-if="msg"
+            v-html="msg"
+            class="px-2 leading-loose lg:px-24 h-72 text-center flex flex-col justify-center items-center"
+          ></div>
+
+          <div v-else>
+            <form
+              novalidate
+              @submit.stop.prevent="submit()"
+              class="flex flex-col px-2 leading-loose lg:px-24"
             >
-              <div v-if="loading">
-                <img src="/loading.svg" :class="{ loading: loading }" alt="" />
-              </div>
-              <span v-else>Send</span>
-            </button>
-          </form>
+              <Textbox v-model="email" label="Your email" />
+
+              <Textarea v-model="message" label="Message" />
+
+              <button
+                type="submit"
+                :disabled="loading"
+                class="flex items-center justify-center w-full py-2 text-2xl font-bold rounded outline-none h-14"
+                :class="
+                  loading
+                    ? 'border border-gray-400 bg-gray-300'
+                    : 'primary text-white'
+                "
+              >
+                <div v-if="loading">
+                  <img src="/loading.svg" alt="loading..." />
+                </div>
+
+                <span v-else>Send</span>
+              </button>
+            </form>
+          </div>
         </div>
         <!-- <div class="w-full lg:w-1/2"> -->
         <!-- </div> -->
@@ -43,6 +55,7 @@
 import Textbox from '~/components/ui/Textbox'
 import Textarea from '~/components/ui/Textarea'
 import { CDN, HOST } from '~/config'
+
 export default {
   data() {
     return {
@@ -54,23 +67,28 @@ export default {
       message: ''
     }
   },
+
   components: { Textbox, Textarea },
+
   computed: {
     isEmail() {
       if (this.email.includes('@')) return true
       else return false
     }
   },
+
   methods: {
     async submit() {
       if (!this.email || this.email == '') {
-        this.$store.commit('setErr', 'Please enter your email/phone no')
+        this.$store.commit('setErr', 'Please enter your email / phone no')
         return
       }
+
       if (!this.isEmail) {
         this.$store.commit('setErr', 'Entered email is not valid')
         return
       }
+
       try {
         this.loading = true
         const res = this.$axios.$post('/api/email/contactus', {
@@ -78,7 +96,8 @@ export default {
           subject: 'Conact from Litekart Demo',
           text: this.message
         })
-        this.msg = 'Thank you for message. We will get back to you soon'
+        this.msg =
+          '<span class="mb-2 font-semibold text-lg">Thank you for message </span><span>We will get back to you soon</span>'
       } catch (e) {
         this.err = e
         console.log('err...', e.toString())
