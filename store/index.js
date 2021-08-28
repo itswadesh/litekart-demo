@@ -57,7 +57,7 @@ export const actions = {
     commit('setGuest', this.$cookies.get('guest')) // Required only at server
     // Categories
     try {
-      let categories = await this.$axios.$get('api/categories/megamenu')
+      let categories = await this.$axios.$get('/api/categories/megamenu')
       commit('categories', categories.data)
     } catch (err) {
       commit('setErr', err)

@@ -68,7 +68,7 @@ select:-webkit-autofill:focus {
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(87deg, #fb6340, #da1c5f) !important;
+    background: linear-gradient(87deg, #d3cdcb, #f3e8ec) !important;
   }
 }
 button,

@@ -26,7 +26,7 @@
 
     <div class="w-full px-0 my-4 lg:px-20">
       <nuxt-link
-        :to="`address/add`"
+        :to="`/checkout/add`"
         class="flex items-center justify-center w-full p-5 mb-5 text-center bg-white border border-gray-100 rounded shadow hover:shadow-xl"
       >
         <img src="/rounded-plus.png" alt="+" class="w-10 mr-1" />ADD NEW ADDRESS
@@ -37,7 +37,7 @@
         :key="a._id"
       >
         <nuxt-link
-          :to="`address/add?id=${a._id}`"
+          :to="`/checkout/add?id=${a._id}`"
           class="absolute right-0 px-4 py-2 mr-2 text-xs text-right bg-white border border-gray-300 rounded hover:bg-gray-50"
           >Edit</nuxt-link
         >

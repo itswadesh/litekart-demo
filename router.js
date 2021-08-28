@@ -66,9 +66,9 @@ const Search = () => import('~/pages/search').then(m => m.default || m)
 const Contact = () => import('~/pages/contact-us').then(m => m.default || m)
 const Test = () => import('~/pages/test').then(m => m.default || m)
 // const Review = () => import('~/pages/review/_id').then(m => m.default || m)
-const Help = () => import('~/pages/helpcenter/index').then(m => m.default || m)
+const Help = () => import('~/pages/help-center/index').then(m => m.default || m)
 const HelpSlug = () =>
-  import('~/pages/helpcenter/_id').then(m => m.default || m)
+  import('~/pages/help-center/_id').then(m => m.default || m)
 export async function createRouter() {
   let routes = []
   routes.push({ path: '/', component: Home })

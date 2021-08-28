@@ -1,25 +1,35 @@
 <template>
   <div class="w-full bg-white shadow">
-    <div class="flex items-center justify-center p-5 text-xl font-bold text-center">
+    <div
+      class="flex items-center justify-center p-5 text-xl font-bold text-center"
+    >
       <div class="mx-auto text-2xl font-bold">
-       <div class="flex flex-row md:hidden">
-          <i class="mt-0.5 mr-2 fa fa-arrow-left"
+        <div class="flex flex-row md:hidden">
+          <i
+            class="mt-0.5 mr-2 fa fa-arrow-left"
             @click="$router.push('/my/')"
-            aria-hidden="true"></i>
-          <div class=""> Profile details </div>
-       </div>
-       <div class="hidden text-center md:flex">Profile details </div>
+            aria-hidden="true"
+          ></i>
+          <div class="">Profile details</div>
+        </div>
+        <div class="hidden text-center md:flex">Profile details</div>
       </div>
     </div>
     <div class="px-0 lg:px-10">
       <div class="w-full px-8 mb-5 text-sm text-center">
         <!-- Just 2 step(s) to go and your profile's complete -->
-        <div class="w-full h-1 text-xs leading-none text-center text-white bg-green-500 rounded-lg"
+        <div
+          class="w-full h-1 text-xs leading-none text-center text-white bg-green-500 rounded-lg"
         ></div>
       </div>
     </div>
 
-    <div class="w-full">
+    <form
+      novalidate
+      autocomplete="off"
+      @submit.stop.prevent="updateProfile(profile)"
+      class="w-full"
+    >
       <ul class="w-full">
         <div class="px-0 lg:px-10">
           <li class="flex flex-wrap px-8 mb-5">
@@ -82,7 +92,7 @@
         </div>
 
         <div class="px-0 lg:px-10 ">
-          <nuxt-link to="/my/password">
+          <nuxt-link to="/my/change-password">
             <li class="flex flex-wrap px-8 py-5 mb-5 ">
               <div class="w-1/12">
                 <i class="fa fa-key" aria-hidden="true"></i>
@@ -95,7 +105,8 @@
           </nuxt-link>
         </div>
       </ul>
-    </div>
+      <button type="submit" class="primary">Submit</button>
+    </form>
   </div>
 </template>
 

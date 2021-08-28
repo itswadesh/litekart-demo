@@ -16,7 +16,6 @@ const getters = {
   },
   checkCart: state => ({ pid, vid }) => {
     // Returns true when there is item in cart
-    console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzz')
     var found = state.items.some(function(el) {
       return el.product._id === pid && el.variant._id === vid
     })

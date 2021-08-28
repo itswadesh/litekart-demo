@@ -1,14 +1,15 @@
 <template>
-  <div
-    class="w-full leading-loose text-center bg-white rounded shadow"
-  >
+  <div class="w-full leading-loose text-center bg-white rounded shadow">
     <div class="w-full py-8 border-b border-gray-200">
       <div
         class="flex items-center justify-center w-20 h-20 p-2 mx-auto text-4xl text-gray-600 bg-gray-200 rounded-full "
-        >{{ user.firstName | first }}
+      >
+        {{ user.firstName | first }}
       </div>
       <div class="my-3 text-lg">{{ user.firstName }}</div>
-      <div class="w-full mx-auto text-sm text-center text-gray-500 ">{{ user.email }}</div>
+      <div class="w-full mx-auto text-sm text-center text-gray-500 ">
+        {{ user.email }}
+      </div>
     </div>
     <ul>
       <li>
@@ -58,7 +59,7 @@
       </li> -->
       <li>
         <nuxt-link
-          to="/my/password"
+          to="/my/change-password"
           active-class="text-pink-500"
           class="flex flex-wrap w-full text-lg"
         >

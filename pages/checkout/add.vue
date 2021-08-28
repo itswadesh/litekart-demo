@@ -36,7 +36,7 @@
             label="Pin Code"
             class="w-full"
             name="name"
-            v-model="a.zip"
+            v-model.number="a.zip"
           />
           <Textbox
             label="Address"

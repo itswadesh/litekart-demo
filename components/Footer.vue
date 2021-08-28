@@ -83,16 +83,16 @@
         <div>
           <h6 class="text-lg text-left lg:text-xs">KEEP IN TOUCH</h6>
           <div class>
-            <a href="https://facebook.com/codenx2">
+            <a href="https://facebook.com/codenx2" target="_blank">
               <i class="fa fa-facebook-official" aria-hidden="true"></i>
             </a>
-            <a href="https://twitter.com/itswadesh">
+            <a href="https://twitter.com/itswadesh" target="_blank">
               <i class="fa fa-twitter" aria-hidden="true"></i>
             </a>
-            <a href="https://github.com/itswadesh">
+            <a href="https://github.com/itswadesh" target="_blank">
               <i class="fa fa-github" aria-hidden="true"></i>
             </a>
-            <a href="#">
+            <a href="http://instagram.com/litekart" target="_blank">
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
           </div>

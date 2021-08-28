@@ -1,37 +1,37 @@
 <template>
-<div>
-  <div class="flex flex-wrap justify-start w-full px-2 xl:hidden">
-    <div class="hidden overflow-y-auto md:flex-col md:block md:order-1 h-96">
-      <img
-        v-for="(i, ix) in product.img"
-        :key="ix"
-        class="object-contain w-24 h-24 mb-1 mr-1 cursor-pointer"
-        v-lazy="$store.state.settings.CDN_URL + i"
-        alt=""
-        @mouseover="showAsCurrentImage(i)"
-      />
-    </div>
-    <div class="flex-1 overflow-hidden xs:order-1 md:order-2 h-96 w-96">
-      <img
-        class="hidden object-scale-down w-full h-full ml-1 lg:object-cover md:inline-block zoom"
-        v-lazy="$store.state.settings.CDN_URL + currentImage"
-        alt=""
-      />
-      <!-- Triggers the virtual dom not matching issue -->
-      <carousel class="md:hidden" :perPage="1" :paginationEnabled="false">
-        <slide
-          class="inline-block w-full md:hidden"
+  <div>
+    <div class="flex flex-wrap justify-start w-full px-2 xl:hidden">
+      <div class="hidden overflow-y-auto md:flex-col md:block md:order-1 h-96">
+        <img
           v-for="(i, ix) in product.img"
           :key="ix"
-        >
-          <img
-            class="inline-block w-full"
-            v-lazy="$store.state.settings.CDN_URL + i"
-            alt=""
-          />
-        </slide>
-      </carousel>
-      <!-- <div class="flex w-full p-2">
+          class="object-contain w-24 h-24 mb-1 mr-1 cursor-pointer"
+          v-lazy="$store.state.settings.CDN_URL + i"
+          alt=""
+          @mouseover="showAsCurrentImage(i)"
+        />
+      </div>
+      <div class="flex-1 overflow-hidden xs:order-1 md:order-2 h-96 w-96">
+        <img
+          class="hidden object-scale-down w-full h-full ml-1 lg:object-cover md:inline-block zoom"
+          v-lazy="$store.state.settings.CDN_URL + currentImage"
+          alt=""
+        />
+        <!-- Triggers the virtual dom not matching issue -->
+        <carousel class="md:hidden" :perPage="1" :paginationEnabled="false">
+          <slide
+            class="inline-block w-full md:hidden"
+            v-for="(i, ix) in product.img"
+            :key="ix"
+          >
+            <img
+              class="inline-block w-full"
+              v-lazy="$store.state.settings.CDN_URL + i"
+              alt=""
+            />
+          </slide>
+        </carousel>
+        <!-- <div class="flex w-full p-2">
         <button
           v-if="!checkCart({pid:product._id, vid:selectedVariant._id})"
           :disabled="!selectedVariant.price || selectedVariant.stock==0 || $store.state.loading"
@@ -50,19 +50,28 @@
           ></i>BUY NOW
         </button>
       </div>-->
+      </div>
+    </div>
+    <div class="hidden w-full grid-cols-2 gap-3 px-5 xl:grid ">
+      <div
+        v-for="(i, ix) in product.img"
+        :key="ix"
+        class="w-full h-full col-span-1 my-auto shadow"
+      >
+        <img
+          @click="handleClick"
+          class="object-contain w-full h-full overflow-hidden cursor-pointer zoom zoom-in"
+          v-lazy="$store.state.settings.CDN_URL + i"
+          alt=""
+        />
+        <!-- @click="
+            $photoswipe.open(0, [
+              { src: $store.state.settings.CDN_URL + i, w: 800, h: 800 }
+            ])
+          " -->
+      </div>
     </div>
   </div>
-  <div class="hidden w-full grid-cols-2 gap-3 px-5 xl:grid ">
-    <div v-for="(i, ix) in product.img" :key="ix"  class="w-full h-full col-span-1 my-auto shadow">
-      <img
-        @click="$photoswipe.open(0, [{ src: $store.state.settings.CDN_URL + i, w: 800, h: 800 }])"
-        class="object-contain w-full h-full overflow-hidden cursor-pointer zoom zoom-in"
-        v-lazy="$store.state.settings.CDN_URL + i"
-        alt=""
-      />
-    </div>
-  </div>
-</div>
 </template>
 
 <script>
@@ -109,11 +118,37 @@ export default {
   computed: {
     ...mapGetters({
       checkCart: 'cart/checkCart'
-    })
+    }),
+    photoSwipeImages() {
+      return this.product.img.map(image => {
+        return {
+          src: this.$store.state.settings.CDN_URL + image,
+          w: 1024,
+          h: 768
+        }
+      })
+    }
   },
   methods: {
     showAsCurrentImage(image) {
       this.currentImage = image
+    },
+    handleClick() {
+      const pswp = this.$Pswp.open({
+        items: this.photoSwipeImages,
+        options: {
+          index: this.getSelectedImageIndex(this.currentImage)
+        }
+      })
+    },
+    getSelectedImageIndex(i) {
+      const pos = this.photoSwipeImages
+        .map(function(e) {
+          return e.src
+        })
+        .indexOf(i)
+      return pos
+      // return this.photoSwipeImages.find((p) => {p.src === i})
     }
     //  selectImg(ix) {
     //       this.selectedImgIndex = ix;

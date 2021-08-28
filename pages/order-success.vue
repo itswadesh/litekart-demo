@@ -115,6 +115,7 @@ export default {
   async asyncData({ params, query, route, redirect, $axios, store }) {
     let order = null,
       err = null
+    store.commit('setCart', {})
     if (store.getters['cart/getTotal'] <= 0) {
       redirect('/')
     }
